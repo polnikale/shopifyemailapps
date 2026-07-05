@@ -1,26 +1,146 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer base {
-*{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-html{scroll-behavior:smooth} body{font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.65;letter-spacing:-.011em;background:#ecfdf5;color:#0f172a}
-::selection{background:#10b98155} :focus-visible{outline:2px solid #10b981;outline-offset:2px}
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background: #f4efe6;
+  }
+
+  body {
+    margin: 0;
+    color: #24170f;
+    background:
+      radial-gradient(circle at 14% 8%, rgba(244, 163, 60, 0.24), transparent 28rem),
+      radial-gradient(circle at 88% 18%, rgba(34, 197, 94, 0.18), transparent 24rem),
+      linear-gradient(180deg, #fffaf1 0%, #f4efe6 52%, #efe3cf 100%);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.7;
+    letter-spacing: -0.012em;
+  }
+
+  ::selection {
+    background: rgba(216, 119, 6, 0.24);
+  }
 }
+
 @layer components {
-.container{@apply max-w-6xl mx-auto px-5 sm:px-6 lg:px-8}
-.btn{@apply inline-flex items-center justify-center px-4 py-2.5 text-sm font-semibold rounded-xl transition-all duration-150 ease-out}
-.btn-primary{background:#022c22;@apply text-white shadow-lg} .btn-primary:hover{background:#064e3b}
-.btn-secondary{@apply bg-white border text-slate-800 hover:bg-slate-50}
-.card{@apply rounded-3xl border bg-white p-6 shadow-sm transition; border-color:#064e3b22; box-shadow:0 12px 40px #064e3b0f} .card:hover{transform:translateY(-2px)}
-.badge{@apply inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold; color:#064e3b; background:#ecfdf5; border-color:#064e3b33}
-.hero-title{font-family:'Instrument Serif',Georgia,serif;@apply text-5xl md:text-7xl font-normal tracking-tight text-slate-950}
-.muted{@apply text-slate-600}
-.data-table{@apply w-full text-sm}
-.data-table th{@apply px-4 py-3 text-left text-xs font-bold uppercase tracking-wide; color:#022c22; background:#ecfdf5}
-.data-table td{@apply border-t px-4 py-3 text-slate-700; border-color:#064e3b22}
-.prose-shopify h2{@apply mt-10 text-3xl font-bold tracking-tight text-slate-950}
-.prose-shopify h3{@apply mt-7 text-xl font-bold text-slate-950}
-.prose-shopify p{@apply mt-4 text-slate-700}
-.prose-shopify ul{@apply mt-4 list-disc space-y-2 pl-6 text-slate-700}
-.link{font-weight:700;color:#064e3b} .link:hover{color:#022c22}
+  .container {
+    @apply mx-auto max-w-7xl px-5 sm:px-6 lg:px-8;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-bold transition;
+  }
+
+  .btn-primary {
+    background: #24170f;
+    color: #fffaf1;
+    box-shadow: 0 18px 50px rgba(36, 23, 15, 0.18);
+  }
+
+  .btn-primary:hover {
+    background: #4a2d17;
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    border: 1px solid rgba(36, 23, 15, 0.2);
+    background: rgba(255, 250, 241, 0.72);
+    color: #24170f;
+  }
+
+  .btn-secondary:hover {
+    border-color: rgba(36, 23, 15, 0.42);
+    background: #fffaf1;
+  }
+
+  .badge {
+    @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-black uppercase tracking-[0.22em];
+    background: #24170f;
+    color: #fffaf1;
+  }
+
+  .hero-title {
+    font-family: Georgia, "Times New Roman", serif;
+    @apply text-5xl font-black leading-[0.95] tracking-[-0.055em] text-[#24170f] md:text-7xl lg:text-8xl;
+  }
+
+  .editorial-kicker {
+    @apply text-sm font-black uppercase tracking-[0.28em] text-[#9a5b16];
+  }
+
+  .card {
+    border: 1px solid rgba(36, 23, 15, 0.14);
+    background: rgba(255, 250, 241, 0.78);
+    box-shadow: 0 22px 70px rgba(36, 23, 15, 0.08);
+    @apply rounded-[2rem] p-6 backdrop-blur;
+  }
+
+  .ledger-card {
+    border-left: 8px solid #d97706;
+    background: #fffaf1;
+    box-shadow: 0 18px 60px rgba(120, 53, 15, 0.12);
+    @apply rounded-r-[2rem] p-6;
+  }
+
+  .rank-pill {
+    @apply inline-flex h-10 w-10 items-center justify-center rounded-full text-sm font-black;
+    background: #d97706;
+    color: #fffaf1;
+  }
+
+  .link {
+    color: #7c3f10;
+    font-weight: 800;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+
+  .link:hover {
+    color: #24170f;
+  }
+
+  .data-table {
+    @apply w-full text-sm;
+  }
+
+  .data-table th {
+    @apply px-4 py-3 text-left text-xs font-black uppercase tracking-[0.16em];
+    background: #24170f;
+    color: #fffaf1;
+  }
+
+  .data-table td {
+    border-top: 1px solid rgba(36, 23, 15, 0.14);
+    @apply px-4 py-4 align-top text-[#4a2d17];
+  }
+
+  .prose-shopify {
+    @apply max-w-none;
+  }
+
+  .prose-shopify h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    @apply mt-12 text-4xl font-black tracking-[-0.04em] text-[#24170f];
+  }
+
+  .prose-shopify h3 {
+    @apply mt-8 text-2xl font-black text-[#24170f];
+  }
+
+  .prose-shopify p {
+    @apply mt-5 text-[17px] leading-8 text-[#4a2d17];
+  }
+
+  .prose-shopify ul {
+    @apply mt-5 list-disc space-y-3 pl-6 text-[16px] leading-7 text-[#4a2d17];
+  }
 }
