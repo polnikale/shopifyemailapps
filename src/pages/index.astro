@@ -6,6 +6,12 @@ const path = '';
 const title = pageTitle(site, path);
 const desc = description(site, path);
 const recommended = APPS.filter((app) => app.channels.includes(site.channel) || app.channels.includes('marketing')).slice(0, 10);
+const auditSteps = [
+  ['Inventory the customer moments', 'List welcome, browse, cart, checkout, post-purchase, replenishment, winback, VIP, review, and sale announcements. Mark the Shopify event, customer property, and product field each moment needs.'],
+  ['Score data readiness', 'Check whether the app can use order count, collections purchased, discount use, fulfillment state, product availability, consent status, and engagement recency without manual exports.'],
+  ['Design suppression before creative', 'Define who should not receive each message: recent purchasers, active support cases, subscription customers, VIPs with better offers, gift buyers, and people already in another high-priority flow.'],
+  ['Measure revenue quality', 'Compare attributed revenue with margin after discount, repeat purchase rate, unsubscribes, spam complaints, and whether buyers continue at full price.']
+];
 ---
 <BaseLayout title={title} description={desc} site={site} path="/">
   <section class="relative overflow-hidden py-16 md:py-24">
@@ -122,5 +128,30 @@ const recommended = APPS.filter((app) => app.channels.includes(site.channel) || 
       <p>Use the internal pages in sequence. App reviews explain individual fit. Comparison pages expose tradeoffs. Store-type guides translate email into catalog and buying-cycle realities. Use-case pages show how a flow should be built, measured, and maintained. If a page makes a tool sound interesting, do not buy it immediately. Rebuild one flow on paper first: trigger, audience, exclusions, offer, product block, success metric, and weekly owner. That exercise reveals whether the app will simplify work or merely add another dashboard.</p>
       <p>The final buying rule is operational: choose the app your team will improve every week. Shopify email revenue compounds through small reviews, clearer segments, better creative, safer discounts, and cleaner suppression. A famous platform that nobody touches after migration will lose to a simpler tool that keeps the team moving. That is the lens behind every route on this site.</p>
     </article>
+  </section>
+  <section class="container pb-16">
+    <div class="grid gap-6 lg:grid-cols-[.9fr_1.1fr]">
+      <article class="prose-shopify card">
+        <h2>A concrete 30-day email implementation plan</h2>
+        <p>Do not judge a Shopify email app by how many templates it shows on day one. Judge it by what a merchant can safely ship in the first month. Week one should connect Shopify, import consent, verify suppression, clean duplicate profiles, and preview real customers against the main flows. Week two should launch a welcome series that changes by source: a product-page subscriber should see product proof, a giveaway subscriber should receive stronger qualification, and an existing customer should not be treated like a stranger. Week three should rebuild abandoned cart and checkout recovery with discount discipline. Week four should add post-purchase education or replenishment, then review whether the app makes weekly improvements easier.</p>
+        <p>The highest-leverage email apps make these steps boring in a good way. A marketer should be able to open a customer record, understand why that person is in a flow, see the product context, confirm the offer, and update the message without breaking another automation. If the app hides those dependencies, the store eventually relies on broad campaigns because they feel safer than lifecycle changes.</p>
+        <h3>Homepage scoring rubric</h3>
+        <ul>
+          <li><strong>40% Shopify data depth:</strong> purchase history, catalog fields, discount behavior, fulfillment, subscription or replenishment signals, and clean customer identity.</li>
+          <li><strong>25% lifecycle control:</strong> visible triggers, branch logic, suppression, frequency controls, sale-week pause rules, and post-purchase sequencing.</li>
+          <li><strong>20% operating speed:</strong> how quickly a non-technical owner can edit copy, products, offers, and reports after launch.</li>
+          <li><strong>15% measurement quality:</strong> margin-aware reporting, deliverability signals, cohort behavior, and repeat purchase movement beyond last-click attribution.</li>
+        </ul>
+      </article>
+      <div class="grid gap-4">
+        {auditSteps.map(([title, body]) => (
+          <div class="card">
+            <div class="text-xs font-black uppercase tracking-[0.18em] text-[#9a5b16]">Email audit step</div>
+            <h3 class="mt-3 text-2xl font-black text-[#24170f]">{title}</h3>
+            <p class="mt-3 text-[#5d3a1d]">{body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
   </section>
 </BaseLayout>
