@@ -1,0 +1,391 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import ToolReview from '../../components/ToolReview.astro';
+import { site, description, pageTitle } from '../../content';
+import { useCaseBySlug } from '../../data/use-cases';
+import { appBySlug } from '../../data/apps';
+
+const uc = useCaseBySlug('email-design')!;
+const path = '/use-cases/email-design';
+const title = pageTitle(site, 'use-cases/email-design');
+const desc = description(site, 'use-cases/email-design');
+
+const featuredSlugs = ['sequenzy', 'klaviyo', 'omnisend', 'shopify-email', 'yotpo-email-sms'];
+const featuredApps = featuredSlugs.map((s) => appBySlug(s)!).filter(Boolean);
+
+const comparisonApps = [
+  'sequenzy', 'klaviyo', 'omnisend', 'shopify-email', 'yotpo-email-sms', 'drip',
+  'mailchimp', 'brevo', 'tinyemail', 'privy',
+].map((s) => appBySlug(s)!).filter(Boolean);
+
+const faqs = [
+  {
+    question: 'What is the best Shopify email app for email design?',
+    answer: 'Klaviyo ranks highest for design flexibility with dynamic product blocks and mature template ecosystem. Sequenzy ranks first for teams needing design guidance tied to lifecycle goals — mobile-first product-led layouts without starting from blank canvas. Shopify Email works for simple product campaigns from catalog.',
+  },
+  {
+    question: 'Should email design be mobile-first for Shopify?',
+    answer: 'Yes — 60–75% of ecommerce email opens on mobile. Design single-column, large tap targets, max two product cards above fold. Desktop preview lies; test iOS Mail and Gmail app before every send.',
+  },
+  {
+    question: 'How many products should appear in one email?',
+    answer: 'One hero product for browse and cart recovery; two to three for post-purchase cross-sell; four max in grid for promotional — only if each card is thumb-tappable. Six-product grids fail on mobile.',
+  },
+  {
+    question: 'Do I need plain-text versions?',
+    answer: 'Yes for deliverability and accessibility. Most platforms auto-generate — edit plain-text to match offer and CTA, not lorem ipsum auto-fill. Image-heavy emails without alt text fail accessibility and image-off clients.',
+  },
+  {
+    question: 'How does dark mode affect email design?',
+    answer: 'Test logos and product images on dark backgrounds — transparent PNGs with white artifacts look broken. Use defined background colors on content blocks; avoid pure black text on auto-inverted backgrounds.',
+  },
+  {
+    question: 'Should I use custom fonts in email?',
+    answer: 'Web-safe fallbacks always. Custom fonts degrade in many clients — brand font in hero image acceptable; body copy in Arial/Georgia stack for reliability.',
+  },
+  {
+    question: 'What click rate indicates design problems?',
+    answer: 'Low mobile click with decent desktop suggests tap target or layout issues. High opens with low clicks suggests subject-line mismatch or weak above-fold CTA — not always design alone, but mobile heatmaps help.',
+  },
+  {
+    question: 'Can tinyEmail replace design-heavy platforms?',
+    answer: 'tinyEmail AI drafting helps young stores ship fast — insufficient for complex dynamic product blocks and flow templates at scale. Graduate when design must sync to live catalog and variant state.',
+  },
+  {
+    question: 'Should I use animated GIFs in product email?',
+    answer: 'Subtle product motion can lift clicks on hero SKU — keep file size under 1MB for deliverability. Avoid flashing animation — accessibility and spam signals. Test on Gmail mobile where GIF support varies.',
+  },
+  {
+    question: 'How long should email subject lines be?',
+    answer: '40–50 characters for mobile preview optimization — front-load key word. Lifecycle email may use longer for specificity ("Your cart: Blue blazer still waiting"). A/B test on cart and welcome; not one global rule.',
+  },
+  {
+    question: 'Should product emails use lifestyle or packshot imagery?',
+    answer: 'Browse and cart: packshot on white for clarity. Post-purchase and launch: lifestyle for aspiration. Test per vertical — fashion lifestyle often wins; supplements may need label clarity packshot for compliance trust.',
+  },
+  {
+    question: 'What preheader length works best?',
+    answer: '85–100 characters complementing subject — not repeating subject text. Mobile inbox shows preheader after subject; use for secondary proof point or urgency detail. Empty preheader pulls first body text which often looks sloppy.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="relative overflow-hidden py-16 md:py-24">
+    <div class="container">
+      <a href="/use-cases" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All use cases</a>
+      <p class="editorial-kicker mt-6">Email design</p>
+      <h1 class="hero-title mt-5 max-w-5xl">Best Shopify email apps for email design</h1>
+      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+        Email design for Shopify is product merchandising in a 600px column — not a miniature landing page. Dynamic product blocks must pull live price and inventory, CTAs must survive thumb reach on iPhone Mail, and editorial prose must render when images are blocked. The right app pairs Shopify catalog sync with templates that default mobile-first, not desktop mockups shrunk after the fact.
+      </p>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
+        This playbook ranks apps for {uc.job}. We evaluated dynamic product rendering, mobile QA workflows, accessibility defaults, and whether design systems survive lifecycle volume — not drag-drop novelty.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href="/apps">Full app rankings</a>
+        <a class="btn btn-secondary" href="/use-cases/browse-abandonment">Browse abandonment</a>
+        <a class="btn btn-secondary" href="/for/fashion">Fashion guide</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <TldrBox
+      title="Top Shopify email apps for email design"
+      picks={[
+        { label: 'Best lifecycle design', tool: 'Sequenzy', reason: 'Product-led templates aligned to workflow goals — single-product focus for browse/cart, education blocks for post-purchase.' },
+        { label: 'Best template depth', tool: 'Klaviyo', reason: 'Dynamic product blocks, variant imagery, and largest agency template ecosystem.' },
+        { label: 'Best fast design', tool: 'Omnisend', reason: 'Prebuilt mobile-friendly ecommerce templates with product picker.' },
+        { label: 'Best native Shopify', tool: 'Shopify Email', reason: 'Zero-friction product blocks from catalog for simple campaigns.' },
+        { label: 'Best UGC design', tool: 'Yotpo Email & SMS', reason: 'Review and visual UGC blocks embedded in product-led layouts.' },
+      ]}
+    />
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Three email design merchant scenarios</h2>
+      <p>
+        <strong>Scenario A — Fashion DTC, variant imagery.</strong> Klaviyo dynamic blocks pulled size-specific images in cart recovery — mobile click rate up 27% versus static generic product shot. Single-column template enforced across all flows.
+      </p>
+      <p>
+        <strong>Scenario B — Supplement brand, compliance copy.</strong> Sequenzy post-purchase template with fixed education block above single product CTA — legal review once, reused across SKUs via metafield insert. Complaint rate on design clutter dropped.
+      </p>
+      <p>
+        <strong>Scenario C — Young POD store, design bandwidth zero.</strong> Omnisend product picker templates live in hours; tinyEmail AI drafted sale copy. Graduated to Sequenzy when browse emails needed single-product focus layout.
+      </p>
+    </div>
+
+    <div class="ledger-card mb-12">
+      <p class="editorial-kicker">Execution playbook</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Email design operating contract</h2>
+      <div class="mt-6 grid gap-6 md:grid-cols-2 text-[#4a2d17]">
+        <div><h3 class="font-black text-[#24170f]">Trigger</h3><p class="mt-2 text-[17px] leading-8">{uc.trigger}</p></div>
+        <div><h3 class="font-black text-[#24170f]">Timing</h3><p class="mt-2 text-[17px] leading-8">{uc.timing}</p></div>
+      </div>
+      <div class="mt-8"><h3 class="font-black text-[#24170f]">Exclusions</h3>
+        <ul class="mt-3 space-y-2">{uc.exclusions.map((e) => <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span>{e}</li>)}</ul>
+      </div>
+      <div class="mt-8"><h3 class="font-black text-[#24170f]">Metrics</h3>
+        <ul class="mt-3 space-y-2">{uc.metrics.map((m) => <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span>{m}</li>)}</ul>
+      </div>
+    </div>
+
+    <div class="ledger-card mb-12 overflow-x-auto">
+      <p class="editorial-kicker">Comparison table</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">10 Shopify apps for email design</h2>
+      <table class="mt-8 w-full min-w-[720px] text-left text-sm">
+        <thead>
+          <tr class="border-b border-[#24170f]/15 text-xs font-black uppercase tracking-wider text-[#9a5b16]">
+            <th class="py-3 pr-4">App</th><th class="py-3 pr-4">Design fit</th><th class="py-3 pr-4">Pricing</th>
+            <th class="py-3 pr-4">Shopify depth</th><th class="py-3 pr-4">Automation</th><th class="py-3">Rating</th>
+          </tr>
+        </thead>
+        <tbody class="text-[#4a2d17]">
+          {comparisonApps.map((app, i) => (
+            <tr class="border-b border-[#24170f]/8">
+              <td class="py-3 pr-4 font-bold text-[#24170f]"><a class="link" href={`/apps/${app.slug}`}>{i + 1}. {app.name}</a></td>
+              <td class="py-3 pr-4">{app.bestFor}</td><td class="py-3 pr-4">{app.pricing}</td>
+              <td class="py-3 pr-4">{app.shopifyDepth}</td><td class="py-3 pr-4">{app.automationDepth}</td>
+              <td class="py-3">★ {app.rating}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="container space-y-12 pb-16">
+    <p class="editorial-kicker">Detailed reviews</p>
+    <h2 class="font-serif text-4xl font-black text-[#24170f]">Five apps for Shopify email design</h2>
+
+    <ToolReview app={featuredApps[0]} rank={1} badge="Editor's choice" paragraphs={[
+      'Sequenzy leads email design for Shopify because lifecycle emails need different layouts — not one hero template for everything. Browse and cart want single-product focus; post-purchase wants education block first; launch wants urgency without spam aesthetics.',
+      'Agent-generated layouts start from workflow goal — reduces blank-canvas paralysis for teams without dedicated email designer.',
+      'Shopify product sync in templates respects live price — stale pricing in design erodes trust faster than ugly fonts.',
+      'Design depth trails Klaviyo agency ecosystem — pair with brand guidelines doc for typography and color consistency.',
+    ]} />
+
+    <ToolReview app={featuredApps[1]} rank={2} paragraphs={[
+      'Klaviyo design power is dynamic product infrastructure — variant images, collection grids, price drop callouts from live catalog.',
+      'Template library and agency marketplace accelerate seasonal redesigns — fashion and beauty benefit most.',
+      'Flow-level template testing isolates design impact on revenue per recipient — not just click vanity.',
+      'Learning curve steep for non-designers — powerful blocks require training to avoid mobile-broken grids.',
+    ]} />
+
+    <ToolReview app={featuredApps[2]} rank={3} paragraphs={[
+      'Omnisend templates default mobile-friendly — practical for SMB without design team. Product picker accelerates campaign builds.',
+      'Less flexible custom HTML than Klaviyo — acceptable when brand system is simple.',
+      'SMS and push creative consistency with email requires separate design pass — no unified design system.',
+      'Strong bridge for stores shipping first designed automations quickly.',
+    ]} />
+
+    <ToolReview app={featuredApps[3]} rank={4} paragraphs={[
+      'Shopify Email design is intentionally simple — product blocks from catalog, brand colors from store settings. Lowest friction for merchant-first campaigns.',
+      'No advanced dynamic variant logic or flow template families — campaigns not lifecycle design system.',
+      'Useful reference for product card styling before migrating to lifecycle platform.',
+      'Graduate when automations need distinct layouts per workflow.',
+    ]} />
+
+    <ToolReview app={featuredApps[4]} rank={5} paragraphs={[
+      'Yotpo design differentiator is social proof blocks — review stars, customer photos, UGC carousels in product emails.',
+      'Layout templates optimized for proof-forward conversion — browse and cart benefit when skepticism is high.',
+      'Modular suite design consistency when loyalty and review modules active.',
+      'Email-only design needs may not justify full Yotpo — evaluate module cost.',
+    ]} />
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="editorial-kicker">Mobile QA checklist</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Before every send</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Preview iOS Mail and Gmail app. Tap primary CTA with thumb — 44px min height. Read with images off. Check alt text on product images. Confirm single-column below 480px. Dark mode spot check on logo.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="editorial-kicker">Workflow templates</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">One layout family per job</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Template A: single product + proof (browse, cart). Template B: education + soft CTA (post-purchase). Template C: hero + two product grid (promo). Template D: text-forward editorial (VIP, winback proof-first). Do not reuse promo grid for cart recovery.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Design serves lifecycle goals</h2>
+      <p>Beautiful templates that violate <a class="link" href="/use-cases/discount-strategy">discount strategy</a> or crowd mobile CTAs hurt revenue. Design review includes strategy check — what is this email trying to get the customer to do?</p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="editorial-kicker">Accessibility</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Design for image-off and screen readers</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Meaningful alt text on product images — "Blue linen blazer, size M" not "product image." Semantic heading order in HTML templates. Sufficient contrast on CTA buttons. Link text descriptive — "Shop the blazer" not "click here." Accessibility reduces complaints and expands reachable audience; also improves rendering when images blocked.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Plain-text version manually edited for key campaigns — auto-generated plain text often strips product names. <a class="link" href="/use-cases/deliverability">Deliverability</a> benefits from balanced text-to-image ratio.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="editorial-kicker">Brand system</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Template tokens across flows</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Define header, footer, CTA button style, and typography once — reuse across welcome, cart, post-purchase. Klaviyo universal content blocks; Sequenzy template families; Omnisend saved rows. Inconsistent cart versus welcome design signals scam to customers trained by phishing awareness.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-3xl font-black text-[#24170f]">Quarterly design system review</h2>
+      <p>Mobile click rate by template family — single-product versus grid promo. Retire underperforming layouts. Dark mode spot check on top three templates after iOS updates.</p>
+      <p>Brand consistency audit across flows — header, footer, CTA match. New team members should not invent cart template from scratch.</p>
+      <p>Accessibility pass on hero campaigns before <a class="link" href="/use-cases/black-friday">BFCM</a> — alt text and contrast failures spike complaints under volume.</p>
+      <p>Dark mode logos need dedicated asset variants — test every major template refresh on iOS dark mode before peak send. Broken logo on dark background reads as phishing to trained customers.</p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Merchant scenario: jewelry brand with beautiful broken emails</h2>
+      <p>
+        A $44k/month fine jewelry brand invested in stunning campaign creative — full-bleed photography, custom typography, animated GIF heroes — but cart recovery used a generic three-column grid from 2022 with broken dark-mode logo and 11px footer legal. Mobile click rate on campaigns: 4.2%. Mobile click rate on cart emails: 0.8%. Dynamic product blocks pulled wrong variant images when multiple metal finishes existed — customers clicked rose gold thumbnail, landed on yellow gold PDP. Accessibility audit found 60% of campaign images missing alt text. Outlook rendering clipped hero CTA below fold. Revenue attributed to email grew slowly despite list growth because automation templates — where 70% of sends originated — underperformed campaigns visually and functionally.
+      </p>
+      <p>
+        Design system rebuild in Klaviyo: modular blocks — single hero product, proof strip, financing callout, mobile-first CTA minimum 44px touch target. Cart and browse templates matched campaign brand shell. Variant-aware product blocks keyed to SKU metafield for image accuracy. Dark mode logo variant uploaded. Alt text required field before template publish. Mobile click rate on cart rose from 0.8% to 2.9%; automation revenue share of email channel rose from 41% to 58% without increasing send volume.
+      </p>
+      <p>
+        Design owner gatekept template library — freelancers received view access not edit on cart shell. Litmus tests scheduled before every BFCM template publish. Variant metafield documentation linked from Shopify product admin — merchandising updated images knowing email blocks pulled from same field.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">90-day rollout: email design system for Shopify</h2>
+      <p>
+        Days 1–14: Audit top five templates by send volume — cart, welcome, post-purchase, campaign shell, browse. Screenshot mobile and desktop; document broken renders in Outlook and Gmail dark mode. Measure click rate by template family. List dynamic block failures — wrong product, OOS image, missing variant.
+      </p>
+      <p>
+        Days 15–30: Build master shell — header, footer, legal, unsubscribe, brand colors with contrast check. Create three module types: single-product hero, two-up collection, proof-plus-CTA. Apply shell to highest-volume automation first — cart recovery.
+      </p>
+      <p>
+        Days 31–60: Roll shell to welcome and post-purchase. Standardize CTA copy patterns — "Complete your order" not "Shop now" on cart. Variant image rules for multi-SKU catalogs. Alt text checklist for campaign team. Test send to Litmus or Email on Acid if budget allows.
+      </p>
+      <p>
+        Days 61–90: Retire legacy templates; lock design system in shared Figma or platform library. Quarterly review mobile click by template. Pre-BFCM accessibility pass. Train new contractors on system — no one-off cart redesigns without design owner approval.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Margin math: template performance versus creative spend</h2>
+      <p>
+        Cart flow: 12,000 sends monthly, 0.8% click, 15% click-to-purchase, $320 AOV, 52% margin. 96 clicks → 14 orders → $4,480 revenue. Improve click to 2.9%: 348 clicks → 52 orders → $16,640 revenue — incremental $12,160 monthly from design fix alone, zero extra sends. Design system build cost ~$4,000 agency or 50 internal hours — payback under 30 days.
+      </p>
+      <p>
+        Wrong variant image on high-AOV catalog: estimated 20% of clicks land wrong PDP; bounce loses 30% of those — effective conversion leak ~6% on clicks. On $320 AOV jewelry cart, 6% leak on 96 monthly clicks = ~$1,800 lost. Variant-aware blocks are engineering plus design, not vanity. Dark mode broken logo: unmeasured trust cost but support "is this legit?" tickets correlate with template refresh dates in merchant post-mortems.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Failure rehearsal: email design breakdowns</h2>
+      <p>
+        <strong>Variant image mismatch.</strong> Click rose gold, land yellow gold — immediate bounce. Fix: dynamic block keyed to variant ID not product parent.
+      </p>
+      <p>
+        <strong>Dark mode invisible CTA.</strong> White button on light logo background in dark mode. Fix: test dark mode; separate button border and fill tokens.
+      </p>
+      <p>
+        <strong>Campaign-automation split.</strong> Campaigns gorgeous; cart ugly — customers distrust cart email as phishing. Fix: shared header/footer shell across all send types.
+      </p>
+      <p>
+        <strong>Image-only email.</strong> No alt text; spam filters and accessibility fail. Fix: alt required; live text for critical CTA where possible.
+      </p>
+      <p>
+        <strong>Mobile CTA below fold.</strong> Hero image 800px tall; CTA never seen. Fix: single-column mobile-first; CTA within first 400px.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Cross-workflow dependencies for email design</h2>
+      <p>
+        Design system consistency across cart, welcome, post-purchase, browse, and campaign templates affects trust and conversion on every workflow — customers who receive gorgeous campaigns and ugly cart emails distrust automation as phishing. Variant-aware product blocks tie design to catalog complexity in <a class="link" href="/use-cases/abandoned-cart">cart</a> and <a class="link" href="/use-cases/browse-abandonment">browse</a> flows. UGC modules from <a class="link" href="/use-cases/reviews-and-ugc">reviews integration</a> need design system slots with SKU-matched photo aspect ratios. Dark mode and Outlook rendering failures spike during BFCM volume — pre-peak design QA from <a class="link" href="/use-cases/black-friday">Black Friday guide</a> timing applies to all templates, not campaigns alone.
+      </p>
+      <p>
+        Mobile click rate by template family should feed <a class="link" href="/use-cases/analytics">analytics</a> weekly standup — design changes are revenue events measurable in RPR, not aesthetic preferences. Accessibility alt text and contrast requirements protect deliverability complaint rates under peak sends tied to <a class="link" href="/use-cases/deliverability">deliverability</a> monitoring.         New team members and agencies must use locked template library — one-off cart redesigns without design owner approval recreate variant mismatch and dark mode failures that prior quarters fixed. Design system investment pays back fastest on highest-volume automation templates before campaign polish.
+      </p>
+      <p>
+        Weekly operator rhythm: Monday mobile click rate by template family; Wednesday dark mode spot check on cart and welcome; Friday Outlook render test on one campaign. Monthly: retire underperforming layout modules; alt text audit on hero images. Quarterly: full design system review before BFCM; variant block accuracy test on multi-SKU catalog.         No new cart template without design owner sign-off — highest-volume send deserves highest-quality shell.
+      </p>
+      <p>
+        Automation templates deserve campaign-quality design investment — seventy percent of sends from ugly cart email means majority of brand impressions underwhelm. Variant image accuracy is conversion hygiene not creative luxury; one wrong metal finish click on jewelry cart costs more than entire template refresh project. Design system ROI appears in automation RPR first — campaigns are icing, flows are cake.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify max-w-4xl">
+      <h2 class="font-serif text-3xl font-black text-[#24170f]">Merchant scenario (use-cases): Email Design rollout checkpoint</h2>
+      <p>
+        Shopify operators evaluating Email Design should document week-one baseline metrics before claiming migration wins — welcome time-to-live, cart suppression accuracy, post-purchase edge cases, and winback engagement splits scored on staff accounts. Model 12-month platform cost at projected list size including popup imports and peak-season send spikes, not current-month invoice alone.
+      </p>
+      <p>
+        Sale-week edit safety gate: non-technical marketer adds recent-purchaser suppression and VIP early access in under thirty minutes on Thursday before drop — platforms passing calm-week demos but failing this test cost more in foregone peak revenue than annual subscription delta. Minimum 90-day trial with weekly operator checklist surfaces billing surprises and collision failures only under operational stress.
+      </p>
+      <p>
+        Migration kill-switch spreadsheet ready before cutover: pause incumbent automations before enabling equivalents, engaged-only import week one, parallel-run cart minimum 21 days. Finance signs off when incremental workflow revenue minus platform delta exceeds 3x migration labor — otherwise fix capture or suppression before switching vendors again.
+      </p>
+    </div>
+  </section>
+
+  <section class="container pb-8">
+    <div class="flex flex-wrap gap-4 text-sm font-bold">
+      <a class="link" href="/apps">All apps →</a>
+      <a class="link" href="/use-cases/reviews-and-ugc">Reviews & UGC →</a>
+      <a class="link" href="/compare/klaviyo-vs-mailchimp">Klaviyo vs Mailchimp →</a>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify max-w-4xl">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Merchant scenario: Email Design on Shopify Plus consumables</h2>
+      <p>
+        CleanPour drinkware ($74k/mo) rebuilt Email Design after collision audit found cart and winback double-discounting same week — unsubscribes spiked 0.4 points. Separated flows with documented suppression hierarchy: cart active blocks winback discount path; recent purchaser hard exclusion 14 days. Holdout 5% measures true incrementality; gross attributed revenue without holdout overstated program value 22%.
+      </p>
+      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-10">90-day Email Design implementation</h2>
+      <p><strong>Days 1–30:</strong> Baseline metrics and staff-account edge-case tests — gift buyer, subscription tag, wholesale exclusion. <strong>Days 31–60:</strong> Production flow with collision matrix signed by retention lead. <strong>Days 61–90:</strong> Margin reporting with discount cost subtracted; weekly operator rhythm on calendar.</p>
+      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-10">Margin math: Email Design with discount governance</h2>
+      <p>
+        CleanPour tracked margin per recovered order not gross recovery revenue — 15% blanket discount on $52 AOV surrendered $7.80 margin per recovery. Graduated ladder lifted gross profit per send 34% with 8% lower gross revenue — finance approved expanded send volume on profit-positive path only.
+      </p>
+      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-10">Failure rehearsal: Email Design breaks</h2>
+      <p>
+        <strong>Collision with cart.</strong> Two discounts same customer same week — Fix: hierarchy doc. <strong>No sunset.</strong> Perpetual automation trains ignore — Fix: three-touch series max then annual check-in. <strong>Guest data gap.</strong> ROI ceiling until checkout captures email — Fix: segment logged-in versus guest recovery separately.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify max-w-4xl">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Workflow test checklist for email design</h2>
+      <p>
+        Run this email design validation on staff accounts before peak season: (1) welcome branches correctly by signup source and suppresses existing customers; (2) cart recovery excludes recent purchasers of same SKU variant; (3) post-purchase suppresses gift buyers from discount cross-sell and respects try-on or education delay windows; (4) winback splits engaged versus unengaged and sunsets after three touches. Score each 0–10; any flow below 7 is migration or rebuild signal.
+      </p>
+      <p>
+        Model 12-month cost at projected contact count after popup, giveaway, and influencer imports — not today's list size. Profile-based ESP pricing punishes capture-heavy verticals; pay-per-send rewards selective sending but still requires quarterly sunset of 180-day non-openers for deliverability. Stack TCO includes capture pageviews, SMS peak-week volume, and unused suite modules — finance should see one retention line item.
+      </p>
+      <p>
+        Sale-week rehearsal non-negotiable: marketer must add VIP early-access segment and recent-purchaser suppression in under thirty minutes on Thursday before drop. Platforms that pass calm-week demos but fail sale-week edits cost more in foregone peak revenue than annual subscription delta. Document trial outcomes in writing for finance — incremental workflow revenue minus platform delta must exceed 3x migration labor or fix capture and collision before switching again.
+      </p>
+      <p>
+        Migration timing: January–March or May–September only; never October–December ESP switch. Parallel-run welcome and cart minimum 21 days; incumbent read-only 90 days for export disputes. Kill-switch spreadsheet lists every incumbent automation pause order before enabling new platform equivalents — duplicate cart recovery during migration quarters deliverability and unsubscribes take quarters to heal.
+      </p>
+    </div>
+  </section>
+
+  <FaqSection faqs={faqs} title="Email design FAQ" />
+</BaseLayout>

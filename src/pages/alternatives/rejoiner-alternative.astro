@@ -1,0 +1,296 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import ToolReview from '../../components/ToolReview.astro';
+import { siteFromHost } from '../../content';
+import { appBySlug } from '../../data/apps';
+
+const site = siteFromHost();
+const path = '/alternatives/rejoiner-alternative';
+const title = 'Best Rejoiner Alternatives for Shopify (2026)';
+const desc = 'Why merchants leave Rejoiner — recovery-only ceiling, pricing at scale, full lifecycle need — plus eight ranked alternatives and migration checklist.';
+
+const altSlugs = ['sequenzy', 'klaviyo', 'sendlane', 'omnisend', 'drip', 'recart', 'postscript', 'brevo'];
+const alternatives = altSlugs.map((s) => appBySlug(s)!);
+
+const faqs = [
+  {
+    question: 'Why do Shopify stores leave Rejoiner?',
+    answer: 'Rejoiner excels at cart and browse recovery — merchants leave when recovery revenue plateaus and welcome, post-purchase, winback, and replenishment become the growth levers Rejoiner was never designed to own. Pricing at scale versus full platforms also triggers exits when finance compares Rejoiner plus manual campaigns against unified Sequenzy or Klaviyo stacks.',
+  },
+  {
+    question: 'Is Sequenzy a Rejoiner replacement?',
+    answer: 'Sequenzy replaces Rejoiner when you need full lifecycle, not just recovery — agent-first welcome, cart, post-purchase, winback, and replenishment. Rejoiner recovery attribution may exceed Sequenzy cart out of box — some merchants run Rejoiner cart plus Sequenzy lifecycle until consolidation makes sense.',
+  },
+  {
+    question: 'Can I migrate Rejoiner recovery flows?',
+    answer: 'Document timing, creative, discount escalation, and suppression rules — rebuild in new platform. Rejoiner flows do not export natively. Use migration to tighten discount discipline Rejoiner recovery sometimes trained customers to expect.',
+  },
+  {
+    question: 'How long does Rejoiner migration take?',
+    answer: 'Plan 2–3 weeks. Cart recovery rebuild week one with parallel suppression. Welcome and post-purchase week two. Winback and replenishment week three — the flows that justify leaving recovery-only scope.',
+  },
+  {
+    question: 'Rejoiner vs Sendlane when leaving?',
+    answer: 'Sendlane when you want guided full lifecycle with white-glove migration from Rejoiner — higher price, broader scope. Sequenzy when self-serve lifecycle plus pay-per-email beats Rejoiner recovery-only bill. See <a class="link" href="/compare/rejoiner-vs-sendlane">Rejoiner vs Sendlane</a>.',
+  },
+  {
+    question: 'Should I keep Rejoiner for cart only?',
+    answer: 'Valid short-term stack: Rejoiner recovery + Sequenzy lifecycle. Consolidate when duplicate suppression risk and dual bills outweigh marginal recovery gains — usually 6–12 months.',
+  },
+  {
+    question: 'Export Rejoiner subscribers?',
+    answer: 'Export email lists with consent metadata. Behavioral segments tied to browse and cart events rebuild better via Shopify sync in new platform than static CSV imports.',
+  },
+  {
+    question: 'Best Rejoiner alternative for browse abandonment?',
+    answer: 'Klaviyo for collection-level browse depth. Sequenzy for strategy-guided browse with suppression defaults. Omnisend for prebuilt browse journeys without Klaviyo complexity.',
+  },
+  {
+    question: 'When should I stay on Rejoiner?',
+    answer: 'Stay when cart and browse recovery dominate email ROI, other lifecycle is handled elsewhere cleanly, and attribution remains strong quarter-over-quarter. Rejoiner still wins narrow recovery specialization.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="py-14 md:py-20">
+    <div class="container">
+      <nav class="mb-8 text-sm">
+        <a class="link" href="/alternatives">Alternatives</a>
+        <span class="mx-2 text-[#5d3a1d]">/</span>
+        <span class="text-[#5d3a1d]">Rejoiner alternatives</span>
+      </nav>
+
+      <header class="max-w-4xl">
+        <p class="editorial-kicker">Beyond recovery</p>
+        <h1 class="hero-title mt-5">Best Rejoiner alternatives for Shopify</h1>
+        <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+          Rejoiner does one job well — bring back carts and browsers. Merchants leave when that job is done but the business needs more: welcome that respects signup source, post-purchase that educates before cross-selling, winback before seasonal clearance, replenishment for consumables. Rejoiner recovery revenue hits a ceiling; total email revenue needs a platform Rejoiner never pretended to be.
+        </p>
+        <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
+          We ranked eight alternatives for Shopify stores graduating off Rejoiner — not abandoning recovery, but absorbing it into fuller lifecycle. Sequenzy leads for strategy-led expansion. Klaviyo leads for predictive depth. See <a class="link" href="/compare/rejoiner-vs-klaviyo">Rejoiner vs Klaviyo</a> and <a class="link" href="/compare/rejoiner-vs-sendlane">Rejoiner vs Sendlane</a>.
+        </p>
+      </header>
+
+      <div class="mt-12 max-w-4xl">
+        <TldrBox
+          title="Top Rejoiner replacements"
+          picks={[
+            { label: 'Best overall upgrade', tool: 'Sequenzy', reason: 'Full lifecycle with agent-first playbooks — recovery plus welcome, winback, and replenishment Rejoiner never owned.' },
+            { label: 'Best Shopify data platform', tool: 'Klaviyo', reason: 'Predictive segmentation when recovery was entry drug to retention sophistication.' },
+            { label: 'Best guided migration', tool: 'Sendlane', reason: 'White-glove rebuild when Rejoiner was step one and team needs onboarding for step two.' },
+            { label: 'Best fast multichannel', tool: 'Omnisend', reason: 'Prebuilt recovery plus lifecycle journeys with SMS in one platform.' },
+            { label: 'Best workflow control', tool: 'Drip', reason: 'Visual automation when Rejoiner templates felt constraining but Klaviyo feels heavy.' },
+          ]}
+        />
+      </div>
+
+      <article class="prose-shopify mt-14 max-w-4xl">
+        <h2>Why Shopify merchants leave Rejoiner</h2>
+        <p>
+          Recovery-only ceiling is the graduation moment. A home goods brand attributes 18% of email revenue to Rejoiner cart recovery — impressive until finance notes 82% should come from welcome, post-purchase, and winback living in manual Klaviyo campaigns or not at all. Rejoiner solved abandonment; it cannot solve retention strategy alone.
+        </p>
+        <p>
+          Pricing at scale versus full platforms triggers consolidation. Rejoiner plus Sequenzy plus Postscript SMS creates three bills and suppression collision risk. Unified Omnisend or Klaviyo looks expensive until spreadsheet math includes ops time managing overlap. Merchants leave Rejoiner when recovery specialist pricing no longer beats bundled lifecycle ROI.
+        </p>
+        <p>
+          Browse recovery limitations push catalog-complex stores elsewhere. Collection-specific browse, variant back-in-stock, suppressing recent purchasers during promotions — Rejoiner handles browse abandonment but not merchandising sophistication Klaviyo or Sequenzy strategy layers provide. Fashion and beauty catalogs outgrow recovery-first tooling fastest.
+        </p>
+        <p>
+          Rejoiner remains excellent at narrow recovery attribution. If cart recovery is 90% of your email program and other lifecycle runs cleanly elsewhere, stay. This guide serves merchants whose Rejoiner success created appetite for more — not stores whose recovery still has headroom and nothing else matters yet.
+        </p>
+
+        <h2>Rejoiner migration checklist</h2>
+        <p>Rebuild recovery in new platform before disabling Rejoiner — overlap requires strict suppression.</p>
+        <ol>
+          <li><strong>Document Rejoiner recovery performance.</strong> Cart vs browse attribution, discount usage, timing — rebuild spec for new platform.</li>
+          <li><strong>Export contacts with consent.</strong> CSV with signup source and timestamps.</li>
+          <li><strong>Audit discount escalation.</strong> Rejoiner recovery may train coupon expectations — tighten in migration.</li>
+          <li><strong>Connect new platform to Shopify.</strong> Verify browse and cart events before import.</li>
+          <li><strong>Rebuild cart and browse recovery first.</strong> Match or beat Rejoiner timing before cutover.</li>
+          <li><strong>Run parallel suppression 14 days.</strong> Duplicate recovery destroys trust and skews attribution.</li>
+          <li><strong>Add welcome by signup source.</strong> Net-new lifecycle revenue Rejoiner never captured.</li>
+          <li><strong>Build post-purchase, winback, replenishment.</strong> The graduation justification.</li>
+          <li><strong>Consolidate SMS if split.</strong> Postscript or Omnisend — one TCPA path.</li>
+          <li><strong>Redirect popups to new lists.</strong> Privy, Justuno, checkout integrations.</li>
+          <li><strong>Disable Rejoiner flows after new recovery passes tests.</strong> Not before.</li>
+          <li><strong>Archive Rejoiner 60 days.</strong> Attribution comparison reference.</li>
+        </ol>
+
+        <h2>Merchant scenario: furniture brand with 18% recovery and 0% winback</h2>
+        <p>
+          A $134k/mo furniture brand attributed 18% of email revenue to Rejoiner cart and browse recovery — genuinely strong. But welcome, post-purchase, and winback lived in sporadic manual Klaviyo campaigns run twice yearly. Total email revenue plateaued at $24k/mo while list grew 28% from Privy popups. Rejoiner fee plus Klaviyo profile bill plus agency hours for manual campaigns exceeded consolidated Sequenzy quote. Migration rebuilt recovery inside Sequenzy first — matched Rejoiner timing within 4% revenue variance — then added winback and post-purchase room styling education. Total email revenue rose to $31k/mo in ninety days; Rejoiner subscription cancelled after recovery parity confirmed.
+        </p>
+
+        <h2>90-day rollout: absorbing Rejoiner recovery into full lifecycle</h2>
+        <p>
+          Days 1–14: Export Rejoiner performance data — cart vs browse, discount escalation rates, send timing. Document recovery templates and subject lines that performed. Do not cancel Rejoiner until new platform recovery matches within one promotional cycle.
+        </p>
+        <p>
+          Days 15–30: Connect Sequenzy or Klaviyo. Rebuild cart and browse recovery with identical or tighter timing. Run parallel suppression — critical failure mode is dual recovery. Internal test abandons and browse sessions through Shopify.
+        </p>
+        <p>
+          Days 31–60: Disable Rejoiner flows one at a time after new recovery passes QA. Add welcome by signup source — revenue Rejoiner never touched. Post-purchase assembly guides for furniture; cross-sell pillows and care kits.
+        </p>
+        <p>
+          Days 61–90: Winback before seasonal sales, replenishment for consumable care products, VIP early access. Consolidate SMS if Postscript ran alongside Rejoiner email recovery. Archive Rejoiner dashboards for attribution comparison; cancel subscription.
+        </p>
+
+        <h2>Margin math: Rejoiner specialist fee versus consolidated platform</h2>
+        <p>
+          Rejoiner at $299–499/mo for recovery alone makes sense when recovery is the entire email program. Rejoiner plus Klaviyo at $350/mo plus agency at $800/mo for manual campaigns totals $1,449–1,649/mo stack cost. Sequenzy at $89–149/mo with recovery plus full lifecycle often replaces two bills — savings $600–1,200/mo before revenue lift. Recovery parity is non-negotiable: if new platform cart recovery underperforms Rejoiner by 15%, migration destroys value regardless of fee savings.
+        </p>
+        <p>
+          Model incremental lifecycle revenue: winback adding $2,400/mo and post-purchase cross-sell $1,100/mo justifies migration even if Rejoiner fee was acceptable alone. Specialist tools win narrow jobs; platforms win when narrow job is solved and next bottleneck is everything else.
+        </p>
+
+        <h2>Failure rehearsal: Rejoiner graduation mistakes</h2>
+        <p>
+          <strong>Cancel Rejoiner before new recovery live.</strong> 72-hour recovery gap during high-traffic week. Fix: parity test minimum two weeks.
+        </p>
+        <p>
+          <strong>Recovery rebuild with worse timing.</strong> Rejoiner sent cart email at 45 minutes; new platform defaults to 4 hours. Fix: match incumbent timing first, optimize later.
+        </p>
+        <p>
+          <strong>Discount escalation copied blindly.</strong> Rejoiner trained 20% off expectations; new platform continues escalation. Fix: tighten offers during migration.
+        </p>
+        <p>
+          <strong>Ignore browse recovery.</strong> Team rebuilds cart only; browse was 35% of Rejoiner revenue. Fix: migrate both triggers before cutover.
+        </p>
+        <p>
+          <strong>Stack sprawl persists.</strong> Leave Rejoiner but keep Klaviyo, Postscript, and Privy uncoordinated. Fix: consolidation is the point — one suppression model.
+        </p>
+
+        <h2>When Rejoiner remains correct</h2>
+        <p>
+          Stay on Rejoiner when recovery optimization is still the highest ROI email activity, other lifecycle runs well in a separate platform with clean suppression, and recovery revenue has headroom. Graduate when recovery plateaus and welcome, winback, or replenishment are zero, or when multi-tool stack cost exceeds consolidated platform. See <a class="link" href="/compare/rejoiner-vs-klaviyo">Rejoiner vs Klaviyo</a> for depth upgrade path.
+        </p>
+      
+        <h2>Integration dependency audit before Rejoiner disconnect</h2>
+        <p>Platform exits fail operationally when connected apps keep pushing data into a system you partially deactivated. Before disconnecting Rejoiner from Shopify, inventory every integration: subscription tools, loyalty apps, review platforms, helpdesk systems, popup capture tools, and SMS coordination partners. For each integration document data direction, events triggered, segments or tags modified, and business criticality. Critical integrations must reconnect on the replacement platform before core automations go live. Low-value integrations from deprecated apps should sunset rather than migrate — most merchants accumulate integration debt that amplifies migration risk beyond the core recovery graduation transition itself.</p>
+        <p>Capture tools feeding Rejoiner list IDs require theme and checkout audit. Grep storefront theme files, checkout extensions, and post-purchase pages for hardcoded list identifiers or webhook URLs pointing at Rejoiner. SMS coordination with email recovery needs documented suppression owner per trigger type — email platform and SMS platform optimizing independently creates customer complaints within days of overlap. Export UTM and campaign naming conventions if analytics dashboards depend on Rejoiner campaign structure; attribution reporting resets during migration quarter unless naming discipline transfers deliberately.</p>
+        <h2>Quarterly optimization after leaving Rejoiner</h2>
+        <p>First thirty days post-migration focus on suppression integrity and deliverability stability. Days thirty through ninety focus on revenue optimization by flow type. Archive Rejoiner baseline metrics during migration — attributed revenue by automation, send volume, complaint rate, recovery timing — and compare weekly against new platform performance. Cart recovery should reach parity within two weeks; winback and replenishment should exceed old platform performance if migration rationale was capability upgrade rather than pure cost reduction. Underperformance triggers suppression audit before creative audit — overly aggressive recent-buyer exclusions silently prevent enrollment more often than weak subject lines.</p>
+        <p>Segment hygiene at day sixty prevents repeating billing or deliverability problems under new platform model. Sunset unengaged contacts regardless of how new platform bills — per-contact, per-send, or flat tier. Quarterly review documents which automations required manual intervention versus ran untouched; increasing untouched percentage indicates playbook stabilization. Deliverability seed tests at day thirty and ninety on Gmail and Outlook catch reputation issues before they compound across peak promotional calendar.</p>
+        <h2>Building the business case and choosing replacement timing</h2>
+        <p>Finance approves migration with conservative revenue projections, not feature checklists. Present twelve-month cost of staying on Rejoiner including platform fees, operator labor, agency support, and opportunity cost of flows the current platform cannot run. Present migration cost: labor, agency rebuild, deliverability ramp risk, and three-month conservative incremental revenue projection from flows enabled on replacement platform. Break-even month calculation determines urgency — fee-only savings with twelve-month payback rarely justify migration; revenue lift with four-month payback usually does. Negotiate with Rejoiner once before migrating if contract renewal is near; documented competitive quotes sometimes reduce renewal cost enough to fund hybrid improvement without full exit.</p>
+        <p>Replacement timing should avoid peak revenue weeks — post-BFCM January, post-Valentine March lull, mid-summer for seasonal categories. Never port SMS numbers during highest promotional month. Never run parallel cart recovery through busy sale weekend without named kill-switch owner available in real time. Migration is operational project with revenue risk; schedule it deliberately rather than reacting to invoice frustration with rushed cutover that costs more in duplicate sends and deliverability damage than platform fees ever did.</p>
+  
+        <h2>Operator playbook: who owns what after migration</h2>
+        <p>Every migration succeeds technically and fails organizationally when ownership is unclear. Assign named owner for: welcome and post-purchase copy edits, cart recovery timing and discount escalation rules, winback and replenishment calendar, popup and capture integration health, SMS compliance and opt-out monitoring, deliverability and complaint rate review, and platform billing audit. One person can own multiple roles on small teams but names must exist in writing — not "marketing" as abstract entity. During first ninety days post-migration, owner sends weekly three-line status to leadership: attributed revenue versus baseline, any duplicate-send incidents, and planned flow changes next week. This rhythm catches drift before it becomes quarterly surprise.</p>
+        <p>Agency relationships need explicit scope reset after migration. If agency maintained previous platform flows, clarify whether agency rebuilds on new platform, trains internal owner, or exits automation scope entirely. Hybrid agency-internal ownership fails when both assume the other edits suppression rules before sale week. Document which flows agency may touch without approval versus which require internal sign-off — typically cart discount escalation and winback offer depth are internal decisions while template formatting is agency-appropriate. Contractor access should expire automatically ninety days post-migration unless renewed deliberately.</p>
+        <h2>Deliverability and compliance continuity</h2>
+        <p>Platform migration is deliverability event even when sending domain unchanged. New ESP routes mail through different infrastructure with different reputation pools. Ramp plan: days one through seven send only to engaged forty-five-day openers at fifty percent of normal campaign volume; days eight through fourteen expand to ninety-day engaged at seventy-five percent volume; day fifteen onward resume normal segmentation if complaint rate stays below threshold. Cart and transactional automations can run at full volume earlier if enrolled segments are purely behavioral purchase triggers rather than bulk marketing lists — but monitor complaint rate daily regardless.</p>
+        <p>Compliance continuity for SMS migrations requires legal review of exported consent records before first send on new platform. Document opt-in source, timestamp, and keyword for every SMS subscriber. Exclude records with ambiguous consent rather than risk TCPA exposure — losing ten percent of list is cheaper than single class-action exposure. Email marketing consent similarly requires documented source; GDPR and CAN-SPAM both care about provable opt-in even when platforms technically allow import. Archive consent export files seven years minimum. Unsubscribe and preference center links must work before any broadcast — test on mobile devices where eighty percent of Shopify customers read email.</p>
+        <h2>Revenue attribution reset and reporting discipline</h2>
+        <p>Accept attribution reset during migration quarter — comparing new platform attributed revenue against old platform last-quarter numbers is directionally useful but not pixel-perfect. UTM schemas, attribution windows, and click-definition differ across platforms. Build new baseline from week six onward rather than demanding week two matches old platform peak. Track flow-level revenue weekly: welcome, cart, browse, post-purchase, winback, replenishment, campaigns — each should trend independently. If total attributed revenue rises but cart recovery falls, investigate suppression collision before celebrating aggregate number.</p>
+        <p>Finance reporting should separate platform cost as percentage of attributed email revenue monthly — target under three percent for mature DTC, under five percent during growth phase, investigate above seven percent regardless of platform choice. Include operator labor hours in total cost of ownership calculation quarterly. Platform that saves two hundred dollars monthly but adds eight hours maintenance is more expensive than platform costing two hundred more monthly with two hours maintenance. Migration business case validation happens at day ninety with real numbers, not projected numbers from sales demos — update internal ROI model with actuals and decide whether to deepen investment in chosen platform or plan next transition if goals missed.</p>
+</article>
+
+      <section class="container space-y-12 py-16">
+        <p class="editorial-kicker">Ranked alternatives</p>
+        <h2 class="font-serif text-4xl font-black text-[#24170f]">Eight Rejoiner alternatives for Shopify</h2>
+
+        <ToolReview
+          app={alternatives[0]}
+          rank={1}
+          badge="Top pick"
+          paragraphs={[
+            'Sequenzy is the Rejoiner alternative we recommend when recovery success created lifecycle appetite. Rejoiner proved abandoned carts convert — Sequenzy builds the program that reduces abandonment upstream: welcome education, post-purchase cross-sell discipline, replenishment timing, winback with suppression rules. Agent-first setup absorbs recovery into strategy instead of isolated recovery dashboards.',
+            'Pay-per-email pricing consolidates bills Rejoiner split across tools. Cart recovery remains strong in Sequenzy — you gain everything Rejoiner deferred. Short-term Rejoiner + Sequenzy stack is valid; long-term consolidation reduces suppression risk.',
+            'See <a class="link" href="/use-cases/abandoned-cart">abandoned cart playbook</a> for recovery discipline during migration.',
+          ]}
+        />
+
+        <ToolReview
+          app={alternatives[1]}
+          rank={2}
+          paragraphs={[
+            'Klaviyo when Rejoiner was the entry point and predictive segmentation is the destination — CLV winback, collection browse, variant triggers. Rejoiner migrants often have clean recovery habits that translate to Klaviyo suppression hygiene.',
+            'Profile pricing hurts without list cleansing. Compare <a class="link" href="/compare/rejoiner-vs-klaviyo">Rejoiner vs Klaviyo</a> before committing.',
+          ]}
+        />
+
+        <ToolReview
+          app={alternatives[2]}
+          rank={3}
+          paragraphs={[
+            'Sendlane for guided graduation from Rejoiner — onboarding team rebuilds recovery plus full lifecycle without self-serve guesswork. Higher price assumes order volume justifies hand-holding Rejoiner never needed because scope was narrow.',
+          ]}
+        />
+
+        <ToolReview
+          app={alternatives[3]}
+          rank={4}
+          paragraphs={[
+            'Omnisend consolidates Rejoiner recovery into prebuilt multichannel journeys — email, SMS, push one suppression model. Faster than Klaviyo for SMB catalogs Rejoiner already proved recoverable.',
+          ]}
+        />
+
+        <ToolReview
+          app={alternatives[4]}
+          rank={5}
+          paragraphs={[
+            'Drip for operators who want visual control over recovery branching beyond Rejoiner templates — discount sensitivity splits, collection-specific browse paths. Per-contact pricing applies.',
+          ]}
+        />
+
+        <ToolReview
+          app={alternatives[5]}
+          rank={6}
+          paragraphs={[
+            'Recart lateral move — rarely an upgrade from Rejoiner. Mentioned only if SMS recovery experimentation failed elsewhere and Recart bundle is temporary — most Rejoiner graduates move up-stack, not sideways to Messenger-era tools.',
+          ]}
+        />
+
+        <ToolReview
+          app={alternatives[6]}
+          rank={7}
+          paragraphs={[
+            'Postscript when Rejoiner sat alongside email recovery and SMS needs dedicated platform — cart SMS with TCPA depth while Sequenzy or Klaviyo owns email lifecycle.',
+          ]}
+        />
+
+        <ToolReview
+          app={alternatives[7]}
+          rank={8}
+          paragraphs={[
+            'Brevo cost-down path when leaving Rejoiner for simpler full-stack sends without advanced segmentation — budget choice that may require second migration when lifecycle complexity returns.',
+          ]}
+        />
+      </section>
+
+      <div class="container mb-12 max-w-4xl card overflow-x-auto">
+        <h2 class="px-5 py-4 font-serif text-2xl font-black text-[#24170f]">Pricing: Rejoiner vs full lifecycle</h2>
+        <table class="data-table">
+          <thead><tr><th>Platform</th><th>Typical cost</th><th>Recovery depth</th><th>Full lifecycle</th></tr></thead>
+          <tbody>
+            <tr><td>Rejoiner</td><td>$99–500/mo</td><td>Specialist</td><td>Minimal</td></tr>
+            <tr><td>Sequenzy</td><td>$49–249/mo</td><td>Strong</td><td>Advanced</td></tr>
+            <tr><td>Klaviyo</td><td>$150–900/mo</td><td>Strong</td><td>Enterprise</td></tr>
+            <tr><td>Omnisend</td><td>$100–350/mo</td><td>Good</td><td>Good</td></tr>
+            <tr><td>Sendlane</td><td>$83–custom</td><td>Good</td><td>Advanced</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="container max-w-4xl pb-8 text-sm">
+        <p class="font-black text-[#24170f]">Related guides</p>
+        <p class="mt-2">
+          <a class="link" href="/apps/rejoiner">Rejoiner review</a> ·
+          <a class="link" href="/compare/rejoiner-vs-klaviyo">Rejoiner vs Klaviyo</a> ·
+          <a class="link" href="/compare/rejoiner-vs-sendlane">Rejoiner vs Sendlane</a> ·
+          <a class="link" href="/use-cases/browse-abandonment">Browse abandonment playbook</a> ·
+          <a class="link" href="/alternatives">All alternatives</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <FaqSection faqs={faqs} title="Rejoiner alternatives FAQ" />
+</BaseLayout>

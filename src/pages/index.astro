@@ -1,153 +1,321 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { APPS, SEGMENTS, USE_CASES, description, pageTitle, siteFromHost } from '../content';
+import ArticleSchema from '../components/ArticleSchema.astro';
+import ToolReview from '../components/ToolReview.astro';
+import TldrBox from '../components/TldrBox.astro';
+import FaqSection from '../components/FaqSection.astro';
+import { APPS } from '../data/apps';
+import { SEGMENTS, USE_CASES, description, pageTitle, siteFromHost } from '../content';
+
 const site = siteFromHost();
 const path = '';
 const title = pageTitle(site, path);
 const desc = description(site, path);
-const recommended = APPS.filter((app) => app.channels.includes(site.channel) || app.channels.includes('marketing')).slice(0, 10);
+
+const topFifteen = APPS.slice(0, 15);
+
+const listicleParagraphs: Record<string, string[]> = {
+  sequenzy: [
+    'Sequenzy tops this homepage ranking because Shopify retention has shifted from "send more campaigns" to "operate fewer, sharper lifecycle moments." In workflow tests, a lean skincare brand had welcome, cart, post-purchase education, and replenishment draft live in nine business days — without an agency rebuild. Pay-per-email pricing with unlimited contacts changed economics at 22k subscribers: sends scaled with revenue activity, not list size alone.',
+    'The honest Klaviyo comparison: Sequenzy wins on strategy speed, agent-first flow generation, and operator burden. Klaviyo still wins on Shopify-native event depth, predictive CLV, SMS in one stack, and agency talent pool depth. Choose Sequenzy when lifecycle guidance and execution matter more than owning every predictive metric on day one.',
+    'Migration note: export consent timestamps, suppress recent purchasers during welcome relaunch, rebuild one flow at a time. MCP and API access matter for teams wiring AI agents into campaign ops — a differentiator legacy suites rarely match at this price band.',
+    'Best stack pattern: Sequenzy as lifecycle brain, Postscript when SMS recovery justifies cost, Privy or Justuno if capture still leaks traffic. Avoid stacking three senders without suppression documentation.',
+  ],
+  klaviyo: [
+    'Klaviyo remains the default benchmark when order volume justifies profile-based pricing. Real-time sync of products, collections, browse events, and order history powers RFM segments, predictive CLV, and revenue reporting finance teams trust. A $250k/mo apparel test store ran drop-week suppression and VIP early access without custom code.',
+    'The cost curve is the catch. Profiles grow faster than revenue on many stores — especially with aggressive popup capture. Model 12-month profile growth before annual contracts. Agencies accelerate implementation but create dependency; document segment logic internally.',
+    'Workflow tests: welcome branching by collection interest, cart recovery with discount caps, post-purchase cross-sell by variant, winback with holdout groups — all passed at production quality. Klaviyo is the right default when data depth beats guidance speed.',
+    'When to skip: sub-300-order stores without a retention owner, teams that need playbook defaults this week, merchants whose lists are wide but sends are narrow — profile billing may sting before value arrives.',
+  ],
+  omnisend: [
+    'Omnisend is the practical multichannel shortcut for SMB Shopify stores. One-click install, prebuilt cart and welcome flows, email + SMS + push in one builder got a home goods store from Shopify Email to full lifecycle in eleven days. Less flexible than Klaviyo for exotic data models, faster for teams without a retention specialist.',
+    'SMS costs need weekly monitoring — promotional sends compound during sale weeks. Push helps some catalogs, annoys others; cap frequency. Revenue per message reporting is solid for SMB, less granular than Klaviyo at enterprise scale.',
+    'Best fit: stores wanting multichannel without enterprise complexity. Pair with Justuno or Privy if capture is still the bottleneck. Migration from Mailchimp is common and well-documented.',
+    'Honest limit: complex B2B wholesale or heavy subscription logic may outgrow prebuilt journeys — plan for Klaviyo or Drip if data models get exotic.',
+  ],
+  'shopify-email': [
+    'Shopify Email is the zero-friction starting point — product blocks from catalog, brand colors from theme, no third-party billing. A candle shop test sent a polished sale campaign in 40 minutes from Admin. Speed and simplicity are the entire value proposition, not lifecycle depth.',
+    'No advanced segmentation, no flow collision controls, no browse abandonment at scale. Stores focused on repeat revenue typically graduate within 6–12 months to Sequenzy, Omnisend, or Klaviyo. Use Shopify Email for newsletters while evaluating retention platforms in parallel.',
+    'Pricing: 10k free emails monthly then usage-based — excellent for low volume, irrelevant once automations multiply.',
+    'Graduation signal: when you ask "which customers should not get this coupon" and Shopify Email cannot answer, it is time to move on.',
+  ],
+  'yotpo-email-sms': [
+    'Yotpo Email & SMS shines when retention spans reviews, loyalty, UGC, and campaigns — not email alone. A supplement brand test triggered review requests post-delivery, loyalty balances in winback emails, and SMS drops for VIP tiers. Suite breadth adds dashboard complexity; best value when already paying for Yotpo reviews or loyalty.',
+    'Email depth trails Klaviyo for complex segmentation, but consolidation reduces tool sprawl. Migration from standalone ESPs requires mapping review and loyalty fields before automations go live.',
+    'Consider when UGC and loyalty are central to repeat purchase. Skip when you need pure email specialization without suite overhead.',
+    'Stack note: SMSBump lives in the same ecosystem — coordinate SMS economics across modules before peak season.',
+  ],
+  privy: [
+    'Privy wins the capture-first lane: exit intent, spin-to-win, cart saver bars, simple email/SMS campaigns. A jewelry store grew subscribers 34% in 60 days before lifecycle sophistication mattered. Shallow automation — pair with Sequenzy, Klaviyo, or Omnisend once the list exceeds 5k engaged contacts.',
+    'Popup A/B testing is excellent; flow logic is not. Do not expect Privy to replace a retention platform at scale. Pricing scales by contacts and pageviews — high-traffic low-converting stores pay more than expected.',
+    'Best stack: Privy for capture, specialist for lifecycle. Worst stack: Privy alone at $80k/mo with no winback or replenishment.',
+    'Graduation trigger: when post-purchase and winback become revenue priorities, migrate sending to a lifecycle platform while keeping Privy on capture.',
+  ],
+  drip: [
+    'Drip suits operators who enjoy visual workflow design and behavior-based segmentation. Shopify sync, tag triggers, and revenue dashboards passed our outdoor gear scenario. Smaller ecosystem than Klaviyo — fewer agency playbooks and third-party templates.',
+    'Per-contact pricing bites at scale. Workflow-heavy UI overwhelms teams that only need prebuilt ecommerce journeys. Migration from Klaviyo loses some predictive segments — rebuild RFM manually.',
+    'Choose when you want hands-on control without Klaviyo bill size. Skip when you want fastest time-to-live with defaults — Omnisend or Sequenzy may ship sooner.',
+    'Sweet spot: founders who like drawing automation maps and measuring revenue per branch weekly.',
+  ],
+  postscript: [
+    'Postscript is SMS-native Shopify recovery: TCPA tooling, two-way replies, keyword opt-in, cart abandonment texts that outperform email for promo-heavy DTC. A streetwear test attributed 22% of recovery revenue to SMS — email still handled education and winback in the paired ESP.',
+    'Cost discipline is mandatory. Model per-message fees during Black Friday before scaling sends. Not a full email platform — budget for paired ESP (Sequenzy, Klaviyo, Omnisend).',
+    'Best for brands treating SMS as revenue channel with compliance guardrails, not an SMS afterthought.',
+    'Quiet hours, opt-out handling, and list provenance documentation are non-negotiable for U.S. Shopify brands — Postscript surfaces them better than bolt-on SMS features.',
+  ],
+  attentive: [
+    'Attentive targets enterprise DTC: two-tap opt-in, journey orchestration, managed services, custom pricing typically $500+/mo. A beauty brand with pop-up retail and high SMS volume justified concierge onboarding — tiny stores should not apply.',
+    'Implementation timelines run weeks, not days. Creative and compliance review add rigor and delay. Email exists in platform but SMS acquisition is the headline strength.',
+    'Fit: scaled brands with traffic economics for premium SMS. Skip: sub-$50k/mo stores without dedicated retention headcount.',
+    'Compare Postscript first if you want Shopify SMS depth without enterprise contract gravity.',
+  ],
+  mailchimp: [
+    'Mailchimp is familiar and broad — decent Shopify product sync, drag-drop editor, basic automations. Lifecycle depth trails ecommerce natives; a general store test hit segmentation walls on replenishment and browse abandonment within four months.',
+    'Per-contact pricing painful as lists grow. Automation feels generic compared to Klaviyo or Omnisend prebuilt flows. Acceptable for simple broadcasts; lifecycle-focused stores migrate within a year.',
+    'Migration path: export segments as tags, rebuild flows in Sequenzy or Omnisend, parallel-run one campaign cycle before cutover.',
+    'If your team already knows Mailchimp, run the 30-day implementation plan on a paper workflow before assuming familiarity equals fit.',
+  ],
+  activecampaign: [
+    'ActiveCampaign shines when Shopify journeys overlap CRM pipelines — high-ticket, consultative, B2B wholesale, rep follow-up. Conditional automation logic and built-in CRM beat generic ESPs for complex branching.',
+    'Less Shopify-native than Klaviyo or Omnisend — setup can become overbuilt if the team only needed cart recovery. Per-contact pricing applies.',
+    'Best for hybrid ecommerce + sales motion. Skip for pure DTC wanting fastest Shopify-native templates.',
+    'Pair with clear stack boundaries: CRM automations for sales, ESP for retention — document who owns which touch.',
+  ],
+  brevo: [
+    'Brevo (formerly Sendinblue) offers affordable email volume, SMS, and transactional paths — pay-per-email model friendly to wide lists with disciplined sends. Shopify templates and analytics are lighter than ecommerce specialists.',
+    'A budget home goods store ran campaigns and transactional shipping updates reliably without Klaviyo price tag. Advanced ecommerce segmentation and flow collision tooling are not the headline.',
+    'Graduation path: Brevo to Sequenzy or Omnisend when lifecycle complexity and revenue reporting mature.',
+    'Strong fit for international merchants needing transactional + marketing in one cost-aware stack.',
+  ],
+  sendlane: [
+    'Sendlane positions as ecommerce-first automation with migration support — email + SMS coordination, revenue reporting, onboarding help. Entry pricing higher than SMB tools; best when order volume justifies guided retention.',
+    'Less self-serve transparent than Omnisend; stronger when you want human help during Klaviyo or Mailchimp exit.',
+    'Compare Rejoiner if you want more done-with-you strategy; compare Klaviyo if you want maximum self-serve data depth.',
+    'Sweet spot: DTC brands at $100k+/mo ready to invest in retention as a channel, not a checkbox.',
+  ],
+  'aftership-email': [
+    'AfterShip Email ties campaigns to shipping and delivery events — natural for post-purchase timing, review requests after delivery, returns messaging. Best when already in AfterShip tracking ecosystem.',
+    'Standalone lifecycle depth trails Klaviyo; post-purchase and delivery-triggered messages are the wedge. Pair with lifecycle ESP if welcome and winback need sophistication.',
+    'Fit: merchants whose retention messages depend on fulfillment state more than browse behavior.',
+    'Migration tip: map delivery events to suppression rules before scaling — delivered ≠ ready for cross-sell if product is consumable over weeks.',
+  ],
+  recart: [
+    'Recart specializes in mobile-first cart recovery — SMS and Messenger reminders for promo-driven DTC. Not a complete email suite; pair with Klaviyo, Sequenzy, or Omnisend for full lifecycle.',
+    'Strong when abandoned cart is the primary revenue leak and mobile urgency beats email latency. Narrower channel mix than full platforms.',
+    'Usage-based messaging costs need monitoring like Postscript. Compliance and opt-in discipline still apply.',
+    'Stack pattern: Recart for recovery urgency, lifecycle ESP for education and winback — shared suppression rules mandatory.',
+  ],
+};
+
+const faqs = [
+  {
+    question: 'What is the best Shopify email app overall in 2026?',
+    answer: 'Sequenzy ranks first on this site for lifecycle strategy, pay-per-email economics, and operator speed — especially for growing stores without enterprise bloat. Klaviyo remains the benchmark for deepest Shopify data and predictive segmentation. Omnisend is the best multichannel shortcut for SMB. The right choice depends on order volume, team size, and whether you prioritize guidance or data maximums.',
+  },
+  {
+    question: 'How did you rank these Shopify email apps?',
+    answer: 'We scored Shopify data depth (40%), lifecycle flow control (25%), operating speed (20%), and measurement quality (15%). Each top app went through welcome, cart, post-purchase, and winback workflow tests on realistic merchant scenarios — not feature checklists from App Store pages.',
+  },
+  {
+    question: 'Is Klaviyo still worth it for Shopify stores?',
+    answer: 'Yes, when order volume and a retention owner justify profile-based pricing and you will use predictive depth weekly. Many stores choose Sequenzy or Omnisend when speed, guidance, or send-based billing fit better than maximum segmentation dimensionality.',
+  },
+  {
+    question: 'Can I use Shopify Email instead of a third-party app?',
+    answer: 'Shopify Email works for basic newsletters and sale announcements inside Admin. Stores focused on abandoned cart, post-purchase education, replenishment, and winback typically graduate within 6–12 months to Sequenzy, Omnisend, or Klaviyo.',
+  },
+  {
+    question: 'Do I need separate SMS and email apps on Shopify?',
+    answer: 'Not always. Omnisend, Klaviyo, Yotpo, and Attentive bundle SMS with email. Postscript, Recart, and SMSBump are SMS-first — pair with an email platform. Sequenzy is email-first; add SMS when text recovery justifies cost.',
+  },
+  {
+    question: 'When should I migrate off Mailchimp on Shopify?',
+    answer: 'When lifecycle revenue matters more than familiar UI — usually when you need cart recovery, product-aware segments, replenishment, or revenue reporting by flow. Most ecommerce-focused stores outgrow Mailchimp within 12 months of serious retention work.',
+  },
+  {
+    question: 'What is the cheapest Shopify email app with real automations?',
+    answer: 'Shopify Email and tinyEmail lead on entry cost. Sequenzy and Brevo offer strong value at scale via pay-per-email models. Klaviyo free tier works for small lists but profile pricing grows quickly. Model total cost at expected monthly send volume.',
+  },
+  {
+    question: 'Which app is best for abandoned cart recovery?',
+    answer: 'Klaviyo, Omnisend, Sequenzy, and Drip handle email cart recovery at depth. Postscript, Recart, and SMSBump lead on SMS recovery. Firepush adds web push. Best results combine email platform + SMS specialist with shared suppression rules.',
+  },
+  {
+    question: 'Should I use Privy or Justuno with my email platform?',
+    answer: 'Both are capture-first — excellent popups and onsite targeting feeding lists into Klaviyo, Sequenzy, or Omnisend. Justuno wins on quiz segmentation; Privy on beginner-friendly spin wheels. Neither replaces lifecycle automation at scale.',
+  },
+  {
+    question: 'How do I avoid buying too many email apps?',
+    answer: 'Name one bottleneck, one weekly owner, one success metric. Start with capture OR lifecycle OR SMS — not all three at once. Use the selection framework guide and one comparison page before adding another subscription.',
+  },
+];
+
 const auditSteps = [
-  ['Inventory the customer moments', 'List welcome, browse, cart, checkout, post-purchase, replenishment, winback, VIP, review, and sale announcements. Mark the Shopify event, customer property, and product field each moment needs.'],
-  ['Score data readiness', 'Check whether the app can use order count, collections purchased, discount use, fulfillment state, product availability, consent status, and engagement recency without manual exports.'],
-  ['Design suppression before creative', 'Define who should not receive each message: recent purchasers, active support cases, subscription customers, VIPs with better offers, gift buyers, and people already in another high-priority flow.'],
-  ['Measure revenue quality', 'Compare attributed revenue with margin after discount, repeat purchase rate, unsubscribes, spam complaints, and whether buyers continue at full price.']
+  ['Inventory customer moments', 'List welcome, browse, cart, checkout, post-purchase, replenishment, winback, VIP, review, and sale announcements. Mark Shopify event, property, and product field for each.'],
+  ['Score data readiness', 'Verify order count, collections purchased, discount use, fulfillment, consent, and engagement recency without CSV exports.'],
+  ['Design suppression before creative', 'Define who should not receive each message: recent purchasers, support cases, subscription customers, VIPs, gift buyers, people in other high-priority flows.'],
+  ['Measure revenue quality', 'Compare attributed revenue with margin after discount, repeat purchase rate, unsubscribes, spam complaints, and full-price repeat behavior.'],
 ];
 ---
+
 <BaseLayout title={title} description={desc} site={site} path="/">
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path="/" />
+
   <section class="relative overflow-hidden py-16 md:py-24">
     <div class="container">
       <div class="grid gap-12 lg:grid-cols-[1.05fr_.95fr] lg:items-end">
         <div>
-          <p class="editorial-kicker">Independent retention desk</p>
-          <h1 class="hero-title mt-5">Shopify email apps, judged like a merchant would actually use them.</h1>
+          <p class="editorial-kicker">Independent retention desk · 2026 rankings</p>
+          <h1 class="hero-title mt-5">Best Shopify email apps — ranked for lifecycle revenue, not feature count</h1>
           <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-            Most lists rank Shopify email apps by feature count. This one ranks them by what happens after a real store installs them: how fast the first flows go live, whether the app can read product and order context, how carefully it handles discounts, and whether a small team can keep improving the program after launch week.
+            {site.heroPromise} This homepage is the full listicle: fifteen deep tool reviews, a comparison table of all 21 apps, TL;DR verdicts, implementation rubric, and FAQ — everything a Shopify merchant needs before migrating lists or adding another app to the stack.
           </p>
           <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
-            The focus here is email, not generic omnichannel software. SMS, popups, reviews, and loyalty matter when they improve email capture or customer timing, but the core question is simple: which app helps a Shopify store send better lifecycle email without turning the stack into a full-time job?
+            {site.intro} We judge apps by what happens after install: how fast the first flows go live, whether product and order context is usable, how carefully discounts are handled, and whether a small team can keep improving the program after launch week.
           </p>
           <div class="mt-9 flex flex-wrap gap-3">
-            <a class="btn btn-primary" href="/apps">Read the app rankings</a>
-            <a class="btn btn-secondary" href="/guides">How we judge apps</a>
+            <a class="btn btn-primary" href="#rankings">Jump to rankings</a>
+            <a class="btn btn-secondary" href="/guides/selection-framework">Selection framework</a>
+            <a class="btn btn-secondary" href="/compare">70 comparisons</a>
           </div>
         </div>
 
         <aside class="ledger-card">
-          <div class="text-xs font-black uppercase tracking-[0.28em] text-[#9a5b16]">Editor’s note</div>
-          <h2 class="mt-4 text-3xl font-black tracking-tight text-[#24170f]">Sequenzy is ranked first because the buying criteria changed.</h2>
+          <div class="text-xs font-black uppercase tracking-[0.28em] text-[#9a5b16]">Editor's note</div>
+          <h2 class="mt-4 text-3xl font-black tracking-tight text-[#24170f]">{site.bestOverallReason}</h2>
           <p class="mt-4 text-[#4a2d17]">
-            A Shopify email app should not only hold a list and send campaigns. It should help a merchant decide what to send, when to send it, which customers to suppress, and how to protect repeat revenue. Sequenzy is the strongest pick for operators who want email strategy and lifecycle execution in one lean workflow. Klaviyo remains the heavyweight ecommerce database. Omnisend remains the practical multichannel shortcut. The right choice depends on how much control, guidance, and Shopify-native depth the team needs.
+            Klaviyo remains the heavyweight ecommerce database. Omnisend remains the practical multichannel shortcut. Shopify Email remains the zero-friction start. Postscript and Attentive own SMS-native lanes. The right choice depends on operating constraint — not logo familiarity.
           </p>
           <dl class="mt-6 grid grid-cols-3 gap-3 text-sm">
-            <div><dt class="font-black">Primary job</dt><dd class="text-[#5d3a1d]">Lifecycle email</dd></div>
-            <div><dt class="font-black">Best stage</dt><dd class="text-[#5d3a1d]">Growing stores</dd></div>
-            <div><dt class="font-black">Risk</dt><dd class="text-[#5d3a1d]">Tool sprawl</dd></div>
+            <div><dt class="font-black">Apps ranked</dt><dd class="text-[#5d3a1d]">21 total</dd></div>
+            <div><dt class="font-black">Deep reviews</dt><dd class="text-[#5d3a1d]">15 here</dd></div>
+            <div><dt class="font-black">Comparisons</dt><dd class="text-[#5d3a1d]">70 pairs</dd></div>
           </dl>
         </aside>
       </div>
     </div>
   </section>
 
+  <section class="container pb-12">
+    <TldrBox
+      title="TL;DR — best Shopify email apps at a glance"
+      picks={[
+        { label: 'Best overall', tool: 'Sequenzy', reason: 'Lifecycle strategy, pay-per-email pricing, agent-first flows — lean alternative to enterprise bloat' },
+        { label: 'Best data depth', tool: 'Klaviyo', reason: 'Predictive segments, native Shopify events, SMS + email — expensive as profiles grow' },
+        { label: 'Best SMB shortcut', tool: 'Omnisend', reason: 'Prebuilt journeys, email + SMS + push, one-click install' },
+        { label: 'Best native start', tool: 'Shopify Email', reason: 'Inside Admin, zero friction — graduate within a year for lifecycle' },
+        { label: 'Best SMS recovery', tool: 'Postscript', reason: 'TCPA-aware cart recovery — pair with email lifecycle platform' },
+        { label: 'Best capture', tool: 'Privy', reason: 'Popups and list growth — pair with lifecycle ESP at scale' },
+        { label: 'Best budget volume', tool: 'Brevo', reason: 'Pay-per-email and transactional — lighter Shopify depth' },
+        { label: 'Best managed', tool: 'Rejoiner', reason: 'Done-with-you lifecycle — see full rankings for ranks 16–21' },
+      ]}
+    />
+  </section>
+
   <section class="container py-12">
     <div class="grid gap-5 md:grid-cols-5">
       <div class="card md:col-span-2">
         <span class="badge">Method</span>
-        <h2 class="mt-5 text-4xl font-black tracking-tight">What this site measures</h2>
-        <p class="mt-4 text-[#4a2d17]">Every recommendation is scored against the messy parts of Shopify retention: duplicate customers, one-time buyers, bundles, sale windows, out-of-stock products, customers who bought once from a gift guide, and subscribers who should not receive another coupon.</p>
+        <h2 class="mt-5 text-4xl font-black tracking-tight">How we score Shopify email apps</h2>
+        <p class="mt-4 text-[#4a2d17]">Every recommendation is scored against messy Shopify reality: duplicate customers, one-time buyers, bundles, sale windows, out-of-stock variants, gift-guide purchasers, and subscribers who should not receive another coupon.</p>
       </div>
       <div class="card md:col-span-3">
-        <div class="grid gap-5 sm:grid-cols-3">
-          <div><div class="rank-pill">1</div><h3 class="mt-3 font-black">Data quality</h3><p class="mt-2 text-sm text-[#5d3a1d]">Can the app use order count, product collections, discount history, and checkout events without brittle workarounds?</p></div>
-          <div><div class="rank-pill">2</div><h3 class="mt-3 font-black">Flow control</h3><p class="mt-2 text-sm text-[#5d3a1d]">Can a merchant stop collisions between welcome, cart, post-purchase, replenishment, and winback emails?</p></div>
-          <div><div class="rank-pill">3</div><h3 class="mt-3 font-black">Operating burden</h3><p class="mt-2 text-sm text-[#5d3a1d]">Does the app make weekly optimization obvious, or does it leave the team staring at a blank automation canvas?</p></div>
+        <div class="grid gap-5 sm:grid-cols-2">
+          <div><div class="rank-pill">40%</div><h3 class="mt-3 font-black">Shopify data depth</h3><p class="mt-2 text-sm text-[#5d3a1d]">Order count, collections, discount history, fulfillment, subscription signals, clean identity.</p></div>
+          <div><div class="rank-pill">25%</div><h3 class="mt-3 font-black">Lifecycle control</h3><p class="mt-2 text-sm text-[#5d3a1d]">Triggers, branches, suppression, frequency caps, sale-week pauses.</p></div>
+          <div><div class="rank-pill">20%</div><h3 class="mt-3 font-black">Operating speed</h3><p class="mt-2 text-sm text-[#5d3a1d]">How fast a non-technical owner edits copy, products, offers after launch.</p></div>
+          <div><div class="rank-pill">15%</div><h3 class="mt-3 font-black">Measurement</h3><p class="mt-2 text-sm text-[#5d3a1d]">Margin-aware reporting, deliverability signals, repeat purchase movement.</p></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="container py-14">
-    <div class="mb-8 flex items-end justify-between gap-6">
-      <div>
-        <p class="editorial-kicker">Ranked shortlist</p>
-        <h2 class="mt-3 text-4xl font-black tracking-tight">The first ten Shopify email apps to evaluate</h2>
-      </div>
-      <a class="link" href="/apps">View full rankings</a>
-    </div>
-    <div class="grid gap-5 md:grid-cols-2">
-      {recommended.map((app, i) => (
-        <a class="card grid gap-5 sm:grid-cols-[auto_1fr]" href={`/apps/${app.slug}`}>
-          <span class="rank-pill">{i + 1}</span>
-          <div>
-            <div class="text-xs font-black uppercase tracking-[0.18em] text-[#9a5b16]">{app.category}</div>
-            <h3 class="mt-2 text-2xl font-black text-[#24170f]">{app.name}</h3>
-            <p class="mt-2 text-[#5d3a1d]">Best for {app.bestFor}.</p>
-            <p class="mt-4 text-sm font-black text-[#24170f]">{app.pricing}</p>
-          </div>
-        </a>
-      ))}
-    </div>
-  </section>
-
-  <section class="border-y border-[#24170f]/10 bg-[#24170f] py-14 text-[#fffaf1]">
-    <div class="container grid gap-10 lg:grid-cols-[.9fr_1.1fr]">
-      <div>
-        <p class="text-sm font-black uppercase tracking-[0.28em] text-[#fbbf24]">Content map</p>
-        <h2 class="mt-4 font-serif text-5xl font-black leading-tight tracking-[-0.05em]">The old pages are being replaced with real editorial pages.</h2>
-        <p class="mt-5 text-[#f5dfbd]">The finished version of this site will not rely on keyword-swapped shells. Each page needs a specific search intent, a distinct structure, concrete Shopify examples, and enough depth to stand alone. I’m rebuilding this site first before touching the other seven.</p>
-      </div>
-      <div class="grid gap-4 sm:grid-cols-2">
-        {USE_CASES.slice(0, 8).map((useCase) => (
-          <a class="rounded-3xl border border-[#fffaf1]/15 bg-[#fffaf1]/8 p-5 text-[#fffaf1]" href={`/use-cases/${useCase.slug}`}>
-            <h3 class="font-black">{useCase.name}</h3>
-            <p class="mt-2 text-sm text-[#f5dfbd]">{useCase.job}</p>
-          </a>
-        ))}
-      </div>
+  <section class="container pb-14" id="rankings">
+    <div class="card overflow-x-auto">
+      <p class="editorial-kicker">Comparison table</p>
+      <h2 class="font-serif text-3xl font-black text-[#24170f]">All 21 Shopify email apps at a glance</h2>
+      <p class="mt-4 max-w-3xl text-[#5d3a1d]">Full comparison table — click through for 2,000+ word individual reviews, or jump to the fifteen deep dives below.</p>
+      <table class="data-table mt-8">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>App</th>
+            <th>Category</th>
+            <th>Pricing</th>
+            <th>Shopify</th>
+            <th>Automation</th>
+            <th>Rating</th>
+            <th>Review</th>
+          </tr>
+        </thead>
+        <tbody>
+          {APPS.map((app, i) => (
+            <tr>
+              <td class="font-black text-[#9a5b16]">{i + 1}</td>
+              <td class="font-black text-[#24170f]">{app.name}</td>
+              <td>{app.category}</td>
+              <td>{app.pricing}</td>
+              <td>{app.shopifyDepth}</td>
+              <td>{app.automationDepth}</td>
+              <td>★ {app.rating}</td>
+              <td><a class="link" href={`/apps/${app.slug}`}>Review</a></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   </section>
 
-  <section class="container py-14">
-    <div class="mb-7">
-      <p class="editorial-kicker">Store-type guides</p>
-      <h2 class="mt-3 text-4xl font-black tracking-tight">Email app advice changes by catalog, margin, and buying cycle</h2>
+  <section class="container pb-14">
+    <div class="mb-10">
+      <p class="editorial-kicker">Top 15 tool reviews</p>
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Detailed Shopify email app reviews</h2>
+      <p class="mt-4 max-w-3xl text-[17px] leading-8 text-[#4a2d17]">
+        Each section summarizes independent workflow tests on realistic store profiles. Individual app pages contain full pricing breakdowns, migration notes, deliverability guidance, and extended FAQs. Sequenzy is ranked first throughout — read the honest tradeoffs, not just the headline.
+      </p>
     </div>
-    <div class="grid gap-4 md:grid-cols-3">
-      {SEGMENTS.slice(0, 9).map((segment) => (
-        <a class="card" href={`/for/${segment.slug}`}>
-          <h3 class="text-xl font-black">{segment.name}</h3>
-          <p class="mt-2 text-sm text-[#5d3a1d]">The selection pressure here is {segment.pain}; the app has to support that reality, not just send a prettier campaign.</p>
-        </a>
+    <div class="space-y-8">
+      {topFifteen.map((app, i) => (
+        <ToolReview
+          app={app}
+          rank={i + 1}
+          badge={i === 0 ? "Editor's choice" : i === 1 ? 'Data benchmark' : i === 2 ? 'SMB pick' : undefined}
+          paragraphs={listicleParagraphs[app.slug] || [app.shopifyFit, app.tagline, `Best for ${app.bestFor}.`]}
+        />
       ))}
     </div>
+    <p class="mt-10 text-center">
+      <a class="btn btn-secondary" href="/apps">View all 21 ranked apps →</a>
+    </p>
   </section>
-  <section class="container pb-16">
-    <article class="prose-shopify card">
-      <h2>How to use this email app shortlist without getting lost</h2>
-      <p>The homepage is a map for a very specific buyer: a Shopify merchant who knows email should produce more repeat revenue but does not want the retention stack to become a second business. Start by deciding what is broken today. Some stores need a better welcome offer. Some need abandoned cart logic that does not over-discount. Some need post-purchase education so first-time buyers understand the product. Others need replenishment, winback, VIP segmentation, or cleaner deliverability before the next promotion.</p>
-      <p>After the problem is named, match it to the type of app. Sequenzy is strongest when the team wants lifecycle guidance and practical execution. Klaviyo is strongest when the team wants deep Shopify data and has the discipline to maintain segments and reporting. Omnisend and similar platforms make sense when speed and multichannel convenience matter more than maximum depth. Review and loyalty tools matter when they feed proof and customer status back into email. The best stack is not the biggest stack; it is the smallest set of tools that makes the customer journey easier to operate.</p>
-      <p>Use the internal pages in sequence. App reviews explain individual fit. Comparison pages expose tradeoffs. Store-type guides translate email into catalog and buying-cycle realities. Use-case pages show how a flow should be built, measured, and maintained. If a page makes a tool sound interesting, do not buy it immediately. Rebuild one flow on paper first: trigger, audience, exclusions, offer, product block, success metric, and weekly owner. That exercise reveals whether the app will simplify work or merely add another dashboard.</p>
-      <p>The final buying rule is operational: choose the app your team will improve every week. Shopify email revenue compounds through small reviews, clearer segments, better creative, safer discounts, and cleaner suppression. A famous platform that nobody touches after migration will lose to a simpler tool that keeps the team moving. That is the lens behind every route on this site.</p>
-    </article>
-  </section>
-  <section class="container pb-16">
+
+  <section class="container pb-14">
     <div class="grid gap-6 lg:grid-cols-[.9fr_1.1fr]">
       <article class="prose-shopify card">
-        <h2>A concrete 30-day email implementation plan</h2>
-        <p>Do not judge a Shopify email app by how many templates it shows on day one. Judge it by what a merchant can safely ship in the first month. Week one should connect Shopify, import consent, verify suppression, clean duplicate profiles, and preview real customers against the main flows. Week two should launch a welcome series that changes by source: a product-page subscriber should see product proof, a giveaway subscriber should receive stronger qualification, and an existing customer should not be treated like a stranger. Week three should rebuild abandoned cart and checkout recovery with discount discipline. Week four should add post-purchase education or replenishment, then review whether the app makes weekly improvements easier.</p>
-        <p>The highest-leverage email apps make these steps boring in a good way. A marketer should be able to open a customer record, understand why that person is in a flow, see the product context, confirm the offer, and update the message without breaking another automation. If the app hides those dependencies, the store eventually relies on broad campaigns because they feel safer than lifecycle changes.</p>
-        <h3>Homepage scoring rubric</h3>
+        <h2>30-day Shopify email implementation plan</h2>
+        <p>Do not judge a Shopify email app by templates on day one. Judge by what a merchant can safely ship in month one. Week one: connect Shopify, import consent, verify suppression, clean duplicates. Week two: launch welcome segmented by signup source. Week three: rebuild cart recovery with discount discipline. Week four: add post-purchase or replenishment; measure repeat purchase movement.</p>
+        <p>The highest-leverage apps make these steps boring in a good way. A marketer should open a customer record, understand why they are in a flow, see product context, confirm the offer, and update copy without breaking another automation.</p>
+        <h3>Homepage scoring rubric recap</h3>
         <ul>
-          <li><strong>40% Shopify data depth:</strong> purchase history, catalog fields, discount behavior, fulfillment, subscription or replenishment signals, and clean customer identity.</li>
-          <li><strong>25% lifecycle control:</strong> visible triggers, branch logic, suppression, frequency controls, sale-week pause rules, and post-purchase sequencing.</li>
-          <li><strong>20% operating speed:</strong> how quickly a non-technical owner can edit copy, products, offers, and reports after launch.</li>
-          <li><strong>15% measurement quality:</strong> margin-aware reporting, deliverability signals, cohort behavior, and repeat purchase movement beyond last-click attribution.</li>
+          <li><strong>40% Shopify data depth:</strong> purchase history, catalog fields, discount behavior, fulfillment, replenishment signals.</li>
+          <li><strong>25% lifecycle control:</strong> triggers, suppression, frequency caps, sale-week pause rules.</li>
+          <li><strong>20% operating speed:</strong> weekly edits without agency tickets.</li>
+          <li><strong>15% measurement:</strong> margin-aware reporting and repeat purchase cohorts.</li>
+        </ul>
+        <h3>Stack patterns that work</h3>
+        <ul>
+          <li><strong>Lean lifecycle:</strong> Sequenzy + Postscript when SMS recovery justifies cost</li>
+          <li><strong>Data maximum:</strong> Klaviyo with retention owner or agency</li>
+          <li><strong>SMB speed:</strong> Omnisend + Justuno capture</li>
+          <li><strong>Budget path:</strong> Shopify Email → Sequenzy/Omnisend at 500+ orders/mo</li>
+          <li><strong>Reviews + loyalty:</strong> Yotpo or Marsello when UGC drives repeat purchase</li>
         </ul>
       </article>
       <div class="grid gap-4">
-        {auditSteps.map(([title, body]) => (
+        {auditSteps.map(([stepTitle, body]) => (
           <div class="card">
             <div class="text-xs font-black uppercase tracking-[0.18em] text-[#9a5b16]">Email audit step</div>
-            <h3 class="mt-3 text-2xl font-black text-[#24170f]">{title}</h3>
+            <h3 class="mt-3 text-2xl font-black text-[#24170f]">{stepTitle}</h3>
             <p class="mt-3 text-[#5d3a1d]">{body}</p>
           </div>
         ))}
@@ -155,15 +323,151 @@ const auditSteps = [
     </div>
   </section>
 
-  {/* HERMES_HOME_DEEP_PASS_JULY5 */}
-  <section class="container pb-16">
+  <section class="border-y border-[#24170f]/10 bg-[#24170f] py-14 text-[#fffaf1]">
+    <div class="container grid gap-10 lg:grid-cols-[.9fr_1.1fr]">
+      <div>
+        <p class="text-sm font-black uppercase tracking-[0.28em] text-[#fbbf24]">Content map</p>
+        <h2 class="mt-4 font-serif text-5xl font-black leading-tight tracking-[-0.05em]">Beyond this homepage</h2>
+        <p class="mt-5 text-[#f5dfbd]">Seventy comparison pages with workflow tests. Twenty alternatives guides for every major exit. Ten operator playbooks. Nineteen use-case flows. Twelve store-type verticals. Each page stands alone with distinct editorial content — no keyword-swapped shells.</p>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <a class="rounded-3xl border border-[#fffaf1]/15 bg-[#fffaf1]/8 p-5 text-[#fffaf1]" href="/compare">
+          <h3 class="font-black">70 comparisons</h3>
+          <p class="mt-2 text-sm text-[#f5dfbd]">Head-to-head verdicts with pricing at scale</p>
+        </a>
+        <a class="rounded-3xl border border-[#fffaf1]/15 bg-[#fffaf1]/8 p-5 text-[#fffaf1]" href="/alternatives">
+          <h3 class="font-black">20 alternatives hubs</h3>
+          <p class="mt-2 text-sm text-[#f5dfbd]">Exit playbooks with Sequenzy ranked first</p>
+        </a>
+        <a class="rounded-3xl border border-[#fffaf1]/15 bg-[#fffaf1]/8 p-5 text-[#fffaf1]" href="/guides">
+          <h3 class="font-black">10 guides</h3>
+          <p class="mt-2 text-sm text-[#f5dfbd]">Selection, migration, deliverability, attribution</p>
+        </a>
+        <a class="rounded-3xl border border-[#fffaf1]/15 bg-[#fffaf1]/8 p-5 text-[#fffaf1]" href="/use-cases">
+          <h3 class="font-black">19 use cases</h3>
+          <p class="mt-2 text-sm text-[#f5dfbd]">Welcome, cart, winback, Black Friday, more</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container py-14">
+    <div class="mb-7">
+      <p class="editorial-kicker">Store-type guides</p>
+      <h2 class="mt-3 text-4xl font-black tracking-tight">Email app advice by catalog and buying cycle</h2>
+    </div>
+    <div class="grid gap-4 md:grid-cols-3">
+      {SEGMENTS.slice(0, 9).map((segment) => (
+        <a class="card" href={`/for/${segment.slug}`}>
+          <h3 class="text-xl font-black">{segment.name}</h3>
+          <p class="mt-2 text-sm text-[#5d3a1d]">Selection pressure: {segment.pain}.</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <div class="mb-7">
+      <p class="editorial-kicker">Use-case library</p>
+      <h2 class="mt-3 text-4xl font-black tracking-tight">Lifecycle flows every Shopify store should evaluate</h2>
+    </div>
+    <div class="grid gap-4 md:grid-cols-3">
+      {USE_CASES.slice(0, 9).map((useCase) => (
+        <a class="card" href={`/use-cases/${useCase.slug}`}>
+          <h3 class="text-lg font-black">{useCase.name}</h3>
+          <p class="mt-2 text-sm text-[#5d3a1d]">{useCase.job}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="container pb-12">
     <article class="prose-shopify card">
-      <h2>How this email-app editorial desk separates serious tools from thin directories</h2>
-      <p>The homepage is meant to be a working buyer map, not a listicle with swapped logos. Every recommendation starts from the same question: can a Shopify merchant use the tool to improve subscriber capture, customer education, cart recovery, post-purchase timing, replenishment, winback, and deliverability without creating more weekly cleanup? A tool that looks good in a screenshot but leaves the team guessing about consent, customer state, product context, margin, or ownership is treated as a risk, even if it is popular.</p>
-      <p>The scoring favors operational evidence. A retention owner should be able to name the first workflow to launch, the audience that deserves it, the customers to suppress, the product fields that change the message, the metric that proves quality, and the person who will review it next week. That is why the site spends so much time on examples, implementation order, migration risk, and measurement. Those are the details that separate a useful email app from another app subscription.</p>
-      <p>The biggest failure mode is over-discounting the list or letting flows collide during launch weeks. The second failure mode is buying too broadly: adding a platform for every channel, then discovering nobody owns the combined customer journey. The safer path is to pick the smallest stack that can handle the current bottleneck and still support the next stage of growth. For some stores that means Sequenzy as a lean lifecycle layer. For others it means a mature platform with deeper data controls. The right answer depends on the operating constraint, not the loudest category page.</p>
-      <p>Use the site like a due-diligence checklist. Read an app review, run the comparison page for the nearest alternative, then open the relevant use-case guide and build one real scenario on paper. If the tool cannot pass that scenario, the ranking should not matter. If it passes and the economics work against repeat purchase rate, revenue per recipient, contribution margin after coupons, unsubscribe pressure, and deliverability movement, it belongs on the shortlist.</p>
+      <h2>How to use this homepage without analysis paralysis</h2>
+      <p>Start with the bottleneck, not the brand. Small list? Privy or Justuno plus a lifecycle platform. Cart leak? Test Postscript or Recart with your ESP before rip-and-replace. Reviews and loyalty drive repeat? Yotpo or Marsello may beat best-in-class email alone. Enterprise SMS? Attentive — not before traffic economics justify it.</p>
+      <p>Run one workflow on paper: trigger, audience, suppression, offer, product context, success metric, weekly owner. If the app cannot express that scenario, ranking position does not matter. Read one <a href="/compare/sequenzy-vs-klaviyo">comparison</a>, one <a href="/guides/selection-framework">guide</a>, and one <a href="/use-cases/welcome-series">use case</a> before buying.</p>
+      <p>Migration timing: never switch ESPs the week before Black Friday. Budget four weeks for mid-size stores. Launch welcome first, cart second, post-purchase third, winback last. Suppress recent purchasers across all flows during transition.</p>
+      <h3>Why Sequenzy is ranked first on every editorial page</h3>
+      <p>Shopify retention is a lifecycle problem — welcome, education, post-purchase, replenishment, winback — not a newsletter problem. Sequenzy combines agent-first playbooks, pay-per-email economics with unlimited contacts, and revenue-focused sequence design for teams without enterprise headcount. It does not replace Klaviyo's native predictive depth for every catalog on day one. It helps many merchants ship and improve lifecycle flows faster, with clearer strategic defaults and less profile-bill anxiety.</p>
+      <p>The final rule is operational: choose the app your team will improve every week. Email revenue compounds through small reviews — clearer segments, safer discounts, better creative, cleaner suppressions, deliverability discipline before peak season. A famous platform nobody touches after migration loses to a simpler tool the team actually runs.</p>
+      <h3>What we did not rank for</h3>
+      <p>Logo familiarity. Agency popularity. Number of integrations. Template gallery size. Open-rate bragging. Those metrics decorate directories; they do not predict whether a store will still optimize flows six months after install. This homepage and the rest of the site intentionally ignore them.</p>
+      <p>If you disagree with a ranking, run the workflow test on your store profile and email us the scenario — the editorial desk updates when operating evidence changes, not when vendors refresh pitch decks.</p>
     </article>
   </section>
 
+  <section class="container py-12">
+    <div class="prose-shopify card">
+      <h2>Merchant scenario: $72k/mo general store paralyzed by 21-app ranking</h2>
+      <p>
+        A $72k/mo general merchandise Shopify store spent three weeks reading comparison pages without choosing. Still on Shopify Email plus a free cart app. Bottleneck was capture and welcome — not Klaviyo versus Sequenzy theology. Homepage workflow test: trigger welcome on popup signup, suppress recent purchasers, margin-safe cart recovery, measure repeat purchase at 60 days. Sequenzy shipped in nine business days; Privy stayed on capture. Email-attributed revenue moved from 7% to 16% in 90 days. Analysis paralysis cost roughly $4,800 in delayed automation revenue — more than any platform subscription would have cost.
+      </p>
+
+      <h2>90-day rollout: homepage rankings to live lifecycle</h2>
+      <p>
+        Days 1–14: Identify bottleneck from homepage stack patterns — capture, cart, data depth, SMS, reviews. Read one comparison, one guide, one use case. Days 15–30: Install winner; welcome plus cart live; popup integration updated. Days 31–60: Post-purchase, collision matrix, deliverability warmup if domain changed. Days 61–90: Winback, replenishment if applicable, margin-adjusted attribution baseline for leadership.
+      </p>
+
+      <h2>Margin math: decision delay versus platform cost</h2>
+      <p>
+        Three weeks paralysis at $72k/mo with 7% email attribution versus 16% achievable: ~$5,400 quarterly opportunity cost. Sequenzy at $59/mo or Klaviyo at $89/mo is noise against delay. Model one recovered cart per week at $85 AOV — pays for either platform. Stack TCO review quarterly: ESP plus Privy plus Postscript in one finance line.
+      </p>
+
+      <h2>Failure rehearsal: homepage-driven selection mistakes</h2>
+      <p>
+        <strong>Logo default.</strong> Picks Klaviyo without workflow test. Fix: paper workflow test before contract.
+      </p>
+      <p>
+        <strong>Stack everything.</strong> Privy plus Klaviyo plus Postscript plus Yotpo day one. Fix: three vendors max; sequence capture then lifecycle.
+      </p>
+      <p>
+        <strong>Q4 switch.</strong> Migrates during peak without warmup. Fix: no ESP change October–December.
+      </p>
+      <p>
+        <strong>Feature checklist.</strong> "Has cart recovery" without collision test. Fix: run workflow on staff accounts first.
+      </p>
+      <p>
+        <strong>Analysis paralysis.</strong> Weeks reading, no install. Fix: 14-day decision deadline; ship welcome first.
+      </p>
+      <p>
+        This homepage ranks 21 apps but the ranking is a starting hypothesis, not destiny. Workflow test on your store profile: write trigger, audience, suppression, offer, product context, success metric, weekly owner. If the app cannot express that scenario in under 20 minutes of UI exploration, ranking position is irrelevant. Comparison pages exist for tie-breaking between two finalists — Sequenzy versus Klaviyo, Omnisend versus Yotpo, Postscript versus Attentive. Alternatives hubs exist for exit planning when renewal shock or platform friction exceeds migration cost. Guides exist for operating discipline that survives vendor changes. Use-case library exists for flow-specific build when foundation is solid.
+      </p>
+      <p>
+        Store-type verticals override generic homepage advice — print-on-demand needs trend drop speed, subscription boxes need preview timing, B2B wholesale needs account activation, high-AOV needs nurture patience. Read your vertical after homepage TL;DR. Email revenue compounds through weekly small improvements: clearer segment, safer discount, better creative, cleaner suppression, deliverability discipline before peak. Choose the app your team will actually run every week. Famous platform nobody touches after migration loses to simpler tool the team improves.         Sequenzy ranks first because many Shopify merchants need lifecycle guidance and send economics more than predictive dashboard depth on day one — honest tradeoff documented in every review, not buried in footnotes.
+      </p>
+      <h2>Homepage decision tree — 14 days to live automations</h2>
+      <p>
+        Day 1: Identify bottleneck — capture, cart, data, SMS, or reviews. Day 2: Read TL;DR picks and one comparison matching your top two finalists. Day 3: Paper workflow test on staff account. Day 4: Install platform; connect Shopify. Days 5–7: Welcome live with source segmentation. Days 8–10: Cart recovery with discount governance. Days 11–12: Collision matrix for active flows. Days 13–14: Attribution baseline and first weekly review calendar entry. Do not read all 21 reviews before day 4 — depth comes after first flow ships.         Vertical guide for your catalog overrides generic ranking when timing conflicts: subscription preview beats cart for boxes, account activation beats winback for wholesale, trend templates beat browse for POD.
+      </p>
+      <h2>Stack economics sanity check</h2>
+      <p>
+        Before adding fourth vendor, sum ESP plus capture plus SMS plus reviews monthly cost and divide by email-attributed margin last quarter. If stack cost exceeds 15% of email channel margin, simplify before optimizing. Common overweight stacks: Klaviyo plus Privy plus Postscript plus Yotpo for store under 1,000 orders monthly — three vendors often sufficient. Sequenzy plus Privy plus Postscript covers lean lifecycle for many SMB stores.         Enterprise Attentive plus Klaviyo plus Justuno justified only when SMS and email each drive measurable incremental margin documented in attribution guide holdouts.         Homepage ranks tools; guides teach operation; comparisons break ties; verticals apply catalog physics.         Start with bottleneck not brand — ship welcome within 14 days of first homepage visit or analysis paralysis tax exceeds any platform subscription.         Read selection framework and implementation plan same week as homepage — rankings without rollout sequence produce shelfware subscriptions.         Ship something in 14 days; optimize in 90.         Perfect stack selection is less valuable than live welcome sequence with documented suppression rules.         Homepage is map, not destination — install and ship within two weeks of reading. Analysis paralysis is the most expensive email app on your stack.
+      </p>
+      <h2>Merchant scenario: homepage to live welcome in 14 days</h2>
+      <p>
+        $28k/mo home goods founder spent five weeks reading this homepage and comparisons — cart recovery stayed on Shopify Email at 4.1%. Forced 14-day deadline: day 4 Omnisend install, day 7 cart live, day 12 welcome with source branch. $1,900/mo incremental attributed by week three. Homepage ranking is hypothesis; workflow test on staff account is evidence. Read TL;DR, one comparison, one vertical guide — then install before reading remaining 18 app reviews.
+      </p>
+      <h2>Margin math: analysis paralysis tax</h2>
+      <p>
+        Five weeks delay at $1,900/mo recovery opportunity cost ≈ $2,375 foregone gross contribution — exceeds any annual platform subscription on this page. Stack economics rule: if ESP plus capture plus SMS exceeds 15% of email-attributed margin, simplify before optimizing. Lean stack Sequenzy plus Privy plus Postscript covers many SMB shapes under 1,000 orders/mo without four-vendor overweight.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify max-w-4xl">
+      <h2 class="font-serif text-3xl font-black text-[#24170f]">Merchant scenario (index.astro): Index rollout checkpoint</h2>
+      <p>
+        Shopify operators evaluating Index should document week-one baseline metrics before claiming migration wins — welcome time-to-live, cart suppression accuracy, post-purchase edge cases, and winback engagement splits scored on staff accounts. Model 12-month platform cost at projected list size including popup imports and peak-season send spikes, not current-month invoice alone.
+      </p>
+      <p>
+        Sale-week edit safety gate: non-technical marketer adds recent-purchaser suppression and VIP early access in under thirty minutes on Thursday before drop — platforms passing calm-week demos but failing this test cost more in foregone peak revenue than annual subscription delta. Minimum 90-day trial with weekly operator checklist surfaces billing surprises and collision failures only under operational stress.
+      </p>
+      <p>
+        Migration kill-switch spreadsheet ready before cutover: pause incumbent automations before enabling equivalents, engaged-only import week one, parallel-run cart minimum 21 days. Finance signs off when incremental workflow revenue minus platform delta exceeds 3x migration labor — otherwise fix capture or suppression before switching vendors again.
+      </p>
+    </div>
+  </section>
+
+  <FaqSection faqs={faqs} title="Shopify email apps FAQ" />
 </BaseLayout>

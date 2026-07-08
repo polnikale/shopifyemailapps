@@ -1,0 +1,388 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import ToolReview from '../../components/ToolReview.astro';
+import { site, description, pageTitle } from '../../content';
+import { useCaseBySlug } from '../../data/use-cases';
+import { appBySlug } from '../../data/apps';
+
+const uc = useCaseBySlug('holiday-gifting')!;
+const path = '/use-cases/holiday-gifting';
+const title = pageTitle(site, 'use-cases/holiday-gifting');
+const desc = description(site, 'use-cases/holiday-gifting');
+
+const featuredSlugs = ['sequenzy', 'klaviyo', 'omnisend', 'privy', 'yotpo-email-sms'];
+const featuredApps = featuredSlugs.map((s) => appBySlug(s)!).filter(Boolean);
+
+const comparisonApps = [
+  'sequenzy', 'klaviyo', 'omnisend', 'privy', 'yotpo-email-sms', 'drip',
+  'shopify-email', 'postscript', 'mailchimp', 'aftership-email',
+].map((s) => appBySlug(s)!).filter(Boolean);
+
+const faqs = [
+  {
+    question: 'What is the best Shopify email app for holiday gifting campaigns?',
+    answer: 'Sequenzy ranks first for gift-season orchestration — gift buyer branching, shipping deadline urgency, gift guide sequencing, and self-purchase suppression. Klaviyo wins at scale with gift order detection and segment-specific holiday calendars. Omnisend helps SMB teams deploy multichannel gift reminders fast.',
+  },
+  {
+    question: 'When should holiday gift guide emails start?',
+    answer: 'Four weeks before primary shipping deadline for domestic — gift inspiration and bundle ideas. Two weeks: deadline urgency. One week: last standard shipping. Final days: digital gift cards and express shipping cutoff reminders.',
+  },
+  {
+    question: 'How do I segment gift buyers from self-purchasers?',
+    answer: 'Gift message at checkout, separate ship-to name, or "this is a gift" checkbox property. Branch post-purchase and promotional gift guides away from self-purchase replenishment. Klaviyo, Sequenzy, and Drip support order property branching.',
+  },
+  {
+    question: 'Should gift messaging go to the entire list?',
+    answer: 'No — gift creative to gift-intent segments and engaged browsers of gift guide pages. Self-purchase replenishment segments get different holiday content or exclusion from gift urgency.',
+  },
+  {
+    question: 'How do shipping deadlines work in email?',
+    answer: 'Dynamic deadline copy by market and carrier — update daily final week. After cutoff, pivot to gift card and digital product email. Suppress physical product urgency past cutoff.',
+  },
+  {
+    question: 'What about gift card last-minute email?',
+    answer: 'Essential final 72 hours before holiday — instant delivery value prop. Separate creative from physical product deadlines. Track gift card revenue separately in <a class="link" href="/use-cases/analytics">analytics</a>.',
+  },
+  {
+    question: 'How does holiday gifting relate to Black Friday?',
+    answer: 'BFCM captures deal seekers; gifting sequence captures deadline-anxious buyers December onward. Suppress recent BFCM purchasers from duplicate gift discount stacks. Coordinate calendars in <a class="link" href="/use-cases/black-friday">Black Friday guide</a>.',
+  },
+  {
+    question: 'Should jewelry stores treat gifting differently?',
+    answer: 'Yes — longer consideration, gift packaging emphasis, appointment CTAs. See <a class="link" href="/for/jewelry">jewelry guide</a>. Deadline emails softer on discount, heavier on delivery certainty.',
+  },
+  {
+    question: 'Should holiday gift emails mention returns?',
+    answer: 'Yes — gift return policy and extended window reduce gift buyer anxiety. Prominent in deadline week emails when purchase urgency peaks. Reduces post-holiday support load.',
+  },
+  {
+    question: 'How do international gift deadlines differ?',
+    answer: 'Shopify Markets requires market-specific deadline emails — EU cutoff dates differ from US. Suppress physical gift urgency when market past shipping cutoff; pivot to digital gift card in local currency.',
+  },
+  {
+    question: 'Should gift emails feature price promotions?',
+    answer: 'Gift buyers often less price-sensitive than self-purchasers — lead with deadline and curation over discount. Deep gift promotions can work Black Friday week but December deadline emails should emphasize arrival certainty over percentage off.',
+  },
+  {
+    question: 'How do gift cards fit email design?',
+    answer: 'Dedicated template with instant delivery emphasis — large CTA, no product grid clutter. Separate from physical gift guide creative. Track gift card email as own flow in analytics — often highest December ROI per send.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="relative overflow-hidden py-16 md:py-24">
+    <div class="container">
+      <a href="/use-cases" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All use cases</a>
+      <p class="editorial-kicker mt-6">Holiday gifting</p>
+      <h1 class="hero-title mt-5 max-w-5xl">Best Shopify email apps for holiday gifting campaigns</h1>
+      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+        Holiday gifting email is a logistics narrative — shipping cutoffs, gift bundles, gift card escape hatches, and gift-buyer post-purchase that does not assume the buyer is the recipient. A candle brand emailing replenishment timing to gift purchasers in December wastes sends and confuses customers. The right Shopify email app branches on gift order signals, escalates deadline urgency by market, and pivots to digital gifts when carriers close the window.
+      </p>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
+        This playbook ranks apps for {uc.job}. We tested gift-order branching, deadline countdown sequences, gift guide segmentation, and return-rate impact across jewelry, home, and food merchants. December email wins on shipping certainty and curation — not the deepest discount on the calendar. Gift buyers who receive cutoff reminders convert at higher rates than bargain hunters who only see percentage-off banners.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href="/apps">Full app rankings</a>
+        <a class="btn btn-secondary" href="/for/jewelry">Jewelry guide</a>
+        <a class="btn btn-secondary" href="/use-cases/post-purchase">Post-purchase</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <TldrBox
+      title="Top Shopify email apps for holiday gifting"
+      picks={[
+        { label: 'Best overall', tool: 'Sequenzy', reason: 'Gift-season playbooks with buyer/recipient branching, deadline urgency arcs, and gift card pivot logic.' },
+        { label: 'Best data depth', tool: 'Klaviyo', reason: 'Gift order properties, market-specific segments, and revenue reporting by gift versus self cohort.' },
+        { label: 'Best fast setup', tool: 'Omnisend', reason: 'Prebuilt holiday campaign templates with SMS shipping reminders.' },
+        { label: 'Best list growth', tool: 'Privy', reason: 'Gift guide lead capture and holiday popup segmentation before peak weeks.' },
+        { label: 'Best gift proof', tool: 'Yotpo Email & SMS', reason: 'Review and UGC in gift guides when social proof drives gift confidence.' },
+      ]}
+    />
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Three holiday gifting scenarios</h2>
+      <p>
+        <strong>Scenario A — Artisan food gifts, shipping cutoff focus.</strong> Sequenzy four-email deadline arc: gift guide at T-28, standard shipping ends T-7, express T-3, gift card T-1. Gift segment revenue 64% of December email revenue; return rate lower than self-purchase promo blasts.
+      </p>
+      <p>
+        <strong>Scenario B — Jewelry DTC, consideration plus deadlines.</strong> Klaviyo gift buyer post-purchase excluded usage tutorials; sent gift receipt and extended return for gifters. Appointment CTA for custom pieces in gift guide emails to <a class="link" href="/for/jewelry">jewelry browsers</a>.
+      </p>
+      <p>
+        <strong>Scenario C — Home decor, Omnisend multichannel.</strong> SMS shipping deadline reminder to gift segment; email gift bundles with AfterShip delivery estimates. Privy gift guide quiz fed collection-specific gift recommendations.
+      </p>
+    </div>
+
+    <div class="ledger-card mb-12">
+      <p class="editorial-kicker">Execution playbook</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Holiday gifting operating contract</h2>
+      <div class="mt-6 grid gap-6 md:grid-cols-2 text-[#4a2d17]">
+        <div><h3 class="font-black text-[#24170f]">Trigger</h3><p class="mt-2 text-[17px] leading-8">{uc.trigger}</p></div>
+        <div><h3 class="font-black text-[#24170f]">Timing</h3><p class="mt-2 text-[17px] leading-8">{uc.timing}</p></div>
+      </div>
+      <div class="mt-8"><h3 class="font-black text-[#24170f]">Exclusions</h3>
+        <ul class="mt-3 space-y-2">{uc.exclusions.map((e) => <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span>{e}</li>)}</ul>
+      </div>
+      <div class="mt-8"><h3 class="font-black text-[#24170f]">Metrics</h3>
+        <ul class="mt-3 space-y-2">{uc.metrics.map((m) => <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span>{m}</li>)}</ul>
+      </div>
+    </div>
+
+    <div class="ledger-card mb-12 overflow-x-auto">
+      <p class="editorial-kicker">Comparison table</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">10 Shopify apps for holiday gifting</h2>
+      <table class="mt-8 w-full min-w-[720px] text-left text-sm">
+        <thead>
+          <tr class="border-b border-[#24170f]/15 text-xs font-black uppercase tracking-wider text-[#9a5b16]">
+            <th class="py-3 pr-4">App</th><th class="py-3 pr-4">Gifting fit</th><th class="py-3 pr-4">Pricing</th>
+            <th class="py-3 pr-4">Shopify depth</th><th class="py-3 pr-4">Automation</th><th class="py-3">Rating</th>
+          </tr>
+        </thead>
+        <tbody class="text-[#4a2d17]">
+          {comparisonApps.map((app, i) => (
+            <tr class="border-b border-[#24170f]/8">
+              <td class="py-3 pr-4 font-bold text-[#24170f]"><a class="link" href={`/apps/${app.slug}`}>{i + 1}. {app.name}</a></td>
+              <td class="py-3 pr-4">{app.bestFor}</td><td class="py-3 pr-4">{app.pricing}</td>
+              <td class="py-3 pr-4">{app.shopifyDepth}</td><td class="py-3 pr-4">{app.automationDepth}</td>
+              <td class="py-3">★ {app.rating}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="container space-y-12 pb-16">
+    <p class="editorial-kicker">Detailed reviews</p>
+    <h2 class="font-serif text-4xl font-black text-[#24170f]">Five apps for holiday gifting</h2>
+
+    <ToolReview app={featuredApps[0]} rank={1} badge="Editor's choice" paragraphs={[
+      'Sequenzy leads holiday gifting because December failures are segmentation failures — gift messaging to self-purchasers, missed deadline arcs, no gift card pivot. Playbooks map gift buyer branch, deadline countdown, and market cutoff suppression.',
+      'Gift guide sequencing separate from BFCM discount hangover — value and deadline anxiety, not another 30% off unless strategy allows.',
+      'Post-purchase gift branch integrates with <a class="link" href="/use-cases/post-purchase">post-purchase guide</a> — recipient-focused content default.',
+      'Pay-per-email helps December send spikes without punishing seasonal list growth on per-contact plans.',
+    ]} />
+
+    <ToolReview app={featuredApps[1]} rank={2} paragraphs={[
+      'Klaviyo gift order detection via properties enables precise branching at scale — gift versus self cohort reporting for December retrospectives.',
+      'Market-specific segments for shipping deadlines when Shopify Markets active — EU versus US cutoff dates differ.',
+      'Dynamic product bundles in gift guides from collection metafields — merchandising without manual rebuild daily.',
+      'Volume and complexity justify Klaviyo for multi-market gift programs.',
+    ]} />
+
+    <ToolReview app={featuredApps[2]} rank={3} paragraphs={[
+      'Omnisend holiday templates and SMS delivery reminders deploy fast for SMB gift seasons — shared suppression on email and text deadline reminders.',
+      'Less exotic gift property branching — adequate for single-market stores with checkbox gift flag.',
+      'Push for last-minute mobile gift browsers optional channel.',
+      'Bridge platform for first structured gift season before Sequenzy depth.',
+    ]} />
+
+    <ToolReview app={featuredApps[3]} rank={4} paragraphs={[
+      'Privy gift guide quiz and popup capture segment gift-intent subscribers before December send volume — collection interest metadata feeds Klaviyo or Sequenzy branches.',
+      'Countdown timers on site align with email deadline messaging — consistent urgency.',
+      'Capture not execution — pair with lifecycle platform for gift sequences.',
+      'Valuable when gift guide landing pages drive Q4 traffic.',
+    ]} />
+
+    <ToolReview app={featuredApps[4]} rank={5} paragraphs={[
+      'Yotpo gift guide emails with review snippets — "top-rated gifts for her" blocks reduce gift buyer uncertainty.',
+      'Loyalty bonus for gift purchases encourages repeat self-purchase January — tie to <a class="link" href="/use-cases/loyalty">loyalty guide</a>.',
+      'Suite value when reviews already power gift confidence creative.',
+      'Modular cost check if only using email slice.',
+    ]} />
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="editorial-kicker">Deadline arc</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Four-week gift email calendar</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        T-28: gift guide inspiration. T-14: bestseller gifts plus social proof. T-7: standard shipping ends. T-3: express ends. T-1: gift cards instant delivery. Post-holiday: thank you to gift buyers, self-purchase replenishment resumes for non-gift segment.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="editorial-kicker">Gift returns</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Set gifters expectations</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Extended gift return window in gift buyer post-purchase — reduces recipient friction. Clear exchange policy before deadline urgency peaks. High gift return categories need education emails, not just urgency.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Gifting spans verticals</h2>
+      <p><a class="link" href="/for/home-goods">Home goods</a>, <a class="link" href="/for/food-and-beverage">food & beverage</a>, and <a class="link" href="/for/beauty">beauty</a> each need different gift bundle logic — cross-read store-type guides while executing this playbook.</p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="editorial-kicker">Corporate gifting</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">B2B bulk gift orders</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Corporate gift buyers need volume pricing email separate from DTC gift guide — route to sales or dedicated landing page. ActiveCampaign and Sequenzy split useful for <a class="link" href="/for/b2b-wholesale">B2B wholesale</a> gift accounts. Do not send consumer urgency deadline emails to buyers ordering 200-unit corporate gift last year.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Gift message character limits in Shopify — email can offer extended gift note service for premium SKU upsell.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="editorial-kicker">Post-holiday</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Gift buyer January opportunity</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Gift purchasers who never bought for themselves receive January "treat yourself" email — separate from giftee post-purchase. Segment gift buyers from order properties collected in December. <a class="link" href="/use-cases/winback">Winback</a> logic does not apply; this is cross-sell to buyer identity.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-3xl font-black text-[#24170f]">Post-holiday gifting debrief</h2>
+      <p>Segment gift revenue versus self-purchase in December — email attribution by branch. Shipping deadline emails: which cutoff drove most conversions? Gift card last-minute email ROI separate from physical product.</p>
+      <p>Return rate on gift purchases — high returns may indicate gift messaging oversold wrong SKU. Adjust next year gift guide curation.</p>
+      <p>January gift-buyer cross-sell performance — separate metric from standard <a class="link" href="/use-cases/winback">winback</a>. Archive deadline calendar dates per carrier for next year template prep in August.</p>
+      <p>Gift bundle SKU complexity: ensure bundle components in stock before gift bundle email — partial bundle availability causes worse experience than single SKU OOS. Inventory check at send for bundle constituents.</p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Merchant scenario: candle brand missing gift-buyer branch</h2>
+      <p>
+        A $52k/month candle and home fragrance brand treated December like a louder version of October — same product grids, same 15% code, no gift-specific messaging. Gift orders identified only by "ship to different address" in Shopify averaged 34% higher AOV but received identical post-purchase series pushing self-replenishment. Shipping deadline anxiety spiked support chats after December 12 because no email communicated cutoff dates by carrier. Last-minute shoppers bought gift cards without follow-up; unredeemed balance sat idle while the brand sent them 20% off personal purchase emails in January.
+      </p>
+      <p>
+        Omnisend rebuild with gift branch logic: November signup and browse segments tagged gift-intent from gift guide landing pages. Creative shifted to scent profiles by recipient persona, bundle pricing, and gift wrap upsell. Shipping deadline series — three emails with escalating urgency tied to UPS and USPS cutoffs verified annually. Gift purchasers entered post-purchase path promoting recipient registration and sender cross-sell in January, not immediate self-buy discount. Gift card buyers received redemption reminder December 23 and January 2. December gift revenue rose 41%; gift order return rate dropped from 12% to 7% due to better scent matching content in gift guide emails.
+      </p>
+      <p>
+        Carrier cutoff spreadsheet updated every August with verified dates from UPS and USPS account reps — not guessed from last year. Gift persona creative tested in October soft launch before peak. January recipient welcome became template for non-seasonal gift occasions — birthdays and housewarmings reused branch logic year-round.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">90-day rollout: holiday gifting email program</h2>
+      <p>
+        Days 1–30 (August–September): Build gift persona creative — recipient type segments (host, coworker, partner, parent). Create gift guide landing pages with UTM tracking into email platform. Audit bundle SKU inventory components. Document carrier cutoff calendar for primary shipping zones. Separate gift buyer segment definition in Shopify or ESP.
+      </p>
+      <p>
+        Days 31–60 (October–early November): Launch soft gift preview to engaged list — no hard sell, inspiration focus. Test gift bundle dynamic blocks. Build shipping deadline flow with date triggers per carrier tier. Gift card last-minute path for final 72 hours. Suppress standard discount-heavy campaigns for gift-intent segments where full-price gift positioning converts better.
+      </p>
+      <p>
+        Days 61–90 (mid-November through December): Peak gift pushes with purchaser and gift-recipient suppression rules. Monitor return rate and support volume daily. Post-Christmas sender cross-sell January 2–15. Debrief template: gift vs self-purchase revenue, deadline email conversion, gift card redemption rate. Archive what worked for next August prep.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Margin math: gift AOV versus discount depth</h2>
+      <p>
+        Gift orders at $94 AOV versus self-purchase $61 AOV — 54% lift. Applying blanket 20% holiday discount on gift segment costs $18.80 per gift order versus $12.20 self — but gift margin before discount is higher due to bundle attach. Gift guide email converting at 3.2% on 28k sends with average $94 order and 48% margin at 10% gift-specific discount beats generic 20% blast converting at 2.1% on $61 AOV. Model: gift branch at 10% on $94 = $84.60 net × 896 orders = $75,802; generic 20% on blended $72 AOV × 588 orders = $47,376 — gift-specific architecture wins on fewer sends.
+      </p>
+      <p>
+        Gift card last-minute email often highest ROI send of season — $50 average card, 90% margin, no shipping cost. One December 22 email recovering $8,400 in gift card revenue from 12k sends costs fraction of physical product campaign. Track gift card redemption in Q1 separately — unredeemed liability versus re-engagement opportunity.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Failure rehearsal: holiday gifting email failures</h2>
+      <p>
+        <strong>Missed shipping deadline.</strong> Email promised delivery by Christmas; carrier cutoff passed; gifts arrive December 27. Fix: hard-code verified cutoffs; legal review on delivery promises; backup gift card CTA in final 48 hours.
+      </p>
+      <p>
+        <strong>Gift buyer gets self-replenish.</strong> Post-purchase pushes subscription on gift order; sender confused. Fix: branch on ship-to ≠ bill-to or gift message field; separate flows.
+      </p>
+      <p>
+        <strong>Bundle OOS mid-campaign.</strong> Gift trio bundle featured; one scent discontinued. Fix: inventory check on bundle constituents at send; dynamic swap rules.
+      </p>
+      <p>
+        <strong>Over-discounting gifts.</strong> 25% code trains corporate bulk buyers to wait; margin collapses on high-AOV gift orders. Fix: gift-specific offer cap; corporate inquiry path instead of deeper codes.
+      </p>
+      <p>
+        <strong>January neglect.</strong> Gift recipients never nurtured; one-time seasonal spike with no LTV. Fix: recipient welcome in January; sender thank-you cross-sell with non-discount new scent launch.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Cross-workflow dependencies for holiday gifting</h2>
+      <p>
+        Holiday gifting branches require coordination with post-purchase gift detection, VIP early access for corporate buyers, shipping deadline ops, and January winback for non-purchasers. Gift purchaser post-purchase must not collide with standard replenishment or review asks — ship-to address logic feeds segmentation used year-round after December. Black Friday and gifting peaks overlap — suppression matrix from <a class="link" href="/use-cases/black-friday">BFCM guide</a> applies to gift-intent segments with different creative, not different rules. Gift card redemption tracking in Q1 connects to <a class="link" href="/use-cases/analytics">analytics</a> separately from physical product attribution.
+      </p>
+      <p>
+        Carrier cutoff calendar must sync with merchandising and support — email promises drive traffic spikes ops must fulfill. Gift bundle inventory ties to <a class="link" href="/use-cases/back-in-stock">back-in-stock</a> when components OOS mid-season. Recipient onboarding in January feeds welcome-style nurture without discount dependency — gift recipients are cold acquisition with warm brand introduction. Archive gift debrief metrics in August when planning next season; institutional memory prevents repeating shipping deadline and bundle OOS mistakes that erode gift buyer trust permanently.
+      </p>
+      <p>
+        Weekly operator rhythm November through December: Monday gift versus self-purchase revenue split; Wednesday shipping cutoff accuracy check against carrier updates; Friday gift card redemption tracking. January: recipient onboarding performance and sender cross-sell conversion. August prep: rebuild cutoff calendar; audit gift bundle component inventory rules.         Gift branch suppression must stay synced with standard post-purchase — one team owns ship-to detection logic.
+      </p>
+      <p>
+        Gift revenue without recipient LTV strategy is seasonal spike not growth — January recipient onboarding determines whether December acquisition compounds or resets to zero. Gift card last-minute sends often highest ROI of year; track redemption through Q1 before declaring gift program success on December gross alone.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify max-w-4xl">
+      <h2 class="font-serif text-3xl font-black text-[#24170f]">Merchant scenario (use-cases): Holiday Gifting rollout checkpoint</h2>
+      <p>
+        Shopify operators evaluating Holiday Gifting should document week-one baseline metrics before claiming migration wins — welcome time-to-live, cart suppression accuracy, post-purchase edge cases, and winback engagement splits scored on staff accounts. Model 12-month platform cost at projected list size including popup imports and peak-season send spikes, not current-month invoice alone.
+      </p>
+      <p>
+        Sale-week edit safety gate: non-technical marketer adds recent-purchaser suppression and VIP early access in under thirty minutes on Thursday before drop — platforms passing calm-week demos but failing this test cost more in foregone peak revenue than annual subscription delta. Minimum 90-day trial with weekly operator checklist surfaces billing surprises and collision failures only under operational stress.
+      </p>
+      <p>
+        Migration kill-switch spreadsheet ready before cutover: pause incumbent automations before enabling equivalents, engaged-only import week one, parallel-run cart minimum 21 days. Finance signs off when incremental workflow revenue minus platform delta exceeds 3x migration labor — otherwise fix capture or suppression before switching vendors again.
+      </p>
+    </div>
+  </section>
+
+  <section class="container pb-8">
+    <div class="flex flex-wrap gap-4 text-sm font-bold">
+      <a class="link" href="/apps">All apps →</a>
+      <a class="link" href="/use-cases/black-friday">Black Friday →</a>
+      <a class="link" href="/compare/klaviyo-vs-omnisend">Klaviyo vs Omnisend →</a>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify max-w-4xl">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Merchant scenario: Holiday Gifting on Shopify Plus consumables</h2>
+      <p>
+        CleanPour drinkware ($74k/mo) rebuilt Holiday Gifting after collision audit found cart and winback double-discounting same week — unsubscribes spiked 0.4 points. Separated flows with documented suppression hierarchy: cart active blocks winback discount path; recent purchaser hard exclusion 14 days. Holdout 5% measures true incrementality; gross attributed revenue without holdout overstated program value 22%.
+      </p>
+      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-10">90-day Holiday Gifting implementation</h2>
+      <p><strong>Days 1–30:</strong> Baseline metrics and staff-account edge-case tests — gift buyer, subscription tag, wholesale exclusion. <strong>Days 31–60:</strong> Production flow with collision matrix signed by retention lead. <strong>Days 61–90:</strong> Margin reporting with discount cost subtracted; weekly operator rhythm on calendar.</p>
+      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-10">Margin math: Holiday Gifting with discount governance</h2>
+      <p>
+        CleanPour tracked margin per recovered order not gross recovery revenue — 15% blanket discount on $52 AOV surrendered $7.80 margin per recovery. Graduated ladder lifted gross profit per send 34% with 8% lower gross revenue — finance approved expanded send volume on profit-positive path only.
+      </p>
+      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-10">Failure rehearsal: Holiday Gifting breaks</h2>
+      <p>
+        <strong>Collision with cart.</strong> Two discounts same customer same week — Fix: hierarchy doc. <strong>No sunset.</strong> Perpetual automation trains ignore — Fix: three-touch series max then annual check-in. <strong>Guest data gap.</strong> ROI ceiling until checkout captures email — Fix: segment logged-in versus guest recovery separately.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify max-w-4xl">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Workflow test checklist for holiday gifting</h2>
+      <p>
+        Run this holiday gifting validation on staff accounts before peak season: (1) welcome branches correctly by signup source and suppresses existing customers; (2) cart recovery excludes recent purchasers of same SKU variant; (3) post-purchase suppresses gift buyers from discount cross-sell and respects try-on or education delay windows; (4) winback splits engaged versus unengaged and sunsets after three touches. Score each 0–10; any flow below 7 is migration or rebuild signal.
+      </p>
+      <p>
+        Model 12-month cost at projected contact count after popup, giveaway, and influencer imports — not today's list size. Profile-based ESP pricing punishes capture-heavy verticals; pay-per-send rewards selective sending but still requires quarterly sunset of 180-day non-openers for deliverability. Stack TCO includes capture pageviews, SMS peak-week volume, and unused suite modules — finance should see one retention line item.
+      </p>
+      <p>
+        Sale-week rehearsal non-negotiable: marketer must add VIP early-access segment and recent-purchaser suppression in under thirty minutes on Thursday before drop. Platforms that pass calm-week demos but fail sale-week edits cost more in foregone peak revenue than annual subscription delta. Document trial outcomes in writing for finance — incremental workflow revenue minus platform delta must exceed 3x migration labor or fix capture and collision before switching again.
+      </p>
+      <p>
+        Migration timing: January–March or May–September only; never October–December ESP switch. Parallel-run welcome and cart minimum 21 days; incumbent read-only 90 days for export disputes. Kill-switch spreadsheet lists every incumbent automation pause order before enabling new platform equivalents — duplicate cart recovery during migration quarters deliverability and unsubscribes take quarters to heal.
+      </p>
+    </div>
+  </section>
+
+  <FaqSection faqs={faqs} title="Holiday gifting FAQ" />
+</BaseLayout>

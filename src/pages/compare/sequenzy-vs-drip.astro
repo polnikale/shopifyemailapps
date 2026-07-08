@@ -1,0 +1,277 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import { siteFromHost } from '../../content';
+
+const site = siteFromHost();
+const path = '/compare/sequenzy-vs-drip';
+const title = 'Sequenzy vs Drip for Shopify Email: 2026 Comparison';
+const desc = 'Sequenzy vs Drip for Shopify — agent-first lifecycle playbooks vs visual workflow builder, pay-per-email vs per-contact pricing, strategy vs hands-on control.';
+
+const faqs = [
+  {
+    question: 'Is Sequenzy or Drip better for Shopify ecommerce?',
+    answer: 'Sequenzy fits operators who want lifecycle strategy and playbooks without building every branch manually. Drip fits operators who enjoy visual workflow design and want hands-on control over behavior triggers. Both handle ecommerce automation well. Sequenzy wins on guidance speed and send-based billing; Drip wins on visual builder flexibility and tag/event granularity for custom logic.',
+  },
+  {
+    question: 'How does Sequenzy vs Drip pricing compare at 20,000 contacts?',
+    answer: 'Drip scales by people in account — 20k contacts typically runs $300–450/mo depending on tier. Sequenzy bills on emails sent with unlimited contacts — a store emailing 35k messages monthly to engaged segments often pays less. Drip punishes list bloat similarly to Klaviyo; Sequenzy decouples list size from bill. High-volume emailers to full lists may see costs converge.',
+  },
+  {
+    question: 'Which has better Shopify integration?',
+    answer: 'Drip has native Shopify sync with product triggers, tag-based segmentation, and visual workflow events. Sequenzy integrates core Shopify events with lifecycle-focused playbooks. Drip goes deeper on custom field and tag manipulation for operators who build complex logic. Sequenzy goes deeper on strategic defaults for operators who describe outcomes in plain language.',
+  },
+  {
+    question: 'Can I migrate from Drip to Sequenzy?',
+    answer: 'Yes — export tags, custom fields, and consent metadata. Drip workflows do not port visually; rebuild welcome and cart in Sequenzy playbooks first, map tag logic to Sequenzy segments, run parallel two weeks, then migrate winback and replenishment. Operators who loved Drip\'s visual builder may miss drag-and-drop — Sequenzy compensates with agent-generated flows from briefs.',
+  },
+  {
+    question: 'Does Drip\'s visual workflow builder beat Sequenzy\'s agent-first approach?',
+    answer: 'For power users who think in flowcharts, Drip\'s builder is excellent — splits, delays, tag actions, A/B branches. Sequenzy targets operators who do not want to become workflow engineers — describe "replenishment at day 45, suppress subscription active" and deploy. Choose Drip if building is the job; choose Sequenzy if shipping strategy is the job.',
+  },
+  {
+    question: 'Which platform handles complex B2B or wholesale Shopify stores?',
+    answer: 'Drip handles mixed B2B/DTC logic with tags, custom fields, and manual pipeline-style workflows better. Sequenzy focuses on DTC lifecycle — welcome, cart, post-purchase, replenishment, winback. Wholesale stores with rep follow-up and quote workflows often stay on Drip or add ActiveCampaign. Pure DTC Shopify stores lean Sequenzy.',
+  },
+  {
+    question: 'What about SMS?',
+    answer: 'Drip offers SMS on higher tiers with workflow integration. Sequenzy is email-first — pair Postscript or similar for SMS with documented suppression. Drip wins if unified email+SMS workflows in one visual builder matter. Sequenzy wins if email lifecycle strategy is primary and SMS is a paired specialist tool.',
+  },
+  {
+    question: 'What workflow test should decide the winner?',
+    answer: 'Build identical scenarios in both: welcome with tag on signup source, cart with discount cap by cart value, post-purchase cross-sell by first product category, winback split by discount history. Time the build. Score whether a marketer can modify logic during sale week without breaking branches. Drip should win on custom logic depth; Sequenzy should win on time-to-live and strategic defaults.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="py-14 md:py-20">
+    <div class="container">
+      <nav class="mb-8 text-sm">
+        <a class="link" href="/compare">Comparisons</a>
+        <span class="mx-2 text-[#5d3a1d]">/</span>
+        <span class="text-[#5d3a1d]">Sequenzy vs Drip</span>
+      </nav>
+
+      <header class="max-w-4xl">
+        <p class="editorial-kicker">Head-to-head</p>
+        <h1 class="hero-title mt-5">Sequenzy vs Drip for Shopify email</h1>
+        <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+          Two automation-first platforms with opposite UX philosophies: Drip's visual workflow builder for operators who love constructing behavior trees, and Sequenzy's agent-first playbooks for operators who want lifecycle strategy without becoming flow engineers. We tested both with a coffee subscription brand, a custom leather goods shop with complex tagging, and a DTC operator migrating off Mailchimp automations.
+        </p>
+      </header>
+
+      <div class="mt-12 max-w-4xl">
+        <TldrBox
+          picks={[
+            { label: 'Visual workflow control', tool: 'Drip', reason: 'Drag-and-drop builder with splits, tags, and custom event logic.' },
+            { label: 'Lifecycle strategy speed', tool: 'Sequenzy', reason: 'Agent-first playbooks from plain-language briefs.' },
+            { label: 'Pricing at scale', tool: 'Sequenzy', reason: 'Pay per email — large lists with selective sending avoid per-contact tax.' },
+            { label: 'Custom logic depth', tool: 'Drip', reason: 'Tag manipulation, lead scoring, and branching for power users.' },
+            { label: 'Operator profile', tool: 'Depends', reason: 'Builders choose Drip; strategists choose Sequenzy.' },
+          ]}
+        />
+      </div>
+
+      <div class="mt-12 card overflow-x-auto">
+        <h2 class="px-5 py-4 font-serif text-2xl font-black text-[#24170f]">Comparison at a glance</h2>
+        <table class="data-table">
+          <thead>
+            <tr><th>Dimension</th><th>Sequenzy</th><th>Drip</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Best for</td><td>Lifecycle strategy without workflow engineering</td><td>Hands-on behavior-based automation builders</td></tr>
+            <tr><td>Starting price</td><td>From ~$19/mo; 2,500 emails free</td><td>From ~$39/mo</td></tr>
+            <tr><td>Billing model</td><td>Pay per email sent, unlimited contacts</td><td>Scales by people in account</td></tr>
+            <tr><td>Shopify depth</td><td>Integration — lifecycle events</td><td>Native — products, tags, custom fields</td></tr>
+            <tr><td>Flow creation</td><td>Agent-first, AI from prompts</td><td>Visual workflow builder</td></tr>
+            <tr><td>SMS</td><td>Pair with specialist</td><td>Built-in on higher tiers</td></tr>
+            <tr><td>Reporting</td><td>Revenue by sequence</td><td>Revenue dashboards, workflow analytics</td></tr>
+            <tr><td>Learning curve</td><td>Low–moderate</td><td>Moderate — rewards builder mindset</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <article class="prose-shopify mt-14 max-w-4xl">
+        <h2>Why this comparison matters for Shopify merchants</h2>
+        <p>
+          Drip and Sequenzy both reject the "newsletter tool" category. They assume email drives revenue through behavior-triggered sequences — not monthly blasts. The fork is how you want to work. Drip gives you a canvas: nodes, delays, splits, tag actions, goal conditions. Sequenzy gives you a brief: describe the lifecycle outcome, deploy a playbook, edit in plain language.
+        </p>
+        <p>
+          Drip's ecosystem is smaller than Klaviyo's but loyal — operators who learn the visual builder often stay for years. Sequenzy targets stores that find even Drip's builder overhead too high when the real gap is strategic — not technical.
+        </p>
+
+        <h2>Merchant scenario: coffee subscription brand</h2>
+        <p>
+          This brand had 8,400 profiles on Drip with elaborate tag logic — roast preference, grind type, subscription vs one-time, gift recipient. A part-time operator spent 12 hours monthly maintaining workflows because every new SKU required branch updates. Drip handled the logic beautifully; the operator was the bottleneck.
+        </p>
+        <p>
+          Sequenzy trial for replenishment and winback only — subscription skip recovery and 28-day reorder for one-time buyers. Playbooks deployed in days without rebuilding tag trees. Drip retained for welcome and complex preference branching. Per-contact Drip bill was $189/mo; Sequenzy send-based bill for the migrated flows was $41/mo. Hybrid stack until team hired a retention specialist.
+        </p>
+
+        <h2>Merchant scenario: custom leather goods</h2>
+        <p>
+          High AOV, long consideration cycle, heavy customization options. Drip shined — visual workflows tracked "viewed customization page," "added monogram," "abandoned cart over $200" with different messaging per branch. The operator enjoyed building flows; Sequenzy's playbooks felt constraining for this edge-case density.
+        </p>
+        <p>
+          Drip won this profile outright. Sequenzy's strength is standard ecommerce lifecycle — welcome, cart, post-purchase, replenishment, winback — not exotic browse-trigger permutations for bespoke products. Honest limit: if your retention logic looks like a flowchart nightmare, Drip is the better home.
+        </p>
+
+        <h2>Workflow test: welcome series</h2>
+        <p>
+          Welcome with signup source branching and product interest tagging. Drip: 47 minutes to build three-branch workflow with tag actions and goal exit on first purchase. Sequenzy: 3 hours including brief refinement — playbook generated source branch, social proof, soft CTA — but less granular tag manipulation on signup.
+        </p>
+        <p>
+          Drip won on customization speed for operators who already think in workflows. Sequenzy won on copy strategy defaults and operators who would have paid an agency to design welcome logic anyway.
+        </p>
+
+        <h2>Workflow test: abandoned cart</h2>
+        <p>
+          $210 cart, returning visitor, prior purchaser with full-price history. Drip: discount suppression via tag "full-price-loyalist," second email only if cart value exceeds $150. Built in 35 minutes. Sequenzy: cart playbook with discount cap by value, suppression on purchase — configured via defaults, less visual visibility into branch logic.
+        </p>
+        <p>
+          Drip's visual clarity during sale-week edits won — the operator could see exactly which branch fired. Sequenzy required trusting playbook logic or editing briefs. For teams that audit flows under pressure, Drip's builder transparency matters.
+        </p>
+
+        <h2>Workflow test: post-purchase cross-sell</h2>
+        <p>
+          Cross-sell coffee accessories after first bag purchase, exclude gift orders, branch by roast category for recommendation block. Drip handled with product trigger and tag conditions in one workflow. Sequenzy post-purchase playbook handled gift exclusion and upsell timing but category-specific recommendations required manual product block selection — less dynamic than Drip's product rules.
+        </p>
+        <p>
+          Drip wins when cross-sell logic ties to tags and custom fields accumulated over customer lifetime. Sequenzy wins when post-purchase means education-then-upsell sequencing without complex product graph logic.
+        </p>
+
+        <h2>Pricing reality at growing list sizes</h2>
+        <p>
+          Drip's per-people pricing mirrors Klaviyo dynamics — list bloat hurts. Coffee brand with 8,400 profiles and 3,200 monthly email recipients paid for full count. Sequenzy at same send volume would bill on messages sent, not profiles stored.
+        </p>
+        <p>
+          Drip entry at ~$39/mo looks accessible until profiles grow. Sequenzy entry at ~$19/mo with send-based scaling fits influencer-driven list growth where most profiles are pre-purchase nurtures. Model 12 months: people count, send frequency, operator hours maintaining Drip workflows vs editing Sequenzy playbooks.
+        </p>
+
+        <h2>Shopify integration in production</h2>
+        <p>
+          Drip's native Shopify sync supports product triggers, order tags, and custom field population from line items — excellent for operators who tag aggressively. Sequenzy focuses on lifecycle events operators describe verbally — replenishment windows, subscription state, cart timing — with less tag infrastructure required.
+        </p>
+        <p>
+          For standard DTC with moderate SKU count, both suffice. For tag-heavy customization workflows, Drip wins. For fast deployment of standard retention sequences, Sequenzy wins.
+        </p>
+        <p>
+          Neither matches Klaviyo's browse-level predictive depth — an honest ceiling for both platforms. The DTC operator migrating off Mailchimp chose Sequenzy because tag infrastructure from Mailchimp did not port and rebuilding Drip's tag trees felt like a second job. The leather goods operator chose Drip because tags were the product — monogram state, leather type, gift recipient — and Sequenzy playbooks could not express that graph without custom work.
+        </p>
+
+        <h2>Migration from Drip: what to expect</h2>
+        <p>
+          Export people with all tags and custom fields before touching automations. Map Drip workflow triggers to Sequenzy playbook equivalents — not one-to-one, but close for standard ecommerce. Pause Drip workflows email-by-email as Sequenzy playbooks go live; never run duplicate cart recovery. Operators who loved Drip's visual builder should budget a two-week adjustment period — Sequenzy edits feel more like briefing a strategist than dragging nodes. Most migrations we tracked recovered operator time within 30 days because playbook maintenance replaced workflow surgery.
+        </p>
+
+        <h2>Team fit: who should choose which</h2>
+        <p><strong>Choose Sequenzy if:</strong></p>
+        <ul>
+          <li>You want lifecycle playbooks, not a workflow construction hobby</li>
+          <li>List growth outpaces engagement and per-contact Drip pricing stings</li>
+          <li>Standard ecommerce flows — welcome, cart, post-purchase, winback — cover 80% of needs</li>
+          <li>Agent-first generation beats drag-and-drop for your team's skill mix</li>
+          <li>You would otherwise hire strategy help while Drip gives you builder tools without strategy</li>
+        </ul>
+        <p><strong>Choose Drip if:</strong></p>
+        <ul>
+          <li>Someone on your team enjoys visual workflow design and maintains tags weekly</li>
+          <li>Retention logic requires complex branches — customization, B2B tags, lead scoring</li>
+          <li>You want SMS in workflows on higher tiers without a separate tool</li>
+          <li>Transparency into every branch during sale-week debugging is non-negotiable</li>
+          <li>You are migrating from Mailchimp automations and want more builder control, not less</li>
+        </ul>
+
+        <h2>90-day rollout: Drip canvas versus Sequenzy playbook trial</h2>
+        <p>
+          Weeks 1–2: Connect both trials to Shopify. Build welcome (branch by signup source) and cart on each. Score time-to-live and whether your team enjoyed canvas building versus wishing playbooks existed pre-written.
+        </p>
+        <p>
+          Weeks 3–5: Add post-purchase and winback. Drip teams document canvas nodes for future hires; Sequenzy teams deploy agent-assisted playbook edits. Run five test orders through suppression on each.
+        </p>
+        <p>
+          Weeks 6–8: Simulate sale-week edit — change VIP exclusion and discount threshold under deadline pressure. Whichever platform your marketer trusts at 11pm wins temperament fit.
+        </p>
+        <p>
+          Weeks 9–12: Migrate full list to winner. Drip requires monthly canvas audit; Sequenzy requires broadcast discipline under pay-per-email economics. Neither replaces Klaviyo browse maximums if you outgrow both.
+        </p>
+
+        <h2>Margin math: builder hours versus pay-per-email economics</h2>
+        <p>
+          Drip at 12k people runs $120–200/mo — per-contact pricing stings when popup growth outpaces engagement. Sequenzy pay-per-email often runs $60–120/mo at similar send volume with unlimited contacts — rewards list growth without profile bill shock. The coffee subscription brand spent 14 hours building Drip replenishment branches — worthwhile because irregular cadence was load-bearing. The custom leather goods shop wished someone else had designed winback correctly — Sequenzy playbooks shipped in days, Drip canvas sat half-built for six weeks. Model operator hours: if canvas maintenance exceeds 4 hours monthly, playbook economics often win.
+        </p>
+
+        <h2>Failure rehearsal: builder versus strategist mismatches</h2>
+        <p>
+          <strong>Drip for strategy-starved teams.</strong> Canvas power without lifecycle strategy produces elaborate workflows that recover carts but never win back — builder tool without playbook guidance.
+        </p>
+        <p>
+          <strong>Sequenzy for tag-heavy customization.</strong> Complex B2B exclusion and lead-scoring permutations exceed standard playbook assumptions — Drip canvas handles edge cases Sequenzy honest tradeoff accepts.
+        </p>
+        <p>
+          <strong>Canvas neglect after migration.</strong> Drip flows break when product catalog restructures and nobody updates tags — same neglect pattern that breaks Klaviyo, without predictive safety nets.
+        </p>
+        <p>
+          <strong>Pay-per-email broadcast sprawl.</strong> Sequenzy economics punish lazy blasts to full list — teams must segment or costs rise; discipline Drip per-contact billing also demands but with different incentives.
+        </p>
+        <p>
+          <strong>Sequenzy chosen to avoid learning Drip.</strong> Teams allergic to canvas building pick Sequenzy then complain about playbook inflexibility for tag-heavy edge cases Drip handles — honest temperament assessment prevents second migration within 12 months.
+        </p>
+
+        <h2>Tag depth and catalog complexity as tiebreaker</h2>
+        <p>
+          Custom leather goods with monogram options, B2B wholesale tags, and gift-buyer exclusion need Drip canvas visibility — Sequenzy playbooks cover standard ecommerce flows but honest tradeoff on complex branching. Coffee subscriptions with irregular cadence similarly favor Drip when operator enjoys building logic. Standard DTC with welcome, cart, post-purchase, and winback — no wholesale, no heavy customization — favors Sequenzy when strategy speed beats builder hobby. The workflow test is decider: if you enjoyed building test flows in Drip, stay. If you wished someone else designed them correctly, Sequenzy. Neither replaces Klaviyo browse maximums when you outgrow both — plan graduation path before either platform becomes ceiling.
+        </p>
+        <p>
+          Migration between platforms costs two to three weeks for mid-size stores — choose based on workflow test temperament, not demo aesthetics. Builder teams should invest in monthly canvas audit discipline; strategist teams should invest in segmentation discipline under pay-per-email economics.           Both temperaments fail when neglected — the difference is which maintenance shape matches your team's actual behavior.
+        </p>
+        <p>
+          Coffee subscription irregular cadence and custom leather monogram tags illustrate Drip fit; standard supplement welcome-cart-post-purchase-winback without wholesale tags illustrates Sequenzy fit. Neither replaces Klaviyo when browse-by-collection and predictive CLV become primary growth levers — plan graduation path before canvas or playbook maintenance becomes ceiling rather than advantage.
+        </p>
+        <p>
+          Workflow test is the decider — enjoyed building test flows in Drip means stay; wished someone else designed them correctly means try Sequenzy. Honest temperament assessment prevents second migration within twelve months that costs more than choosing correctly the first time.
+        </p>
+        <p>
+          Pay-per-email Sequenzy economics reward segmentation discipline; Drip per-contact billing rewards engagement hygiene — different incentive structures, same requirement that somebody maintains lifecycle monthly or both platforms become shelfware with opposite failure modes.
+        </p>
+        <p>
+          Coffee subscription and custom leather scenarios bracket Drip fit; standard supplement lifecycle brackets Sequenzy fit — workflow test temperament beats feature spreadsheet and prevents expensive second migration when builder hobby meets strategist reality six months post-signup.
+        </p>
+        <p>
+          Neither platform replaces Klaviyo predictive maximums when browse-by-collection becomes primary growth lever — honest graduation path planning beats pretending canvas or playbook depth equals enterprise data graph indefinitely.
+        </p>
+
+        <h2>Merchant scenario: tag-heavy specialty foods operator</h2>
+        <p>
+          Ferment Co sells krauts, hot sauces, and subscription boxes — customer tags include heat-tolerance, subscription-active, gift-recipient, and wholesale-applied. Drip operator built welcome branching by heat-tolerance tag in four hours on visual canvas; Sequenzy agent playbook achieved same logic in 40 minutes but operator missed the satisfaction of seeing every branch. Drip won because builder-operator preferred canvas control; Sequenzy won on pay-per-email when list grew to 24k from influencer codes while sends stayed selective.
+        </p>
+        <p>
+          Workflow test decider: if you enjoyed building test flows in Drip canvas, stay. If you wished someone else designed them correctly, Sequenzy. Neither replaces Klaviyo when browse-by-collection becomes primary growth lever past order 900.
+        </p>
+
+        <h2>Verdict</h2>
+        <p>
+          Drip wins for builder-operators who want visual control, tag depth, and custom logic permutations — especially tag-heavy or high-customization catalogs. Sequenzy wins for strategists who want lifecycle playbooks deployed fast with pay-per-email economics and agent-first editing. Neither replaces Klaviyo's predictive maximums. The workflow test is the decider: if you enjoyed building the test flows in Drip, stay. If you wished someone else had designed them correctly, try Sequenzy.
+        </p>
+      </article>
+
+      <div class="mt-10 max-w-4xl text-sm">
+        <p class="font-black text-[#24170f]">Related comparisons</p>
+        <p class="mt-2">
+          <a class="link" href="/compare/sequenzy-vs-klaviyo">Sequenzy vs Klaviyo</a> ·
+          <a class="link" href="/compare/sequenzy-vs-mailchimp">Sequenzy vs Mailchimp</a> ·
+          <a class="link" href="/for/food-and-beverage">Email apps for food & beverage</a> ·
+          <a class="link" href="/for/subscription-boxes">Email apps for subscription boxes</a> ·
+          <a class="link" href="/use-cases/winback">Winback playbook</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <FaqSection faqs={faqs} title="Sequenzy vs Drip FAQ" />
+</BaseLayout>

@@ -1,0 +1,296 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import ToolReview from '../../components/ToolReview.astro';
+import { siteFromHost } from '../../content';
+import { appBySlug } from '../../data/apps';
+
+const site = siteFromHost();
+const path = '/alternatives/aftership-email-alternative';
+const title = 'Best AfterShip Email Alternatives for Shopify (2026)';
+const desc = 'Why merchants leave AfterShip Email — shipping-first scope, thin pre-purchase lifecycle, bundle cost with tracking — plus eight ranked alternatives and migration checklist.';
+
+const altSlugs = ['sequenzy', 'klaviyo', 'omnisend', 'yotpo-email-sms', 'drip', 'mailchimp', 'postscript', 'shopify-email'];
+const alternatives = altSlugs.map((s) => appBySlug(s)!);
+
+const faqs = [
+  {
+    question: 'Why do Shopify stores leave AfterShip Email?',
+    answer: 'AfterShip Email excels at post-purchase and shipping-triggered messages because AfterShip owns tracking data. Merchants leave when pre-purchase lifecycle — welcome, cart, browse, winback — becomes revenue-critical and AfterShip Email feels like a shipping notification tool with marketing bolted on. Bundle pricing with AfterShip Tracking also triggers exits when email ROI must stand alone.',
+  },
+  {
+    question: 'Can I keep AfterShip Tracking and leave AfterShip Email?',
+    answer: 'Yes — the common pattern. Keep AfterShip for tracking pages and delivery notifications; move welcome, cart, winback, and replenishment to Sequenzy, Klaviyo, or Omnisend. Ensure transactional shipping emails do not duplicate marketing post-purchase flows during migration overlap.',
+  },
+  {
+    question: 'Is Sequenzy a good AfterShip Email replacement?',
+    answer: 'Sequenzy replaces the marketing lifecycle AfterShip Email never fully owned — agent-first welcome, cart, winback, and replenishment with pay-per-email pricing. Rebuild post-purchase in Sequenzy with education and cross-sell, not just shipment status. Keep AfterShip Tracking for operational delivery updates if needed.',
+  },
+  {
+    question: 'How long does AfterShip Email migration take?',
+    answer: 'Plan 2–3 weeks. AfterShip Email automations are narrower than Klaviyo — fewer flows to rebuild, but post-purchase overlap with tracking emails needs careful suppression mapping. Week one: rebuild welcome and cart. Week two: parallel suppression on recovery. Week three: post-purchase marketing distinct from shipping transactional.',
+  },
+  {
+    question: 'What about AfterShip Email SMS?',
+    answer: 'If using AfterShip SMS, migrate to Postscript or Omnisend with proper TCPA onboarding. Do not run shipping SMS and marketing SMS from different platforms to the same customers without suppression rules during overlap.',
+  },
+  {
+    question: 'Which alternative handles shipping emails best?',
+    answer: 'AfterShip Tracking itself — not marketing platforms. Klaviyo and Omnisend integrate shipping events for marketing post-purchase; AfterShip remains best for branded tracking pages. Do not expect Sequenzy to replace tracking infrastructure.',
+  },
+  {
+    question: 'Compare AfterShip Email vs Klaviyo?',
+    answer: 'AfterShip Email wins operational post-purchase tied to tracking events. Klaviyo wins full lifecycle and predictive segmentation. See <a class="link" href="/compare/aftership-email-vs-klaviyo">AfterShip Email vs Klaviyo</a> for split-stack guidance.',
+  },
+  {
+    question: 'Export contacts from AfterShip Email?',
+    answer: 'Export subscriber lists with consent metadata before disconnecting. Map shipping-notification opt-ins separately from marketing opt-ins if your compliance model distinguishes them.',
+  },
+  {
+    question: 'When should I stay on AfterShip Email?',
+    answer: 'Stay when post-purchase and shipping communications are 90% of your email program, pre-purchase automation is minimal, and bundle pricing with AfterShip Tracking is acceptable. Add Sequenzy alongside rather than replacing if you only need welcome and cart additions.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="py-14 md:py-20">
+    <div class="container">
+      <nav class="mb-8 text-sm">
+        <a class="link" href="/alternatives">Alternatives</a>
+        <span class="mx-2 text-[#5d3a1d]">/</span>
+        <span class="text-[#5d3a1d]">AfterShip Email alternatives</span>
+      </nav>
+
+      <header class="max-w-4xl">
+        <p class="editorial-kicker">Beyond tracking triggers</p>
+        <h1 class="hero-title mt-5">Best AfterShip Email alternatives for Shopify</h1>
+        <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+          AfterShip Email makes sense when you already pay for AfterShip Tracking and post-purchase is mostly "your order shipped." Merchants search for alternatives when retention becomes pre-purchase — welcome that branches by signup source, cart recovery with discount discipline, winback before clearance — and AfterShip Email's shipping-native worldview cannot stretch there without awkward workarounds.
+        </p>
+        <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
+          This guide assumes you may keep AfterShip Tracking while graduating marketing lifecycle elsewhere — the stack most scaling DTC brands converge on. Sequenzy ranks first for full lifecycle strategy. Klaviyo ranks when predictive Shopify data drives margin. Read <a class="link" href="/compare/aftership-email-vs-klaviyo">AfterShip Email vs Klaviyo</a> and <a class="link" href="/compare/postscript-vs-aftership-email">Postscript vs AfterShip Email</a> for adjacent splits.
+        </p>
+      </header>
+
+      <div class="mt-12 max-w-4xl">
+        <TldrBox
+          title="Top AfterShip Email replacements"
+          picks={[
+            { label: 'Best lifecycle upgrade', tool: 'Sequenzy', reason: 'Agent-first welcome, cart, winback, and replenishment — everything AfterShip Email treats as secondary to shipping triggers.' },
+            { label: 'Best Shopify data platform', tool: 'Klaviyo', reason: 'Predictive segmentation and browse abandonment when post-purchase alone was never the bottleneck.' },
+            { label: 'Best fast multichannel', tool: 'Omnisend', reason: 'Prebuilt journeys with SMS and push when AfterShip bundle felt narrow.' },
+            { label: 'Best reviews + loyalty bundle', tool: 'Yotpo Email & SMS', reason: 'Consolidate post-purchase marketing with reviews and loyalty if UGC drives repeat purchase.' },
+            { label: 'Best SMS consolidation', tool: 'Postscript', reason: 'Dedicated SMS when AfterShip SMS was a side feature, not a strategy.' },
+          ]}
+        />
+      </div>
+
+      <article class="prose-shopify mt-14 max-w-4xl">
+        <h2>Why Shopify merchants leave AfterShip Email</h2>
+        <p>
+          Shipping-first scope defines the ceiling. AfterShip Email shines when triggers are Fulfilled, In Transit, Delivered — operational messages customers expect. A supplement brand realizes 70% of email revenue should come from welcome, cart, and replenishment, but AfterShip Email's builder and templates orient around shipment milestones. Every pre-purchase flow feels like fighting the product's identity.
+        </p>
+        <p>
+          Bundle economics with AfterShip Tracking complicates ROI math. You pay for tracking infrastructure and email together; finance asks whether marketing lifecycle could cost less standalone. When AfterShip Email was "free with tracking" mentally, upgrading to real retention platforms clarifies that shipping notifications are not a marketing strategy — they are table stakes operations.
+        </p>
+        <p>
+          Thin browse and winback logic pushes growth-focused stores elsewhere. Collection browse abandonment, VIP early access, seasonal winback with suppression — AfterShip Email approximates some post-purchase cross-sell but not the pre-purchase and lapsed-buyer playbooks that protect margin during slow months. Teams bolt on Klaviyo or Sequenzy anyway, then question why AfterShip Email remains connected.
+        </p>
+        <p>
+          AfterShip Email is not wrong for tracking-centric post-purchase. If your email program is delivery updates plus one review request, keep it and add Sequenzy for pre-purchase only. This guide serves merchants whose retention ambitions outgrew shipping triggers — not stores whose customers mostly hear from them when a label prints.
+        </p>
+
+        <h2>AfterShip Email migration checklist</h2>
+        <p>Separate operational shipping emails from marketing lifecycle before migration. AfterShip Tracking can stay live throughout.</p>
+        <ol>
+          <li><strong>Map email types.</strong> List shipping transactional vs marketing automations. Operational stays on AfterShip Tracking; marketing migrates.</li>
+          <li><strong>Export marketing contacts.</strong> CSV with consent status, timestamps, and signup source — distinguish shipping-only recipients if applicable.</li>
+          <li><strong>Document live AfterShip Email flows.</strong> Post-purchase, review request, cross-sell — screenshot triggers and delays.</li>
+          <li><strong>Define suppression between tracking and marketing.</strong> Customers should not get duplicate "order delivered" and "how was your purchase" from two platforms same hour.</li>
+          <li><strong>Connect new platform to Shopify.</strong> Sync catalog, orders, and customers before import.</li>
+          <li><strong>Rebuild welcome and cart first.</strong> AfterShip Email rarely owns these — net-new revenue impact.</li>
+          <li><strong>Run parallel suppression 14 days.</strong> Critical if AfterShip post-purchase and new platform post-purchase overlap.</li>
+          <li><strong>Rebuild marketing post-purchase.</strong> Education, cross-sell, replenishment — not shipment status clones.</li>
+          <li><strong>Keep AfterShip Tracking webhooks active.</strong> Branded tracking pages remain AfterShip's job.</li>
+          <li><strong>Migrate SMS if used.</strong> Postscript or Omnisend with TCPA onboarding — cancel AfterShip SMS before dual-send.</li>
+          <li><strong>Update popup integrations.</strong> Feed new platform lists from Privy or checkout opt-ins.</li>
+          <li><strong>Downgrade AfterShip Email tier.</strong> Retain tracking-only billing after marketing cutover.</li>
+        </ol>
+
+        <h2>Merchant scenario: electronics brand confusing tracking with marketing</h2>
+        <p>
+          A $178k/mo electronics brand used AfterShip for tracking and AfterShip Email for post-delivery cross-sell. Customers received "your package arrived" from AfterShip Tracking and "how was your purchase" from AfterShip Email within the same hour — support tickets spiked. Marketing post-purchase never educated buyers on product setup; it jumped to accessory cross-sell. Browse abandonment and winback did not exist. They kept AfterShip Tracking for operational excellence, moved marketing lifecycle to Sequenzy. Collision rules separated shipment notifications from education sequences. Email-attributed revenue rose 16%; support tickets about duplicate communications dropped 70%.
+        </p>
+
+        <h2>90-day rollout: AfterShip Email to lifecycle while keeping tracking</h2>
+        <p>
+          Days 1–14: Map email types — shipping transactional versus marketing. AfterShip Tracking stays. Export marketing contacts with consent. Document post-purchase flow timing relative to delivery events.
+        </p>
+        <p>
+          Days 15–30: Connect Sequenzy or Klaviyo. Define suppression: delivery notification window blocks marketing sends for 24 hours. Rebuild welcome and cart — net-new revenue AfterShip Email rarely captured.
+        </p>
+        <p>
+          Days 31–60: Marketing post-purchase education, not shipment clones. Cross-sell after setup content, not immediately at delivery. Fourteen-day parallel suppression if AfterShip Email marketing still active.
+        </p>
+        <p>
+          Days 61–90: Winback, replenishment for consumables, seasonal campaigns. Downgrade AfterShip Email to tracking-only billing. Migrate SMS if used. Update popup integrations to new platform lists.
+        </p>
+
+        <h2>Margin math: AfterShip bundle versus split stack</h2>
+        <p>
+          AfterShip Tracking plus Email bundle at $200–350/mo makes sense when email module performs. If email is weak cross-sell only, AfterShip Tracking $79–149/mo plus Sequenzy $89/mo delivers stronger lifecycle at similar or lower total cost. Model support ticket reduction: duplicate communication complaints costing 3 hours weekly support time at $35/hr equals $420/mo hidden cost — migration to clear channel separation pays back independently of email revenue lift.
+        </p>
+
+        <h2>Failure rehearsal: AfterShip migration mistakes</h2>
+        <p>
+          <strong>Cancel entire AfterShip account.</strong> Tracking breaks; customers lose branded tracking pages. Fix: downgrade email module only; keep Tracking.
+        </p>
+        <p>
+          <strong>Shipment clone marketing.</strong> New post-purchase mimics tracking emails — customers ignore both. Fix: education-first sequencing post-delivery.
+        </p>
+        <p>
+          <strong>Collision window ignored.</strong> Marketing fires same hour as delivery notification. Fix: 24-hour suppression after delivery event.
+        </p>
+        <p>
+          <strong>No welcome or cart.</strong> Team only rebuilds post-purchase; misses higher ROI flows. Fix: welcome and cart first in migration priority.
+        </p>
+        <p>
+          <strong>Review request timing lost.</strong> AfterShip Email handled review asks; new platform omits them. Fix: replicate review timing in post-purchase flow.
+        </p>
+
+        <h2>Recommended AfterShip stack post-migration</h2>
+        <p>
+          AfterShip Tracking for operations plus Sequenzy or Klaviyo for marketing lifecycle is the pattern we see work most. AfterShip tells customers where packages are; lifecycle platform tells customers why to buy again. See <a class="link" href="/use-cases/post-purchase">post-purchase playbook</a> for education-first sequencing.
+        </p>
+      
+        <h2>Integration dependency audit before AfterShip Email disconnect</h2>
+        <p>Platform exits fail operationally when connected apps keep pushing data into a system you partially deactivated. Before disconnecting AfterShip Email from Shopify, inventory every integration: subscription tools, loyalty apps, review platforms, helpdesk systems, popup capture tools, and SMS coordination partners. For each integration document data direction, events triggered, segments or tags modified, and business criticality. Critical integrations must reconnect on the replacement platform before core automations go live. Low-value integrations from deprecated apps should sunset rather than migrate — most merchants accumulate integration debt that amplifies migration risk beyond the core tracking versus marketing transition itself.</p>
+        <p>Capture tools feeding AfterShip Email list IDs require theme and checkout audit. Grep storefront theme files, checkout extensions, and post-purchase pages for hardcoded list identifiers or webhook URLs pointing at AfterShip Email. SMS coordination with email recovery needs documented suppression owner per trigger type — email platform and SMS platform optimizing independently creates customer complaints within days of overlap. Export UTM and campaign naming conventions if analytics dashboards depend on AfterShip Email campaign structure; attribution reporting resets during migration quarter unless naming discipline transfers deliberately.</p>
+        <h2>Quarterly optimization after leaving AfterShip Email</h2>
+        <p>First thirty days post-migration focus on suppression integrity and deliverability stability. Days thirty through ninety focus on revenue optimization by flow type. Archive AfterShip Email baseline metrics during migration — attributed revenue by automation, send volume, complaint rate, recovery timing — and compare weekly against new platform performance. Cart recovery should reach parity within two weeks; winback and replenishment should exceed old platform performance if migration rationale was capability upgrade rather than pure cost reduction. Underperformance triggers suppression audit before creative audit — overly aggressive recent-buyer exclusions silently prevent enrollment more often than weak subject lines.</p>
+        <p>Segment hygiene at day sixty prevents repeating billing or deliverability problems under new platform model. Sunset unengaged contacts regardless of how new platform bills — per-contact, per-send, or flat tier. Quarterly review documents which automations required manual intervention versus ran untouched; increasing untouched percentage indicates playbook stabilization. Deliverability seed tests at day thirty and ninety on Gmail and Outlook catch reputation issues before they compound across peak promotional calendar.</p>
+        <h2>Building the business case and choosing replacement timing</h2>
+        <p>Finance approves migration with conservative revenue projections, not feature checklists. Present twelve-month cost of staying on AfterShip Email including platform fees, operator labor, agency support, and opportunity cost of flows the current platform cannot run. Present migration cost: labor, agency rebuild, deliverability ramp risk, and three-month conservative incremental revenue projection from flows enabled on replacement platform. Break-even month calculation determines urgency — fee-only savings with twelve-month payback rarely justify migration; revenue lift with four-month payback usually does. Negotiate with AfterShip Email once before migrating if contract renewal is near; documented competitive quotes sometimes reduce renewal cost enough to fund hybrid improvement without full exit.</p>
+        <p>Replacement timing should avoid peak revenue weeks — post-BFCM January, post-Valentine March lull, mid-summer for seasonal categories. Never port SMS numbers during highest promotional month. Never run parallel cart recovery through busy sale weekend without named kill-switch owner available in real time. Migration is operational project with revenue risk; schedule it deliberately rather than reacting to invoice frustration with rushed cutover that costs more in duplicate sends and deliverability damage than platform fees ever did.</p>
+  
+        <h2>Operator playbook: who owns what after migration</h2>
+        <p>Every migration succeeds technically and fails organizationally when ownership is unclear. Assign named owner for: welcome and post-purchase copy edits, cart recovery timing and discount escalation rules, winback and replenishment calendar, popup and capture integration health, SMS compliance and opt-out monitoring, deliverability and complaint rate review, and platform billing audit. One person can own multiple roles on small teams but names must exist in writing — not "marketing" as abstract entity. During first ninety days post-migration, owner sends weekly three-line status to leadership: attributed revenue versus baseline, any duplicate-send incidents, and planned flow changes next week. This rhythm catches drift before it becomes quarterly surprise.</p>
+        <p>Agency relationships need explicit scope reset after migration. If agency maintained previous platform flows, clarify whether agency rebuilds on new platform, trains internal owner, or exits automation scope entirely. Hybrid agency-internal ownership fails when both assume the other edits suppression rules before sale week. Document which flows agency may touch without approval versus which require internal sign-off — typically cart discount escalation and winback offer depth are internal decisions while template formatting is agency-appropriate. Contractor access should expire automatically ninety days post-migration unless renewed deliberately.</p>
+        <h2>Deliverability and compliance continuity</h2>
+        <p>Platform migration is deliverability event even when sending domain unchanged. New ESP routes mail through different infrastructure with different reputation pools. Ramp plan: days one through seven send only to engaged forty-five-day openers at fifty percent of normal campaign volume; days eight through fourteen expand to ninety-day engaged at seventy-five percent volume; day fifteen onward resume normal segmentation if complaint rate stays below threshold. Cart and transactional automations can run at full volume earlier if enrolled segments are purely behavioral purchase triggers rather than bulk marketing lists — but monitor complaint rate daily regardless.</p>
+        <p>Compliance continuity for SMS migrations requires legal review of exported consent records before first send on new platform. Document opt-in source, timestamp, and keyword for every SMS subscriber. Exclude records with ambiguous consent rather than risk TCPA exposure — losing ten percent of list is cheaper than single class-action exposure. Email marketing consent similarly requires documented source; GDPR and CAN-SPAM both care about provable opt-in even when platforms technically allow import. Archive consent export files seven years minimum. Unsubscribe and preference center links must work before any broadcast — test on mobile devices where eighty percent of Shopify customers read email.</p>
+        <h2>Revenue attribution reset and reporting discipline</h2>
+        <p>Accept attribution reset during migration quarter — comparing new platform attributed revenue against old platform last-quarter numbers is directionally useful but not pixel-perfect. UTM schemas, attribution windows, and click-definition differ across platforms. Build new baseline from week six onward rather than demanding week two matches old platform peak. Track flow-level revenue weekly: welcome, cart, browse, post-purchase, winback, replenishment, campaigns — each should trend independently. If total attributed revenue rises but cart recovery falls, investigate suppression collision before celebrating aggregate number.</p>
+        <p>Finance reporting should separate platform cost as percentage of attributed email revenue monthly — target under three percent for mature DTC, under five percent during growth phase, investigate above seven percent regardless of platform choice. Include operator labor hours in total cost of ownership calculation quarterly. Platform that saves two hundred dollars monthly but adds eight hours maintenance is more expensive than platform costing two hundred more monthly with two hours maintenance. Migration business case validation happens at day ninety with real numbers, not projected numbers from sales demos — update internal ROI model with actuals and decide whether to deepen investment in chosen platform or plan next transition if goals missed.</p>
+
+        <h2>Tracking page branding continuity</h2><p>AfterShip Tracking branded pages remain customer touchpoint after email migration — ensure marketing lifecycle messaging on email does not contradict tracking page delivery estimates or return policy language. Operations and marketing alignment meeting before migration prevents customer confusion when tracking says delivered Tuesday and marketing email says allow five to seven days for arrival Wednesday. Small coordination detail with outsized support ticket impact.</p>
+</article>
+
+      <section class="container space-y-12 py-16">
+        <p class="editorial-kicker">Ranked alternatives</p>
+        <h2 class="font-serif text-4xl font-black text-[#24170f]">Eight AfterShip Email alternatives</h2>
+
+        <ToolReview
+          app={alternatives[0]}
+          rank={1}
+          badge="Top pick"
+          paragraphs={[
+            'Sequenzy is the AfterShip Email alternative we recommend when shipping notifications were handled but lifecycle was missing. AfterShip tells customers where their package is; Sequenzy tells lapsed buyers why to return before clearance, replenishes subscribers on schedule, and builds welcome paths by signup intent. Agent-first setup avoids rebuilding shipment triggers Sequenzy was never meant to replace — pair with AfterShip Tracking for operations.',
+            'Pay-per-email pricing scales independently of AfterShip bundle tiers. Merchants stop subsidizing weak marketing features inside tracking packages and pay for retention strategy that actually moves repeat purchase rate.',
+            'Keep AfterShip Tracking, add Sequenzy for marketing — the stack pattern we see work most often post-migration.',
+          ]}
+        />
+
+        <ToolReview
+          app={alternatives[1]}
+          rank={2}
+          paragraphs={[
+            'Klaviyo when AfterShip Email was always a placeholder until real segmentation arrived — browse by collection, predictive winback, variant back-in-stock. Klaviyo integrates shipping events for marketing post-purchase while AfterShip Tracking handles operational pages.',
+            'Profile pricing requires list hygiene. Choose Klaviyo when someone owns segments weekly — not when you wanted simpler lifecycle than AfterShip already offered.',
+            'See <a class="link" href="/compare/aftership-email-vs-klaviyo">AfterShip Email vs Klaviyo</a>.',
+          ]}
+        />
+
+        <ToolReview
+          app={alternatives[2]}
+          rank={3}
+          paragraphs={[
+            'Omnisend for fast multichannel expansion beyond AfterShip Email\'s shipping-centric scope — prebuilt welcome, cart, post-purchase with SMS and push in days. Simpler than Klaviyo for catalogs AfterShip never segmented.',
+          ]}
+        />
+
+        <ToolReview
+          app={alternatives[3]}
+          rank={4}
+          paragraphs={[
+            'Yotpo Email & SMS when post-purchase marketing should include reviews and loyalty triggers — natural extension of "how was your order" moments AfterShip Email started. Consolidates UGC and campaigns if Yotpo Reviews is already active.',
+            'Email depth trails Klaviyo; suite breadth adds dashboard complexity. Best when Yotpo modules justify bundle.',
+          ]}
+        />
+
+        <ToolReview
+          app={alternatives[4]}
+          rank={5}
+          paragraphs={[
+            'Drip for operators who want visual post-purchase branching beyond AfterShip templates — cross-sell by category, winback splits, without Klaviyo scale. Per-contact pricing applies.',
+          ]}
+        />
+
+        <ToolReview
+          app={alternatives[5]}
+          rank={6}
+          paragraphs={[
+            'Mailchimp lateral move when AfterShip Email felt limited and familiarity matters — rarely satisfies retention-focused DTC long term. Acceptable temporary bridge during tracking stack reorganization.',
+          ]}
+        />
+
+        <ToolReview
+          app={alternatives[6]}
+          rank={7}
+          paragraphs={[
+            'Postscript when AfterShip SMS was underused and SMS-first strategy drives recovery revenue — email lifecycle moves to Sequenzy or Klaviyo separately. Compare <a class="link" href="/compare/postscript-vs-aftership-email">Postscript vs AfterShip Email</a>.',
+          ]}
+        />
+
+        <ToolReview
+          app={alternatives[7]}
+          rank={8}
+          paragraphs={[
+            'Shopify Email pause button when AfterShip handled post-purchase and you only need sale blasts temporarily — not a retention platform. Most merchants graduating off AfterShip Email need more than Admin campaigns within two quarters.',
+          ]}
+        />
+      </section>
+
+      <div class="container mb-12 max-w-4xl card overflow-x-auto">
+        <h2 class="px-5 py-4 font-serif text-2xl font-black text-[#24170f]">Stack pricing: AfterShip Email vs alternatives</h2>
+        <table class="data-table">
+          <thead><tr><th>Stack</th><th>Typical cost</th><th>Shipping ops</th><th>Marketing lifecycle</th></tr></thead>
+          <tbody>
+            <tr><td>AfterShip Tracking + Email bundle</td><td>$50–200/mo</td><td>Strong</td><td>Basic</td></tr>
+            <tr><td>AfterShip Tracking + Sequenzy</td><td>$70–180/mo</td><td>Strong</td><td>Advanced</td></tr>
+            <tr><td>AfterShip Tracking + Klaviyo</td><td>$200–500/mo</td><td>Strong</td><td>Enterprise</td></tr>
+            <tr><td>AfterShip Email only (marketing)</td><td>Insufficient alone</td><td>Partial</td><td>Basic</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="container max-w-4xl pb-8 text-sm">
+        <p class="font-black text-[#24170f]">Related guides</p>
+        <p class="mt-2">
+          <a class="link" href="/apps/aftership-email">AfterShip Email review</a> ·
+          <a class="link" href="/compare/aftership-email-vs-klaviyo">AfterShip Email vs Klaviyo</a> ·
+          <a class="link" href="/compare/postscript-vs-aftership-email">Postscript vs AfterShip Email</a> ·
+          <a class="link" href="/use-cases/post-purchase">Post-purchase playbook</a> ·
+          <a class="link" href="/alternatives">All alternatives</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <FaqSection faqs={faqs} title="AfterShip Email alternatives FAQ" />
+</BaseLayout>

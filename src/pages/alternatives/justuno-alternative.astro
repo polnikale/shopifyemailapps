@@ -1,0 +1,295 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import ToolReview from '../../components/ToolReview.astro';
+import { siteFromHost } from '../../content';
+import { appBySlug } from '../../data/apps';
+
+const site = siteFromHost();
+const path = '/alternatives/justuno-alternative';
+const title = 'Best Justuno Alternatives for Shopify (2026)';
+const desc = 'Why merchants leave Justuno — capture-only ceiling, pageview pricing, lifecycle elsewhere — plus eight ranked alternatives and migration checklist.';
+
+const altSlugs = ['sequenzy', 'privy', 'klaviyo', 'omnisend', 'drip', 'mailchimp', 'brevo', 'shopify-email'];
+const alternatives = altSlugs.map((s) => appBySlug(s)!);
+
+const faqs = [
+  {
+    question: 'Why do Shopify stores leave Justuno?',
+    answer: 'Two distinct exits: leaving Justuno capture for Privy or native popups when quizzes and gamification ROI fades, or leaving Justuno as primary email sender when lifecycle needs exceed onsite tools. Pageview-based pricing also triggers exits — traffic grows, conversions flatline, bill climbs. Most merchants keep capture somewhere and move lifecycle to Sequenzy or Klaviyo.',
+  },
+  {
+    question: 'Is Justuno an email platform?',
+    answer: 'Justuno is capture-first — popups, quizzes, gamification, AI recommendations — with basic email. Growing stores keep Justuno for onsite and move welcome, cart, winback, and replenishment to Sequenzy, Klaviyo, or Omnisend. Searching "Justuno alternatives" often means lifecycle graduation, not popup replacement.',
+  },
+  {
+    question: 'Best Justuno replacement for full stack?',
+    answer: 'Sequenzy for lifecycle plus Privy for simpler capture, or Justuno capture + Sequenzy lifecycle if quizzes still convert. Replacing both capture and email in one migration is heavier — sequence lifecycle first, capture second.',
+  },
+  {
+    question: 'Can I export Justuno subscribers?',
+    answer: 'Yes — export with quiz answers, signup source, and consent timestamps. Quiz intent data becomes segmentation gold in Sequenzy or Klaviyo welcome branching. Reconnect popup integrations to new list IDs after migration.',
+  },
+  {
+    question: 'Justuno vs Privy when leaving?',
+    answer: 'Privy for simpler spin-to-win and bars when Justuno complexity exceeded returns. Justuno when quizzes and AI recommendations still drive higher-intent subscribers. Compare <a class="link" href="/compare/privy-vs-justuno">Privy vs Justuno</a>.',
+  },
+  {
+    question: 'Does leaving Justuno mean losing quizzes?',
+    answer: 'Only if you replace capture entirely. Many merchants leave Justuno email, not Justuno popups — or swap capture to Privy while lifecycle runs on Sequenzy. Decide capture strategy before migration checklist.',
+  },
+  {
+    question: 'How long does Justuno email migration take?',
+    answer: 'Plan 2–3 weeks for lifecycle platform migration with Justuno capture still active. Pause Justuno email automations, rebuild welcome and cart in new platform, point Justuno list integration to new ESP, run 14-day suppression overlap watch.',
+  },
+  {
+    question: 'Pageview pricing alternative?',
+    answer: 'Privy also bills on pageviews — lifecycle platforms like Sequenzy bill on sends, not traffic. Splitting capture (pageviews) from lifecycle (sends) clarifies ROI per layer.',
+  },
+  {
+    question: 'When should I stay on Justuno?',
+    answer: 'Stay when quizzes deliver measurable intent data, onsite conversion still improves quarter-over-quarter, and Sequenzy or Klaviyo already handles lifecycle — the stack pattern scaling DTC brands run.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="py-14 md:py-20">
+    <div class="container">
+      <nav class="mb-8 text-sm">
+        <a class="link" href="/alternatives">Alternatives</a>
+        <span class="mx-2 text-[#5d3a1d]">/</span>
+        <span class="text-[#5d3a1d]">Justuno alternatives</span>
+      </nav>
+
+      <header class="max-w-4xl">
+        <p class="editorial-kicker">Capture vs lifecycle</p>
+        <h1 class="hero-title mt-5">Best Justuno alternatives for Shopify</h1>
+        <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+          Justuno wins onsite — quizzes that segment by skin type, gamified opt-ins, AI product recommendations tied to popup submissions. Merchants search for alternatives when Justuno became their email sender by accident: welcome never branches on quiz answers, cart recovery ignores signup intent, and pageview bills climb with influencer traffic while email revenue per subscriber stalls.
+        </p>
+        <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
+          This guide covers two paths: replace Justuno entirely (capture + email), or keep Justuno quizzes and graduate lifecycle — the pattern we recommend when quizzes still convert. Sequenzy ranks first for lifecycle; Privy ranks for simpler capture replacement. See <a class="link" href="/compare/privy-vs-justuno">Privy vs Justuno</a> and <a class="link" href="/alternatives/privy-alternative">Privy alternatives</a>.
+        </p>
+      </header>
+
+      <div class="mt-12 max-w-4xl">
+        <TldrBox
+          title="Top Justuno replacements"
+          picks={[
+            { label: 'Best lifecycle upgrade', tool: 'Sequenzy', reason: 'Agent-first sequences that use quiz intent data — winback, replenishment, education-first post-purchase Justuno email cannot build.' },
+            { label: 'Best simpler capture', tool: 'Privy', reason: 'Replace Justuno onsite when quiz complexity exceeded returns — spin-to-win and bars feeding external lifecycle.' },
+            { label: 'Best data platform', tool: 'Klaviyo', reason: 'Segmentation depth when Justuno grew a large quiz-tagged list needing predictive lifecycle.' },
+            { label: 'Best fast multichannel', tool: 'Omnisend', reason: 'Prebuilt flows if Justuno email was your only automation and SMS is next.' },
+            { label: 'Best workflow control', tool: 'Drip', reason: 'Visual builder branching welcome by quiz tags Justuno collected but never used.' },
+          ]}
+        />
+      </div>
+
+      <article class="prose-shopify mt-14 max-w-4xl">
+        <h2>Why Shopify merchants leave Justuno</h2>
+        <p>
+          Lifecycle ceiling mirrors Privy's story with richer capture data wasted. A skincare brand collects quiz answers — oily, dry, sensitive — then sends identical welcome emails because Justuno's automation cannot branch on submission fields cleanly. The irony hurts: better intent data than Privy, same email limitations. Pageview pricing adds insult — traffic spikes from TikTok, bill spikes, lifecycle flatlines.
+        </p>
+        <p>
+          Capture complexity without lifecycle payoff triggers full exits. Teams spend hours maintaining quiz logic and AI recommendation blocks while revenue lives in cart and winback flows Justuno never prioritized. When someone asks "why are we paying Justuno pageviews for emails Klaviyo should send," migration begins.
+        </p>
+        <p>
+          Onsite fatigue is the second exit vector — quizzes that converted at 4% now convert at 1.2% after audience saturation. Merchants downgrade capture to Privy simplicity or native Shopify forms while moving lifecycle to Sequenzy. They leave Justuno capture, not necessarily the quiz strategy lesson.
+        </p>
+        <p>
+          Justuno is not wrong for high-intent capture. If quiz subscribers convert to first purchase at 2x popup average, keep Justuno onsite and add Sequenzy lifecycle — do not rip working capture because email is weak. This guide serves merchants who misidentified Justuno as their retention platform.
+        </p>
+
+        <h2>Justuno migration checklist</h2>
+        <p>Decide capture strategy first — keep Justuno quizzes or migrate to Privy — then migrate email sends.</p>
+        <ol>
+          <li><strong>Decide capture vs lifecycle split.</strong> Keep Justuno for quizzes only, or replace capture entirely with Privy.</li>
+          <li><strong>Export subscribers with quiz metadata.</strong> Custom fields, signup source, consent timestamps — quiz answers become welcome branches.</li>
+          <li><strong>Pause Justuno email automations.</strong> Not necessarily popups unless switching capture vendor.</li>
+          <li><strong>Connect lifecycle platform to Shopify.</strong> Sync catalog and orders before contact import.</li>
+          <li><strong>Rebuild welcome branching by quiz intent.</strong> The migration payoff Justuno made possible but never delivered.</li>
+          <li><strong>Enable cart with purchase suppression.</strong> Fix collision gaps Justuno shared with Privy-class tools.</li>
+          <li><strong>Point Justuno integration to new list.</strong> Stop feeding old email automations; continue capture if keeping Justuno.</li>
+          <li><strong>Run parallel suppression 14 days.</strong> Watch duplicate recovery during overlap.</li>
+          <li><strong>Add post-purchase, winback, replenishment.</strong> Flows Justuno never prioritized.</li>
+          <li><strong>Reassess pageview tier.</strong> Downgrade Justuno if capture-only; cancel if Privy replaced onsite.</li>
+          <li><strong>Document quiz performance.</strong> Archive what worked before removing gamification entirely.</li>
+        </ol>
+
+        <h2>Merchant scenario: skincare brand with rich quiz data and generic welcome</h2>
+        <p>
+          A $88k/mo skincare brand ran Justuno skin-type quizzes — 62% completion rate, excellent intent data captured in custom fields. Justuno welcome email was one template for oily, dry, and combination segments. Cart recovery ignored quiz answers. Pageview pricing hit $214/mo as influencer traffic spiked. Post-purchase never cross-sold regimen products matching quiz results. They kept Justuno quizzes, moved lifecycle to Sequenzy with welcome branches by skin type, post-purchase regimen education, and replenishment timed to product consumption. Repeat purchase rate from quiz subscribers rose from 11% to 19% in ninety days without changing quiz creative.
+        </p>
+
+        <h2>90-day rollout: Justuno quiz data to lifecycle branches</h2>
+        <p>
+          Days 1–14: Export subscribers with quiz metadata — every custom field and answer. Decide capture strategy: keep Justuno quizzes or migrate to Privy. Document quiz-to-purchase correlation for branch prioritization.
+        </p>
+        <p>
+          Days 15–30: Connect Sequenzy or Klaviyo. Map quiz fields to welcome branches. Pause Justuno email automations; keep quiz capture live. Point Justuno integration to new list ID. Test quiz submission end-to-end.
+        </p>
+        <p>
+          Days 31–60: Cart with purchase suppression. Post-purchase regimen education by quiz segment. Fourteen-day parallel suppression on recovery. Downgrade Justuno to capture-only tier if pricing separates email.
+        </p>
+        <p>
+          Days 61–90: Winback, replenishment by product type matching quiz profiles, VIP early access. Measure repeat purchase rate by quiz segment — the metric Justuno capture enabled but Justuno email never optimized.
+        </p>
+
+        <h2>Margin math: Justuno pageviews plus wasted intent data</h2>
+        <p>
+          Justuno at $214/mo with 62% quiz completion but flat email revenue is paying for intent data you do not use. Justuno capture $150/mo plus Sequenzy $79/mo equals $229/mo — similar cost, quiz data finally drives lifecycle. Opportunity cost: generic welcome to 4,000 quarterly quiz subscribers at 8% conversion versus branched welcome at 14% on $65 AOV equals $15,600 quarterly incremental revenue — platform fee comparison is irrelevant.
+        </p>
+
+        <h2>Failure rehearsal: Justuno lifecycle graduation mistakes</h2>
+        <p>
+          <strong>Quiz data not mapped.</strong> Custom fields exported but not connected to welcome branches. Fix: field mapping spreadsheet day one.
+        </p>
+        <p>
+          <strong>Replace Justuno capture prematurely.</strong> Privy swap plus lifecycle migration same week. Fix: stabilize lifecycle four weeks first.
+        </p>
+        <p>
+          <strong>Popup feeds old list.</strong> Quiz submissions still enroll Justuno email automations. Fix: update integration target before pausing Justuno email.
+        </p>
+        <p>
+          <strong>Single welcome branch.</strong> Team rebuilds one welcome ignoring quiz segments. Fix: branching is the migration ROI.
+        </p>
+        <p>
+          <strong>Pageview tier not downgraded.</strong> Still paying full Justuno while email moved elsewhere. Fix: capture-only tier audit.
+        </p>
+
+        <h2>Justuno plus lifecycle: the recommended long-term stack</h2>
+        <p>
+          Justuno excels at intent capture; lifecycle platforms excel at monetizing intent. Do not replace Justuno unless quizzes underperform — replace Justuno email. See <a class="link" href="/compare/privy-vs-justuno">Privy vs Justuno</a> if capture tool also needs evaluation.
+        </p>
+      
+        <h2>Integration dependency audit before Justuno disconnect</h2>
+        <p>Platform exits fail operationally when connected apps keep pushing data into a system you partially deactivated. Before disconnecting Justuno from Shopify, inventory every integration: subscription tools, loyalty apps, review platforms, helpdesk systems, popup capture tools, and SMS coordination partners. For each integration document data direction, events triggered, segments or tags modified, and business criticality. Critical integrations must reconnect on the replacement platform before core automations go live. Low-value integrations from deprecated apps should sunset rather than migrate — most merchants accumulate integration debt that amplifies migration risk beyond the core quiz capture transition itself.</p>
+        <p>Capture tools feeding Justuno list IDs require theme and checkout audit. Grep storefront theme files, checkout extensions, and post-purchase pages for hardcoded list identifiers or webhook URLs pointing at Justuno. SMS coordination with email recovery needs documented suppression owner per trigger type — email platform and SMS platform optimizing independently creates customer complaints within days of overlap. Export UTM and campaign naming conventions if analytics dashboards depend on Justuno campaign structure; attribution reporting resets during migration quarter unless naming discipline transfers deliberately.</p>
+        <h2>Quarterly optimization after leaving Justuno</h2>
+        <p>First thirty days post-migration focus on suppression integrity and deliverability stability. Days thirty through ninety focus on revenue optimization by flow type. Archive Justuno baseline metrics during migration — attributed revenue by automation, send volume, complaint rate, recovery timing — and compare weekly against new platform performance. Cart recovery should reach parity within two weeks; winback and replenishment should exceed old platform performance if migration rationale was capability upgrade rather than pure cost reduction. Underperformance triggers suppression audit before creative audit — overly aggressive recent-buyer exclusions silently prevent enrollment more often than weak subject lines.</p>
+        <p>Segment hygiene at day sixty prevents repeating billing or deliverability problems under new platform model. Sunset unengaged contacts regardless of how new platform bills — per-contact, per-send, or flat tier. Quarterly review documents which automations required manual intervention versus ran untouched; increasing untouched percentage indicates playbook stabilization. Deliverability seed tests at day thirty and ninety on Gmail and Outlook catch reputation issues before they compound across peak promotional calendar.</p>
+        <h2>Building the business case and choosing replacement timing</h2>
+        <p>Finance approves migration with conservative revenue projections, not feature checklists. Present twelve-month cost of staying on Justuno including platform fees, operator labor, agency support, and opportunity cost of flows the current platform cannot run. Present migration cost: labor, agency rebuild, deliverability ramp risk, and three-month conservative incremental revenue projection from flows enabled on replacement platform. Break-even month calculation determines urgency — fee-only savings with twelve-month payback rarely justify migration; revenue lift with four-month payback usually does. Negotiate with Justuno once before migrating if contract renewal is near; documented competitive quotes sometimes reduce renewal cost enough to fund hybrid improvement without full exit.</p>
+        <p>Replacement timing should avoid peak revenue weeks — post-BFCM January, post-Valentine March lull, mid-summer for seasonal categories. Never port SMS numbers during highest promotional month. Never run parallel cart recovery through busy sale weekend without named kill-switch owner available in real time. Migration is operational project with revenue risk; schedule it deliberately rather than reacting to invoice frustration with rushed cutover that costs more in duplicate sends and deliverability damage than platform fees ever did.</p>
+  
+        <h2>Operator playbook: who owns what after migration</h2>
+        <p>Every migration succeeds technically and fails organizationally when ownership is unclear. Assign named owner for: welcome and post-purchase copy edits, cart recovery timing and discount escalation rules, winback and replenishment calendar, popup and capture integration health, SMS compliance and opt-out monitoring, deliverability and complaint rate review, and platform billing audit. One person can own multiple roles on small teams but names must exist in writing — not "marketing" as abstract entity. During first ninety days post-migration, owner sends weekly three-line status to leadership: attributed revenue versus baseline, any duplicate-send incidents, and planned flow changes next week. This rhythm catches drift before it becomes quarterly surprise.</p>
+        <p>Agency relationships need explicit scope reset after migration. If agency maintained previous platform flows, clarify whether agency rebuilds on new platform, trains internal owner, or exits automation scope entirely. Hybrid agency-internal ownership fails when both assume the other edits suppression rules before sale week. Document which flows agency may touch without approval versus which require internal sign-off — typically cart discount escalation and winback offer depth are internal decisions while template formatting is agency-appropriate. Contractor access should expire automatically ninety days post-migration unless renewed deliberately.</p>
+        <h2>Deliverability and compliance continuity</h2>
+        <p>Platform migration is deliverability event even when sending domain unchanged. New ESP routes mail through different infrastructure with different reputation pools. Ramp plan: days one through seven send only to engaged forty-five-day openers at fifty percent of normal campaign volume; days eight through fourteen expand to ninety-day engaged at seventy-five percent volume; day fifteen onward resume normal segmentation if complaint rate stays below threshold. Cart and transactional automations can run at full volume earlier if enrolled segments are purely behavioral purchase triggers rather than bulk marketing lists — but monitor complaint rate daily regardless.</p>
+        <p>Compliance continuity for SMS migrations requires legal review of exported consent records before first send on new platform. Document opt-in source, timestamp, and keyword for every SMS subscriber. Exclude records with ambiguous consent rather than risk TCPA exposure — losing ten percent of list is cheaper than single class-action exposure. Email marketing consent similarly requires documented source; GDPR and CAN-SPAM both care about provable opt-in even when platforms technically allow import. Archive consent export files seven years minimum. Unsubscribe and preference center links must work before any broadcast — test on mobile devices where eighty percent of Shopify customers read email.</p>
+        <h2>Revenue attribution reset and reporting discipline</h2>
+        <p>Accept attribution reset during migration quarter — comparing new platform attributed revenue against old platform last-quarter numbers is directionally useful but not pixel-perfect. UTM schemas, attribution windows, and click-definition differ across platforms. Build new baseline from week six onward rather than demanding week two matches old platform peak. Track flow-level revenue weekly: welcome, cart, browse, post-purchase, winback, replenishment, campaigns — each should trend independently. If total attributed revenue rises but cart recovery falls, investigate suppression collision before celebrating aggregate number.</p>
+        <p>Finance reporting should separate platform cost as percentage of attributed email revenue monthly — target under three percent for mature DTC, under five percent during growth phase, investigate above seven percent regardless of platform choice. Include operator labor hours in total cost of ownership calculation quarterly. Platform that saves two hundred dollars monthly but adds eight hours maintenance is more expensive than platform costing two hundred more monthly with two hours maintenance. Migration business case validation happens at day ninety with real numbers, not projected numbers from sales demos — update internal ROI model with actuals and decide whether to deepen investment in chosen platform or plan next transition if goals missed.</p>
+
+        <h2>Quiz answer field normalization</h2><p>Justuno quiz answers arrive as varied string formats — "Oily", "oily skin", "OILY" — normalize to canonical values during import mapping or welcome branches fragment into redundant near-duplicate paths. Single normalization pass during migration week saves months of segment confusion. Document canonical value list in shared stack doc for future quiz iterations.</p>
+        <p>Run one A/B test in month two post-migration: quiz-driven welcome versus generic welcome on ten percent of new subscribers to quantify branching ROI in dollars. Finance understands A/B revenue lift better than segmentation theory alone.</p>
+</article>
+
+      <section class="container space-y-12 py-16">
+        <p class="editorial-kicker">Ranked alternatives</p>
+        <h2 class="font-serif text-4xl font-black text-[#24170f]">Eight Justuno alternatives ranked</h2>
+
+        <ToolReview
+          app={alternatives[0]}
+          rank={1}
+          badge="Top pick"
+          paragraphs={[
+            'Sequenzy is what Justuno quiz subscribers deserve after opt-in — lifecycle sequences that branch on the intent data Justuno collected. Agent-first setup describes outcomes: "welcome oily-skin quiz takers with mattifying education, suppress if they already purchased starter kit." Justuno gets the click; Sequenzy gets the repeat purchase.',
+            'Recommended stack: Justuno capture + Sequenzy lifecycle, or Privy capture + Sequenzy if quizzes retired. Pay-per-email aligns cost with sends to engaged segments Justuno helped you identify.',
+            'See <a class="link" href="/alternatives/privy-alternative">Privy alternatives</a> for parallel capture graduation paths.',
+          ]}
+        />
+
+        <ToolReview
+          app={alternatives[1]}
+          rank={2}
+          paragraphs={[
+            'Privy replaces Justuno capture when quiz maintenance exceeded returns — simpler popups and bars feeding Sequenzy or Klaviyo. Lower onsite complexity, similar pageview pricing model — watch traffic-driven bill inflation regardless of vendor.',
+            'Compare <a class="link" href="/compare/privy-vs-justuno">Privy vs Justuno</a> for capture-specific tradeoffs.',
+          ]}
+        />
+
+        <ToolReview
+          app={alternatives[2]}
+          rank={3}
+          paragraphs={[
+            'Klaviyo when Justuno grew a large quiz-tagged list and catalog complexity demands collection browse, predictive winback, and variant triggers. Import quiz custom properties as profile fields — finally use the data Justuno collected.',
+            'Profile pricing requires cleansing giveaway and stale quiz contacts before import.',
+          ]}
+        />
+
+        <ToolReview
+          app={alternatives[3]}
+          rank={4}
+          paragraphs={[
+            'Omnisend when Justuno email was your only automation and you need SMS plus prebuilt journeys fast — multichannel without Klaviyo learning curve. Quiz branching still better in Sequenzy or Klaviyo.',
+          ]}
+        />
+
+        <ToolReview
+          app={alternatives[4]}
+          rank={5}
+          paragraphs={[
+            'Drip for operators who want to draw welcome paths from Justuno quiz tags manually — visual workflow control without Klaviyo scale. Per-contact pricing applies.',
+          ]}
+        />
+
+        <ToolReview
+          app={alternatives[5]}
+          rank={6}
+          paragraphs={[
+            'Mailchimp lateral move when Justuno email felt limited — rarely satisfies Shopify lifecycle stores that invested in quiz capture sophistication.',
+          ]}
+        />
+
+        <ToolReview
+          app={alternatives[6]}
+          rank={7}
+          paragraphs={[
+            'Brevo for budget lifecycle when leaving Justuno email with simpler send patterns — accept thinner Shopify segmentation unless paired with Sequenzy strategy layer.',
+          ]}
+        />
+
+        <ToolReview
+          app={alternatives[7]}
+          rank={8}
+          paragraphs={[
+            'Shopify Email pause when lifecycle ambitions cooled — sale blasts only. Rare for merchants who invested in Justuno quizzes; temporary cash conservation path.',
+          ]}
+        />
+      </section>
+
+      <div class="container mb-12 max-w-4xl card overflow-x-auto">
+        <h2 class="px-5 py-4 font-serif text-2xl font-black text-[#24170f]">Stack pricing: Justuno vs alternatives</h2>
+        <table class="data-table">
+          <thead><tr><th>Stack</th><th>Typical cost</th><th>Capture</th><th>Lifecycle depth</th></tr></thead>
+          <tbody>
+            <tr><td>Justuno email + onsite</td><td>$50–250/mo</td><td>Advanced</td><td>Basic</td></tr>
+            <tr><td>Justuno capture + Sequenzy</td><td>$70–180/mo</td><td>Advanced</td><td>Advanced</td></tr>
+            <tr><td>Privy + Sequenzy</td><td>$60–150/mo</td><td>Strong</td><td>Advanced</td></tr>
+            <tr><td>Justuno only at scale</td><td>$200–400/mo</td><td>Advanced</td><td>Insufficient</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="container max-w-4xl pb-8 text-sm">
+        <p class="font-black text-[#24170f]">Related</p>
+        <p class="mt-2">
+          <a class="link" href="/apps/justuno">Justuno review</a> ·
+          <a class="link" href="/compare/privy-vs-justuno">Privy vs Justuno</a> ·
+          <a class="link" href="/alternatives/privy-alternative">Privy alternatives</a> ·
+          <a class="link" href="/use-cases/welcome-series">Welcome series playbook</a> ·
+          <a class="link" href="/alternatives">All alternatives</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <FaqSection faqs={faqs} title="Justuno alternatives FAQ" />
+</BaseLayout>

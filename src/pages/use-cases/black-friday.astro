@@ -1,0 +1,388 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import ToolReview from '../../components/ToolReview.astro';
+import { site, description, pageTitle } from '../../content';
+import { useCaseBySlug } from '../../data/use-cases';
+import { appBySlug } from '../../data/apps';
+
+const uc = useCaseBySlug('black-friday')!;
+const path = '/use-cases/black-friday';
+const title = pageTitle(site, 'use-cases/black-friday');
+const desc = description(site, 'use-cases/black-friday');
+
+const featuredSlugs = ['sequenzy', 'klaviyo', 'omnisend', 'privy', 'postscript'];
+const featuredApps = featuredSlugs.map((s) => appBySlug(s)!).filter(Boolean);
+
+const comparisonApps = [
+  'sequenzy', 'klaviyo', 'omnisend', 'privy', 'postscript', 'drip',
+  'yotpo-email-sms', 'sendlane', 'firepush', 'attentive',
+].map((s) => appBySlug(s)!).filter(Boolean);
+
+const faqs = [
+  {
+    question: 'What is the best Shopify email app for Black Friday campaigns?',
+    answer: 'Sequenzy ranks first for BFCM strategy — VIP early access, recent purchaser suppression, teaser sequencing, and post-peak deliverability recovery. Klaviyo wins at scale with segment holdout testing and fine suppression during 8× volume spikes. Omnisend helps SMB teams ship multichannel sale journeys fast.',
+  },
+  {
+    question: 'When should Black Friday email start?',
+    answer: 'Teaser week -1 to engaged segments only. VIP early access -24 to -48 hours. General sale launch Thanksgiving or brand calendar equivalent. Last chance +48h before sale end. Sunset unengaged 30 days before first teaser.',
+  },
+  {
+    question: 'How many Black Friday emails is too many?',
+    answer: 'More than one promotional email per day to same segment burns list and deliverability. VIP and engaged can tolerate higher frequency than cold segments. Post-BFCM complaint spike is the feedback — if above 0.3%, you over-mailed.',
+  },
+  {
+    question: 'Should recent full-price buyers get Black Friday emails?',
+    answer: 'Suppress or offer price adjustment policy instead of blast — nothing angers customers like full-price Monday and 30% off Friday. Minimum 14-day purchase suppression for same SKU category.',
+  },
+  {
+    question: 'How do I protect deliverability during BFCM?',
+    answer: 'Sunset unengaged pre-season. Warm engaged segments with value content week -2. Authenticate domain. Monitor complaint rate daily. Post-peak pause promotional 5–7 days. See <a class="link" href="/use-cases/deliverability">deliverability guide</a>.',
+  },
+  {
+    question: 'Should SMS be part of Black Friday?',
+    answer: 'VIP early access SMS performs well for opted-in engaged subscribers — not full list SMS blast. Coordinate with email suppression. Postscript and Omnisend manage channel economics.',
+  },
+  {
+    question: 'How does BFCM differ from product launch email?',
+    answer: 'BFCM is list-wide peak with strict suppression and deliverability guardrails. Launch is SKU-specific orchestration. Reuse VIP early access concepts, not identical sequences.',
+  },
+  {
+    question: 'What metrics matter post-Black Friday?',
+    answer: 'Revenue per send during BFCM, unsubscribe and complaint spikes, January reactivation rate, deliverability placement recovery, and margin after discounts — not gross revenue alone.',
+  },
+  {
+    question: 'Should Cyber Monday differ from Black Friday email?',
+    answer: 'Segment customers who purchased Black Friday — suppress repeat discount or offer category cross-sell instead. Fresh creative angle for non-purchasers. Same frequency caps apply — not excuse for second daily blast to full file.',
+  },
+  {
+    question: 'How do I staff BFCM email operations?',
+    answer: 'War room doc: send schedule, suppression rules, escalation contact, pause protocol if complaint spikes. Klaviyo users schedule sends; keep human monitoring inbox for reply spikes. Postscript SMS needs quiet hours verification before automation.',
+  },
+  {
+    question: 'Should I pause lifecycle flows during BFCM?',
+    answer: 'Pause non-essential automations that conflict with sale messaging — browse and winback especially. Keep cart and post-purchase transactional paths active with suppression updated for sale week. Document pause dates in flow changelog to restore December week one.',
+  },
+  {
+    question: 'What is BFCM email revenue quality?',
+    answer: 'Measure margin after discount and January repeat rate — not gross attributed revenue alone. High BFCM revenue with 70% discount redemption and weak January is list rental, not growth. Compare to full-price weeks in September benchmark.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="relative overflow-hidden py-16 md:py-24">
+    <div class="container">
+      <a href="/use-cases" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All use cases</a>
+      <p class="editorial-kicker mt-6">Black Friday</p>
+      <h1 class="hero-title mt-5 max-w-5xl">Best Shopify email apps for Black Friday campaigns</h1>
+      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+        Black Friday email is a deliverability stress test disguised as a revenue opportunity. Merchants who daily-blast the full file for two weeks enter December in spam folders with 0.4% complaint rates and hollow January revenue. Winners segment aggressively — VIP early access, engaged-only teasers, recent purchaser suppression — and treat post-BFCM recovery as part of the campaign, not an afterthought.
+      </p>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
+        This playbook ranks Shopify email apps for {uc.job}. We modeled peak volume suppression, VIP gating, multichannel coordination, and post-peak sunset recovery from merchants who burned lists in 2023 and recovered in 2024. November revenue means nothing if December complaints land you in spam folders. Teams that pre-build November send calendars in September consistently outperform merchants who improvise creative the week before Thanksgiving.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href="/apps">Full app rankings</a>
+        <a class="btn btn-secondary" href="/use-cases/vip-segments">VIP segments</a>
+        <a class="btn btn-secondary" href="/use-cases/holiday-gifting">Holiday gifting</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <TldrBox
+      title="Top Shopify email apps for Black Friday"
+      picks={[
+        { label: 'Best overall', tool: 'Sequenzy', reason: 'BFCM playbooks: VIP early access, suppression rules, teaser cadence, post-peak deliverability recovery.' },
+        { label: 'Best at scale', tool: 'Klaviyo', reason: 'Segment holdout testing, fine suppression, revenue reporting during peak chaos.' },
+        { label: 'Best multichannel', tool: 'Omnisend', reason: 'Email + SMS + push sale journeys with shared suppression for fast SMB execution.' },
+        { label: 'Best pre-BFCM capture', tool: 'Privy', reason: 'List growth and countdown popups feeding segmented sale audiences.' },
+        { label: 'Best VIP SMS', tool: 'Postscript', reason: 'Early access texts to engaged SMS subscribers with compliance guardrails.' },
+      ]}
+    />
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Three Black Friday merchant scenarios</h2>
+      <p>
+        <strong>Scenario A — Fashion DTC, 2023 list burn recovery.</strong> Sequenzy BFCM 2024: sunset unengaged in October, VIP 48h early access, max one promo email per day per segment. Complaint rate 0.19% versus 0.44% prior year; January revenue up 12% versus 2023 post-burn hangover.
+      </p>
+      <p>
+        <strong>Scenario B — Electronics accessories, Klaviyo at scale.</strong> Holdout test on teaser creative; VIP segment 22% of BFCM revenue from 8% of list. Recent purchaser suppression reduced support tickets 28%.
+      </p>
+      <p>
+        <strong>Scenario C — Home goods SMB, Omnisend plus Privy.</strong> Privy November list growth 19%; Omnisend three-touch sale to engaged only. Firepush for cart during sale week. Post-sale 7-day promotional pause stabilized engagement metrics.
+      </p>
+    </div>
+
+    <div class="ledger-card mb-12">
+      <p class="editorial-kicker">Execution playbook</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Black Friday operating contract</h2>
+      <div class="mt-6 grid gap-6 md:grid-cols-2 text-[#4a2d17]">
+        <div><h3 class="font-black text-[#24170f]">Trigger</h3><p class="mt-2 text-[17px] leading-8">{uc.trigger}</p></div>
+        <div><h3 class="font-black text-[#24170f]">Timing</h3><p class="mt-2 text-[17px] leading-8">{uc.timing}</p></div>
+      </div>
+      <div class="mt-8"><h3 class="font-black text-[#24170f]">Exclusions</h3>
+        <ul class="mt-3 space-y-2">{uc.exclusions.map((e) => <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span>{e}</li>)}</ul>
+      </div>
+      <div class="mt-8"><h3 class="font-black text-[#24170f]">Metrics</h3>
+        <ul class="mt-3 space-y-2">{uc.metrics.map((m) => <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span>{m}</li>)}</ul>
+      </div>
+    </div>
+
+    <div class="ledger-card mb-12 overflow-x-auto">
+      <p class="editorial-kicker">Comparison table</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">10 Shopify apps for Black Friday</h2>
+      <table class="mt-8 w-full min-w-[720px] text-left text-sm">
+        <thead>
+          <tr class="border-b border-[#24170f]/15 text-xs font-black uppercase tracking-wider text-[#9a5b16]">
+            <th class="py-3 pr-4">App</th><th class="py-3 pr-4">BFCM fit</th><th class="py-3 pr-4">Pricing</th>
+            <th class="py-3 pr-4">Shopify depth</th><th class="py-3 pr-4">Automation</th><th class="py-3">Rating</th>
+          </tr>
+        </thead>
+        <tbody class="text-[#4a2d17]">
+          {comparisonApps.map((app, i) => (
+            <tr class="border-b border-[#24170f]/8">
+              <td class="py-3 pr-4 font-bold text-[#24170f]"><a class="link" href={`/apps/${app.slug}`}>{i + 1}. {app.name}</a></td>
+              <td class="py-3 pr-4">{app.bestFor}</td><td class="py-3 pr-4">{app.pricing}</td>
+              <td class="py-3 pr-4">{app.shopifyDepth}</td><td class="py-3 pr-4">{app.automationDepth}</td>
+              <td class="py-3">★ {app.rating}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="container space-y-12 pb-16">
+    <p class="editorial-kicker">Detailed reviews</p>
+    <h2 class="font-serif text-4xl font-black text-[#24170f]">Five apps for Black Friday campaigns</h2>
+
+    <ToolReview app={featuredApps[0]} rank={1} badge="Editor's choice" paragraphs={[
+      'Sequenzy leads BFCM because peak season failures are strategic — over-send, no suppression, no post-peak recovery. Playbooks encode October hygiene, VIP gating, daily frequency caps per segment, and December re-engagement pause.',
+      'Pay-per-email helps unpredictable BFCM volume — spike sends without per-contact bill shock from seasonal list growth.',
+      'Post-BFCM deliverability recovery sequence documented — promotional pause, engaged-only value, gradual ramp.',
+      'Agent edits adjust sale calendar without rebuilding suppression trees under November time pressure.',
+    ]} />
+
+    <ToolReview app={featuredApps[1]} rank={2} paragraphs={[
+      'Klaviyo BFCM at scale — segment holdouts on offer depth, recent purchase suppression by SKU category, revenue reporting hourly during peak.',
+      'Predictive segments identify full-price buyers to exclude from deepest discounts — margin protection under volume pressure.',
+      'SMS credits need daily monitoring — sale week SMS stacks costs fast.',
+      'Best when retention team exists for November war room operations.',
+    ]} />
+
+    <ToolReview app={featuredApps[2]} rank={3} paragraphs={[
+      'Omnisend sale templates and multichannel journeys deploy fast — SMB teams ship BFCM without November agency scramble.',
+      'Shared email-SMS-push suppression reduces double-touch on sale day.',
+      'Manual discipline on frequency still required — templates do not prevent over-mail alone.',
+      'Strong for stores under 2k orders/month first serious BFCM.',
+    ]} />
+
+    <ToolReview app={featuredApps[3]} rank={4} paragraphs={[
+      'Privy pre-BFCM list growth — countdown popups, early access signup, segment interest by category before sale execution platform sends.',
+      'On-site cart saver during sale week captures price-comparison abandoners.',
+      'Not sale orchestration — capture feeding Sequenzy or Klaviyo execution.',
+      'Critical when Q4 list growth target precedes sale revenue goal.',
+    ]} />
+
+    <ToolReview app={featuredApps[4]} rank={5} paragraphs={[
+      'Postscript VIP SMS early access — mobile-first shoppers buy size runs before email opens.',
+      'Compliance quiet hours and opt-out during high-frequency week — legal and reputation protection.',
+      'Pair with email platform for non-SMS subscribers — channel coordination essential.',
+      'ROI on SMS BFCM depends on AOV and sell-through speed, not message count bragging.',
+    ]} />
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="editorial-kicker">October prep</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Pre-season checklist</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Sunset unengaged. Audit SPF/DKIM/DMARC. Document suppression rules. Freeze flow changes Nov 1 except sale-specific. Pre-build VIP and general creatives. Set complaint rate alert at 0.25%. Plan post-sale pause.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="editorial-kicker">Post-peak recovery</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">December is deliverability rehab</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        5–7 day promotional pause or engaged-only content. Monitor placement weekly. January winback to lapsed buyers separate from BFCM blast — see <a class="link" href="/use-cases/winback">winback guide</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">BFCM connects to holiday gifting</h2>
+      <p>Cyber week buyers include gift purchasers — branch post-purchase for gifts per <a class="link" href="/use-cases/holiday-gifting">holiday gifting guide</a>. Do not treat all BFCM orders as self-purchase replenishment candidates.</p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="editorial-kicker">Cyber Week cadence</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Segment-specific frequency caps</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        VIP engaged: max one email per day during peak, SMS optional second touch. General engaged: every other day. Lapsed reactivation during BFCM only if they opted into sale list — not resurrection of sunset contacts for one last blast. Document caps in team war room doc; Klaviyo segment send limits enforce technically.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        <a class="link" href="/for/fashion">Fashion</a> and <a class="link" href="/for/home-goods">home goods</a> with deep catalogs: category-specific sale emails beat repeated same hero offer — reduces fatigue.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="editorial-kicker">January hangover</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Post-BFCM revenue cliff is optional</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Merchants who over-discount November train January silence. January content: new arrivals, education, loyalty enrollment — not deeper clearance immediately. Measure January reactivation rate in <a class="link" href="/use-cases/analytics">analytics</a>; below prior year signals list damage from BFCM discipline failure.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-3xl font-black text-[#24170f]">Quarterly BFCM retrospective</h2>
+      <p>Compare year-over-year: revenue per send, complaint rate peak, January revenue, full-price order share in December. Honest post-mortem names over-mail decisions — not just creative winners.</p>
+      <p>Document VIP early access sell-through versus public — if VIP did not outperform, VIP definition or offer was weak. Archive suppression rules that worked for reuse.</p>
+      <p>Plan October hygiene in January while pain fresh — sunset policy updates, engaged segment refresh, domain authentication check. Teams that defer prep repeat list burns.</p>
+      <p>Cyber Monday is not permission to reset frequency caps — treat as continuation of Black Friday discipline with purchaser suppression updated for Friday buyers. Document which segments received which offer to prevent Tuesday stack confusion.</p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Merchant scenario: skincare brand drowning in BFCM sends</h2>
+      <p>
+        A $180k/month skincare brand sent 11 campaign emails between Thanksgiving and Cyber Monday 2024 — VIP early access, public launch, reminder, extension, last chance, cart nudge, browse nudge, SMS blast, and three "we extended again" messages. Revenue peaked 340% over baseline but January revenue fell 28% below prior year. Complaint rate hit 0.08% during Cyber Monday — triple their normal. Gmail promotions tab placement spiked; February welcome series open rates dropped 19%. VIP segment received same offer as public list because segment sync failed after Shopify Markets update.
+      </p>
+      <p>
+        2025 rebuild on Klaviyo with Sequenzy frequency playbook: five sends maximum in peak window — VIP 48-hour early access, public launch, cart recovery only for active abandons, one extension with hard stop, post-purchase thank-you excluding purchasers from further sale mail. Purchaser suppression refreshed every six hours during peak. SMS limited to VIP and cart branch. Revenue still hit 290% peak with 40% fewer sends. January decline narrowed to 9%. Complaint rate stayed under 0.03%. Full-price order share in December improved 4 points because fewer discount reminder emails trained wait-and-see behavior.
+      </p>
+      <p>
+        Send cap enforced in shared calendar — marketing could swap sends but not add without removing one. Post-mortem completed December 28 while team remembered which suppression rules failed. January winback branch for non-purchasers scheduled November 15 alongside peak creative — no improvisation after Cyber Monday exhaustion.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">90-day rollout: BFCM email architecture</h2>
+      <p>
+        Days 1–30 (August–September): Define offer architecture — VIP depth, public depth, minimum order, exclusion SKUs. Build engaged-only send segments; sunset inactive before October. Verify domain authentication (SPF, DKIM, DMARC). Document suppression matrix: purchasers, recent buyers, active cart, active winback. Create campaign calendar with send caps — marketing cannot add "one more" without removing another.
+      </p>
+      <p>
+        Days 31–60 (October): Load email creative templates; test dynamic product blocks with sale pricing. Run VIP segment dry-run — confirm RFM or spend threshold matches intended audience. Warm any new sending subdomain if infrastructure changed. Train support on offer terms and code limits. Sync inventory alerts for hero SKUs featured in launch email.
+      </p>
+      <p>
+        Days 61–90 (November pre-peak): Enable flows in shadow mode — triggers fire but suppress sends except staff test. Final purchaser suppression QA. Schedule campaigns with staggered send times to avoid ESP queue overload. Prepare Cyber Monday as continuation not reset — update suppression for Friday buyers. Post-mortem template ready before peak starts so team captures decisions while fresh.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Margin math: BFCM send volume versus January hangover</h2>
+      <p>
+        Peak-week model: 11 sends to 42k list, 18% average discount, 2,400 orders at $78 AOV. Gross revenue $187k; discount cost $33k; ESP and SMS fees $2.1k. January hangover — 28% revenue drop on $120k baseline = $33.6k lost January revenue. Net peak gain eroded heavily. Five-send disciplined program: 2,100 orders at $78, slightly lower peak gross $164k, but January drop 9% = $10.8k lost — net seasonal outcome roughly $15k better on contribution after discount and hangover combined.
+      </p>
+      <p>
+        Complaint-rate cost is delayed: 0.08% complaints on 420k sends = 336 complaints → provider flags → inbox placement drop costs February and March revenue. Model deliverability damage at 5–15% open rate decline on automated flows for 60 days — often exceeds incremental peak revenue from send six through eleven. Finance should review BFCM on Q4 contribution, not peak-week gross alone.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Failure rehearsal: Black Friday email meltdowns</h2>
+      <p>
+        <strong>Suppression failure.</strong> Friday buyers receive Saturday "last chance" — support flooded, trust destroyed. Fix: purchase suppression every 6 hours during peak; test with live order before launch.
+      </p>
+      <p>
+        <strong>VIP leak.</strong> Early access code forwarded; public uses VIP pricing. Fix: unique codes per segment, single-use or capped redemptions, monitor anomalous redemption velocity.
+      </p>
+      <p>
+        <strong>Inventory oversell.</strong> Launch email features hero SKU; stock gone in 40 minutes; remaining sends drive rage clicks. Fix: inventory threshold gate on dynamic blocks; backup creative ready.
+      </p>
+      <p>
+        <strong>ESP queue delay.</strong> Scheduled 6am send delivers 2pm — missed morning conversion window. Fix: stagger segments; confirm ESP capacity with rep; avoid largest list in single batch.
+      </p>
+      <p>
+        <strong>January silence mistake.</strong> Team so burned they send nothing in January; lapsed customers drift to competitors. Fix: post-BFCM winback for non-purchasers, replenishment for buyers, no sale — see <a class="link" href="/use-cases/winback">winback guide</a>.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Cross-workflow dependencies for BFCM email</h2>
+      <p>
+        BFCM email architecture consumes every other workflow's suppression logic — cart, browse, winback, welcome, replenishment, VIP early access, and loyalty double-points must be calendar-blocked or collision-checked during peak week. Deliverability hygiene in October determines whether November sends reach inbox — read <a class="link" href="/use-cases/deliverability">deliverability guide</a> before scaling peak volume. Engaged segment definition from <a class="link" href="/use-cases/segmentation">segmentation</a> must match send file used for BFCM; sending to stale engaged destroys domain reputation under volume. VIP early access sequencing ties to <a class="link" href="/use-cases/vip-segments">VIP segments</a> and <a class="link" href="/use-cases/product-launch">launch</a> playbooks when drops coincide with peak.
+      </p>
+      <p>
+        Post-BFCM January strategy is part of BFCM planning — not an afterthought. Purchaser suppression lists, winback branches for non-buyers, and replenishment for consumable buyers should be scheduled before Thanksgiving, not improvised December 26. Email design system from <a class="link" href="/use-cases/email-design">email design guide</a> must be load-tested on mobile before peak — broken cart-style templates under campaign volume spike complaints. Analytics holdout on peak sends is controversial but valuable: small control group receiving no sale email informs true incrementality for next year's send cap decisions and CFO conversations about margin-adjusted peak contribution.
+      </p>
+      <p>
+        Weekly operator rhythm August through October: Monday engaged segment count trend; Wednesday authentication DNS check; Friday send cap calendar review with merchandising. During peak week: daily complaint rate and purchaser suppression audit; pause any automation conflicting with sale calendar. Post-peak: January branch scheduled before Thanksgiving; debrief within 72 hours while data fresh.         Never add send eleven because creative is ready — remove one instead.
+      </p>
+      <p>
+        Peak week discipline is competitive advantage in January — brands that protect domain and customer trust in November outperform on replenishment and welcome flows in Q1 while competitors recover reputation. Send cap calendar signed by marketing and finance before October prevents "just one more" creative requests that feel urgent and prove expensive in February open rates.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify max-w-4xl">
+      <h2 class="font-serif text-3xl font-black text-[#24170f]">Merchant scenario (use-cases): Black Friday rollout checkpoint</h2>
+      <p>
+        Shopify operators evaluating Black Friday should document week-one baseline metrics before claiming migration wins — welcome time-to-live, cart suppression accuracy, post-purchase edge cases, and winback engagement splits scored on staff accounts. Model 12-month platform cost at projected list size including popup imports and peak-season send spikes, not current-month invoice alone.
+      </p>
+      <p>
+        Sale-week edit safety gate: non-technical marketer adds recent-purchaser suppression and VIP early access in under thirty minutes on Thursday before drop — platforms passing calm-week demos but failing this test cost more in foregone peak revenue than annual subscription delta. Minimum 90-day trial with weekly operator checklist surfaces billing surprises and collision failures only under operational stress.
+      </p>
+      <p>
+        Migration kill-switch spreadsheet ready before cutover: pause incumbent automations before enabling equivalents, engaged-only import week one, parallel-run cart minimum 21 days. Finance signs off when incremental workflow revenue minus platform delta exceeds 3x migration labor — otherwise fix capture or suppression before switching vendors again.
+      </p>
+    </div>
+  </section>
+
+  <section class="container pb-8">
+    <div class="flex flex-wrap gap-4 text-sm font-bold">
+      <a class="link" href="/apps">All apps →</a>
+      <a class="link" href="/use-cases/deliverability">Deliverability →</a>
+      <a class="link" href="/for/fashion">Fashion →</a>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify max-w-4xl">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Merchant scenario: Black Friday on Shopify Plus consumables</h2>
+      <p>
+        CleanPour drinkware ($74k/mo) rebuilt Black Friday after collision audit found cart and winback double-discounting same week — unsubscribes spiked 0.4 points. Separated flows with documented suppression hierarchy: cart active blocks winback discount path; recent purchaser hard exclusion 14 days. Holdout 5% measures true incrementality; gross attributed revenue without holdout overstated program value 22%.
+      </p>
+      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-10">90-day Black Friday implementation</h2>
+      <p><strong>Days 1–30:</strong> Baseline metrics and staff-account edge-case tests — gift buyer, subscription tag, wholesale exclusion. <strong>Days 31–60:</strong> Production flow with collision matrix signed by retention lead. <strong>Days 61–90:</strong> Margin reporting with discount cost subtracted; weekly operator rhythm on calendar.</p>
+      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-10">Margin math: Black Friday with discount governance</h2>
+      <p>
+        CleanPour tracked margin per recovered order not gross recovery revenue — 15% blanket discount on $52 AOV surrendered $7.80 margin per recovery. Graduated ladder lifted gross profit per send 34% with 8% lower gross revenue — finance approved expanded send volume on profit-positive path only.
+      </p>
+      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-10">Failure rehearsal: Black Friday breaks</h2>
+      <p>
+        <strong>Collision with cart.</strong> Two discounts same customer same week — Fix: hierarchy doc. <strong>No sunset.</strong> Perpetual automation trains ignore — Fix: three-touch series max then annual check-in. <strong>Guest data gap.</strong> ROI ceiling until checkout captures email — Fix: segment logged-in versus guest recovery separately.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify max-w-4xl">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Workflow test checklist for black friday</h2>
+      <p>
+        Run this black friday validation on staff accounts before peak season: (1) welcome branches correctly by signup source and suppresses existing customers; (2) cart recovery excludes recent purchasers of same SKU variant; (3) post-purchase suppresses gift buyers from discount cross-sell and respects try-on or education delay windows; (4) winback splits engaged versus unengaged and sunsets after three touches. Score each 0–10; any flow below 7 is migration or rebuild signal.
+      </p>
+      <p>
+        Model 12-month cost at projected contact count after popup, giveaway, and influencer imports — not today's list size. Profile-based ESP pricing punishes capture-heavy verticals; pay-per-send rewards selective sending but still requires quarterly sunset of 180-day non-openers for deliverability. Stack TCO includes capture pageviews, SMS peak-week volume, and unused suite modules — finance should see one retention line item.
+      </p>
+      <p>
+        Sale-week rehearsal non-negotiable: marketer must add VIP early-access segment and recent-purchaser suppression in under thirty minutes on Thursday before drop. Platforms that pass calm-week demos but fail sale-week edits cost more in foregone peak revenue than annual subscription delta. Document trial outcomes in writing for finance — incremental workflow revenue minus platform delta must exceed 3x migration labor or fix capture and collision before switching again.
+      </p>
+      <p>
+        Migration timing: January–March or May–September only; never October–December ESP switch. Parallel-run welcome and cart minimum 21 days; incumbent read-only 90 days for export disputes. Kill-switch spreadsheet lists every incumbent automation pause order before enabling new platform equivalents — duplicate cart recovery during migration quarters deliverability and unsubscribes take quarters to heal.
+      </p>
+    </div>
+  </section>
+
+  <FaqSection faqs={faqs} title="Black Friday FAQ" />
+</BaseLayout>

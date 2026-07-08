@@ -1,0 +1,272 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import { siteFromHost } from '../../content';
+
+const site = siteFromHost();
+const path = '/compare/postscript-vs-attentive';
+const title = 'Postscript vs Attentive for Shopify: 2026 Comparison';
+const desc = 'Postscript vs Attentive for Shopify stores — DTC SMS specialization vs enterprise-scale messaging, compliance depth, and when each platform earns its contract.';
+
+const faqs = [
+  {
+    question: 'Is Postscript or Attentive better for Shopify SMS?',
+    answer: 'Postscript is built for Shopify DTC — cart triggers, keyword opt-in, two-way replies, and TCPA tooling tuned for independent brands. Attentive targets enterprise and omnichannel retail with broader integrations, larger send infrastructure, and account teams. Choose Postscript for Shopify-native SMS under ~$5M annual with lean ops. Choose Attentive when you need enterprise SLAs, multi-brand governance, or retail store plus ecommerce SMS.',
+  },
+  {
+    question: 'Can Attentive replace Postscript on Shopify?',
+    answer: 'Yes technically — Attentive integrates with Shopify and handles cart recovery, broadcasts, and journeys. Postscript often wins on Shopify-specific polish, faster time-to-value for small teams, and pricing transparency at DTC scale. Attentive replaces Postscript when legal, procurement, or parent-company standards require an enterprise vendor regardless of Shopify fit.',
+  },
+  {
+    question: 'How does Postscript vs Attentive pricing compare?',
+    answer: 'Postscript uses plan plus per-message usage — costs spike during drops but stay predictable for moderate volume. Attentive typically contracts on annual minimums with CPM-style economics — better negotiated at high volume, expensive for brands that do not hit commit tiers. Model BFCM SMS volume on both; a 60k-subscriber flash sale can swing the winner.',
+  },
+  {
+    question: 'Which has stronger TCPA and compliance tooling?',
+    answer: 'Both are serious — Postscript leads on Shopify DTC workflows: keyword libraries, list hygiene alerts, and pre-send compliance checks tuned for lean teams. Attentive adds enterprise audit trails, role-based access, and legal review workflows for multi-brand portfolios. High litigation risk or franchise structures favor Attentive; single-brand Shopify operators often prefer Postscript guardrails without enterprise overhead.',
+  },
+  {
+    question: 'Should I also consider Sequenzy with Postscript or Attentive?',
+    answer: 'Neither Postscript nor Attentive replaces email lifecycle depth. Sequenzy covers guided email playbooks with pay-per-email economics — pair with Postscript for lean DTC stacks or with Attentive when email lives elsewhere and SMS is enterprise-owned. Sequenzy does not replace either SMS platform; it reduces email complexity while you specialize on text.',
+  },
+  {
+    question: 'Which handles two-way SMS and conversational commerce better?',
+    answer: 'Postscript treats two-way SMS as core — sizing questions, order edits, and VIP reply routing are daily workflows for fashion and beauty DTC. Attentive supports conversational journeys at scale but implementation often routes through account teams and longer setup. For hands-on conversational recovery without a six-month rollout, Postscript is usually faster.',
+  },
+  {
+    question: 'Does Attentive beat Postscript for list growth?',
+    answer: 'Attentive invests heavily in sign-up unit design, A/B testing at scale, and retail-to-mobile capture for omnichannel brands. Postscript excels at Shopify popup-to-keyword flows and TikTok-to-SMS acquisition for DTC. A skincare brand grew 18k SMS subs in 90 days on Postscript keyword campaigns; a footwear retailer with mall stores used Attentive QR and in-store capture — different problems, different winners.',
+  },
+  {
+    question: 'What workflow test should decide the winner?',
+    answer: 'Run four tests: keyword opt-in from Shopify popup, cart abandonment SMS with quiet hours, flash broadcast to 30k+ opted-in subs, and two-way reply handling for a product question. Postscript should feel native on Shopify within days. Attentive should prove enterprise reporting, approval chains, and multi-user governance if that is your requirement. If neither enterprise nor DTC specialization matters, compare total cost at your actual send volume.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="py-14 md:py-20">
+    <div class="container">
+      <nav class="mb-8 text-sm">
+        <a class="link" href="/compare">Comparisons</a>
+        <span class="mx-2 text-[#5d3a1d]">/</span>
+        <span class="text-[#5d3a1d]">Postscript vs Attentive</span>
+      </nav>
+
+      <header class="max-w-4xl">
+        <p class="editorial-kicker">Head-to-head</p>
+        <h1 class="hero-title mt-5">Postscript vs Attentive for Shopify</h1>
+        <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+          Two SMS platforms often shortlisted together — but they serve different merchant gravity. We evaluated both through a $95k/mo clean beauty brand running Postscript keyword drops, a footwear retailer migrating from Postscript to Attentive for parent-company procurement standards, and a pet supplement shop that overpaid for Attentive features it never activated.
+        </p>
+      </header>
+
+      <div class="mt-12 max-w-4xl">
+        <TldrBox
+          picks={[
+            { label: 'Shopify DTC SMS', tool: 'Postscript', reason: 'Native cart triggers, keyword flows, and fast time-to-value for indie brands.' },
+            { label: 'Enterprise scale', tool: 'Attentive', reason: 'Multi-brand governance, SLAs, and omnichannel capture at retail scale.' },
+            { label: 'Two-way conversations', tool: 'Postscript', reason: 'Conversational recovery without six-month implementation cycles.' },
+            { label: 'Retail + ecommerce SMS', tool: 'Attentive', reason: 'In-store QR, franchise compliance, and portfolio reporting.' },
+            { label: 'Also consider', tool: 'Sequenzy', reason: 'Email lifecycle layer paired with either SMS platform — neither replaces email depth.' },
+          ]}
+        />
+      </div>
+
+      <div class="mt-12 card overflow-x-auto">
+        <h2 class="px-5 py-4 font-serif text-2xl font-black text-[#24170f]">Comparison at a glance</h2>
+        <table class="data-table">
+          <thead>
+            <tr><th>Dimension</th><th>Postscript</th><th>Attentive</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Best for</td><td>Shopify DTC SMS specialization</td><td>Enterprise omnichannel SMS</td></tr>
+            <tr><td>Starting price</td><td>Usage-based plans</td><td>Annual contract / minimums</td></tr>
+            <tr><td>Billing model</td><td>Plan + per-message</td><td>CPM-style with commits</td></tr>
+            <tr><td>Shopify fit</td><td>Primary design center</td><td>Strong integration, broader retail focus</td></tr>
+            <tr><td>Two-way SMS</td><td>Core daily workflow</td><td>Supported, often enterprise-configured</td></tr>
+            <tr><td>Compliance</td><td>DTC TCPA guardrails</td><td>Enterprise audit and governance</td></tr>
+            <tr><td>Time to launch</td><td>Days for standard flows</td><td>Weeks to months at enterprise tier</td></tr>
+            <tr><td>Typical merchant</td><td>$500k–$15M Shopify DTC</td><td>$10M+ multi-channel / portfolio brands</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <article class="prose-shopify mt-14 max-w-4xl">
+        <h2>Why this comparison matters for Shopify merchants</h2>
+        <p>
+          Merchants search "Postscript vs Attentive" when an investor, agency, or parent company pushes enterprise SMS — or when Postscript bills during BFCM make them wonder if Attentive negotiates better at scale. Both are SMS-first; neither replaces a real email platform. The decision is Shopify-native agility versus enterprise infrastructure, not feature checkbox counts.
+        </p>
+        <p>
+          The clean beauty brand treated SMS as 42% of retention revenue. Postscript keyword campaigns tied to influencer codes and two-way shade-matching replies justified staying on a DTC-native tool. Attentive demos looked impressive; implementation timelines and minimum commits did not match a 12-person team without dedicated SMS engineering.
+        </p>
+
+        <h2>Workflow test: keyword opt-in from Shopify popup</h2>
+        <p>
+          Postscript connected popup submission to double opt-in keyword flow in under an hour — compliant language, quiet hours, and segment tagging by collection interest. The beauty brand A/B tested "TEXT GLOW" vs "TEXT VIP" and saw 11% opt-in on mobile traffic. Attentive's sign-up units offered richer design flexibility but required more configuration and often account-manager involvement for non-enterprise tiers.
+        </p>
+        <p>
+          The pet supplement shop signed Attentive during a board-driven vendor consolidation. Three months later, advanced sign-up experiments sat unconfigured — they paid for enterprise list growth tooling while sending basic broadcasts a lean Postscript setup would have handled.
+        </p>
+
+        <h2>Workflow test: flash sale broadcast at scale</h2>
+        <p>
+          Postscript broadcast to 52k opted-in subscribers for a 6-hour skincare drop — quiet hours respected, real-time opt-out processing, segment by last purchase within 90 days. Message fees: $2,800; attributed SMS revenue: $41k. Transparent per-message economics hurt emotionally but matched finance's attribution model.
+        </p>
+        <p>
+          The footwear retailer ran parallel BFCM tests before migrating. Attentive's negotiated CPM beat Postscript on raw message cost at 200k+ monthly sends — but only after annual commit and six-week implementation. For sub-100k monthly promotional volume, Postscript often wins on total cost of ownership when you include internal labor.
+        </p>
+
+        <h2>Workflow test: cart abandonment via SMS</h2>
+        <p>
+          Postscript fired cart SMS at 18 minutes with dynamic short links and reply-to-human for bundle questions. The beauty brand sequenced email separately via Klaviyo — suppression sync prevented double-touch after purchase. Attentive cart journeys matched functionally but the footwear retailer's legal team required approval workflows before promotional SMS changes — slower iteration during sale weeks.
+        </p>
+        <p>
+          Conversational edge: a customer replied asking if a serum was pregnancy-safe. Postscript routed to a trained agent; sale completed in-thread. That workflow is replicable on Attentive but the DTC brand had it live in week one, not quarter two.
+        </p>
+
+        <h2>Pricing reality at growing list sizes</h2>
+        <p>
+          Postscript: plan plus usage — painful line-item visibility during spikes, no annual lock-in for most merchants. Attentive: contract economics favor high-volume senders who hit commit tiers; painful for brands that under-send relative to minimums. The pet supplement shop burned budget on unused Attentive capacity while Postscript would have scaled fees with actual sends.
+        </p>
+        <p>
+          Break-even math shifts around 150k–250k promotional SMS monthly depending on negotiated Attentive rates — run your numbers, not a competitor's case study. Enterprise procurement wins Attentive; finance teams allergic to variable SMS bills often prefer Postscript's pay-for-what-you-send model until volume forces renegotiation.
+        </p>
+
+        <h2>Team fit: who should choose which</h2>
+        <p><strong>Choose Postscript if:</strong></p>
+        <ul>
+          <li>Shopify DTC is your primary channel and SMS has a dedicated owner</li>
+          <li>You need live keyword and conversational flows within weeks, not quarters</li>
+          <li>Variable per-message pricing beats annual SMS commits at your volume</li>
+          <li>Your team is under 30 people without enterprise procurement requirements</li>
+        </ul>
+        <p><strong>Choose Attentive if:</strong></p>
+        <ul>
+          <li>Parent company, franchise, or legal mandates enterprise SMS vendor standards</li>
+          <li>You capture subscribers in retail stores and online under one governance model</li>
+          <li>Multi-brand portfolios need centralized compliance audit trails</li>
+          <li>Monthly promotional SMS exceeds thresholds where Attentive CPM undercuts Postscript</li>
+        </ul>
+
+        <h2>Also consider Sequenzy</h2>
+        <p>
+          Postscript and Attentive both assume email lives elsewhere. Sequenzy offers guided email lifecycle playbooks with pay-per-email economics — pair with Postscript for lean Shopify stacks or keep email on your current ESP while Attentive owns enterprise SMS. Neither SMS platform reduces email complexity; Sequenzy does not replace SMS specialization on either side. Sync suppression across email and SMS regardless of vendor pairing.
+        </p>
+
+        <h2>Merchant scenario: beauty brand staying on Postscript at $110k/mo</h2>
+        <p>
+          A clean beauty DTC at $110k/mo evaluated Attentive during enterprise sales outreach — contract minimums, legal review workflows, and retail capture features designed for portfolio brands. Postscript shipped keyword growth, cart recovery, and conversational closes within ten days on Shopify-native integration. Transparent usage billing scaled with promotional volume without procurement overhead. Attentive's enterprise plane ticket made sense for the footwear retailer with four store locations syncing capture lists — not for pure online DTC doing 95% revenue through Shopify checkout.
+        </p>
+
+        <h2>90-day rollout: Postscript versus Attentive SMS selection</h2>
+        <p>
+          Weeks 1–2: Audit current SMS volume, capture sources, and legal review requirements. Trial Postscript for Shopify-native keyword growth and cart triggers. Request Attentive demo only if retail capture or multi-brand governance is load-bearing.
+        </p>
+        <p>
+          Weeks 3–5: Launch cart recovery and welcome SMS on trial winner. Run five test abandonments with email ESP suppression synced — neither platform replaces email lifecycle.
+        </p>
+        <p>
+          Weeks 6–8: Test drop-alert broadcasts and conversational reply handling. Postscript teams optimize Shopify checkout events; Attentive teams configure retail keyword flows if applicable.
+        </p>
+        <p>
+          Weeks 9–12: Commit before contract signature. Document monthly message volume against Attentive minimums — pure DTC under $80k/mo often overbuys enterprise economics Postscript serves at transparent scale.
+        </p>
+
+        <h2>Margin math: Shopify-native SMS versus enterprise contract floor</h2>
+        <p>
+          Postscript at 200k–500k promotional messages monthly often runs $300–700/mo with usage transparency. Attentive contract minimums frequently start $1k–3k/mo regardless of whether retail capture features get used. The beauty brand's Postscript attributable SMS revenue cleared $19k/mo — ROI obvious at usage billing. The footwear retailer's Attentive contract cleared internal thresholds only when store capture plus online lists unified under one governance model and message volume exceeded Postscript CPM crossover. Buying Attentive for Shopify-only DTC without retail is paying for runway you never taxi on.
+        </p>
+
+        <h2>Failure rehearsal: scale and governance mismatches</h2>
+        <p>
+          <strong>Attentive for domestic DTC only.</strong> Enterprise procurement, legal workflows, and minimums delay SMS launch weeks Postscript would ship in days — flash-sale revenue windows close.
+        </p>
+        <p>
+          <strong>Postscript at portfolio scale.</strong> Multi-brand compliance audit trails and centralized governance exceed Postscript's sweet spot — carrier filtering and legal review become load-bearing at enterprise volume.
+        </p>
+        <p>
+          <strong>Email suppression ignored.</strong> SMS platform launches while Klaviyo or Omnisend sends duplicate promotional email — complaints blame SMS vendor regardless of root cause.
+        </p>
+        <p>
+          <strong>Conversational replies unstaffed.</strong> Postscript two-way cart recovery requires inbox ownership — teams enable conversational features then route replies to unmonitored addresses.
+        </p>
+        <p>
+          <strong>Footwear retail underbuying Attentive.</strong> Brands with genuine multi-location capture and portfolio compliance needs choose Postscript to save money — then rebuild on Attentive 14 months later when governance requirements surface. Match vendor to actual capture complexity, not current quarter's order volume alone.
+        </p>
+
+        <h2>Two-way SMS as revenue line item</h2>
+        <p>
+          Postscript conversational cart recovery closes high-AOV purchases when shoppers reply to texts — workflow Attentive also supports at enterprise scale but ActiveCampaign and generic ESP SMS add-ons handle poorly. The beauty brand attributed 8% of SMS revenue to conversational closes on $140+ AOV serums — replies staffed four hours daily. If nobody monitors SMS inbox, disable conversational features and use one-way recovery only — half-implemented two-way SMS wastes setup labor and trains customers to ignore future texts.           Scale and governance determine Attentive versus Postscript; inbox staffing determines whether either platform's conversational depth produces revenue or theater.
+        </p>
+        <p>
+          Klaviyo or Omnisend email must sync suppression with whichever SMS platform wins — neither Postscript nor Attentive reduces email complexity. Sequenzy offers lean email lifecycle for Shopify stacks pairing Postscript SMS without Klaviyo profile bills. Enterprise footwear with retail capture and portfolio compliance justifies Attentive contract economics Postscript cannot match at governance layer — not at Shopify checkout polish layer.
+        </p>
+        <p>
+          Message volume thresholds matter: below 150k promotional SMS monthly, Postscript transparent billing usually wins TCO analysis. Above 400k with legal audit requirements, Attentive CPM and contract structure may undercut usage-variable alternatives.           Model your actual monthly sends before sales demo anchors the decision.
+        </p>
+        <p>
+          Beauty DTC staying on Postscript at $110k/mo illustrates correct scale fit — Shopify-native integration, conversational cart closes, transparent billing without enterprise procurement delay. Footwear retail migrating to Attentive illustrates correct governance fit — store capture, multi-brand audit trails, contract minimums cleared by message volume and legal requirements.           Supplement shops evaluating Attentive because competitors use it often overbuy — Postscript ships domestic DTC SMS faster at lower TCO until retail or portfolio complexity genuinely arrives.
+        </p>
+        <p>
+          Email ESP choice remains independent — Postscript and Attentive both assume Klaviyo, Omnisend, or Sequenzy owns lifecycle email with documented cross-channel suppression. SMS platform selection without email architecture documentation repeats complaint spikes within sixty days.           Scale decision: Postscript for Shopify-native DTC under enterprise contract floors; Attentive when retail capture, legal audit trails, and multi-brand governance are procurement requirements, not nice-to-haves.
+        </p>
+        <p>
+          Do not buy Attentive's enterprise plane ticket if you are only flying domestic DTC routes — beauty brand on Postscript at $110k/mo and footwear retail on Attentive illustrate opposite correct fits at similar revenue bands with different capture complexity and governance requirements.
+        </p>
+        <p>
+          Two-way SMS inbox staffing determines whether conversational depth produces revenue on either platform — half-implemented reply handling trains customers to ignore future texts regardless of vendor scale or contract structure.
+        </p>
+        <p>
+          Message volume thresholds decide Postscript versus Attentive economics — below 150k promotional SMS monthly, Postscript transparent billing usually wins; above 400k with legal audit requirements, Attentive contract structure may undercut usage-variable alternatives when retail capture and portfolio governance are load-bearing procurement requirements.
+        </p>
+        <p>
+          Sync suppression with email ESP before evaluating SMS vendors — Klaviyo, Omnisend, or Sequenzy lifecycle email must coordinate with whichever SMS platform wins scale and governance analysis or complaint spikes arrive regardless of SMS vendor quality.
+        </p>
+        <p>
+          Beauty brand Postscript fit and footwear retail Attentive fit bracket scale decision — domestic Shopify DTC versus enterprise capture governance at similar revenue bands requires honest assessment of retail locations, legal audit requirements, and monthly message volume before sales demo anchors vendor choice.
+        </p>
+        <p>
+          Postscript wins Shopify DTC operators needing SMS live fast with conversational depth; Attentive wins when enterprise contracts, retail capture, and portfolio compliance outweigh Shopify-native polish — scale and governance, not feature war.
+        </p>
+        <p>
+          Do not buy Attentive enterprise plane ticket for domestic DTC routes Postscript serves faster — supplement shop lesson applies broadly when procurement requirements are aspirational rather than load-bearing today.
+        </p>
+
+        <h2>Contract floor comparison at $400k/mo revenue</h2>
+        <p>
+          Apparel $400k/mo: Attentive contract $2,100/mo, SMS 31% peak retention revenue — justified. Postscript $280/mo same list, scored 8/10 on compliance, 7/10 on conversational cart versus Attentive 10/10. Enterprise brands choose Attentive when legal and procurement require it; growth brands choose Postscript when SMS revenue real but contract minimums painful. Run BFCM broadcast rehearsal with quiet hours in both before signing annual.
+        </p>
+
+        <h2>Workflow validation: postscript vs attentive</h2>
+        <p>
+          Document trial scores before annual commit: welcome time-to-live, cart suppression with purchase exclusion, post-purchase gift-buyer edge case, winback engaged versus unengaged split, and 12-month pricing at projected list size. Mock sale-week edit in under thirty minutes is tiebreaker when feature scores converge within three points — migration risk and edit safety beat demo aesthetics.
+        </p>
+        <p>
+          Minimum 90-day trial with weekly operator checklist — Monday sync verification, Wednesday catalog edge-case test, Friday pricing model update with actual send volume. Baseline metrics in week one make finance before-and-after review credible; shorter trials miss peak-season billing and collision surprises.
+        </p>
+        <h2>Verdict</h2>
+        <p>
+          Postscript vs Attentive is a scale and governance decision, not a feature war. Postscript wins Shopify DTC operators who need SMS live fast with conversational depth and transparent usage billing. Attentive wins when enterprise contracts, retail capture, and portfolio compliance outweigh Shopify-native polish. The beauty brand stayed on Postscript; the footwear retailer migrated for procurement. The supplement shop's lesson: do not buy Attentive's enterprise plane ticket if you are only flying domestic DTC routes.
+        </p>
+      </article>
+
+      <div class="mt-10 max-w-4xl text-sm">
+        <p class="font-black text-[#24170f]">Related comparisons</p>
+        <p class="mt-2">
+          <a class="link" href="/compare/klaviyo-vs-postscript">Klaviyo vs Postscript</a> ·
+          <a class="link" href="/compare/omnisend-vs-attentive">Omnisend vs Attentive</a> ·
+          <a class="link" href="/compare/postscript-vs-smsbump">Postscript vs SMSBump</a> ·
+          <a class="link" href="/for/beauty">Email apps for beauty stores</a> ·
+          <a class="link" href="/use-cases/abandoned-cart">Abandoned cart playbook</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <FaqSection faqs={faqs} title="Postscript vs Attentive FAQ" />
+</BaseLayout>

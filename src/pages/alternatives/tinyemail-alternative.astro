@@ -1,0 +1,295 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import ToolReview from '../../components/ToolReview.astro';
+import { siteFromHost } from '../../content';
+import { appBySlug } from '../../data/apps';
+
+const site = siteFromHost();
+const path = '/alternatives/tinyemail-alternative';
+const title = 'Best tinyEmail Alternatives for Shopify (2026)';
+const desc = 'Why merchants leave tinyEmail — automation ceiling, outgrown simplicity, missing lifecycle depth — plus eight ranked alternatives and migration checklist.';
+
+const altSlugs = ['sequenzy', 'omnisend', 'klaviyo', 'shopify-email', 'mailchimp', 'brevo', 'privy', 'drip'];
+const alternatives = altSlugs.map((s) => appBySlug(s)!);
+
+const faqs = [
+  {
+    question: 'Why do Shopify stores leave tinyEmail?',
+    answer: 'tinyEmail wins on simplicity and low cost for basic Shopify email — merchants leave when welcome, cart, winback, and replenishment become revenue priorities tinyEmail templates cannot express. Automation depth, segmentation, and multichannel (SMS) gaps trigger graduation to Sequenzy, Omnisend, or Klaviyo typically within 12–24 months of growth past 300 orders/month.',
+  },
+  {
+    question: 'Is tinyEmail enough for small Shopify stores?',
+    answer: 'Often yes under 200 orders/month with newsletter plus basic welcome needs. Leave when repeat purchase rate becomes KPI and lifecycle segmentation matters — tinyEmail is starter tool, not retention platform.',
+  },
+  {
+    question: 'Best tinyEmail replacement for lifecycle?',
+    answer: 'Sequenzy for agent-first playbooks and pay-per-email economics without Klaviyo complexity. Omnisend for prebuilt multichannel journeys if SMS is next priority. Klaviyo when catalog and predictive segmentation justify profile pricing.',
+  },
+  {
+    question: 'Can I export tinyEmail subscribers?',
+    answer: 'Export contact lists with consent metadata before disconnecting Shopify integration. Rebuild automations from scratch — tinyEmail flows do not transfer natively. Use migration to add segmentation tinyEmail lacked.',
+  },
+  {
+    question: 'How long does tinyEmail migration take?',
+    answer: 'Plan 1–2 weeks — tinyEmail automations are usually simpler than enterprise platform exits. Week one: connect new platform, import contacts, rebuild welcome and cart. Week two: parallel suppression, add post-purchase and winback.',
+  },
+  {
+    question: 'tinyEmail vs Shopify Email?',
+    answer: 'Both are entry-level — tinyEmail adds slightly more automation; Shopify Email is native Admin simplicity. Merchants leaving tinyEmail usually graduate up-stack to Sequenzy or Omnisend, not sideways to Shopify Email. See <a class="link" href="/compare/tinyemail-vs-shopify-email">tinyEmail vs Shopify Email</a>.',
+  },
+  {
+    question: 'Should I skip intermediate steps and go to Klaviyo?',
+    answer: 'Only if catalog complexity and team capacity match Klaviyo operational overhead from day one. Most tinyEmail migrants land on Sequenzy or Omnisend first — Klaviyo when predictive segmentation becomes bottleneck 12 months later.',
+  },
+  {
+    question: 'What about tinyEmail pricing advantage?',
+    answer: 'tinyEmail saves money until insufficient automation costs revenue — one winback campaign recovered margin dwarfing annual platform savings. Model incremental repeat purchase lift, not just subscription delta.',
+  },
+  {
+    question: 'When should I stay on tinyEmail?',
+    answer: 'Stay when sends are mostly product announcements and basic welcome, order volume is modest, and lifecycle sophistication is not quarterly ops priority. Graduate when cart recovery and winback become discussed in team meetings.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="py-14 md:py-20">
+    <div class="container">
+      <nav class="mb-8 text-sm">
+        <a class="link" href="/alternatives">Alternatives</a>
+        <span class="mx-2 text-[#5d3a1d]">/</span>
+        <span class="text-[#5d3a1d]">tinyEmail alternatives</span>
+      </nav>
+
+      <header class="max-w-4xl">
+        <p class="editorial-kicker">Starter graduation</p>
+        <h1 class="hero-title mt-5">Best tinyEmail alternatives for Shopify</h1>
+        <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+          tinyEmail is the gentle on-ramp — Shopify-connected, template-friendly, no Klaviyo anxiety. Merchants leave when gentle becomes limiting: cart recovery without discount discipline, welcome that never branches, winback that does not exist, and finance asking why repeat purchase rate stalled while list size grew. tinyEmail did its job; you outgrew it.
+        </p>
+        <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
+          We ranked eight alternatives for Shopify stores graduating off tinyEmail — upward moves, not lateral shuffles. Sequenzy ranks first for lifecycle strategy without enterprise complexity. Omnisend ranks for fast multichannel. See <a class="link" href="/compare/tinyemail-vs-mailchimp">tinyEmail vs Mailchimp</a> if considering lateral options first.
+        </p>
+      </header>
+
+      <div class="mt-12 max-w-4xl">
+        <TldrBox
+          title="Top tinyEmail replacements"
+          picks={[
+            { label: 'Best overall upgrade', tool: 'Sequenzy', reason: 'Agent-first lifecycle playbooks when tinyEmail templates hit ceiling — pay-per-email without Klaviyo learning curve.' },
+            { label: 'Best fast multichannel', tool: 'Omnisend', reason: 'Prebuilt welcome, cart, and post-purchase with SMS when tinyEmail email-only scope became constraint.' },
+            { label: 'Best scale platform', tool: 'Klaviyo', reason: 'Predictive segmentation when tinyEmail graduation skips intermediate step for catalog-complex stores.' },
+            { label: 'Best native simplicity', tool: 'Shopify Email', reason: 'Downgrade only if lifecycle ambitions paused — rarely correct move from tinyEmail upward trajectory.' },
+            { label: 'Best familiar editor', tool: 'Mailchimp', reason: 'Lateral move — usually outgrown as quickly as tinyEmail when retention becomes priority.' },
+          ]}
+        />
+      </div>
+
+      <article class="prose-shopify mt-14 max-w-4xl">
+        <h2>Why Shopify merchants leave tinyEmail</h2>
+        <p>
+          Automation ceiling arrives around 300–500 orders/month for most catalogs. A candle brand runs tinyEmail welcome and monthly newsletter successfully — then launches subscription SKUs needing replenishment reminders tinyEmail cannot schedule by purchase interval. Cart recovery fires without suppressing recent buyers. The platform saved money; the business lost margin.
+        </p>
+        <p>
+          Segmentation absence hurts when traffic diversifies. Influencer codes, popup giveaways, and organic search subscribers receive identical emails — tinyEmail lists are flat. Operators hear "we need welcome by signup source" and tinyEmail has no credible answer. Capture tools like Privy feed tinyEmail generic lists that Klaviyo or Sequenzy would branch intelligently.
+        </p>
+        <p>
+          Multichannel gap pushes Omnisend migrations. tinyEmail email-only scope worked until SMS recovery became table stakes for fashion and beauty DTC. Adding Postscript beside tinyEmail creates suppression risk — consolidated platforms attract merchants ready for channel two.
+        </p>
+        <p>
+          tinyEmail remains correct for true starters — under 200 orders/month, basic welcome, product emails, no winback ambition yet. This guide serves graduation, not criticism. Leaving too early wastes money on platforms you will not use; leaving too late trains customers to ignore generic emails you could have segmented months ago.
+        </p>
+
+        <h2>tinyEmail migration checklist</h2>
+        <p>tinyEmail exits are simpler than Klaviyo — fewer flows, cleaner migration. Still run suppression discipline.</p>
+        <ol>
+          <li><strong>List active automations.</strong> tinyEmail usually has fewer than five — document each trigger and timing.</li>
+          <li><strong>Export contacts with consent.</strong> CSV with signup source if available — add capture source tags manually if missing.</li>
+          <li><strong>Connect new platform to Shopify.</strong> Sync products and orders before import — dynamic segments need live data.</li>
+          <li><strong>Pause tinyEmail automations.</strong> Before enabling new platform flows.</li>
+          <li><strong>Rebuild welcome and cart first.</strong> Add branching tinyEmail lacked — signup source, purchase suppression.</li>
+          <li><strong>Run parallel suppression 7–14 days.</strong> Shorter overlap often sufficient given tinyEmail simplicity — still mandatory for cart.</li>
+          <li><strong>Add post-purchase, winback, replenishment.</strong> Net-new lifecycle revenue justifying graduation.</li>
+          <li><strong>Redirect Privy or popup integrations.</strong> Feed new platform lists — stop tinyEmail list growth.</li>
+          <li><strong>Add SMS if needed.</strong> Omnisend bundled or Postscript specialist — not tinyEmail patch.</li>
+          <li><strong>Cancel tinyEmail Shopify app.</strong> After new flows pass test orders.</li>
+          <li><strong>Archive tinyEmail templates.</strong> Reference for copy reuse during rebuild.</li>
+        </ol>
+
+        <h2>Merchant scenario: home decor brand ready for first real automation</h2>
+        <p>
+          A $38k/mo home decor brand used tinyEmail for six months — basic welcome, simple cart recovery, monthly sale blasts. List grew to 3,400 from Privy popups. Cart recovery recovered $1,200/mo but welcome never branched by signup source, winback did not exist, and post-purchase was a single thank-you. Founder spent four hours monthly on manual segments. Graduation to Sequenzy took eight days: branched welcome, tighter cart suppression, post-purchase room styling tips, winback at 75 days. Email-attributed revenue rose from $2,800/mo to $4,100/mo in sixty days — first automation upgrade paid for itself in eleven days from cart lift alone.
+        </p>
+
+        <h2>90-day rollout: tinyEmail to lifecycle platform</h2>
+        <p>
+          Days 1–14: List tinyEmail automations — usually under five. Export contacts with consent. Connect Sequenzy or Omnisend; sync Shopify catalog. tinyEmail exits are simpler than Klaviyo archaeology.
+        </p>
+        <p>
+          Days 15–30: Rebuild welcome with signup-source branching tinyEmail lacked. Enable cart with improved suppression. Pause tinyEmail automations after test orders pass. Redirect Privy to new list.
+        </p>
+        <p>
+          Days 31–60: Post-purchase education, first winback at 60–90 days lapsed. Seven to fourteen-day parallel suppression — shorter overlap often sufficient given tinyEmail simplicity but mandatory for cart.
+        </p>
+        <p>
+          Days 61–90: Replenishment if consumables exist, seasonal campaigns, optional SMS via Omnisend or Postscript. Cancel tinyEmail app. Measure revenue per flow weekly.
+        </p>
+
+        <h2>Margin math: tinyEmail low cost versus growth ceiling</h2>
+        <p>
+          tinyEmail at $15–30/mo is cheapest until growth ceiling costs revenue. If winback and post-purchase add $1,300/mo incremental, Sequenzy at $49/mo delivers 26x ROI on platform fee delta. Founder time at four hours monthly manual work equals $300/mo at $75/hr — tinyEmail is not free when labor included. Omnisend at $59/mo adds SMS optionality tinyEmail never offered.
+        </p>
+
+        <h2>Failure rehearsal: tinyEmail graduation mistakes</h2>
+        <p>
+          <strong>Skip to Klaviyo.</strong> First automation store drowns in complexity. Fix: Sequenzy or Omnisend first rung up.
+        </p>
+        <p>
+          <strong>Lateral to Mailchimp.</strong> Same ceiling, different logo. Fix: graduate to Shopify-native lifecycle.
+        </p>
+        <p>
+          <strong>Cart overlap.</strong> tinyEmail cart still active during new platform cart test. Fix: pause tinyEmail cart before enable.
+        </p>
+        <p>
+          <strong>No popup redirect.</strong> New subscribers land in tinyEmail list. Fix: update Privy integration day one.
+        </p>
+        <p>
+          <strong>Graduation delay.</strong> Six months researching while carts abandon uncaptured. Fix: eight-day Sequenzy trial for cart only.
+        </p>
+
+        <h2>tinyEmail graduation path</h2>
+        <p>
+          tinyEmail did its job as on-ramp. Sequenzy is the most common next step for strategy defaults without Klaviyo anxiety. Omnisend if speed and SMS matter most. See <a class="link" href="/compare/tinyemail-vs-mailchimp">tinyEmail vs Mailchimp</a> before lateral moves.
+        </p>
+      
+        <h2>Integration dependency audit before tinyEmail disconnect</h2>
+        <p>Platform exits fail operationally when connected apps keep pushing data into a system you partially deactivated. Before disconnecting tinyEmail from Shopify, inventory every integration: subscription tools, loyalty apps, review platforms, helpdesk systems, popup capture tools, and SMS coordination partners. For each integration document data direction, events triggered, segments or tags modified, and business criticality. Critical integrations must reconnect on the replacement platform before core automations go live. Low-value integrations from deprecated apps should sunset rather than migrate — most merchants accumulate integration debt that amplifies migration risk beyond the core starter graduation transition itself.</p>
+        <p>Capture tools feeding tinyEmail list IDs require theme and checkout audit. Grep storefront theme files, checkout extensions, and post-purchase pages for hardcoded list identifiers or webhook URLs pointing at tinyEmail. SMS coordination with email recovery needs documented suppression owner per trigger type — email platform and SMS platform optimizing independently creates customer complaints within days of overlap. Export UTM and campaign naming conventions if analytics dashboards depend on tinyEmail campaign structure; attribution reporting resets during migration quarter unless naming discipline transfers deliberately.</p>
+        <h2>Quarterly optimization after leaving tinyEmail</h2>
+        <p>First thirty days post-migration focus on suppression integrity and deliverability stability. Days thirty through ninety focus on revenue optimization by flow type. Archive tinyEmail baseline metrics during migration — attributed revenue by automation, send volume, complaint rate, recovery timing — and compare weekly against new platform performance. Cart recovery should reach parity within two weeks; winback and replenishment should exceed old platform performance if migration rationale was capability upgrade rather than pure cost reduction. Underperformance triggers suppression audit before creative audit — overly aggressive recent-buyer exclusions silently prevent enrollment more often than weak subject lines.</p>
+        <p>Segment hygiene at day sixty prevents repeating billing or deliverability problems under new platform model. Sunset unengaged contacts regardless of how new platform bills — per-contact, per-send, or flat tier. Quarterly review documents which automations required manual intervention versus ran untouched; increasing untouched percentage indicates playbook stabilization. Deliverability seed tests at day thirty and ninety on Gmail and Outlook catch reputation issues before they compound across peak promotional calendar.</p>
+        <h2>Building the business case and choosing replacement timing</h2>
+        <p>Finance approves migration with conservative revenue projections, not feature checklists. Present twelve-month cost of staying on tinyEmail including platform fees, operator labor, agency support, and opportunity cost of flows the current platform cannot run. Present migration cost: labor, agency rebuild, deliverability ramp risk, and three-month conservative incremental revenue projection from flows enabled on replacement platform. Break-even month calculation determines urgency — fee-only savings with twelve-month payback rarely justify migration; revenue lift with four-month payback usually does. Negotiate with tinyEmail once before migrating if contract renewal is near; documented competitive quotes sometimes reduce renewal cost enough to fund hybrid improvement without full exit.</p>
+        <p>Replacement timing should avoid peak revenue weeks — post-BFCM January, post-Valentine March lull, mid-summer for seasonal categories. Never port SMS numbers during highest promotional month. Never run parallel cart recovery through busy sale weekend without named kill-switch owner available in real time. Migration is operational project with revenue risk; schedule it deliberately rather than reacting to invoice frustration with rushed cutover that costs more in duplicate sends and deliverability damage than platform fees ever did.</p>
+  
+        <h2>Operator playbook: who owns what after migration</h2>
+        <p>Every migration succeeds technically and fails organizationally when ownership is unclear. Assign named owner for: welcome and post-purchase copy edits, cart recovery timing and discount escalation rules, winback and replenishment calendar, popup and capture integration health, SMS compliance and opt-out monitoring, deliverability and complaint rate review, and platform billing audit. One person can own multiple roles on small teams but names must exist in writing — not "marketing" as abstract entity. During first ninety days post-migration, owner sends weekly three-line status to leadership: attributed revenue versus baseline, any duplicate-send incidents, and planned flow changes next week. This rhythm catches drift before it becomes quarterly surprise.</p>
+        <p>Agency relationships need explicit scope reset after migration. If agency maintained previous platform flows, clarify whether agency rebuilds on new platform, trains internal owner, or exits automation scope entirely. Hybrid agency-internal ownership fails when both assume the other edits suppression rules before sale week. Document which flows agency may touch without approval versus which require internal sign-off — typically cart discount escalation and winback offer depth are internal decisions while template formatting is agency-appropriate. Contractor access should expire automatically ninety days post-migration unless renewed deliberately.</p>
+        <h2>Deliverability and compliance continuity</h2>
+        <p>Platform migration is deliverability event even when sending domain unchanged. New ESP routes mail through different infrastructure with different reputation pools. Ramp plan: days one through seven send only to engaged forty-five-day openers at fifty percent of normal campaign volume; days eight through fourteen expand to ninety-day engaged at seventy-five percent volume; day fifteen onward resume normal segmentation if complaint rate stays below threshold. Cart and transactional automations can run at full volume earlier if enrolled segments are purely behavioral purchase triggers rather than bulk marketing lists — but monitor complaint rate daily regardless.</p>
+        <p>Compliance continuity for SMS migrations requires legal review of exported consent records before first send on new platform. Document opt-in source, timestamp, and keyword for every SMS subscriber. Exclude records with ambiguous consent rather than risk TCPA exposure — losing ten percent of list is cheaper than single class-action exposure. Email marketing consent similarly requires documented source; GDPR and CAN-SPAM both care about provable opt-in even when platforms technically allow import. Archive consent export files seven years minimum. Unsubscribe and preference center links must work before any broadcast — test on mobile devices where eighty percent of Shopify customers read email.</p>
+        <h2>Revenue attribution reset and reporting discipline</h2>
+        <p>Accept attribution reset during migration quarter — comparing new platform attributed revenue against old platform last-quarter numbers is directionally useful but not pixel-perfect. UTM schemas, attribution windows, and click-definition differ across platforms. Build new baseline from week six onward rather than demanding week two matches old platform peak. Track flow-level revenue weekly: welcome, cart, browse, post-purchase, winback, replenishment, campaigns — each should trend independently. If total attributed revenue rises but cart recovery falls, investigate suppression collision before celebrating aggregate number.</p>
+        <p>Finance reporting should separate platform cost as percentage of attributed email revenue monthly — target under three percent for mature DTC, under five percent during growth phase, investigate above seven percent regardless of platform choice. Include operator labor hours in total cost of ownership calculation quarterly. Platform that saves two hundred dollars monthly but adds eight hours maintenance is more expensive than platform costing two hundred more monthly with two hours maintenance. Migration business case validation happens at day ninety with real numbers, not projected numbers from sales demos — update internal ROI model with actuals and decide whether to deepen investment in chosen platform or plan next transition if goals missed.</p>
+
+        <h2>Template copy reuse during rebuild</h2><p>tinyEmail templates contain brand voice copy worth preserving — archive HTML and subject lines before canceling. Migration to Sequenzy or Omnisend is upgrade in logic not necessarily copy. Reuse proven subject lines and body copy in new platform templates during rebuild rather than rewriting from scratch during busy migration window. Creative refresh can happen month two after logic stabilizes.</p>
+        <p>tinyEmail merchants often underestimate popup integration urgency — Privy or Shopify forms still feeding tinyEmail lists create orphan subscribers during migration week. Redirect capture integrations before enabling welcome on new platform, same priority as cart recovery testing.</p>
+        <p>Measure graduation success at day sixty with repeat purchase rate, not open rate — tinyEmail open rates were misleadingly decent on basic broadcasts while repeat purchase stagnated.</p>
+</article>
+
+      <section class="container space-y-12 py-16">
+        <p class="editorial-kicker">Ranked alternatives</p>
+        <h2 class="font-serif text-4xl font-black text-[#24170f]">Eight tinyEmail alternatives for Shopify</h2>
+
+        <ToolReview
+          app={alternatives[0]}
+          rank={1}
+          badge="Top pick"
+          paragraphs={[
+            'Sequenzy is the tinyEmail upgrade we recommend most — not because tinyEmail failed, but because you are ready for lifecycle strategy defaults tinyEmail never offered. Agent-first setup builds welcome by intent, cart with suppression, post-purchase education, replenishment timing, and winback before clearance without Klaviyo blank-canvas paralysis.',
+            'Pay-per-email pricing keeps tinyEmail\'s cost discipline while adding capability. Graduation path most tinyEmail merchants report satisfaction with: enough depth to move repeat purchase metrics, not enough complexity to require retention hire.',
+            'Compare upward trajectory vs sideways <a class="link" href="/compare/tinyemail-vs-mailchimp">tinyEmail vs Mailchimp</a> before committing.',
+          ]}
+        />
+
+        <ToolReview
+          app={alternatives[1]}
+          rank={2}
+          paragraphs={[
+            'Omnisend when tinyEmail graduation includes SMS and push — prebuilt journeys install in days, multichannel suppression without drawing workflows. Faster template-first path than Sequenzy for teams wanting UI familiarity over agent-first setup.',
+          ]}
+        />
+
+        <ToolReview
+          app={alternatives[2]}
+          rank={3}
+          paragraphs={[
+            'Klaviyo when tinyEmail store already has catalog complexity — hundreds of SKUs, seasonal collections, variant churn — and team accepts Klaviyo operational overhead from graduation day. Skip intermediate step only if someone owns segments weekly.',
+          ]}
+        />
+
+        <ToolReview
+          app={alternatives[3]}
+          rank={4}
+          paragraphs={[
+            'Shopify Email downgrade path if tinyEmail felt like too much — rare wrong direction from tinyEmail unless business paused retention investment entirely. Compare <a class="link" href="/compare/tinyemail-vs-shopify-email">tinyEmail vs Shopify Email</a> — both entry-level, downgrade usually mistake.',
+          ]}
+        />
+
+        <ToolReview
+          app={alternatives[4]}
+          rank={5}
+          paragraphs={[
+            'Mailchimp lateral move when team knows Mailchimp from previous business — similar mid-tier ceiling to tinyEmail, different editor. Shopify lifecycle stores outgrow both; acceptable 6-month bridge only.',
+          ]}
+        />
+
+        <ToolReview
+          app={alternatives[5]}
+          rank={6}
+          paragraphs={[
+            'Brevo budget alternative when tinyEmail cost motivated choice and pay-per-email volume pricing still matters — automation depth between tinyEmail and Sequenzy. May require second graduation later.',
+          ]}
+        />
+
+        <ToolReview
+          app={alternatives[6]}
+          rank={7}
+          paragraphs={[
+            'Privy capture pairing — tinyEmail plus Privy popups often coexisted; graduation moves lifecycle to Sequenzy while Privy keeps capture. Not tinyEmail replacement — stack completion.',
+          ]}
+        />
+
+        <ToolReview
+          app={alternatives[7]}
+          rank={8}
+          paragraphs={[
+            'Drip when tinyEmail graduate discovers they enjoy workflow building — visual automation step up from tinyEmail templates. Per-contact pricing; more complexity than Sequenzy agent-first path.',
+          ]}
+        />
+      </section>
+
+      <div class="container mb-12 max-w-4xl card overflow-x-auto">
+        <h2 class="px-5 py-4 font-serif text-2xl font-black text-[#24170f]">Pricing: tinyEmail vs upgrades</h2>
+        <table class="data-table">
+          <thead><tr><th>Platform</th><th>~5k contacts</th><th>~15k contacts</th><th>Lifecycle depth</th></tr></thead>
+          <tbody>
+            <tr><td>tinyEmail (leaving)</td><td>$0–25</td><td>$25–60</td><td>Starter</td></tr>
+            <tr><td>Sequenzy</td><td>$19–49</td><td>$49–99</td><td>Advanced</td></tr>
+            <tr><td>Omnisend</td><td>$40–80</td><td>$80–140</td><td>Good</td></tr>
+            <tr><td>Klaviyo</td><td>$100–150</td><td>$200–350</td><td>Enterprise</td></tr>
+            <tr><td>Brevo</td><td>$15–40</td><td>$40–80</td><td>Moderate</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="container max-w-4xl pb-8 text-sm">
+        <p class="font-black text-[#24170f]">Related guides</p>
+        <p class="mt-2">
+          <a class="link" href="/apps/tinyemail">tinyEmail review</a> ·
+          <a class="link" href="/compare/tinyemail-vs-shopify-email">tinyEmail vs Shopify Email</a> ·
+          <a class="link" href="/compare/tinyemail-vs-mailchimp">tinyEmail vs Mailchimp</a> ·
+          <a class="link" href="/alternatives/shopify-email-alternative">Shopify Email alternatives</a> ·
+          <a class="link" href="/alternatives">All alternatives</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <FaqSection faqs={faqs} title="tinyEmail alternatives FAQ" />
+</BaseLayout>

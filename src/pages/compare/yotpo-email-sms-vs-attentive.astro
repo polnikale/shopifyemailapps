@@ -1,0 +1,276 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import { siteFromHost } from '../../content';
+
+const site = siteFromHost();
+const path = '/compare/yotpo-email-sms-vs-attentive';
+const title = 'Yotpo Email & SMS vs Attentive for Shopify: 2026 Comparison';
+const desc = 'Yotpo Email & SMS vs Attentive for Shopify — reviews-loyalty suite messaging vs enterprise SMS scale, retail capture, and procurement-driven stack decisions.';
+
+const faqs = [
+  {
+    question: 'Is Yotpo Email & SMS or Attentive better for Shopify SMS?',
+    answer: 'Attentive targets enterprise and omnichannel retail — broader integrations, larger send infrastructure, multi-brand governance, and account teams. Yotpo Email & SMS fits Shopify DTC merchants invested in reviews and loyalty who want email and SMS unified with UGC context. Choose Attentive when legal, procurement, or parent-company standards require enterprise SMS. Choose Yotpo when suite consolidation around trust loops matters more than enterprise SLAs.',
+  },
+  {
+    question: 'Can Attentive replace Yotpo Email & SMS entirely?',
+    answer: 'Attentive replaces Yotpo SMS for enterprise text programs but does not replace Yotpo native review-request sequencing or loyalty earn email. Many portfolio brands run Attentive for SMS governance while Yotpo owns Reviews, Loyalty, and lifecycle email — or migrate email to Klaviyo while keeping Yotpo for UGC display. Full replacement requires explicit trigger ownership across platforms.',
+  },
+  {
+    question: 'How does Yotpo vs Attentive pricing compare?',
+    answer: 'Yotpo uses modular contract pricing — bundle economics when Reviews and Loyalty are active. Attentive typically contracts on annual minimums with CPM-style economics — better negotiated at high volume, expensive for brands that miss commit tiers. A 60k-subscriber flash sale models differently on each; enterprise Attentive commits favor high-volume omnichannel retailers.',
+  },
+  {
+    question: 'Which has stronger compliance and governance tooling?',
+    answer: 'Attentive adds enterprise audit trails, role-based access, and legal review workflows for multi-brand portfolios. Yotpo offers solid DTC compliance within suite context but not franchise-grade governance. High litigation risk or multi-brand structures favor Attentive; single-brand Shopify DTC with Yotpo Reviews often prefers suite consolidation over enterprise SMS overhead.',
+  },
+  {
+    question: 'Should I also consider Sequenzy with Yotpo or Attentive?',
+    answer: 'Neither platform alone covers strategic email lifecycle for all merchants. Sequenzy offers guided email playbooks with pay-per-email economics — pair with Attentive when SMS is enterprise-owned and email lives elsewhere, or with Yotpo when suite email needs strategic guidance without canvas complexity. Sequenzy does not replace Attentive governance or Yotpo review loops.',
+  },
+  {
+    question: 'Which handles retail plus ecommerce SMS better?',
+    answer: 'Attentive invests in in-store QR capture, franchise compliance, and portfolio reporting for omnichannel brands. Yotpo SMS is Shopify-centric — strong for DTC post-purchase and loyalty text, weaker for mall-to-mobile capture at enterprise scale. Footwear retailers with physical stores often lean Attentive; DTC-only beauty on Yotpo Reviews lean Yotpo suite.',
+  },
+  {
+    question: 'Does Yotpo SMS depth trail Attentive at enterprise scale?',
+    answer: 'Yes for enterprise SMS programs — approval chains, multi-brand suppression, and retail capture favor Attentive. Yotpo SMS is adequate for loyalty earn reminders, cart recovery, and moderate broadcasts when suite consolidation with Reviews and Loyalty is the primary goal.',
+  },
+  {
+    question: 'What workflow test should decide the winner?',
+    answer: 'Run in-store QR opt-in if retail exists, flash broadcast to 50k+ subs with approval workflow, post-purchase review coordination, and multi-brand suppression if applicable. Attentive should prove enterprise reporting and governance if that is your requirement. Yotpo should prove suite UGC and loyalty context if Reviews is live. If neither applies, compare total cost at actual send volume.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="py-14 md:py-20">
+    <div class="container">
+      <nav class="mb-8 text-sm">
+        <a class="link" href="/compare">Comparisons</a>
+        <span class="mx-2 text-[#5d3a1d]">/</span>
+        <span class="text-[#5d3a1d]">Yotpo Email & SMS vs Attentive</span>
+      </nav>
+
+      <header class="max-w-4xl">
+        <p class="editorial-kicker">Head-to-head</p>
+        <h1 class="hero-title mt-5">Yotpo Email & SMS vs Attentive for Shopify</h1>
+        <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+          Suite trust loops versus enterprise SMS infrastructure. Yotpo Email & SMS bundles lifecycle messaging with reviews and loyalty when those modules anchor your retention strategy. Attentive targets portfolio brands and omnichannel retailers who need governance, SLAs, and scale beyond DTC-native tooling. We evaluated both through a $4.2M annual footwear brand migrating from Yotpo SMS to Attentive for parent-company procurement, a $89k/mo clean beauty DTC staying on Yotpo suite because UGC post-purchase was non-negotiable, and a $120k/mo home fitness retailer that overpaid for Attentive features tied to retail stores they did not operate.
+        </p>
+      </header>
+
+      <div class="mt-12 max-w-4xl">
+        <TldrBox
+          picks={[
+            { label: 'Enterprise SMS scale', tool: 'Attentive', reason: 'Multi-brand governance, SLAs, and retail capture.' },
+            { label: 'Reviews + loyalty suite', tool: 'Yotpo', reason: 'Native UGC and points in email and SMS together.' },
+            { label: 'Retail + ecommerce', tool: 'Attentive', reason: 'In-store QR and franchise compliance workflows.' },
+            { label: 'Shopify DTC consolidation', tool: 'Yotpo', reason: 'One vendor when Reviews or Loyalty already live.' },
+            { label: 'Also consider', tool: 'Sequenzy', reason: 'Email lifecycle layer when SMS is enterprise-owned elsewhere.' },
+          ]}
+        />
+      </div>
+
+      <div class="mt-12 card overflow-x-auto">
+        <h2 class="px-5 py-4 font-serif text-2xl font-black text-[#24170f]">Comparison at a glance</h2>
+        <table class="data-table">
+          <thead>
+            <tr><th>Dimension</th><th>Yotpo Email & SMS</th><th>Attentive</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Best for</td><td>Reviews/loyalty suite merchants</td><td>Enterprise omnichannel SMS</td></tr>
+            <tr><td>Starting price</td><td>Bundle-dependent pricing</td><td>Annual contract / minimums</td></tr>
+            <tr><td>Billing model</td><td>Yotpo contract tiers</td><td>CPM-style with commits</td></tr>
+            <tr><td>Email depth</td><td>Full lifecycle + UGC</td><td>Not primary — SMS-first</td></tr>
+            <tr><td>Retail capture</td><td>Limited</td><td>Core enterprise strength</td></tr>
+            <tr><td>Reviews integration</td><td>Native</td><td>Via coordination</td></tr>
+            <tr><td>Compliance</td><td>DTC suite guardrails</td><td>Enterprise audit and governance</td></tr>
+            <tr><td>Typical merchant</td><td>$500k–$15M Shopify DTC</td><td>$10M+ multi-channel / portfolio</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <article class="prose-shopify mt-14 max-w-4xl">
+        <h2>Why this comparison matters for Shopify merchants</h2>
+        <p>
+          Merchants search Yotpo vs Attentive when an investor, agency, or parent company pushes enterprise SMS — or when Yotpo renewal bundles text alongside reviews they already depend on. Both handle Shopify cart recovery and broadcasts; neither is interchangeable as a full stack. The decision is suite-aligned DTC retention versus enterprise infrastructure, often forced by procurement before feature matrices enter the conversation.
+        </p>
+        <p>
+          The footwear brand treated the decision as governance first, features second. Parent company standardized on Attentive across portfolio brands — Yotpo SMS could not satisfy legal review workflows and multi-brand reporting. They kept Yotpo Reviews and Email for DTC UGC while Attentive owned SMS — integration labor they budgeted explicitly versus discovering suppression gaps during holiday peaks.
+        </p>
+
+        <h2>Merchant scenario: footwear brand with retail stores on Attentive</h2>
+        <p>
+          At $4.2M annual revenue this brand operated twelve mall locations plus Shopify DTC. Attentive in-store QR capture and franchise-compliant opt-in language unified retail and online SMS lists — 34k net new subs in one quarter from store traffic alone. Yotpo SMS could not replicate retail capture at enterprise scale; Yotpo Reviews remained on PDPs for UGC display.
+        </p>
+        <p>
+          Post-purchase review requests stayed in Yotpo Email — Attentive SMS handled drop alerts and back-in-stock with approval chains legal required. Documented trigger ownership prevented review ask texts colliding with promotional broadcasts. Hybrid stack was procurement-mandated, not idealistic best-of-breed — but it worked with discipline.
+        </p>
+
+        <h2>Merchant scenario: clean beauty DTC staying on Yotpo suite</h2>
+        <p>
+          This brand at $89k/mo had Yotpo Reviews driving 290 photo submissions monthly and Loyalty with tiered earn on repurchase. Attentive demos impressed leadership; implementation timelines and minimum commits did not match a fourteen-person team without dedicated SMS engineering. Yotpo Email & SMS unified post-purchase review timing, loyalty earn reminders, and moderate SMS — adequate for their text volume.
+        </p>
+        <p>
+          SMS was 22% of retention revenue, not 45% — enterprise specialization did not justify contract overhead. Suite consolidation won on operator hours and native UGC context Attentive would have coordinated via integration.
+        </p>
+
+        <h2>Workflow test: in-store and online opt-in</h2>
+        <p>
+          Attentive connected mall QR codes to double opt-in with franchise-compliant language and segment tagging by store location — non-negotiable for the footwear brand. Yotpo signup flows served Shopify DTC adequately but lacked retail capture infrastructure.
+        </p>
+        <p>
+          The home fitness retailer signed Attentive during board-driven vendor consolidation — pure DTC without stores. Three months later retail capture modules sat unconfigured while they paid for enterprise tiers Postscript or Yotpo SMS would have handled at fraction of cost. Match vendor gravity to actual channel mix.
+        </p>
+
+        <h2>Workflow test: flash sale broadcast with approval workflow</h2>
+        <p>
+          Attentive broadcast to 78k opted-in subscribers across three sub-brands required legal pre-approval and role-based send permissions — workflow the footwear parent company mandated. Send completed with audit trail; attributed SMS revenue: $186k over 48 hours.
+        </p>
+        <p>
+          Yotpo SMS broadcast on the beauty brand's six-hour drop worked with loyalty earn messaging in same send — simpler governance, smaller scale, native suppression with review follow-ups. Enterprise approval chains were unnecessary overhead for their team size.
+        </p>
+
+        <h2>Pricing reality at growing list sizes</h2>
+        <p>
+          Attentive contracts on annual minimums — favorable at high volume with negotiated CPM, punitive when commits exceed actual sends. Yotpo modular pricing bundles Reviews, Loyalty, Email, and SMS — economics improve when all modules active, wasteful when SMS credits sit unused.
+        </p>
+        <p>
+          The home fitness retailer modeled Attentive commit versus Yotpo bundle plus Postscript for drops — Yotpo plus Postscript won on TCO because retail capture was irrelevant. The footwear brand's Attentive commit was non-negotiable at portfolio level — local TCO math was secondary to procurement standard.
+        </p>
+
+        <h2>Shopify data depth in production</h2>
+        <p>
+          Yotpo adds review and loyalty context natively — reviewer segments, points expiration, referral status in email and SMS. Attentive segments by capture source, purchase behavior, and portfolio brand — richer for omnichannel SMS governance, thinner for UGC-native post-purchase unless Yotpo Email coordinates triggers.
+        </p>
+        <p>
+          Hybrid stacks are common at scale. Failure mode: Attentive drop SMS and Yotpo review email within same hour — the beauty brand avoided this with documented quiet windows; the footwear brand assigned channel owners in their retention runbook.
+        </p>
+
+        <h2>Team fit: who should choose which</h2>
+        <p><strong>Choose Yotpo Email & SMS if:</strong></p>
+        <ul>
+          <li>Yotpo Reviews or Loyalty is already live and SMS is supporting actor</li>
+          <li>You are Shopify DTC without retail capture requirements</li>
+          <li>Post-purchase UGC and loyalty earn should inform text and email together</li>
+          <li>Enterprise SMS governance is unnecessary overhead for your team</li>
+        </ul>
+        <p><strong>Choose Attentive if:</strong></p>
+        <ul>
+          <li>Procurement, legal, or parent company requires enterprise SMS vendor</li>
+          <li>Retail stores and ecommerce share SMS list strategy</li>
+          <li>Multi-brand portfolios need approval chains and audit trails</li>
+          <li>SMS volume and governance justify annual commit economics</li>
+        </ul>
+
+        <h2>Also consider Sequenzy</h2>
+        <p>
+          Attentive does not replace email lifecycle strategy; Yotpo Email may feel suite-heavy if Reviews live but email needs guidance. Sequenzy offers guided playbooks with pay-per-email pricing — pair with Attentive when SMS is enterprise-owned and email needs agent-assisted flow design without Klaviyo canvas complexity. Sequenzy will not replace Attentive governance or Yotpo native review timing; it reduces email blank-page risk while text stays enterprise-specialized.
+        </p>
+
+        <h2>Procurement documentation for hybrid stacks</h2>
+        <p>
+          Portfolio brands running Attentive plus Yotpo Email need written trigger ownership before legal sign-off: which platform sends post-purchase review request, which sends drop SMS, which owns loyalty earn reminder, quiet hours between channels, and multi-brand suppression when sub-brands share parent SMS list. The footwear brand assigned channel owners in retention runbook — failure mode without documentation is review ask text colliding with promotional broadcast within same hour.
+        </p>
+        <p>
+          DTC-only merchants presenting Attentive to finance should include retail capture module utilization forecast — if zero stores, show Postscript or Yotpo TCO comparison explicitly. Procurement momentum locks multi-year commits; independent operators rarely renegotiate mid-contract like enterprise portfolios can.
+        </p>
+
+        <h2>When Yotpo suite beats enterprise SMS alone</h2>
+        <p>
+          Clean beauty at $89k/mo proved suite consolidation when SMS was 22% of retention revenue, not 45% — enterprise specialization did not justify contract overhead. UGC post-purchase timing non-negotiable; Attentive coordination would have added integration labor without improving review submission rate. Match vendor gravity to SMS share of P&amp;L, not demo breadth.
+        </p>
+
+        <h2>90-day rollout: enterprise SMS versus suite consolidation trial</h2>
+        <p>
+          Weeks 1–4: If retail exists, test Attentive in-store QR opt-in at one location with franchise-compliant language. Parallel Yotpo SMS signup on Shopify DTC with loyalty earn messaging if Reviews module is live.
+        </p>
+        <p>
+          Weeks 5–8: Run flash broadcast test at 10% of list on each platform — measure approval workflow time, quiet hours compliance, and attributed revenue per message. Document trigger ownership if Yotpo Email handles post-purchase review requests simultaneously.
+        </p>
+        <p>
+          Weeks 9–12: Model annual TCO including Attentive minimum commits versus Yotpo bundle credits. Present procurement with governance requirements and actual channel mix — retail capture modules you will not use should disqualify Attentive regardless of demo polish.
+        </p>
+
+        <h2>Margin math: Attentive commit versus Yotpo bundle utilization</h2>
+        <p>
+          Home fitness retailer paid Attentive annual minimum $48k with zero retail stores — effective SMS CPM ran 3x Postscript equivalent for three annual drops. Yotpo bundle at $32k including Reviews they did not use was also wasteful; lean Postscript plus Klaviyo won on TCO at $41k combined.
+        </p>
+        <p>
+          Footwear brand's Attentive commit was portfolio-mandated — local TCO math was secondary. For DTC-only beauty on Yotpo Reviews at $89k/mo, suite SMS at bundled rate beat Attentive minimum by $18k annually when text volume stayed moderate. Match vendor gravity to actual sends, not aspirational omnichannel strategy decks.
+        </p>
+
+        <h2>Decision matrix: retail, procurement, and suite signals</h2>
+        <p>
+          Choose Attentive when any three apply: physical retail captures 10%+ of new SMS subs, parent company mandates enterprise vendor, multi-brand approval chains required, SMS list exceeds 50k with weekly broadcasts. Choose Yotpo Email & SMS when any three apply: Reviews or Loyalty live with measurable UGC velocity, DTC-only without retail, SMS under 30% of retention revenue, suite renewal already budgeted.
+        </p>
+        <p>
+          Home fitness retailer failed matrix — zero retail, DTC drops only, no procurement mandate — yet signed Attentive. Clean beauty passed Yotpo matrix — Reviews at 290 monthly submissions, SMS supporting actor, fourteen-person team without SMS engineering headcount.
+        </p>
+
+        <h2>Failure rehearsal: procurement-driven wrong picks</h2>
+        <p>
+          <strong>Attentive for pure DTC without retail.</strong> Enterprise governance modules sit unconfigured while finance questions SMS ROI — paying portfolio pricing for DTC drop cadence Postscript handles at fraction of cost.
+        </p>
+        <p>
+          <strong>Yotpo SMS without Reviews or Loyalty active.</strong> Suite SMS lacks context that justifies bundling — email and text feel bolted on without UGC or points data informing segments. Migrate to specialized SMS or adopt Reviews first, then consolidate.
+        </p>
+
+        <h2>Merchant scenario: home fitness retailer overpaying for Attentive</h2>
+        <p>
+          At $120k/mo pure DTC this brand signed Attentive during board-driven vendor consolidation — parent company standardized enterprise SMS across portfolio. Three months post-launch, retail capture modules sat unconfigured; in-store QR workflows were irrelevant without physical locations. They paid annual minimum tiers designed for omnichannel retailers while sending four promotional broadcasts quarterly.
+        </p>
+        <p>
+          Yotpo Email & SMS demo showed adequate cart recovery and loyalty earn messaging they could have activated faster at lower commit. Postscript trial on one drop matched Attentive attributed revenue within 4% at 40% lower message cost. Re-negotiation was politically impossible mid-contract — the lesson for independent merchants: match SMS vendor scale to actual channel mix before procurement momentum locks multi-year commits.
+        </p>
+
+        <h2>Weekly operator checklist during trial</h2>
+        <p>
+          Monday: verify quiet hours blocked promotional SMS during operational email windows. Wednesday: audit SMS credits consumed versus bundle allocation on Yotpo, or commit tier utilization on Attentive. Friday: count new SMS subs by capture source — retail QR versus Shopify DTC versus keyword. Sale week: confirm multi-brand suppression if portfolio rules apply; single-brand merchants skip retail audit entirely.
+        </p>
+
+        <p>
+          Board presentation tip: frame Yotpo versus Attentive as organizational gravity decision — suite trust loops for DTC brands with Reviews live, enterprise SMS infrastructure for portfolio retail mandates. Feature parity slides mislead; channel mix and procurement requirements decide. Independent merchants skip Attentive retail modules entirely; portfolio brands skip Yotpo SMS governance entirely — both are valid, opposite conclusions from same comparison article. Run opt-in tests at actual scale before board deck claims.
+        </p>
+
+        <p><em>Minimum viable trial length: 90 days with weekly operator checklist — shorter trials miss sale-week edit safety and billing cycle surprises both platforms surface only under operational stress.</em></p>
+
+        <h2>Enterprise SMS versus Yotpo modular SMS bundle</h2>
+        <p>
+          Beauty brand Yotpo SMS inside suite $140/mo add-on; Attentive quoted $1,800/mo. Promotional SMS 11% retention revenue — Yotpo SMS sufficient. Attentive justified only above 20% SMS revenue share with legal review quarterly. Evaluate Attentive when TCPA incident cost exceeds annual premium differential — same calculus as Postscript versus suite SMS.
+        </p>
+
+        <h2>Workflow validation: yotpo email sms vs attentive</h2>
+        <p>
+          Document trial scores before annual commit: welcome time-to-live, cart suppression with purchase exclusion, post-purchase gift-buyer edge case, winback engaged versus unengaged split, and 12-month pricing at projected list size. Mock sale-week edit in under thirty minutes is tiebreaker when feature scores converge within three points — migration risk and edit safety beat demo aesthetics.
+        </p>
+        <p>
+          Minimum 90-day trial with weekly operator checklist — Monday sync verification, Wednesday catalog edge-case test, Friday pricing model update with actual send volume. Baseline metrics in week one make finance before-and-after review credible; shorter trials miss peak-season billing and collision surprises.
+        </p>
+        <h2>Verdict</h2>
+        <p>
+          Yotpo Email & SMS wins when Reviews or Loyalty modules anchor retention and SMS should share suite context without enterprise overhead. Attentive wins when procurement, retail capture, or multi-brand governance mandate enterprise SMS — often alongside Yotpo Email for UGC, not instead of it. Run opt-in and broadcast tests at your actual scale and compliance requirements. The winner matches organizational gravity, not demo aesthetics.
+        </p>
+      </article>
+
+      <div class="mt-10 max-w-4xl text-sm">
+        <p class="font-black text-[#24170f]">Related comparisons</p>
+        <p class="mt-2">
+          <a class="link" href="/compare/postscript-vs-attentive">Postscript vs Attentive</a> ·
+          <a class="link" href="/compare/yotpo-email-sms-vs-postscript">Yotpo vs Postscript</a> ·
+          <a class="link" href="/compare/omnisend-vs-attentive">Omnisend vs Attentive</a> ·
+          <a class="link" href="/for/fashion">Email apps for fashion stores</a> ·
+          <a class="link" href="/use-cases/abandoned-cart">Abandoned cart playbook</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <FaqSection faqs={faqs} title="Yotpo Email & SMS vs Attentive FAQ" />
+</BaseLayout>

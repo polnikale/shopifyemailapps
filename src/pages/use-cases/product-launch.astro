@@ -1,0 +1,388 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import ToolReview from '../../components/ToolReview.astro';
+import { site, description, pageTitle } from '../../content';
+import { useCaseBySlug } from '../../data/use-cases';
+import { appBySlug } from '../../data/apps';
+
+const uc = useCaseBySlug('product-launch')!;
+const path = '/use-cases/product-launch';
+const title = pageTitle(site, 'use-cases/product-launch');
+const desc = description(site, 'use-cases/product-launch');
+
+const featuredSlugs = ['sequenzy', 'klaviyo', 'privy', 'omnisend', 'postscript'];
+const featuredApps = featuredSlugs.map((s) => appBySlug(s)!).filter(Boolean);
+
+const comparisonApps = [
+  'sequenzy', 'klaviyo', 'privy', 'omnisend', 'postscript', 'drip',
+  'firepush', 'yotpo-email-sms', 'shopify-email', 'attentive',
+].map((s) => appBySlug(s)!).filter(Boolean);
+
+const faqs = [
+  {
+    question: 'What is the best Shopify email app for product launches?',
+    answer: 'Sequenzy ranks first for launch orchestration — VIP early access, waitlist fulfillment order, post-launch winback, and suppression of recent purchasers. Klaviyo wins at scale with variant inventory sync and segment holdout testing. Privy excels at pre-launch waitlist capture feeding the launch sequence.',
+  },
+  {
+    question: 'How early should VIP early access start?',
+    answer: 'Typically 24–72 hours before public launch for DTC drops. Full-price loyalists and repeat buyers first; engaged waitlist second; general list at go-live. Document inventory allocation before promising VIP access volume.',
+  },
+  {
+    question: 'Should launch emails go to the entire list?',
+    answer: 'No. Suppress recent purchasers of adjacent SKUs, sold-out variants, and markets without product availability. Blast launches train list to ignore non-launch mail and inflate unsubscribes.',
+  },
+  {
+    question: 'How do waitlists interact with launch email?',
+    answer: 'Waitlist signups receive fulfillment in signup order on restock or launch day — priority queue separate from general announcement. Do not email entire list before waitlist gets first access.',
+  },
+  {
+    question: 'What metrics matter for product launch email?',
+    answer: '48-hour sell-through, waitlist conversion rate, VIP versus general revenue split, inventory accuracy in emails, and full-price percentage during launch window.',
+  },
+  {
+    question: 'Should SMS be part of launch?',
+    answer: 'For hype drops and limited inventory — yes, with strict caps. VIP SMS early access can sell out size runs. Over-SMS trains wait-for-text behavior. Postscript and Omnisend coordinate SMS with email suppression.',
+  },
+  {
+    question: 'Can Shopify Email run a product launch?',
+    answer: 'Manual campaign only — no VIP segmentation automation, waitlist priority, or variant OOS suppression during send. Dedicated platforms required for serious drop orchestration.',
+  },
+  {
+    question: 'How does launch relate to back-in-stock?',
+    answer: 'Restock of hero SKU uses <a class="link" href="/use-cases/back-in-stock">back-in-stock</a> waitlist logic — narrower audience than full launch. Launch is net-new product; back-in-stock is demand capture on existing SKU.',
+  },
+  {
+    question: 'How do I test launch email without burning the list?',
+    answer: 'Hold out 5% of VIP segment on early access — compare sell-through and unsubscribes. Test teaser subject lines on engaged subset before full file. Never test deep discount depth on full VIP without holdout — margin risk.',
+  },
+  {
+    question: 'Should discontinued products keep waitlists?',
+    answer: 'Close waitlists on discontinued SKUs with honest email and substitute recommendation. Perpetual waitlist erodes trust. Archive waitlist segment to prevent accidental alert on liquidation inventory.',
+  },
+  {
+    question: 'How do influencer drops differ in email?',
+    answer: 'Influencer code traffic may need separate welcome and launch branch — attribution to influencer segment for reporting. Collab inventory often smaller — VIP and waitlist only, no full-list blast. Coordinate send time with influencer post schedule across time zones.',
+  },
+  {
+    question: 'What is waitlist-to-launch handoff?',
+    answer: 'Waitlist subscribers receive first access link at go-live; general list delayed per playbook. Tag waitlist at signup via Privy or Klaviyo form — handoff fails when waitlist lives in spreadsheet outside email platform.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="relative overflow-hidden py-16 md:py-24">
+    <div class="container">
+      <a href="/use-cases" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All use cases</a>
+      <p class="editorial-kicker mt-6">Product launch</p>
+      <h1 class="hero-title mt-5 max-w-5xl">Best Shopify email apps for product launch campaigns</h1>
+      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+        Product launches fail in email when everyone gets the same blast at the same second. Streetwear drops need VIP early access and waitlist priority. Beauty launches need shade-level inventory accuracy. Supplement launches need compliance-safe claims in teaser sequence. Launch orchestration is segmentation choreography tied to Shopify inventory — not a single hero image broadcast.
+      </p>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
+        This playbook ranks Shopify email apps for {uc.job}. We stress-tested VIP gating, waitlist order, variant OOS handling, and post-drop winback against merchants running 4–12 launches per year. Launch email is inventory choreography — creative is secondary to who gets access when. Drops that email the full list on day one routinely sell out hero SKUs before VIP segments ever see the link.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href="/apps">Full app rankings</a>
+        <a class="btn btn-secondary" href="/for/fashion">Fashion drops</a>
+        <a class="btn btn-secondary" href="/use-cases/vip-segments">VIP segments</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <TldrBox
+      title="Top Shopify email apps for product launch"
+      picks={[
+        { label: 'Best overall', tool: 'Sequenzy', reason: 'Launch playbooks: VIP early access, waitlist priority, inventory-aware sends, post-drop winback without flow rebuild each season.' },
+        { label: 'Best data depth', tool: 'Klaviyo', reason: 'Variant inventory sync, segment holdout tests, and revenue split reporting for complex catalogs.' },
+        { label: 'Best pre-launch capture', tool: 'Privy', reason: 'Waitlist popups and drop countdown feeding segmented launch audiences.' },
+        { label: 'Best multichannel', tool: 'Omnisend', reason: 'Email + SMS + push launch journeys with shared suppression for flash sales.' },
+        { label: 'Best SMS drops', tool: 'Postscript', reason: 'VIP text early access with compliance controls for mobile-first drop culture.' },
+      ]}
+    />
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Three product launch scenarios</h2>
+      <p>
+        <strong>Scenario A — Streetwear weekly drop.</strong> Privy waitlist captured 8,200 signups. Sequenzy VIP email 24h early to repeat buyers; waitlist at public launch; SMS via Postscript to VIP only. 73% sell-through in 48h at full price.
+      </p>
+      <p>
+        <strong>Scenario B — Beauty brand, 12-shade foundation launch.</strong> Klaviyo shade-specific waitlist from quiz data; launch emails suppressed OOS shades per subscriber profile. Waitlist conversion 41%; false OOS sends zero due to inventory sync at send.
+      </p>
+      <p>
+        <strong>Scenario C — Outdoor gear, seasonal jacket.</strong> Omnisend teaser week, VIP early access, general launch, last-chance at 72h without deeper discount. Firepush for browse abandoners during launch window only.
+      </p>
+    </div>
+
+    <div class="ledger-card mb-12">
+      <p class="editorial-kicker">Execution playbook</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Product launch operating contract</h2>
+      <div class="mt-6 grid gap-6 md:grid-cols-2 text-[#4a2d17]">
+        <div><h3 class="font-black text-[#24170f]">Trigger</h3><p class="mt-2 text-[17px] leading-8">{uc.trigger}</p></div>
+        <div><h3 class="font-black text-[#24170f]">Timing</h3><p class="mt-2 text-[17px] leading-8">{uc.timing}</p></div>
+      </div>
+      <div class="mt-8"><h3 class="font-black text-[#24170f]">Exclusions</h3>
+        <ul class="mt-3 space-y-2">{uc.exclusions.map((e) => <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span>{e}</li>)}</ul>
+      </div>
+      <div class="mt-8"><h3 class="font-black text-[#24170f]">Metrics</h3>
+        <ul class="mt-3 space-y-2">{uc.metrics.map((m) => <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span>{m}</li>)}</ul>
+      </div>
+    </div>
+
+    <div class="ledger-card mb-12 overflow-x-auto">
+      <p class="editorial-kicker">Comparison table</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">10 Shopify apps for product launch</h2>
+      <table class="mt-8 w-full min-w-[720px] text-left text-sm">
+        <thead>
+          <tr class="border-b border-[#24170f]/15 text-xs font-black uppercase tracking-wider text-[#9a5b16]">
+            <th class="py-3 pr-4">App</th><th class="py-3 pr-4">Launch fit</th><th class="py-3 pr-4">Pricing</th>
+            <th class="py-3 pr-4">Shopify depth</th><th class="py-3 pr-4">Automation</th><th class="py-3">Rating</th>
+          </tr>
+        </thead>
+        <tbody class="text-[#4a2d17]">
+          {comparisonApps.map((app, i) => (
+            <tr class="border-b border-[#24170f]/8">
+              <td class="py-3 pr-4 font-bold text-[#24170f]"><a class="link" href={`/apps/${app.slug}`}>{i + 1}. {app.name}</a></td>
+              <td class="py-3 pr-4">{app.bestFor}</td><td class="py-3 pr-4">{app.pricing}</td>
+              <td class="py-3 pr-4">{app.shopifyDepth}</td><td class="py-3 pr-4">{app.automationDepth}</td>
+              <td class="py-3">★ {app.rating}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="container space-y-12 pb-16">
+    <p class="editorial-kicker">Detailed reviews</p>
+    <h2 class="font-serif text-4xl font-black text-[#24170f]">Five apps for product launch campaigns</h2>
+
+    <ToolReview app={featuredApps[0]} rank={1} badge="Editor's choice" paragraphs={[
+      'Sequenzy leads launches because every drop forces flow rebuild on legacy tools. Agent playbooks describe VIP gating, waitlist order, and post-sellout winback once — adapt copy per drop without reconstructing boolean logic.',
+      'Inventory-aware launch sends prevent the trust-killing "buy now" email for sold-out variants — especially fashion and beauty with size/shade matrices.',
+      'Pay-per-email helps launch week volume spikes without per-contact bill shock from waitlist imports.',
+      'MCP/API access wires external inventory or merchandising AI into launch segments for Plus brands.',
+    ]} />
+
+    <ToolReview app={featuredApps[1]} rank={2} paragraphs={[
+      'Klaviyo launch at scale: holdout tests on teaser creative, variant-level dynamic blocks, predictive VIP identification from CLV.',
+      'Real-time inventory in email critical for size-run drops — sync at send not enroll.',
+      'Revenue reporting splits VIP, waitlist, general list — proves early access ROI to finance.',
+      'Complexity and cost justified at 1,000+ monthly orders and frequent launches.',
+    ]} />
+
+    <ToolReview app={featuredApps[2]} rank={3} paragraphs={[
+      'Privy is pre-launch infrastructure — countdown popups, waitlist capture, collection interest segmentation before Klaviyo or Sequenzy executes.',
+      'Spin-to-win and drop teasers grow launch audience — pass waitlist tag to email platform for priority send.',
+      'Not launch execution depth — pair with lifecycle platform always.',
+      'Essential for <a class="link" href="/for/print-on-demand">POD</a> and fashion hype cycles.',
+    ]} />
+
+    <ToolReview app={featuredApps[3]} rank={4} paragraphs={[
+      'Omnisend launch journeys bundle email, SMS, push for flash sales — one suppression graph.',
+      'Prebuilt sale templates accelerate teaser week — customize VIP branch before enable.',
+      'Push nudge during launch window recovers mobile browsers without SMS cost.',
+      'SMB drops under 500 SKUs with straightforward VIP rules.',
+    ]} />
+
+    <ToolReview app={featuredApps[4]} rank={5} paragraphs={[
+      'Postscript VIP SMS early access sells limited size runs when email inbox is crowded.',
+      'Compliance and quiet hours protect launch texts from legal and reputation risk.',
+      'SMS-only for launch is insufficient — pair with Sequenzy or Klaviyo email sequence.',
+      'Cost model: SMS launch ROI on AOV and sell-through speed, not blast volume.',
+    ]} />
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="editorial-kicker">Launch calendar</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Teaser → VIP → public → last chance</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Week -1: teaser content, waitlist push, no product live. VIP -24h: early access link, inventory cap communicated. T+0: public launch to engaged segments. T+72h: last chance only if inventory remains — not deeper discount by default.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="editorial-kicker">Post-drop</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Sold-out is not the end</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Route sold-out browsers to <a class="link" href="/use-cases/back-in-stock">back-in-stock</a>. Post-drop winback for engaged non-buyers with complementary collection — not immediate 20% off. <a class="link" href="/use-cases/browse-abandonment">Browse abandonment</a> during launch window uses launch-specific creative.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Launch and BFCM differ</h2>
+      <p>Product launch is SKU-specific orchestration. <a class="link" href="/use-cases/black-friday">Black Friday</a> is peak-season list discipline. Reuse VIP suppression concepts, not identical sequences.</p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="editorial-kicker">Inventory allocation</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Email promises inventory cannot keep</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        VIP early access email volume must match allocated units — promising 2,000 VIPs first access on 400 units creates backlash. Merchandising and email must share allocation spreadsheet before send. Waitlist queue length informs reorder quantity; Klaviyo waitlist depth reports help buying team.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        <a class="link" href="/for/print-on-demand">POD merchants</a> launching trending designs: shorter launch window, faster sell-through, immediate pivot to <a class="link" href="/use-cases/back-in-stock">waitlist</a> when print capacity caps inventory.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="editorial-kicker">Collaboration launches</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Co-brand drop email rules</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Collaboration launches need joint approval on creative and send time — partner brand may have list overlap. Suppress customers who purchased partner's prior collab at full price from deep discount launch. Legal may require co-brand logo placement in email header; build template variant before drop week chaos.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-3xl font-black text-[#24170f]">Quarterly launch email retrospective</h2>
+      <p>Per launch debrief: VIP versus waitlist versus general revenue split, sell-through hours, unsubscribes, inventory accuracy score. Document what suppression rules failed — recent buyers who got launch discount anyway.</p>
+      <p>Compare Sequenzy agent-rebuilt launch sequence time versus prior manual Klaviyo rebuild — operator hours matter for weekly drop brands. Postscript SMS ROI only when sell-through under four hours justified message cost.</p>
+      <p>Archive launch calendar with email send times — institutional memory prevents repeating 2024 mistake of VIP and public same minute. Cross-link next season's <a class="link" href="/use-cases/product-launch">launch playbook</a> updates here.</p>
+      <p>Soft launch versus hard launch: soft to waitlist validates demand before scale; hard launch to engaged file scales proven SKU. Email stack must support both without waitlist pollution from public preview traffic.</p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Merchant scenario: streetwear label botched drop sequencing</h2>
+      <p>
+        A $130k/month streetwear brand ran product launch emails like mini-BFCM — public list got "available now" at same time as Instagram post while 4,200 waitlist subscribers who signed up for early access received nothing for six hours due to timezone scheduling error. VIP customers with $500+ lifetime spend saw no differentiation — same 10% off as footer subscribers. Sell-through hit 100% in 90 minutes but margin suffered from launch discount on full-price loyalists. Waitlist unsubscribes spiked 340 day-of; social comments accused brand of fake waitlist. Back-in-stock and launch flows collided when restock email fired for previous drop SKU during new drop day.
+      </p>
+      <p>
+        Sequenzy launch playbook rebuild: waitlist 24-hour early access with unique link and no public code. VIP 12-hour head start on public with full-price positioning — early access as privilege not discount. Public launch with inventory cap messaging. Suppression — purchasers of drop N excluded from drop N+1 waitlist pollution. Postscript SMS only to waitlist unopened after 2 hours. Second drop revenue up 18% with higher full-price mix; waitlist-to-purchase conversion rose from 8% to 19%.
+      </p>
+      <p>
+        Drop calendar became shared doc with ops, support, and email — send times in three timezones, suppression rules linked, inventory caps noted. Waitlist capture on PDP passed drop ID into profile property so pollution from previous drops stopped. Social team received email schedule same day creative approved — no more Instagram "live now" before waitlist email. Third drop sold through with zero waitlist complaint posts — trust rebuilt became competitive advantage for fourth drop signups.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">90-day rollout: product launch email architecture</h2>
+      <p>
+        Days 1–30 (pre-launch): Build waitlist capture with source tagging — drop ID in custom property. Define VIP threshold and early access window lengths. Creative: teaser, early access, public launch, last units — max four sends. Inventory sync verified for variant-level stock display. Suppression matrix for recent buyers and active cart.
+      </p>
+      <p>
+        Days 31–60: Soft launch test to small waitlist segment — validate links, checkout, mobile pay. Schedule sends with timezone clarity — account manager confirms queue. SMS branch criteria documented. Train support on drop FAQ and code limits.
+      </p>
+      <p>
+        Days 61–90 (launch window): Execute sequence; monitor sell-through hourly. Pause browse and winback discount emails during drop window to avoid collision. Post-launch debrief within 72 hours — VIP vs waitlist vs public revenue, unsubscribes, inventory accuracy. Archive timing for next drop.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Margin math: launch discount versus early access value</h2>
+      <p>
+        Drop: 800 units at $120 retail, 52% margin. Launch discount 10% on all buyers: margin per unit drops ~10 points on full file. VIP early access full-price for 200 units saves $2,400 discount cost versus uniform 10%. Waitlist converts 19% of 4,200 = 798 orders — without waitlist discipline, public discount trains non-waitlist to ignore future waitlists. Lifetime value of waitlist trust: next drop waitlist signups grew 28% when early access honored on time.
+      </p>
+      <p>
+        SMS to waitlist: 4,200 × $0.02 = $84 plus platform fee — justified if converts 40 incremental orders at $120 and 52% margin ($2,496 gross margin) versus email-only. Model SMS on incremental orders not total drop revenue. Over-texting waitlist between drops erodes opt-in — cap to drop day plus one reminder.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Failure rehearsal: product launch email failures</h2>
+      <p>
+        <strong>Waitlist forgotten.</strong> Public launch fires; waitlist six hours late. Fix: schedule waitlist first; automated check before public enable.
+      </p>
+      <p>
+        <strong>VIP same as public.</strong> No differentiation; VIP churn. Fix: early access full-price; public gets wider window not deeper discount.
+      </p>
+      <p>
+        <strong>Inventory lie.</strong> Email says in stock; checkout OOS. Fix: real-time inventory in dynamic blocks; pause send if below threshold.
+      </p>
+      <p>
+        <strong>Flow collision.</strong> Back-in-stock for old SKU day of new drop. Fix: suppress other automations during launch window calendar block.
+      </p>
+      <p>
+        <strong>Timezone queue bug.</strong> ESP delivers early access at wrong local peak. Fix: send time optimization per segment or explicit timezone test accounts.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Cross-workflow dependencies for product launch</h2>
+      <p>
+        Product launch email sequencing collides with back-in-stock alerts, BFCM peaks, winback discount paths, and VIP early access calendars — calendar-block other automations during drop window or customers receive conflicting offers same day. Waitlist metadata from capture feeds <a class="link" href="/use-cases/welcome-series">welcome</a> and segmentation for future drops. Browse collection affinity from <a class="link" href="/use-cases/browse-abandonment">browse abandonment</a> informs VIP targeting for category-specific launches. Inventory display in launch emails depends on same sync health as cart recovery — false in-stock destroys drop trust permanently on hype products.
+      </p>
+      <p>
+        Launch discount strategy must align with <a class="link" href="/use-cases/discount-strategy">discount governance</a> — early access as privilege not deeper discount protects margin and VIP relationship. SMS launch branch economics compare to Postscript fees in <a class="link" href="/use-cases/analytics">analytics</a> on incremental orders only.         Post-launch debrief metrics feed next season's <a class="link" href="/use-cases/vip-segments">VIP</a> threshold and waitlist capture design. Soft launch to waitlist before public scale reduces inventory oversell risk coordinated with ops — email promises drive traffic spikes that checkout must survive.
+      </p>
+      <p>
+        Weekly operator rhythm during drop season: Monday waitlist conversion and queue depth; Wednesday inventory sync latency test; Friday suppression collision check with other automations. Pre-drop: timezone send dry-run with staff accounts in three regions. Post-drop debrief within 72 hours — VIP versus public revenue, unsubscribes, false inventory incidents.         Archive timing spreadsheet for next drop; institutional memory beats hero creative memory.
+      </p>
+      <p>
+        Launch email without ops calendar alignment is marketing volunteering support for social backlash — sell-through speed means nothing if checkout breaks or waitlist feels fake. Soft launch to waitlist validates demand and catches broken dynamic inventory blocks before public scale amplifies failure. Drop debrief within 72 hours or institutional memory evaporates before next season planning starts. Waitlist pollution from previous drops erodes signups — tag every capture with drop ID property at source. SMS branch fires only after waitlist email confirms — channel order signals priority.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify max-w-4xl">
+      <h2 class="font-serif text-3xl font-black text-[#24170f]">Merchant scenario (use-cases): Product Launch rollout checkpoint</h2>
+      <p>
+        Shopify operators evaluating Product Launch should document week-one baseline metrics before claiming migration wins — welcome time-to-live, cart suppression accuracy, post-purchase edge cases, and winback engagement splits scored on staff accounts. Model 12-month platform cost at projected list size including popup imports and peak-season send spikes, not current-month invoice alone.
+      </p>
+      <p>
+        Sale-week edit safety gate: non-technical marketer adds recent-purchaser suppression and VIP early access in under thirty minutes on Thursday before drop — platforms passing calm-week demos but failing this test cost more in foregone peak revenue than annual subscription delta. Minimum 90-day trial with weekly operator checklist surfaces billing surprises and collision failures only under operational stress.
+      </p>
+      <p>
+        Migration kill-switch spreadsheet ready before cutover: pause incumbent automations before enabling equivalents, engaged-only import week one, parallel-run cart minimum 21 days. Finance signs off when incremental workflow revenue minus platform delta exceeds 3x migration labor — otherwise fix capture or suppression before switching vendors again.
+      </p>
+    </div>
+  </section>
+
+  <section class="container pb-8">
+    <div class="flex flex-wrap gap-4 text-sm font-bold">
+      <a class="link" href="/apps">All apps →</a>
+      <a class="link" href="/use-cases/back-in-stock">Back-in-stock →</a>
+      <a class="link" href="/for/fashion">Fashion →</a>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify max-w-4xl">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Merchant scenario: Product Launch on Shopify Plus consumables</h2>
+      <p>
+        CleanPour drinkware ($74k/mo) rebuilt Product Launch after collision audit found cart and winback double-discounting same week — unsubscribes spiked 0.4 points. Separated flows with documented suppression hierarchy: cart active blocks winback discount path; recent purchaser hard exclusion 14 days. Holdout 5% measures true incrementality; gross attributed revenue without holdout overstated program value 22%.
+      </p>
+      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-10">90-day Product Launch implementation</h2>
+      <p><strong>Days 1–30:</strong> Baseline metrics and staff-account edge-case tests — gift buyer, subscription tag, wholesale exclusion. <strong>Days 31–60:</strong> Production flow with collision matrix signed by retention lead. <strong>Days 61–90:</strong> Margin reporting with discount cost subtracted; weekly operator rhythm on calendar.</p>
+      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-10">Margin math: Product Launch with discount governance</h2>
+      <p>
+        CleanPour tracked margin per recovered order not gross recovery revenue — 15% blanket discount on $52 AOV surrendered $7.80 margin per recovery. Graduated ladder lifted gross profit per send 34% with 8% lower gross revenue — finance approved expanded send volume on profit-positive path only.
+      </p>
+      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-10">Failure rehearsal: Product Launch breaks</h2>
+      <p>
+        <strong>Collision with cart.</strong> Two discounts same customer same week — Fix: hierarchy doc. <strong>No sunset.</strong> Perpetual automation trains ignore — Fix: three-touch series max then annual check-in. <strong>Guest data gap.</strong> ROI ceiling until checkout captures email — Fix: segment logged-in versus guest recovery separately.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify max-w-4xl">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Workflow test checklist for product launch</h2>
+      <p>
+        Run this product launch validation on staff accounts before peak season: (1) welcome branches correctly by signup source and suppresses existing customers; (2) cart recovery excludes recent purchasers of same SKU variant; (3) post-purchase suppresses gift buyers from discount cross-sell and respects try-on or education delay windows; (4) winback splits engaged versus unengaged and sunsets after three touches. Score each 0–10; any flow below 7 is migration or rebuild signal.
+      </p>
+      <p>
+        Model 12-month cost at projected contact count after popup, giveaway, and influencer imports — not today's list size. Profile-based ESP pricing punishes capture-heavy verticals; pay-per-send rewards selective sending but still requires quarterly sunset of 180-day non-openers for deliverability. Stack TCO includes capture pageviews, SMS peak-week volume, and unused suite modules — finance should see one retention line item.
+      </p>
+      <p>
+        Sale-week rehearsal non-negotiable: marketer must add VIP early-access segment and recent-purchaser suppression in under thirty minutes on Thursday before drop. Platforms that pass calm-week demos but fail sale-week edits cost more in foregone peak revenue than annual subscription delta. Document trial outcomes in writing for finance — incremental workflow revenue minus platform delta must exceed 3x migration labor or fix capture and collision before switching again.
+      </p>
+      <p>
+        Migration timing: January–March or May–September only; never October–December ESP switch. Parallel-run welcome and cart minimum 21 days; incumbent read-only 90 days for export disputes. Kill-switch spreadsheet lists every incumbent automation pause order before enabling new platform equivalents — duplicate cart recovery during migration quarters deliverability and unsubscribes take quarters to heal.
+      </p>
+    </div>
+  </section>
+
+  <FaqSection faqs={faqs} title="Product launch FAQ" />
+</BaseLayout>

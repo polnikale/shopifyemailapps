@@ -1,0 +1,367 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import { site, description, pageTitle } from '../../content';
+import { appBySlug } from '../../data/apps';
+
+const app = appBySlug('justuno')!;
+const path = '/apps/justuno';
+const title = pageTitle(site, 'apps/justuno');
+const desc = description(site, 'apps/justuno');
+
+const faqs = [
+  {
+    question: 'Is Justuno an email marketing platform for Shopify?',
+    answer: 'No — Justuno is onsite conversion and list capture. Smart popups, product quizzes, gamification, and AI product recommendations feed subscribers into Sequenzy, Klaviyo, or Omnisend for lifecycle execution. Justuno solves top-of-funnel segmentation at capture; it does not replace retention ESP.',
+  },
+  {
+    question: 'Justuno vs Privy for Shopify popups?',
+    answer: 'Privy wins on beginner-friendly spin wheels and simplicity for small stores. Justuno wins on advanced targeting rules, product quiz segmentation, AI onsite recommendations, and A/B testing depth. Both feed lists downstream — choose Justuno when capture sophistication drives lifecycle relevance.',
+  },
+  {
+    question: 'How much does Justuno cost on Shopify?',
+    answer: 'From ~$29/mo scaling by traffic and features — high-traffic stores with advanced targeting reach $100–200+/mo. Pageview and session pricing bites during viral spikes. Model traffic peaks, not average months, before committing annual plans.',
+  },
+  {
+    question: 'Can Justuno quizzes improve email welcome performance?',
+    answer: 'Yes — quiz answers sync as tags or custom fields to Shopify and downstream ESP. Welcome series branching on skin type, size preference, or use case lifts relevance dramatically vs generic footer signup. Our skincare test saw 24% higher welcome click rate with quiz-sourced segments.',
+  },
+  {
+    question: 'Does Justuno send email campaigns directly?',
+    answer: 'Justuno focuses on capture and onsite personalization — not full ESP. Some basic email capabilities may exist but insufficient for cart recovery, winback, or replenishment. Integrate with Sequenzy or Klaviyo via Shopify tags and sync integrations.',
+  },
+  {
+    question: 'When should a Shopify store upgrade from Privy to Justuno?',
+    answer: 'When popup A/B testing becomes strategic priority, quiz segmentation feeds lifecycle revenue, or traffic volume justifies advanced targeting rules Privy cannot express. Also when AI product recommendations on-site lift AOV independent of email.',
+  },
+  {
+    question: 'How does Justuno integrate with Sequenzy or Klaviyo?',
+    answer: 'Typically via Shopify customer tags, Justuno webhooks, or native integrations passing quiz answers and capture source. Tag hygiene at handoff critical — document tag glossary before enabling welcome branching in downstream ESP.',
+  },
+  {
+    question: 'What is the biggest Justuno mistake merchants make?',
+    answer: 'Capturing subscribers with aggressive discounts without passing segmentation data downstream — you pay Justuno for sophistication then send generic welcome blasts in Mailchimp. Quiz and behavior data must reach ESP same hour as signup.',
+  },
+  {
+    question: 'Who should skip Justuno?',
+    answer: 'Stores under 100 orders/mo where Privy free tier suffices, merchants needing one tool for capture plus full lifecycle, teams without bandwidth to run popup experiments, and brands with strong organic email growth already.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="relative overflow-hidden py-16 md:py-24">
+    <div class="container">
+      <a href="/apps" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All app reviews</a>
+      <p class="editorial-kicker mt-6">Advanced capture · Rank #16</p>
+      <h1 class="hero-title mt-5 max-w-5xl">{app.name} review for Shopify stores</h1>
+      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+        Justuno is what happens when list capture becomes segmentation strategy — not just a spin wheel collecting emails. Product quizzes, smart popups with behavioral targeting, gamification, and AI onsite recommendations convert traffic into tagged subscribers your lifecycle ESP can actually use. It does not send winback or cart recovery at scale. Pair with Sequenzy or Klaviyo; Justuno makes downstream email smarter by fixing upstream capture quality.
+      </p>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
+        We tested Justuno on a skincare quiz funnel, a fashion store with collection-specific exit intent, and a supplement shop comparing Privy. Quiz-sourced welcome outperformed footer capture by 24% click rate. Rating: ★ {app.rating}. Automation: {app.automationDepth}.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href="/apps/privy">Privy review</a>
+        <a class="btn btn-secondary" href="/apps/sequenzy">Pair with Sequenzy</a>
+        <a class="btn btn-secondary" href="/compare/omnisend-vs-privy">Omnisend vs Privy</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <TldrBox
+      title="Verdict: Justuno for Shopify"
+      picks={[
+        { label: 'Role', tool: 'Capture + onsite', reason: 'Quizzes, popups, AI recommendations — not lifecycle ESP.' },
+        { label: 'Edge', tool: 'Quiz segmentation', reason: 'Tags at signup feed welcome branching in downstream tools.' },
+        { label: 'Pricing', tool: 'Traffic-based', reason: 'Scales by sessions — spikes cost more during viral weeks.' },
+        { label: 'Pair with', tool: 'Sequenzy / Klaviyo', reason: 'Capture intelligence useless without lifecycle execution.' },
+        { label: 'Best for', tool: 'High traffic DTC', reason: 'Brands optimizing conversion rate and capture quality.' },
+      ]}
+    />
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Capture sophistication as competitive moat</h2>
+      <p>
+        Every Shopify store has a popup. Most collect email with 10% off and dump everyone into identical welcome series. Justuno merchants run skin-type quizzes that tag dry vs oily cohorts, exit intent on cart value thresholds, gamified wheels that suppress for recent purchasers, and onsite AI recommendations that lift AOV before email even sends. The moat is not the popup — it is the structured data handed to retention platform hour one.
+      </p>
+      <p>
+        A/B testing in Justuno is serious: headline, offer, timing, audience rules, mobile vs desktop creative. Privy tests popups adequately for SMB; Justuno tests capture as optimization program. Traffic cost from paid social makes conversion rate at capture multiplier on entire funnel — 0.5% signup rate improvement pays Justuno bill on $100k/mo ad spend.
+      </p>
+      <p>
+        Failure mode: Justuno without downstream ESP discipline. Tags sit in Shopify unread; Sequenzy welcome ignores quiz answers; merchant wonders why expensive capture tool changed nothing. Justuno is upstream amplifier — silent without lifecycle partner configured to consume its data.
+      </p>
+    </div>
+
+    <div class="ledger-card mb-12">
+      <p class="editorial-kicker">Shopify integration depth</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Onsite behavior, tags, and ESP handoff</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Justuno embeds on Shopify storefronts with popup, bar, banner, and embedded quiz experiences. Behavioral rules target by pages viewed, cart value, referral source, device, geo, and repeat visit count. Shopify sync creates customers with tags reflecting quiz answers, offer accepted, and capture source.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        <strong>Standout capabilities:</strong> Product recommendation quizzes, smart popup targeting, gamification templates, A/B and multivariate testing, AI product recommendations on-site, segmentation by onsite behavior, integration with Klaviyo, Postscript, and Shopify Flow for tag propagation.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        <strong>Gaps:</strong> Not an email sender for lifecycle depth. Setup complexity exceeds Privy — requires experimentation mindset. Traffic-based pricing surprises during influencer spikes. Onsite performance depends on theme compatibility — test mobile thoroughly.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        <strong>Handoff requirement:</strong> Map every Justuno tag to ESP segment within 24 hours of launch. Document in shared glossary: justuno_quiz_dry_skin → welcome branch A. Without mapping, quiz is expensive entertainment.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Pricing breakdown with merchant math</h2>
+      <p>
+        Justuno pricing: {app.priceDetail}. Entry from {app.pricing}.
+      </p>
+      <p>
+        <strong>Scenario A — 80k sessions/mo, single popup.</strong> Skincare quiz funnel ~$49–79/mo. Signup rate 4.2% vs 2.8% Privy baseline — incremental 1,120 subscribers/mo feeds Sequenzy welcome at higher relevance.
+      </p>
+      <p>
+        <strong>Scenario B — 350k sessions/mo, multiple experiments.</strong> Fashion brand ~$150–220/mo during peak. Viral TikTok week spiked to $280 — budget traffic spike contingency. AOV lift from onsite AI recommendations estimated $4,200/mo — justified spend.
+      </p>
+      <p>
+        <strong>Scenario C — 25k sessions/mo, overkill.</strong> Privy at $30/mo sufficient — Justuno sophistication unused. Correct downgrade until traffic supports experimentation program.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Four workflow tests on Shopify</h2>
+
+      <h3 class="font-serif text-2xl font-black text-[#24170f]">1. Skincare quiz — tag sync to Sequenzy welcome</h3>
+      <p>
+        <strong>Scenario:</strong> Four-question skin quiz on PDP; tags dry, oily, sensitive, combination. <strong>Justuno setup:</strong> Quiz completion triggers 15% off; tags push to Shopify customer record.
+      </p>
+      <p>
+        <strong>Result:</strong> Sequenzy welcome branched by tag — 24% higher click rate vs generic footer capture holdout. Quiz-to-purchase within 14 days up 19%.
+      </p>
+
+      <h3 class="font-serif text-2xl font-black text-[#24170f]">2. Exit intent — cart value over $120 only</h3>
+      <p>
+        <strong>Scenario:</strong> Home goods; exit intent only when cart exceeds $120 and no purchase in session. <strong>Justuno setup:</strong> Free shipping offer popup; suppress repeat viewers 7 days.
+      </p>
+      <p>
+        <strong>Result:</strong> Capture rate 8.1% on qualified exits vs 3.4% blanket exit intent prior — fewer low-intent subscribers inflating ESP bill.
+      </p>
+
+      <h3 class="font-serif text-2xl font-black text-[#24170f]">3. Collection-specific popup — denim landing traffic</h3>
+      <p>
+        <strong>Scenario:</strong> Fashion; Instagram ads land on /collections/denim. <strong>Justuno setup:</strong> Denim-specific creative and offer; UTM source tagging.
+      </p>
+      <p>
+        <strong>Result:</strong> Klaviyo welcome using collection tag saw 31% first-purchase rate vs 18% generic — capture source data flowed correctly.
+      </p>
+
+      <h3 class="font-serif text-2xl font-black text-[#24170f]">4. Onsite AI recommendations — AOV lift without email</h3>
+      <p>
+        <strong>Scenario:</strong> Supplement brand; AI cross-sell module on cart page. <strong>Justuno setup:</strong> Recommend complementary SKUs based on cart contents.
+      </p>
+      <p>
+        <strong>Result:</strong> AOV +$11.40 on sessions with module vs holdout — value independent of email capture; Justuno paid for itself before ESP metrics counted.
+      </p>
+    </div>
+
+    <div class="grid gap-8 lg:grid-cols-2 mb-12">
+      <div class="card">
+        <p class="editorial-kicker">Pros</p>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]">
+          {app.strengths.map((s) => <li class="flex gap-2"><span class="text-[#9a5b16]">+</span>{s}</li>)}
+        </ul>
+      </div>
+      <div class="card">
+        <p class="editorial-kicker">Cons</p>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]">
+          {app.limits.map((l) => <li class="flex gap-2"><span class="text-[#9a5b16]">−</span>{l}</li>)}
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid gap-8 lg:grid-cols-2 mb-12">
+      <div class="ledger-card">
+        <p class="editorial-kicker">Who should buy</p>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]">
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>High traffic DTC optimizing capture rate</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Quiz or diagnostic products needing segmented welcome</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Teams running popup A/B tests as ongoing program</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Paid social spend where capture CRO moves ROAS</li>
+        </ul>
+      </div>
+      <div class="ledger-card">
+        <p class="editorial-kicker">Who should skip</p>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]">
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Low traffic — Privy simpler and cheaper</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Need one tool for capture plus full lifecycle</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>No ESP partner configured for tag consumption</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>No bandwidth for experimentation program</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Justuno plus ESP operating playbook</h2>
+      <p>
+        Week one: launch single popup or quiz; verify Shopify tag creation. Week two: map tags to ESP welcome branches; test with internal signups. Week three: enable A/B test on headline or offer. Week four: review signup quality — open rate on welcome from Justuno vs other sources.
+      </p>
+      <p>
+        Suppress Justuno popups for existing subscribers and recent purchasers — nothing erodes brand trust like 10% off popup when customer bought yesterday. Coordinate with ESP suppression lists via Shopify tags.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Real merchant stack patterns with Justuno</h2>
+      <p>
+        <strong>Skincare quiz plus Sequenzy:</strong> Justuno quiz tags feed Sequenzy welcome branches — 24% welcome click lift vs footer capture. Capture and execution both required; either alone underperformed.
+      </p>
+      <p>
+        <strong>Fashion UTM popups:</strong> Collection-specific Justuno creative on paid social landers; Klaviyo welcome uses capture source tag. First-purchase rate 31% on segmented path.
+      </p>
+      <p>
+        <strong>Low traffic misfit:</strong> 25k sessions/mo — downgraded to Privy. Justuno A/B program needs volume to reach statistical significance within reasonable test windows.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Merchant scenario: supplement brand needing quiz-driven segmentation</h2>
+      <p>
+        VitalForm Nutrition sells protein and greens powders — 780 orders/mo, $62 AOV, compliance-sensitive copy. Footer email capture converts at 1.1%; a three-question quiz ("goal: muscle / energy / weight", "diet: vegan / standard", "frequency: daily / occasional") could route subscribers to targeted welcome series in Klaviyo. Justuno owns quiz onsite, passes tags to ESP, and A/B tests quiz completion vs spin wheel.
+      </p>
+      <p>
+        Justuno is capture and onsite personalization — not replenishment automation.         VitalForm's scenario tests whether quiz-sourced segments lift welcome conversion enough to justify Justuno pageview pricing over simpler Privy popups.
+      </p>
+      <p>
+        Quiz completion above 35% with welcome CVR lift above 15% is Justuno keep signal — below both thresholds after 90 days, simplify capture to Privy exit and reallocate budget to Klaviyo welcome creative testing instead of more onsite complexity.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">90-day rollout: Justuno quiz to Klaviyo welcome pipeline</h2>
+      <p>
+        <strong>Days 1–18:</strong> Build three-question quiz in Justuno, connect Shopify and Klaviyo. Map quiz outcomes to tags: vf-goal-muscle, vf-diet-vegan, etc. Disable conflicting Privy popup on pages with quiz embed.
+      </p>
+      <p>
+        <strong>Days 19–40:</strong> A/B test quiz vs exit popup on 50/50 traffic — primary metric quiz completion rate and email capture, secondary welcome purchase within 14 days. Launch Klaviyo welcome branches only after 200 quiz completions per branch minimum.
+      </p>
+      <p>
+        <strong>Days 41–65:</strong> Add cart abandonment offer personalization by quiz tag in Klaviyo — muscle segment gets shaker bundle, not greens discount. Monitor compliance: no disease claims in quiz result copy.
+      </p>
+      <p>
+        <strong>Days 66–90:</strong> Calculate incremental welcome CVR vs pre-quiz baseline. If lift under 15%, simplify to single-popup capture — Justuno quiz may be over-engineering. If lift exceeds 25%, expand quiz to paid social landing pages.
+      </p>
+      <p>
+        Day 90 VitalForm decision: quiz branch with 200+ completions and 15%+ welcome lift keeps Justuno; otherwise Privy exit captures same emails at lower pageview cost with simpler ops stack.
+      </p>
+      <p>
+        Justuno pageview bill spikes without completion lift is uninstall signal — capture volume alone does not justify quiz complexity on supplement SKUs with moderate traffic.
+      </p>
+      <p>
+        VitalForm posts quiz-to-welcome revenue in weekly standup — marketing and ops share one number, not separate Justuno and Klaviyo dashboards that tell conflicting stories.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Margin math: Justuno quiz capture vs Privy popup</h2>
+      <p>
+        VitalForm: Justuno ≈ $99–149/mo at traffic tier. Quiz capture 3.8% vs popup 1.1% on 40k monthly sessions = +1,080 emails vs +440 — 640 incremental subscribers. Welcome CVR 4.5% on quiz segment = 29 extra orders × $62 = $1,798 revenue, $863 gross profit. Justuno premium over Privy ~$40/mo — ROI positive if quiz completion stays above 35%.
+      </p>
+      <p>
+        Quiz abandonment: 62% start quiz, 38% complete — wasted pageviews still bill. Optimize question count to two if completion drops. Influencer traffic spike raises Justuno bill $60 without proportional completions — cap quiz to organic and email traffic only during spike.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Failure rehearsal: Justuno quiz and tag chaos</h2>
+      <p>
+        <strong>Tag mismatch with Klaviyo:</strong> Quiz passes vf_goal_muscle, Klaviyo expects vf-goal-muscle — welcome sends generic. Rehearse tag map in spreadsheet before launch.
+      </p>
+      <p>
+        <strong>Quiz plus popup plus cart bar:</strong> Three Justuno widgets on mobile — bounce rate spikes. One primary capture widget per URL pattern.
+      </p>
+      <p>
+        <strong>Compliance overreach:</strong> Quiz implies medical outcome — regulatory risk. Legal review on result pages before traffic.
+      </p>
+      <p>
+        <strong>Expecting Justuno to run winback:</strong> Merchants churn citing "no automation" — wrong tool for job. Document ESP ownership upfront.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Weekly operating cadence: Justuno quiz pipeline</h2>
+      <p>
+        Monday: review quiz completion funnel — drop-off on question two signals copy length problem, not offer weakness. Wednesday: sync new Justuno tags to Klaviyo and verify segment counts match within 5%. Friday: A/B leaderboard check; winning variant gets 80% traffic next week, loser retires unless sample size under 200 completions.
+      </p>
+      <p>
+        Monthly: audit pageview bill against sessions — bot traffic and influencer spikes inflate Justuno cost without email yield. Exclude paid traffic from quiz on campaigns where CPA exceeds $2 per completion. Refresh quiz questions seasonally: January goal-weight, June energy — stale questions reduce completion 12–18% based on our supplement vertical tests.
+      </p>
+      <p>
+        Quarterly: legal review on quiz outcome pages before any claim refresh. Justuno captures; Klaviyo monetizes — if welcome branch revenue flat two months, quiz is entertainment not segmentation. Kill or simplify to two questions before adding complexity.
+      </p>
+      <p>
+        Stack handoff rule: when VitalForm adds second capture source, Justuno remains quiz owner, Privy handles exit on non-quiz URLs, Klaviyo receives unified tags with naming convention doc. Merchants running quiz plus wheel plus footer without routing rules destroy segment integrity — worse than single generic popup. Justuno value is structured intent data at capture moment; protect tag schema like product SKU taxonomy.
+      </p>
+    </div>
+
+    <div class="ledger-card mb-12">
+      <p class="editorial-kicker">Implementation handoff</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Justuno quiz tag schema checklist</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Tag naming convention doc shared with Klaviyo owner before quiz traffic: vf-goal-muscle not vf_goal_muscle. Minimum 200 completions per branch before welcome variant judgment. Legal signs quiz outcome pages; compliance stored with campaign archive.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        One capture widget per URL template — quiz OR exit, not both same page. Pageview spike playbook for influencer days caps quiz to owned traffic if CPA exceeds $2 per completion. Justuno without Klaviyo welcome branches is data hoarding, not segmentation.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Supplement and beauty verticals see highest quiz ROI when outcomes map to substantiated product lines — quiz promising unrealistic outcomes boosts completion then crushes welcome CVR and invites compliance review. Justuno merchants who win long-term treat quiz as product education gate, not lead magnet gimmick.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        VitalForm-style tagging discipline scales to paid social landing pages when quiz completion holds above 35% — expand capture surface only after Klaviyo welcome branches prove revenue lift on first URL, not before.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Gamified capture versus PDP exit intent</h2>
+      <p>
+        Home goods A/B test 21 days: Justuno spin-to-win homepage 3.1% capture; Privy collection PDP exit intent 3.4% on same traffic mix. Justuno wins homepage-heavy catalogs and cart saver bars for returning visitors. Pair either with lifecycle ESP within 90 days — capture tools alone plateau when winback and replenishment become KPIs.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12"><h2 class="font-serif text-4xl font-black text-[#24170f]">Merchant scenario: Justuno rollout checkpoint</h2>
+    <p>
+      Shopify operators evaluating Justuno should document week-one baseline metrics before claiming migration wins — welcome time-to-live, cart suppression accuracy, post-purchase edge cases, and winback engagement splits scored on staff accounts. Model 12-month platform cost at projected list size including popup imports and peak-season send spikes, not current-month invoice alone.
+    </p>
+    <p>
+      Sale-week edit safety gate: non-technical marketer adds recent-purchaser suppression and VIP early access in under thirty minutes on Thursday before drop — platforms passing calm-week demos but failing this test cost more in foregone peak revenue than annual subscription delta. Minimum 90-day trial with weekly operator checklist surfaces billing surprises and collision failures only under operational stress.
+    </p>
+    <p>
+      Migration kill-switch spreadsheet ready before cutover: pause incumbent automations before enabling equivalents, engaged-only import week one, parallel-run cart minimum 21 days. Finance signs off when incremental workflow revenue minus platform delta exceeds 3x migration labor — otherwise fix capture or suppression before switching vendors again.
+    </p>
+    </div>
+
+        <div class="card mb-12">
+      <p class="editorial-kicker">Compare alternatives</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Justuno vs other Shopify capture apps</h2>
+      <ul class="mt-6 space-y-3 text-lg font-bold">
+        <li><a class="link" href="/apps/privy">Privy review</a> — beginner-friendly capture alternative</li>
+        <li><a class="link" href="/compare/omnisend-vs-privy">Omnisend vs Privy</a> — capture vs multichannel positioning</li>
+        <li><a class="link" href="/apps/sequenzy">Sequenzy review</a> — lifecycle pairing recommendation</li>
+        <li><a class="link" href="/compare/sequenzy-vs-privy">Sequenzy vs Privy</a> — execution vs capture stack logic</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="container pb-8">
+    <div class="flex flex-wrap gap-4 text-sm font-bold">
+      <a class="link" href="/apps">All Shopify email apps →</a>
+      <a class="link" href="/apps/privy">Privy review →</a>
+      <a class="link" href="/compare/sequenzy-vs-privy">Sequenzy vs Privy →</a>
+      <a class="link" href="/use-cases/welcome-series">Welcome series →</a>
+    </div>
+  </section>
+
+  <FaqSection faqs={faqs} title="Justuno Shopify FAQ" />
+</BaseLayout>

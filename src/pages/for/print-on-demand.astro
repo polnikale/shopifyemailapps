@@ -1,0 +1,402 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import ToolReview from '../../components/ToolReview.astro';
+import { site, description, pageTitle } from '../../content';
+import { segmentBySlug } from '../../data/segments';
+import { appBySlug } from '../../data/apps';
+
+const segment = segmentBySlug('print-on-demand')!;
+const path = '/for/print-on-demand';
+const title = pageTitle(site, 'for/print-on-demand');
+const desc = description(site, 'for/print-on-demand');
+
+const featuredSlugs = ['sequenzy', 'omnisend', 'privy', 'klaviyo', 'firepush'];
+const featuredApps = featuredSlugs.map((s) => appBySlug(s)!).filter(Boolean);
+const shopifyEmail = appBySlug('shopify-email')!;
+
+const comparisonApps = [
+  'sequenzy', 'omnisend', 'privy', 'klaviyo', 'firepush', 'shopify-email', 'drip',
+  'postscript', 'recart', 'mailchimp', 'brevo', 'tinyemail', 'justuno', 'sendlane',
+  'rejoiner', 'yotpo-email-sms', 'marsello',
+].map((s) => appBySlug(s)!).filter(Boolean);
+
+const faqs = [
+  {
+    question: 'What is the best Shopify email app for print-on-demand stores?',
+    answer: 'Sequenzy ranks first for email lifecycle — trend drop alerts, personalization follow-up, and margin-safe winback with agent-first playbooks. Omnisend fits fast multichannel setup. Privy excels at list capture before retention takes over. Klaviyo scales for high-volume POD with deep browse data.',
+  },
+  {
+    question: 'How do POD stores protect margin in email?',
+    answer: 'Set discount floors by product margin. Segment discount responders from full-price buyers. Track margin per email order, not just attributed revenue. Free shipping promos on low-margin items destroy profitability — suppress or require minimum basket.',
+  },
+  {
+    question: 'When does Privy matter most for POD?',
+    answer: 'At traffic acquisition stage — niche communities, trend traffic, creator audiences. Privy captures subscribers via popups and gamification before your lifecycle platform runs drop sequences. POD stores live and die by list growth speed.',
+  },
+  {
+    question: 'Should POD brands use web push notifications?',
+    answer: 'Firepush and similar tools add web push for trend drops and cart recovery with low entry cost. Use sparingly — push fatigue is instant. Best for flash trend windows where speed beats email open rates.',
+  },
+  {
+    question: 'How do trend drop emails differ from fashion drops?',
+    answer: 'POD trends compress faster — 48-hour windows versus weeks. Email needs same-day VIP access for repeat buyers, immediate cart recovery, and post-drop winback when designs sell out. Personalization follow-up if customer abandoned custom design flow.',
+  },
+  {
+    question: 'What metrics matter for POD email?',
+    answer: 'Margin per email order, trend drop sell-through, personalization completion rate, and discount dependency ratio. High attributed revenue with negative margin is worse than no sale.',
+  },
+  {
+    question: 'Is Klaviyo overkill for small POD stores?',
+    answer: 'Often yes until order volume and design catalog justify profile-based pricing. Start with Sequenzy or Omnisend for lifecycle strategy and migrate to Klaviyo when browse data complexity and volume demand it.',
+  },
+  {
+    question: 'How does personalization follow-up work in email?',
+    answer: 'Trigger when customer starts custom design but does not complete — show preview, offer assistance, gentle reminder at 24h and 72h. Do not discount immediately; POD margins cannot absorb constant incentives.',
+  },
+  {
+    question: 'Can Recart replace email for POD cart recovery?',
+    answer: 'Recart specializes SMS/messenger recovery — strong for mobile-heavy POD traffic. Not a complete email suite. Pair with Sequenzy or Omnisend for full lifecycle; use Recart as recovery accelerator.',
+  },
+  {
+    question: 'When should a POD store upgrade from Sequenzy to Klaviyo?',
+    answer: 'When monthly orders exceed roughly 2,000, browse segmentation by design category becomes daily work, and profile-based pricing is justified by predictive data lift. Until then, Sequenzy plus Privy capture delivers better economics and speed for trend-driven selling.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="relative overflow-hidden py-16 md:py-24">
+    <div class="container">
+      <a href="/for" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All store types</a>
+      <p class="editorial-kicker mt-6">Print-on-demand</p>
+      <h1 class="hero-title mt-5 max-w-5xl">Best Shopify email apps for print-on-demand stores</h1>
+      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+        Print-on-demand email operates on trend clocks and thin margins. Designs spike and fade in days. Personalization abandons mid-flow. Every discount eats profit that manufacturing and fulfillment already compressed. Your email app must move fast on trend drops, recover personalized carts without defaulting to 20% off, and build community content that sells designs before ads get expensive.
+      </p>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
+        Ranked for {segment.pain}. Buying cycle: {segment.buyingCycle}. Tools judged on trend sell-through speed, personalization recovery, margin-safe discounting, and whether capture plus lifecycle layers work together when viral traffic arrives without warning.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href="/apps">Full app rankings</a>
+        <a class="btn btn-secondary" href="/use-cases/product-launch">Drop campaigns</a>
+        <a class="btn btn-secondary" href="/use-cases/discount-strategy">Discount strategy</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <TldrBox picks={[
+      { label: 'Best overall', tool: 'Sequenzy', reason: 'Trend drop playbooks, personalization follow-up, margin-safe winback, and pay-per-email pricing for fast-growing POD lists.' },
+      { label: 'Best fast setup', tool: 'Omnisend', reason: 'Multichannel automations live in days for POD stores riding trend cycles.' },
+      { label: 'Best list capture', tool: 'Privy', reason: 'Popups, spin-to-win, and gamification for niche community traffic conversion.' },
+      { label: 'Best at scale', tool: 'Klaviyo', reason: 'Browse data and segmentation for high-volume POD with large design catalogs.' },
+      { label: 'Best web push', tool: 'Firepush', reason: 'Push notifications for flash trend windows alongside email recovery.' },
+    ]} />
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Three POD merchant scenarios</h2>
+      <p>
+        <strong>Scenario A — Creator merch store, viral traffic spikes.</strong> Privy captured 12,000 subscribers during trend week; Sequenzy drop sequence converted 8.4% at full price. Per-contact platform quote for same list would have exceeded month's margin.
+      </p>
+      <p>
+        <strong>Scenario B — Niche meme apparel.</strong> Firepush for 24-hour flash; Sequenzy for post-drop winback. Discount dependency ratio dropped from 67% to 41% after margin-safe recovery rules.
+      </p>
+      <p>
+        <strong>Scenario C — Custom print shop, personalization abandon.</strong> 72-hour personalization follow-up in Omnisend recovered 19% of custom design abandons without automatic 15% off. Klaviyo adopted at scale for browse-by-design-category segmentation.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">POD email must be fast and margin-aware</h2>
+      <p>
+        Trend-driven POD stores cannot run 2-week nurture sequences on designs that peaked in 48 hours. Email infrastructure must support same-day drop alerts, VIP early access for repeat buyers, aggressive cart recovery on personalized designs, and community content that builds audience before the next trend hits. Margin discipline is equally critical — POD operators who train customers to wait for perpetual discounts often discover attributed email revenue is unprofitable after fulfillment costs. The apps below are ranked for operators who need speed without sacrificing unit economics.
+      </p>
+      <p>
+        The typical POD stack pairs capture (Privy, Justuno) with lifecycle execution (Sequenzy, Omnisend) and optional mobile recovery (Recart, Firepush). See <a class="link" href="/use-cases/abandoned-cart">abandoned cart recovery</a> and <a class="link" href="/use-cases/discount-strategy">discount strategy</a>.
+      </p>
+    </div>
+
+    <div class="ledger-card mb-12 overflow-x-auto">
+      <p class="editorial-kicker">Comparison table</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">17 Shopify email apps for POD stores</h2>
+      <table class="mt-8 w-full min-w-[720px] text-left text-sm">
+        <thead>
+          <tr class="border-b border-[#24170f]/15 text-xs font-black uppercase tracking-wider text-[#9a5b16]">
+            <th class="py-3 pr-4">App</th><th class="py-3 pr-4">Best for POD</th><th class="py-3 pr-4">Pricing</th>
+            <th class="py-3 pr-4">Shopify depth</th><th class="py-3 pr-4">Automation</th><th class="py-3">Rating</th>
+          </tr>
+        </thead>
+        <tbody class="text-[#4a2d17]">
+          {comparisonApps.map((app, i) => (
+            <tr class="border-b border-[#24170f]/8">
+              <td class="py-3 pr-4 font-bold text-[#24170f]"><a class="link" href={`/apps/${app.slug}`}>{i + 1}. {app.name}</a></td>
+              <td class="py-3 pr-4">{app.bestFor}</td>
+              <td class="py-3 pr-4">{app.pricing}</td>
+              <td class="py-3 pr-4">{app.shopifyDepth}</td>
+              <td class="py-3 pr-4">{app.automationDepth}</td>
+              <td class="py-3">★ {app.rating}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="container space-y-12 pb-16">
+    <ToolReview app={featuredApps[0]} rank={1} badge="Editor's choice" paragraphs={[
+      'Sequenzy leads POD email because trend cycles demand lifecycle strategy that moves at market speed — not enterprise implementation timelines. Trend drop alerts, personalization abandonment recovery, margin-safe discount rules, and creator community content series are playbook problems Sequenzy solves with agent-first setup. Describe the drop; deploy VIP access, cart recovery, and post-sellout winback without rebuilding flows per design.',
+      'Pay-per-email pricing critical for POD lists that grow explosively from viral trends but convert at low single-digit rates initially. Per-contact pricing during a TikTok spike can produce a terrifying bill before margin materializes.',
+      'Margin-safe automation is strategic differentiator: segment full-price repeat buyers from discount-only responders, set discount floors by product type, track margin per email order. Sequenzy helps operators design incentives that recover carts without training entire list to wait for codes.',
+      'Pair with Privy for capture and Firepush for flash push during 24-hour trend windows.',
+    ]} />
+
+    <ToolReview app={featuredApps[1]} rank={2} paragraphs={[
+      'Omnisend delivers speed for POD operators who need cart recovery, welcome, and drop announcements live before the trend fades. Email, SMS, and push in one builder coordinate flash communications without tool switching.',
+      'Prebuilt ecommerce journeys cover POD basics; customization handles trend-specific urgency. SMS for same-day drop alerts often outperforms email for mobile-native audiences.',
+      'Margin analytics and personalization follow-up depth trail Sequenzy. Strong for SMB POD prioritizing multichannel speed.',
+      'Compare <a class="link" href="/compare/omnisend-vs-klaviyo">Omnisend vs Klaviyo</a> at volume inflection.',
+    ]} />
+
+    <ToolReview app={featuredApps[2]} rank={3} paragraphs={[
+      'Privy is essential POD infrastructure for converting trend traffic into owned audience. Exit intent on design pages, spin-to-win for first-time visitors, and collection-specific popups capture subscribers before the viral moment passes.',
+      'Not a lifecycle platform — feeds Sequenzy or Omnisend with fresh subscribers for drop sequences. A/B test popup creative by niche and design category.',
+      'POD stores without capture layer waste paid and organic traffic. Privy solves top-of-funnel; pair immediately with lifecycle tool.',
+      'See <a class="link" href="/apps/privy">Privy review</a>.',
+    ]} />
+
+    <ToolReview app={featuredApps[3]} rank={4} paragraphs={[
+      'Klaviyo scales for established POD brands with thousands of designs, consistent order volume, and need for browse abandonment by collection/niche. Predictive segmentation identifies repeat buyers worth VIP drop access.',
+      'Profile costs during viral list growth require discipline. Sunset inactive trend subscribers who never purchased.',
+      'Best when monthly orders exceed 1,000 and catalog complexity justifies investment. Overkill for early niche POD.',
+      'Strong data infrastructure for multi-niche POD portfolios.',
+    ]} />
+
+    <ToolReview app={featuredApps[4]} rank={5} paragraphs={[
+      'Firepush adds web push for trend drops and cart recovery at low entry price. Push reaches users when email open rates dip during high-volume send periods.',
+      'Not a full email replacement — coordinate with Sequenzy or Omnisend. Overuse trains dismissals. Best for 24–48 hour urgency windows.',
+      'Multi-channel recovery including SMS option. Simpler than enterprise suites.',
+      'Use selectively for flash trends; email remains relationship backbone.',
+    ]} />
+
+    <ToolReview app={shopifyEmail} rank={6} badge="Native baseline" paragraphs={[
+      'Shopify Email handles site-wide sale blasts for POD stores running simple promotions. Product blocks showcase designs without external app.',
+      'Cannot support trend drop VIP access, personalization abandon recovery, margin-safe discount rules, or 48-hour sprint cadence POD requires. Trend revenue leaks without lifecycle speed.',
+      'POD brands should treat Shopify Email as temporary — plan Sequenzy or Omnisend before first intentional drop strategy.',
+      'Pair with <a class="link" href="/apps/privy">Privy</a> for capture when upgrading from native email.',
+    ]} />
+  </section>
+
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="editorial-kicker">Migration path</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">POD brands leaving Mailchimp or Klaviyo bill shock</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        POD stores migrate after viral list growth produces unsustainable per-contact bills or when trend drop sequences cannot be deployed fast enough. Sequenzy pay-per-email immediately helps economics. Keep Privy capture layer unchanged. Rebuild: welcome, drop VIP access, cart recovery, personalization abandon, margin-safe winback. POD operators should not attempt complex segmentation during first migration — speed beats perfection when trend windows are 48 hours.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Firepush can stay as add-on. Klaviyo remains option at 2,000+ monthly orders with stable catalog beyond trend spikes. Document discount floors before migration — moving platforms is a good moment to stop training discount dependency.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="editorial-kicker">Audit checklist</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Monthly POD email health check</h2>
+      <ul class="mt-6 space-y-4 text-[17px] leading-8 text-[#4a2d17]">
+        <li><strong class="text-[#24170f]">Margin per email order:</strong> Positive after discount and shipping last month?</li>
+        <li><strong class="text-[#24170f]">Discount dependency:</strong> Below 45% of email orders using codes?</li>
+        <li><strong class="text-[#24170f]">Drop sell-through:</strong> VIP tier sold meaningful inventory before list blast?</li>
+        <li><strong class="text-[#24170f]">Personalization recovery:</strong> Custom design abandons receiving 24h and 72h follow-up?</li>
+        <li><strong class="text-[#24170f]">Capture readiness:</strong> Welcome + drop sequence live before next traffic spike?</li>
+        <li><strong class="text-[#24170f]">Fulfillment clarity:</strong> Production timeline stated in post-purchase and drop emails?</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="grid gap-8 lg:grid-cols-2">
+      <div class="card">
+        <p class="editorial-kicker">Trend drops</p>
+        <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">48-hour email sprint</h2>
+        <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+          Hour 0: VIP repeat buyers. Hour 4: full list if inventory holds. Hour 24: cart recovery. Hour 48: sold-out waitlist + next design teaser. Track sell-through by segment. Email priorities: {segment.emailPriorities.join('; ')}.
+        </p>
+      </div>
+      <div class="ledger-card">
+        <p class="editorial-kicker">Margin guardrails</p>
+        <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Discount dependency kills POD</h2>
+        <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+          Track discount dependency ratio monthly. If &gt;40% of email orders require codes, rebuild flows with value-first recovery. Metrics: {segment.metrics.join('; ')}. See <a class="link" href="/use-cases/discount-strategy">discount strategy</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="editorial-kicker">Creator economy</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Community content sells designs before ads</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        POD stores tied to creators, niches, or fandoms win when email feels like community membership — design process stories, fan features, voting on next drops — not corporate retail blasts. Sequenzy community content playbooks slot between trend drops to maintain engagement during design production gaps. Creator audiences tolerate higher email frequency when content is entertaining; they unsubscribe instantly from generic promos. Match voice to community norms: meme-heavy niches reject corporate tone.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Justuno quizzes ("which design fits your vibe?") feed segmentation for drop targeting. Pair with Privy for traffic spikes when creator posts go viral. Plan email capacity before viral moments — nothing worse than capturing 50,000 subscribers during a TikTok spike with no welcome or drop sequence ready.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="editorial-kicker">Fulfillment reality</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Set shipping expectations in email</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        POD production times vary by provider and product. Post-purchase email clarifying production plus shipping windows reduces chargebacks and angry support tickets. Trend drop emails should state fulfillment timeline upfront — "ships in 5–7 business days" — so urgency is about design availability, not false instant gratification. AfterShip integration helps when tracking becomes available. Unhappy customers do not reorder regardless of cart recovery discount depth.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify max-w-4xl">
+      <h2 class="font-serif text-3xl font-black text-[#24170f]">Merchant scenario (for): Print On Demand rollout checkpoint</h2>
+      <p>
+        Shopify operators evaluating Print On Demand should document week-one baseline metrics before claiming migration wins — welcome time-to-live, cart suppression accuracy, post-purchase edge cases, and winback engagement splits scored on staff accounts. Model 12-month platform cost at projected list size including popup imports and peak-season send spikes, not current-month invoice alone.
+      </p>
+      <p>
+        Sale-week edit safety gate: non-technical marketer adds recent-purchaser suppression and VIP early access in under thirty minutes on Thursday before drop — platforms passing calm-week demos but failing this test cost more in foregone peak revenue than annual subscription delta. Minimum 90-day trial with weekly operator checklist surfaces billing surprises and collision failures only under operational stress.
+      </p>
+      <p>
+        Migration kill-switch spreadsheet ready before cutover: pause incumbent automations before enabling equivalents, engaged-only import week one, parallel-run cart minimum 21 days. Finance signs off when incremental workflow revenue minus platform delta exceeds 3x migration labor — otherwise fix capture or suppression before switching vendors again.
+      </p>
+    </div>
+  </section>
+
+  <section class="container pb-8">
+    <div class="flex flex-wrap gap-4 text-sm font-bold">
+      <a class="link" href="/apps">All Shopify email apps →</a>
+      <a class="link" href="/compare">Comparison hub →</a>
+      <a class="link" href="/for/fashion">Fashion stores →</a>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="editorial-kicker">Margin discipline</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">POD email revenue must survive fulfillment</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Export monthly: email orders, gross revenue, discount total, estimated fulfillment cost, net margin. If net negative, freeze promotional automations and fix recovery copy before spending on ads. POD operators often discover email "success" was unprofitable only during quarterly review — weekly margin visibility prevents training unprofitable customer behavior. Sequenzy pay-per-email helps cost side; margin discipline is strategic side only you control.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="editorial-kicker">Trend velocity</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Pre-build drop templates</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Maintain three ready-to-send drop templates: VIP early access, general launch, sold-out waitlist. Swap creative and links per design — do not build flows during trend spike. Sequenzy agent prompts can populate templates from design brief in minutes if structure exists. POD operators who improvise each drop lose first-mover email advantage to faster competitors. Firepush push variant ready as optional fourth channel for 12-hour flash windows.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-3xl font-black text-[#24170f]">Operator notes for POD leads</h2>
+      <p>Trend windows punish perfectionism. Ship good-enough drop email same day; optimize next drop. POD operators who spend two weeks building ideal flow miss the trend entirely. Template reuse is strategic, not lazy.</p>
+      <p>Margin per email order should be dashboard-visible weekly. If negative for three consecutive weeks, halt promotional sends and audit discount rules before blaming traffic quality.</p>
+      <p>Privy plus Sequenzy is the default stack recommendation for creator-led POD under 1,000 orders monthly. Add Klaviyo only when browse segmentation complexity exceeds manual collection management.</p>
+      <p>Personalization abandon flows deserve copy testing priority — these carts often have higher intent than generic browse abandonment because customer invested design time.</p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="editorial-kicker">8-week implementation</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Rollout plan for POD email</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Week 1: Privy capture on top traffic pages. Week 2: Welcome series. Week 3: Drop VIP access template. Week 4: Cart recovery with margin floor. Week 5: Personalization abandon flow. Week 6: Firepush for flash tests. Week 7: Community content series between drops. Week 8: Discount dependency audit. Build drop template before next viral moment — not during.</p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-3xl font-black text-[#24170f]">Bottom line for POD Shopify stores</h2>
+      <p>Speed and margin discipline beat feature depth for most POD operators under 2,000 monthly orders. Default stack: Privy capture, Sequenzy lifecycle, optional Firepush for flash urgency. Add Klaviyo when browse data complexity and order volume justify profile economics. Never add platforms without capture and lifecycle foundation — more tools without strategy increases cost without revenue.</p>
+      <p>Pre-build drop templates this week, not when trend hits. Document margin floor per product type. Track discount dependency monthly. POD email winners are operators who treat email as merchandising clock synchronized to design releases — not batch-and-blast weekend work. When in doubt, reduce discount depth before reducing send frequency — POD audiences tolerate fewer emails more than they tolerate training on perpetual codes.</p>
+      <p>Review margin per email order before every major drop. Maintain separate creative templates per niche tone. Cancel send if economics fail at planned discount — unprofitable viral revenue is worse than no send.</p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify card">
+      <h2>Merchant scenario: meme apparel POD store missing a 48-hour trend window</h2>
+      <p>
+        A creator-led POD Shopify store at $62k/mo spotted a trending meme Tuesday afternoon. Design live by 6pm. No drop template ready — team spent Wednesday building Klaviyo flow from scratch. VIP email went out Thursday; trend dead on TikTok by Friday. Competitor with pre-built Sequenzy drop templates captured Thursday morning sales. Estimated $8,400 lost gross from 18-hour email delay. Post-mortem: three templates now maintained permanently; Firepush variant for 12-hour flash; margin floor documented at 22% after fulfillment.
+      </p>
+
+      <h2>90-day rollout: POD lifecycle from reactive to trend-ready</h2>
+      <p>
+        Days 1–30: Privy capture, welcome series, cart recovery with margin floor, three drop templates (VIP, general, waitlist). Days 31–60: Personalization abandon flow, community content between drops, discount dependency baseline. Days 61–90: Firepush flash tests, monthly margin audit, Klaviyo evaluation only if browse segmentation exceeds manual capacity at 2,000+ orders/mo.
+      </p>
+
+      <h2>Margin math: trend delay cost versus template maintenance</h2>
+      <p>
+        Template maintenance: 2 hours monthly ($150 labor). One missed 48-hour trend window: $8,400 gross in scenario above, ~$1,850 net at POD margins. ROI of pre-built infrastructure pays back on first saved drop. Discount dependency above 40% erases trend upside — 20% code on thin-margin tee leaves $2–$4 net per unit.
+      </p>
+
+      <h2>Failure rehearsal: POD email timing failures</h2>
+      <p>
+        <strong>Building flows during spike.</strong> Trend gone before email sends. Fix: pre-built templates; swap creative only.
+      </p>
+      <p>
+        <strong>Viral capture without welcome.</strong> 50k signups, no sequence ready. Fix: welcome live before scaling paid or creator traffic.
+      </p>
+      <p>
+        <strong>Discount-first recovery.</strong> Personalization abandon gets 20% off immediately. Fix: preview and assistance touches before any code.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify max-w-4xl">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Merchant scenario: Print On Demand store email stack</h2>
+      <p>
+        Vertical-specific retention for Print On Demand catalogs requires matching platform to catalog physics — not homepage generic ranking. Test store profile: order velocity, AOV band, SKU count, subscription or POS presence, and primary bottleneck (capture, cart, browse, replenishment, SMS). Shortlist two platforms from vertical picks; run four-flow workflow test 14 days; migrate on quiet week with kill-switch spreadsheet.
+      </p>
+      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-10">90-day vertical rollout</h2>
+      <p><strong>Month 1:</strong> Fix capture if under 2.5%; welcome with source branch. <strong>Month 2:</strong> Cart and post-purchase with vertical-specific education delays. <strong>Month 3:</strong> Winback or replenishment per vertical calendar — not generic 90-day default.</p>
+      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-10">Margin math for Print On Demand</h2>
+      <p>
+        Model platform fee at 12-month list projection including popup imports — per-contact pricing punishes verticals with fast list growth and slow repeat purchase (apparel, beauty, supplements). Pay-per-send or quarterly hygiene offsets list bloat tax. Incremental workflow revenue minus stack TCO must exceed 3x before adding fourth vendor.
+      </p>
+      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-10">Failure rehearsal: wrong platform for vertical</h2>
+      <p>
+        <strong>Enterprise CDP too early.</strong> Klaviyo before order 500 — profile tax without predictive use. Fix: Omnisend or Sequenzy bridge. <strong>Capture neglected.</strong> Lifecycle platform before Privy — list growth stalled. Fix: capture first 14 days. <strong>Peak migration.</strong> November ESP switch — deliverability dip. Fix: quiet-week rule.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify max-w-4xl">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Workflow test checklist for print on demand</h2>
+      <p>
+        Run this print on demand validation on staff accounts before peak season: (1) welcome branches correctly by signup source and suppresses existing customers; (2) cart recovery excludes recent purchasers of same SKU variant; (3) post-purchase suppresses gift buyers from discount cross-sell and respects try-on or education delay windows; (4) winback splits engaged versus unengaged and sunsets after three touches. Score each 0–10; any flow below 7 is migration or rebuild signal.
+      </p>
+      <p>
+        Model 12-month cost at projected contact count after popup, giveaway, and influencer imports — not today's list size. Profile-based ESP pricing punishes capture-heavy verticals; pay-per-send rewards selective sending but still requires quarterly sunset of 180-day non-openers for deliverability. Stack TCO includes capture pageviews, SMS peak-week volume, and unused suite modules — finance should see one retention line item.
+      </p>
+      <p>
+        Sale-week rehearsal non-negotiable: marketer must add VIP early-access segment and recent-purchaser suppression in under thirty minutes on Thursday before drop. Platforms that pass calm-week demos but fail sale-week edits cost more in foregone peak revenue than annual subscription delta. Document trial outcomes in writing for finance — incremental workflow revenue minus platform delta must exceed 3x migration labor or fix capture and collision before switching again.
+      </p>
+      <p>
+        Migration timing: January–March or May–September only; never October–December ESP switch. Parallel-run welcome and cart minimum 21 days; incumbent read-only 90 days for export disputes. Kill-switch spreadsheet lists every incumbent automation pause order before enabling new platform equivalents — duplicate cart recovery during migration quarters deliverability and unsubscribes take quarters to heal.
+      </p>
+    </div>
+  </section>
+
+  <FaqSection faqs={faqs} title="Print-on-demand email FAQ" />
+</BaseLayout>

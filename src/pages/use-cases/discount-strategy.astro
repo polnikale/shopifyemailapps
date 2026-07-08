@@ -1,0 +1,391 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import ToolReview from '../../components/ToolReview.astro';
+import { site, description, pageTitle } from '../../content';
+import { useCaseBySlug } from '../../data/use-cases';
+import { appBySlug } from '../../data/apps';
+
+const uc = useCaseBySlug('discount-strategy')!;
+const path = '/use-cases/discount-strategy';
+const title = pageTitle(site, 'use-cases/discount-strategy');
+const desc = description(site, 'use-cases/discount-strategy');
+
+const featuredSlugs = ['sequenzy', 'klaviyo', 'drip', 'omnisend', 'privy'];
+const featuredApps = featuredSlugs.map((s) => appBySlug(s)!).filter(Boolean);
+
+const comparisonApps = [
+  'sequenzy', 'klaviyo', 'drip', 'omnisend', 'privy', 'shopify-email',
+  'mailchimp', 'brevo', 'yotpo-email-sms', 'rejoiner',
+].map((s) => appBySlug(s)!).filter(Boolean);
+
+const faqs = [
+  {
+    question: 'What is the best Shopify email app for discount strategy execution?',
+    answer: 'Sequenzy ranks first for discount governance playbooks — graduated incentives, full-price segment treatment, and flow collision rules. Klaviyo wins with predictive discount sensitivity and segment-level offer testing. Drip suits operators building explicit discount-cap workflows visually.',
+  },
+  {
+    question: 'Should every automation include a discount code?',
+    answer: 'No — the most expensive mistake in Shopify email. Default 10% on welcome, cart, browse, and winback stacks incentives and trains customers to never buy full price. Proof-first sequences with selective discount escalation outperform blanket codes.',
+  },
+  {
+    question: 'How do I segment by discount sensitivity?',
+    answer: 'Use order history: percentage of orders with codes, average discount depth, days since last discounted purchase. Klaviyo predictive metrics accelerate this at scale. Tag manually in Drip or Sequenzy when order volume is moderate.',
+  },
+  {
+    question: 'Can popup discounts stack with cart recovery?',
+    answer: 'Never intentionally. Set global rules: one active incentive per customer per 14-day window. Popup coupon suppresses cart discount or vice versa via priority flags. Stacking destroys margin and creates support chaos.',
+  },
+  {
+    question: 'What full-price order percentage is healthy?',
+    answer: 'Varies by vertical — 40–60% for established DTC with strong brand; higher for luxury and <a class="link" href="/for/high-aov">high-AOV</a>. Below 25% signals discount addiction requiring automation audit.',
+  },
+  {
+    question: 'Should VIPs receive the same sale discounts?',
+    answer: 'Usually excluded or offered access instead of deeper percentage. See <a class="link" href="/use-cases/vip-segments">VIP guide</a>. VIP early access at full price beats VIP 30% off during public 25% sale.',
+  },
+  {
+    question: 'How does discount strategy affect deliverability?',
+    answer: 'Aggressive discount blasts to cold segments spike complaints and unsubscribes — hurts inbox placement. Targeted offers to engaged segments perform better on revenue and deliverability. See <a class="link" href="/use-cases/deliverability">deliverability guide</a>.',
+  },
+  {
+    question: 'Can Privy coexist with disciplined discount strategy?',
+    answer: 'Yes if popup offers align with lifecycle rules — smaller capture incentive, no auto-stack with cart. Privy spin-to-win needs outcome passed to email platform for suppression logic.',
+  },
+  {
+    question: 'Can I use automatic Shopify discounts in email?',
+    answer: 'Automatic discounts apply at checkout without code — email promoting code may confuse if automatic already active. Pick one mechanism per promotion window. Document in discount policy spreadsheet which flows use codes versus automatic.',
+  },
+  {
+    question: 'How do free shipping offers compare to percentage off?',
+    answer: 'Often better margin outcome for AOV above shipping cost threshold — test on cart recovery before escalating percentage. Full-price loyalists may respond to free shipping where percentage off trains discount expectation.',
+  },
+  {
+    question: 'What is maximum discount depth policy?',
+    answer: 'Finance-approved ceiling per flow documented in writing — e.g., cart max 10%, winback max 15%, welcome max 10% only for popup entrants. Automation builders cannot exceed without approval. Sequenzy agent prompts can encode caps; Klaviyo requires manual boolean guards.',
+  },
+  {
+    question: 'How do employee discounts interact with email codes?',
+    answer: 'Exclude staff and friends-of-brand segments from promotional automation — separate internal comms channel. Accidental employee inclusion in public cart recovery trains code leakage to social media.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="relative overflow-hidden py-16 md:py-24">
+    <div class="container">
+      <a href="/use-cases" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All use cases</a>
+      <p class="editorial-kicker mt-6">Discount strategy</p>
+      <h1 class="hero-title mt-5 max-w-5xl">Best Shopify email apps for discount strategy</h1>
+      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+        Discount strategy is the guardrail system for every other email workflow. When welcome, cart, browse, winback, and BFCM each ship 10–20% off by default, you do not have a retention program — you have a coupon newsletter with extra steps. The right Shopify email app enforces graduated incentives, respects full-price loyalists, and prevents popup-to-cart-to-winback stacking that finance sees as margin leakage.
+      </p>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
+        This playbook ranks apps for {uc.job}. We audited flow-level discount penetration, collision rules, and full-price repeat metrics across merchants recovering from "discount treadmill" programs. Margin recovered from softer offers often exceeds revenue lost from shallower discounts — measure both.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href="/apps">Full app rankings</a>
+        <a class="btn btn-secondary" href="/use-cases/abandoned-cart">Abandoned cart</a>
+        <a class="btn btn-secondary" href="/for/fashion">Fashion guide</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <TldrBox
+      title="Top Shopify email apps for discount strategy"
+      picks={[
+        { label: 'Best overall', tool: 'Sequenzy', reason: 'Discount governance playbooks with proof-first defaults, graduated escalation, and cross-flow collision documentation.' },
+        { label: 'Best data depth', tool: 'Klaviyo', reason: 'Predictive discount sensitivity, segment offer testing, and revenue-after-discount reporting.' },
+        { label: 'Best workflow control', tool: 'Drip', reason: 'Visual discount-cap branches and explicit full-price paths per automation.' },
+        { label: 'Best multichannel', tool: 'Omnisend', reason: 'Unified email and SMS offer rules when both channels carry incentives.' },
+        { label: 'Best capture alignment', tool: 'Privy', reason: 'Popup offer design feeding lifecycle suppression when paired with execution platform.' },
+      ]}
+    />
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Three discount strategy scenarios</h2>
+      <p>
+        <strong>Scenario A — Apparel brand, 19% full-price orders.</strong> Sequenzy audit removed discount from browse email one and cart email one; graduated winback discount to email three only. Full-price order share rose to 38% in two quarters without revenue drop.
+      </p>
+      <p>
+        <strong>Scenario B — Home goods, stacked popup + cart.</strong> Klaviyo global property "active_offer_window" set on any discount redemption; suppressed second offer for 14 days. Support tickets on code confusion fell 31%.
+      </p>
+      <p>
+        <strong>Scenario C — POD merch, margin-sensitive.</strong> Drip capped all automation discounts at 10% max with cart value floor — no discount on carts under $45. Privy popup reduced from 20% to 10% with higher minimum order. Contribution margin positive on email-acquired orders.
+      </p>
+    </div>
+
+    <div class="ledger-card mb-12">
+      <p class="editorial-kicker">Execution playbook</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Discount strategy operating contract</h2>
+      <div class="mt-6 grid gap-6 md:grid-cols-2 text-[#4a2d17]">
+        <div><h3 class="font-black text-[#24170f]">Trigger</h3><p class="mt-2 text-[17px] leading-8">{uc.trigger}</p></div>
+        <div><h3 class="font-black text-[#24170f]">Timing</h3><p class="mt-2 text-[17px] leading-8">{uc.timing}</p></div>
+      </div>
+      <div class="mt-8"><h3 class="font-black text-[#24170f]">Exclusions</h3>
+        <ul class="mt-3 space-y-2">{uc.exclusions.map((e) => <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span>{e}</li>)}</ul>
+      </div>
+      <div class="mt-8"><h3 class="font-black text-[#24170f]">Metrics</h3>
+        <ul class="mt-3 space-y-2">{uc.metrics.map((m) => <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span>{m}</li>)}</ul>
+      </div>
+    </div>
+
+    <div class="ledger-card mb-12 overflow-x-auto">
+      <p class="editorial-kicker">Comparison table</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">10 Shopify apps for discount strategy</h2>
+      <table class="mt-8 w-full min-w-[720px] text-left text-sm">
+        <thead>
+          <tr class="border-b border-[#24170f]/15 text-xs font-black uppercase tracking-wider text-[#9a5b16]">
+            <th class="py-3 pr-4">App</th><th class="py-3 pr-4">Discount governance</th><th class="py-3 pr-4">Pricing</th>
+            <th class="py-3 pr-4">Shopify depth</th><th class="py-3 pr-4">Automation</th><th class="py-3">Rating</th>
+          </tr>
+        </thead>
+        <tbody class="text-[#4a2d17]">
+          {comparisonApps.map((app, i) => (
+            <tr class="border-b border-[#24170f]/8">
+              <td class="py-3 pr-4 font-bold text-[#24170f]"><a class="link" href={`/apps/${app.slug}`}>{i + 1}. {app.name}</a></td>
+              <td class="py-3 pr-4">{app.bestFor}</td><td class="py-3 pr-4">{app.pricing}</td>
+              <td class="py-3 pr-4">{app.shopifyDepth}</td><td class="py-3 pr-4">{app.automationDepth}</td>
+              <td class="py-3">★ {app.rating}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="container space-y-12 pb-16">
+    <p class="editorial-kicker">Detailed reviews</p>
+    <h2 class="font-serif text-4xl font-black text-[#24170f]">Five apps for discount strategy</h2>
+
+    <ToolReview app={featuredApps[0]} rank={1} badge="Editor's choice" paragraphs={[
+      'Sequenzy leads discount strategy because tools enable discounts — they do not prevent discount addiction. Playbooks default proof-first across welcome, browse, cart, winback with explicit escalation gates tied to sensitivity segments.',
+      'Cross-flow collision rules documented: one offer window, VIP exclusion, replenishment full-price default — strategy layer competitors leave to spreadsheets.',
+      'Agent edits implement finance-approved discount caps without hunting boolean nodes in enterprise builders.',
+      'Ideal for merchants recovering from "every email is 20% off" programs without hiring discount police full-time.',
+    ]} />
+
+    <ToolReview app={featuredApps[1]} rank={2} paragraphs={[
+      'Klaviyo predictive discount affinity segments customers before you offer — send proof to predicted full-price buyers, codes to predicted responders only.',
+      'Flow A/B tests offer depth versus access-based perks — data-driven discount policy refinement.',
+      'Revenue reporting net of discount shows true flow contribution — essential for quarterly audit.',
+      'Risk: powerful segmentation makes aggressive discounting easier too — discipline still operational.',
+    ]} />
+
+    <ToolReview app={featuredApps[2]} rank={3} paragraphs={[
+      'Drip canvas displays every discount node — audit-friendly for teams visualizing offer stacking across workflows.',
+      'Tags like discount-responder-30d drive suppression in other flows — manual but transparent.',
+      'Workflow splits by cart value and order history implement graduated caps clearly.',
+      'Operator-heavy; rewards teams who treat discount policy as product.',
+    ]} />
+
+    <ToolReview app={featuredApps[3]} rank={4} paragraphs={[
+      'Omnisend bundles email and SMS offers — single place to prevent SMS stacking extra code on email cart recovery.',
+      'Prebuilt flows often include discount placeholders — audit before enable is mandatory for discipline.',
+      'Practical for SMB implementing first collision rules after Shopify Email.',
+      'Graduate when offer logic spans 6+ conditions across channels.',
+    ]} />
+
+    <ToolReview app={featuredApps[4]} rank={5} paragraphs={[
+      'Privy is where discount strategy starts — popup offer size sets customer expectations before lifecycle platform takes over.',
+      'Smaller capture incentive with higher AOV threshold trains better subscribers than 25% off everything.',
+      'Pass coupon metadata to Sequenzy or Klaviyo for welcome and cart suppression alignment.',
+      'Privy alone cannot govern cross-flow discounts — always pair with lifecycle executor.',
+    ]} />
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="editorial-kicker">Offer ladder</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Graduated incentive model</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Level 0: proof only. Level 1: free shipping threshold. Level 2: 5–10% capped. Level 3: 15% only for cold discount-sensitive segments. Never Level 3 on <a class="link" href="/use-cases/vip-segments">VIP</a> or replenishment habitual buyers.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="editorial-kicker">Finance alignment</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Margin floor per flow</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Document minimum contribution margin after discount per workflow. Cart recovery below floor sends reminder-only. Winback below floor sends product news only. <a class="link" href="/use-cases/analytics">Analytics guide</a> covers margin reporting in platforms.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Discount strategy touches every flow</h2>
+      <p>Cross-read <a class="link" href="/use-cases/welcome-series">welcome</a>, <a class="link" href="/use-cases/abandoned-cart">cart</a>, <a class="link" href="/use-cases/winback">winback</a>, and <a class="link" href="/use-cases/black-friday">Black Friday</a> with this guardrail doc open. One policy, many workflows.</p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="editorial-kicker">Code architecture</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Shopify discount codes in automation</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Unique single-use codes per recipient reduce leakage on forums — Klaviyo dynamic coupons, Sequenzy integration patterns, manual static codes leak and stack. Set minimum order value on codes aligned with margin floor. Expire codes in 72 hours for urgency without permanent train-waiting.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Automatic discounts in Shopify Admin conflict with email codes — customer gets lower of two or double confusion. Pick one incentive mechanism per promotion window.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="editorial-kicker">International stores</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Currency and discount perception</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Shopify Markets customers see local currency — flat 10% works; flat $10 off does not translate. Segment by market for incentive messaging. Free shipping threshold varies by zone — <a class="link" href="/for/food-and-beverage">food merchants</a> shipping perishables need geo-specific offers in <a class="link" href="/use-cases/segmentation">segments</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-3xl font-black text-[#24170f]">Quarterly discount policy review</h2>
+      <p>Export every automation containing a code — map discount depth by flow. Calculate blended margin after codes for email-acquired orders. If below floor, soften or remove offers flow by flow.</p>
+      <p>Measure full-price order share trend — declining share triggers automation audit even if revenue grows. Compare popup offer to cart offer to winback offer — stacking incidents logged in support tickets.</p>
+      <p>Finance sign-off on annual discount budget tied to email — prevents marketing optimizing attributed revenue while CFO sees margin collapse.</p>
+      <p>Agency or freelancer campaign sends need same discount policy as automation — one-off campaign with steeper code undermines cart flow ladder. Centralize code creation permissions in Shopify or document approval chain.</p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Merchant scenario: footwear brand bleeding full-price share</h2>
+      <p>
+        A $110k/month DTC footwear label ran 20% popup, 15% welcome, 10% browse abandon, 15% cart, and 25% winback — often hitting the same shopper within two weeks. Full-price orders fell to 19% of transactions despite revenue growth. Finance discovered email-attributed orders averaged 11.2 points lower margin than paid social acquisition. Customer service logged 23 weekly tickets about "which code works" and expired stack attempts. Influencer codes collided with automation codes because Shopify discount creation lived in three different admin tabs with no central registry.
+      </p>
+      <p>
+        Sequenzy-led audit mapped every automation containing a discount code into a single spreadsheet: flow name, discount depth, eligibility segment, minimum order, expiration, collision rules. Proof-first defaults replaced discount in browse email one and cart email one. Global property active_offer_window set on any redemption — 14-day suppression of second offer across flows. Winback graduated to email three only. Popup reduced to 15% with $85 minimum. Full-price share recovered to 36% in two quarters; email-attributed margin rose $4,200 monthly without revenue decline. Klaviyo predictive sensitivity later identified 22% of list as full-price-likely — those profiles route to education paths instead of codes.
+      </p>
+      <p>
+        Discount spreadsheet linked from every flow description in Klaviyo — new hire opened flow, saw policy link first. Support used spreadsheet to answer "which code applies" tickets in one lookup. Finance signed quarterly discount budget tied to spreadsheet max depths — marketing could not exceed without written approval.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">90-day rollout: discount governance from chaos to contract</h2>
+      <p>
+        Days 1–14: Export every active Shopify discount code and map to automation or campaign. Interview support for top five code confusion patterns. Calculate current full-price order share and email-attributed margin versus store average. Draft discount floor with finance — maximum depth by cart value band and customer discount history.
+      </p>
+      <p>
+        Days 15–30: Remove discount from first touch in browse and cart flows. Implement global suppression property or tag on redemption. Align popup offer with welcome email one — single source of truth. Document ladder in shared Notion or spreadsheet accessible to marketing and support.
+      </p>
+      <p>
+        Days 31–60: Audit winback and replenishment for unnecessary codes. Cap all automation discounts at finance-approved ceiling. Add VIP full-price segment exclusion from offer paths. Train agency or freelancer on code creation approval chain — no ad-hoc steeper codes in campaigns.
+      </p>
+      <p>
+        Days 61–90: Quarterly review ritual scheduled. Measure full-price share trend weekly. Run first holdout test — 10% of cart abandoners get proof-only email two; compare margin-adjusted recovery. Publish internal discount policy one-pager; link from every flow description field in ESP.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Margin math: stacked offers versus governed ladder</h2>
+      <p>
+        Store doing 1,800 orders monthly, $72 AOV, 44% gross margin. Stacked 20% average discount on 55% of email-attributed orders (990 orders): discount cost ≈ $14,260 monthly. Governed ladder with 20% on 25% of email orders only: discount cost ≈ $6,480 — savings $7,780 monthly ($93,360 annual). Even 15% reduction in discount depth on half of email orders typically moves contribution margin 3–5 points without touching acquisition spend.
+      </p>
+      <p>
+        Hidden cost: support time. 23 tickets weekly × 12 minutes × $28/hr support cost = $64 weekly ($3,328 annual) plus customer trust erosion unmeasured. Centralized code registry and collision suppression often pay back in support labor alone within one quarter. Model discount as percentage of contribution margin, not top-line revenue — marketing dashboards optimizing attributed revenue without margin floor destroy CFO confidence in email channel.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Failure rehearsal: discount strategy collapses</h2>
+      <p>
+        <strong>Campaign override.</strong> Black Friday one-off 30% code undermines cart ladder trained at 15% max. Fix: campaign codes respect active_offer_window or pause automation offers during sale window with documented exception process.
+      </p>
+      <p>
+        <strong>VIP insult.</strong> Top customer who never uses codes receives winback 25%. Fix: exclude RFM top decile and full-price loyalists from discount automation paths.
+      </p>
+      <p>
+        <strong>Popup-welcome drift.</strong> Privy updated to 20%, welcome still references 15%. Fix: weekly automated test submission through popup; alert on mismatch.
+      </p>
+      <p>
+        <strong>Finance surprise.</strong> Marketing celebrates email revenue record; margin report shows email channel negative on contribution. Fix: monthly margin-after-discount report by acquisition source; tie bonus metrics to contribution not gross.
+      </p>
+      <p>
+        <strong>Over-correction.</strong> Remove all discounts; recovery and welcome conversion crater. Fix: graduated ladder — proof first, discount second touch, capped by segment — not zero-discount absolutism.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Cross-workflow dependencies for discount governance</h2>
+      <p>
+        Discount policy is the spine connecting welcome, browse, cart, winback, replenishment, loyalty, BFCM, and product launch flows — change one ladder rung without auditing others and collision returns within weeks. Finance-approved discount floor should live in a single document linked from every flow description field in your ESP. When loyalty points or VIP early access perks change, update discount governance doc the same day — triple-stack incidents during peaks destroy margin faster than any single flow optimization recovers. Agency and freelancer campaign access to Shopify discount creation needs approval chain; one-off 30% campaign undermines cart ladder trained at 15% max.
+      </p>
+      <p>
+        Predictive discount sensitivity in Klaviyo only helps when profile hygiene and redemption history are clean — garbage segment definitions produce garbage sensitivity scores. Pair discount governance with <a class="link" href="/use-cases/segmentation">segmentation</a> quarterly audit and <a class="link" href="/use-cases/analytics">analytics</a> margin-after-discount reporting. Full-price order share is the north star metric spanning all workflows; declining share triggers automation audit even when attributed revenue grows. Discount strategy is not a one-time project — merchandising calendar, new popup vendors, and platform migrations all require policy revalidation before launch.
+      </p>
+      <p>
+        Weekly operator rhythm: Monday export active Shopify discount codes and map to automations; Wednesday review full-price order share trend; Friday scan support tickets for code confusion keywords. Monthly: finance sign-off on discount depth changes; audit agency campaign codes against ladder. Quarterly: full automation discount map refresh; holdout test on one flow with proof-only second touch.         Every flow owner reads discount policy doc before editing offer logic — no exceptions during peak prep.
+      </p>
+      <p>
+        Discount governance fails when treated as one-time audit — new flows launch weekly, popups change monthly, agencies create codes daily. Policy doc without weekly rhythm becomes historical artifact by Q2. Full-price order share trending down is early warning system; investigate within two weeks not two quarters.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify max-w-4xl">
+      <h2 class="font-serif text-3xl font-black text-[#24170f]">Merchant scenario (use-cases): Discount Strategy rollout checkpoint</h2>
+      <p>
+        Shopify operators evaluating Discount Strategy should document week-one baseline metrics before claiming migration wins — welcome time-to-live, cart suppression accuracy, post-purchase edge cases, and winback engagement splits scored on staff accounts. Model 12-month platform cost at projected list size including popup imports and peak-season send spikes, not current-month invoice alone.
+      </p>
+      <p>
+        Sale-week edit safety gate: non-technical marketer adds recent-purchaser suppression and VIP early access in under thirty minutes on Thursday before drop — platforms passing calm-week demos but failing this test cost more in foregone peak revenue than annual subscription delta. Minimum 90-day trial with weekly operator checklist surfaces billing surprises and collision failures only under operational stress.
+      </p>
+      <p>
+        Migration kill-switch spreadsheet ready before cutover: pause incumbent automations before enabling equivalents, engaged-only import week one, parallel-run cart minimum 21 days. Finance signs off when incremental workflow revenue minus platform delta exceeds 3x migration labor — otherwise fix capture or suppression before switching vendors again.
+      </p>
+    </div>
+  </section>
+
+  <section class="container pb-8">
+    <div class="flex flex-wrap gap-4 text-sm font-bold">
+      <a class="link" href="/apps">All apps →</a>
+      <a class="link" href="/use-cases/segmentation">Segmentation →</a>
+      <a class="link" href="/for/print-on-demand">Print-on-demand →</a>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify max-w-4xl">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Merchant scenario: Discount Strategy on Shopify Plus consumables</h2>
+      <p>
+        CleanPour drinkware ($74k/mo) rebuilt Discount Strategy after collision audit found cart and winback double-discounting same week — unsubscribes spiked 0.4 points. Separated flows with documented suppression hierarchy: cart active blocks winback discount path; recent purchaser hard exclusion 14 days. Holdout 5% measures true incrementality; gross attributed revenue without holdout overstated program value 22%.
+      </p>
+      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-10">90-day Discount Strategy implementation</h2>
+      <p><strong>Days 1–30:</strong> Baseline metrics and staff-account edge-case tests — gift buyer, subscription tag, wholesale exclusion. <strong>Days 31–60:</strong> Production flow with collision matrix signed by retention lead. <strong>Days 61–90:</strong> Margin reporting with discount cost subtracted; weekly operator rhythm on calendar.</p>
+      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-10">Margin math: Discount Strategy with discount governance</h2>
+      <p>
+        CleanPour tracked margin per recovered order not gross recovery revenue — 15% blanket discount on $52 AOV surrendered $7.80 margin per recovery. Graduated ladder lifted gross profit per send 34% with 8% lower gross revenue — finance approved expanded send volume on profit-positive path only.
+      </p>
+      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-10">Failure rehearsal: Discount Strategy breaks</h2>
+      <p>
+        <strong>Collision with cart.</strong> Two discounts same customer same week — Fix: hierarchy doc. <strong>No sunset.</strong> Perpetual automation trains ignore — Fix: three-touch series max then annual check-in. <strong>Guest data gap.</strong> ROI ceiling until checkout captures email — Fix: segment logged-in versus guest recovery separately.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify max-w-4xl">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Workflow test checklist for discount strategy</h2>
+      <p>
+        Run this discount strategy validation on staff accounts before peak season: (1) welcome branches correctly by signup source and suppresses existing customers; (2) cart recovery excludes recent purchasers of same SKU variant; (3) post-purchase suppresses gift buyers from discount cross-sell and respects try-on or education delay windows; (4) winback splits engaged versus unengaged and sunsets after three touches. Score each 0–10; any flow below 7 is migration or rebuild signal.
+      </p>
+      <p>
+        Model 12-month cost at projected contact count after popup, giveaway, and influencer imports — not today's list size. Profile-based ESP pricing punishes capture-heavy verticals; pay-per-send rewards selective sending but still requires quarterly sunset of 180-day non-openers for deliverability. Stack TCO includes capture pageviews, SMS peak-week volume, and unused suite modules — finance should see one retention line item.
+      </p>
+      <p>
+        Sale-week rehearsal non-negotiable: marketer must add VIP early-access segment and recent-purchaser suppression in under thirty minutes on Thursday before drop. Platforms that pass calm-week demos but fail sale-week edits cost more in foregone peak revenue than annual subscription delta. Document trial outcomes in writing for finance — incremental workflow revenue minus platform delta must exceed 3x migration labor or fix capture and collision before switching again.
+      </p>
+      <p>
+        Migration timing: January–March or May–September only; never October–December ESP switch. Parallel-run welcome and cart minimum 21 days; incumbent read-only 90 days for export disputes. Kill-switch spreadsheet lists every incumbent automation pause order before enabling new platform equivalents — duplicate cart recovery during migration quarters deliverability and unsubscribes take quarters to heal.
+      </p>
+    </div>
+  </section>
+
+  <FaqSection faqs={faqs} title="Discount strategy FAQ" />
+</BaseLayout>

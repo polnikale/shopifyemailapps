@@ -1,0 +1,391 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import ToolReview from '../../components/ToolReview.astro';
+import { site, description, pageTitle } from '../../content';
+import { useCaseBySlug } from '../../data/use-cases';
+import { appBySlug } from '../../data/apps';
+
+const uc = useCaseBySlug('replenishment')!;
+const path = '/use-cases/replenishment';
+const title = pageTitle(site, 'use-cases/replenishment');
+const desc = description(site, 'use-cases/replenishment');
+
+const featuredSlugs = ['sequenzy', 'klaviyo', 'omnisend', 'drip', 'yotpo-email-sms'];
+const featuredApps = featuredSlugs.map((s) => appBySlug(s)!).filter(Boolean);
+
+const comparisonApps = [
+  'sequenzy', 'klaviyo', 'omnisend', 'drip', 'yotpo-email-sms', 'postscript',
+  'shopify-email', 'brevo', 'sendlane', 'marsello',
+].map((s) => appBySlug(s)!).filter(Boolean);
+
+const faqs = [
+  {
+    question: 'What is the best Shopify email app for replenishment reminders?',
+    answer: 'Sequenzy ranks first for consumption-based replenishment playbooks with subscription collision rules and SKU-specific timing windows. Klaviyo wins at scale with line-item triggers and predictive reorder dates. Postscript adds SMS for low-friction reorder on consumables when opted in.',
+  },
+  {
+    question: 'How do I calculate replenishment timing?',
+    answer: 'Map each consumable SKU to expected days of supply from usage research — not universal 30-day default. Reminder at 80% of consumption window; follow-up at 100%; subscription upsell at 120% if not reordered. Beauty serums, dog food, and coffee differ radically.',
+  },
+  {
+    question: 'Should replenishment emails include discounts?',
+    answer: 'Default full-price for replenishment — these are habitual buyers who already trust product. Discount only for lapsed replenishment responders who missed 100% window. Subscription upsell in follow-up often beats discount on margin.',
+  },
+  {
+    question: 'How do replenishment and subscription apps interact?',
+    answer: 'Exclude active subscribers on same SKU from replenishment email. Shopify Subscription, Recharge, or Skio status must sync to email platform. Double messaging causes skips and cancellations.',
+  },
+  {
+    question: 'Can one reminder timing work for all products?',
+    answer: 'No — the most common replenishment failure. 30-day universal reminder trains wrong expectations and annoys customers on 90-day supply SKUs. Build per-SKU or per-category consumption tables.',
+  },
+  {
+    question: 'What replenishment conversion rate is good?',
+    answer: '15–35% for well-timed consumables with established buyers. Higher on pet food and coffee; lower on discretionary beauty. Measure days early/late versus optimal — precision matters more than blast conversion.',
+  },
+  {
+    question: 'Does SMS work for replenishment?',
+    answer: 'Yes for habitual mobile buyers — one-tap reorder links perform well. Cap frequency; monthly SMS reminder max for most consumables. Postscript and Omnisend SMS integrate with Shopify reorder URLs.',
+  },
+  {
+    question: 'How does replenishment relate to winback?',
+    answer: 'Customers between replenishment cycles are not lapsed — exclude from winback. Winback targets true purchase lapse beyond category-appropriate windows.',
+  },
+  {
+    question: 'What if customer subscribes mid-replenishment flow?',
+    answer: 'Exit replenishment immediately on subscription start for same SKU — subscription management emails take over. Tag subscription-active in Shopify or Recharge sync. Double messaging causes skips.',
+  },
+  {
+    question: 'Can replenishment email recommend different SKU?',
+    answer: 'Yes when original SKU discontinued or out of stock long-term — recommend successor product with migration messaging. Do not silently swap without explanation — trust loss.',
+  },
+  {
+    question: 'How do bundle replenishment timers work?',
+    answer: 'Bundle consumption ends when first component depletes — timer based on limiting SKU. Tag bundle orders with shortest-supply SKU property. Sending reminder when one of three bundle items empty feels wrong — education on partial replenishment acceptable.',
+  },
+  {
+    question: 'What is early replenishment signal?',
+    answer: 'Customer reorders before reminder fires — update timer from actual reorder date, suppress pending reminder. Shopify repeat order event cancels in-flight replenishment sequence. Prevents annoyance to best customers.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="relative overflow-hidden py-16 md:py-24">
+    <div class="container">
+      <a href="/use-cases" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All use cases</a>
+      <p class="editorial-kicker mt-6">Replenishment</p>
+      <h1 class="hero-title mt-5 max-w-5xl">Best Shopify email apps for replenishment reminders</h1>
+      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+        Replenishment email is a clock problem disguised as a marketing problem. A 30-day reminder for a 90-day serum insults customers who still have half a bottle. A dog food brand reminding at true consumption window beats any winback discount. The right Shopify email app reads order line items, respects subscription state, and fires at SKU-specific supply depletion — not arbitrary calendar defaults.
+      </p>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
+        This playbook ranks apps for {uc.job}. We validated per-SKU timing tables, subscription exclusion, and full-price replenishment economics across beauty, pet, and food merchants. One universal 30-day reminder is the most common replenishment failure we see in Shopify migrations.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href="/apps">Full app rankings</a>
+        <a class="btn btn-secondary" href="/for/beauty">Beauty guide</a>
+        <a class="btn btn-secondary" href="/for/pet-products">Pet products</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <TldrBox
+      title="Top Shopify email apps for replenishment"
+      picks={[
+        { label: 'Best overall', tool: 'Sequenzy', reason: 'SKU consumption playbooks, subscription suppression, and subscription upsell at 120% window without per-SKU flow cloning.' },
+        { label: 'Best data depth', tool: 'Klaviyo', reason: 'Line-item reorder triggers, predictive next order date, and segment testing per product category.' },
+        { label: 'Best fast setup', tool: 'Omnisend', reason: 'Prebuilt reorder journeys for stores with few consumable SKUs and simple timing.' },
+        { label: 'Best workflow control', tool: 'Drip', reason: 'Per-product tag timers and visual branches for operators managing consumption tables manually.' },
+        { label: 'Best loyalty tie-in', tool: 'Yotpo Email & SMS', reason: 'Points-earned reminders when loyalty program rewards habitual reorder.' },
+      ]}
+    />
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Three replenishment merchant scenarios</h2>
+      <p>
+        <strong>Scenario A — Vitamin DTC, 45-day supply bottles.</strong> Sequenzy reminder at day 36 (80%), follow-up day 45, subscribe-and-save pitch day 54. Subscription conversion from reminder series 14%; full-price replenishment 71% of reorder revenue.
+      </p>
+      <p>
+        <strong>Scenario B — Premium pet food, breed-specific consumption.</strong> Klaviyo metafields stored consumption days by SKU; large-breed formula 38-day reminder, small-breed 52-day. Postscript SMS at 100% window for mobile-loyal segment. Replenishment precision cut churn to competitor promos.
+      </p>
+      <p>
+        <strong>Scenario C — Specialty coffee, multi-SKU households.</strong> Drip tagged orders by bag size; 12oz at 18-day, 2lb at 41-day. Excluded gift subscriptions. Winback suppression while replenishment active prevented double-send confusion.
+      </p>
+    </div>
+
+    <div class="ledger-card mb-12">
+      <p class="editorial-kicker">Execution playbook</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Replenishment operating contract</h2>
+      <div class="mt-6 grid gap-6 md:grid-cols-2 text-[#4a2d17]">
+        <div><h3 class="font-black text-[#24170f]">Trigger</h3><p class="mt-2 text-[17px] leading-8">{uc.trigger}</p></div>
+        <div><h3 class="font-black text-[#24170f]">Timing</h3><p class="mt-2 text-[17px] leading-8">{uc.timing}</p></div>
+      </div>
+      <div class="mt-8"><h3 class="font-black text-[#24170f]">Exclusions</h3>
+        <ul class="mt-3 space-y-2">{uc.exclusions.map((e) => <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span>{e}</li>)}</ul>
+      </div>
+      <div class="mt-8"><h3 class="font-black text-[#24170f]">Metrics</h3>
+        <ul class="mt-3 space-y-2">{uc.metrics.map((m) => <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span>{m}</li>)}</ul>
+      </div>
+    </div>
+
+    <div class="ledger-card mb-12 overflow-x-auto">
+      <p class="editorial-kicker">Comparison table</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">10 Shopify apps for replenishment</h2>
+      <table class="mt-8 w-full min-w-[720px] text-left text-sm">
+        <thead>
+          <tr class="border-b border-[#24170f]/15 text-xs font-black uppercase tracking-wider text-[#9a5b16]">
+            <th class="py-3 pr-4">App</th><th class="py-3 pr-4">Replenishment fit</th><th class="py-3 pr-4">Pricing</th>
+            <th class="py-3 pr-4">Shopify depth</th><th class="py-3 pr-4">Automation</th><th class="py-3">Rating</th>
+          </tr>
+        </thead>
+        <tbody class="text-[#4a2d17]">
+          {comparisonApps.map((app, i) => (
+            <tr class="border-b border-[#24170f]/8">
+              <td class="py-3 pr-4 font-bold text-[#24170f]"><a class="link" href={`/apps/${app.slug}`}>{i + 1}. {app.name}</a></td>
+              <td class="py-3 pr-4">{app.bestFor}</td><td class="py-3 pr-4">{app.pricing}</td>
+              <td class="py-3 pr-4">{app.shopifyDepth}</td><td class="py-3 pr-4">{app.automationDepth}</td>
+              <td class="py-3">★ {app.rating}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="container space-y-12 pb-16">
+    <p class="editorial-kicker">Detailed reviews</p>
+    <h2 class="font-serif text-4xl font-black text-[#24170f]">Five apps for replenishment reminders</h2>
+
+    <ToolReview app={featuredApps[0]} rank={1} badge="Editor's choice" paragraphs={[
+      'Sequenzy leads replenishment because universal 30-day reminders destroy trust on 60–90 day SKUs. Agent playbooks encode consumption tables by category — beauty, pet, food — with subscription exclusion and upsell at 120% window baked in.',
+      'Replenishment is high-repeat, full-price revenue — protect it from discount creep. Sequenzy defaults full-price reminder creative; discount only on non-responder branch after 100% window.',
+      'Pay-per-email aligns with selective replenishment sends — you are not broadcasting to entire list, only prior buyers of specific SKUs on timers.',
+      'Integrate subscription app webhooks via API/MCP when Shopify native subscription fields insufficient.',
+    ]} />
+
+    <ToolReview app={featuredApps[1]} rank={2} paragraphs={[
+      'Klaviyo predicted next order date refines static consumption tables as order history grows — especially valuable for multi-SKU households with irregular purchase patterns.',
+      'Line-item triggered flows per product ID scale to large catalogs when metafields store supply days. A/B test reminder versus subscribe-and-save CTA placement.',
+      'Revenue reporting by replenishment flow proves incremental reorder versus organic — critical for finance buy-in.',
+      'Profile-based cost acceptable when replenishment list is buyers only — smaller than full marketing file.',
+    ]} />
+
+    <ToolReview app={featuredApps[2]} rank={3} paragraphs={[
+      'Omnisend reorder templates work for stores with under 20 consumable SKUs and uniform timing — coffee single-SKU, simple supplement line.',
+      'SMS reorder reminder in same journey — strong for pet and food mobile buyers.',
+      'Strains when each SKU needs distinct day count — manual duplication required.',
+      'Good 12-month bridge before Sequenzy or Klaviyo consumption sophistication.',
+    ]} />
+
+    <ToolReview app={featuredApps[3]} rank={4} paragraphs={[
+      'Drip tag-based timers after purchase of SKU category — operator maintains consumption spreadsheet, Drip executes delays.',
+      'Visual clarity when replenishment overlaps winback — see collision on canvas.',
+      'Manual metafield discipline required — no predictive reorder native.',
+      'Fits operators who enjoy explicit per-product workflow control.',
+    ]} />
+
+    <ToolReview app={featuredApps[4]} rank={5} paragraphs={[
+      'Yotpo replenishment plus loyalty points reminder — "reorder and earn double points" beats discount for enrolled members.',
+      'Review social proof in replenishment email reinforces habit — "join 12k monthly subscribers".',
+      'Best when loyalty module already live — modular pricing audit needed otherwise.',
+      'See <a class="link" href="/use-cases/loyalty">loyalty guide</a> for enrollment timing with replenishment.',
+    ]} />
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="editorial-kicker">Consumption table</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Build SKU supply map first</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Spreadsheet: SKU, category, supply days, reminder day (80%), follow-up day (100%), upsell day (120%). Source from customer research, usage instructions, and reorder analytics. <a class="link" href="/for/supplements">Supplements</a> and <a class="link" href="/for/food-and-beverage">food brands</a> update quarterly as pack sizes change.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="editorial-kicker">Subscription upsell</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">120% window pitch</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        After 100% reminder without reorder, offer subscribe-and-save with clear pause/skip policy — not deeper discount. <a class="link" href="/for/subscription-boxes">Subscription box brands</a> invert logic: replenishment becomes skip recovery. Different job, different flow.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Post-purchase feeds replenishment</h2>
+      <p>First order starts consumption clock — <a class="link" href="/use-cases/post-purchase">post-purchase education</a> sets usage expectations that make reminder timing credible. Misaligned education causes ignored reminders.</p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="editorial-kicker">Irregular usage</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">SKUs that break consumption math</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Seasonal products, gift purchases, and multi-household sharing distort replenishment timing. Supplement gift buyers should not enter 45-day reminder — they are not the consumer. Seasonal SKUs pause replenishment outside usage season. Pet food with multiple pets needs quantity metafield at purchase to adjust supply days. Document exceptions in consumption table; do not force universal timers.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        <a class="link" href="/for/supplements">Supplement stores</a> with subscription attach should branch replenishment email three to subscription pitch only when orders one and two were one-time — subscribers need skip management, not another reminder.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="editorial-kicker">Multi-brand catalogs</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Replenishment per vendor line</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Retailers stocking multiple brands need per-vendor consumption tables — Brand A coffee at 18 days, Brand B at 30. Klaviyo product-type properties scale; Sequenzy agent prompts map vendor metafields to timer families. Mixing brands in one 30-day reminder annoys customers on long-supply SKUs.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-3xl font-black text-[#24170f]">Quarterly replenishment calibration</h2>
+      <p>Compare predicted consumption versus actual reorder dates — adjust supply days table. SKUs with consistent late reorder need longer timer; early reorder suggests shorter window or over-aggressive reminder.</p>
+      <p>Subscription cannibalization check: replenishment email driving one-time reorders while subscribe-and-save underperforms — shift email three CTA. <a class="link" href="/for/pet-products">Pet</a> and <a class="link" href="/for/beauty">beauty</a> categories need separate table rows.</p>
+      <p>Full-price replenishment rate should exceed 60% for habitual categories — otherwise <a class="link" href="/use-cases/discount-strategy">discount creep</a> infected reminders.</p>
+      <p>Multi-item orders with different consumption speeds need per-line-item timers — order-level reminder fires too early for slow-consumption SKU. Klaviyo line-item triggers essential; spreadsheet timer per SKU minimum on other platforms.</p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Merchant scenario: pet supplement brand with wrong timer</h2>
+      <p>
+        A $54k/month pet supplement brand set replenishment at fixed 30 days for every SKU — joint chews consumed in 45 days for large breeds, probiotic powder in 22 days for small dogs. Customers got "time to reorder" while half-full jar still on counter — unsubscribes and support complaints. Multi-item orders triggered one reminder based on first SKU only. Replenishment email included 15% off every time — subscription upsell in post-purchase never converted because replenishment trained wait-for-reminder discount. Subscribe-and-save revenue flat while one-time replenishment email revenue grew. Klaviyo flow had no line-item trigger — only order-level date property.
+      </p>
+      <p>
+        Rebuild: consumption table by SKU and pet size metafield — 38, 45, 52 day windows. Line-item replenishment triggers per Klaviyo ordered product flow. Email one reminder full-price with usage tips; email two subscribe-and-save CTA; discount only email three for non-subscribers with zero prior replenishment discount. Suppress replenishment when subscription active. Repeat purchase rate at 60 days rose from 31% to 44%. Subscription share of replenishment cohort rose from 12% to 29%. Full-price replenishment orders rose from 48% to 71%.
+      </p>
+      <p>
+        The ops lead published consumption tables in shared drive linked from every replenishment flow description — when product team reformulated chew size, timer updated within 48 hours instead of six months later. Finance started tracking full-price replenishment rate monthly alongside subscription attach, giving marketing a margin metric that replenishment actually moved. Support macros linked to email two education content reduced "how much should I give my dog" tickets by half. Replenishment became the consumable retention engine post-purchase was supposed to be.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">90-day rollout: replenishment timing architecture</h2>
+      <p>
+        Days 1–14: Analyze reorder data — median days between repeat purchase by SKU. Build consumption table with ops and product team. Identify multi-item order patterns. Baseline replenishment conversion and discount redemption rate.
+      </p>
+      <p>
+        Days 15–30: Configure line-item or SKU-level triggers where platform supports. Set default windows per top 10 SKUs. Exclude subscription-active customers. Email one full-price reminder — no code.
+      </p>
+      <p>
+        Days 31–60: Email two subscription or bundle upsell. Email three conditional incentive for discount-dependent only. Collision check with <a class="link" href="/use-cases/post-purchase">post-purchase</a> and winback. Test multi-pet household — separate timers per line item.
+      </p>
+      <p>
+        Days 61–90: Quarterly calibration — predicted versus actual reorder dates. Adjust supply days table. Category-specific rows for <a class="link" href="/for/beauty">beauty</a> versus <a class="link" href="/for/supplements">supplements</a>. Full-price replenishment rate target 60%+; audit discount creep.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Margin math: replenishment discount versus subscription conversion</h2>
+      <p>
+        800 replenishment-eligible orders monthly, 30% email conversion, 15% discount every reminder: 240 orders × $42 AOV × 15% discount = $1,512 discount cost monthly. Full-price email one plus subscribe CTA email two: 25% conversion, 18% to subscription at $38/month × 40% margin = 36 subs × $15.20 = $547 monthly recurring from cohort plus 168 one-time at full margin $42 × 45% = $3,175 — total contribution beats discount treadmill when subscription attach rises. One subscription LTV 8 months × $15.20 = $121.60 versus one-time discounted reorder $42 × 38% net after 15% off = $16.28.
+      </p>
+      <p>
+        Wrong 30-day timer on 45-day SKU: premature emails increase unsubscribes 0.3% per send on 2,400 list = 7 profiles × $180 LTV est = $1,260 monthly LTV risk from timing error alone. Line-item trigger setup 12 hours; payback first month on consumables catalog.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Failure rehearsal: replenishment breakdowns</h2>
+      <p>
+        <strong>Fixed timer all SKUs.</strong> Too early or late reminder annoys. Fix: SKU consumption table; quarterly calibration.
+      </p>
+      <p>
+        <strong>Order-level only.</strong> Multi-speed consumption items wrong timing. Fix: line-item triggers per product.
+      </p>
+      <p>
+        <strong>Discount every reminder.</strong> Trains wait for email; kills subscription. Fix: full-price one; sub CTA two; discount three selective.
+      </p>
+      <p>
+        <strong>Active subscription spam.</strong> Subscriber gets reorder email. Fix: suppress when subscription status active.
+      </p>
+      <p>
+        <strong>Post-purchase collision.</strong> Education and replenishment same week day 7. Fix: stagger from delivery date not order date.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Cross-workflow dependencies for replenishment</h2>
+      <p>
+        Replenishment timers start from post-purchase delivery confirmation — order-date triggers collide with education series and pre-delivery review asks from <a class="link" href="/use-cases/post-purchase">post-purchase guide</a>. SKU-level consumption tables differ by vertical — pet, beauty, and supplement guides override default 30-day assumptions. Active subscription suppression prevents reorder spam to subscribers already on auto-ship — sync subscription status from Recharge or Shopify Subscriptions nightly.
+      </p>
+      <p>
+        Full-price replenishment email one supports <a class="link" href="/use-cases/discount-strategy">discount governance</a> — discount every reminder trains wait-for-email behavior and kills subscribe-and-save attach in email two. Multi-item orders need line-item triggers; order-level reminder fires too early for slow-consumption SKU in mixed cart. Replenishment failure drives winback cohort — tune timers quarterly using predicted versus actual reorder data from <a class="link" href="/use-cases/analytics">analytics</a>.         Loyalty points mention in replenishment connects to <a class="link" href="/use-cases/loyalty">loyalty integration</a> when enrolled members should see balance at reorder decision moment.
+      </p>
+      <p>
+        Weekly operator rhythm: Monday replenishment conversion by SKU timer; Wednesday full-price replenishment rate above 60% target; Friday subscription suppress audit on active subs. Monthly: predicted versus actual reorder date calibration; line-item trigger spot check on multi-SKU orders. Quarterly: consumption table update with product team.         Wrong timer damages trust faster than no reminder — calibrate before adding discount to email three.
+      </p>
+      <p>
+        Document consumption assumptions in flow changelog when product reformulates — silent timer drift is how replenishment programs die six months after successful launch. Pair replenishment reporting with subscription churn metrics; if reminders drive one-time reorders while subs flatline, email three CTA needs subscribe-first rewrite not deeper discount. Ops and marketing must share one consumption table owner — orphaned spreadsheets revert to fixed 30-day defaults within two catalog updates. Line-item triggers are non-negotiable for mixed carts — order-level reminders will always fire too early for at least one SKU. Subscription-active suppression is mandatory — discount reorder email while auto-ship is active erodes subscribe-and-save trust immediately. Consumption table updates belong in launch checklist for every SKU reformulation.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify max-w-4xl">
+      <h2 class="font-serif text-3xl font-black text-[#24170f]">Merchant scenario (use-cases): Replenishment rollout checkpoint</h2>
+      <p>
+        Shopify operators evaluating Replenishment should document week-one baseline metrics before claiming migration wins — welcome time-to-live, cart suppression accuracy, post-purchase edge cases, and winback engagement splits scored on staff accounts. Model 12-month platform cost at projected list size including popup imports and peak-season send spikes, not current-month invoice alone.
+      </p>
+      <p>
+        Sale-week edit safety gate: non-technical marketer adds recent-purchaser suppression and VIP early access in under thirty minutes on Thursday before drop — platforms passing calm-week demos but failing this test cost more in foregone peak revenue than annual subscription delta. Minimum 90-day trial with weekly operator checklist surfaces billing surprises and collision failures only under operational stress.
+      </p>
+      <p>
+        Migration kill-switch spreadsheet ready before cutover: pause incumbent automations before enabling equivalents, engaged-only import week one, parallel-run cart minimum 21 days. Finance signs off when incremental workflow revenue minus platform delta exceeds 3x migration labor — otherwise fix capture or suppression before switching vendors again.
+      </p>
+    </div>
+  </section>
+
+  <section class="container pb-8">
+    <div class="flex flex-wrap gap-4 text-sm font-bold">
+      <a class="link" href="/apps">All apps →</a>
+      <a class="link" href="/use-cases/winback">Winback →</a>
+      <a class="link" href="/compare/klaviyo-vs-omnisend">Klaviyo vs Omnisend →</a>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify max-w-4xl">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Merchant scenario: Replenishment on Shopify Plus consumables</h2>
+      <p>
+        CleanPour drinkware ($74k/mo) rebuilt Replenishment after collision audit found cart and winback double-discounting same week — unsubscribes spiked 0.4 points. Separated flows with documented suppression hierarchy: cart active blocks winback discount path; recent purchaser hard exclusion 14 days. Holdout 5% measures true incrementality; gross attributed revenue without holdout overstated program value 22%.
+      </p>
+      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-10">90-day Replenishment implementation</h2>
+      <p><strong>Days 1–30:</strong> Baseline metrics and staff-account edge-case tests — gift buyer, subscription tag, wholesale exclusion. <strong>Days 31–60:</strong> Production flow with collision matrix signed by retention lead. <strong>Days 61–90:</strong> Margin reporting with discount cost subtracted; weekly operator rhythm on calendar.</p>
+      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-10">Margin math: Replenishment with discount governance</h2>
+      <p>
+        CleanPour tracked margin per recovered order not gross recovery revenue — 15% blanket discount on $52 AOV surrendered $7.80 margin per recovery. Graduated ladder lifted gross profit per send 34% with 8% lower gross revenue — finance approved expanded send volume on profit-positive path only.
+      </p>
+      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-10">Failure rehearsal: Replenishment breaks</h2>
+      <p>
+        <strong>Collision with cart.</strong> Two discounts same customer same week — Fix: hierarchy doc. <strong>No sunset.</strong> Perpetual automation trains ignore — Fix: three-touch series max then annual check-in. <strong>Guest data gap.</strong> ROI ceiling until checkout captures email — Fix: segment logged-in versus guest recovery separately.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify max-w-4xl">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Workflow test checklist for replenishment</h2>
+      <p>
+        Run this replenishment validation on staff accounts before peak season: (1) welcome branches correctly by signup source and suppresses existing customers; (2) cart recovery excludes recent purchasers of same SKU variant; (3) post-purchase suppresses gift buyers from discount cross-sell and respects try-on or education delay windows; (4) winback splits engaged versus unengaged and sunsets after three touches. Score each 0–10; any flow below 7 is migration or rebuild signal.
+      </p>
+      <p>
+        Model 12-month cost at projected contact count after popup, giveaway, and influencer imports — not today's list size. Profile-based ESP pricing punishes capture-heavy verticals; pay-per-send rewards selective sending but still requires quarterly sunset of 180-day non-openers for deliverability. Stack TCO includes capture pageviews, SMS peak-week volume, and unused suite modules — finance should see one retention line item.
+      </p>
+      <p>
+        Sale-week rehearsal non-negotiable: marketer must add VIP early-access segment and recent-purchaser suppression in under thirty minutes on Thursday before drop. Platforms that pass calm-week demos but fail sale-week edits cost more in foregone peak revenue than annual subscription delta. Document trial outcomes in writing for finance — incremental workflow revenue minus platform delta must exceed 3x migration labor or fix capture and collision before switching again.
+      </p>
+      <p>
+        Migration timing: January–March or May–September only; never October–December ESP switch. Parallel-run welcome and cart minimum 21 days; incumbent read-only 90 days for export disputes. Kill-switch spreadsheet lists every incumbent automation pause order before enabling new platform equivalents — duplicate cart recovery during migration quarters deliverability and unsubscribes take quarters to heal.
+      </p>
+    </div>
+  </section>
+
+  <FaqSection faqs={faqs} title="Replenishment FAQ" />
+</BaseLayout>

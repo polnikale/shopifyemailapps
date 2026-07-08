@@ -1,0 +1,204 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import ToolReview from '../../components/ToolReview.astro';
+import { siteFromHost } from '../../content';
+import { appBySlug } from '../../data/apps';
+
+const site = siteFromHost();
+const path = '/alternatives/postscript-alternative';
+const title = 'Best Postscript Alternatives for Shopify SMS (2026)';
+const desc = 'Why merchants leave Postscript — SMS cost spikes, email gap, attribution blur — plus eight ranked SMS and lifecycle alternatives.';
+
+const altSlugs = ['sequenzy', 'attentive', 'smsbump', 'klaviyo', 'omnisend', 'recart', 'yotpo-email-sms', 'firepush'];
+const alternatives = altSlugs.map((s) => appBySlug(s)!);
+
+const faqs = [
+  { question: 'Why leave Postscript?', answer: 'SMS bills spiking during promos without clear incrementality, need for email lifecycle in same budget, or enterprise SMS features at lower minimums elsewhere.' },
+  { question: 'Best Postscript alternative for SMS only?', answer: 'Attentive at enterprise scale; SMSBump in Yotpo ecosystem; Klaviyo or Omnisend SMS if consolidating email+SMS.' },
+  { question: 'Can I port my Postscript number?', answer: 'Short code and toll-free transfers require compliance review — plan 2–4 week lead time; run one platform until port completes.' },
+  { question: 'Does Sequenzy replace Postscript SMS?', answer: 'Sequenzy is email-first lifecycle — pair with Postscript alternative for SMS or use Klaviyo/Omnisend bundled SMS.' },
+  { question: 'Export Postscript subscribers?', answer: 'Export with SMS consent timestamp and opt-in source — TCPA requires proof for new platform.' },
+  { question: 'Postscript vs Attentive switch?', answer: 'Attentive for enterprise volume and managed services; Postscript for mid-market Shopify-native — switch when minimums or support model changes.' },
+  { question: 'Reduce SMS spend without leaving?', answer: 'Frequency caps, suppress recent purchasers, segment VIP-only texts — if still over budget, evaluate Omnisend SMS or Klaviyo SMS with stricter automation.' },
+  { question: 'Migration checklist priority?', answer: 'Compliance export first, pause promotional SMS during port, rebuild cart SMS triggers, then campaign automations.' },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="py-14 md:py-20">
+    <div class="container">
+      <nav class="mb-8 text-sm"><a class="link" href="/alternatives">Alternatives</a><span class="mx-2 text-[#5d3a1d]">/</span><span class="text-[#5d3a1d]">Postscript alternatives</span></nav>
+      <header class="max-w-4xl">
+        <p class="editorial-kicker">SMS economics</p>
+        <h1 class="hero-title mt-5">Best Postscript alternatives for Shopify</h1>
+        <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+          Postscript is the Shopify SMS benchmark until BFCM invoice arrives. Merchants leave when promotional blasts cost more than incremental margin, when email lifecycle still lives in a second tool and finance wants consolidation, or when list size qualifies for Attentive enterprise economics with concierge support. Postscript is not failing — SMS unit economics changed or the stack sprawl did.
+        </p>
+      </header>
+
+      <div class="mt-12 max-w-4xl">
+        <TldrBox title="Top Postscript replacements" picks={[
+          { label: 'Best lifecycle + email', tool: 'Sequenzy', reason: 'Email retention brain to pair with new SMS tool — strategy layer Postscript never was.' },
+          { label: 'Best enterprise SMS', tool: 'Attentive', reason: 'Scaled DTC with managed growth and two-tap opt-in at volume.' },
+          { label: 'Best Yotpo SMS', tool: 'SMSBump', reason: 'When consolidating into Yotpo ecosystem from Postscript.' },
+          { label: 'Best email+SMS one platform', tool: 'Klaviyo', reason: 'Unified suppression and attribution across channels.' },
+          { label: 'Best cart recovery focus', tool: 'Recart', reason: 'Mobile-first recovery specialization vs full SMS suite.' },
+        ]} />
+      </div>
+
+      <article class="prose-shopify mt-14 max-w-4xl">
+        <h2>Why Shopify merchants leave Postscript</h2>
+        <p>
+          Cost visibility during sale weeks tops complaints — cart recovery SMS pays for itself; fourth promotional text in five days does not, but bills the same. Email gap is structural: Postscript is SMS-native, so stores run Klaviyo or Shopify Email separately — duplicate suppression mistakes send text and email cart recovery within an hour.
+        </p>
+        <p>
+          Attribution arguments flare when finance compares SMS-attributed revenue against message spend and finds 0.8x ROAS on blasts but 4x on automations — yet volume skews toward blasts because they are easy. Compliance anxiety during list imports or keyword changes pushes risk-averse teams toward Attentive's enterprise hand-holding.
+        </p>
+
+        <h2>Postscript migration checklist</h2>
+        <ol>
+          <li><strong>Export SMS subscribers</strong> with consent timestamp, source, keyword history.</li>
+          <li><strong>Document active automations</strong> — cart, browse, back-in-stock, campaigns.</li>
+          <li><strong>Choose port vs new short code</strong> — legal review for TCPA continuity.</li>
+          <li><strong>Pause Postscript promotional sends</strong> during migration window.</li>
+          <li><strong>Rebuild cart SMS on new platform</strong> with purchase suppression.</li>
+          <li><strong>Align email platform suppression</strong> — one owner per trigger type.</li>
+          <li><strong>Test two-way reply handling</strong> if customer support relies on SMS replies.</li>
+          <li><strong>Monitor opt-out rate first 30 days</strong> — migration fatigue spikes complaints.</li>
+        </ol>
+
+        <h2>Merchant scenario: beauty brand's $4,200 BFCM SMS bill</h2>
+        <p>
+          A $95k/mo skincare shop ran Postscript hard through BFCM — four promotional blasts, daily cart nudges, VIP early access texts. SMS attributed $31k revenue but message costs hit $4,200 for November alone. Finance asked whether Klaviyo SMS consolidation or stricter frequency caps made more sense than switching entirely. They kept Postscript but moved email winback to Sequenzy, implemented 72-hour promotional caps, and suppressed anyone who received email cart recovery that day. December SMS COGS fell 38% with flat recovery revenue.
+        </p>
+
+        <h2>90-day rollout: Postscript to Klaviyo SMS consolidation</h2>
+        <p>
+          Weeks 1–2: Export SMS consent with keyword history. Map Postscript automations to Klaviyo flow equivalents. Identify promotional sends to cut, not migrate.
+        </p>
+        <p>
+          Weeks 3–6: Rebuild cart and back-in-stock SMS in Klaviyo with shared email suppression. Test checkout events against email flows.
+        </p>
+        <p>
+          Weeks 7–10: Port number or warm new sender. Reduce blast volume 50% during transition.
+        </p>
+        <p>
+          Weeks 11–12: Compare revenue per message and opt-out rate against Postscript baseline. Cancel Postscript only after two clean promotional cycles.
+        </p>
+
+        <h2>Margin math: SMS ROAS by message type</h2>
+        <p>
+          Split automations (cart, shipping, back-in-stock) from campaigns. A $2,800/mo Postscript bill where automations return 5.2x and blasts return 0.9x means the fix is frequency discipline, not necessarily platform change. Klaviyo consolidation saves duplicate suppression labor — model 3 hours/month ops time at $70/hr = $210/mo hidden savings plus reduced double-send complaints.
+        </p>
+
+        <h2>Failure rehearsal: Postscript exit risks</h2>
+        <p>
+          <strong>Email+SMS pileup.</strong> Cart email and cart SMS fire within 30 minutes from different platforms. Document one owner per trigger.
+        </p>
+        <p>
+          <strong>Port-week deliverability dip.</strong> Plan reduced volume; do not run biggest promo during port.
+        </p>
+        <p>
+          <strong>Consent gap on import.</strong> Never text imported subscribers without TCPA source validation.
+        </p>
+
+        <h2>Post-migration optimization: SMS frequency discipline</h2>
+        <p>
+          Most Postscript exits that succeed do not require leaving — they require frequency caps. Document promotional versus automation revenue split monthly. If blasts return under 1.2x ROAS for three consecutive months, cut blast volume before evaluating Attentive or Klaviyo consolidation. Merchants who leave Postscript for cost reasons often recreate blast-heavy habits on the new platform within two quarters. The platform changes; the behavior does not. Set hard caps: maximum two promotional texts per subscriber per month, 72-hour gap after cart recovery SMS, suppress anyone who received email cart same day. These rules travel with you regardless of ESP.
+        </p>
+        <p>
+          Coordinate with email platform using shared suppression spreadsheet during first ninety days: column for trigger type, column for email owner, column for SMS owner, column for quiet hours. Postscript plus Sequenzy split works when the spreadsheet exists; fails when each platform optimizes channel metrics independently. Weekly fifteen-minute review of opt-out rate and revenue per message type catches drift before BFCM invoice shock repeats.
+        </p>
+
+        <h2>Integration audit: Postscript dependencies</h2>
+        <p>
+          Before disconnecting Postscript, inventory every Shopify flow, Klaviyo segment, Gorgias macro, and Recharge webhook referencing Postscript subscriber tags or SMS events. Popup tools may pass UTM parameters tied to Postscript keyword campaigns — update before canceling. Subscription apps sending Postscript shipping notifications need replacement on new SMS platform. Loyalty apps triggering SMS on points earn may integrate only with Postscript — map API dependencies. Two-way SMS customer support workflows in Gorgias or Zendesk break during port unless reply routing is reconfigured on Postscript replacement.
+        </p>
+      
+        <h2>Integration dependency audit before Postscript disconnect</h2>
+        <p>Platform exits fail operationally when connected apps keep pushing data into a system you partially deactivated. Before disconnecting Postscript from Shopify, inventory every integration: subscription tools, loyalty apps, review platforms, helpdesk systems, popup capture tools, and SMS coordination partners. For each integration document data direction, events triggered, segments or tags modified, and business criticality. Critical integrations must reconnect on the replacement platform before core automations go live. Low-value integrations from deprecated apps should sunset rather than migrate — most merchants accumulate integration debt that amplifies migration risk beyond the core SMS economics transition itself.</p>
+        <p>Capture tools feeding Postscript list IDs require theme and checkout audit. Grep storefront theme files, checkout extensions, and post-purchase pages for hardcoded list identifiers or webhook URLs pointing at Postscript. SMS coordination with email recovery needs documented suppression owner per trigger type — email platform and SMS platform optimizing independently creates customer complaints within days of overlap. Export UTM and campaign naming conventions if analytics dashboards depend on Postscript campaign structure; attribution reporting resets during migration quarter unless naming discipline transfers deliberately.</p>
+        <h2>Quarterly optimization after leaving Postscript</h2>
+        <p>First thirty days post-migration focus on suppression integrity and deliverability stability. Days thirty through ninety focus on revenue optimization by flow type. Archive Postscript baseline metrics during migration — attributed revenue by automation, send volume, complaint rate, recovery timing — and compare weekly against new platform performance. Cart recovery should reach parity within two weeks; winback and replenishment should exceed old platform performance if migration rationale was capability upgrade rather than pure cost reduction. Underperformance triggers suppression audit before creative audit — overly aggressive recent-buyer exclusions silently prevent enrollment more often than weak subject lines.</p>
+        <p>Segment hygiene at day sixty prevents repeating billing or deliverability problems under new platform model. Sunset unengaged contacts regardless of how new platform bills — per-contact, per-send, or flat tier. Quarterly review documents which automations required manual intervention versus ran untouched; increasing untouched percentage indicates playbook stabilization. Deliverability seed tests at day thirty and ninety on Gmail and Outlook catch reputation issues before they compound across peak promotional calendar.</p>
+        <h2>Building the business case and choosing replacement timing</h2>
+        <p>Finance approves migration with conservative revenue projections, not feature checklists. Present twelve-month cost of staying on Postscript including platform fees, operator labor, agency support, and opportunity cost of flows the current platform cannot run. Present migration cost: labor, agency rebuild, deliverability ramp risk, and three-month conservative incremental revenue projection from flows enabled on replacement platform. Break-even month calculation determines urgency — fee-only savings with twelve-month payback rarely justify migration; revenue lift with four-month payback usually does. Negotiate with Postscript once before migrating if contract renewal is near; documented competitive quotes sometimes reduce renewal cost enough to fund hybrid improvement without full exit.</p>
+        <p>Replacement timing should avoid peak revenue weeks — post-BFCM January, post-Valentine March lull, mid-summer for seasonal categories. Never port SMS numbers during highest promotional month. Never run parallel cart recovery through busy sale weekend without named kill-switch owner available in real time. Migration is operational project with revenue risk; schedule it deliberately rather than reacting to invoice frustration with rushed cutover that costs more in duplicate sends and deliverability damage than platform fees ever did.</p>
+  
+        <h2>Operator playbook: who owns what after migration</h2>
+        <p>Every migration succeeds technically and fails organizationally when ownership is unclear. Assign named owner for: welcome and post-purchase copy edits, cart recovery timing and discount escalation rules, winback and replenishment calendar, popup and capture integration health, SMS compliance and opt-out monitoring, deliverability and complaint rate review, and platform billing audit. One person can own multiple roles on small teams but names must exist in writing — not "marketing" as abstract entity. During first ninety days post-migration, owner sends weekly three-line status to leadership: attributed revenue versus baseline, any duplicate-send incidents, and planned flow changes next week. This rhythm catches drift before it becomes quarterly surprise.</p>
+        <p>Agency relationships need explicit scope reset after migration. If agency maintained previous platform flows, clarify whether agency rebuilds on new platform, trains internal owner, or exits automation scope entirely. Hybrid agency-internal ownership fails when both assume the other edits suppression rules before sale week. Document which flows agency may touch without approval versus which require internal sign-off — typically cart discount escalation and winback offer depth are internal decisions while template formatting is agency-appropriate. Contractor access should expire automatically ninety days post-migration unless renewed deliberately.</p>
+        <h2>Deliverability and compliance continuity</h2>
+        <p>Platform migration is deliverability event even when sending domain unchanged. New ESP routes mail through different infrastructure with different reputation pools. Ramp plan: days one through seven send only to engaged forty-five-day openers at fifty percent of normal campaign volume; days eight through fourteen expand to ninety-day engaged at seventy-five percent volume; day fifteen onward resume normal segmentation if complaint rate stays below threshold. Cart and transactional automations can run at full volume earlier if enrolled segments are purely behavioral purchase triggers rather than bulk marketing lists — but monitor complaint rate daily regardless.</p>
+        <p>Compliance continuity for SMS migrations requires legal review of exported consent records before first send on new platform. Document opt-in source, timestamp, and keyword for every SMS subscriber. Exclude records with ambiguous consent rather than risk TCPA exposure — losing ten percent of list is cheaper than single class-action exposure. Email marketing consent similarly requires documented source; GDPR and CAN-SPAM both care about provable opt-in even when platforms technically allow import. Archive consent export files seven years minimum. Unsubscribe and preference center links must work before any broadcast — test on mobile devices where eighty percent of Shopify customers read email.</p>
+        <h2>Revenue attribution reset and reporting discipline</h2>
+        <p>Accept attribution reset during migration quarter — comparing new platform attributed revenue against old platform last-quarter numbers is directionally useful but not pixel-perfect. UTM schemas, attribution windows, and click-definition differ across platforms. Build new baseline from week six onward rather than demanding week two matches old platform peak. Track flow-level revenue weekly: welcome, cart, browse, post-purchase, winback, replenishment, campaigns — each should trend independently. If total attributed revenue rises but cart recovery falls, investigate suppression collision before celebrating aggregate number.</p>
+        <p>Finance reporting should separate platform cost as percentage of attributed email revenue monthly — target under three percent for mature DTC, under five percent during growth phase, investigate above seven percent regardless of platform choice. Include operator labor hours in total cost of ownership calculation quarterly. Platform that saves two hundred dollars monthly but adds eight hours maintenance is more expensive than platform costing two hundred more monthly with two hours maintenance. Migration business case validation happens at day ninety with real numbers, not projected numbers from sales demos — update internal ROI model with actuals and decide whether to deepen investment in chosen platform or plan next transition if goals missed.</p>
+
+        <h2>Keyword campaign sunset inventory</h2><p>Postscript keyword campaigns accumulate over years — BFCM2022, SUMMER15, COLLAB_X — each may still be printed on packaging or influencer content. Before canceling Postscript, inventory active keywords with physical-world references. Port or redirect keywords to new SMS platform or influencer content continues driving opt-ins to dead keyword. Legal and marketing both care about this inventory; technical migration teams often miss it until influencer posts broken keyword link mid-campaign.</p>
+        <p>Postscript shipping notification automations may integrate with Recharge or Skio — map subscription shipping SMS dependencies before port. Subscribers expect shipping texts; accidental silence during port week generates churn in subscription base separate from marketing SMS concerns.</p>
+        <p>Document quiet hours and frequency caps from Postscript before migration — these operational rules are not automatic defaults on Klaviyo SMS or Attentive and must be manually configured on replacement platform during rebuild week. Export Postscript analytics CSV for trailing twelve months before cancellation; historical revenue-per-message data informs frequency cap decisions on new platform.</p>
+</article>
+
+      <section class="container space-y-12 py-16">
+        <h2 class="font-serif text-4xl font-black text-[#24170f]">Eight Postscript alternatives</h2>
+
+        <ToolReview app={alternatives[0]} rank={1} badge="Top pick" paragraphs={[
+          'Sequenzy addresses the email half Postscript never owned — lifecycle strategy with pay-per-email while you pick SMS specialist. Most Postscript exits need better email coordination, not just cheaper texts. Sequenzy sequences welcome, post-purchase, winback with suppression rules that prevent email+SMS pileups.',
+          'Pair Sequenzy email with Attentive, Klaviyo SMS, or Omnisend SMS — document channel ownership per trigger.',
+        ]} />
+
+        <ToolReview app={alternatives[1]} rank={2} paragraphs={[
+          'Attentive for enterprise DTC graduating Postscript — two-tap opt-in, concierge onboarding, creative services. Custom pricing excludes small stores. Compare <a class="link" href="/compare/postscript-vs-attentive">Postscript vs Attentive</a>.',
+        ]} />
+
+        <ToolReview app={alternatives[2]} rank={3} paragraphs={[
+          'SMSBump when Yotpo consolidation is the goal — native Shopify SMS in Yotpo ecosystem. Similar economics to Postscript; switch for bundle pricing, not magic savings.',
+        ]} />
+
+        <ToolReview app={alternatives[3]} rank={4} paragraphs={[
+          'Klaviyo unifies email and SMS attribution — one suppression model, revenue by channel. Profile pricing applies. Best when leaving Postscript because dual-platform ops hurt more than SMS cost.',
+        ]} />
+
+        <ToolReview app={alternatives[4]} rank={5} paragraphs={[
+          'Omnisend bundles email, SMS, push for SMB teams tired of Postscript plus separate email tool. Less SMS depth than Postscript; simpler ops.',
+        ]} />
+
+        <ToolReview app={alternatives[5]} rank={6} paragraphs={[
+          'Recart narrows focus to cart and browse recovery via SMS/messenger — not full campaign suite. When Postscript felt like paying for features you never used.',
+        ]} />
+
+        <ToolReview app={alternatives[6]} rank={7} paragraphs={[
+          'Yotpo Email & SMS suite move — modular pricing, reviews integration. Evaluate total module cost vs Postscript + Klaviyo stack.',
+        ]} />
+
+        <ToolReview app={alternatives[7]} rank={8} paragraphs={[
+          'Firepush adds web push alongside SMS/email at lower entry — partial Postscript replacement if push converts for your mobile traffic.',
+        ]} />
+      </section>
+
+      <div class="container mb-12 max-w-4xl card overflow-x-auto">
+        <h2 class="px-5 py-4 font-serif text-2xl font-black text-[#24170f]">SMS pricing comparison</h2>
+        <table class="data-table">
+          <thead><tr><th>Platform</th><th>Typical SMB</th><th>Strength</th></tr></thead>
+          <tbody>
+            <tr><td>Postscript</td><td>$100–500+/mo</td><td>Shopify-native SMS depth</td></tr>
+            <tr><td>Attentive</td><td>$500+/mo custom</td><td>Enterprise acquisition</td></tr>
+            <tr><td>Klaviyo SMS</td><td>Usage + profiles</td><td>Unified email+SMS</td></tr>
+            <tr><td>Omnisend SMS</td><td>Bundle pricing</td><td>SMB multichannel</td></tr>
+            <tr><td>Sequenzy + SMS pair</td><td>$19+ email + SMS tool</td><td>Strategy + specialist SMS</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="container max-w-4xl pb-8 text-sm"><p class="font-black text-[#24170f]">Related</p><p class="mt-2"><a class="link" href="/compare/postscript-vs-attentive">Postscript vs Attentive</a> · <a class="link" href="/compare/recart-vs-postscript">Recart vs Postscript</a> · <a class="link" href="/use-cases/abandoned-cart">Cart recovery</a></p></div>
+    </div>
+  </section>
+
+  <FaqSection faqs={faqs} title="Postscript alternatives FAQ" />
+</BaseLayout>

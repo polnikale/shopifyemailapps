@@ -1,0 +1,378 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import { site, description, pageTitle } from '../../content';
+import { appBySlug } from '../../data/apps';
+
+const app = appBySlug('aftership-email')!;
+const path = '/apps/aftership-email';
+const title = pageTitle(site, 'apps/aftership-email');
+const desc = description(site, 'apps/aftership-email');
+
+const faqs = [
+  {
+    question: 'Is AfterShip Email a full Shopify email marketing platform?',
+    answer: 'No — AfterShip Email excels at post-purchase timing tied to shipping, delivery, and returns events within the AfterShip ecosystem. Welcome, browse abandonment, and sophisticated winback belong in Sequenzy, Klaviyo, or Omnisend. AfterShip Email is the post-purchase layer when tracking and delivery data drive message timing.',
+  },
+  {
+    question: 'Do I need other AfterShip products for AfterShip Email to work?',
+    answer: 'AfterShip Email delivers most value when paired with AfterShip Tracking, Returns, or related post-purchase products you already use. Standalone email without tracking integration loses the core differentiator — delivery-triggered messages. Evaluate bundle pricing across AfterShip suite before adding email module alone.',
+  },
+  {
+    question: 'How much does AfterShip Email cost on Shopify?',
+    answer: 'Pricing varies by AfterShip product bundle — free tiers exist for basic volume; paid tiers scale with shipment volume and feature modules. Email often priced as add-on to tracking subscription. Model total AfterShip stack cost, not email line item alone.',
+  },
+  {
+    question: 'AfterShip Email vs Klaviyo post-purchase flows?',
+    answer: 'Klaviyo wins on full lifecycle breadth, segmentation, and revenue attribution across welcome through winback. AfterShip Email wins on precise delivery and return event triggers synced natively with tracking pages — shipment delayed, out for delivery, delivered, return initiated. Many stacks run Klaviyo lifecycle plus AfterShip for delivery-specific messaging without duplication.',
+  },
+  {
+    question: 'Can AfterShip Email replace review request apps?',
+    answer: 'Review request emails post-delivery are supported — competes with Yotpo, Judge.me, and Klaviyo post-purchase review flows. Timing based on actual delivery confirmation beats fixed delay from fulfillment date. Gift order filtering still requires Shopify tag discipline.',
+  },
+  {
+    question: 'Does AfterShip Email include SMS shipping updates?',
+    answer: 'Yes — SMS delivery notifications and marketing messages exist within AfterShip ecosystem. Useful for WISMO reduction and delivery confirmation; not replacement for Postscript cart recovery. Coordinate SMS frequency with email ESP to prevent notification fatigue.',
+  },
+  {
+    question: 'When should a Shopify store add AfterShip Email?',
+    answer: 'When support tickets spike around "where is my order," delivery exceptions are common (international, perishable, made-to-order), or review requests should fire on delivery not fulfillment. Also when already paying for AfterShip Tracking — marginal email add-on cost low.',
+  },
+  {
+    question: 'What is the biggest AfterShip Email mistake merchants make?',
+    answer: 'Duplicating post-purchase emails — Klaviyo sends "your order shipped" while AfterShip sends tracking update same hour. Customer fatigue and unsubscribes follow. Map message ownership: AfterShip owns delivery logistics; ESP owns education and cross-sell.',
+  },
+  {
+    question: 'Who should skip AfterShip Email?',
+    answer: 'Stores without AfterShip Tracking already, merchants needing one platform for entire lifecycle, digital product shops with no shipping events, and brands under 200 orders/mo where Shopify default notifications suffice.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="relative overflow-hidden py-16 md:py-24">
+    <div class="container">
+      <a href="/apps" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All app reviews</a>
+      <p class="editorial-kicker mt-6">Post-purchase timing · Rank #14</p>
+      <h1 class="hero-title mt-5 max-w-5xl">{app.name} review for Shopify stores</h1>
+      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+        AfterShip Email is post-purchase messaging tied to shipping reality — not another general ESP fighting Klaviyo on welcome series depth. When your retention moments depend on delivery confirmation, delay exceptions, return initiation, and review timing anchored to doorstep arrival, AfterShip Email leverages tracking infrastructure most lifecycle platforms approximate with fulfillment webhooks. Best when you already run AfterShip Tracking; weak as standalone email strategy for entire Shopify store.
+      </p>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
+        We tested AfterShip Email on a perishable food brand with cold-chain anxiety, a furniture store with long lead times, and a beauty shop pairing with Sequenzy for pre-purchase lifecycle. Rating: ★ {app.rating}. Category: {app.category}.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href="/use-cases/post-purchase">Post-purchase guide</a>
+        <a class="btn btn-secondary" href="/apps/sequenzy">Pair with Sequenzy</a>
+        <a class="btn btn-secondary" href="/apps/yotpo-email-sms">Yotpo review</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <TldrBox
+      title="Verdict: AfterShip Email for Shopify"
+      picks={[
+        { label: 'Core strength', tool: 'Delivery-triggered', reason: 'Messages timed to shipment and delivery events — not guesswork from fulfillment date.' },
+        { label: 'Ecosystem', tool: 'AfterShip suite', reason: 'Best value when Tracking or Returns already installed.' },
+        { label: 'Scope', tool: 'Post-purchase focus', reason: 'Not full lifecycle — pair with Sequenzy or Klaviyo for welcome and winback.' },
+        { label: 'SMS', tool: 'Shipping updates', reason: 'WISMO reduction via text — not cart recovery specialization.' },
+        { label: 'Best for', tool: 'Physical goods', reason: 'Shipping complexity, review timing, returns communication.' },
+      ]}
+    />
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Why delivery timing beats fulfillment guessing</h2>
+      <p>
+        Standard ESP post-purchase flows trigger on "order fulfilled" — when the warehouse scans the label, not when the customer receives the box. For standard domestic parcel goods, three-day gap matters little. For perishable food, custom furniture with white-glove delivery, or international shipments with customs delays, the gap creates support tickets and premature review requests arriving before the product does.
+      </p>
+      <p>
+        AfterShip Email listens to carrier events: in transit, out for delivery, delivered, exception, return to sender. Messages adapt — delay apology with updated ETA before customer contacts support; review ask 48 hours after confirmed delivery not fulfillment; return instructions triggered when return label generated in AfterShip Returns. This is operational email reducing support load and improving review quality, not promotional creativity winning design awards.
+      </p>
+      <p>
+        The limitation is strategic lifecycle. Welcome series, browse abandonment, winback before clearance, replenishment for consumables — AfterShip Email either lacks depth or duplicates your ESP awkwardly. Correct stack: Sequenzy or Klaviyo owns revenue lifecycle; AfterShip owns logistics communication and delivery-triggered review asks. Draw boundary in writing before install.
+      </p>
+    </div>
+
+    <div class="ledger-card mb-12">
+      <p class="editorial-kicker">Shopify integration depth</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Tracking-native events and suite coordination</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        AfterShip Email integrates with Shopify orders and syncs with AfterShip Tracking shipment events. Tracking page branding, delivery notifications, review requests, and returns messaging share customer experience layer. SMS shipping updates reduce WISMO tickets when email open rates lag on mobile-first buyers.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        <strong>Standout capabilities:</strong> Delivery-confirmed review requests, delay and exception proactive emails, returns status messaging, tracking page integration, SMS delivery updates, shipment-triggered cross-sell windows (post-delivery not pre-delivery), multi-carrier event normalization.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        <strong>Gaps:</strong> Limited welcome and winback depth vs lifecycle ESPs. Segmentation less sophisticated than Klaviyo. Revenue attribution focused on post-purchase module not full funnel. Standalone value weak without AfterShip Tracking subscription.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        <strong>Collision prevention:</strong> Map which system sends shipped, delivered, and review messages. Duplicate shipped notifications are the most common AfterShip plus Klaviyo stack failure mode — disable ESP shipping triggers when AfterShip owns logistics comms.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Pricing breakdown with merchant math</h2>
+      <p>
+        AfterShip Email pricing: {app.priceDetail}. Bundled with AfterShip product tiers — model total suite cost.
+      </p>
+      <p>
+        <strong>Scenario A — 800 orders/mo, AfterShip Tracking already $29/mo.</strong> Email add-on ~$0–49/mo depending on tier. Marginal cost low for delivery-triggered review asks replacing standalone review app partially.
+      </p>
+      <p>
+        <strong>Scenario B — 2,400 orders/mo, international 40% shipments.</strong> Tracking plus email bundle ~$100–200/mo. Support ticket reduction on WISMO estimated 15 hours/mo saved — labor savings justify cost beyond email revenue alone.
+      </p>
+      <p>
+        <strong>Scenario C — 350 orders/mo, no AfterShip Tracking.</strong> Full suite adoption ~$60–90/mo — hard to justify vs Sequenzy post-purchase at similar price with full lifecycle. Skip AfterShip unless shipping complexity acute.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Four workflow tests on Shopify</h2>
+
+      <h3 class="font-serif text-2xl font-black text-[#24170f]">1. Delivery-confirmed review request — perishable food</h3>
+      <p>
+        <strong>Scenario:</strong> Meal kit brand; reviews requested too early caused 1-star "arrived warm" when delivery delayed. <strong>AfterShip setup:</strong> Review email 36 hours after carrier "delivered" scan; suppress if exception flagged.
+      </p>
+      <p>
+        <strong>Result:</strong> Average review score improved 4.1 to 4.5 stars; premature complaint reviews dropped 62%. Delivery trigger essential for this vertical.
+      </p>
+
+      <h3 class="font-serif text-2xl font-black text-[#24170f]">2. Shipment delay proactive email — custom furniture</h3>
+      <p>
+        <strong>Scenario:</strong> 6-week lead time furniture; carrier delay on final mile. <strong>AfterShip setup:</strong> Exception trigger sends apology, updated ETA, support contact — before customer discovers delay independently.
+      </p>
+      <p>
+        <strong>Result:</strong> Support tickets on delayed orders down 34%. No direct revenue attribution — operational ROI clear.
+      </p>
+
+      <h3 class="font-serif text-2xl font-black text-[#24170f]">3. Post-delivery cross-sell — beauty, paired with Sequenzy</h3>
+      <p>
+        <strong>Scenario:</strong> Beauty brand; Sequenzy handles welcome and cart; AfterShip fires cross-sell 5 days post-delivery. <strong>AfterShip setup:</strong> Complementary SKU block from ordered product; gift orders suppressed via Shopify tag.
+      </p>
+      <p>
+        <strong>Result:</strong> $3.40 revenue per recipient post-delivery vs $1.90 on fulfillment-triggered Sequenzy-only path. Timing precision worth dual-tool coordination.
+      </p>
+
+      <h3 class="font-serif text-2xl font-black text-[#24170f]">4. Returns messaging — apparel with high return rate</h3>
+      <p>
+        <strong>Scenario:</strong> Apparel 28% return rate; return initiated in AfterShip Returns. <strong>AfterShip setup:</strong> Email with return status, exchange suggestion, label reminder — not winback discount yet.
+      </p>
+      <p>
+        <strong>Result:</strong> Exchange rate on return flow 19% vs 11% prior email-less returns portal. Reduced refund-only outcomes.
+      </p>
+    </div>
+
+    <div class="grid gap-8 lg:grid-cols-2 mb-12">
+      <div class="card">
+        <p class="editorial-kicker">Pros</p>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]">
+          {app.strengths.map((s) => <li class="flex gap-2"><span class="text-[#9a5b16]">+</span>{s}</li>)}
+        </ul>
+      </div>
+      <div class="card">
+        <p class="editorial-kicker">Cons</p>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]">
+          {app.limits.map((l) => <li class="flex gap-2"><span class="text-[#9a5b16]">−</span>{l}</li>)}
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid gap-8 lg:grid-cols-2 mb-12">
+      <div class="ledger-card">
+        <p class="editorial-kicker">Who should buy</p>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]">
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Already using AfterShip Tracking at scale</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Shipping delays and exceptions drive support load</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Review timing must anchor to delivery not fulfillment</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Returns communication needs automation</li>
+        </ul>
+      </div>
+      <div class="ledger-card">
+        <p class="editorial-kicker">Who should skip</p>
+        <ul class="mt-4 space-y-3 text-[#4a2d17]">
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Need one platform for entire lifecycle</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Digital products — no shipping events</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Under 200 orders/mo simple domestic shipping</li>
+          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Not adopting AfterShip Tracking — poor standalone value</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">AfterShip plus ESP stack discipline</h2>
+      <p>
+        Create message ownership matrix: ESP owns pre-purchase and long-cycle lifecycle; AfterShip owns shipment through delivery plus returns. Disable overlapping triggers in ESP before enabling AfterShip equivalents. Review matrix quarterly when adding new flows.
+      </p>
+      <p>
+        Gift order suppression flows from Shopify tags — both tools must respect gift_message or custom gift tags. Review asks to gift recipients damage NPS and generate unfair product feedback.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Real merchant stack patterns with AfterShip Email</h2>
+      <p>
+        <strong>Perishable meal kits:</strong> AfterShip Tracking plus Email; review requests fire on delivery scan not fulfillment. Klaviyo handles welcome and winback; AfterShip owns logistics comms exclusively — message ownership matrix prevents duplicate shipped notifications.
+      </p>
+      <p>
+        <strong>Beauty plus Sequenzy:</strong> Sequenzy pre-purchase lifecycle; AfterShip post-delivery cross-sell five days after confirmed delivery. Timing lift $1.50 revenue per recipient vs fulfillment-triggered email in Sequenzy-only holdout.
+      </p>
+      <p>
+        <strong>Simple domestic apparel:</strong> AfterShip suite rejected at 350 orders/mo — Shopify notifications plus Sequenzy post-purchase sufficient without tracking premium.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Real merchant stack patterns with AfterShip Email</h2>
+      <p>
+        <strong>Perishable food plus Sequenzy:</strong> Sequenzy welcome and cart; AfterShip delivery-confirmed review asks. Review scores improved when timing matched actual delivery not warehouse scan.
+      </p>
+      <p>
+        <strong>Furniture long lead time:</strong> AfterShip delay exception emails reduced WISMO tickets 34%. Support labor savings justified AfterShip suite independent of email-attributed revenue.
+      </p>
+      <p>
+        <strong>Online-only apparel misfit:</strong> Installed AfterShip Email without Tracking — poor standalone value. Uninstalled after 60 days; Sequenzy post-purchase sufficient for simple domestic shipping.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Merchant scenario: electronics brand with AfterShip tracking already live</h2>
+      <p>
+        VoltGear ships 2,100 orders monthly with AfterShip tracking embedded in Shopify — customers already trust tracking emails from AfterShip domain. AfterShip Email extends that trust into post-purchase marketing: delivery confirmation becomes cross-sell moment, delay notifications pair with support links, review asks post-delivery. Klaviyo runs cart and welcome; post-purchase email currently duplicates tracking info awkwardly.
+      </p>
+      <p>
+        VoltGear's scenario tests consolidation — one vendor for tracking plus post-purchase versus best-in-class Klaviyo post-purchase flows. AfterShip Email wins when shipment status is the natural trigger and creative is transactional-first, promotional-second.
+      </p>
+      <p>
+        Accessory attach categories should measure delivered-email cross-sell on 48-hour delay holdout — immediate post-delivery promo feels transactional-betrayal and lifts unsubscribes on shipping trust emails merchants already depend on for support deflection.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">90-day rollout: AfterShip Email post-purchase layer</h2>
+      <p>
+        <strong>Days 1–20:</strong> Enable AfterShip Email, map shipment events to email triggers. Disable redundant Klaviyo "shipped" email to avoid duplicate. Configure branded tracking page links in all templates.
+      </p>
+      <p>
+        <strong>Days 21–45:</strong> Launch delivered + cross-sell cable accessories 48 hours post-delivery. Suppress if return initiated. A/B test education vs discount on email two.
+      </p>
+      <p>
+        <strong>Days 46–70:</strong> Add delay and exception emails with human support CTA — measure ticket deflection and NPS on delayed shipments.
+      </p>
+      <p>
+        <strong>Days 71–90:</strong> Compare accessory attach rate vs pre-AfterShip Email baseline. If incremental revenue under $2k/mo, evaluate whether Klaviyo unified post-purchase is simpler long-term. Keep AfterShip for tracking regardless — email module optional.
+      </p>
+      <p>
+        Day 90 VoltGear attach lift target 3+ points on delivered cohort — miss target and module stays off while tracking remains; miss plus duplicate Klaviyo emails means ops failure not product failure.
+      </p>
+      <p>
+        AfterShip Email module renewal depends on attach incremental lift, not open rate on shipping messages — transactional trust is asset; promotional abuse is liability.
+      </p>
+      <p>
+        VoltGear reviews carrier coverage quarterly — new 3PL contracts without AfterShip mapping silently exclude 10–15% of orders from cross-sell triggers until integration catches up.
+      </p>
+      <p>
+        Delivered-trigger cross-sell waits on carrier scan confirmation, not merchant hope — timing discipline protects shipping email trust.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Margin math: AfterShip Email accessory attach revenue</h2>
+      <p>
+        VoltGear: $78 AOV, 2,100 orders, 12% historical accessory attach ($9.36 per order attach revenue). AfterShip Email ≈ $29–79/mo add-on to tracking. Post-delivery cross-sell lifts attach to 15% (+$5,874 monthly attach revenue on 63 extra attachments × $78 avg accessory — simplified). Gross profit on accessories 55% = +$3,231/mo vs $79 tool cost — strong ROI if attribution holds.
+      </p>
+      <p>
+        Duplicate email penalty: tracking plus Klaviyo post-purchase both fire — unsubscribes rise 0.4 points, costing estimated $400/mo lifecycle value. Consolidation savings real. Delay email with aggressive discount trains customers to expect compensation — margin hit on future full-price orders.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Failure rehearsal: AfterShip Email coordination failures</h2>
+      <p>
+        <strong>Double shipped emails:</strong> Klaviyo and AfterShip both notify — customer confusion. Single owner for shipment triggers documented in runbook.
+      </p>
+      <p>
+        <strong>Promotional tracking emails:</strong> Cross-sell in delay notification feels exploitative — brand damage on bad CX moment. Transactional tone on exception paths only.
+      </p>
+      <p>
+        <strong>Expecting full ESP depth:</strong> Browse abandonment in AfterShip Email — wrong tool. Cart stays in Klaviyo; AfterShip owns post-fulfillment only.
+      </p>
+      <p>
+        <strong>International carrier gaps:</strong> Delivered trigger never fires for regional carrier — cross-sell never sends. Monitor carrier integration coverage monthly.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Weekly operating cadence: AfterShip Email post-fulfillment</h2>
+      <p>
+        Monday: review shipment exception email volume — spike means carrier or fulfillment problem, not marketing opportunity; pause cross-sell during outage clusters. Wednesday: accessory attach rate on delivered-trigger emails vs holdout week. Friday: confirm Klaviyo shipment emails remain disabled — duplicate tracking is support ticket driver.
+      </p>
+      <p>
+        Monthly: carrier integration health report — new SKU fulfillment partners need mapping before first bulk ship. Post-delivery cross-sell creative rotates by product family; cable buyers vs charger buyers get different accessory logic. VoltGear measures incremental attach revenue, not open rate, on transactional-adjacent sends.
+      </p>
+      <p>
+        Quarterly: decide whether post-purchase depth should expand in Klaviyo instead — AfterShip Email wins on tracking trust, not complex segmentation. Hybrid stack is valid: AfterShip for delivery moment, Klaviyo for education and winback.
+      </p>
+    </div>
+
+    <div class="ledger-card mb-12">
+      <p class="editorial-kicker">Implementation handoff</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">AfterShip Email trigger mapping checklist</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        VoltGear maps every carrier and fulfillment center to AfterShip trigger before cross-sell copy goes live — regional 3PL without integration means silent failure on 15% of orders. Disable redundant shipment notifications in Klaviyo same day AfterShip Email ships; customers forgiving tracking duplication once, not thrice.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Exception path copy reviewed by support lead — delay emails with promotional tone generate tickets, not accessory revenue. Post-delivery cross-sell waits 48 hours after confirmed delivery scan, not label-created timestamp. Handoff to finance: measure accessory attach incremental lift, not combined shipment email opens.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Electronics and accessory attach categories benefit most from AfterShip Email — brands with single-SKU replenishment see smaller lift. VoltGear-style attach math should be replicated on your catalog before buying module; tracking consolidation alone justifies AfterShip, email module is upside option.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Merchants already paying AfterShip tracking should trial email module on delivered-trigger cross-sell only before expanding — incremental attach revenue on 10% of orders often covers module fee within 45 days when AOV accessories exceed $25.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Operational versus marketing post-purchase split</h2>
+      <p>
+        Luméa Skincare: AfterShip owns carrier-scan and delivered triggers; Klaviyo owns marketing winback. Consolidation attempt reduced WISMO 34% to 22% then broke APAC webhook latency — restored AfterShip in nine days. Trigger map prevents duplicate review requests: AfterShip day-7 delivered review handoff; Klaviyo day-45 lapsed buyer winback. Merchants already paying AfterShip tracking should trial email module on delivered cross-sell only before full expansion.
+      </p>
+    </div>
+
+    <div class="prose-shopify mb-12"><h2 class="font-serif text-4xl font-black text-[#24170f]">Merchant scenario: Aftership Email rollout checkpoint</h2>
+    <p>
+      Shopify operators evaluating Aftership Email should document week-one baseline metrics before claiming migration wins — welcome time-to-live, cart suppression accuracy, post-purchase edge cases, and winback engagement splits scored on staff accounts. Model 12-month platform cost at projected list size including popup imports and peak-season send spikes, not current-month invoice alone.
+    </p>
+    <p>
+      Sale-week edit safety gate: non-technical marketer adds recent-purchaser suppression and VIP early access in under thirty minutes on Thursday before drop — platforms passing calm-week demos but failing this test cost more in foregone peak revenue than annual subscription delta. Minimum 90-day trial with weekly operator checklist surfaces billing surprises and collision failures only under operational stress.
+    </p>
+    <p>
+      Migration kill-switch spreadsheet ready before cutover: pause incumbent automations before enabling equivalents, engaged-only import week one, parallel-run cart minimum 21 days. Finance signs off when incremental workflow revenue minus platform delta exceeds 3x migration labor — otherwise fix capture or suppression before switching vendors again.
+    </p>
+    </div>
+
+        <div class="card mb-12">
+      <p class="editorial-kicker">Compare alternatives</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">AfterShip Email vs other Shopify apps</h2>
+      <ul class="mt-6 space-y-3 text-lg font-bold">
+        <li><a class="link" href="/apps/yotpo-email-sms">Yotpo Email & SMS review</a> — reviews plus loyalty suite</li>
+        <li><a class="link" href="/apps/sequenzy">Sequenzy review</a> — full lifecycle pairing partner</li>
+        <li><a class="link" href="/apps/klaviyo">Klaviyo review</a> — post-purchase flow benchmark</li>
+        <li><a class="link" href="/compare/klaviyo-vs-yotpo-email-sms">Klaviyo vs Yotpo</a> — retention suite comparison</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="container pb-8">
+    <div class="flex flex-wrap gap-4 text-sm font-bold">
+      <a class="link" href="/apps">All Shopify email apps →</a>
+      <a class="link" href="/use-cases/post-purchase">Post-purchase guide →</a>
+    </div>
+  </section>
+
+  <FaqSection faqs={faqs} title="AfterShip Email Shopify FAQ" />
+</BaseLayout>

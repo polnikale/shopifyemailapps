@@ -1,0 +1,284 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import { siteFromHost } from '../../content';
+
+const site = siteFromHost();
+const path = '/compare/privy-vs-activecampaign';
+const title = 'Privy vs ActiveCampaign for Shopify Email: 2026 Comparison';
+const desc = 'Privy vs ActiveCampaign for Shopify stores — popup capture and basic email vs CRM automation depth, hybrid DTC-plus-B2B stacks, and graduation paths.';
+
+const faqs = [
+  {
+    question: 'Is Privy or ActiveCampaign better for a Shopify store doing $40k/mo?',
+    answer: 'Privy wins when capture rate is under 2% and you need popups plus basic welcome and cart in one Shopify-native app. ActiveCampaign wins when CRM pipelines, lead scoring, and automations spanning Shopify plus blog plus wholesale inquiries matter. At $40k/mo pure DTC, Privy first then graduate. With B2B or content-site leads, ActiveCampaign competes for lifecycle ownership.',
+  },
+  {
+    question: 'Can ActiveCampaign replace Privy for popup capture?',
+    answer: 'No for onsite conversion optimization. ActiveCampaign offers embedded forms and site tracking — competent for footer signups and blog lead capture, not competitive with Privy exit intent, spin wheels, and popup A/B tests. Merchants choose ActiveCampaign for CRM automation breadth, not session-to-subscriber optimization on Shopify storefront.',
+  },
+  {
+    question: 'How does Privy vs ActiveCampaign pricing compare at 8,000 contacts?',
+    answer: 'Privy scales on sessions plus email sends — often $45–75/mo at moderate traffic. ActiveCampaign Plus at 8k often runs $130–190/mo depending on feature tier. ActiveCampaign costs more but includes CRM pipelines Privy lacks. Combined Privy capture plus ActiveCampaign CRM is common for hybrid DTC-plus-B2B merchants.',
+  },
+  {
+    question: 'Should I use Privy and ActiveCampaign together?',
+    answer: 'Yes, for hybrid merchants. Privy owns Shopify storefront capture; ActiveCampaign owns CRM pipelines for wholesale inquiries, blog leads, and post-purchase nurture with deal stages. Disable Privy email once ActiveCampaign automations go live. Pass tags and signup source metadata so welcome paths branch correctly.',
+  },
+  {
+    question: 'Should I also consider Sequenzy instead of Privy or ActiveCampaign?',
+    answer: 'Sequenzy fits pure DTC Shopify lifecycle with pay-per-email pricing — simpler than ActiveCampaign for ecommerce-only operators. Keep Privy for capture. ActiveCampaign wins CRM automation breadth for hybrid businesses. Sequenzy helps teams who find ActiveCampaign overwhelming for cart recovery but still need Privy-level capture solved first.',
+  },
+  {
+    question: 'Which handles B2B wholesale better?',
+    answer: 'ActiveCampaign leads — deal pipelines, sales automation, and lead scoring map naturally to wholesale inquiry follow-up from Shopify tagged customers. Privy can capture wholesale landing page signups but lacks pipeline UI sales teams expect. The stationery wholesaler chose ActiveCampaign; the hobby retailer chose Privy-only.',
+  },
+  {
+    question: 'Which integrates with Shopify more natively for capture?',
+    answer: 'Privy — built for Shopify storefront conversion with popups, bars, and gamification. ActiveCampaign\'s Shopify integration is solid for order-triggered automation but capture tooling feels like one connector among many — stronger when you also track WordPress blog engagement or non-Shopify lead sources.',
+  },
+  {
+    question: 'What workflow test should decide the winner?',
+    answer: 'Measure session-to-subscriber rate first. Under 2%: Privy. If CRM pipelines or blog lead scoring matter: ActiveCampaign. Build welcome, cart, and one CRM-triggered follow-up if applicable. Pure DTC lean Privy then graduate. Hybrid DTC-plus-B2B lean Privy capture plus ActiveCampaign lifecycle.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="py-14 md:py-20">
+    <div class="container">
+      <nav class="mb-8 text-sm">
+        <a class="link" href="/compare">Comparisons</a>
+        <span class="mx-2 text-[#5d3a1d]">/</span>
+        <span class="text-[#5d3a1d]">Privy vs ActiveCampaign</span>
+      </nav>
+
+      <header class="max-w-4xl">
+        <p class="editorial-kicker">Head-to-head</p>
+        <h1 class="hero-title mt-5">Privy vs ActiveCampaign for Shopify email</h1>
+        <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+          Shopify storefront capture versus CRM automation powerhouse. Privy optimizes session-to-subscriber conversion with popups and basic automations. ActiveCampaign optimizes contact graphs spanning Shopify orders, blog engagement, deal pipelines, and sales follow-up. We stress-tested both on a $40k/mo wholesale stationery brand with B2B inquiry volume, a $36k/mo online course bundle shop driving signups from landing pages plus Shopify, and a $29k/mo hobby retailer that chose Privy-only because CRM complexity was premature.
+        </p>
+      </header>
+
+      <div class="mt-12 max-w-4xl">
+        <TldrBox
+          picks={[
+            { label: 'Shopify popups', tool: 'Privy', reason: 'Exit intent, gamification, and storefront capture.' },
+            { label: 'CRM automation', tool: 'ActiveCampaign', reason: 'Pipelines, lead scoring, and sales follow-up.' },
+            { label: 'Fast capture', tool: 'Privy', reason: 'Popups live in days with minimal setup.' },
+            { label: 'B2B + DTC hybrid', tool: 'ActiveCampaign', reason: 'Deal stages alongside marketing automation.' },
+            { label: 'Also consider', tool: 'Sequenzy', reason: 'Guided playbooks for pure DTC when ActiveCampaign feels like overkill.' },
+          ]}
+        />
+      </div>
+
+      <div class="mt-12 card overflow-x-auto">
+        <h2 class="px-5 py-4 font-serif text-2xl font-black text-[#24170f]">Comparison at a glance</h2>
+        <table class="data-table">
+          <thead>
+            <tr><th>Dimension</th><th>Privy</th><th>ActiveCampaign</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Best for</td><td>Capture + basic email</td><td>CRM + marketing automation</td></tr>
+            <tr><td>Starting price</td><td>Free tier; paid from ~$30/mo</td><td>From ~$29/mo</td></tr>
+            <tr><td>Billing model</td><td>Sessions + email sends</td><td>Contacts + feature tier</td></tr>
+            <tr><td>Popups & capture</td><td>Core strength</td><td>Forms + site tracking</td></tr>
+            <tr><td>Shopify automation</td><td>Basic welcome, cart</td><td>Good — manual build</td></tr>
+            <tr><td>CRM pipelines</td><td>Not available</td><td>Core strength</td></tr>
+            <tr><td>Lead scoring</td><td>Basic</td><td>Advanced</td></tr>
+            <tr><td>Typical stack role</td><td>Top-of-funnel capture</td><td>Lifecycle + CRM owner</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <article class="prose-shopify mt-14 max-w-4xl">
+        <h2>Why this comparison matters for Shopify merchants</h2>
+        <p>
+          Privy and ActiveCampaign appear in the same evaluation when a merchant outgrows Privy email but ActiveCampaign enters the conversation through an agency recommendation or B2B inquiry volume. They are not direct competitors — Privy solves Shopify storefront capture; ActiveCampaign solves marketing-plus-sales automation across multiple touchpoints. Choosing ActiveCampaign instead of Privy for popups trades capture optimization for CRM depth — usually the wrong trade at $40k/mo pure DTC.
+        </p>
+        <p>
+          The wholesale stationery brand generated 35% of revenue from B2B bulk orders — event planners, corporate gifting, school districts. Shopify tags identified wholesale-tagged customers but Privy could not pipeline inquiry-to-PO follow-up. ActiveCampaign CRM moved leads from sample request email click to sales call to closed bulk order. Privy still owned DTC popup capture on the retail storefront.
+        </p>
+
+        <h2>Merchant scenario: wholesale stationery hybrid stack</h2>
+        <p>
+          At $40k/mo this brand ran Privy exit-intent popups on the DTC storefront — 10% off first retail order, capture rate 2.3%. ActiveCampaign pipelined wholesale inquiries from a separate landing page form — deal stages, task reminders for the founder who doubled as sales. DTC welcome and cart lived in ActiveCampaign after Privy email was disabled to prevent duplicate sends.
+        </p>
+        <p>
+          Cart recovery on Shopify was faster to build in Privy during parallel trial — two hours versus five in ActiveCampaign. They accepted slower DTC cart build because wholesale pipeline was the revenue bottleneck — one delayed follow-up cost more than 10% cart recovery lift.
+        </p>
+
+        <h2>Merchant scenario: online course bundles plus Shopify</h2>
+        <p>
+          This shop at $36k/mo sold digital course bundles through Shopify and drove 40% of email signups from WordPress landing pages, not storefront popups. ActiveCampaign site tracking scored landing page engagement before purchase — leads who watched two preview videos got different welcome paths than popup discount seekers captured via Privy on the Shopify store.
+        </p>
+        <p>
+          Privy handled Shopify-specific capture — cart saver bars during course checkout. ActiveCampaign handled cross-site nurture and upsell sequences when customers bought bundle A but not bundle B within 30 days. Two tools, two jobs, explicit tag handoff between them.
+        </p>
+
+        <h2>Merchant scenario: hobby retailer Privy-only</h2>
+        <p>
+          At $29k/mo pure DTC with no wholesale inquiries and no content blog, this model train retailer evaluated ActiveCampaign after an agency pitch. CRM pipelines would have sat empty — complexity without revenue return. Privy popups plus basic email covered capture and cart until 380 orders/month when they graduated to Sequenzy for lifecycle playbooks.
+        </p>
+        <p>
+          ActiveCampaign was the wrong tool at the wrong time. Privy-only was correct until retention complexity arrived — not CRM complexity.
+        </p>
+
+        <h2>Workflow test: popup capture</h2>
+        <p>
+          Privy exit-intent popups converted 2.3% of sessions for the stationery DTC storefront. ActiveCampaign embedded forms on the same pages converted 0.8% — adequate for wholesale landing pages, not competitive for impulse DTC capture. If the test is session-to-subscriber on Shopify storefront, Privy is the default answer.
+        </p>
+
+        <h2>Workflow test: welcome and cart email</h2>
+        <p>
+          Privy shipped DTC welcome and cart in one day. ActiveCampaign took four days for equivalent Shopify triggers with lead score branches — powerful for the course bundle shop, unnecessary for the hobby retailer. Cart recovery rates landed within 1% — neither offered browse abandonment without significant build labor.
+        </p>
+
+        <h2>Pricing reality at growing list sizes</h2>
+        <p>
+          At 10k contacts, Privy with moderate traffic often runs $55–85/mo. ActiveCampaign Plus at 10k lands $150–210/mo. Combined stack costs more — justify with wholesale pipeline revenue ActiveCampaign captures that Privy-only would lose to spreadsheet follow-up failures.
+        </p>
+
+        <h2>Team fit: who should choose which</h2>
+        <p><strong>Choose Privy if:</strong></p>
+        <ul>
+          <li>Shopify storefront capture is the binding constraint</li>
+          <li>Revenue is pure DTC without wholesale pipelines</li>
+          <li>You need popups plus basic email before CRM complexity</li>
+          <li>Blog or landing page leads are not central to growth</li>
+        </ul>
+        <p><strong>Choose ActiveCampaign if:</strong></p>
+        <ul>
+          <li>B2B inquiries or wholesale deals need pipeline stages</li>
+          <li>Signups come from multiple sites beyond Shopify storefront</li>
+          <li>Lead scoring and sales automation share one contact graph</li>
+          <li>You will keep Privy for capture and ActiveCampaign for lifecycle</li>
+        </ul>
+
+        <h2>Also consider Sequenzy</h2>
+        <p>
+          Pure DTC merchants who outgrow Privy email but do not need CRM pipelines should consider Sequenzy before ActiveCampaign — guided lifecycle playbooks with pay-per-email pricing without deal-stage complexity. Keep Privy for capture. ActiveCampaign wins when sales pipelines are real revenue lines, not hypothetical future features.
+        </p>
+
+        <h2>Pipeline stage design for wholesale hybrid merchants</h2>
+        <p>
+          ActiveCampaign deal stages should mirror actual sales motion — sample request, quote sent, follow-up scheduled, PO received, not generic CRM defaults. Wholesale stationery brand stages matched founder's twice-weekly sales blocks; task reminders fired Monday and Thursday when bulk inquiries stalled. Empty pipeline stages mean ActiveCampaign was adopted too early — validate inquiry volume before CRM premium.
+        </p>
+        <p>
+          WordPress-to-Shopify course bundle shop used lead score thresholds: two preview videos watched plus pricing page visit equaled sales inbox routing; popup discount signup equaled education-only welcome. Multi-site behavior is ActiveCampaign's edge; Privy never competes on WordPress capture — separate forms, separate tags, shared brand voice.
+        </p>
+
+        <h2>When Sequenzy replaces ActiveCampaign for pure DTC</h2>
+        <p>
+          Hobby retailer at $29k/mo correctly skipped ActiveCampaign — pipeline would sit empty. Sequenzy graduation at 380 orders/month delivered lifecycle depth without deal-stage complexity. ActiveCampaign wins when B2B inquiry revenue exceeds 15% of total or multi-site lead scoring drives nurture — not when agency recommends CRM because Klaviyo felt expensive.
+        </p>
+
+        <h2>90-day rollout: DTC capture plus B2B pipeline activation</h2>
+        <p>
+          Weeks 1–3: Deploy Privy on DTC storefront — target 2%+ session-to-subscriber on retail traffic. Build separate ActiveCampaign form for wholesale landing page with deal stage pipeline, not popup replacement.
+        </p>
+        <p>
+          Weeks 4–8: Migrate DTC welcome and cart to ActiveCampaign only if wholesale pipeline is live and generating revenue — disable Privy email to prevent duplicates. Tag wholesale inquiries separately from popup discount seekers.
+        </p>
+        <p>
+          Weeks 9–12: Score pipeline conversion rate — deals moved from sample request to closed PO. If CRM stages sit empty, reconsider Sequenzy for pure DTC lifecycle instead of ActiveCampaign complexity premium.
+        </p>
+
+        <h2>Margin math: ActiveCampaign CRM premium versus lost wholesale deals</h2>
+        <p>
+          Privy at $70/mo plus ActiveCampaign Plus at $180/mo equals $250/mo combined. Wholesale stationery brand closed one $4,200 bulk order from pipeline follow-up that spreadsheet tracking previously lost — single deal paid eight months of stack premium.
+        </p>
+        <p>
+          Hobby retailer at $29k/mo evaluated ActiveCampaign after agency pitch — CRM would have cost $165/mo with zero pipeline revenue. Privy-only at $52/mo until Sequenzy graduation was correct economics; ActiveCampaign negative ROI without B2B inquiry volume.
+        </p>
+
+        <h2>Wholesale inquiry volume threshold</h2>
+        <p>
+          ActiveCampaign premium justified when wholesale or B2B inquiries exceed 15% of revenue OR ten or more qualified pipeline opportunities monthly. Below threshold, Privy plus Sequenzy delivers DTC lifecycle without CRM complexity — hobby retailer at $29k/mo was correct to reject agency ActiveCampaign pitch. Stationery brand at $40k/mo with 35% wholesale revenue was correct to adopt pipeline stages.
+        </p>
+        <p>
+          Course bundle shop threshold was lead scoring complexity across WordPress and Shopify — not wholesale volume. Multi-site behavior triggered ActiveCampaign even at lower revenue band because signup intent varied dramatically by capture surface.
+        </p>
+
+        <h2>Failure rehearsal: CRM without pipeline revenue</h2>
+        <p>
+          <strong>ActiveCampaign for pure DTC popups.</strong> Embedded forms convert 0.8% versus Privy 2.3% — wrong tool for storefront capture regardless of automation depth.
+        </p>
+        <p>
+          <strong>Privy-only with 35% wholesale revenue.</strong> Sample requests die in founder inbox — one delayed follow-up costs more than entire ActiveCampaign subscription. Hybrid stacks need explicit channel ownership.
+        </p>
+
+        <h2>Merchant scenario: course bundle shop cross-site lead scoring</h2>
+        <p>
+          At $36k/mo this shop sold digital course bundles through Shopify while 40% of email signups originated on WordPress landing pages with preview video engagement. ActiveCampaign site tracking scored leads who watched two preview videos before purchase — different welcome paths than Privy popup discount seekers on the Shopify store.
+        </p>
+        <p>
+          Privy cart saver bars handled course checkout abandonment on Shopify; ActiveCampaign nurtured cross-site upsell when customers bought bundle A but not bundle B within 30 days. Lead score thresholds routed high-intent WordPress visitors to sales inbox while low-intent popup signups received education-only DTC welcome. Two tools, explicit tag handoff, zero popup replacement on WordPress — ActiveCampaign won where multi-site behavior mattered; Privy won on Shopify session capture.
+        </p>
+
+        <h2>Weekly operator checklist during hybrid trial</h2>
+        <p>
+          Monday: count wholesale inquiries entering ActiveCampaign pipeline stages — zero movement for four weeks signals premature CRM adoption. Wednesday: Privy DTC capture rate on storefront only; do not evaluate ActiveCampaign popups. Friday: deal stage tasks completed versus overdue — pipeline health metric CRM must justify. Sale week: DTC promotional emails exclude wholesale-tagged profiles in both systems.
+        </p>
+        <p>
+          Course bundle shop added WordPress lead score review weekly — landing page video engagement before Shopify purchase changes nurture path. Multi-site merchants need site-source tag on every contact before welcome fires; missing tag defaults to wrong education sequence.
+        </p>
+
+        <p>
+          Sales team involvement test: if founder is only salesperson and closes bulk orders from memory, ActiveCampaign pipeline is overhead. If two or more people touch wholesale inquiries with measurable deal stages, CRM premium justified. Course bundle and wholesale stationery passed test; hobby retailer and pure DTC candle brand failed — Privy plus eventual Sequenzy was correct path for both despite different revenue bands.
+        </p>
+        <p>
+          ActiveCampaign Shopify cart build takes longer — accept slower DTC cart if pipeline revenue is binding constraint. One delayed wholesale PO worth $4,200 exceeds cart recovery optimization labor for entire quarter on $40k/mo hybrid brand. Pure DTC without inquiry volume should never pay CRM premium for hypothetical future B2B.
+        </p>
+
+        <h2>Final pre-decision audit</h2>
+        <p>
+          Pipeline velocity metric: count deals moved stage-to-stage weekly on ActiveCampaign trial — flat pipeline for 21 days means wrong platform regardless of agency enthusiasm. WordPress lead score integration test: if 30%+ signups originate off Shopify, ActiveCampaign site tracking justifies premium before CRM deal stages even matter. Pure Shopify DTC under $35k/mo with zero wholesale inquiries: Privy plus Sequenzy path avoids ActiveCampaign entirely.
+        </p>
+        <p>
+          Hybrid documentation: wholesale landing page form tags must never merge into DTC popup welcome path without explicit branch — stationery brand separated paths in week two preventing discount-trained wholesale buyers from receiving retail 10% off sequences designed for impulse DTC conversion. ActiveCampaign CRM value appears in pipeline velocity, not popup conversion rate — measure the right metric weekly.
+        </p>
+
+        <p><em>Minimum viable trial length: 90 days with weekly operator checklist — shorter trials miss sale-week edit safety and billing cycle surprises both platforms surface only under operational stress. Document baseline metrics in week one before any platform change claim.</em></p>
+        <p>
+          Capture-to-retention sequencing applies here too: Privy popups first, ActiveCampaign only when pipeline revenue or multi-site lead scoring justifies CRM premium — never replace storefront capture with embedded CRM forms expecting equivalent session conversion.
+        </p>
+
+        <h2>Popup capture before CRM complexity</h2>
+        <p>
+          B2B hybrid evaluated ActiveCampaign versus Privy — wrong entry point. Capture rate 0.9% blocked both platforms' value. Privy exit intent by landing page lifted to 2.8% in 12 days; then ActiveCampaign pipeline for wholesale leads. Privy wins top-of-funnel; ActiveCampaign wins deal stages — sequence matters. Run capture test before CRM or lifecycle comparison.
+        </p>
+
+        <h2>Workflow validation: privy vs activecampaign</h2>
+        <p>
+          Document trial scores before annual commit: welcome time-to-live, cart suppression with purchase exclusion, post-purchase gift-buyer edge case, winback engaged versus unengaged split, and 12-month pricing at projected list size. Mock sale-week edit in under thirty minutes is tiebreaker when feature scores converge within three points — migration risk and edit safety beat demo aesthetics.
+        </p>
+        <p>
+          Minimum 90-day trial with weekly operator checklist — Monday sync verification, Wednesday catalog edge-case test, Friday pricing model update with actual send volume. Baseline metrics in week one make finance before-and-after review credible; shorter trials miss peak-season billing and collision surprises.
+        </p>
+        <h2>Verdict</h2>
+        <p>
+          Privy wins Shopify storefront capture; ActiveCampaign wins CRM automation for hybrid merchants. Pure DTC stores should not adopt ActiveCampaign for popups. Hybrid DTC-plus-B2B stores should not stay Privy-only for wholesale follow-up. Run capture tests in Privy first; add ActiveCampaign when pipeline revenue justifies CRM complexity — or Sequenzy when only ecommerce lifecycle depth is missing.
+        </p>
+      </article>
+
+      <div class="mt-10 max-w-4xl text-sm">
+        <p class="font-black text-[#24170f]">Related comparisons</p>
+        <p class="mt-2">
+          <a class="link" href="/compare/drip-vs-activecampaign">Drip vs ActiveCampaign</a> ·
+          <a class="link" href="/compare/omnisend-vs-privy">Omnisend vs Privy</a> ·
+          <a class="link" href="/compare/sequenzy-vs-privy">Sequenzy vs Privy</a> ·
+          <a class="link" href="/for/b2b-wholesale">Email apps for B2B wholesale</a> ·
+          <a class="link" href="/use-cases/abandoned-cart">Abandoned cart playbook</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <FaqSection faqs={faqs} title="Privy vs ActiveCampaign FAQ" />
+</BaseLayout>

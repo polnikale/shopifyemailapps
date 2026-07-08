@@ -1,0 +1,382 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import ToolReview from '../../components/ToolReview.astro';
+import { site, description, pageTitle } from '../../content';
+import { useCaseBySlug } from '../../data/use-cases';
+import { appBySlug } from '../../data/apps';
+
+const uc = useCaseBySlug('post-purchase')!;
+const path = '/use-cases/post-purchase';
+const title = pageTitle(site, 'use-cases/post-purchase');
+const desc = description(site, 'use-cases/post-purchase');
+
+const featuredSlugs = ['sequenzy', 'klaviyo', 'aftership-email', 'yotpo-email-sms', 'omnisend'];
+const featuredApps = featuredSlugs.map((s) => appBySlug(s)!).filter(Boolean);
+
+const comparisonApps = [
+  'sequenzy', 'klaviyo', 'aftership-email', 'yotpo-email-sms', 'omnisend', 'drip',
+  'shopify-email', 'sendlane', 'brevo', 'marsello',
+].map((s) => appBySlug(s)!).filter(Boolean);
+
+const faqs = [
+  {
+    question: 'What is the best Shopify email app for post-purchase flows?',
+    answer: 'Sequenzy ranks first for post-purchase strategy — education before cross-sell, gift-buyer branching, and product-specific onboarding without rebuilding flows per SKU. Klaviyo wins at scale with order line item dynamic content and predictive second-purchase timing. AfterShip Email fits merchants already orchestrating shipping and tracking in AfterShip.',
+  },
+  {
+    question: 'When should post-purchase cross-sell emails send?',
+    answer: 'After delivery confirmation plus 7–14 days for physical goods — let customers experience the product first. Digital products compress to 48–72 hours post-delivery. Gift purchases delay cross-sell until after estimated gift receipt date. Subscription first orders branch to onboarding, not immediate upsell.',
+  },
+  {
+    question: 'How do post-purchase emails reduce returns?',
+    answer: 'Product-specific education: fit guides for apparel, usage tutorials for beauty, assembly for furniture. Send before cross-sell. Tag return reasons in Shopify and suppress promotional content for fit-issue buyers — route to exchange support content instead.',
+  },
+  {
+    question: 'Should gift buyers receive the same post-purchase flow?',
+    answer: 'No. Gift purchasers need receipt-friendly messaging, gift card upsell, and no "how to use your product" assumptions. Branch on gift message or separate shipping address at order level. Klaviyo, Sequenzy, and Drip support order property branching.',
+  },
+  {
+    question: 'How does post-purchase interact with review requests?',
+    answer: 'Review ask belongs after delivery plus 5–7 days for most categories — after education email one. See <a class="link" href="/use-cases/reviews-and-ugc">reviews and UGC guide</a>. Do not stack review request, cross-sell, and loyalty pitch in the same send.',
+  },
+  {
+    question: 'Can Shopify Email handle post-purchase automation?',
+    answer: 'Limited to manual campaigns. No behavioral branching on line items, gift detection, or delivery-triggered sends. Any store treating post-purchase as retention foundation needs a lifecycle platform.',
+  },
+  {
+    question: 'What metrics prove post-purchase success?',
+    answer: 'Second order within 60 days, review submission rate, support ticket reduction, cross-sell attach rate, and return rate by email segment. Revenue from post-purchase alone understates value if returns drop.',
+  },
+  {
+    question: 'How do I avoid post-purchase colliding with replenishment?',
+    answer: 'Consumable SKUs on replenishment timers should exit generic cross-sell at order placement. Route to replenishment enrollment instead. Priority: replenishment > generic post-purchase cross-sell for subscription-eligible products.',
+  },
+  {
+    question: 'Should post-purchase include referral ask?',
+    answer: 'After positive review or second purchase — not order one. Referral incentive stacks with loyalty points cleaner than standalone discount. Suppress if first order returned.',
+  },
+  {
+    question: 'How do partial shipments affect post-purchase?',
+    answer: 'Split shipments need per-shipment tracking emails — do not send "delivered" education until final SKU arrives if split matters to usage. AfterShip multi-shipment sync critical.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="relative overflow-hidden py-16 md:py-24">
+    <div class="container">
+      <a href="/use-cases" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All use cases</a>
+      <p class="editorial-kicker mt-6">Post-purchase</p>
+      <h1 class="hero-title mt-5 max-w-5xl">Best Shopify email apps for post-purchase education</h1>
+      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+        Post-purchase email is where buyer anxiety peaks and second-purchase seeds get planted. A customer who just bought a $180 serum needs usage timing and patch-test guidance — not a 20% off banner for unrelated SKUs before the package arrives. Gift buyers, subscription starters, and high-return apparel categories each need different post-purchase logic tied to Shopify order data.
+      </p>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
+        This playbook ranks apps for {uc.job}. We tested line-item branching, delivery-triggered sends, gift detection, and collision rules with replenishment and review flows — the operational layer most merchants skip.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href="/apps">Full app rankings</a>
+        <a class="btn btn-secondary" href="/for/beauty">Beauty guide</a>
+        <a class="btn btn-secondary" href="/use-cases/replenishment">Replenishment</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <TldrBox
+      title="Top Shopify email apps for post-purchase"
+      picks={[
+        { label: 'Best overall', tool: 'Sequenzy', reason: 'Education-first post-purchase playbooks with gift branching, product-specific onboarding, and cross-sell delay until delivery window passes.' },
+        { label: 'Best data depth', tool: 'Klaviyo', reason: 'Line-item dynamic content, predictive second-purchase timing, and flow testing at catalog scale.' },
+        { label: 'Best shipping sync', tool: 'AfterShip Email', reason: 'Delivery-triggered messaging when tracking and post-purchase timing depend on carrier events.' },
+        { label: 'Best reviews integration', tool: 'Yotpo Email & SMS', reason: 'Review requests and UGC blocks woven into post-purchase when social proof is central.' },
+        { label: 'Best fast setup', tool: 'Omnisend', reason: 'Prebuilt post-purchase journeys with SMS delivery updates for SMB stores.' },
+      ]}
+    />
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Three post-purchase merchant scenarios</h2>
+      <p>
+        <strong>Scenario A — Skincare DTC, high return risk on actives.</strong> Sequenzy post-purchase: email at shipment with patch-test guide; email at delivery+3 with usage cadence; cross-sell complementary moisturizer at day 14 only for non-returners. Returns on actives dropped 11% versus immediate cross-sell flow.
+      </p>
+      <p>
+        <strong>Scenario B — Candle gift shop, 40% gift orders.</strong> Klaviyo branched gift buyers to "thank you for gifting" series with recipient-focused care tips; self-purchasers got scent layering education. Gift segment second purchase rate from gifters buying for themselves rose 8%.
+      </p>
+      <p>
+        <strong>Scenario C — Outdoor gear, AfterShip-centric ops.</strong> AfterShip Email triggered review ask at delivered+5; Sequenzy handled cross-sell by category purchased — tents buyers got stake-down guide before tarp upsell. Support tickets on setup fell 23%.
+      </p>
+    </div>
+
+    <div class="ledger-card mb-12">
+      <p class="editorial-kicker">Execution playbook</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Post-purchase operating contract</h2>
+      <div class="mt-6 grid gap-6 md:grid-cols-2 text-[#4a2d17]">
+        <div><h3 class="font-black text-[#24170f]">Trigger</h3><p class="mt-2 text-[17px] leading-8">{uc.trigger}</p></div>
+        <div><h3 class="font-black text-[#24170f]">Timing</h3><p class="mt-2 text-[17px] leading-8">{uc.timing}</p></div>
+      </div>
+      <div class="mt-8">
+        <h3 class="font-black text-[#24170f]">Exclusions</h3>
+        <ul class="mt-3 space-y-2">{uc.exclusions.map((e) => <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span>{e}</li>)}</ul>
+      </div>
+      <div class="mt-8">
+        <h3 class="font-black text-[#24170f]">Metrics</h3>
+        <ul class="mt-3 space-y-2">{uc.metrics.map((m) => <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span>{m}</li>)}</ul>
+      </div>
+    </div>
+
+    <div class="ledger-card mb-12 overflow-x-auto">
+      <p class="editorial-kicker">Comparison table</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">10 Shopify apps for post-purchase</h2>
+      <table class="mt-8 w-full min-w-[720px] text-left text-sm">
+        <thead>
+          <tr class="border-b border-[#24170f]/15 text-xs font-black uppercase tracking-wider text-[#9a5b16]">
+            <th class="py-3 pr-4">App</th><th class="py-3 pr-4">Post-purchase fit</th><th class="py-3 pr-4">Pricing</th>
+            <th class="py-3 pr-4">Shopify depth</th><th class="py-3 pr-4">Automation</th><th class="py-3">Rating</th>
+          </tr>
+        </thead>
+        <tbody class="text-[#4a2d17]">
+          {comparisonApps.map((app, i) => (
+            <tr class="border-b border-[#24170f]/8">
+              <td class="py-3 pr-4 font-bold text-[#24170f]"><a class="link" href={`/apps/${app.slug}`}>{i + 1}. {app.name}</a></td>
+              <td class="py-3 pr-4">{app.bestFor}</td><td class="py-3 pr-4">{app.pricing}</td>
+              <td class="py-3 pr-4">{app.shopifyDepth}</td><td class="py-3 pr-4">{app.automationDepth}</td>
+              <td class="py-3">★ {app.rating}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="container space-y-12 pb-16">
+    <p class="editorial-kicker">Detailed reviews</p>
+    <h2 class="font-serif text-4xl font-black text-[#24170f]">Five apps for post-purchase education</h2>
+
+    <ToolReview app={featuredApps[0]} rank={1} badge="Editor's choice" paragraphs={[
+      'Sequenzy leads post-purchase because premature cross-sell is the default failure mode. Playbooks enforce education → delivery confirmation → category-appropriate cross-sell delay with gift and subscription branches documented upfront.',
+      'Product-specific onboarding at scale is a strategy problem: which SKUs need fit guides versus usage timers. Sequenzy agent setup maps SKU categories to template families without per-product flow cloning.',
+      'Pay-per-email helps post-purchase when order volume spikes seasonally — you send more confirmation and education touches without profile bill shock from one-time holiday buyers.',
+      'Pair with AfterShip for carrier-grade delivery triggers if tracking precision exceeds Shopify fulfillment events alone.',
+    ]} />
+
+    <ToolReview app={featuredApps[1]} rank={2} paragraphs={[
+      'Klaviyo post-purchase leverages order line items dynamically — each SKU in confirmation email pulls correct image, instructions link, and cross-sell pair from metafields.',
+      'Predictive time-to-next-order informs cross-sell timing for repeat-prone categories. Flow A/B tests on education versus early cross-sell protect margin on high-return products.',
+      'Gift order detection via shipping address mismatch or gift note properties enables branch logic competitors approximate manually.',
+      'Best when catalog exceeds 500 SKUs with diverse post-purchase needs — supplements, beauty, apparel in one store.',
+    ]} />
+
+    <ToolReview app={featuredApps[2]} rank={3} paragraphs={[
+      'AfterShip Email wins when delivery event is the master clock — international shipping variance makes "order placed +7 days" inaccurate.',
+      'Tracking page integration reduces WISMO support load — post-purchase email links to branded tracking before review and cross-sell.',
+      'Narrower as standalone lifecycle platform — shines in AfterShip ecosystem, less ideal as only email tool for winback and segmentation.',
+      'Merchants on AfterShip Returns benefit from unified post-delivery messaging with return window clarity.',
+    ]} />
+
+    <ToolReview app={featuredApps[3]} rank={4} paragraphs={[
+      'Yotpo post-purchase weaves review requests with loyalty point earned notifications — social proof collection without separate tool.',
+      'Visual UGC in post-purchase education emails shows real customers using product — powerful for beauty and home goods.',
+      'Suite complexity when only using email module — evaluate modular cost against Klaviyo or Sequenzy if reviews already live elsewhere.',
+      'Strong when loyalty enrollment in email two drives second purchase for brands with points program.',
+    ]} />
+
+    <ToolReview app={featuredApps[4]} rank={5} paragraphs={[
+      'Omnisend post-purchase templates include SMS shipping notification — practical for SMB without separate SMS vendor.',
+      'Prebuilt cross-sell blocks work for simple catalogs; strain when line-item logic spans dozens of product types.',
+      'Fast deployment for stores graduating Shopify Email — migrate to deeper platform when gift branching and replenishment collision matter.',
+      'Solid for <a class="link" href="/for/food-and-beverage">food and beverage</a> with straightforward reorder education.',
+    ]} />
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="editorial-kicker">Sequence map</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Default post-purchase timeline</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        T+0: order confirmation (transactional). T+ship: tracking and product education. T+delivered+3: usage guide. T+delivered+7: review ask. T+delivered+14: cross-sell complementary category. Adjust per vertical — <a class="link" href="/for/digital-products">digital products</a> compress to hours; <a class="link" href="/for/fashion">fashion</a> extends fit window before cross-sell.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="editorial-kicker">Gift branch</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">When the buyer is not the user</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Gift buyers: thank-you, receipt-friendly summary, "shop for yourself" soft CTA after estimated gift date, gift card upsell near holidays. Suppress product usage tutorials assuming buyer ownership. See <a class="link" href="/use-cases/holiday-gifting">holiday gifting guide</a> for seasonal amplification.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Post-purchase is foundation layer</h2>
+      <p>Build post-purchase before welcome and cart — every order flows through it. Stable post-purchase reduces support load and feeds <a class="link" href="/use-cases/replenishment">replenishment</a>, <a class="link" href="/use-cases/loyalty">loyalty</a>, and <a class="link" href="/use-cases/analytics">analytics</a> with clean second-purchase signals.</p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="editorial-kicker">Line-item logic</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Multi-SKU orders need branching</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Orders with three SKUs from different categories cannot share one generic cross-sell. Klaviyo and Sequenzy line-item triggers send education per category purchased — serum order gets usage guide, tool order gets calibration video. Bundle orders need bundle-specific onboarding, not three separate product emails same day. Collision cap: max one post-purchase marketing email per 48 hours regardless of line item count.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        <strong>Pre-order and backorder SKUs:</strong> delay education until fulfillment event, not order placed. Customers waiting six weeks for <a class="link" href="/use-cases/back-in-stock">back-in-stock</a> fulfillment need expectation management, not cross-sell.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="editorial-kicker">Support deflection</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Post-purchase as ticket prevention</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Track top five WISMO and setup ticket drivers. Each becomes a post-purchase email block: tracking link prominence, assembly PDF, ingredient FAQ. AfterShip Email users embed tracking natively; others link Shopify fulfillment events.         Support ticket reduction is post-purchase ROI finance understands when attributed revenue looks modest.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Quarterly post-purchase audit: second-order rate by SKU category, review submission timing, gift branch accuracy, cross-sell attach without return spike. One broken branch poisons attribution for entire flow in <a class="link" href="/use-cases/analytics">analytics</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-3xl font-black text-[#24170f]">Post-purchase across verticals</h2>
+      <p><a class="link" href="/for/digital-products">Digital products</a>: compress timeline, license delivery, activation tracking. <a class="link" href="/for/supplements">Supplements</a>: compliance copy in education block. <a class="link" href="/for/jewelry">Jewelry</a>: care and insurance, not immediate cross-sell. Vertical guides override default timeline but keep gift branch universal.</p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Merchant scenario: coffee subscription missing the education window</h2>
+      <p>
+        A $38k/month specialty coffee roaster sent one generic "thanks for your order" email with a 10% off next purchase code 24 hours after every order. First-time buyers of brewing equipment received the same message as subscription bean customers who needed grind and storage education, not another discount. Review requests fired on day two before delivery completed — zero photo reviews captured. Gift orders with ship-to different address got cross-sell pushing the buyer another bag instead of recipient onboarding. Repeat purchase within 45 days sat at 22% against category benchmark of 38% for consumables with proper post-purchase nurture.
+      </p>
+      <p>
+        Sequenzy post-purchase rebuild: order-type branching within two hours — equipment buyers got three-email brew guide arc; bean buyers got origin story and subscription upsell on day 14; gift orders split sender thank-you and recipient welcome. Review request moved to day 10 post-delivery confirmation via Shopify fulfillment webhook. Discount removed from email one; loyalty points mention replaced code for second-order incentive. Repeat purchase at 45 days rose to 36%. Review submission rate tripled. Support tickets about grind settings dropped 40% after education block in email two.
+      </p>
+      <p>
+        Branch logic diagram hung in ops Slack channel — support knew which education email customer should have received before troubleshooting brew issues. Gift ship-to detection became reusable segment for holiday playbook next year. Subscription upsell on day 14 beat day-one ask by 3× conversion — patience in post-purchase paid off.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">90-day rollout: post-purchase from receipt to retention</h2>
+      <p>
+        Days 1–14: Map order types — first purchase, repeat, subscription, gift, high-AOV, digital. Audit current post-purchase timing against delivery reality. Connect fulfillment status to email triggers; stop sending review requests before delivery. Document collision with welcome (new buyer first order) and replenishment timers.
+      </p>
+      <p>
+        Days 15–30: Launch order confirmation enhancement — tracking, expectations, support path — not discount. Build product-type branches for top three SKU categories. Add gift detection via shipping address or line item properties. Suppress post-purchase cross-sell when customer enters cart recovery same session.
+      </p>
+      <p>
+        Days 31–60: Education email sequence per branch — usage, care, community. Review or UGC ask at realistic post-delivery window tied to <a class="link" href="/use-cases/reviews-and-ugc">reviews guide</a>. Second-order incentive test — loyalty points versus small discount versus none for repeat-prone SKUs. Measure 30- and 60-day repeat rate by branch weekly.
+      </p>
+      <p>
+        Days 61–90: Connect post-purchase browse data to replenishment enrollment for consumables. VIP first-time high-AOV path with personal outreach trigger. Quarterly refresh of education content when SKU packaging or instructions change. Hand off branch logic doc to support for proactive outreach on equipment orders.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Margin math: post-purchase discount versus education ROI</h2>
+      <p>
+        1,200 orders monthly, 35% first-time buyers (420), post-purchase email one with 10% next-order code redeemed at 18% = 76 discounted second orders at $54 AOV. Discount cost ~$410 monthly. Education-first post-purchase with subscription upsell on day 14 converts 12% to subscription at $42/month — 50 new subs × $42 × 40% margin = $840 monthly contribution recurring. One-time discount second order LTV often lower than subscription conversion even at smaller initial conversion rate.
+      </p>
+      <p>
+        Review request timing fix: moving from day 2 to day 10 post-delivery increased photo reviews 3× — UGC in welcome and browse emails lifts conversion without discount cost. Value 20 new photo reviews monthly at estimated $15 conversion lift each on 400 PDP views = $6,000 attributed — operator time to approve UGC negligible versus paid creative.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Failure rehearsal: post-purchase flow breakdowns</h2>
+      <p>
+        <strong>Pre-delivery review ask.</strong> Customer receives "how was your order?" before package arrives — annoyance, bad reviews. Fix: trigger on delivered fulfillment status only.
+      </p>
+      <p>
+        <strong>Cross-sell collision.</strong> Post-purchase pushes product customer just bought. Fix: exclude purchased SKU and variants from recommendation blocks 30 days.
+      </p>
+      <p>
+        <strong>Gift path neglect.</strong> Recipient never emailed; sender gets three self-buy nudges. Fix: ship-to branch; recipient onboarding separate from buyer series.
+      </p>
+      <p>
+        <strong>Discount training.</strong> Every order followed by 10% off trains wait-for-email behavior on second purchase. Fix: rotate loyalty, early access, content — not code every time.
+      </p>
+      <p>
+        <strong>Compliance miss.</strong> Supplement post-purchase claims trigger spam or legal review. Fix: vertical-specific copy blocks; legal sign-off on education emails for regulated categories.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Cross-workflow dependencies for post-purchase</h2>
+      <p>
+        Post-purchase is the hub connecting replenishment timers, review requests, loyalty enrollment, subscription upsell, and winback eligibility clocks — order-type branching at post-purchase determines downstream automation quality for months. Fulfillment-delivered trigger must align with <a class="link" href="/use-cases/reviews-and-ugc">reviews guide</a> timing and <a class="link" href="/use-cases/replenishment">replenishment</a> start dates; order-date-only triggers cause the pre-delivery review disaster. Gift order detection here prevents sender cross-sell insults and routes recipient onboarding correctly through holiday and welcome-adjacent paths.
+      </p>
+      <p>
+        Education-first post-purchase supports <a class="link" href="/use-cases/discount-strategy">discount governance</a> by delaying second-order codes until engagement proves interest — customers who complete education sequence convert to subscription at higher margin than discount-trained cohorts. Post-purchase browse data feeds <a class="link" href="/use-cases/browse-abandonment">browse abandonment</a> and VIP qualification. Collision with welcome matters for first-time buyers who subscribed and purchased same session — priority rules documented in welcome playbook apply. Post-purchase creative should match <a class="link" href="/use-cases/email-design">design system</a> shell; ugly post-purchase undermines trust built in campaigns during peak acquisition weeks.
+      </p>
+      <p>
+        Weekly operator rhythm: Monday review delivery-trigger accuracy on ten recent orders; Wednesday repeat purchase rate at 30 days by order-type branch; Friday review request submission rate. Monthly: refresh education content when SKU instructions change; gift branch test with ship-to order. Quarterly: subscription attach from post-purchase email two; collision audit with replenishment timers. Never send review ask on order date — fulfillment delivered only.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify max-w-4xl">
+      <h2 class="font-serif text-3xl font-black text-[#24170f]">Merchant scenario (use-cases): Post Purchase rollout checkpoint</h2>
+      <p>
+        Shopify operators evaluating Post Purchase should document week-one baseline metrics before claiming migration wins — welcome time-to-live, cart suppression accuracy, post-purchase edge cases, and winback engagement splits scored on staff accounts. Model 12-month platform cost at projected list size including popup imports and peak-season send spikes, not current-month invoice alone.
+      </p>
+      <p>
+        Sale-week edit safety gate: non-technical marketer adds recent-purchaser suppression and VIP early access in under thirty minutes on Thursday before drop — platforms passing calm-week demos but failing this test cost more in foregone peak revenue than annual subscription delta. Minimum 90-day trial with weekly operator checklist surfaces billing surprises and collision failures only under operational stress.
+      </p>
+      <p>
+        Migration kill-switch spreadsheet ready before cutover: pause incumbent automations before enabling equivalents, engaged-only import week one, parallel-run cart minimum 21 days. Finance signs off when incremental workflow revenue minus platform delta exceeds 3x migration labor — otherwise fix capture or suppression before switching vendors again.
+      </p>
+    </div>
+  </section>
+
+  <section class="container pb-8">
+    <div class="flex flex-wrap gap-4 text-sm font-bold">
+      <a class="link" href="/apps">All apps →</a>
+      <a class="link" href="/use-cases/welcome-series">Welcome series →</a>
+      <a class="link" href="/for/supplements">Supplements →</a>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify max-w-4xl">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Merchant scenario: Post Purchase on Shopify Plus consumables</h2>
+      <p>
+        CleanPour drinkware ($74k/mo) rebuilt Post Purchase after collision audit found cart and winback double-discounting same week — unsubscribes spiked 0.4 points. Separated flows with documented suppression hierarchy: cart active blocks winback discount path; recent purchaser hard exclusion 14 days. Holdout 5% measures true incrementality; gross attributed revenue without holdout overstated program value 22%.
+      </p>
+      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-10">90-day Post Purchase implementation</h2>
+      <p><strong>Days 1–30:</strong> Baseline metrics and staff-account edge-case tests — gift buyer, subscription tag, wholesale exclusion. <strong>Days 31–60:</strong> Production flow with collision matrix signed by retention lead. <strong>Days 61–90:</strong> Margin reporting with discount cost subtracted; weekly operator rhythm on calendar.</p>
+      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-10">Margin math: Post Purchase with discount governance</h2>
+      <p>
+        CleanPour tracked margin per recovered order not gross recovery revenue — 15% blanket discount on $52 AOV surrendered $7.80 margin per recovery. Graduated ladder lifted gross profit per send 34% with 8% lower gross revenue — finance approved expanded send volume on profit-positive path only.
+      </p>
+      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-10">Failure rehearsal: Post Purchase breaks</h2>
+      <p>
+        <strong>Collision with cart.</strong> Two discounts same customer same week — Fix: hierarchy doc. <strong>No sunset.</strong> Perpetual automation trains ignore — Fix: three-touch series max then annual check-in. <strong>Guest data gap.</strong> ROI ceiling until checkout captures email — Fix: segment logged-in versus guest recovery separately.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify max-w-4xl">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Workflow test checklist for post purchase</h2>
+      <p>
+        Run this post purchase validation on staff accounts before peak season: (1) welcome branches correctly by signup source and suppresses existing customers; (2) cart recovery excludes recent purchasers of same SKU variant; (3) post-purchase suppresses gift buyers from discount cross-sell and respects try-on or education delay windows; (4) winback splits engaged versus unengaged and sunsets after three touches. Score each 0–10; any flow below 7 is migration or rebuild signal.
+      </p>
+      <p>
+        Model 12-month cost at projected contact count after popup, giveaway, and influencer imports — not today's list size. Profile-based ESP pricing punishes capture-heavy verticals; pay-per-send rewards selective sending but still requires quarterly sunset of 180-day non-openers for deliverability. Stack TCO includes capture pageviews, SMS peak-week volume, and unused suite modules — finance should see one retention line item.
+      </p>
+      <p>
+        Sale-week rehearsal non-negotiable: marketer must add VIP early-access segment and recent-purchaser suppression in under thirty minutes on Thursday before drop. Platforms that pass calm-week demos but fail sale-week edits cost more in foregone peak revenue than annual subscription delta. Document trial outcomes in writing for finance — incremental workflow revenue minus platform delta must exceed 3x migration labor or fix capture and collision before switching again.
+      </p>
+      <p>
+        Migration timing: January–March or May–September only; never October–December ESP switch. Parallel-run welcome and cart minimum 21 days; incumbent read-only 90 days for export disputes. Kill-switch spreadsheet lists every incumbent automation pause order before enabling new platform equivalents — duplicate cart recovery during migration quarters deliverability and unsubscribes take quarters to heal.
+      </p>
+    </div>
+  </section>
+
+  <FaqSection faqs={faqs} title="Post-purchase FAQ" />
+</BaseLayout>

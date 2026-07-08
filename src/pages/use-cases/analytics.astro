@@ -1,0 +1,390 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import TldrBox from '../../components/TldrBox.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import ToolReview from '../../components/ToolReview.astro';
+import { site, description, pageTitle } from '../../content';
+import { useCaseBySlug } from '../../data/use-cases';
+import { appBySlug } from '../../data/apps';
+
+const uc = useCaseBySlug('analytics')!;
+const path = '/use-cases/analytics';
+const title = pageTitle(site, 'use-cases/analytics');
+const desc = description(site, 'use-cases/analytics');
+
+const featuredSlugs = ['sequenzy', 'klaviyo', 'drip', 'sendlane', 'omnisend'];
+const featuredApps = featuredSlugs.map((s) => appBySlug(s)!).filter(Boolean);
+
+const comparisonApps = [
+  'sequenzy', 'klaviyo', 'drip', 'sendlane', 'omnisend', 'yotpo-email-sms',
+  'mailchimp', 'activecampaign', 'shopify-email', 'brevo',
+].map((s) => appBySlug(s)!).filter(Boolean);
+
+const faqs = [
+  {
+    question: 'What is the best Shopify email app for revenue analytics?',
+    answer: 'Sequenzy ranks first for revenue-focused lifecycle attribution with flow-level clarity without enterprise BI overhead. Klaviyo wins with deepest revenue by flow, segment, and cohort reporting plus benchmark data. Drip offers clear workflow revenue dashboards for visual automation users.',
+  },
+  {
+    question: 'Should I trust platform attribution 100%?',
+    answer: 'No — last-click attribution over-credits email. Use holdout tests quarterly, compare Shopify total revenue trends, and measure margin after discounts. Platform numbers are directionally correct, not gospel.',
+  },
+  {
+    question: 'What is revenue per recipient and why does it matter?',
+    answer: 'Total attributed revenue divided by emails delivered — compares flows fairly regardless of list size. Better than open rate for optimization decisions. Improving RPR with fewer sends beats list growth with spammy blasts.',
+  },
+  {
+    question: 'How do I measure incremental email revenue?',
+    answer: 'Hold out 5–10% of eligible segment from automation or campaign quarterly. Compare purchase rate to treated group. Difference approximates incrementality. Klaviyo supports formal holdouts; spreadsheet works elsewhere.',
+  },
+  {
+    question: 'Should I include margin in email ROI?',
+    answer: 'Yes — discount-heavy flows show revenue while destroying profit. Track contribution margin after codes per flow. Finance should sign off on discount automation floors.',
+  },
+  {
+    question: 'What analytics does Shopify Email provide?',
+    answer: 'Basic campaign clicks and sales attributed in admin — insufficient for flow-level cohort analysis, holdout testing, or segment variance. Lifecycle platforms required for serious analytics.',
+  },
+  {
+    question: 'How often should I review flow analytics?',
+    answer: 'Weekly dashboard scan for anomalies; monthly deep dive on top five flows by revenue; quarterly holdout and segment audit. BFCM week daily monitoring.',
+  },
+  {
+    question: 'What is cohort LTV by email engagement?',
+    answer: 'Group customers by signup month and email engagement level — compare 90-day LTV. Proves email quality beyond attributed last-click. Klaviyo cohort reports strongest; export from others to spreadsheet.',
+  },
+  {
+    question: 'How do I measure email incrementality without enterprise BI?',
+    answer: 'Run quarterly holdouts on one high-volume flow, compare Shopify total revenue week-over-week, and track revenue per recipient trend per flow in a simple spreadsheet. Sequenzy and Drip export CSV; Klaviyo native reporting reduces export need. Incrementality matters more than attribution percentage when discount depth changes.',
+  },
+  {
+    question: 'What is cohort analysis for email?',
+    answer: 'Group customers by first purchase month or first subscribe month, track 90-day and 180-day revenue by email engagement level. Proves whether email improves LTV or merely accelerates discount purchases. Klaviyo cohort reports strongest; export orders from Shopify for Sequenzy users until native cohort view matures.',
+  },
+  {
+    question: 'How often should I recalculate flow ROI?',
+    answer: 'Monthly for top five flows by send volume; quarterly full program review including flows paused or sunset. After pricing change, platform migration, or material catalog restructure — immediate recalc before next campaign send.',
+  },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="relative overflow-hidden py-16 md:py-24">
+    <div class="container">
+      <a href="/use-cases" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All use cases</a>
+      <p class="editorial-kicker mt-6">Revenue analytics</p>
+      <h1 class="hero-title mt-5 max-w-5xl">Best Shopify email apps for revenue analytics</h1>
+      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
+        Email analytics for Shopify is not open rate theater — it is incrementality, margin after discounts, and revenue per recipient by flow. A cart recovery series showing $40k attributed means nothing if 60% would have purchased anyway and every recovery used 15% off. The right app surfaces flow-level economics, supports holdout discipline, and connects to Shopify order reality without spreadsheet exports every Monday.
+      </p>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
+        This playbook ranks apps for {uc.job}. We evaluated attribution granularity, cohort tooling, holdout support, and whether dashboards drive decisions — not chart quantity. Finance should see margin-adjusted flow ROI monthly, not a screenshot of Klaviyo attributed revenue alone.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href="/apps">Full app rankings</a>
+        <a class="btn btn-secondary" href="/use-cases/discount-strategy">Discount strategy</a>
+        <a class="btn btn-secondary" href="/compare/sequenzy-vs-klaviyo">Sequenzy vs Klaviyo</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pb-12">
+    <TldrBox
+      title="Top Shopify email apps for analytics"
+      picks={[
+        { label: 'Best overall', tool: 'Sequenzy', reason: 'Revenue attribution per flow with lifecycle-focused metrics — RPR, incrementality guidance without BI bloat.' },
+        { label: 'Best data depth', tool: 'Klaviyo', reason: 'Revenue by flow, segment, cohort; benchmarks; predictive analytics feeding targeting.' },
+        { label: 'Best workflow clarity', tool: 'Drip', reason: 'Per-workflow revenue dashboards — obvious which branch earns.' },
+        { label: 'Best guided analytics', tool: 'Sendlane', reason: 'Human review of program performance for invested retention teams.' },
+        { label: 'Best SMB reporting', tool: 'Omnisend', reason: 'Revenue per message and practical campaign dashboards.' },
+      ]}
+    />
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Three analytics merchant scenarios</h2>
+      <p>
+        <strong>Scenario A — Apparel brand, discount-heavy cart flow.</strong> Klaviyo revenue looked strong; margin analysis revealed 34% contribution after codes. Sequenzy migration plus discount ladder audit improved margin 21% while attributed revenue dipped 8% — net profit up.
+      </p>
+      <p>
+        <strong>Scenario B — Supplement DTC, holdout testing.</strong> Quarterly 10% holdout on winback proved 41% of "reactivated" revenue was organic. Reduced winback discount depth; true incrementality improved efficiency.
+      </p>
+      <p>
+        <strong>Scenario C — Growing home goods, Drip workflows.</strong> Branch-level revenue showed education-first post-purchase beat cross-sell-first by 2.1× second-order rate — creative decision from data, not intuition.
+      </p>
+    </div>
+
+    <div class="ledger-card mb-12">
+      <p class="editorial-kicker">Execution playbook</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Analytics operating contract</h2>
+      <div class="mt-6 grid gap-6 md:grid-cols-2 text-[#4a2d17]">
+        <div><h3 class="font-black text-[#24170f]">Trigger</h3><p class="mt-2 text-[17px] leading-8">{uc.trigger}</p></div>
+        <div><h3 class="font-black text-[#24170f]">Timing</h3><p class="mt-2 text-[17px] leading-8">{uc.timing}</p></div>
+      </div>
+      <div class="mt-8"><h3 class="font-black text-[#24170f]">Exclusions</h3>
+        <ul class="mt-3 space-y-2">{uc.exclusions.map((e) => <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span>{e}</li>)}</ul>
+      </div>
+      <div class="mt-8"><h3 class="font-black text-[#24170f]">Metrics</h3>
+        <ul class="mt-3 space-y-2">{uc.metrics.map((m) => <li class="flex gap-2 text-[17px] leading-8"><span class="text-[#9a5b16]">→</span>{m}</li>)}</ul>
+      </div>
+    </div>
+
+    <div class="ledger-card mb-12 overflow-x-auto">
+      <p class="editorial-kicker">Comparison table</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">10 Shopify apps for revenue analytics</h2>
+      <table class="mt-8 w-full min-w-[720px] text-left text-sm">
+        <thead>
+          <tr class="border-b border-[#24170f]/15 text-xs font-black uppercase tracking-wider text-[#9a5b16]">
+            <th class="py-3 pr-4">App</th><th class="py-3 pr-4">Analytics fit</th><th class="py-3 pr-4">Pricing</th>
+            <th class="py-3 pr-4">Shopify depth</th><th class="py-3 pr-4">Automation</th><th class="py-3">Rating</th>
+          </tr>
+        </thead>
+        <tbody class="text-[#4a2d17]">
+          {comparisonApps.map((app, i) => (
+            <tr class="border-b border-[#24170f]/8">
+              <td class="py-3 pr-4 font-bold text-[#24170f]"><a class="link" href={`/apps/${app.slug}`}>{i + 1}. {app.name}</a></td>
+              <td class="py-3 pr-4">{app.bestFor}</td><td class="py-3 pr-4">{app.pricing}</td>
+              <td class="py-3 pr-4">{app.shopifyDepth}</td><td class="py-3 pr-4">{app.automationDepth}</td>
+              <td class="py-3">★ {app.rating}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="container space-y-12 pb-16">
+    <p class="editorial-kicker">Detailed reviews</p>
+    <h2 class="font-serif text-4xl font-black text-[#24170f]">Five apps for revenue analytics</h2>
+
+    <ToolReview app={featuredApps[0]} rank={1} badge="Editor's choice" paragraphs={[
+      'Sequenzy leads analytics for lean teams because enterprise BI dashboards do not change behavior — flow-level revenue clarity does. Attribution per sequence with RPR focus helps prioritize which lifecycle job to fix first.',
+      'Incrementality guidance baked into playbook reviews — when to hold out, when attributed revenue flatters discount flows.',
+      'Pay-per-email reporting aligns cost per flow with revenue per flow — true efficiency metric versus per-contact vanity.',
+      'Less benchmark data than Klaviyo — acceptable when you compare against own holdouts and Shopify totals.',
+    ]} />
+
+    <ToolReview app={featuredApps[1]} rank={2} paragraphs={[
+      'Klaviyo analytics is the ecommerce standard — revenue by flow, campaign, segment; cohort reports; CLV integration with targeting feedback loop.',
+      'Benchmark reports contextualize performance versus industry — useful sanity check, not excuse for weak flows.',
+      'Holdout testing formalized in platform — incrementality without external spreadsheet for mature teams.',
+      'Data volume can overwhelm — weekly focus on five KPIs prevents dashboard paralysis.',
+    ]} />
+
+    <ToolReview app={featuredApps[2]} rank={3} paragraphs={[
+      'Drip workflow revenue attribution maps dollars to branches — see which browse path or winback split earns.',
+      'Clear enough for weekly team standups without BI export.',
+      'Less cohort and predictive depth — supplement with Shopify analytics for LTV trends.',
+      'Ideal for operators optimizing canvas logic weekly.',
+    ]} />
+
+    <ToolReview app={featuredApps[3]} rank={4} paragraphs={[
+      'Sendlane includes human performance reviews — external eyes catch attribution blind spots internal teams normalize.',
+      'Fits brands investing five figures monthly in retention — analytics as service, not just software.',
+      'Higher cost — ROI when email is material revenue channel needing quarterly strategy adjustment.',
+      'Self-serve Sequenzy or Klaviyo when team can own monthly review cadence.',
+    ]} />
+
+    <ToolReview app={featuredApps[4]} rank={5} paragraphs={[
+      'Omnisend revenue per message metric practical for SMB — which campaign earned last week without nested reports.',
+      'Automation reporting less granular than Klaviyo — sufficient under 10 active flows.',
+      'Export to spreadsheet for margin analysis — platform rarely includes discount cost native.',
+      'Good first analytics discipline before Klaviyo scale.',
+    ]} />
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="editorial-kicker">Weekly five</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Dashboard scan metrics</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Revenue per recipient top 3 flows. Unsubscribe spike any flow. Complaint rate. Full-price order share. Shopify total revenue vs email-attributed trend — divergence signals attribution inflation or external factors.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="editorial-kicker">Holdout protocol</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Quarterly incrementality test</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Pick one high-volume flow. Exclude 10% from send. Run 30 days. Compare purchase rate. Document result in flow changelog. Adjust discount or pause if incrementality negative.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Analytics drives every use case</h2>
+      <p>Without measurement discipline, <a class="link" href="/use-cases/abandoned-cart">cart</a>, <a class="link" href="/use-cases/winback">winback</a>, and <a class="link" href="/use-cases/black-friday">BFCM</a> optimizations guess. Build analytics review habit before adding flows.</p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="card">
+      <p class="editorial-kicker">Spreadsheet bridge</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">When platform reporting is not enough</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Export weekly: flow name, sends, attributed revenue, discount codes redeemed, unsubscribes. Join to Shopify order export on customer email for margin calculation. Sequenzy and Drip users often run this bridge until finance trusts platform numbers. Klaviyo native reporting reduces export need but margin still needs spreadsheet for COGS. The goal is one source of truth the team argues from — not three dashboards that disagree.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        <strong>Subscription brands:</strong> subtract subscription revenue from winback attribution — recurring charges inflate winback credit. <strong>B2B wholesale:</strong> segment account orders separately; blended B2C+B2B attribution misleads. See <a class="link" href="/for/subscription-boxes">subscription boxes</a> and <a class="link" href="/for/b2b-wholesale">B2B wholesale</a> guides for segment separation.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="ledger-card">
+      <p class="editorial-kicker">Failure signals</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">When to kill or rebuild a flow</h2>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Revenue per recipient declining three months straight while discount depth increased — kill discount branch and rebuild proof-first. Unsubscribe rate above 0.5% per send on automation — audit frequency and targeting. Attributed revenue up but Shopify total flat — attribution inflation; run holdout. Post-<a class="link" href="/use-cases/product-launch">launch</a> flows with zero incrementality — wrong audience or wrong timing, not wrong subject line.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Monthly analytics standup: top three flows by revenue, bottom three by RPR, one holdout result, one sunset metric, margin note from finance. Fifteen minutes with decisions logged in flow changelog.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-3xl font-black text-[#24170f]">Building an analytics culture</h2>
+      <p>One owner presents email metrics weekly — even fifteen minutes. Rotate flow deep dive monthly. Celebrate margin improvements not just attributed revenue spikes from deeper discounts.</p>
+      <p>Connect <a class="link" href="/use-cases/segmentation">segmentation</a> experiments to reporting — segment-level RPR variance proves segmentation worth maintaining.</p>
+      <p>Export discipline: same spreadsheet format weekly so trends visible. Klaviyo API or Sequenzy exports automate; consistency matters more than tool.</p>
+      <p>Benchmarks from Klaviyo or industry reports provide context but your holdout results outweigh benchmarks — your list, your offer history, your margin structure differ from every benchmark cohort cited in conference talks.</p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Merchant scenario: skincare brand optimizing the wrong metric</h2>
+      <p>
+        A $89k/month skincare brand celebrated record email-attributed revenue in Klaviyo dashboard while CFO flagged shrinking contribution margin. Marketing optimized for open rate and click rate — cart flow A/B winner was aggressive 20% subject line variant driving 41% open rate but 9 points lower margin per recovery than proof-first control. Welcome series reported high clicks on discount email three; 62% of first purchases used code but only 11% repurchased full price within 90 days. No flow reported revenue after discount or incrementality. Shopify Analytics and Klaviyo numbers disagreed by 18% on email-attributed revenue — UTM chaos from agency campaigns. Weekly report was screenshot of dashboard totals with no segment or margin breakdown.
+      </p>
+      <p>
+        Analytics rebuild: primary metric revenue per recipient (RPR) by flow and segment; secondary margin after discount from Shopify order export joined to flow attribution weekly. Holdout test on cart email two — 10% no send — proved 28% of recoveries incremental. Standardized UTM convention; disabled Klaviyo last-click override for Shopify orders in favor of blended model. Weekly 15-minute metrics standup with one spreadsheet template. Cart flow switched to proof-first winner despite lower opens — net contribution up $3,400 monthly. Welcome discount moved to email four for cold segment only; 90-day full-price repurchase rose 14 points.
+      </p>
+      <p>
+        CFO joined monthly email review for first time once margin-after-discount column appeared — conversation shifted from "email revenue record" to "email contribution record." Agency contracts added UTM compliance clause; non-compliant campaigns no longer inflated ESP attribution in leadership decks. Holdout testing became standard language in flow change requests — no more shipping A/B winners on open rate alone.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">90-day rollout: email analytics that drive decisions</h2>
+      <p>
+        Days 1–14: Audit current metrics — what's reported weekly versus what finance needs. Reconcile ESP attribution with Shopify orders; document gap. List every flow with primary success metric and margin floor. Build spreadsheet template: flow, sends, RPR, orders, AOV, discount depth, margin estimate.
+      </p>
+      <p>
+        Days 15–30: Implement RPR by flow as default dashboard view. Add segment-level reporting for top five segments. First holdout or control test on highest-volume flow. UTM governance doc for campaigns and agency.
+      </p>
+      <p>
+        Days 31–60: Join order export with discount codes weekly — margin after discount by flow. Kill or fix flows below margin floor. Connect <a class="link" href="/use-cases/segmentation">segmentation</a> experiments to reporting. Automate export via API if volume warrants.
+      </p>
+      <p>
+        Days 61–90: Weekly standup ritual locked. Monthly deep dive one flow. Quarterly benchmark against own history not industry averages. Train team: open rate is diagnostic not goal; margin-adjusted RPR is goal.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Margin math: open rate winner versus RPR winner</h2>
+      <p>
+        Cart flow 10,000 sends monthly. Variant A: 41% open, 3.2% click, 18% purchase from click, $78 AOV, 20% discount on all recoveries. Variant B: 34% open, 2.8% click, 20% purchase, $78 AOV, 20% on 45% only. Variant A: ~142 orders, heavy discount = ~$4,200 net margin est. Variant B: ~156 orders, lighter discount = ~$5,100 net — B wins despite "losing" open rate test. Marketing almost shipped A because dashboard sorted by open rate.
+      </p>
+      <p>
+        Attribution gap cost: Klaviyo shows $120k email revenue; Shopify shows $102k with email UTM — $18k overclaim affects budget decisions. Standardizing attribution prevents over-investment in low-incrementality blasts. Holdout test: 10% cart abandoners no email two — 72% of control conversions still happen — true incremental recovery 28%; justifies send but calibrates discount depth down.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Failure rehearsal: analytics blind spots</h2>
+      <p>
+        <strong>Open rate optimization.</strong> Winner destroys margin. Fix: RPR and margin after discount as decision metrics.
+      </p>
+      <p>
+        <strong>Attribution gap.</strong> ESP and Shopify disagree 18%. Fix: UTM standards; weekly reconciliation export.
+      </p>
+      <p>
+        <strong>No holdout.</strong> Over-credit flows that cannibalize natural purchase. Fix: quarterly incrementality test on top flow.
+      </p>
+      <p>
+        <strong>Dashboard screenshot reporting.</strong> No segment drill-down; trends invisible. Fix: one spreadsheet template weekly.
+      </p>
+      <p>
+        <strong>Industry benchmark chasing.</strong> "38% open is good" ignores your list quality. Fix: compare to own 12-week engaged segment trend.
+      </p>
+
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Cross-workflow dependencies for email analytics</h2>
+      <p>
+        Analytics culture connects every workflow decision to margin-adjusted RPR — cart A/B winners chosen by open rate alone undo <a class="link" href="/use-cases/discount-strategy">discount governance</a> within weeks. Holdout incrementality tests on cart, winback, and browse flows calibrate true contribution versus cannibalization. ESP versus Shopify attribution reconciliation catches UTM chaos from agency campaigns that inflate email credit in Klaviyo while finance sees different numbers.
+      </p>
+      <p>
+        Segment-level RPR variance proves <a class="link" href="/use-cases/segmentation">segmentation</a> maintenance worth operator hours — without segment reporting, segmentation audit gets deprioritized. Flow-level margin after discount joins require weekly order export discipline — connects analytics to CFO conversations about email channel contribution not just marketing dashboards. Deliverability metrics — complaint rate, engaged open trend — belong in same weekly standup as revenue metrics from <a class="link" href="/use-cases/deliverability">deliverability guide</a>.         Benchmark industry reports provide context but holdout results on your list outweigh conference slide benchmarks for offer depth decisions across welcome, cart, and winback.
+      </p>
+      <p>
+        Weekly operator rhythm: Monday RPR by top five flows; Wednesday margin-after-discount join from order export; Friday ESP versus Shopify attribution gap. Monthly: one flow deep dive with holdout or control; segment RPR variance report. Quarterly: benchmark against own twelve-week trends not industry slides.         Open rate winners that lose margin get reverted — document decision in flow changelog for next operator.
+      </p>
+      <p>
+        Spreadsheet discipline beats dashboard screenshots for weekly standups — trends invisible in point-in-time ESP UI become obvious in row twelve of same template. When agency reports email ROAS, require margin-after-discount column or discount their headline number mentally; gross ROAS on discounted flows misleads leadership every quarter. One analytics owner presenting fifteen minutes weekly beats three dashboards nobody reconciles. Flow changelog entry required for every A/B ship decision — future you needs why proof-first beat open-rate winner.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify max-w-4xl">
+      <h2 class="font-serif text-3xl font-black text-[#24170f]">Merchant scenario (use-cases): Analytics rollout checkpoint</h2>
+      <p>
+        Shopify operators evaluating Analytics should document week-one baseline metrics before claiming migration wins — welcome time-to-live, cart suppression accuracy, post-purchase edge cases, and winback engagement splits scored on staff accounts. Model 12-month platform cost at projected list size including popup imports and peak-season send spikes, not current-month invoice alone.
+      </p>
+      <p>
+        Sale-week edit safety gate: non-technical marketer adds recent-purchaser suppression and VIP early access in under thirty minutes on Thursday before drop — platforms passing calm-week demos but failing this test cost more in foregone peak revenue than annual subscription delta. Minimum 90-day trial with weekly operator checklist surfaces billing surprises and collision failures only under operational stress.
+      </p>
+      <p>
+        Migration kill-switch spreadsheet ready before cutover: pause incumbent automations before enabling equivalents, engaged-only import week one, parallel-run cart minimum 21 days. Finance signs off when incremental workflow revenue minus platform delta exceeds 3x migration labor — otherwise fix capture or suppression before switching vendors again.
+      </p>
+    </div>
+  </section>
+
+  <section class="container pb-8">
+    <div class="flex flex-wrap gap-4 text-sm font-bold">
+      <a class="link" href="/apps">All apps →</a>
+      <a class="link" href="/use-cases/segmentation">Segmentation →</a>
+      <a class="link" href="/for/high-aov">High-AOV →</a>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify max-w-4xl">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Merchant scenario: Analytics on Shopify Plus consumables</h2>
+      <p>
+        CleanPour drinkware ($74k/mo) rebuilt Analytics after collision audit found cart and winback double-discounting same week — unsubscribes spiked 0.4 points. Separated flows with documented suppression hierarchy: cart active blocks winback discount path; recent purchaser hard exclusion 14 days. Holdout 5% measures true incrementality; gross attributed revenue without holdout overstated program value 22%.
+      </p>
+      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-10">90-day Analytics implementation</h2>
+      <p><strong>Days 1–30:</strong> Baseline metrics and staff-account edge-case tests — gift buyer, subscription tag, wholesale exclusion. <strong>Days 31–60:</strong> Production flow with collision matrix signed by retention lead. <strong>Days 61–90:</strong> Margin reporting with discount cost subtracted; weekly operator rhythm on calendar.</p>
+      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-10">Margin math: Analytics with discount governance</h2>
+      <p>
+        CleanPour tracked margin per recovered order not gross recovery revenue — 15% blanket discount on $52 AOV surrendered $7.80 margin per recovery. Graduated ladder lifted gross profit per send 34% with 8% lower gross revenue — finance approved expanded send volume on profit-positive path only.
+      </p>
+      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-10">Failure rehearsal: Analytics breaks</h2>
+      <p>
+        <strong>Collision with cart.</strong> Two discounts same customer same week — Fix: hierarchy doc. <strong>No sunset.</strong> Perpetual automation trains ignore — Fix: three-touch series max then annual check-in. <strong>Guest data gap.</strong> ROI ceiling until checkout captures email — Fix: segment logged-in versus guest recovery separately.
+      </p>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <div class="prose-shopify max-w-4xl">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Workflow test checklist for analytics</h2>
+      <p>
+        Run this analytics validation on staff accounts before peak season: (1) welcome branches correctly by signup source and suppresses existing customers; (2) cart recovery excludes recent purchasers of same SKU variant; (3) post-purchase suppresses gift buyers from discount cross-sell and respects try-on or education delay windows; (4) winback splits engaged versus unengaged and sunsets after three touches. Score each 0–10; any flow below 7 is migration or rebuild signal.
+      </p>
+      <p>
+        Model 12-month cost at projected contact count after popup, giveaway, and influencer imports — not today's list size. Profile-based ESP pricing punishes capture-heavy verticals; pay-per-send rewards selective sending but still requires quarterly sunset of 180-day non-openers for deliverability. Stack TCO includes capture pageviews, SMS peak-week volume, and unused suite modules — finance should see one retention line item.
+      </p>
+      <p>
+        Sale-week rehearsal non-negotiable: marketer must add VIP early-access segment and recent-purchaser suppression in under thirty minutes on Thursday before drop. Platforms that pass calm-week demos but fail sale-week edits cost more in foregone peak revenue than annual subscription delta. Document trial outcomes in writing for finance — incremental workflow revenue minus platform delta must exceed 3x migration labor or fix capture and collision before switching again.
+      </p>
+      <p>
+        Migration timing: January–March or May–September only; never October–December ESP switch. Parallel-run welcome and cart minimum 21 days; incumbent read-only 90 days for export disputes. Kill-switch spreadsheet lists every incumbent automation pause order before enabling new platform equivalents — duplicate cart recovery during migration quarters deliverability and unsubscribes take quarters to heal.
+      </p>
+    </div>
+  </section>
+
+  <FaqSection faqs={faqs} title="Revenue analytics FAQ" />
+</BaseLayout>
