@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const title = 'Shopify Email App Guides';
+const description = 'A browsable hub for 100 citation-backed Shopify email app listicles covering store types, lifecycle jobs, campaigns, deliverability, analytics, and retention.';
+const guides = [
+  ['Best Shopify Email Apps for Fashion Stores','/blog/best-shopify-email-apps-for-fashion-stores'],
+  ['Best Shopify Email Apps for Abandoned Cart Recovery','/blog/best-shopify-email-apps-for-abandoned-cart-recovery'],
+  ['Best Shopify Email Apps for BFCM','/blog/best-shopify-email-apps-for-bfcm'],
+  ['Best Shopify Email Apps for Segmentation','/blog/best-shopify-email-apps-for-segmentation'],
+  ['Best Shopify Email Apps for Deliverability','/blog/best-shopify-email-apps-for-deliverability'],
+  ['Best Shopify Email Apps for Customer Retention','/blog/best-shopify-email-apps-for-customer-retention'],
+  ['Best Shopify Email Apps for Product Recommendations','/blog/best-shopify-email-apps-for-product-recommendations'],
+  ['Best Shopify Email Apps for New Collections','/blog/best-shopify-email-apps-for-new-collections'],
+  ['Best Shopify Email Apps for Customer Stories','/blog/best-shopify-email-apps-for-customer-stories'],
+  ['Best Shopify Email Apps for List Hygiene','/blog/best-shopify-email-apps-for-list-hygiene'],
+];
+---
+<BaseLayout title={title} description={description}><main class="container page-stack"><p class="eyebrow">Editorial library</p><h1>{title}</h1><p class="lede">One hundred distinct guides for choosing Shopify email apps by store model, lifecycle job, campaign type, and operating constraint.</p><p>Every guide includes source links, pricing context, tool-by-tool tradeoffs, practical tables, and internal paths into the alternatives, guides, use cases, and app profiles.</p><table><thead><tr><th>Editorial lane</th><th>What it answers</th><th>Start here</th></tr></thead><tbody><tr><td>Store models</td><td>Which app fits a catalog, audience, or sales motion?</td><td><a href="/blog/best-shopify-email-apps-for-fashion-stores">Fashion stores</a></td></tr><tr><td>Lifecycle jobs</td><td>Which tool supports recovery, retention, education, or replenishment?</td><td><a href="/blog/best-shopify-email-apps-for-customer-retention">Retention</a></td></tr><tr><td>Operating discipline</td><td>How should teams govern deliverability, consent, and measurement?</td><td><a href="/blog/best-shopify-email-apps-for-deliverability">Deliverability</a></td></tr></tbody></table><h2>Featured guides</h2><div class="grid gap-4 md:grid-cols-2">{guides.map(([label, href])=><a class="rounded-2xl border border-[#24170f]/15 bg-white p-5" href={href}><h3>{label}</h3><p class="mt-2 text-sm text-[#5b4637]">Read the source-backed shortlist and implementation verdict.</p></a>)}</div><p>Explore the <a href="/alternatives">alternatives library</a>, <a href="/guides">operator guides</a>, <a href="/use-cases">use cases</a>, and <a href="/apps">Shopify app profiles</a>.</p></main></BaseLayout>

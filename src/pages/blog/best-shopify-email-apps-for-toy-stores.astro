@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const title = 'Best Shopify Email Apps for Toy Stores in 2026';
+const description = 'A practical, source-backed guide to Shopify email apps for toy stores, with lifecycle use cases, pricing context, tradeoffs, and implementation advice.';
+const apps = [
+  ['Klaviyo', 'Large catalogs and behavior-led merchandising', 'Deep event data, predictive segments, and flexible flows', 'More setup and a higher learning curve as the list grows', 'https://www.klaviyo.com/features/segmentation'],
+  ['Omnisend', 'Promotions, SMS, and quick campaign launches', 'Retail-focused automation and easy multichannel execution', 'Advanced analysis is less configurable than a specialist stack', 'https://www.omnisend.com/features/marketing-automation/'],
+  ['Sequenzy', 'Lean teams that need sequences without heavy operations', 'Simple campaign and sequence workflows with a focused interface', 'Check catalog and merchandising depth for complex stores', 'https://sequenzy.io/'],
+  ['Brevo', 'Value-conscious stores with broad channel needs', 'Email, transactional messaging, and contact-based pricing options', 'Retail event modeling may require more manual design', 'https://www.brevo.com/features/marketing-automation/'],
+  ['Shopify Email', 'Small stores starting with owned-channel basics', 'Native product selection and straightforward Shopify setup', 'Less sophisticated for cross-category behavioral journeys', 'https://www.shopify.com/email-marketing'],
+];
+---
+<BaseLayout title={title} description={description}>
+  <main class="container page-stack">
+    <p class="eyebrow">Shopify email apps</p><h1>{title}</h1>
+    <p class="lede">Toy stores sell across age ranges, interests, price points, and gifting moments. The right app should turn those differences into useful paths—without treating every parent, collector, and gift buyer as the same subscriber.</p>
+    <p>Our shortlist prioritizes Shopify event quality, audience controls, product education, and the ability to suppress irrelevant promotions. Pricing changes by plan, contacts, sends, and SMS usage, so use the linked vendor pages to validate a current quote before migrating.</p>
+    <h2>Shortlist at a glance</h2><table><thead><tr><th>App</th><th>Best fit</th><th>Useful first flow</th><th>Main caution</th></tr></thead><tbody>{apps.map((a) => <tr><td>{a[0]}</td><td>{a[1]}</td><td>{a[0] === 'Klaviyo' ? 'Age/interest onboarding' : a[0] === 'Omnisend' ? 'Gift-season browse recovery' : a[0] === 'Sequenzy' ? 'New-release sequence' : a[0] === 'Brevo' ? 'Post-purchase education' : 'Welcome plus product picks'}</td><td>{a[3]}</td></tr>)}</tbody></table>
+    {apps.map((a) => <section><h2>{a[0]} for toy stores</h2><p><strong>Best for:</strong> {a[1]}. {a[0]} is most useful when the store has a clear audience rule and a measurable next action, such as choosing an age band, saving a wishlist, or returning for a gift date. Start with one high-intent event rather than importing every possible customer property.</p><p><strong>Why it stands out:</strong> {a[2]}. For a toy catalog, that distinction affects whether the email feels like a relevant recommendation or an undifferentiated sale. Keep claims tied to observable behavior—category viewed, age range selected, or purchase interval—and do not infer a child’s identity from a parent’s browsing data.</p><table><tbody><tr><th>Pros</th><td>{a[2]}; Shopify-connected campaign or automation path; useful for testing a narrow audience.</td></tr><tr><th>Cons</th><td>{a[3]}; plan limits and SMS charges may change the effective cost.</td></tr><tr><th>Pricing context</th><td>Check the official pricing page before publishing a number; compare total contacts, monthly sends, seats, and SMS usage.</td></tr><tr><th>Source</th><td><a href={a[4]} rel="nofollow">Official product information</a></td></tr></tbody></table></section>)}
+    <h2>Choose by operating model</h2><table><thead><tr><th>If your priority is…</th><th>Start with…</th><th>Reason</th></tr></thead><tbody><tr><td>Behavioral recommendations across many categories</td><td>Klaviyo</td><td>Strongest fit for granular events and segments.</td></tr><tr><td>Fast promotional launches with SMS</td><td>Omnisend</td><td>Retail-oriented workflows reduce setup time.</td></tr><tr><td>Simple owned-channel foundations</td><td>Shopify Email</td><td>Low operational overhead for an early store.</td></tr></tbody></table>
+    <p>Pair this guide with the <a href="/shopify-email">Shopify email marketing overview</a>, our <a href="/alternatives">alternatives library</a>, and the <a href="/for/subscription-boxes">subscription-store guide</a> when the catalog includes recurring play kits.</p>
+  </main>
+</BaseLayout>

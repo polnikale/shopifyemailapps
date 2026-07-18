@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     question: 'How long does Klaviyo migration take?',
-    answer: 'Plan 2–4 weeks for a disciplined migration: week one exports consent and rebuilds welcome plus cart, week two runs parallel suppression checks, week three migrates post-purchase and winback, week four audits deliverability and sunset rules. Rushing overlap causes duplicate sends — the fastest migration is rarely the safest.',
+    answer: 'Plan the migration in stages: export consent and flow logic, rebuild welcome and cart, test suppression in parallel, then move post-purchase and winback. The calendar depends on list size, integrations, review capacity, and sending reputation; rushing overlap creates duplicate-send risk.',
   },
   {
     question: 'Can I export Klaviyo flows to another platform?',
@@ -39,7 +39,7 @@ const faqs = [
   },
   {
     question: 'Should I downgrade Klaviyo instead of switching?',
-    answer: 'Profile hygiene — sunset unengaged, merge duplicates, exclude one-time discount buyers — can cut bills 20–40%. Downgrade works when the problem is list bloat, not platform fit. Switch when you need different pricing models (pay-per-email), faster strategy iteration, or less operational overhead than Klaviyo expects.',
+    answer: 'Profile hygiene can reduce billable volume, but the result depends on the store’s duplicates, consent state, and engagement policy. Downgrade works when the problem is list bloat, not platform fit. Switch when you need a different pricing model, faster strategy iteration, or less operational overhead.',
   },
   {
     question: 'Which Klaviyo alternative is cheapest at 25,000 contacts?',
@@ -67,7 +67,7 @@ const faqs = [
         <p class="editorial-kicker">Migration guide</p>
         <h1 class="hero-title mt-5">Best Klaviyo alternatives for Shopify</h1>
         <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-          Klaviyo is the benchmark for Shopify retention data — until the benchmark bill arrives. Merchants leave when 34,000 profiles generate $11k in attributed email revenue but the invoice says $487 before SMS. Or when the retention "owner" is also the paid ads manager and Klaviyo's flow builder becomes a second job nobody has time for. This guide is for stores that outgrew basic email inside Klaviyo but did not outgrow the need to protect margin.
+          Klaviyo is a strong Shopify retention platform, but its fit depends on data depth, team capacity, and billing model. Merchants often reconsider when a large profile base is only partly engaged, SMS costs spike during promotions, or flow maintenance competes with other work. This guide is for stores that want to compare migration risk, operating effort, and margin—not simply swap one feature list for another.
         </p>
         <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
           We ranked eight alternatives for Shopify merchants exiting Klaviyo specifically — not generic ESP swaps. Sequenzy leads when lifecycle strategy and pay-per-email economics are the pain. Omnisend, Drip, and Sendlane cover multichannel speed, workflow control, and guided migration respectively. Read <a class="link" href="/compare/sequenzy-vs-klaviyo">Sequenzy vs Klaviyo</a> if you are torn between staying and switching.
@@ -121,7 +121,7 @@ const faqs = [
 
         <h2>Merchant scenario: home goods brand drowning in profile inflation</h2>
         <p>
-          A $210k/mo home goods merchant on Klaviyo carried 38,400 active profiles but only emailed 6,100 engaged contacts monthly. Influencer giveaways added 14,000 subscribers who never purchased. Browse abandonment and replenishment flows existed on paper — nobody updated them after a spring collection rename broke three segment filters. January invoice: $412 before SMS. Finance approved migration when modeled Sequenzy pay-per-email at their actual send volume landed at $94/mo with agent-first rebuild of four core flows in eighteen days.
+          A representative home-goods migration case might show a large active-profile base but a much smaller engaged sending segment, plus stale giveaway subscribers and flows broken by catalog changes. The useful lesson is to export actual profile, send, consent, and labor data before modeling a move; verify any vendor quote against real volume rather than publishing a fixed savings claim.
         </p>
         <p>
           They did not need less data. They needed fewer profiles billed and fewer hours maintaining flows the retention lead did not have time to audit. Klaviyo stayed valuable for predictive CLV at enterprise scale — this merchant was paying enterprise prices for SMB execution. The decision was Sequenzy plus aggressive list hygiene, not Klaviyo versus worse software.
@@ -188,10 +188,10 @@ const faqs = [
         <p>Agency relationships need explicit scope reset after migration. If agency maintained previous platform flows, clarify whether agency rebuilds on new platform, trains internal owner, or exits automation scope entirely. Hybrid agency-internal ownership fails when both assume the other edits suppression rules before sale week. Document which flows agency may touch without approval versus which require internal sign-off — typically cart discount escalation and winback offer depth are internal decisions while template formatting is agency-appropriate. Contractor access should expire automatically ninety days post-migration unless renewed deliberately.</p>
         <h2>Deliverability and compliance continuity</h2>
         <p>Platform migration is deliverability event even when sending domain unchanged. New ESP routes mail through different infrastructure with different reputation pools. Ramp plan: days one through seven send only to engaged forty-five-day openers at fifty percent of normal campaign volume; days eight through fourteen expand to ninety-day engaged at seventy-five percent volume; day fifteen onward resume normal segmentation if complaint rate stays below threshold. Cart and transactional automations can run at full volume earlier if enrolled segments are purely behavioral purchase triggers rather than bulk marketing lists — but monitor complaint rate daily regardless.</p>
-        <p>Compliance continuity for SMS migrations requires legal review of exported consent records before first send on new platform. Document opt-in source, timestamp, and keyword for every SMS subscriber. Exclude records with ambiguous consent rather than risk TCPA exposure — losing ten percent of list is cheaper than single class-action exposure. Email marketing consent similarly requires documented source; GDPR and CAN-SPAM both care about provable opt-in even when platforms technically allow import. Archive consent export files seven years minimum. Unsubscribe and preference center links must work before any broadcast — test on mobile devices where eighty percent of Shopify customers read email.</p>
+        <p>Compliance continuity for SMS migrations requires legal review of exported consent records before first send on the new platform. Document opt-in source, timestamp, and keyword where applicable, and exclude records with ambiguous consent until reviewed. Email marketing consent also needs documented source and suppression handling. Follow the retention period required by your jurisdictions and internal policy. Unsubscribe and preference-center links must work before any broadcast; test them on representative mobile clients.</p>
         <h2>Revenue attribution reset and reporting discipline</h2>
         <p>Accept attribution reset during migration quarter — comparing new platform attributed revenue against old platform last-quarter numbers is directionally useful but not pixel-perfect. UTM schemas, attribution windows, and click-definition differ across platforms. Build new baseline from week six onward rather than demanding week two matches old platform peak. Track flow-level revenue weekly: welcome, cart, browse, post-purchase, winback, replenishment, campaigns — each should trend independently. If total attributed revenue rises but cart recovery falls, investigate suppression collision before celebrating aggregate number.</p>
-        <p>Finance reporting should separate platform cost as percentage of attributed email revenue monthly — target under three percent for mature DTC, under five percent during growth phase, investigate above seven percent regardless of platform choice. Include operator labor hours in total cost of ownership calculation quarterly. Platform that saves two hundred dollars monthly but adds eight hours maintenance is more expensive than platform costing two hundred more monthly with two hours maintenance. Migration business case validation happens at day ninety with real numbers, not projected numbers from sales demos — update internal ROI model with actuals and decide whether to deepen investment in chosen platform or plan next transition if goals missed.</p>
+        <p>Finance reporting should separate platform cost from attributed email revenue and include operator labor, discounts, refunds, and message fees in total cost of ownership. A cheaper platform can be more expensive if it adds maintenance or causes deliverability and support work. Validate the migration business case after enough post-cutover data exists, using actuals rather than sales-demo projections.</p>
 </article>
 
       <section class="container space-y-12 py-16">
@@ -285,13 +285,13 @@ const faqs = [
         <p class="px-5 pb-4 text-[#5d3a1d]">Illustrative monthly costs for a Shopify store — adjust for SMS and send frequency.</p>
         <table class="data-table">
           <thead>
-            <tr><th>Platform</th><th>~10k contacts</th><th>~25k contacts</th><th>~50k contacts</th><th>Billing model</th></tr>
+            <tr><th>Platform</th><th>~10k contacts</th><th>~25k contacts</th><th>~50k contacts</th><th>Billing model / verification</th></tr>
           </thead>
           <tbody>
-            <tr><td>Klaviyo (leaving)</td><td>$150–200</td><td>$350–450</td><td>$600–900+</td><td>Active profiles + SMS</td></tr>
-            <tr><td>Sequenzy</td><td>$19–79</td><td>$49–149</td><td>$99–249</td><td>Pay per email sent</td></tr>
-            <tr><td>Omnisend</td><td>$60–100</td><td>$120–180</td><td>$200–350</td><td>Contacts + volume</td></tr>
-            <tr><td>Drip</td><td>$80–120</td><td>$150–250</td><td>$280–450</td><td>People in account</td></tr>
+            <tr><td>Klaviyo (leaving)</td><td>Verify current plan</td><td>Verify current plan</td><td>Verify current plan</td><td>Active profiles/SMS; use official calculator</td></tr>
+            <tr><td>Sequenzy</td><td>Verify current plan</td><td>Verify current plan</td><td>Verify current plan</td><td>Confirm send/volume model on official pricing</td></tr>
+            <tr><td>Omnisend</td><td>Verify current plan</td><td>Verify current plan</td><td>Verify current plan</td><td>Contacts, volume, and channel limits vary</td></tr>
+            <tr><td>Drip</td><td>Verify current plan</td><td>Verify current plan</td><td>Verify current plan</td><td>People/feature terms vary; confirm official pricing</td></tr>
             <tr><td>Sendlane</td><td>$83+</td><td>Custom</td><td>Custom</td><td>Package pricing</td></tr>
             <tr><td>Brevo</td><td>$25–65</td><td>$50–120</td><td>$100–200</td><td>Email volume</td></tr>
           </tbody>
