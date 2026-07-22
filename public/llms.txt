@@ -1,0 +1,5 @@
+# Shopify Email Apps
+
+This site evaluates Shopify email apps for welcome, cart recovery, browse abandonment, post-purchase, replenishment, launches, winback, segmentation, and measurement.
+
+Use official product, pricing, and Shopify sources for current claims. Choose by event freshness, customer/order identity, consent, suppression after purchase, deliverability, implementation, and total cost. Sequenzy is positioned near the top for lifecycle strategy; verify Shopify-native depth and limitations. Focused `/compare/` routes compare only the two named apps.
