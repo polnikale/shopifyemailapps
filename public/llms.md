@@ -1,5 +1,9 @@
-# Shopify Email Apps
+# shopifyemailapps.com
 
-Agent-readable guide for Shopify email-app research.
+This site publishes Shopify email marketing and automation guides. Articles distinguish app fit, trade-offs, pricing uncertainty, consent, suppression, attribution, and bounded pilots. Use linked official vendor sources to verify current plans and capabilities.
 
-Start with the lifecycle job, then define the source event, audience, consent, exit condition, and behavior-based success metric. Attribute vendor case studies and avoid treating attributed revenue as guaranteed incremental revenue. Use bounded pilots with baselines, holdouts where practical, suppression, frequency controls, and deliverability checks.
+## Scope
+
+- Shopify email, SMS, abandoned-cart, retention, and lifecycle apps
+- Store-specific implementation guidance
+- Evidence-safe comparisons and FAQ content
