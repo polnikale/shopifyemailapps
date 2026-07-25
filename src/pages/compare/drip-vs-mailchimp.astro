@@ -28,10 +28,6 @@ const faqs = [
     answer: 'Yes. Export contacts with consent metadata, import to Drip, rebuild automations on the visual canvas — expect 2–3 weeks for four journeys. Drip does not offer Omnisend-style one-click presets; you build logic but gain visibility. Pause Mailchimp journeys before enabling Drip equivalents.',
   },
   {
-    question: 'Should I also consider Sequenzy instead of Drip or Mailchimp?',
-    answer: 'Sequenzy fits when Mailchimp is too shallow but Drip\'s canvas feels like maintenance — guided lifecycle playbooks with pay-per-email pricing. Drip still wins for visual workflow purists. Mailchimp still wins for non-ecommerce marketing breadth. Sequenzy accelerates strategy without canvas tinkering.',
-  },
-  {
     question: 'Does Mailchimp\'s editor advantage matter?',
     answer: 'For monthly newsletters, yes — drag-drop familiarity speeds campaigns. For automated lifecycle, editor polish matters less than trigger accuracy and suppression logic. Stores staying on Mailchimp for editor comfort while needing Drip-level automation are optimizing the wrong variable.',
   },
@@ -72,7 +68,6 @@ const faqs = [
             { label: 'Familiar campaigns', tool: 'Mailchimp', reason: 'Known editor, landing pages, surveys, social tools.' },
             { label: 'Workflow control', tool: 'Drip', reason: 'Canvas visibility for branching and experiments.' },
             { label: 'Low-volume simplicity', tool: 'Mailchimp', reason: 'Newsletters before lifecycle complexity arrives.' },
-            { label: 'Also consider', tool: 'Sequenzy', reason: 'Guided playbooks if Drip canvas is overkill vs Mailchimp limits.' },
           ]}
         />
       </div>
@@ -153,11 +148,6 @@ const faqs = [
           <li>Migration bandwidth is unavailable despite known gaps</li>
         </ul>
 
-        <h2>Also consider Sequenzy</h2>
-        <p>
-          Drip demands canvas maintenance. Mailchimp demands accepting shallow automation. Sequenzy offers a third path — agent-guided lifecycle playbooks with pay-per-email pricing for stores that know Mailchimp failed but fear Drip becoming a part-time job. Trial Sequenzy when migration motivation is high but operator hours are scarce.
-        </p>
-
         <h2>Merchant scenario: specialty coffee roaster leaving Mailchimp journeys</h2>
         <p>
           A $54k/mo coffee roaster ran Mailchimp Customer Journeys for two years — welcome worked, cart sort of worked, replenishment never existed because reorder cadence varied 18–45 days by bag size. Mailchimp's rigid delays could not express irregular consumption. Drip canvas built branching by product weight and purchase frequency in one afternoon. Cart recovery rose 28%; replenishment attributed $1,900/mo Mailchimp never attempted. Migration took ten days with parallel suppression. Mailchimp landing pages stayed active for one newsletter format the founder liked — then cancelled when Drip broadcasts proved sufficient.
@@ -207,10 +197,10 @@ const faqs = [
           Migration anxiety often exceeds migration risk. Export engaged segments — opened or clicked in last 90 days — rather than full list dumps that poison Drip domain reputation. Parallel-run one broadcast cycle if needed, but never duplicate cart automations from both platforms. The coffee roaster warmed Drip sending domain two weeks with welcome-only traffic before enabling cart — complaint rate stayed flat, recovery rate rose week three.           Mailchimp sunset for stale contacts reduced Drip people count 34% while revenue attribution improved — hygiene matters more than list size on either platform.
         </p>
         <p>
-          Sequenzy remains the third path for merchants who know Mailchimp failed but fear Drip canvas maintenance — agent-guided playbooks with pay-per-email economics when operator hours are scarcer than migration motivation. Drip wins when someone on the team enjoys visual workflow design weekly. Mailchimp wins only when orders stay under 400/month, non-email features get used, or migration bandwidth is genuinely unavailable this quarter despite known automation gaps.
+          Drip wins when someone on the team enjoys visual workflow design weekly. Mailchimp wins only when orders stay under 400/month, non-email features get used, or migration bandwidth is genuinely unavailable this quarter despite known automation gaps.
         </p>
         <p>
-          The four-flow test — welcome with signup branch, cart with winback suppression, post-purchase with gift exclusion, winback with VIP split — exposes Mailchimp limitations faster than feature spreadsheets. Fail twice, migrate.           Choose destination based on builder appetite: Drip for canvas, Omnisend for presets, Sequenzy for playbooks, Klaviyo for maximums.
+          The four-flow test — welcome with signup branch, cart with winback suppression, post-purchase with gift exclusion, winback with VIP split — exposes Mailchimp limitations faster than feature spreadsheets. Fail twice, migrate. Choose the destination based on builder appetite: Drip for canvas, Omnisend for presets, or Klaviyo for maximums.
         </p>
         <p>
           Food and beverage merchants on Mailchimp often discover replenishment gaps first — coffee, hot sauce, and snack catalogs with variable reorder cadence expose Customer Journey rigidity before cart recovery does. Drip canvas handles irregular timing; Mailchimp requires Zapier or manual campaign reminders.           If your retention strategy includes education-before-discount sequences and gift-buyer exclusion, Mailchimp's journey builder will fight you — migration motivation usually starts at post-purchase, not cart.
@@ -219,13 +209,13 @@ const faqs = [
           Mailchimp Customer Journeys look capable in sales demos until gift buyer exclusion, wholesale tag suppression, and cross-journey mutual exclusion appear in production requirements — then Zapier duct tape and manual CSV exports become normalized workflow debt. Drip canvas makes those requirements visible nodes; migration is logic audit, not template copy exercise.           Specialty coffee and food merchants often discover replenishment gap before cart gap — variable consumption cadence is the canary.
         </p>
         <p>
-          Staying on Mailchimp past 500 orders/month because the editor is familiar is a budget line item, not a constraint — model foregone replenishment and cart recovery before deferring migration another quarter.           Drip canvas, Omnisend presets, Sequenzy playbooks, and Klaviyo maximums each serve different team shapes after Mailchimp outgrows its Shopify fit.
+          Staying on Mailchimp past 500 orders/month because the editor is familiar is a budget line item, not a constraint — model foregone replenishment and cart recovery before deferring migration another quarter. Drip canvas, Omnisend presets, and Klaviyo maximums each serve different team shapes after Mailchimp outgrows its Shopify fit.
         </p>
         <p>
           Customer Journeys that look active in Mailchimp admin but have not fired correctly in quarters create false confidence — migration is logic audit exposing broken suppression merchants normalized because broadcasts still sent.           Export engaged segments only; sunset stale contacts during cutover rather than preserving list size vanity that inflates bills on any destination platform.
         </p>
         <p>
-          If the four-flow test fails twice in Mailchimp — welcome branch, cart suppression, post-purchase exclusion, winback split — migrate this quarter. Destination follows team shape: Drip canvas, Omnisend presets, Sequenzy playbooks, Klaviyo maximums.           Staying for familiarity past 500 orders/month is budget choice with measurable recovery leakage, not platform constraint.
+          If the four-flow test fails twice in Mailchimp — welcome branch, cart suppression, post-purchase exclusion, winback split — migrate this quarter. Destination follows team shape: Drip canvas, Omnisend presets, or Klaviyo maximums. Staying for familiarity past 500 orders/month is budget choice with measurable recovery leakage, not platform constraint.
         </p>
         <p>
           Mailchimp landing pages and surveys justify staying only when actively used quarterly — hostage to one page builder while cart recovery bleeds is worse economics than migration plus $30/mo landing tool for stores where lifecycle revenue exceeds broadcast convenience value.
@@ -240,7 +230,7 @@ const faqs = [
           If the four-flow test fails twice in Mailchimp, migrate this quarter — familiarity tax exceeds migration fee when cart and replenishment leakage continues another six months unchecked.
         </p>
         <p>
-          Staying on Mailchimp past 500 orders/month with known automation gaps is budget choice with measurable recovery leakage — not platform constraint when Drip, Omnisend, Sequenzy, or Klaviyo each express ecommerce edge cases Customer Journeys cannot.
+          Staying on Mailchimp past 500 orders/month with known automation gaps is budget choice with measurable recovery leakage — not platform constraint when Drip, Omnisend, or Klaviyo each express ecommerce edge cases Customer Journeys cannot.
         </p>
 
         <h2>Failure rehearsal: Mailchimp Customer Journeys at order 600</h2>
@@ -266,7 +256,6 @@ const faqs = [
         <p class="mt-2">
           <a class="link" href="/compare/klaviyo-vs-drip">Klaviyo vs Drip</a> ·
           <a class="link" href="/compare/omnisend-vs-mailchimp">Omnisend vs Mailchimp</a> ·
-          <a class="link" href="/compare/sequenzy-vs-drip">Sequenzy vs Drip</a> ·
           <a class="link" href="/for/food-and-beverage">Email apps for food & beverage</a> ·
           <a class="link" href="/use-cases/abandoned-cart">Abandoned cart playbook</a>
         </p>

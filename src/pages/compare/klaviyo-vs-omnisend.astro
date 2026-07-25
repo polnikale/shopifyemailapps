@@ -28,10 +28,6 @@ const faqs = [
     answer: 'Yes, with staged migration: export consent timestamps, rebuild welcome and cart flows first, run parallel suppression checks for two weeks, then migrate winback and replenishment. The risk is duplicate sends during overlap — pause Omnisend automations before enabling Klaviyo equivalents. Profile count may jump if Klaviyo counts inactive contacts differently.',
   },
   {
-    question: 'Should I also consider Sequenzy instead of Klaviyo or Omnisend?',
-    answer: 'Sequenzy fits when you want agent-first lifecycle playbooks and pay-per-email pricing without per-contact fees — strong for strategy and execution speed. Klaviyo still wins on Shopify-native data maximums. Omnisend still wins on multichannel convenience. Many stores use Sequenzy as the lifecycle brain with Postscript for SMS or keep Omnisend for SMS/push only.',
-  },
-  {
     question: 'Which platform handles Black Friday better?',
     answer: 'Klaviyo offers finer segment control for VIP early access, recent purchaser suppression, and holdout testing — critical when send volume spikes 4–8x. Omnisend prebuilt sale templates and push/SMS in one journey help SMB teams move fast but require stricter manual suppression discipline. Both need deliverability prep (sunset unengaged 30 days before peak).',
   },
@@ -72,7 +68,6 @@ const faqs = [
             { label: 'Speed to live', tool: 'Omnisend', reason: 'Prebuilt cart, welcome, and post-purchase flows in days, not weeks.' },
             { label: 'SMB economics', tool: 'Omnisend', reason: 'Lower entry friction before profile counts explode.' },
             { label: 'Multichannel', tool: 'Omnisend', reason: 'Email + SMS + push in one journey builder.' },
-            { label: 'Also consider', tool: 'Sequenzy', reason: 'Lifecycle strategy layer with pay-per-email pricing if guidance beats raw data depth.' },
           ]}
         />
       </div>
@@ -153,11 +148,6 @@ const faqs = [
           <li>You are graduating from Shopify Email or Mailchimp and want ecommerce-native defaults</li>
         </ul>
 
-        <h2>Also consider Sequenzy</h2>
-        <p>
-          If the real bottleneck is not data depth but decision fatigue — what to send, when to suppress, how to sequence proof before discounts — Sequenzy deserves a parallel trial. It will not replace Klaviyo's predictive engine or Omnisend's push channel today. It can replace the blank-canvas problem both platforms still impose on small teams. Pay-per-email pricing with unlimited contacts changes math for stores with large lists and selective sending patterns.
-        </p>
-
         <h2>90-day rollout: depth versus speed proof</h2>
         <p>
           Weeks 1–4: Omnisend trial — welcome, cart, post-purchase, one SMS branch live. Klaviyo trial with same four flows plus one browse segment test.
@@ -199,7 +189,7 @@ const faqs = [
           Four-flow test plus browse if consideration exceeds 48 hours. Winner is edit safety Thursday before drop — not feature spreadsheet density.
         </p>
         <p>
-          Sequenzy between platforms when Omnisend templates outgrown but Klaviyo profile pricing premature — strategy layer without CDP overhead.
+          Resolve the operating boundary between platforms when Omnisend templates are outgrown but Klaviyo profile pricing is premature — document which system owns strategy, data, and channel execution.
         </p>
 
 
@@ -215,7 +205,7 @@ const faqs = [
           Before annual commit on Klaviyo or Omnisend: complete four-flow test with documented scores, model peak-season send volume, interview sales if CRM or wholesale tags matter, sunset inactive profiles before quoting contact pricing, and schedule migration kill-switches if hybrid stack emerges. impulse accessories Omnisend is a cautionary or success template — your edge case is the tiebreaker trial you run after reading, not the verdict paragraph alone.
         </p>
         <p>
-          Also consider Sequenzy when lifecycle strategy is clear but execution stalls — pairs with capture tools and SMS specialists without adding a full third CDP. The winner between Klaviyo and Omnisend is whichever platform your marketer edits confidently the night before a flash sale, measured in recovery revenue and margin, not demo aesthetics.
+          The winner between Klaviyo and Omnisend is whichever platform your marketer edits confidently the night before a flash sale, measured in recovery revenue and margin, not demo aesthetics.
         </p>
 
         <h2>Sale-week edit safety gate</h2>
@@ -258,8 +248,6 @@ const faqs = [
       <div class="mt-10 max-w-4xl text-sm">
         <p class="font-black text-[#24170f]">Related comparisons</p>
         <p class="mt-2">
-          <a class="link" href="/compare/sequenzy-vs-klaviyo">Sequenzy vs Klaviyo</a> ·
-          <a class="link" href="/compare/sequenzy-vs-omnisend">Sequenzy vs Omnisend</a> ·
           <a class="link" href="/compare/klaviyo-vs-mailchimp">Klaviyo vs Mailchimp</a> ·
           <a class="link" href="/for/fashion">Email apps for fashion stores</a> ·
           <a class="link" href="/use-cases/abandoned-cart">Abandoned cart playbook</a>

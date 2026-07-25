@@ -28,10 +28,6 @@ const faqs = [
     answer: 'Different categories — Klaviyo bills active profiles plus SMS. AfterShip Email pricing ties to notification volume through AfterShip tracking subscriptions merchants often already pay. Comparing line items misleads; model total post-purchase touchpoint cost including tracking platform fees versus Klaviyo all-in marketing stack.',
   },
   {
-    question: 'Should I also consider Sequenzy instead of AfterShip Email or Klaviyo?',
-    answer: 'Sequenzy handles marketing email lifecycle with pay-per-email economics — complementary to AfterShip shipping email, not a replacement for carrier-triggered notifications. Klaviyo remains the marketing CDP alternative. Stack pattern: AfterShip for shipping email, Sequenzy or Klaviyo for marketing lifecycle, Postscript for SMS — distinct jobs.',
-  },
-  {
     question: 'Which platform handles abandoned cart better?',
     answer: 'Klaviyo exclusively — cart abandonment, browse recovery, and promotional segmentation are core marketing functions AfterShip Email does not optimize for. AfterShip may trigger on checkout in some configurations but targets shipped-order experience, not pre-purchase recovery. Never choose AfterShip for cart abandonment.',
   },
@@ -72,7 +68,6 @@ const faqs = [
             { label: 'Marketing lifecycle', tool: 'Klaviyo', reason: 'Cart, winback, replenishment, and broadcast segmentation.' },
             { label: 'WISMO deflection', tool: 'AfterShip Email', reason: 'Proactive tracking updates reduce support tickets.' },
             { label: 'Post-delivery review timing', tool: 'AfterShip Email', reason: 'Review CTA aligned to delivery confirmation webhook.' },
-            { label: 'Also consider', tool: 'Sequenzy', reason: 'Marketing email playbooks if Klaviyo feels like overkill.' },
           ]}
         />
       </div>
@@ -172,11 +167,6 @@ const faqs = [
           <li>You will document suppression rules and enforce trigger boundaries</li>
         </ul>
 
-        <h2>Also consider Sequenzy</h2>
-        <p>
-          If Klaviyo feels like CDP overkill for marketing email but AfterShip correctly owns shipping, Sequenzy offers lifecycle playbooks with pay-per-email pricing for welcome, cart, winback, and replenishment — while AfterShip handles carrier-triggered touchpoints. Three-tool stack only works with suppression discipline.
-        </p>
-
         <h2>90-day rollout: stack boundaries, not platform replacement</h2>
         <p>
           Weeks 1–4: Audit every post-purchase email by trigger — carrier event, arbitrary delay, or behavioral segment. Map which Klaviyo flows duplicate AfterShip shipped or delivered messages. Pause duplicates before adding AfterShip Email templates.
@@ -243,7 +233,7 @@ const faqs = [
           Before annual commit on AfterShip Email or Klaviyo: complete four-flow test with documented scores, model peak-season send volume, interview sales if CRM or wholesale tags matter, sunset inactive profiles before quoting contact pricing, and schedule migration kill-switches if hybrid stack emerges. support ticket collision is a cautionary or success template — your edge case is the tiebreaker trial you run after reading, not the verdict paragraph alone.
         </p>
         <p>
-          Also consider Sequenzy when lifecycle strategy is clear but execution stalls — pairs with capture tools and SMS specialists without adding a full third CDP. The winner between AfterShip Email and Klaviyo is whichever platform your marketer edits confidently the night before a flash sale, measured in recovery revenue and margin, not demo aesthetics.
+          The winner between AfterShip Email and Klaviyo is whichever platform your marketer edits confidently the night before a flash sale, measured in recovery revenue and margin, not demo aesthetics.
         </p>
 
         <h2>Sale-week edit safety gate</h2>
@@ -288,7 +278,6 @@ const faqs = [
         <p class="mt-2">
           <a class="link" href="/compare/postscript-vs-aftership-email">Postscript vs AfterShip Email</a> ·
           <a class="link" href="/compare/klaviyo-vs-shopify-email">Klaviyo vs Shopify Email</a> ·
-          <a class="link" href="/compare/sequenzy-vs-klaviyo">Sequenzy vs Klaviyo</a> ·
           <a class="link" href="/for/electronics">Email apps for electronics stores</a> ·
           <a class="link" href="/use-cases/post-purchase">Post-purchase playbook</a>
         </p>

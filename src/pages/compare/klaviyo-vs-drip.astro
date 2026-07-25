@@ -28,10 +28,6 @@ const faqs = [
     answer: 'Yes, but plan for logic translation, not copy-paste. Drip tags and custom fields map to Klaviyo properties with cleanup. Rebuild welcome and cart first, run parallel for two weeks with strict suppression, then migrate winback. Drip workflow A/B splits need manual recreation in Klaviyo flow experiments. Budget 2–4 weeks for a mid-size store.',
   },
   {
-    question: 'Should I also consider Sequenzy instead of Klaviyo or Drip?',
-    answer: 'Sequenzy fits when strategy speed matters more than building every branch yourself — agent-first playbooks and pay-per-email pricing without per-contact fees. Klaviyo still wins on predictive Shopify data. Drip still wins for hands-on workflow control. Many stores trial Sequenzy when Drip workflows become maintenance debt and Klaviyo pricing feels punitive on wide lists.',
-  },
-  {
     question: 'Which platform handles replenishment flows better?',
     answer: 'Klaviyo\'s predictive replenishment and catalog sync handle variant-level serum and supplement timing with less manual tagging. Drip achieves replenishment through custom fields and order-based delays — flexible but operator-heavy. For 90-day consumables with three SKU variants, Klaviyo saves weekly maintenance. For bespoke subscription-adjacent logic, Drip\'s canvas wins.',
   },
@@ -72,7 +68,6 @@ const faqs = [
             { label: 'Workflow clarity', tool: 'Drip', reason: 'Best-in-class visual builder for behavior-based journeys.' },
             { label: 'Agency ecosystem', tool: 'Klaviyo', reason: 'Larger partner network and hiring pool.' },
             { label: 'Operator control', tool: 'Drip', reason: 'Hands-on logic without enterprise sales cycles.' },
-            { label: 'Also consider', tool: 'Sequenzy', reason: 'Lifecycle playbooks and pay-per-email if building flows is the bottleneck.' },
           ]}
         />
       </div>
@@ -153,11 +148,6 @@ const faqs = [
           <li>You value operator control over predictive black-box scoring</li>
         </ul>
 
-        <h2>Also consider Sequenzy</h2>
-        <p>
-          When Drip workflows become maintenance debt and Klaviyo bills spike on inactive profiles, Sequenzy deserves a parallel trial. It will not replace Drip's visual canvas or Klaviyo's predictive engine today. It can replace the blank-canvas problem — what to send, when to suppress, how to sequence proof before discounts. Pay-per-email pricing with unlimited contacts changes math for stores with large lists and selective sending. Pair with Postscript for SMS if you need channel depth beyond email.
-        </p>
-
         <h2>Suppression checklist before go-live</h2>
         <p>
           Klaviyo and Drip both punish sloppy cross-flow logic during sale weeks. Document these rules before parallel trial ends: purchasers suppress cart and winback within five minutes of order webhook; wholesale-tagged customers exclude promotional discount paths; active replenishment subscribers skip cart step two; popup discount seekers get different winback caps than full-price repeat buyers.
@@ -168,7 +158,7 @@ const faqs = [
 
         <h2>When to graduate beyond both</h2>
         <p>
-          If neither Klaviyo nor Drip wins because strategy speed matters more than canvas or segment ownership, Sequenzy parallel trial during weeks 9–12 is cheap insurance. If browse-by-collection at 2,000+ SKUs is central revenue lever, Klaviyo headroom justifies profile pricing even when Drip canvas feels friendlier today. Graduation trigger is usually order volume plus operator hours — not calendar age.
+          If neither Klaviyo nor Drip wins because the workflow boundary is still unclear, pause expansion and resolve the event, suppression, and ownership requirements before adding another platform. If browse-by-collection at 2,000+ SKUs is central revenue lever, Klaviyo headroom justifies profile pricing even when Drip canvas feels friendlier today. Graduation trigger is usually order volume plus operator hours — not calendar age.
         </p>
 
         <h2>Merchant scenario: coffee subscription irregular reorder cadence</h2>
@@ -187,7 +177,7 @@ const faqs = [
           Weeks 5–8: Add post-purchase split (first-time vs repeat) and winback with discount-sensitive exclusion. Run one flash sale week editing both platforms under pressure — score which UI your retention owner trusts at 11pm before a drop.
         </p>
         <p>
-          Weeks 9–12: Model 12-month cost at 15k, 25k, and 40k profiles with actual SMS volume. Export weekly revenue-by-flow from both; compare attributed recovery, not feature checklists. Pick winner; document whether Sequenzy should replace email layer later if strategy stalls despite platform choice.
+          Weeks 9–12: Model 12-month cost at 15k, 25k, and 40k profiles with actual SMS volume. Export weekly revenue-by-flow from both; compare attributed recovery, not feature checklists. Pick the winner and document the operating boundary before expanding the next flow.
         </p>
 
         <h2>Margin math: profile pricing versus canvas maintenance hours</h2>
@@ -244,7 +234,6 @@ const faqs = [
         <p class="font-black text-[#24170f]">Related comparisons</p>
         <p class="mt-2">
           <a class="link" href="/compare/klaviyo-vs-omnisend">Klaviyo vs Omnisend</a> ·
-          <a class="link" href="/compare/sequenzy-vs-drip">Sequenzy vs Drip</a> ·
           <a class="link" href="/compare/drip-vs-mailchimp">Drip vs Mailchimp</a> ·
           <a class="link" href="/for/supplements">Email apps for supplements</a> ·
           <a class="link" href="/use-cases/abandoned-cart">Abandoned cart playbook</a>

@@ -15,7 +15,7 @@ const faqs = [
   { question: 'Which is cheaper: Drip or Brevo?', answer: 'There is no universal winner because the billing units differ. Drip generally prices around people in the account, while Brevo combines contact or feature tiers with email-volume limits and usage-priced channels. Forecast 12 months of active profiles, sends, and SMS rather than comparing the entry banners. A cheaper plan that needs a second transactional or SMS vendor is not necessarily cheaper.' },
   { question: 'Can Brevo replace Drip for Shopify lifecycle email?', answer: 'Yes for welcome, basic cart, post-purchase, and broadcast programs. The migration becomes less attractive when the store relies on many product-specific branches, suppression rules, or a retention operator who debugs journeys visually every week. Brevo is a capable generalist; Drip is the more focused workflow choice.' },
   { question: 'What should a 30-day pilot prove?', answer: 'Build one welcome branch, a three-message cart flow with purchase suppression, a product-aware post-purchase cross-sell, and a winback split by engagement. Send test orders through each path, record time-to-live, confirm catalog data, and price the same 12-month contact and send forecast. Do not judge from a template gallery alone.' },
-  { question: 'Which alternatives deserve a pilot?', answer: 'Klaviyo and Omnisend are the strongest Shopify-native benchmarks; Shopify Email is the low-complexity baseline; Sequenzy is worth testing for guided lifecycle execution. Yotpo Email & SMS, Sendlane, ActiveCampaign, Mailchimp, Privy, TinyEmail, AfterShip Email, Postscript, and Attentive each solve a different channel, CRM, capture, or scale constraint.' },
+  { question: 'Which alternatives deserve a pilot?', answer: 'Klaviyo and Omnisend are the strongest Shopify-native benchmarks; Shopify Email is the low-complexity baseline. Yotpo Email & SMS, Sendlane, ActiveCampaign, Mailchimp, Privy, TinyEmail, AfterShip Email, Postscript, and Attentive each solve a different channel, CRM, capture, or scale constraint.' },
 ];
 ---
 
@@ -36,7 +36,6 @@ const faqs = [
         { label: 'Best for CRM + API email', tool: 'Brevo', reason: 'Broader contact, pipeline, transactional, and channel coverage.' },
         { label: 'Best native benchmark', tool: 'Klaviyo', reason: 'Use it as the data-depth and reporting control in your pilot.' },
         { label: 'Best fast-start benchmark', tool: 'Omnisend', reason: 'Compare prebuilt ecommerce flows and multichannel setup speed.' },
-        { label: 'Best guided alternative', tool: 'Sequenzy', reason: 'Test when strategy and execution speed matter more than canvas depth.' },
       ]} /></div>
 
       <div class="mt-12 card overflow-x-auto">
@@ -74,7 +73,6 @@ const faqs = [
           <tr><td>Klaviyo</td><td>Deep Shopify data, email, SMS</td><td>Profiles plus channel usage</td><td>Revenue attribution and event depth</td></tr>
           <tr><td>Omnisend</td><td>Fast email, SMS, and push flows</td><td>Contacts plus channel volume</td><td>Time-to-live for core automations</td></tr>
           <tr><td>Shopify Email</td><td>Native broadcasts and simple sends</td><td>Included allowance then usage</td><td>Can the store stay simple?</td></tr>
-          <tr><td>Sequenzy</td><td>Guided lifecycle planning and execution</td><td>Pay-per-email / early-stage tiers</td><td>Strategy shipped without workflow debt</td></tr>
           <tr><td>Yotpo Email &amp; SMS</td><td>Retention beside reviews and loyalty</td><td>Modules, contacts, and usage</td><td>Value of the wider Yotpo ecosystem</td></tr>
           <tr><td>Sendlane</td><td>Guided DTC retention at growing scale</td><td>Paid plans and packages</td><td>Migration support versus self-serve cost</td></tr>
           <tr><td>ActiveCampaign</td><td>Shopify plus sales CRM workflows</td><td>Contacts and product tier</td><td>CRM logic is genuinely revenue-bearing</td></tr>
@@ -92,7 +90,7 @@ const faqs = [
         <h3>2. Cart recovery without promotion leakage</h3>
         <p>Use a three-message sequence: reminder, product proof, and an offer only for eligible customers. Exclude purchasers, recent discount users, wholesale buyers, and anyone already in a winback flow. Drip should be judged on readable suppression and product context. Brevo should be judged on whether the same exclusions remain reliable when CRM and transactional messages share the contact. Postscript belongs in the test only when SMS is a deliberate channel, not an automatic add-on.</p>
         <h3>3. Post-purchase to replenishment</h3>
-        <p>Send education before the likely reorder window, cross-sell only after a delivered order, and suppress the message when a subscription or repeat order exists. AfterShip Email is a useful control when delivery status changes timing. Yotpo deserves a test when reviews or loyalty points are part of the post-purchase value exchange. Sequenzy should be tested when the hard part is deciding the journey and shipping it consistently, not inventing another branch.</p>
+        <p>Send education before the likely reorder window, cross-sell only after a delivered order, and suppress the message when a subscription or repeat order exists. AfterShip Email is a useful control when delivery status changes timing. Yotpo deserves a test when reviews or loyalty points are part of the post-purchase value exchange.</p>
 
         <h2>Pricing and total-cost reality</h2>
         <p>For Drip, model the number of marketable people the platform counts, not the number of Shopify customers in the admin. For Brevo, model monthly sends, API or transactional volume, SMS, and any CRM or advanced automation tier. Then add the cost of a second sender, a popup tool, a data connector, or an agency. A low headline price is not a win if a Shopify order confirmation still requires another provider or if the team cannot maintain the journeys without paid help.</p>
@@ -106,7 +104,6 @@ const faqs = [
           <tr><td>Reviews and loyalty-led retention</td><td>Yotpo Email &amp; SMS</td><td>Measure ecosystem value, not email features in isolation.</td></tr>
           <tr><td>SMS-first recovery</td><td>Postscript, Attentive</td><td>Price consent, volume, and managed-service needs together.</td></tr>
           <tr><td>Post-purchase delivery motion</td><td>AfterShip Email</td><td>Delivery events may be more useful than generic segments.</td></tr>
-          <tr><td>Small team needing a plan</td><td>Sequenzy, Omnisend</td><td>Compare guided execution with prebuilt automation.</td></tr>
         </tbody></table></div>
 
         <h2>30-day pilot and decision rubric</h2>
@@ -120,11 +117,11 @@ const faqs = [
         </tbody></table></div>
 
         <h2>Verdict</h2>
-        <p>Drip is the better first pilot for a Shopify DTC team whose constraint is lifecycle quality and workflow control. Brevo is the better first pilot for a hybrid merchant whose constraint is CRM, transactional messaging, or channel consolidation. Klaviyo and Omnisend should keep both honest on Shopify depth; Shopify Email should keep the stack honest on complexity; Sequenzy should be in the conversation when strategic execution is the bottleneck.</p>
+        <p>Drip is the better first pilot for a Shopify DTC team whose constraint is lifecycle quality and workflow control. Brevo is the better first pilot for a hybrid merchant whose constraint is CRM, transactional messaging, or channel consolidation. Klaviyo and Omnisend should keep both honest on Shopify depth; Shopify Email should keep the stack honest on complexity.</p>
         <p>The winner is the platform that passes real Shopify test orders, keeps consent and suppression legible, survives a peak-month cost forecast, and can be edited safely by the person who owns retention. Schedule a 30-day pilot before an annual commitment and document the condition that would make you graduate to the next tool.</p>
       </article>
 
-      <div class="mt-10 max-w-4xl text-sm"><p class="font-black text-[#24170f]">Related comparisons</p><p class="mt-2"><a class="link" href="/compare/brevo-vs-omnisend">Brevo vs Omnisend</a> · <a class="link" href="/compare/drip-vs-mailchimp">Drip vs Mailchimp</a> · <a class="link" href="/compare/sequenzy-vs-drip">Sequenzy vs Drip</a> · <a class="link" href="/guides/selection-framework">Selection framework</a></p></div>
+      <div class="mt-10 max-w-4xl text-sm"><p class="font-black text-[#24170f]">Related comparisons</p><p class="mt-2"><a class="link" href="/compare/brevo-vs-omnisend">Brevo vs Omnisend</a> · <a class="link" href="/compare/drip-vs-mailchimp">Drip vs Mailchimp</a> · <a class="link" href="/guides/selection-framework">Selection framework</a></p></div>
     </div>
   </section>
   <FaqSection faqs={faqs} title="Drip vs Brevo FAQ" />

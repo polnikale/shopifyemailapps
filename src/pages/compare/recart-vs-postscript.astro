@@ -28,10 +28,6 @@ const faqs = [
     answer: 'Yes, with TCPA compliance care. Export SMS opt-in timestamps and consent source — re-opt-in may be required for some subscribers depending on consent language. Rebuild cart SMS first; run parallel one week with strict purchase suppression. Budget 2–3 weeks including compliance review for mid-size lists.',
   },
   {
-    question: 'Should I also consider Sequenzy instead of Recart or Postscript?',
-    answer: 'Sequenzy is email-first — it does not replace SMS cart recovery. Pair Sequenzy lifecycle email with Recart or Postscript for SMS with documented suppression. Postscript still wins full SMS marketing. Recart still wins cart-only focus. Sequenzy reduces email stack complexity alongside either SMS tool.',
-  },
-  {
     question: 'Does Postscript broadcast SMS matter vs Recart?',
     answer: 'Postscript excels at promotional broadcasts, drop alerts, and keyword campaigns — core revenue for many DTC brands. Recart focuses on recovery flows over broadcast breadth. If flash sale SMS drives 40%+ of text revenue, Postscript is necessary. If SMS exists only for cart abandonment, Recart avoids paying for unused broadcast infrastructure.',
   },
@@ -72,7 +68,6 @@ const faqs = [
             { label: 'Full SMS marketing', tool: 'Postscript', reason: 'Broadcasts, keywords, and two-way conversations at scale.' },
             { label: 'Recovery ROI pricing', tool: 'Recart', reason: 'Cost structure aligned with cart attribution.' },
             { label: 'Shopify SMS ecosystem', tool: 'Postscript', reason: 'Larger partner network and integration depth.' },
-            { label: 'Also consider', tool: 'Sequenzy', reason: 'Email lifecycle playbooks to pair with either SMS tool.' },
           ]}
         />
       </div>
@@ -161,10 +156,6 @@ const faqs = [
           <li>You want Shopify SMS ecosystem depth and agency partner access</li>
         </ul>
 
-        <h2>Also consider Sequenzy</h2>
-        <p>
-          Either SMS tool needs email complement. Sequenzy offers lifecycle email playbooks with pay-per-email pricing — pair with Recart for recovery-focused stack or Postscript for full SMS plus strategic email. Suppression documentation between Sequenzy email and either SMS platform prevents duplicate cart touches.
-        </p>
 
         <h2>Twelve-month SMS attribution template</h2>
         <p>
@@ -176,7 +167,7 @@ const faqs = [
 
         <h2>Email complement after Recart migration</h2>
         <p>
-          Recart cart SMS needs promotional email elsewhere — Klaviyo, Sequenzy, or Omnisend for broadcasts Postscript previously covered. Beauty brand paired Recart with Klaviyo email; total stack cost dropped 24% while promotional sends moved to email where message economics favor longer creative. Channel shift, not channel elimination.
+          Recart cart SMS needs promotional email elsewhere — a dedicated email platform for broadcasts Postscript previously covered. Beauty brand paired Recart with its email platform; total stack cost dropped 24% while promotional sends moved to email where message economics favor longer creative. Channel shift, not channel elimination.
         </p>
 
         <h2>90-day rollout: audit SMS revenue mix before switching</h2>
@@ -187,7 +178,7 @@ const faqs = [
           Weeks 5–8: Trial Recart cart flows on subset of abandoners — compare recovery rate and cost per recovery versus Postscript cart SMS. Keep Postscript keyword growth running if list growth is strategic KPI.
         </p>
         <p>
-          Weeks 9–12: If migrating to Recart, pair with Klaviyo or Sequenzy for promotional email Postscript broadcasts previously covered. Monitor list growth — recovery-only SMS does not grow list; plan Postscript re-add if opt-in velocity stalls.
+          Weeks 9–12: If migrating to Recart, pair it with the existing email platform for promotional sends Postscript previously covered. Monitor list growth — recovery-only SMS does not grow list; plan Postscript re-add if opt-in velocity stalls.
         </p>
 
         <h2>Margin math: Postscript platform cost versus Recart recovery ROI</h2>
@@ -232,7 +223,7 @@ const faqs = [
 
         <h2>Weekly operator checklist during SMS audit</h2>
         <p>
-          Monday: export SMS sends by workflow tag. Wednesday: list growth velocity — negative four weeks post-Recart migration triggers Postscript keyword re-evaluation. Friday: email complement check — promotional sends still covered if broadcasts moved from Postscript to Klaviyo or Sequenzy. Sale week: cart SMS and cart email stagger minimum 30 minutes; document channel priority in runbook regardless of platform.
+          Monday: export SMS sends by workflow tag. Wednesday: list growth velocity — negative four weeks post-Recart migration triggers Postscript keyword re-evaluation. Friday: email complement check — promotional sends remain covered after broadcasts move from Postscript to the email platform. Sale week: cart SMS and cart email stagger minimum 30 minutes; document channel priority in runbook regardless of platform.
         </p>
 
         <p>

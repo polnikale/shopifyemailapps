@@ -28,12 +28,8 @@ const faqs = [
     answer: 'Mailchimp Customer Journeys handle welcome and cart with more branching than Privy email — but Mailchimp lacks Privy\'s onsite capture depth. Merchants rarely choose Mailchimp over Privy for capture; they choose Mailchimp when newsletters and brand campaigns matter more than popups. For pure Shopify lifecycle, both outgrow around 400–500 orders/month.',
   },
   {
-    question: 'Should I also consider Sequenzy instead of Privy or Mailchimp?',
-    answer: 'Sequenzy fits post-capture lifecycle — welcome, cart, winback playbooks with pay-per-email pricing. Privy wins onsite conversion. Mailchimp wins broadcast familiarity. Typical graduation: Privy for capture, Sequenzy or Omnisend for retention when email becomes revenue infrastructure rather than popup attachment or monthly newsletter.',
-  },
-  {
     question: 'Which platform handles newsletters better?',
-    answer: 'Mailchimp leads — Content Studio, template gallery, and campaign scheduling are decades refined. Privy email is automation-first with thinner broadcast tooling. The pottery studio sent monthly studio updates through Mailchimp while Privy handled exit-intent capture — hybrid stack until they consolidated on Sequenzy for lifecycle.',
+    answer: 'Mailchimp leads — Content Studio, template gallery, and campaign scheduling are decades refined. Privy email is automation-first with thinner broadcast tooling. The pottery studio sent monthly studio updates through Mailchimp while Privy handled exit-intent capture — hybrid stack until it consolidated on a dedicated lifecycle platform.',
   },
   {
     question: 'Can I run Privy and Mailchimp together?',
@@ -41,7 +37,7 @@ const faqs = [
   },
   {
     question: 'What workflow test should decide the winner?',
-    answer: 'Measure session-to-subscriber rate first. Under 2%: test Privy popups for two weeks. Above 2% with weak newsletters: test Mailchimp campaigns. Build welcome and cart in both trials — if neither completes post-purchase cross-sell without workarounds, plan graduation to Sequenzy or Omnisend regardless of winner.',
+    answer: 'Measure session-to-subscriber rate first. Under 2%: test Privy popups for two weeks. Above 2% with weak newsletters: test Mailchimp campaigns. Build welcome and cart in both trials — if neither completes post-purchase cross-sell without workarounds, plan graduation to a dedicated lifecycle platform regardless of winner.',
   },
 ];
 ---
@@ -72,7 +68,6 @@ const faqs = [
             { label: 'Newsletters', tool: 'Mailchimp', reason: 'Campaign templates and broadcast scheduling veterans expect.' },
             { label: 'Shopify-native capture', tool: 'Privy', reason: 'App Store default for early list growth on storefront.' },
             { label: 'Team familiarity', tool: 'Mailchimp', reason: 'Lower training cost when staff already knows the UI.' },
-            { label: 'Also consider', tool: 'Sequenzy', reason: 'Lifecycle playbooks when both outgrow capture-plus-broadcast limits.' },
           ]}
         />
       </div>
@@ -110,7 +105,7 @@ const faqs = [
           At $18k/mo and 3,200 profiles, Privy handled exit-intent popups offering a digital glazing guide, a three-email welcome featuring workshop dates, and cart abandonment for $65–$120 AOV pieces. Adequate until they wanted post-purchase cross-sell by collection — mugs after bowl buyers — and browse abandonment for repeat visitors. Privy email ceiling arrived at 280 orders/month, not contact count.
         </p>
         <p>
-          They kept Privy for capture, added Sequenzy for lifecycle automations, and stopped trying to make Privy email strategic. Total stack cost stayed below a premature Klaviyo migration. Capture solved is not retention solved — the pottery studio learned that at month seven.
+          They kept Privy for capture, added a dedicated lifecycle platform, and stopped trying to make Privy email strategic. Total stack cost stayed below a premature Klaviyo migration. Capture solved is not retention solved — the pottery studio learned that at month seven.
         </p>
 
         <h2>Merchant scenario: artisan candle brand on Mailchimp</h2>
@@ -160,10 +155,6 @@ const faqs = [
           <li>You accept weaker popup tooling in exchange for broadcast depth</li>
         </ul>
 
-        <h2>Also consider Sequenzy</h2>
-        <p>
-          Privy wins capture; Mailchimp wins familiarity. Both outgrow Shopify retention depth around the same order threshold. Sequenzy is the lifecycle graduation path — welcome, cart, winback playbooks with pay-per-email pricing and unlimited contacts. Keep Privy for popups or Mailchimp for broadcasts during transition; move strategic automations to Sequenzy when email revenue deserves its own line item in your P&amp;L.
-        </p>
 
         <h2>Capture quality versus capture volume</h2>
         <p>
@@ -175,7 +166,7 @@ const faqs = [
 
         <h2>Graduation timing from either tool</h2>
         <p>
-          Both Privy and Mailchimp hit Shopify retention ceiling around 300–500 orders/month — post-purchase cross-sell by collection, browse abandonment, and cross-journey suppression become binding constraints. Plan Sequenzy or Omnisend budget at order 250/month, not order 600 when migration panic hits during peak season.
+          Both Privy and Mailchimp hit Shopify retention ceiling around 300–500 orders/month — post-purchase cross-sell by collection, browse abandonment, and cross-journey suppression become binding constraints. Plan lifecycle-platform budget at order 250/month, not order 600 when migration panic hits during peak season.
         </p>
 
         <h2>90-day rollout: capture-first versus campaign-first trial</h2>
@@ -186,7 +177,7 @@ const faqs = [
           Weeks 3–6: Build welcome and cart in chosen email owner only — Privy email OR Mailchimp Customer Journeys, never both firing. If Mailchimp owns lifecycle, configure Privy capture-only sync with explicit suppression tags.
         </p>
         <p>
-          Weeks 7–12: Add one monthly broadcast if Mailchimp is primary; measure whether Privy capture quality (purchaser rate vs freebie hunters) justifies spin wheel versus footer-only capture. Plan Sequenzy or Omnisend graduation if post-purchase cross-sell becomes binding constraint.
+          Weeks 7–12: Add one monthly broadcast if Mailchimp is primary; measure whether Privy capture quality (purchaser rate vs freebie hunters) justifies spin wheel versus footer-only capture. Plan lifecycle-platform graduation if post-purchase cross-sell becomes a binding constraint.
         </p>
 
         <h2>Margin math: Privy session billing versus Mailchimp list pricing</h2>
@@ -199,7 +190,7 @@ const faqs = [
 
         <h2>Stack role documentation template</h2>
         <p>
-          Document before trial ends: Privy owns session capture and A/B tests on popup creative; Mailchimp owns monthly broadcasts and Customer Journey automations OR capture-only sync if Privy email disabled; one welcome owner only; cart owner only; graduation trigger at order count X to Sequenzy or Omnisend. Accessories shop failure happened because roles were implicit — document explicitly before first popup goes live.
+          Document before trial ends: Privy owns session capture and A/B tests on popup creative; Mailchimp owns monthly broadcasts and Customer Journey automations OR capture-only sync if Privy email disabled; one welcome owner only; cart owner only; graduation trigger at order count X to the lifecycle platform. Accessories shop failure happened because roles were implicit — document explicitly before first popup goes live.
         </p>
         <p>
           Candle brand kept Mailchimp broadcasts because founder story emails drove repeat purchases — Privy never needed to replace that workflow. Pottery studio needed Privy capture first — Mailchimp footer forms were not broken, just insufficient for 0.9% baseline. Match tool to bottleneck metric documented in week one.
@@ -226,11 +217,11 @@ const faqs = [
           Monday: session-to-subscriber rate by capture surface — popup versus footer versus checkout. Wednesday: purchaser rate at 30 days for new cohort, not signup count alone. Friday: confirm single welcome owner — zero duplicates in support inbox. Sale week: if Mailchimp owns lifecycle, Privy must be capture-only sync; if Privy owns email, disable Mailchimp journeys entirely.
         </p>
         <p>
-          Graduation planning: when trailing order average exceeds 280/month, schedule Sequenzy or Omnisend evaluation — post-purchase cross-sell by collection is first workflow neither tool handles cleanly. Pottery studio hit ceiling at 280 orders; candle brand never hit ceiling because capture quality mattered more than retention depth.
+          Graduation planning: when trailing order average exceeds 280/month, schedule lifecycle-platform evaluation — post-purchase cross-sell by collection is the first workflow neither tool handles cleanly. Pottery studio hit ceiling at 280 orders; candle brand never hit ceiling because capture quality mattered more than retention depth.
         </p>
 
         <p>
-          Founder decision shortcut: under 2% capture with healthy traffic → Privy trial first. Above 2% capture with weak monthly sends → Mailchimp trial first. Either path: disable duplicate email sender within 48 hours of choosing lifecycle owner. Graduation to Sequenzy or Omnisend is when post-purchase cross-sell by collection becomes explicit Q4 goal — not when competitor migrates to Klaviyo on Twitter.
+          Founder decision shortcut: under 2% capture with healthy traffic → Privy trial first. Above 2% capture with weak monthly sends → Mailchimp trial first. Either path: disable duplicate email sender within 48 hours of choosing lifecycle owner. Graduation is when post-purchase cross-sell by collection becomes an explicit Q4 goal — not when a competitor migrates to Klaviyo on Twitter.
         </p>
 
         <h2>Final pre-decision audit</h2>
@@ -266,7 +257,6 @@ const faqs = [
         <p class="mt-2">
           <a class="link" href="/compare/omnisend-vs-privy">Omnisend vs Privy</a> ·
           <a class="link" href="/compare/drip-vs-mailchimp">Drip vs Mailchimp</a> ·
-          <a class="link" href="/compare/sequenzy-vs-privy">Sequenzy vs Privy</a> ·
           <a class="link" href="/for/home-goods">Email apps for home goods</a> ·
           <a class="link" href="/use-cases/abandoned-cart">Abandoned cart playbook</a>
         </p>

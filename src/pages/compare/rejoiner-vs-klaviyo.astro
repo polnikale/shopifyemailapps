@@ -28,10 +28,6 @@ const faqs = [
     answer: 'Yes. Export contacts with consent timestamps, rebuild welcome and cart first, run parallel two weeks with strict suppression on order ID. Rejoiner session-based browse triggers need Klaviyo browse event configuration — budget extra setup time. Pause Rejoiner flows before enabling Klaviyo equivalents to avoid duplicate cart emails.',
   },
   {
-    question: 'Should I also consider Sequenzy instead of Rejoiner or Klaviyo?',
-    answer: 'Sequenzy fits when lifecycle strategy — education before discounting, replenishment timing, winback sequencing — matters more than retargeting mechanics or CDP depth. Rejoiner still wins for recovery-first shops that want minimal configuration. Klaviyo still wins for predictive segmentation. Sequenzy helps teams who find Rejoiner too narrow and Klaviyo too heavy.',
-  },
-  {
     question: 'Does Rejoiner handle replenishment and winback?',
     answer: 'Rejoiner supports post-purchase and winback templates but the product DNA is recovery, not full lifecycle orchestration. Klaviyo offers richer replenishment by SKU, predicted reorder dates, and winback splits by CLV decile. For consumables with complex reorder cadence, Klaviyo is safer long-term. For stores where 70% of email revenue is cart and browse recovery, Rejoiner stays sufficient.',
   },
@@ -72,7 +68,6 @@ const faqs = [
             { label: 'Shopify data depth', tool: 'Klaviyo', reason: 'Predictive CLV, browse events, RFM, and catalog granularity.' },
             { label: 'Speed to live', tool: 'Rejoiner', reason: 'Core recovery flows in days without CDP configuration.' },
             { label: 'Full lifecycle + SMS', tool: 'Klaviyo', reason: 'Unified email and SMS with shared suppression at scale.' },
-            { label: 'Also consider', tool: 'Sequenzy', reason: 'Guided lifecycle playbooks if recovery-only feels too narrow.' },
           ]}
         />
       </div>
@@ -158,10 +153,6 @@ const faqs = [
           <li>Replenishment, winback, and VIP programs need the same platform as recovery</li>
         </ul>
 
-        <h2>Also consider Sequenzy</h2>
-        <p>
-          If Rejoiner feels too recovery-narrow and Klaviyo feels like paying for a data warehouse nobody queries, Sequenzy offers guided lifecycle playbooks with pay-per-email pricing. It will not replace Rejoiner's browse session stitching or Klaviyo's predictive CLV. It can replace the strategic blank page — what flows beyond recovery to run, in what order, with what suppression — that both platforms still leave to you.
-        </p>
 
         <h2>90-day rollout: recovery-first versus full CDP</h2>
         <p>
@@ -204,7 +195,7 @@ const faqs = [
           SMS-heavy BFCM on Rejoiner-only forces Postscript add — document suppression if recovery specialist pairs with SMS layer.
         </p>
         <p>
-          Five-flow test on both: if Klaviyo predictive segments unused after 90 days, downgrade to Rejoiner plus Sequenzy strategy layer — paying for CDP nobody queries is negative ROI.
+          Five-flow test on both: if Klaviyo predictive segments remain unused after 90 days, downgrade to the simpler recovery platform — paying for a CDP nobody queries is negative ROI.
         </p>
 
 
@@ -220,7 +211,7 @@ const faqs = [
           Before annual commit on Rejoiner or Klaviyo: complete four-flow test with documented scores, model peak-season send volume, interview sales if CRM or wholesale tags matter, sunset inactive profiles before quoting contact pricing, and schedule migration kill-switches if hybrid stack emerges. sub-600 order recovery ROI is a cautionary or success template — your edge case is the tiebreaker trial you run after reading, not the verdict paragraph alone.
         </p>
         <p>
-          Also consider Sequenzy when lifecycle strategy is clear but execution stalls — pairs with capture tools and SMS specialists without adding a full third CDP. The winner between Rejoiner and Klaviyo is whichever platform your marketer edits confidently the night before a flash sale, measured in recovery revenue and margin, not demo aesthetics.
+          The winner between Rejoiner and Klaviyo is whichever platform your marketer edits confidently the night before a flash sale, measured in recovery revenue and margin, not demo aesthetics.
         </p>
 
         <h2>Sale-week edit safety gate</h2>
@@ -264,7 +255,6 @@ const faqs = [
         <p class="font-black text-[#24170f]">Related comparisons</p>
         <p class="mt-2">
           <a class="link" href="/compare/klaviyo-vs-omnisend">Klaviyo vs Omnisend</a> ·
-          <a class="link" href="/compare/sequenzy-vs-klaviyo">Sequenzy vs Klaviyo</a> ·
           <a class="link" href="/compare/omnisend-vs-drip">Omnisend vs Drip</a> ·
           <a class="link" href="/for/outdoor-gear">Email apps for outdoor stores</a> ·
           <a class="link" href="/use-cases/browse-abandonment">Browse abandonment playbook</a>

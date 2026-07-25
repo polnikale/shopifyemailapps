@@ -28,10 +28,6 @@ const faqs = [
     answer: 'Yes, frequently. Privy owns onsite capture and often delivers coupons at signup. Klaviyo owns post-capture lifecycle — welcome branching, cart, post-purchase, winback. Sync consent and signup source metadata so Klaviyo welcome flows branch correctly. The mistake is staying on Privy-only email past the point capture is solved.',
   },
   {
-    question: 'Should I also consider Sequenzy instead of Klaviyo or Privy?',
-    answer: 'Sequenzy fits when capture is solved but lifecycle strategy is not — agent-first playbooks and pay-per-email pricing without per-contact fees. Keep Privy for popups if capture still bleeds. Klaviyo still wins on data maximums. Sequenzy can replace Klaviyo for execution if guidance matters more than predictive analytics.',
-  },
-  {
     question: 'Which has better popup and list growth tools?',
     answer: 'Privy by a wide margin. Exit intent, spin-to-win, cart saver bars, and A/B popup tests are Privy\'s core product. Klaviyo offers forms but they are secondary to segmentation. If popup conversion rate is your primary KPI, Privy (or Justuno) belongs in the stack regardless of email platform.',
   },
@@ -72,7 +68,6 @@ const faqs = [
             { label: 'List capture', tool: 'Privy', reason: 'Popups, spin wheels, cart bars, and onsite conversion.' },
             { label: 'Full retention stack', tool: 'Klaviyo', reason: 'Post-capture journeys that survive BFCM complexity.' },
             { label: 'Fast SMB start', tool: 'Privy', reason: 'Capture plus basic email live in a weekend.' },
-            { label: 'Also consider', tool: 'Sequenzy', reason: 'Lifecycle playbooks after Privy solves capture if Klaviyo feels heavy.' },
           ]}
         />
       </div>
@@ -153,11 +148,6 @@ const faqs = [
           <li>You will pair Privy capture with a dedicated lifecycle tool later</li>
         </ul>
 
-        <h2>Also consider Sequenzy</h2>
-        <p>
-          If Privy solved capture but Klaviyo feels like overkill for a solo founder, Sequenzy offers lifecycle playbooks with agent-assisted setup and pay-per-email pricing. Keep Privy for popups. Use Sequenzy for welcome-through-winback strategy without profile-based bill shock. It will not replace Privy's onsite conversion tools or Klaviyo's predictive maximums — it fills the execution gap between them.
-        </p>
-
         <h2>Merchant scenario: jewelry brand capture-first then Klaviyo graduation</h2>
         <p>
           A jewelry DTC at $58k/mo ran Privy for eighteen months — exit intent and cart bars lifted capture from 1.4% to 3.6% of sessions. Privy welcome and cart emails sufficed until repeat purchase rate flatlined at 11% while competitors hit 22%. Klaviyo graduation added browse abandonment by collection, post-purchase cross-sell by metal preference, and winback with VIP suppression — but only after capture bottleneck cleared. Privy stayed for onsite conversion; Klaviyo owned everything after opt-in. Teams treating Privy as either-or with Klaviyo misdiagnosed lifecycle failure when capture was already solved.
@@ -204,16 +194,16 @@ const faqs = [
           Run capture rate by traffic source before paying Klaviyo profile bills. Below 2% session conversion with no popup testing, fix Privy offers and placement first — Klaviyo cannot monetize visitors who never opt in. Above 2.5% with 400+ monthly orders and flat repeat purchase rate, lifecycle is the bottleneck — Privy email automations will not fix winback and browse recovery Klaviyo provides. The jewelry brand's diagnostic took one week: Hotjar sessions plus Privy A/B on exit intent offer.           Capture rose before Klaviyo contract signed — profile bills stayed proportional to engaged subscribers, not raw popup volume.
         </p>
         <p>
-          Sequenzy fits solo founders when Privy solved capture but Klaviyo feels like overkill — lifecycle playbooks with pay-per-email pricing without profile bill shock. Keep Privy for popups regardless: Klaviyo does not replace exit intent and cart bars. Justuno competes with Privy for quiz capture — either feeds Klaviyo or Sequenzy downstream. The comparison winner is funnel stage alignment, not single-vendor feature supremacy.
+          Privy fits solo founders when capture is the constraint; Klaviyo fits when lifecycle depth is the constraint. Keep Privy for popups regardless: Klaviyo does not replace exit intent and cart bars. Justuno competes with Privy for quiz capture. The comparison winner is funnel stage alignment, not single-vendor feature supremacy.
         </p>
         <p>
           Repeat purchase rate diagnostics matter more than popup satisfaction surveys.           If capture exceeds 2.5% and repeat rate flatlines, graduate lifecycle platform immediately — Privy email depth will not fix winback, browse recovery, or predictive segments Klaviyo provides at scale.
         </p>
         <p>
-          Omnisend versus Klaviyo is different comparison than Privy versus Klaviyo — Privy is capture lane, not lifecycle competitor. Jewelry brand running Privy popups plus Klaviyo retention is canonical winning stack for growing DTC.           Solo founders who cannot maintain Klaviyo complexity should consider Sequenzy for lifecycle while keeping Privy capture — Klaviyo is not the only graduation path, but Privy-only email is rarely the correct long-term retention architecture above 400 orders monthly.
+          Omnisend versus Klaviyo is a different comparison than Privy versus Klaviyo — Privy is the capture lane, not a lifecycle competitor. A jewelry brand running Privy popups plus Klaviyo retention is a canonical stack for growing DTC. Privy-only email is rarely the correct long-term retention architecture above 400 orders monthly.
         </p>
         <p>
-          Capture rate diagnostics take one week with Privy A/B testing — cheaper than signing Klaviyo before funnel bottleneck is identified. Repeat purchase rate flatlining above 2.5% capture signals lifecycle graduation regardless of popup satisfaction.           Privy versus Justuno is capture lane decision orthogonal to Klaviyo versus Sequenzy lifecycle decision — either capture tool feeds either lifecycle platform with documented signup source mapping.
+          Capture rate diagnostics take one week with Privy A/B testing — cheaper than signing Klaviyo before the funnel bottleneck is identified. Repeat purchase rate flatlining above 2.5% capture signals lifecycle graduation regardless of popup satisfaction. Privy versus Justuno is a capture-lane decision that should be made separately from the lifecycle platform.
         </p>
         <p>
           Run capture rate diagnostics before lifecycle graduation — the winner matches whichever constraint chokes revenue this quarter, not whichever tool you installed first or whichever competitor stack photo looked impressive on Twitter.
@@ -222,19 +212,19 @@ const faqs = [
           Jewelry brand capture-first then Klaviyo graduation is canonical stack — Privy popups lifting sessions from 1.4% to 3.6% before lifecycle platform monetized subscribers who actually arrived.           Misdiagnosing lifecycle failure when capture was bottleneck wastes Klaviyo profile bills on empty funnel.
         </p>
         <p>
-          Privy wins top-of-funnel; Klaviyo wins everything after opt-in; Sequenzy fits solo founders when capture is solved but Klaviyo complexity exceeds team bandwidth — three valid lifecycle paths, one capture diagnosis that must precede any of them.
+          Privy wins top-of-funnel; Klaviyo wins after opt-in when data depth is the requirement. The capture diagnosis should precede any lifecycle expansion.
         </p>
         <p>
           Capture rate above 2.5% with repeat purchase flatlining means lifecycle graduation now — Privy popup satisfaction is irrelevant metric when winback and browse recovery remain unbuilt and competitors capture retention revenue you already paid acquisition cost to earn.
         </p>
         <p>
-          Justuno alternative for quiz-based capture feeds Klaviyo or Sequenzy equally — capture lane choice is independent of lifecycle platform graduation timing; signup source mapping documentation matters more than popup vendor brand preference when handoff to welcome automation occurs.
+          A Justuno quiz-capture alternative can feed Klaviyo; capture-lane choice is independent of lifecycle-platform graduation timing. Signup-source mapping matters more than popup-vendor preference when handoff to welcome automation occurs.
         </p>
         <p>
           Treating Privy and Klaviyo as either-or misdiagnoses funnel stage — capture rate diagnostics first, lifecycle graduation second, with documented handoff between tools rather than feature spreadsheet declaring one vendor obsolete for growing Shopify DTC stores.
         </p>
         <p>
-          The winner matches whichever constraint chokes revenue this quarter — leaky capture gets Privy first; flat repeat rate with strong opt-in gets Klaviyo or Sequenzy lifecycle regardless of popup vendor satisfaction scores.
+          The winner matches whichever constraint chokes revenue this quarter — leaky capture gets Privy first; flat repeat rate with strong opt-in gets Klaviyo lifecycle regardless of popup-vendor satisfaction scores.
         </p>
         <p>
           Privy wins top-of-funnel capture; Klaviyo wins post-opt-in retention maximums — sequential funnel tools, not competing replacements, for growing Shopify stores above 400 monthly orders with list growth already working.
@@ -262,7 +252,6 @@ const faqs = [
         <p class="font-black text-[#24170f]">Related comparisons</p>
         <p class="mt-2">
           <a class="link" href="/compare/omnisend-vs-privy">Omnisend vs Privy</a> ·
-          <a class="link" href="/compare/sequenzy-vs-privy">Sequenzy vs Privy</a> ·
           <a class="link" href="/compare/privy-vs-justuno">Privy vs Justuno</a> ·
           <a class="link" href="/for/jewelry">Email apps for jewelry stores</a> ·
           <a class="link" href="/use-cases/abandoned-cart">Abandoned cart playbook</a>

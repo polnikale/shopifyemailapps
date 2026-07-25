@@ -62,6 +62,7 @@ const faqs = [
         <p>Shopify Email is a sensible first pilot for a merchant whose actual schedule is campaign-led: product launches, editorial notes, and occasional promotions. Best for: a Shopify-native team that values fast setup, catalog access, and fewer vendors. Start with Shopify’s current <a class="link" href="https://help.shopify.com/en/manual/promoting-marketing/create-marketing/shopify-email">send allowance and billing documentation</a>, because quotas and pricing are details to verify at decision time.</p>
         <p>Its upside is simplicity and proximity to the store. Its trade-off is that the team may need manual work or another system when behavior-based branching, complex suppression, or additional channels become central. Pros include a low-friction workflow and native context; cons include a narrower automation decision space and the risk that “easy to send” gets mistaken for “enough lifecycle coverage.”</p>
 
+        {false && <>
         <h2>13 useful alternatives, each with a different reason to test</h2>
         <p>These are not a ranking. They are a shortlist for the constraint that Omnisend or Shopify Email may not solve. Official links are included so the pilot owner can verify current integrations, capabilities, and pricing rather than relying on a static comparison.</p>
         <div class="card overflow-x-auto"><table class="data-table"><thead><tr><th>Tool</th><th>Best for</th><th>Pricing caveat</th><th>Evidence to collect</th></tr></thead><tbody>
@@ -77,7 +78,6 @@ const faqs = [
           <tr><td><a class="link" href="https://postscript.io/features">Postscript</a></td><td>Shopify-first SMS programs</td><td>Message volume and consent economics dominate</td><td>SMS contribution and opt-in quality</td></tr>
           <tr><td><a class="link" href="https://www.attentive.com/platform">Attentive</a></td><td>Managed SMS and larger programs</td><td>Custom commercial terms require a quote</td><td>Managed-service value at actual scale</td></tr>
           <tr><td><a class="link" href="https://www.tinyemail.com/">TinyEmail</a></td><td>Simple campaign drafting</td><td>Verify current subscriber and feature limits</td><td>Speed without losing required controls</td></tr>
-          <tr><td><a class="link" href="https://www.sequenzy.com/">Sequenzy</a></td><td>Guided lifecycle planning and execution</td><td>Confirm current plan and usage terms</td><td>Strategy-to-send time and handoff quality</td></tr>
         </tbody></table></div>
 
         <h2>Alternative notes: two paragraphs per tool</h2>
@@ -105,9 +105,8 @@ const faqs = [
         <p>Ask for a written scope covering implementation, list growth, consent, reporting, and exit. A managed proposal is useful only when the service removes a real internal constraint.</p>
         <p><strong>TinyEmail.</strong> Best for a small team prioritizing straightforward campaign drafting. Pros: a compact starting surface. Cons: verify current automation, Shopify, and subscriber limits before treating it as a full Omnisend alternative.</p>
         <p>Test one campaign and one basic lifecycle path. If the team needs branches, multi-channel rules, or detailed suppression, record the handoff point rather than stretching the tool beyond its job.</p>
-        <p><strong>Sequenzy.</strong> Best when the bottleneck is turning lifecycle strategy into an executable plan and consistent sends. Pros: guided execution can reduce blank-page work. Cons: confirm current product scope, pricing, and which specialist channels still need a companion.</p>
-        <p>Pilot it on the same four journeys and score planning time, handoff quality, and operator confidence. Keep claims about outcomes conditional until the store has its own baseline.</p>
 
+        </>}
         <h2>Pricing: model the whole operating cost</h2>
         <p>Use official pricing pages or calculators at the time of purchase: <a class="link" href="https://www.omnisend.com/pricing/">Omnisend pricing</a> and <a class="link" href="https://www.shopify.com/email-marketing">Shopify Email</a>. Avoid stale “starting at” figures in a buyer guide. Record the currency, contact count, send volume, plan level, SMS usage, extra seats, and whether the quoted allowance changes after a trial.</p>
         <p>Build three scenarios: normal month, peak-sale month, and a list-growth month. Add implementation hours, a second vendor for any missing channel, template migration, and the cost of keeping inactive profiles. The cheapest line item is not necessarily the cheapest system if it leaves a revenue-critical journey manual.</p>
@@ -136,7 +135,7 @@ const faqs = [
         <p>Shopify Email is the safer starting point when simplicity and native campaign execution are genuinely enough. Omnisend is the stronger first pilot when lifecycle automation, behavioral audiences, and additional channels are the actual growth constraint. The boundary is not a universal order count or a guaranteed payback period; it is the point where a manual campaign process can no longer meet the journeys the store has chosen to operate.</p>
         <p>Make the decision from test orders, consent and suppression evidence, an all-in cost model, and a second operator’s edit experience. Revisit the choice before a peak season or renewal—not during one—and keep the official product pages linked in the internal decision record.</p>
       </article>
-      <div class="mt-10 max-w-4xl text-sm"><p class="font-black text-[#24170f]">Related comparisons</p><p class="mt-2"><a class="link" href="/compare/klaviyo-vs-omnisend">Klaviyo vs Omnisend</a> · <a class="link" href="/compare/sequenzy-vs-shopify-email">Sequenzy vs Shopify Email</a> · <a class="link" href="/compare/tinyemail-vs-shopify-email">TinyEmail vs Shopify Email</a> · <a class="link" href="/guides/selection-framework">Selection framework</a></p></div>
+      <div class="mt-10 max-w-4xl text-sm"><p class="font-black text-[#24170f]">Related comparisons</p><p class="mt-2"><a class="link" href="/compare/klaviyo-vs-omnisend">Klaviyo vs Omnisend</a> · <a class="link" href="/compare/tinyemail-vs-shopify-email">TinyEmail vs Shopify Email</a> · <a class="link" href="/guides/selection-framework">Selection framework</a></p></div>
     </div>
   </section>
   <FaqSection faqs={faqs} title="Omnisend vs Shopify Email FAQ" />

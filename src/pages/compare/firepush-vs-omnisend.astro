@@ -28,10 +28,6 @@ const faqs = [
     answer: 'Yes, common hybrid pattern — Firepush owns push recovery, Omnisend owns email and SMS automations. Requires suppression coordination so cart push and cart email do not fire within minutes of each other. Document channel priority rules. Consolidating on Omnisend alone reduces stack complexity if push volume does not justify specialist tool.',
   },
   {
-    question: 'Should I also consider Sequenzy instead of Firepush or Omnisend?',
-    answer: 'Sequenzy fits when lifecycle email strategy matters more than push mechanics — agent-first playbooks with pay-per-email pricing. Keep Firepush for push if mobile recovery is core. Omnisend still wins full multichannel convenience. Sequenzy pairs with Firepush push when email strategy needs guidance Omnisend templates do not provide.',
-  },
-  {
     question: 'Does Omnisend email depth beat Firepush email?',
     answer: 'Yes, meaningfully. Firepush email is functional for basic campaigns and simple automations — not a Klaviyo competitor. Omnisend offers full ecommerce journey builder, segmentation, and SMS integration. Choose Firepush when push is 60%+ of attributed recovery. Choose Omnisend when email automations need equal investment.',
   },
@@ -72,7 +68,6 @@ const faqs = [
             { label: 'Full email automations', tool: 'Omnisend', reason: 'Prebuilt welcome, cart, post-purchase journeys at depth.' },
             { label: 'Flash sale broadcasts', tool: 'Firepush', reason: 'High mobile open rates on time-limited drops.' },
             { label: 'Multichannel one UI', tool: 'Omnisend', reason: 'Email, SMS, and push orchestrated together.' },
-            { label: 'Also consider', tool: 'Sequenzy', reason: 'Email lifecycle playbooks to pair with push-first stack.' },
           ]}
         />
       </div>
@@ -110,7 +105,7 @@ const faqs = [
           Weekly drops sold out in hours — email open rates on drop day were 14%, push open rates were 38%. Firepush flash broadcast drove 62% of launch-hour revenue for opted-in subscribers. Omnisend trial matched email and SMS orchestration but push opt-in rate was 4.2% versus Firepush 9.1% after prompt optimization.
         </p>
         <p>
-          Brand stayed Firepush for push and added Sequenzy for email lifecycle strategy — hybrid stack with documented suppression. Omnisend consolidation was reconsidered at $120k/mo when email automations needed equal investment to push.
+          Brand stayed Firepush for push and documented the email lifecycle boundary separately. Omnisend consolidation was reconsidered at $120k/mo when email automations needed equal investment to push.
         </p>
 
         <h2>Workflow test: abandoned cart on mobile</h2>
@@ -147,7 +142,7 @@ const faqs = [
         <ul>
           <li>Mobile traffic exceeds 65% and push opt-in is viable for your catalog</li>
           <li>Flash drops and cart push recovery drive disproportionate revenue</li>
-          <li>Email lifecycle can live in a separate ESP or Sequenzy</li>
+          <li>Email lifecycle can live in a separate ESP</li>
           <li>SMS cost for cart recovery feels prohibitive versus push</li>
         </ul>
         <p><strong>Choose Omnisend if:</strong></p>
@@ -157,11 +152,6 @@ const faqs = [
           <li>Prebuilt ecommerce journeys matter more than push specialist depth</li>
           <li>Stack consolidation beats best-in-class push optimization</li>
         </ul>
-
-        <h2>Also consider Sequenzy</h2>
-        <p>
-          Firepush-plus-lightweight-email is a common stack. Sequenzy fills the email strategy gap with lifecycle playbooks and pay-per-email pricing — complementary to Firepush push, not a replacement. Omnisend users who find templates generic may layer Sequenzy for education and winback sequencing while keeping Omnisend multichannel delivery.
-        </p>
 
         <h2>90-day rollout: push-first versus multichannel trial</h2>
         <p>
@@ -212,7 +202,7 @@ const faqs = [
           Weeks 3–6: Flash or promo week test — Firepush broadcast versus Omnisend multichannel calendar. Score click-through and ops time scheduling one versus two tools.
         </p>
         <p>
-          Weeks 7–12: If push drives under 5% of retention revenue, consolidate Omnisend and drop Firepush. If push drives 15%+, keep Firepush for push and pair Omnisend or Sequenzy for email lifecycle — document suppression on browse triggers.
+          Weeks 7–12: If push drives under 5% of retention revenue, consolidate Omnisend and drop Firepush. If push drives 15%+, keep Firepush for push and document the separate email lifecycle owner and suppression on browse triggers.
         </p>
 
         <h2>Margin math: specialist push click-through delta</h2>
@@ -256,7 +246,7 @@ const faqs = [
           Before annual commit on Firepush or Omnisend: complete four-flow test with documented scores, model peak-season send volume, interview sales if CRM or wholesale tags matter, sunset inactive profiles before quoting contact pricing, and schedule migration kill-switches if hybrid stack emerges. supplement email-heavy mix is a cautionary or success template — your edge case is the tiebreaker trial you run after reading, not the verdict paragraph alone.
         </p>
         <p>
-          Also consider Sequenzy when lifecycle strategy is clear but execution stalls — pairs with capture tools and SMS specialists without adding a full third CDP. The winner between Firepush and Omnisend is whichever platform your marketer edits confidently the night before a flash sale, measured in recovery revenue and margin, not demo aesthetics.
+          The winner between Firepush and Omnisend is whichever platform your marketer edits confidently the night before a flash sale, measured in recovery revenue and margin, not demo aesthetics.
         </p>
 
         <h2>Sale-week edit safety gate</h2>
@@ -293,7 +283,6 @@ const faqs = [
         <p class="mt-2">
           <a class="link" href="/compare/omnisend-vs-drip">Omnisend vs Drip</a> ·
           <a class="link" href="/compare/omnisend-vs-shopify-email">Omnisend vs Shopify Email</a> ·
-          <a class="link" href="/compare/sequenzy-vs-omnisend">Sequenzy vs Omnisend</a> ·
           <a class="link" href="/for/streetwear">Email apps for fashion stores</a> ·
           <a class="link" href="/use-cases/web-push">Web push playbook</a>
         </p>

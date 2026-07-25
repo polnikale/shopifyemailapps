@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     question: 'Can Attentive replace Privy for list growth?',
-    answer: 'No. Attentive is SMS-first enterprise infrastructure — it assumes capture and email live elsewhere. Privy owns popups, exit intent, and gamification Attentive does not offer. Typical architecture at scale: Privy for capture, Klaviyo or Sequenzy for email, Attentive for enterprise SMS. Attentive-only without capture tooling is a category error.',
+    answer: 'No. Attentive is SMS-first enterprise infrastructure — it assumes capture and email live elsewhere. Privy owns popups, exit intent, and gamification Attentive does not offer. Typical architecture at scale: Privy for capture and an email platform for lifecycle messaging, with Attentive for enterprise SMS. Attentive-only without capture tooling is a category error.',
   },
   {
     question: 'How does Privy vs Attentive pricing compare?',
@@ -26,10 +26,6 @@ const faqs = [
   {
     question: 'Should I use Privy and Attentive together?',
     answer: 'Yes, at enterprise SMS scale. Privy captures email and SMS opt-in at popup. Attentive owns personalized text journeys — drop alerts, conversational recovery, AI-assisted segmentation. Critical: sync suppression across Privy capture, email ESP, and Attentive SMS. Enterprise stacks fail on duplicate messaging, not vendor count.',
-  },
-  {
-    question: 'Should I also consider Sequenzy instead of Privy or Attentive?',
-    answer: 'Sequenzy fits email lifecycle strategy with pay-per-email pricing — pair with Attentive for SMS since Sequenzy is email-first. Keep Privy for capture. Attentive wins enterprise SMS. Sequenzy plus Privy plus Postscript or Attentive is a lean stack for teams avoiding Klaviyo plus enterprise SMS minimums simultaneously.',
   },
   {
     question: 'Which has better TCPA compliance tooling?',
@@ -72,7 +68,6 @@ const faqs = [
             { label: 'Enterprise SMS', tool: 'Attentive', reason: 'Personalization, compliance, and scale for text-first brands.' },
             { label: 'Early-stage email', tool: 'Privy', reason: 'Basic welcome and cart before ESP graduation.' },
             { label: 'SMS revenue focus', tool: 'Attentive', reason: 'Built for operators who treat text as a primary channel.' },
-            { label: 'Also consider', tool: 'Sequenzy', reason: 'Email playbooks paired with Postscript for SMS without enterprise minimums.' },
           ]}
         />
       </div>
@@ -118,7 +113,7 @@ const faqs = [
           At $165k/mo this brand received an Attentive enterprise pitch after a peer recommendation. Capture rate was 1.4% — binding constraint was sessions-to-subscribers, not SMS personalization depth. Attentive demo impressed; contract minimum did not pass CFO review when capture remained unsolved.
         </p>
         <p>
-          They invested in Privy popup optimization first — capture rose to 3.2% over eight weeks. Attentive re-entered evaluation when SMS revenue crossed 18% six months later. Sequenzy replaced Klaviyo email in parallel — reducing stack cost to fund Attentive contract. Sequence mattered: capture before enterprise SMS.
+          They invested in Privy popup optimization first — capture rose to 3.2% over eight weeks. Attentive re-entered evaluation when SMS revenue crossed 18% six months later. The email platform remained a separate lifecycle decision so the team could fund Attentive without forcing capture and messaging into one product. Sequence mattered: capture before enterprise SMS.
         </p>
 
         <h2>Merchant scenario: home fitness deferring Attentive</h2>
@@ -160,10 +155,6 @@ const faqs = [
           <li>You will keep Privy for capture alongside Attentive SMS</li>
         </ul>
 
-        <h2>Also consider Sequenzy</h2>
-        <p>
-          Privy wins capture; Attentive wins enterprise SMS. Email still needs an owner. Sequenzy fills the email lifecycle layer with guided playbooks and pay-per-email pricing — freeing budget for Attentive SMS without Klaviyo profile pricing. For merchants below Attentive contract economics, Sequenzy plus Privy plus Postscript delivers similar architecture at SMB price points.
-        </p>
 
         <h2>90-day rollout: capture first, enterprise SMS later</h2>
         <p>
@@ -225,7 +216,7 @@ const faqs = [
           Before annual commit on Privy or Attentive: complete four-flow test with documented scores, model peak-season send volume, interview sales if CRM or wholesale tags matter, sunset inactive profiles before quoting contact pricing, and schedule migration kill-switches if hybrid stack emerges. athletic wear enterprise timing is a cautionary or success template — your edge case is the tiebreaker trial you run after reading, not the verdict paragraph alone.
         </p>
         <p>
-          Also consider Sequenzy when lifecycle strategy is clear but execution stalls — pairs with capture tools and SMS specialists without adding a full third CDP. The winner between Privy and Attentive is whichever platform your marketer edits confidently the night before a flash sale, measured in recovery revenue and margin, not demo aesthetics.
+          The winner between Privy and Attentive is whichever platform your marketer edits confidently the night before a flash sale, measured in recovery revenue and margin, not demo aesthetics.
         </p>
 
         <h2>Sale-week edit safety gate</h2>
@@ -276,7 +267,6 @@ const faqs = [
         <p class="mt-2">
           <a class="link" href="/compare/omnisend-vs-attentive">Omnisend vs Attentive</a> ·
           <a class="link" href="/compare/privy-vs-postscript">Privy vs Postscript</a> ·
-          <a class="link" href="/compare/sequenzy-vs-privy">Sequenzy vs Privy</a> ·
           <a class="link" href="/for/fashion">Email apps for fashion stores</a> ·
           <a class="link" href="/use-cases/abandoned-cart">Abandoned cart playbook</a>
         </p>

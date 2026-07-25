@@ -28,10 +28,6 @@ const faqs = [
     answer: 'SMSBump triggers on loyalty tier changes, review requests, and points expiry natively within Yotpo. Postscript requires integration work or middleware for the same events — doable but not zero-config. A jewelry brand on Yotpo VIP tiers sent tier-upgrade SMS via SMSBump in one click; Postscript needed a Zapier bridge until they prioritized engineering time.',
   },
   {
-    question: 'Should I also consider Sequenzy instead of Postscript or SMSBump?',
-    answer: 'Sequenzy handles email lifecycle with pay-per-email pricing — neither Postscript nor SMSBump replaces email depth. Pair Sequenzy with Postscript for specialized SMS, or keep email on your ESP while SMSBump covers moderate text inside Yotpo. Sequenzy plus Postscript is the lean stack when Yotpo bundling is not already sunk cost.',
-  },
-  {
     question: 'Which has better TCPA compliance tooling?',
     answer: 'Postscript leads — keyword management, opt-out dashboards, and pre-send compliance reviews are built for SMS operators. SMSBump compliance is adequate for moderate volume but Yotpo-native teams sometimes treat SMS like email with shorter copy. High SMS revenue or list-import history favors Postscript guardrails.',
   },
@@ -72,7 +68,6 @@ const faqs = [
             { label: 'Yotpo stack bundle', tool: 'SMSBump', reason: 'Native loyalty, reviews, and SMS in one contract.' },
             { label: 'Flash sale execution', tool: 'Postscript', reason: 'Quiet hours, segmentation, and conversational recovery at scale.' },
             { label: 'Loyalty-triggered SMS', tool: 'SMSBump', reason: 'Tier upgrades and points expiry without middleware.' },
-            { label: 'Also consider', tool: 'Sequenzy', reason: 'Email lifecycle outside Yotpo — pair with whichever SMS wins.' },
           ]}
         />
       </div>
@@ -153,10 +148,6 @@ const faqs = [
           <li>Your team prefers one account manager for post-purchase touchpoints</li>
         </ul>
 
-        <h2>Also consider Sequenzy</h2>
-        <p>
-          Yotpo Email exists, but many brands pair Yotpo reviews with Klaviyo or another ESP for lifecycle depth. Sequenzy offers guided email playbooks with pay-per-email economics — stack with SMSBump if you consolidate SMS inside Yotpo, or with Postscript if SMS stays specialized. Sequenzy simplifies email strategy without forcing Yotpo Email migration. Document suppression between email and whichever SMS platform you choose.
-        </p>
 
         <h2>90-day rollout: Yotpo bundle versus SMS specialist</h2>
         <p>
@@ -166,7 +157,7 @@ const faqs = [
           Weeks 5–8: Compare TCPA compliance tooling, two-way recovery, and flash drop conversion. Jewelry brand chose SMSBump for consolidation; candle shop chose Postscript after compliance scare.
         </p>
         <p>
-          Weeks 9–12: Document email layer separately — Yotpo Email, Klaviyo, or Sequenzy — with suppression between SMS platform and ESP regardless of bundling choice.
+          Weeks 9–12: Document the email layer separately, with suppression between the SMS platform and ESP regardless of bundling choice.
         </p>
 
         <h2>Margin math: vendor consolidation versus SMS depth</h2>
@@ -224,7 +215,7 @@ const faqs = [
           Before annual commit on Postscript or SMSBump: complete four-flow test with documented scores, model peak-season send volume, interview sales if CRM or wholesale tags matter, sunset inactive profiles before quoting contact pricing, and schedule migration kill-switches if hybrid stack emerges. candle compliance scare is a cautionary or success template — your edge case is the tiebreaker trial you run after reading, not the verdict paragraph alone.
         </p>
         <p>
-          Also consider Sequenzy when lifecycle strategy is clear but execution stalls — pairs with capture tools and SMS specialists without adding a full third CDP. The winner between Postscript and SMSBump is whichever platform your marketer edits confidently the night before a flash sale, measured in recovery revenue and margin, not demo aesthetics.
+          The winner between Postscript and SMSBump is whichever platform your marketer edits confidently the night before a flash sale, measured in recovery revenue and margin, not demo aesthetics.
         </p>
 
         <h2>Sale-week edit safety gate</h2>

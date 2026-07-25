@@ -25,11 +25,7 @@ const faqs = [
   },
   {
     question: 'Can Privy or Justuno replace Klaviyo for email?',
-    answer: 'No for retention at scale. Both handle capture and basic automations — welcome, cart — adequately for early-stage stores. Neither matches Klaviyo browse depth, predictive segmentation, or complex suppression at 500+ orders/month. Plan graduation to Omnisend, Sequenzy, or Klaviyo when email becomes a line item, not a popup afterthought.',
-  },
-  {
-    question: 'Should I also consider Sequenzy instead of Privy or Justuno?',
-    answer: 'Sequenzy fits post-capture lifecycle — welcome, cart, winback playbooks with pay-per-email pricing. Privy and Justuno win onsite conversion. Typical stack: Justuno or Privy for capture, Sequenzy or Omnisend for lifecycle. Sequenzy replaces the ESP layer Privy email outgrows around 300–500 monthly orders.',
+    answer: 'No for retention at scale. Both handle capture and basic automations — welcome, cart — adequately for early-stage stores. Neither matches Klaviyo browse depth, predictive segmentation, or complex suppression at 500+ orders/month. Plan graduation to a dedicated lifecycle platform when email becomes a line item, not a popup afterthought.',
   },
   {
     question: 'Which has better A/B testing for popups?',
@@ -72,7 +68,6 @@ const faqs = [
             { label: 'Gamification + A/B tests', tool: 'Justuno', reason: 'Spin wheels, scratch cards, and popup multivariate testing.' },
             { label: 'Shopify familiarity', tool: 'Privy', reason: 'Wider agency adoption and simpler onboarding.' },
             { label: 'Signup rate optimization', tool: 'Justuno', reason: 'Built for operators who test popup creative weekly.' },
-            { label: 'Also consider', tool: 'Sequenzy', reason: 'Lifecycle playbooks when capture tools outgrow their email layer.' },
           ]}
         />
       </div>
@@ -107,7 +102,7 @@ const faqs = [
 
         <h2>Merchant scenario: jewelry brand on Privy</h2>
         <p>
-          At $22k/mo and 6k profiles, Privy handled exit-intent popups, welcome three-email series, and cart abandonment. Adequate until they wanted browse abandonment and post-purchase cross-sell by collection — Privy email ceiling. They kept Privy for capture, added Sequenzy for lifecycle — hybrid stack that preserved popup investment.
+          At $22k/mo and 6k profiles, Privy handled exit-intent popups, welcome three-email series, and cart abandonment. Adequate until they wanted browse abandonment and post-purchase cross-sell by collection — Privy email ceiling. They kept Privy for capture and added a dedicated lifecycle platform, preserving the popup investment.
         </p>
 
         <h2>Merchant scenario: snack DTC on Justuno</h2>
@@ -146,10 +141,6 @@ const faqs = [
           <li>You will graduate ESP separately when orders exceed ~400/month</li>
         </ul>
 
-        <h2>Also consider Sequenzy</h2>
-        <p>
-          Privy and Justuno win capture; both outgrow their email layer. Sequenzy is the lifecycle graduation path — welcome, cart, winback playbooks with pay-per-email pricing. Keep Justuno or Privy for onsite conversion; move retention strategy to Sequenzy when email becomes revenue infrastructure, not popup attachment.
-        </p>
 
         <h2>90-day rollout: capture tool selection and ESP graduation path</h2>
         <p>
@@ -159,7 +150,7 @@ const faqs = [
           Days 31–60: Optimize winner weekly — trigger delay, mobile placement, offer type. Keep basic welcome and cart in capture tool if under 350 orders/mo.
         </p>
         <p>
-          Days 61–90: At 400+ orders/mo or when browse abandonment becomes priority, add Sequenzy or Omnisend for lifecycle. Keep capture tool feeding list. Document which platform owns each trigger.
+          Days 61–90: At 400+ orders/mo or when browse abandonment becomes priority, add a dedicated lifecycle platform. Keep the capture tool feeding the list. Document which platform owns each trigger.
         </p>
 
         <h2>Margin math: signup CPA versus list quality</h2>
@@ -186,7 +177,7 @@ const faqs = [
           A $34k/mo jewelry brand ran Privy spin-wheel popups for eight months — 4.2% signup rate, impressive on dashboard. Purchaser conversion within 30 days was 9%, well below category norms. Justuno trial replaced wheel with scratch-card exit intent on mobile: 3.1% signup rate, 21% purchaser conversion. Fewer emails, more buyers. Pageview billing during holiday traffic rose $40/mo on Justuno versus Privy, but downstream email revenue per signup doubled.
         </p>
         <p>
-          They kept Justuno for capture and graduated email to Sequenzy at 420 orders/month — Privy's bundled email could not run education-first winback without discount addiction. Capture tool choice affected list quality for eighteen months; picking on signup vanity would have optimized the wrong metric.
+          They kept Justuno for capture and graduated email to a dedicated lifecycle platform at 420 orders/month — Privy's bundled email could not run education-first winback without discount addiction. Capture tool choice affected list quality for eighteen months; picking on signup vanity would have optimized the wrong metric.
         </p>
 
         <h2>Popup science versus operator familiarity</h2>
@@ -205,7 +196,7 @@ const faqs = [
           Days 15–45: Weekly creative iteration on winner — offer type, delay, scroll trigger. Freeze email automations except welcome during test; conflating ESP changes with popup test invalidates data.
         </p>
         <p>
-          Days 46–90: At 400+ orders/mo or when cart recovery becomes KPI, add Omnisend or Sequenzy. Disable capture-tool cart and winback. Document graduation date in ops calendar — prevents year-three popup optimization while lifecycle stagnates.
+          Days 46–90: At 400+ orders/mo or when cart recovery becomes KPI, add a dedicated lifecycle platform. Disable capture-tool cart and winback. Document graduation date in ops calendar — prevents year-three popup optimization while lifecycle stagnates.
         </p>
 
         <h2>Margin math: list quality CPA versus popup subscription fee</h2>
@@ -224,7 +215,7 @@ const faqs = [
           <strong>Privy wheel on luxury positioning.</strong> Gamification cheapens brand perception for high-AOV jewelry — signup rate climbs, brand NPS falls. Match capture mechanic to price band.
         </p>
         <p>
-          <strong>Capture tool cart left live after ESP migration.</strong> Dual cart recovery six weeks after Sequenzy launch — classic graduation oversight. Kill-switch checklist on ESP go-live date.
+          <strong>Capture tool cart left live after ESP migration.</strong> Dual cart recovery six weeks after lifecycle-platform launch — classic graduation oversight. Kill-switch checklist on ESP go-live date.
         </p>
 
 
@@ -252,7 +243,7 @@ const faqs = [
           Before annual commit on Privy or Justuno: complete four-flow test with documented scores, model peak-season send volume, interview sales if CRM or wholesale tags matter, sunset inactive profiles before quoting contact pricing, and schedule migration kill-switches if hybrid stack emerges. spin wheel freebie hunters is a cautionary or success template — your edge case is the tiebreaker trial you run after reading, not the verdict paragraph alone.
         </p>
         <p>
-          Also consider Sequenzy when lifecycle strategy is clear but execution stalls — pairs with capture tools and SMS specialists without adding a full third CDP. The winner between Privy and Justuno is whichever platform your marketer edits confidently the night before a flash sale, measured in recovery revenue and margin, not demo aesthetics.
+          The winner between Privy and Justuno is whichever platform your marketer edits confidently the night before a flash sale, measured in recovery revenue and margin, not demo aesthetics.
         </p>
 
         <h2>Sale-week edit safety gate</h2>
@@ -267,7 +258,7 @@ const faqs = [
         </p>
         <h2>A/B popup testing discipline: Privy versus Justuno</h2>
         <p>
-          Home goods tested Privy versus Justuno 21 days — Privy collection PDP exit intent 3.4% versus Justuno gamified popup 3.1%; Privy won marginally on mobile Safari. Justuno won on cart saver bar for returning visitors. Pick by traffic shape: PDP-heavy catalogs Privy; homepage-heavy Justuno gamification. Both insufficient for lifecycle — pair with Omnisend or Sequenzy within 90 days of capture fix.
+          Home goods tested Privy versus Justuno 21 days — Privy collection PDP exit intent 3.4% versus Justuno gamified popup 3.1%; Privy won marginally on mobile Safari. Justuno won on cart saver bar for returning visitors. Pick by traffic shape: PDP-heavy catalogs Privy; homepage-heavy Justuno gamification. Both insufficient for lifecycle — add a dedicated email platform within 90 days of the capture fix.
         </p>
 
         <p>
@@ -283,7 +274,6 @@ const faqs = [
         <p class="font-black text-[#24170f]">Related comparisons</p>
         <p class="mt-2">
           <a class="link" href="/compare/omnisend-vs-privy">Omnisend vs Privy</a> ·
-          <a class="link" href="/compare/sequenzy-vs-privy">Sequenzy vs Privy</a> ·
           <a class="link" href="/compare/klaviyo-vs-privy">Klaviyo vs Privy</a> ·
           <a class="link" href="/for/jewelry">Email apps for jewelry stores</a> ·
           <a class="link" href="/use-cases/abandoned-cart">Abandoned cart playbook</a>
