@@ -15,4 +15,196 @@ const guides = [
   ['Best Shopify Email Apps for List Hygiene','/blog/best-shopify-email-apps-for-list-hygiene'],
 ];
 ---
-<BaseLayout title={title} description={description}><main class="container page-stack"><p class="eyebrow">Editorial library</p><h1>{title}</h1><p class="lede">One hundred distinct guides for choosing Shopify email apps by store model, lifecycle job, campaign type, and operating constraint.</p><p>Every guide includes source links, pricing context, tool-by-tool tradeoffs, practical tables, and internal paths into the alternatives, guides, use cases, and app profiles.</p><table><thead><tr><th>Editorial lane</th><th>What it answers</th><th>Start here</th></tr></thead><tbody><tr><td>Store models</td><td>Which app fits a catalog, audience, or sales motion?</td><td><a href="/blog/best-shopify-email-apps-for-fashion-stores">Fashion stores</a></td></tr><tr><td>Lifecycle jobs</td><td>Which tool supports recovery, retention, education, or replenishment?</td><td><a href="/blog/best-shopify-email-apps-for-customer-retention">Retention</a></td></tr><tr><td>Operating discipline</td><td>How should teams govern deliverability, consent, and measurement?</td><td><a href="/blog/best-shopify-email-apps-for-deliverability">Deliverability</a></td></tr></tbody></table><h2>Featured guides</h2><div class="grid gap-4 md:grid-cols-2">{guides.map(([label, href])=><a class="rounded-2xl border border-[#24170f]/15 bg-white p-5" href={href}><h3>{label}</h3><p class="mt-2 text-sm text-[#5b4637]">Read the source-backed shortlist and implementation verdict.</p></a>)}</div><p>Explore the <a href="/alternatives">alternatives library</a>, <a href="/guides">operator guides</a>, <a href="/use-cases">use cases</a>, and <a href="/apps">Shopify app profiles</a>.</p></main></BaseLayout>
+<BaseLayout title={title} description={description}><main class="container page-stack"><p class="eyebrow">Editorial library
+</p><h1>{title}
+</h1><p class="lede">One hundred distinct guides for choosing Shopify email apps by store model, lifecycle job, campaign type, and operating constraint.
+</p><p>Every guide includes source links, pricing context, tool-by-tool tradeoffs, practical tables, and internal paths into the alternatives, guides, use cases, and app profiles.
+</p><table><thead><tr><th>Editorial lane
+</th><th>What it answers
+</th><th>Start here
+</th></tr></thead><tbody><tr><td>Store models
+</td><td>Which app fits a catalog, audience, or sales motion?
+</td><td><a href="/blog/best-shopify-email-apps-for-fashion-stores">Fashion stores
+</a></td></tr><tr><td>Lifecycle jobs
+</td><td>Which tool supports recovery, retention, education, or replenishment?
+</td><td><a href="/blog/best-shopify-email-apps-for-customer-retention">Retention
+</a></td></tr><tr><td>Operating discipline
+</td><td>How should teams govern deliverability, consent, and measurement?
+</td><td><a href="/blog/best-shopify-email-apps-for-deliverability">Deliverability
+</a></td></tr></tbody></table><h2>Featured guides
+</h2><div class="grid gap-4 md:grid-cols-2">{guides.map(([label, href])=><a class="rounded-2xl border border-[#24170f]/15 bg-white p-5" href={href}><h3>{label}
+</h3><p class="mt-2 text-sm text-[#5b4637]">Read the source-backed shortlist and implementation verdict.
+</p></a>)}
+</div><p>Explore the
+<a href="/alternatives">alternatives library
+</a>,
+<a href="/guides">operator guides
+</a>,
+<a href="/use-cases">use cases
+</a>, and
+<a href="/apps">Shopify app profiles
+</a>.
+</p>
+<h2>How to use this library</h2>
+<p>Start with the guide that matches your constraint, not the one that matches the loudest brand. A store model guide answers which catalog and audience shape fits which tool; a lifecycle guide answers which app supports a specific job; an operating discipline guide answers how to run the program safely once a tool is chosen. Reading one of each gives a more complete picture than five comparisons of the same two platforms.</p>
+<h2>How we evaluate Shopify email apps</h2>
+<div class="overflow-x-auto"><table>
+<thead><tr><th>Evaluation lane</th><th>What we test</th><th>Why it matters</th></tr></thead>
+<tbody>
+<tr><td>Shopify data fidelity</td><td>Order, cart, refund, and consent events in a test store</td><td>Automation is only as good as its events</td></tr>
+<tr><td>Consent and suppression</td><td>Post-purchase exits, quiet hours, and audit trails</td><td>Compliance failures cost more than missed sends</td></tr>
+<tr><td>Operating cost</td><td>Subscription, overages, SMS credits, and agency work</td><td>Stack cost should stay well under channel margin</td></tr>
+<tr><td>Editor safety</td><td>Whether a second operator can edit a flow without risk</td><td>Key-person dependency is a hidden failure mode</td></tr>
+<tr><td>Peak readiness</td><td>Behavior at five-times volume with freezes in place</td><td>Most programs break in November, not in demos</td></tr>
+</tbody>
+</table></div>
+<h2>Reading paths by store stage</h2>
+<div class="overflow-x-auto"><table>
+<thead><tr><th>Stage</th><th>Primary question</th><th>Start with</th></tr></thead>
+<tbody>
+<tr><td>Pre-launch</td><td>Which tool supports a small list and a first welcome path?</td><td><a href="/blog/best-shopify-email-apps-for-new-dtc-brands">New DTC brands</a></td></tr>
+<tr><td>First growth</td><td>When does cart recovery need more than native sends?</td><td><a href="/blog/best-shopify-email-apps-for-cart-recovery">Cart recovery</a></td></tr>
+<tr><td>Scaling retention</td><td>Which platform handles segmentation and suppression depth?</td><td><a href="/blog/best-shopify-email-apps-for-customer-retention">Customer retention</a></td></tr>
+<tr><td>Peak season</td><td>How should flows, discounts, and volume be governed?</td><td><a href="/blog/best-shopify-email-apps-for-bfcm">BFCM</a></td></tr>
+<tr><td>Mature program</td><td>How is deliverability and list hygiene maintained?</td><td><a href="/blog/best-shopify-email-apps-for-list-hygiene">List hygiene</a></td></tr>
+</tbody>
+</table></div>
+<h2>Editorial standards</h2>
+<ol>
+<li>Every shortlist is verified against vendor documentation at the time of writing.</li>
+<li>Pricing is always hedged and pointed at official pricing pages, because plans change.</li>
+<li>Trade-offs are stated per app, including who should not choose it.</li>
+<li>Claims about measured results are framed as illustrative scenarios, not guarantees.</li>
+<li>Each guide connects to the alternatives, use cases, and app profiles that support the decision.</li>
+<li>Internal links are checked against the built site so recommendations resolve to real pages.</li>
+<li>Corrections are noted inline rather than silently edited away.</li>
+</ol>
+<h2>Full guide catalog</h2>
+<p>Every guide below follows the same structure: a shortlist with per-app trade-offs, pricing context pointing at official sources, decision tables, and implementation cautions. Use the catalog to jump directly to the job or store model you need.</p>
+<p>When two guides seem to conflict, prefer the one that matches your binding constraint. A store with weak capture should solve consent and list growth before upgrading its sending platform, and a store with strong capture but thin margins should fix discount economics before adding channels.</p>
+<div class="overflow-x-auto"><table>
+<thead><tr><th>Guide</th><th>Path</th></tr></thead>
+<tbody>
+<tr><td><a href="/blog/best-shopify-email-apps-for-ab-testing">Ab testing</a></td><td>/blog/best-shopify-email-apps-for-ab-testing</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-abandoned-cart-recovery">Abandoned cart recovery</a></td><td>/blog/best-shopify-email-apps-for-abandoned-cart-recovery</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-agency-managed-stores">Agency managed stores</a></td><td>/blog/best-shopify-email-apps-for-agency-managed-stores</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-ambassador-programs">Ambassador programs</a></td><td>/blog/best-shopify-email-apps-for-ambassador-programs</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-b2b-wholesale">B2b wholesale</a></td><td>/blog/best-shopify-email-apps-for-b2b-wholesale</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-baby-brands">Baby brands</a></td><td>/blog/best-shopify-email-apps-for-baby-brands</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-back-in-stock">Back in stock</a></td><td>/blog/best-shopify-email-apps-for-back-in-stock</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-beauty-brands">Beauty brands</a></td><td>/blog/best-shopify-email-apps-for-beauty-brands</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-bfcm">Bfcm</a></td><td>/blog/best-shopify-email-apps-for-bfcm</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-brand-launches">Brand launches</a></td><td>/blog/best-shopify-email-apps-for-brand-launches</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-brand-storytelling">Brand storytelling</a></td><td>/blog/best-shopify-email-apps-for-brand-storytelling</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-browse-abandonment">Browse abandonment</a></td><td>/blog/best-shopify-email-apps-for-browse-abandonment</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-campaign-calendars">Campaign calendars</a></td><td>/blog/best-shopify-email-apps-for-campaign-calendars</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-cart-recovery">Cart recovery</a></td><td>/blog/best-shopify-email-apps-for-cart-recovery</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-coffee-brands">Coffee brands</a></td><td>/blog/best-shopify-email-apps-for-coffee-brands</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-community-building">Community building</a></td><td>/blog/best-shopify-email-apps-for-community-building</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-consent-compliance">Consent compliance</a></td><td>/blog/best-shopify-email-apps-for-consent-compliance</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-content-marketing">Content marketing</a></td><td>/blog/best-shopify-email-apps-for-content-marketing</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-cross-sell">Cross sell</a></td><td>/blog/best-shopify-email-apps-for-cross-sell</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-custom-products">Custom products</a></td><td>/blog/best-shopify-email-apps-for-custom-products</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-customer-acquisition">Customer acquisition</a></td><td>/blog/best-shopify-email-apps-for-customer-acquisition</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-customer-lifecycle">Customer lifecycle</a></td><td>/blog/best-shopify-email-apps-for-customer-lifecycle</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-customer-onboarding">Customer onboarding</a></td><td>/blog/best-shopify-email-apps-for-customer-onboarding</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-customer-retention">Customer retention</a></td><td>/blog/best-shopify-email-apps-for-customer-retention</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-customer-service">Customer service</a></td><td>/blog/best-shopify-email-apps-for-customer-service</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-customer-stories">Customer stories</a></td><td>/blog/best-shopify-email-apps-for-customer-stories</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-customer-surveys">Customer surveys</a></td><td>/blog/best-shopify-email-apps-for-customer-surveys</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-deliverability">Deliverability</a></td><td>/blog/best-shopify-email-apps-for-deliverability</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-digital-products">Digital products</a></td><td>/blog/best-shopify-email-apps-for-digital-products</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-discount-strategy">Discount strategy</a></td><td>/blog/best-shopify-email-apps-for-discount-strategy</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-ecommerce-automation">Ecommerce automation</a></td><td>/blog/best-shopify-email-apps-for-ecommerce-automation</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-electronics-stores">Electronics stores</a></td><td>/blog/best-shopify-email-apps-for-electronics-stores</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-email-and-sms">Email and sms</a></td><td>/blog/best-shopify-email-apps-for-email-and-sms</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-email-courses">Email courses</a></td><td>/blog/best-shopify-email-apps-for-email-courses</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-email-design">Email design</a></td><td>/blog/best-shopify-email-apps-for-email-design</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-event-triggered-campaigns">Event triggered campaigns</a></td><td>/blog/best-shopify-email-apps-for-event-triggered-campaigns</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-exchanges">Exchanges</a></td><td>/blog/best-shopify-email-apps-for-exchanges</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-fashion-stores">Fashion stores</a></td><td>/blog/best-shopify-email-apps-for-fashion-stores</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-first-party-data">First party data</a></td><td>/blog/best-shopify-email-apps-for-first-party-data</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-flash-sales">Flash sales</a></td><td>/blog/best-shopify-email-apps-for-flash-sales</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-food-and-beverage">Food and beverage</a></td><td>/blog/best-shopify-email-apps-for-food-and-beverage</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-free-shipping-promotions">Free shipping promotions</a></td><td>/blog/best-shopify-email-apps-for-free-shipping-promotions</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-furniture-stores">Furniture stores</a></td><td>/blog/best-shopify-email-apps-for-furniture-stores</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-gift-cards">Gift cards</a></td><td>/blog/best-shopify-email-apps-for-gift-cards</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-gift-guides">Gift guides</a></td><td>/blog/best-shopify-email-apps-for-gift-guides</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-growth-teams">Growth teams</a></td><td>/blog/best-shopify-email-apps-for-growth-teams</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-handmade-brands">Handmade brands</a></td><td>/blog/best-shopify-email-apps-for-handmade-brands</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-high-aov-stores">High aov stores</a></td><td>/blog/best-shopify-email-apps-for-high-aov-stores</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-high-volume-stores">High volume stores</a></td><td>/blog/best-shopify-email-apps-for-high-volume-stores</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-home-goods">Home goods</a></td><td>/blog/best-shopify-email-apps-for-home-goods</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-influencer-campaigns">Influencer campaigns</a></td><td>/blog/best-shopify-email-apps-for-influencer-campaigns</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-international-stores">International stores</a></td><td>/blog/best-shopify-email-apps-for-international-stores</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-jewelry-stores">Jewelry stores</a></td><td>/blog/best-shopify-email-apps-for-jewelry-stores</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-lead-magnets">Lead magnets</a></td><td>/blog/best-shopify-email-apps-for-lead-magnets</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-list-hygiene">List hygiene</a></td><td>/blog/best-shopify-email-apps-for-list-hygiene</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-local-stores">Local stores</a></td><td>/blog/best-shopify-email-apps-for-local-stores</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-loyalty-programs">Loyalty programs</a></td><td>/blog/best-shopify-email-apps-for-loyalty-programs</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-luxury-brands">Luxury brands</a></td><td>/blog/best-shopify-email-apps-for-luxury-brands</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-memberships">Memberships</a></td><td>/blog/best-shopify-email-apps-for-memberships</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-mobile-first-stores">Mobile first stores</a></td><td>/blog/best-shopify-email-apps-for-mobile-first-stores</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-multi-brand-portfolios">Multi brand portfolios</a></td><td>/blog/best-shopify-email-apps-for-multi-brand-portfolios</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-new-collections">New collections</a></td><td>/blog/best-shopify-email-apps-for-new-collections</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-new-dtc-brands">New dtc brands</a></td><td>/blog/best-shopify-email-apps-for-new-dtc-brands</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-newsletters">Newsletters</a></td><td>/blog/best-shopify-email-apps-for-newsletters</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-omnichannel-retail">Omnichannel retail</a></td><td>/blog/best-shopify-email-apps-for-omnichannel-retail</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-order-confirmations">Order confirmations</a></td><td>/blog/best-shopify-email-apps-for-order-confirmations</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-order-tracking">Order tracking</a></td><td>/blog/best-shopify-email-apps-for-order-tracking</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-outdoor-brands">Outdoor brands</a></td><td>/blog/best-shopify-email-apps-for-outdoor-brands</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-personalization">Personalization</a></td><td>/blog/best-shopify-email-apps-for-personalization</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-pet-stores">Pet stores</a></td><td>/blog/best-shopify-email-apps-for-pet-stores</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-popups">Popups</a></td><td>/blog/best-shopify-email-apps-for-popups</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-post-purchase-retention">Post purchase retention</a></td><td>/blog/best-shopify-email-apps-for-post-purchase-retention</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-post-purchase-upsell">Post purchase upsell</a></td><td>/blog/best-shopify-email-apps-for-post-purchase-upsell</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-preorder-launches">Preorder launches</a></td><td>/blog/best-shopify-email-apps-for-preorder-launches</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-print-on-demand">Print on demand</a></td><td>/blog/best-shopify-email-apps-for-print-on-demand</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-product-bundles">Product bundles</a></td><td>/blog/best-shopify-email-apps-for-product-bundles</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-product-care">Product care</a></td><td>/blog/best-shopify-email-apps-for-product-care</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-product-education">Product education</a></td><td>/blog/best-shopify-email-apps-for-product-education</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-product-recommendations">Product recommendations</a></td><td>/blog/best-shopify-email-apps-for-product-recommendations</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-referral-programs">Referral programs</a></td><td>/blog/best-shopify-email-apps-for-referral-programs</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-replenishment">Replenishment</a></td><td>/blog/best-shopify-email-apps-for-replenishment</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-returns-and-reviews">Returns and reviews</a></td><td>/blog/best-shopify-email-apps-for-returns-and-reviews</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-revenue-attribution">Revenue attribution</a></td><td>/blog/best-shopify-email-apps-for-revenue-attribution</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-seasonal-campaigns">Seasonal campaigns</a></td><td>/blog/best-shopify-email-apps-for-seasonal-campaigns</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-seasonal-gifting">Seasonal gifting</a></td><td>/blog/best-shopify-email-apps-for-seasonal-gifting</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-seasonal-replenishment">Seasonal replenishment</a></td><td>/blog/best-shopify-email-apps-for-seasonal-replenishment</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-segmentation">Segmentation</a></td><td>/blog/best-shopify-email-apps-for-segmentation</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-shipping-updates">Shipping updates</a></td><td>/blog/best-shopify-email-apps-for-shipping-updates</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-shopify-analytics">Shopify analytics</a></td><td>/blog/best-shopify-email-apps-for-shopify-analytics</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-subscription-boxes">Subscription boxes</a></td><td>/blog/best-shopify-email-apps-for-subscription-boxes</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-subscription-commerce">Subscription commerce</a></td><td>/blog/best-shopify-email-apps-for-subscription-commerce</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-supplement-brands">Supplement brands</a></td><td>/blog/best-shopify-email-apps-for-supplement-brands</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-sustainable-brands">Sustainable brands</a></td><td>/blog/best-shopify-email-apps-for-sustainable-brands</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-toy-stores">Toy stores</a></td><td>/blog/best-shopify-email-apps-for-toy-stores</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-travel-brands">Travel brands</a></td><td>/blog/best-shopify-email-apps-for-travel-brands</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-ugc-collection">Ugc collection</a></td><td>/blog/best-shopify-email-apps-for-ugc-collection</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-vip-customers">Vip customers</a></td><td>/blog/best-shopify-email-apps-for-vip-customers</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-waitlists">Waitlists</a></td><td>/blog/best-shopify-email-apps-for-waitlists</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-welcome-series">Welcome series</a></td><td>/blog/best-shopify-email-apps-for-welcome-series</td></tr>
+<tr><td><a href="/blog/best-shopify-email-apps-for-winback-campaigns">Winback campaigns</a></td><td>/blog/best-shopify-email-apps-for-winback-campaigns</td></tr>
+</tbody>
+</table></div>
+<h2>Shopify email app FAQ</h2>
+<section class="max-w-3xl mx-auto space-y-6">
+<div><h3>Are these rankings sponsored?</h3><p>No. Guides prioritize operating fit, consent handling, and total cost. Vendor links point to official sources so readers can verify current plans and limits themselves.</p></div>
+<div><h3>Which guide should a brand-new store read first?</h3><p>Start with the store-model guide closest to your catalog, then the welcome-series and cart-recovery lifecycle guides. That covers the first ninety days of a realistic email program without overcommitting to a complex platform.</p></div>
+<div><h3>How current is the pricing information?</h3><p>We avoid restating specific plan prices because they change frequently. Each guide links to official pricing pages and explains which cost components to model, including overages, SMS credits, and implementation work.</p></div>
+<div><h3>Do these guides replace a deliverability audit?</h3><p>No. They help you choose and configure tools. Deliverability itself depends on consent quality, sending history, and infrastructure, which the deliverability guide covers separately.</p></div>
+<div><h3>How should I combine guides into a decision?</h3><p>Read one store-model guide, one lifecycle guide, and the selection-framework material, then model cost and suppression requirements across the two or three finalists. Decide with a bounded pilot rather than by feature comparison alone.</p></div>
+<div><h3>What if my store model is not covered?</h3><p>Use the closest catalog and buying-cycle analogy, then verify the assumptions that differ. The lifecycle and operating-discipline guides apply to almost any Shopify store regardless of vertical.</p></div>
+</section>
+<script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",mainEntity:[
+{"@type":"Question","name":"Are these rankings sponsored?","acceptedAnswer":{"@type":"Answer","text":"No. Guides prioritize operating fit, consent handling, and total cost, and vendor links point to official sources for verification."}},
+{"@type":"Question","name":"Which guide should a brand-new store read first?","acceptedAnswer":{"@type":"Answer","text":"Start with the store-model guide closest to your catalog, then the welcome-series and cart-recovery lifecycle guides."}},
+{"@type":"Question","name":"How current is the pricing information?","acceptedAnswer":{"@type":"Answer","text":"We avoid restating plan prices because they change frequently; each guide links to official pricing pages and explains what to model."}},
+{"@type":"Question","name":"Do these guides replace a deliverability audit?","acceptedAnswer":{"@type":"Answer","text":"No. They help you choose and configure tools; deliverability depends on consent quality, sending history, and infrastructure."}},
+{"@type":"Question","name":"How should I combine guides into a decision?","acceptedAnswer":{"@type":"Answer","text":"Read one store-model guide, one lifecycle guide, and selection-framework material, then model cost and suppression across finalists and decide with a bounded pilot."}},
+{"@type":"Question","name":"What if my store model is not covered?","acceptedAnswer":{"@type":"Answer","text":"Use the closest catalog and buying-cycle analogy, verify differing assumptions, and apply the lifecycle and operating-discipline guidance that generalizes across stores."}}
+]})} />
+<p>Finally, bookmark this hub: it is the fastest way back into the library when a platform changes, a team member joins, or a new lifecycle job appears. The catalog and reading paths are maintained alongside the guides themselves, so a change to one guide propagates to the paths that reference it.</p>
+<p>Every guide in this library is revised when a vendor materially changes its Shopify integration, pricing model, or consent tooling. If a guide and an official pricing page disagree, trust the pricing page and read our correction note at the top of the guide.</p>
+</main></BaseLayout>
+<p>The catalog above is generated from the live site structure, so every listed path resolves to a published guide. If a link ever breaks, treat it as a bug worth reporting, not an acceptable cost of maintenance.</p>
