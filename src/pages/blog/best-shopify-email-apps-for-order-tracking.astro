@@ -68,144 +68,144 @@ const apps = [
 </a>.
 </p>
 <h2 class="mt-14">Consent and purchaser suppression for Order tracking</h2>
-<p>Before any order tracking automation goes live, confirm that every app in the stack records email and SMS consent in a form you can audit, and that purchase events suppress promotional follow-up immediately after checkout. A message that lands after a purchase, a refund, or an unresolved support case damages the channel faster than weak creative ever will.</p>
+<p>Hold the order tracking launch until consent is documented per app and purchase events suppress order tracking promos immediately after checkout — both verifiable in an audit. Order Tracking audiences forgive plain creative; they do not forgive promos sent mid-refund or right after checkout.</p>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Audience state</th><th>Required handling</th><th>Why it matters</th></tr></thead>
 <tbody>
-<tr><td>No documented consent</td><td>Suppress all marketing; transactional messages only</td><td>Consent is the legal foundation of every send</td></tr>
-<tr><td>Consented, never purchased</td><td>Educational and social-proof content first</td><td>Early discounting trains deal-seeking behavior</td></tr>
-<tr><td>Active cart, no checkout</td><td>Reminder with product context, no instant discount</td><td>Margin protection during a high-intent window</td></tr>
-<tr><td>Purchased recently</td><td>Suppress promotion; shift to post-purchase education</td><td>Avoids buyer remorse and unsubscribe risk</td></tr>
-<tr><td>Refund or return open</td><td>Hold promotion until the case resolves</td><td>Service context changes message tolerance</td></tr>
-<tr><td>Repeated non-engagement</td><td>Sunset the contact before complaints accumulate</td><td>Protects sender reputation and inbox placement</td></tr>
-<tr><td>SMS consent present</td><td>Respect quiet hours and frequency caps</td><td>SMS complaints carry higher cost and risk</td></tr>
-<tr><td>Wholesale or B2B account</td><td>Route to account-specific communication</td><td>Retail promotions can breach contract terms</td></tr>
-<tr><td>Free or disposable email domain</td><td>Verify before enrolling in automated journeys</td><td>Bounce risk and low-quality signups hurt deliverability</td></tr>
-<tr><td>Staff and test accounts</td><td>Exclude from production sending</td><td>Test noise corrupts reporting and attribution</td></tr>
-<tr><td>Competitor or researcher signals</td><td>No special handling; normal consent rules apply</td><td>Manual exceptions create untrackable inconsistencies</td></tr>
-<tr><td>Legacy list without timestamps</td><td>Re-permission before automated follow-up</td><td>Undocumented consent is a compliance liability</td></tr>
+<tr><td>No documented consent</td><td>Order Tracking marketing stays off; transactional only</td><td>Consent evidence underwrites all order tracking sending</td></tr>
+<tr><td>Consented, never purchased</td><td>Open order tracking with guidance and proof, not discounts</td><td>First-touch order tracking codes create discount dependence</td></tr>
+<tr><td>Active cart, no checkout</td><td>Context-rich order tracking nudge before any incentive</td><td>Margin-safe order tracking recovery at peak intent</td></tr>
+<tr><td>Purchased recently</td><td>Order Tracking buyers get education, not another pitch</td><td>Keeps order tracking buyers from instant list fatigue</td></tr>
+<tr><td>Refund or return open</td><td>Freeze order tracking promos until refund or return closes</td><td>Service-active order tracking shoppers reject promos</td></tr>
+<tr><td>Repeated non-engagement</td><td>Remove chronic order tracking non-openers pre-complaint</td><td>Keeps order tracking placement high via list hygiene</td></tr>
+<tr><td>SMS consent present</td><td>Order Tracking SMS obeys quiet hours and caps</td><td>Order Tracking SMS complaints cost more per incident</td></tr>
+<tr><td>Wholesale or B2B account</td><td>Send order tracking B2B accounts down their own track</td><td>Order Tracking retail promos can violate B2B terms</td></tr>
+<tr><td>Free or disposable email domain</td><td>Verify order tracking throwaway addresses pre-journey</td><td>Low-grade order tracking signups drag deliverability</td></tr>
+<tr><td>Staff and test accounts</td><td>Order Tracking QA profiles excluded from reporting</td><td>Order Tracking reporting stays clean without test noise</td></tr>
+<tr><td>Competitor or researcher signals</td><td>Order Tracking researcher signups follow standard consent</td><td>Ad-hoc order tracking exceptions break traceability</td></tr>
+<tr><td>Legacy list without timestamps</td><td>Legacy order tracking contacts re-opt before journeys</td><td>Order Tracking lists without proof invite liability</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Margin, app costs, and pricing for Order tracking</h2>
-<p>Attributed revenue is not profit. A order tracking program that pays for itself should survive a full cost model: platform subscription, contact or send overages, SMS credits, capture tooling, template work, agency retainers, and the margin cost of every discount the flows issue. If stack cost approaches fifteen percent of email-attributed margin, simplify before optimizing.</p>
-<p>Pricing changes frequently and varies by region, contact volume, and contract term, so check the official pricing pages of every shortlisted app and model an eighteen-month total that includes a peak season. Free tiers usually trade limits in contacts, sends, branching, or support; confirm which limit binds for your order tracking plan first.</p>
+<p>Judge order tracking on margin, not attribution. A durable order tracking program absorbs subscription, overages, SMS, capture, creative, agency, and discount costs and still pays. If order tracking tooling eats toward fifteen percent of attributed margin, reduce order tracking scope before optimizing flows.</p>
+<p>Pricing changes frequently and varies by region, contact volume, and contract term, so check the official pricing pages of every shortlisted app and model an eighteen-month total that includes a peak season. Order Tracking free tiers look generous until one limit bites — verify which of contacts, sends, branching, or support constrains order tracking first.</p>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Cost component</th><th>What to model</th><th>Common failure</th></tr></thead>
 <tbody>
-<tr><td>Platform subscription</td><td>Plan tier at realistic contact volume</td><td>Buying the tier for a list you do not have yet</td></tr>
-<tr><td>Contact or send overages</td><td>Growth rate against plan limits</td><td>Seasonal spikes triggering surprise invoices</td></tr>
-<tr><td>SMS credits</td><td>Opt-in rate times messages per journey</td><td>Assuming SMS converts like email at a fraction of cost</td></tr>
-<tr><td>Discount budget</td><td>Discount depth times expected redemption</td><td>Flows that train customers to wait for codes</td></tr>
-<tr><td>Creative and ops time</td><td>Hours per week to maintain flows</td><td>Underestimating editing and QA workload</td></tr>
-<tr><td>Migration and setup</td><td>Data import, consent mapping, flow rebuild</td><td>Losing consent records during a move</td></tr>
-<tr><td>Support and success tiers</td><td>Whether critical issues need paid support</td><td>Discovering support gaps during peak week</td></tr>
-<tr><td>Third-party integrations</td><td>Review, loyalty, and capture tool fees</td><td>Stack creep that doubles effective platform cost</td></tr>
-<tr><td>Deliverability remediation</td><td>Monitoring, list cleaning, and consulting</td><td>Reputation damage costing more than the subscription</td></tr>
+<tr><td>Platform subscription</td><td>Order Tracking tier matched to true contact volume</td><td>Order Tracking tier bought for phantom growth</td></tr>
+<tr><td>Contact or send overages</td><td>Order Tracking headroom checked against growth</td><td>Order Tracking overage invoices after drops</td></tr>
+<tr><td>SMS credits</td><td>Scale order tracking SMS by opt-ins and journey length</td><td>Order Tracking SMS economics misread as email</td></tr>
+<tr><td>Discount budget</td><td>Order Tracking discount load from depth and uptake</td><td>order tracking incentives training perpetual waiting</td></tr>
+<tr><td>Creative and ops time</td><td>Order Tracking upkeep hours per operating week</td><td>order tracking maintenance hours wished away</td></tr>
+<tr><td>Migration and setup</td><td>Order Tracking cutover cost in data and rebuilds</td><td>Dropped order tracking permission records on switch</td></tr>
+<tr><td>Support and success tiers</td><td>Order Tracking support tier for critical incidents</td><td>order tracking support shortfall during the worst week</td></tr>
+<tr><td>Third-party integrations</td><td>Order Tracking satellite fees beyond the ESP</td><td>Creeping order tracking add-ons dwarfing ESP spend</td></tr>
+<tr><td>Deliverability remediation</td><td>order tracking inbox-health monitoring and cleanup</td><td>Order Tracking reputation repair dwarfing license fees</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Decision table for Order tracking</h2>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Situation</th><th>Start with</th><th>Reason</th></tr></thead>
 <tbody>
-<tr><td>Occasional sends, small catalog</td><td>Shopify Email</td><td>Native setup with minimal operating cost</td></tr>
-<tr><td>Branching and suppression matter</td><td>Klaviyo</td><td>Deep event and segment controls</td></tr>
-<tr><td>Small team, email plus light SMS</td><td>Omnisend</td><td>Accessible multichannel workflows</td></tr>
-<tr><td>Broad newsletter operations</td><td>Mailchimp</td><td>Familiar editor and audience tooling</td></tr>
-<tr><td>Lean lifecycle operations</td><td>Sequenzy</td><td>Focused sequence and campaign operation</td></tr>
-<tr><td>Developer-led custom builds</td><td>Customer.io</td><td>Event-triggered messaging flexibility</td></tr>
-<tr><td>CRM-led sales follow-up</td><td>ActiveCampaign</td><td>Automation joined to account context</td></tr>
-<tr><td>Simple list growth and popups</td><td>Privy</td><td>Capture-first tooling for new stores</td></tr>
-<tr><td>Commerce cohort analysis</td><td>Drip</td><td>Repeat-purchase reporting orientation</td></tr>
+<tr><td>Occasional sends, small catalog</td><td>Shopify Email</td><td>Native order tracking setup keeps operating cost minimal</td></tr>
+<tr><td>Branching and suppression matter</td><td>Klaviyo</td><td>Event-level order tracking control for growing logic</td></tr>
+<tr><td>Small team, email plus light SMS</td><td>Omnisend</td><td>Approachable order tracking multichannel journeys</td></tr>
+<tr><td>Broad newsletter operations</td><td>Mailchimp</td><td>Order Tracking newsletters in a familiar editor</td></tr>
+<tr><td>Lean lifecycle operations</td><td>Sequenzy</td><td>Focused lifecycle order tracking sequences minus suite overhead</td></tr>
+<tr><td>Developer-led custom builds</td><td>Customer.io</td><td>Developer-grade order tracking event triggers</td></tr>
+<tr><td>CRM-led sales follow-up</td><td>ActiveCampaign</td><td>Order Tracking outreach with deal context attached</td></tr>
+<tr><td>Simple list growth and popups</td><td>Privy</td><td>Early order tracking momentum through capture widgets</td></tr>
+<tr><td>Commerce cohort analysis</td><td>Drip</td><td>Order Tracking reporting bent toward repeat buying</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Common failure modes in order tracking email</h2>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Failure</th><th>Prevention</th><th>Cost of getting it wrong</th></tr></thead>
 <tbody>
-<tr><td>Discount in the first touch</td><td>Hold offers until intent is established</td><td>Trains low-margin buying habits</td></tr>
-<tr><td>No purchase suppression</td><td>Exit flows on order and checkout events</td><td>Post-purchase promotions feel careless</td></tr>
-<tr><td>Consent imported without proof</td><td>Map timestamps and source fields</td><td>Compliance exposure during audits</td></tr>
-<tr><td>Flows only one operator understands</td><td>Document exits and naming conventions</td><td>Editing risk and key-person dependency</td></tr>
-<tr><td>Measuring clicks only</td><td>Track margin, returns, and complaints</td><td>Clicks reward aggressive, harmful tactics</td></tr>
-<tr><td>Ignoring deliverability signals</td><td>Monitor bounces and spam complaints</td><td>Recovery costs exceed prevention</td></tr>
-<tr><td>Peak-season flow changes</td><td>Freeze edits during the peak window</td><td>Untested changes fail at the worst time</td></tr>
-<tr><td>SMS without a channel strategy</td><td>Define SMS jobs separately from email</td><td>Frequency overlap drives opt-outs</td></tr>
+<tr><td>Discount in the first touch</td><td>Order Tracking incentives only after intent signals</td><td>Early order tracking codes reset margin expectations down</td></tr>
+<tr><td>No purchase suppression</td><td>Order Tracking purchase exits on live order events</td><td>Order Tracking mistiming insults fresh buyers</td></tr>
+<tr><td>Consent imported without proof</td><td>Order Tracking proof: timestamp plus source per contact</td><td>Order Tracking liability when sources are vague</td></tr>
+<tr><td>Flows only one operator understands</td><td>Document order tracking exits and naming standards</td><td>order tracking changes gamble without docs</td></tr>
+<tr><td>Measuring clicks only</td><td>Score order tracking on profit, returns, grievances</td><td>Order Tracking vanity clicks hide damage</td></tr>
+<tr><td>Ignoring deliverability signals</td><td>order tracking deliverability watched weekly</td><td>Order Tracking repair bills dwarf prevention</td></tr>
+<tr><td>Peak-season flow changes</td><td>Lock order tracking flows through the peak window</td><td>Order Tracking untested edits detonate at peak</td></tr>
+<tr><td>SMS without a channel strategy</td><td>order tracking SMS roles defined outside email</td><td>order tracking duplication across channels bleeds opt-ins</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Implementation order for a order tracking program</h2>
 <ol>
-<li>Document consent sources and map them into the platform before any campaign.</li>
-<li>Verify Shopify order, cart, refund, and support events fire in a test store.</li>
-<li>Build suppression rules and exit conditions before building any flow.</li>
-<li>Launch one bounded pilot journey with a holdout group for measurement.</li>
-<li>Review margin, complaints, unsubscribes, and repeat purchase after thirty days.</li>
-<li>Expand only when the pilot can be edited safely by a second operator.</li>
-<li>Write a peak-season freeze policy covering edits, discounts, and volume.</li>
-<li>Set a quarterly cost review that compares stack cost to email-attributed margin.</li>
-<li>Archive or simplify any flow nobody has reviewed in ninety days.</li>
+<li>Record order tracking permission origins in the ESP before sending.</li>
+<li>Confirm order tracking event wiring with a full test-store pass.</li>
+<li>Write order tracking suppression and exits before any order tracking flow exists.</li>
+<li>For order tracking, start single-journey with a control group.</li>
+<li>For order tracking, the thirty-day read covers profit and list health.</li>
+<li>Order Tracking expansion needs two-operator safety.</li>
+<li>For order tracking, pre-write peak rules on changes and offers.</li>
+<li>Order Tracking finance: stack cost over margin, quarterly.</li>
+<li>For order tracking, dusty journeys get archived quarterly.</li>
 </ol>
 <h2 class="mt-12">Metrics review cadence for order tracking</h2>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Metric</th><th>Definition</th><th>Review cadence</th></tr></thead>
 <tbody>
-<tr><td>Margin per send</td><td>Revenue minus discounts, sends, and platform cost</td><td>Monthly</td></tr>
-<tr><td>Repeat purchase rate</td><td>Second-order share within ninety days</td><td>Monthly</td></tr>
-<tr><td>Complaint and unsubscribe rate</td><td>Per campaign and per flow</td><td>Weekly</td></tr>
-<tr><td>Suppression accuracy</td><td>Sample post-purchase sends for violations</td><td>Weekly</td></tr>
-<tr><td>Time to edit safely</td><td>Minutes for a second operator to change a flow</td><td>Quarterly</td></tr>
-<tr><td>Holdout lift</td><td>Treated versus excluded group comparison</td><td>Quarterly</td></tr>
+<tr><td>Margin per send</td><td>Order Tracking revenue less discounts, send and platform cost</td><td>Monthly</td></tr>
+<tr><td>Repeat purchase rate</td><td>order tracking repeat share at the ninety-day mark</td><td>Monthly</td></tr>
+<tr><td>Complaint and unsubscribe rate</td><td>order tracking-level and flow-level complaint splits</td><td>Weekly</td></tr>
+<tr><td>Suppression accuracy</td><td>order tracking-buyer samples screened for breaches</td><td>Weekly</td></tr>
+<tr><td>Time to edit safely</td><td>Order Tracking edit time for a fresh operator</td><td>Quarterly</td></tr>
+<tr><td>Holdout lift</td><td>order tracking-exposed versus excluded comparison</td><td>Quarterly</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Order tracking matchup FAQ</h2>
 <section class="max-w-3xl mx-auto space-y-6">
-<div><h3>Klaviyo or Shopify Email for order tracking?</h3><p>Shopify Email is a reasonable start when order tracking campaigns are occasional and the catalog is small. Klaviyo pays off when order tracking work needs event-driven branching, catalog-aware content, and segment-level reporting. Model profile-based billing against expected contact growth before committing.</p></div>
-<div><h3>Omnisend vs Klaviyo for order tracking?</h3><p>Omnisend tends to be faster for a small team running email-first order tracking campaigns with light SMS. Klaviyo offers deeper segmentation and event flexibility, which matters as order tracking logic grows. Pilot both with one real order tracking journey and compare maintenance time, not feature lists.</p></div>
-<div><h3>Mailchimp or Klaviyo for order tracking?</h3><p>Mailchimp suits teams that value a familiar editor and broad campaign tooling for order tracking newsletters and simple automations. Klaviyo is stronger where order tracking messages depend on Shopify order, cart, and browse events. Check both official pricing pages at your contact volume before deciding.</p></div>
-<div><h3>Do I need a separate SMS tool for order tracking?</h3><p>Not at the start. Several platforms cover basic SMS alongside email, and SMS specialists earn their cost only when text messages measurably improve order tracking outcomes. Confirm consent handling, quiet hours, and per-message pricing, and verify that your audience actually responds to SMS.</p></div>
-<div><h3>How should I suppress audiences in order tracking flows?</h3><p>Exclude recent purchasers, open support or return cases, refunded orders, and anyone without documented consent. For order tracking, write exit conditions next to each flow so another operator can audit them. Suppression mistakes cost more margin than a missed campaign.</p></div>
-<div><h3>What does order tracking email cost?</h3><p>Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your order tracking campaigns consume. Providers change plans and limits often, so check official pricing pages and model an eighteen-month total before committing.</p></div>
-<div><h3>Which app should a lean team pilot first for order tracking?</h3><p>Start with the tool your team can fully operate in two weeks: native Shopify Email for simple order tracking sends, or a lean ecommerce platform when branching and suppression matter. A completed pilot beats an ambitious setup that stalls during week one.</p></div>
-<div><h3>How do I measure order tracking email results?</h3><p>Track margin per send, repeat purchase, unsubscribe and complaint rates, and support load alongside attributed revenue. For order tracking specifically, compare a holdout group against recipients so seasonal lift is not mistaken for program impact.</p></div>
-<div><h3>Can I run order tracking email without an agency?</h3><p>Yes, if the scope stays small. Pick one order tracking journey, document consent and suppression rules, and reuse a simple template system. Add outside help only when flow complexity, deliverability remediation, or peak-season volume exceeds in-house capacity.</p></div>
-<div><h3>When should I graduate from my first app for order tracking?</h3><p>Graduate when the team cannot safely edit flows, segment reliably by purchase state, or forecast cost at your growing contact count. For order tracking, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression.</p></div>
-<div><h3>How much discounting is acceptable for order tracking?</h3><p>Treat discounts as one lever, not the default. For order tracking, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. If most revenue needs a code, the program has a value problem rather than a pricing problem.</p></div>
-<div><h3>Which Shopify data matters most for order tracking?</h3><p>Order and refund state, cart and browse events, consent source, and product availability cover most order tracking decisions. Verify each event fires correctly in a test purchase before building logic on top of it, and document field meanings so marketing and engineering agree.</p></div>
-<div><h3>How do I avoid duplicate sends across apps for order tracking?</h3><p>Give one platform ownership of each order tracking journey, document which app sends what, and share suppression lists where the tools support it. Run a weekly audit during peak season that samples customers and lists every message they received.</p></div>
-<div><h3>What should a order tracking pilot include?</h3><p>A bounded pilot covers one audience, one or two journeys, explicit suppression rules, a holdout group, and a thirty-day review of margin and complaints. Agree on the success criteria before launch so results cannot be reinterpreted afterward.</p></div>
+<div><h3>Klaviyo or Shopify Email for order tracking?</h3><p>Start order tracking on Shopify Email while sends stay occasional and catalogs compact; Klaviyo pays when order tracking branching and reporting complexity arrives — forecast profile cost on order tracking list growth.</p></div>
+<div><h3>Omnisend vs Klaviyo for order tracking?</h3><p>For order tracking, Omnisend ships email-first order tracking plus light SMS fastest for small teams; Klaviyo counters with deeper order tracking segmentation — pilot one genuine order tracking journey on each and weigh upkeep, not checklists.</p></div>
+<div><h3>Mailchimp or Klaviyo for order tracking?</h3><p>Order Tracking newsletters suit Mailchimp familiarity; order tracking automation on commerce events suits Klaviyo. Compare official pricing at your order tracking contact tier before choosing.</p></div>
+<div><h3>Do I need a separate SMS tool for order tracking?</h3><p>For order tracking, skip dedicated SMS initially — bundled texting suffices until SMS provably lifts order tracking results. Confirm order tracking consent, quiet hours, and per-message pricing, and prove the order tracking audience answers texts.</p></div>
+<div><h3>How should I suppress audiences in order tracking flows?</h3><p>order tracking flows must shed recent purchasers, case-active shoppers, refunds, and unconsented profiles, with order tracking exit logic visible to any auditor — suppression slips outcost quiet weeks.</p></div>
+<div><h3>What does order tracking email cost?</h3><p>Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your order tracking campaigns consume. Because providers revise plans frequently, check official pricing pages and build an eighteen-month order tracking total — peak season included — before you commit.</p></div>
+<div><h3>Which app should a lean team pilot first for order tracking?</h3><p>Open order tracking with the tool at full command in fourteen days — simple order tracking sends natively, branched order tracking on a lean platform. Shipping order tracking beats architecting it.</p></div>
+<div><h3>How do I measure order tracking email results?</h3><p>For order tracking, judge the program on margin per send, repeat purchase, unsubscribe and complaint rates, and support load next to attributed revenue — and keep a holdout group beside recipients so seasonal lift is never misread as program impact.</p></div>
+<div><h3>Can I run order tracking email without an agency?</h3><p>Yes, if the scope stays small. Pick one order tracking journey, document consent and suppression rules, and reuse a simple template system. Keep order tracking in-house unless tangled flows, deliverability triage, or peak-season order tracking load exceed internal bandwidth.</p></div>
+<div><h3>When should I graduate from my first app for order tracking?</h3><p>Graduate the order tracking stack when the team can no longer edit flows safely, segment order tracking audiences by purchase state, or forecast cost at the growing contact count. For order tracking, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression.</p></div>
+<div><h3>How much discounting is acceptable for order tracking?</h3><p>Treat discounts as one lever, not the default. For order tracking, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. A order tracking program where nearly every order needs a discount is signalling weak order tracking value, not wrong pricing.</p></div>
+<div><h3>Which Shopify data matters most for order tracking?</h3><p>Order and refund state, cart and browse events, consent source, and product availability cover most order tracking decisions. On order tracking, prove events in a test checkout before trusting them in flows, with order tracking field definitions written where both teams can find them.</p></div>
+<div><h3>How do I avoid duplicate sends across apps for order tracking?</h3><p>Give one platform ownership of each order tracking journey, document which app sends what, and share suppression lists where the tools support it. During peak season, audit order tracking weekly by sampling customers and listing every order tracking message each one received.</p></div>
+<div><h3>What should a order tracking pilot include?</h3><p>Bound the order tracking pilot to one audience and one or two journeys, with written suppression rules, a holdout group, and a thirty-day margin-and-complaints review — and lock order tracking success criteria before launch so nobody reinterprets results afterward.</p></div>
 </section>
 <script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",mainEntity:[
-{"@type": "Question", "name": "Klaviyo or Shopify Email for order tracking?", "acceptedAnswer": {"@type": "Answer", "text": "Shopify Email is a reasonable start when order tracking campaigns are occasional and the catalog is small. Klaviyo pays off when order tracking work needs event-driven branching, catalog-aware content, and segment-level reporting. Model profile-based billing against expected contact growth before committing."}},
-{"@type": "Question", "name": "Omnisend vs Klaviyo for order tracking?", "acceptedAnswer": {"@type": "Answer", "text": "Omnisend tends to be faster for a small team running email-first order tracking campaigns with light SMS. Klaviyo offers deeper segmentation and event flexibility, which matters as order tracking logic grows. Pilot both with one real order tracking journey and compare maintenance time, not feature lists."}},
-{"@type": "Question", "name": "Mailchimp or Klaviyo for order tracking?", "acceptedAnswer": {"@type": "Answer", "text": "Mailchimp suits teams that value a familiar editor and broad campaign tooling for order tracking newsletters and simple automations. Klaviyo is stronger where order tracking messages depend on Shopify order, cart, and browse events. Check both official pricing pages at your contact volume before deciding."}},
-{"@type": "Question", "name": "Do I need a separate SMS tool for order tracking?", "acceptedAnswer": {"@type": "Answer", "text": "Not at the start. Several platforms cover basic SMS alongside email, and SMS specialists earn their cost only when text messages measurably improve order tracking outcomes. Confirm consent handling, quiet hours, and per-message pricing, and verify that your audience actually responds to SMS."}},
-{"@type": "Question", "name": "How should I suppress audiences in order tracking flows?", "acceptedAnswer": {"@type": "Answer", "text": "Exclude recent purchasers, open support or return cases, refunded orders, and anyone without documented consent. For order tracking, write exit conditions next to each flow so another operator can audit them. Suppression mistakes cost more margin than a missed campaign."}},
-{"@type": "Question", "name": "What does order tracking email cost?", "acceptedAnswer": {"@type": "Answer", "text": "Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your order tracking campaigns consume. Providers change plans and limits often, so check official pricing pages and model an eighteen-month total before committing."}},
-{"@type": "Question", "name": "Which app should a lean team pilot first for order tracking?", "acceptedAnswer": {"@type": "Answer", "text": "Start with the tool your team can fully operate in two weeks: native Shopify Email for simple order tracking sends, or a lean ecommerce platform when branching and suppression matter. A completed pilot beats an ambitious setup that stalls during week one."}},
-{"@type": "Question", "name": "How do I measure order tracking email results?", "acceptedAnswer": {"@type": "Answer", "text": "Track margin per send, repeat purchase, unsubscribe and complaint rates, and support load alongside attributed revenue. For order tracking specifically, compare a holdout group against recipients so seasonal lift is not mistaken for program impact."}},
-{"@type": "Question", "name": "Can I run order tracking email without an agency?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if the scope stays small. Pick one order tracking journey, document consent and suppression rules, and reuse a simple template system. Add outside help only when flow complexity, deliverability remediation, or peak-season volume exceeds in-house capacity."}},
-{"@type": "Question", "name": "When should I graduate from my first app for order tracking?", "acceptedAnswer": {"@type": "Answer", "text": "Graduate when the team cannot safely edit flows, segment reliably by purchase state, or forecast cost at your growing contact count. For order tracking, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression."}},
-{"@type": "Question", "name": "How much discounting is acceptable for order tracking?", "acceptedAnswer": {"@type": "Answer", "text": "Treat discounts as one lever, not the default. For order tracking, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. If most revenue needs a code, the program has a value problem rather than a pricing problem."}},
-{"@type": "Question", "name": "Which Shopify data matters most for order tracking?", "acceptedAnswer": {"@type": "Answer", "text": "Order and refund state, cart and browse events, consent source, and product availability cover most order tracking decisions. Verify each event fires correctly in a test purchase before building logic on top of it, and document field meanings so marketing and engineering agree."}},
-{"@type": "Question", "name": "How do I avoid duplicate sends across apps for order tracking?", "acceptedAnswer": {"@type": "Answer", "text": "Give one platform ownership of each order tracking journey, document which app sends what, and share suppression lists where the tools support it. Run a weekly audit during peak season that samples customers and lists every message they received."}},
-{"@type": "Question", "name": "What should a order tracking pilot include?", "acceptedAnswer": {"@type": "Answer", "text": "A bounded pilot covers one audience, one or two journeys, explicit suppression rules, a holdout group, and a thirty-day review of margin and complaints. Agree on the success criteria before launch so results cannot be reinterpreted afterward."}}
+{"@type": "Question", "name": "Klaviyo or Shopify Email for order tracking?", "acceptedAnswer": {"@type": "Answer", "text": "Start order tracking on Shopify Email while sends stay occasional and catalogs compact; Klaviyo pays when order tracking branching and reporting complexity arrives — forecast profile cost on order tracking list growth."}},
+{"@type": "Question", "name": "Omnisend vs Klaviyo for order tracking?", "acceptedAnswer": {"@type": "Answer", "text": "For order tracking, Omnisend ships email-first order tracking plus light SMS fastest for small teams; Klaviyo counters with deeper order tracking segmentation — pilot one genuine order tracking journey on each and weigh upkeep, not checklists."}},
+{"@type": "Question", "name": "Mailchimp or Klaviyo for order tracking?", "acceptedAnswer": {"@type": "Answer", "text": "Order Tracking newsletters suit Mailchimp familiarity; order tracking automation on commerce events suits Klaviyo. Compare official pricing at your order tracking contact tier before choosing."}},
+{"@type": "Question", "name": "Do I need a separate SMS tool for order tracking?", "acceptedAnswer": {"@type": "Answer", "text": "For order tracking, skip dedicated SMS initially — bundled texting suffices until SMS provably lifts order tracking results. Confirm order tracking consent, quiet hours, and per-message pricing, and prove the order tracking audience answers texts."}},
+{"@type": "Question", "name": "How should I suppress audiences in order tracking flows?", "acceptedAnswer": {"@type": "Answer", "text": "order tracking flows must shed recent purchasers, case-active shoppers, refunds, and unconsented profiles, with order tracking exit logic visible to any auditor — suppression slips outcost quiet weeks."}},
+{"@type": "Question", "name": "What does order tracking email cost?", "acceptedAnswer": {"@type": "Answer", "text": "Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your order tracking campaigns consume. Because providers revise plans frequently, check official pricing pages and build an eighteen-month order tracking total — peak season included — before you commit."}},
+{"@type": "Question", "name": "Which app should a lean team pilot first for order tracking?", "acceptedAnswer": {"@type": "Answer", "text": "Open order tracking with the tool at full command in fourteen days — simple order tracking sends natively, branched order tracking on a lean platform. Shipping order tracking beats architecting it."}},
+{"@type": "Question", "name": "How do I measure order tracking email results?", "acceptedAnswer": {"@type": "Answer", "text": "For order tracking, judge the program on margin per send, repeat purchase, unsubscribe and complaint rates, and support load next to attributed revenue — and keep a holdout group beside recipients so seasonal lift is never misread as program impact."}},
+{"@type": "Question", "name": "Can I run order tracking email without an agency?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if the scope stays small. Pick one order tracking journey, document consent and suppression rules, and reuse a simple template system. Keep order tracking in-house unless tangled flows, deliverability triage, or peak-season order tracking load exceed internal bandwidth."}},
+{"@type": "Question", "name": "When should I graduate from my first app for order tracking?", "acceptedAnswer": {"@type": "Answer", "text": "Graduate the order tracking stack when the team can no longer edit flows safely, segment order tracking audiences by purchase state, or forecast cost at the growing contact count. For order tracking, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression."}},
+{"@type": "Question", "name": "How much discounting is acceptable for order tracking?", "acceptedAnswer": {"@type": "Answer", "text": "Treat discounts as one lever, not the default. For order tracking, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. A order tracking program where nearly every order needs a discount is signalling weak order tracking value, not wrong pricing."}},
+{"@type": "Question", "name": "Which Shopify data matters most for order tracking?", "acceptedAnswer": {"@type": "Answer", "text": "Order and refund state, cart and browse events, consent source, and product availability cover most order tracking decisions. On order tracking, prove events in a test checkout before trusting them in flows, with order tracking field definitions written where both teams can find them."}},
+{"@type": "Question", "name": "How do I avoid duplicate sends across apps for order tracking?", "acceptedAnswer": {"@type": "Answer", "text": "Give one platform ownership of each order tracking journey, document which app sends what, and share suppression lists where the tools support it. During peak season, audit order tracking weekly by sampling customers and listing every order tracking message each one received."}},
+{"@type": "Question", "name": "What should a order tracking pilot include?", "acceptedAnswer": {"@type": "Answer", "text": "Bound the order tracking pilot to one audience and one or two journeys, with written suppression rules, a holdout group, and a thirty-day margin-and-complaints review — and lock order tracking success criteria before launch so nobody reinterprets results afterward."}}
 ]})} />
 <h2 class="mt-12">Governance and documentation for order tracking</h2>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Practice</th><th>Standard</th><th>Risk it prevents</th></tr></thead>
 <tbody>
-<tr><td>Flow ownership</td><td>One named owner per journey</td><td>Orphaned flows that send stale offers</td></tr>
-<tr><td>Naming convention</td><td>Prefix by job and audience</td><td>Impossible audits during peak season</td></tr>
-<tr><td>Change log</td><td>Record edits, dates, and reasons</td><td>Untraceable performance regressions</td></tr>
-<tr><td>Access control</td><td>Least-privilege seats for editors</td><td>Accidental deletes or unauthorized sends</td></tr>
-<tr><td>Quarterly flow review</td><td>Archive or simplify unused branches</td><td>Complexity tax that slows every edit</td></tr>
-<tr><td>Incident runbook</td><td>Steps for pausing sends and notifying</td><td>Slow response to a broken or harmful send</td></tr>
+<tr><td>Flow ownership</td><td>Named order tracking owner on every journey</td><td>order tracking ghosts sending expired incentives</td></tr>
+<tr><td>Naming convention</td><td>Name order tracking flows job-first, audience-second</td><td>Unnamed order tracking sprawl unauditable in season</td></tr>
+<tr><td>Change log</td><td>order tracking-flow history recorded per change</td><td>Mystery order tracking dips nobody can source</td></tr>
+<tr><td>Access control</td><td>Limit order tracking edit rights tightly</td><td>Over-permissioned order tracking editors misfiring</td></tr>
+<tr><td>Quarterly flow review</td><td>Prune idle order tracking branches quarterly</td><td>Tangled order tracking logic slowing changes</td></tr>
+<tr><td>Incident runbook</td><td>order tracking kill steps plus alert list</td><td>order tracking damage window from missing runbook</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Peak season readiness for order tracking</h2>
 <ol>
-<li>Freeze flow edits two weeks before the peak window opens.</li>
-<li>Test every flow with a real purchase, refund, and support case.</li>
-<li>Confirm suppression rules exclude recent buyers and open returns.</li>
-<li>Raise holdout samples so peak results remain measurable.</li>
-<li>Pre-write quiet-hours and frequency-cap policies for SMS.</li>
-<li>Check plan limits and overage pricing against forecast volume.</li>
-<li>Assign a daily deliverability monitor for complaints and bounces.</li>
-<li>Document rollback steps for each flow before the first campaign.</li>
+<li>Halt order tracking edits ahead of the peak window.</li>
+<li>Order Tracking QA spans purchase, refund, and case paths.</li>
+<li>Check order tracking exits filter buyers and open cases.</li>
+<li>For order tracking, grow control samples ahead of volume.</li>
+<li>Draft order tracking SMS quiet-hour and cap rules in advance.</li>
+<li>For order tracking, test tier limits against peak projections.</li>
+<li>Order Tracking placement watched every peak day.</li>
+<li>Pre-write order tracking rollback moves per flow before launch.</li>
 </ol>
-<p>One more operating note for order tracking: schedule the first quarterly review before launch, not after the first crisis. Teams that write down their suppression rules, discount caps, and escalation contacts in week one spend markedly less time firefighting later, and new operators inherit a documented system instead of folklore.</p>
-<p>Finally, keep the order tracking program honest with a quarterly written review: what shipped, what was suppressed, what margin was kept, and which assumptions failed. Written reviews turn individual judgment into team knowledge and make vendor decisions calmer, because the evidence sits in one place instead of in memory.</p>
+<p>One more order tracking operating note: book the first quarterly review before launch, not after the first crisis. Order Tracking teams that record suppression rules, discount caps, and escalation contacts in week one firefight far less later, and new operators inherit a order tracking system instead of folklore.</p>
+<p>Finally, review order tracking in writing each quarter: what order tracking work shipped, what was suppressed, what margin the order tracking program kept, which assumptions failed. That order tracking record turns individual judgment into team knowledge and keeps vendor calls evidence-based.</p>
 </main></BaseLayout>

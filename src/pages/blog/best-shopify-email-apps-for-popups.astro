@@ -72,144 +72,144 @@ const apps = [
 </a>.
 </p>
 <h2 class="mt-14">Consent and purchaser suppression for Popups</h2>
-<p>Before any popups automation goes live, confirm that every app in the stack records email and SMS consent in a form you can audit, and that purchase events suppress promotional follow-up immediately after checkout. A message that lands after a purchase, a refund, or an unresolved support case damages the channel faster than weak creative ever will.</p>
+<p>Before launching popups automation, prove every app in the stack logs email and SMS consent auditably, with purchase events cutting promotional follow-up the moment checkout completes. Protect the popups channel first: post-purchase, refund-window, and support-case promos do more damage than dull popups copy.</p>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Audience state</th><th>Required handling</th><th>Why it matters</th></tr></thead>
 <tbody>
-<tr><td>No documented consent</td><td>Suppress all marketing; transactional messages only</td><td>Consent is the legal foundation of every send</td></tr>
-<tr><td>Consented, never purchased</td><td>Educational and social-proof content first</td><td>Early discounting trains deal-seeking behavior</td></tr>
-<tr><td>Active cart, no checkout</td><td>Reminder with product context, no instant discount</td><td>Margin protection during a high-intent window</td></tr>
-<tr><td>Purchased recently</td><td>Suppress promotion; shift to post-purchase education</td><td>Avoids buyer remorse and unsubscribe risk</td></tr>
-<tr><td>Refund or return open</td><td>Hold promotion until the case resolves</td><td>Service context changes message tolerance</td></tr>
-<tr><td>Repeated non-engagement</td><td>Sunset the contact before complaints accumulate</td><td>Protects sender reputation and inbox placement</td></tr>
-<tr><td>SMS consent present</td><td>Respect quiet hours and frequency caps</td><td>SMS complaints carry higher cost and risk</td></tr>
-<tr><td>Wholesale or B2B account</td><td>Route to account-specific communication</td><td>Retail promotions can breach contract terms</td></tr>
-<tr><td>Free or disposable email domain</td><td>Verify before enrolling in automated journeys</td><td>Bounce risk and low-quality signups hurt deliverability</td></tr>
-<tr><td>Staff and test accounts</td><td>Exclude from production sending</td><td>Test noise corrupts reporting and attribution</td></tr>
-<tr><td>Competitor or researcher signals</td><td>No special handling; normal consent rules apply</td><td>Manual exceptions create untrackable inconsistencies</td></tr>
-<tr><td>Legacy list without timestamps</td><td>Re-permission before automated follow-up</td><td>Undocumented consent is a compliance liability</td></tr>
+<tr><td>No documented consent</td><td>Popups marketing stays off; transactional only</td><td>Popups consent is the legal basis of every send</td></tr>
+<tr><td>Consented, never purchased</td><td>Open popups with guidance and proof, not discounts</td><td>First-touch popups codes create discount dependence</td></tr>
+<tr><td>Active cart, no checkout</td><td>Context-rich popups nudge before any incentive</td><td>Protects popups profit when purchase intent is hottest</td></tr>
+<tr><td>Purchased recently</td><td>Recent popups buyers exit promos into onboarding</td><td>Popups suppression protects the new-customer glow</td></tr>
+<tr><td>Refund or return open</td><td>No popups promos mid-case; resume after resolution</td><td>Popups messaging lands badly during open cases</td></tr>
+<tr><td>Repeated non-engagement</td><td>Sunset cold popups contacts before complaints build</td><td>Popups inboxing survives on timely sunsets</td></tr>
+<tr><td>SMS consent present</td><td>Popups SMS obeys quiet hours and caps</td><td>Text grievances hit popups programs hardest</td></tr>
+<tr><td>Wholesale or B2B account</td><td>Isolate popups wholesale comms from retail blasts</td><td>B2B popups mis-sends risk contract breach</td></tr>
+<tr><td>Free or disposable email domain</td><td>Gate popups journeys behind address verification</td><td>Popups bounces from junk signups hurt inboxing</td></tr>
+<tr><td>Staff and test accounts</td><td>Popups QA profiles excluded from reporting</td><td>Popups reporting stays clean without test noise</td></tr>
+<tr><td>Competitor or researcher signals</td><td>No bespoke popups track for competitor signals</td><td>Ad-hoc popups exceptions break traceability</td></tr>
+<tr><td>Legacy list without timestamps</td><td>Legacy popups contacts re-opt before journeys</td><td>Old popups permission without records is a risk</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Margin, app costs, and pricing for Popups</h2>
-<p>Attributed revenue is not profit. A popups program that pays for itself should survive a full cost model: platform subscription, contact or send overages, SMS credits, capture tooling, template work, agency retainers, and the margin cost of every discount the flows issue. If stack cost approaches fifteen percent of email-attributed margin, simplify before optimizing.</p>
-<p>Pricing changes frequently and varies by region, contact volume, and contract term, so check the official pricing pages of every shortlisted app and model an eighteen-month total that includes a peak season. Free tiers usually trade limits in contacts, sends, branching, or support; confirm which limit binds for your popups plan first.</p>
+<p>Attributed revenue is not profit for popups. A self-funding popups program survives a full cost model: subscription, contact or send overages, SMS credits, capture tooling, templates, agency time, and every point of popups discount margin. For popups, a stack at fifteen percent of attributed margin needs simplification first, optimization second.</p>
+<p>Pricing changes frequently and varies by region, contact volume, and contract term, so check the official pricing pages of every shortlisted app and model an eighteen-month total that includes a peak season. Before banking on free for popups, check which free-tier limit — contacts, sends, branching, support — hits your popups plan earliest.</p>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Cost component</th><th>What to model</th><th>Common failure</th></tr></thead>
 <tbody>
-<tr><td>Platform subscription</td><td>Plan tier at realistic contact volume</td><td>Buying the tier for a list you do not have yet</td></tr>
-<tr><td>Contact or send overages</td><td>Growth rate against plan limits</td><td>Seasonal spikes triggering surprise invoices</td></tr>
-<tr><td>SMS credits</td><td>Opt-in rate times messages per journey</td><td>Assuming SMS converts like email at a fraction of cost</td></tr>
-<tr><td>Discount budget</td><td>Discount depth times expected redemption</td><td>Flows that train customers to wait for codes</td></tr>
-<tr><td>Creative and ops time</td><td>Hours per week to maintain flows</td><td>Underestimating editing and QA workload</td></tr>
-<tr><td>Migration and setup</td><td>Data import, consent mapping, flow rebuild</td><td>Losing consent records during a move</td></tr>
-<tr><td>Support and success tiers</td><td>Whether critical issues need paid support</td><td>Discovering support gaps during peak week</td></tr>
-<tr><td>Third-party integrations</td><td>Review, loyalty, and capture tool fees</td><td>Stack creep that doubles effective platform cost</td></tr>
-<tr><td>Deliverability remediation</td><td>Monitoring, list cleaning, and consulting</td><td>Reputation damage costing more than the subscription</td></tr>
+<tr><td>Platform subscription</td><td>Tier your popups plan to contacts you truly hold</td><td>Paying popups prices for a list you lack</td></tr>
+<tr><td>Contact or send overages</td><td>popups expansion rate tested on plan caps</td><td>Unmodeled popups peaks triggering invoices</td></tr>
+<tr><td>SMS credits</td><td>Popups opt-in share times texts per journey</td><td>Popups SMS economics misread as email</td></tr>
+<tr><td>Discount budget</td><td>Popups discount load from depth and uptake</td><td>popups incentives training perpetual waiting</td></tr>
+<tr><td>Creative and ops time</td><td>Popups upkeep hours per operating week</td><td>popups maintenance hours wished away</td></tr>
+<tr><td>Migration and setup</td><td>popups switch priced in imports and rebuild labor</td><td>popups migration shedding consent proof</td></tr>
+<tr><td>Support and success tiers</td><td>Popups severity coverage: paid or included</td><td>Popups support gaps found at peak</td></tr>
+<tr><td>Third-party integrations</td><td>popups companion tools and their fees</td><td>Popups sprawl doubling real platform cost</td></tr>
+<tr><td>Deliverability remediation</td><td>Popups monitoring, cleaning, advisory spend</td><td>Popups reputation repair dwarfing license fees</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Decision table for Popups</h2>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Situation</th><th>Start with</th><th>Reason</th></tr></thead>
 <tbody>
-<tr><td>Occasional sends, small catalog</td><td>Shopify Email</td><td>Native setup with minimal operating cost</td></tr>
-<tr><td>Branching and suppression matter</td><td>Klaviyo</td><td>Deep event and segment controls</td></tr>
-<tr><td>Small team, email plus light SMS</td><td>Omnisend</td><td>Accessible multichannel workflows</td></tr>
-<tr><td>Broad newsletter operations</td><td>Mailchimp</td><td>Familiar editor and audience tooling</td></tr>
-<tr><td>Lean lifecycle operations</td><td>Sequenzy</td><td>Focused sequence and campaign operation</td></tr>
-<tr><td>Developer-led custom builds</td><td>Customer.io</td><td>Event-triggered messaging flexibility</td></tr>
-<tr><td>CRM-led sales follow-up</td><td>ActiveCampaign</td><td>Automation joined to account context</td></tr>
-<tr><td>Simple list growth and popups</td><td>Privy</td><td>Capture-first tooling for new stores</td></tr>
-<tr><td>Commerce cohort analysis</td><td>Drip</td><td>Repeat-purchase reporting orientation</td></tr>
+<tr><td>Occasional sends, small catalog</td><td>Shopify Email</td><td>Native popups setup keeps operating cost minimal</td></tr>
+<tr><td>Branching and suppression matter</td><td>Klaviyo</td><td>Popups branching and suppression depth</td></tr>
+<tr><td>Small team, email plus light SMS</td><td>Omnisend</td><td>Low-friction popups journeys spanning channels</td></tr>
+<tr><td>Broad newsletter operations</td><td>Mailchimp</td><td>Popups newsletters in a familiar editor</td></tr>
+<tr><td>Lean lifecycle operations</td><td>Sequenzy</td><td>Focused lifecycle popups sequences minus suite overhead</td></tr>
+<tr><td>Developer-led custom builds</td><td>Customer.io</td><td>Custom popups messaging on raw events</td></tr>
+<tr><td>CRM-led sales follow-up</td><td>ActiveCampaign</td><td>Account-linked popups sequences for B2B motion</td></tr>
+<tr><td>Simple list growth and popups</td><td>Privy</td><td>Popups subscriber capture before lifecycle depth</td></tr>
+<tr><td>Commerce cohort analysis</td><td>Drip</td><td>Repeat-revenue popups lens on customer cohorts</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Common failure modes in popups email</h2>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Failure</th><th>Prevention</th><th>Cost of getting it wrong</th></tr></thead>
 <tbody>
-<tr><td>Discount in the first touch</td><td>Hold offers until intent is established</td><td>Trains low-margin buying habits</td></tr>
-<tr><td>No purchase suppression</td><td>Exit flows on order and checkout events</td><td>Post-purchase promotions feel careless</td></tr>
-<tr><td>Consent imported without proof</td><td>Map timestamps and source fields</td><td>Compliance exposure during audits</td></tr>
-<tr><td>Flows only one operator understands</td><td>Document exits and naming conventions</td><td>Editing risk and key-person dependency</td></tr>
-<tr><td>Measuring clicks only</td><td>Track margin, returns, and complaints</td><td>Clicks reward aggressive, harmful tactics</td></tr>
-<tr><td>Ignoring deliverability signals</td><td>Monitor bounces and spam complaints</td><td>Recovery costs exceed prevention</td></tr>
-<tr><td>Peak-season flow changes</td><td>Freeze edits during the peak window</td><td>Untested changes fail at the worst time</td></tr>
-<tr><td>SMS without a channel strategy</td><td>Define SMS jobs separately from email</td><td>Frequency overlap drives opt-outs</td></tr>
+<tr><td>Discount in the first touch</td><td>Popups incentives only after intent signals</td><td>popups discount-first trains bargain hunting</td></tr>
+<tr><td>No purchase suppression</td><td>Popups purchase exits on live order events</td><td>Popups mistiming insults fresh buyers</td></tr>
+<tr><td>Consent imported without proof</td><td>Record popups opt-in origin and moment</td><td>Popups liability when sources are vague</td></tr>
+<tr><td>Flows only one operator understands</td><td>popups conventions written for successors</td><td>Popups edits hinge on one memory</td></tr>
+<tr><td>Measuring clicks only</td><td>popups measured on kept margin and complaints</td><td>Click-only popups metrics bless aggression</td></tr>
+<tr><td>Ignoring deliverability signals</td><td>popups deliverability watched weekly</td><td>Popups repair bills dwarf prevention</td></tr>
+<tr><td>Peak-season flow changes</td><td>Popups edit freeze across peak weeks</td><td>popups changes break when traffic peaks</td></tr>
+<tr><td>SMS without a channel strategy</td><td>Give popups SMS its own job spec apart from email</td><td>Popups channel overlap triggers opt-outs</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Implementation order for a popups program</h2>
 <ol>
-<li>Document consent sources and map them into the platform before any campaign.</li>
-<li>Verify Shopify order, cart, refund, and support events fire in a test store.</li>
-<li>Build suppression rules and exit conditions before building any flow.</li>
-<li>Launch one bounded pilot journey with a holdout group for measurement.</li>
-<li>Review margin, complaints, unsubscribes, and repeat purchase after thirty days.</li>
-<li>Expand only when the pilot can be edited safely by a second operator.</li>
-<li>Write a peak-season freeze policy covering edits, discounts, and volume.</li>
-<li>Set a quarterly cost review that compares stack cost to email-attributed margin.</li>
-<li>Archive or simplify any flow nobody has reviewed in ninety days.</li>
+<li>Popups first step: consent sources documented and mapped.</li>
+<li>For popups, test-fire order, cart, refund, and support events first.</li>
+<li>Set popups guardrails before constructing journeys.</li>
+<li>For popups, start single-journey with a control group.</li>
+<li>At day thirty, review popups margin, complaints, unsubscribes, repeat buying.</li>
+<li>For popups, growth waits for transferable editing.</li>
+<li>Document popups freeze terms before the season.</li>
+<li>Quarterly, weigh the popups stack against attributed margin.</li>
+<li>Prune popups flows no one has owned in a quarter.</li>
 </ol>
 <h2 class="mt-12">Metrics review cadence for popups</h2>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Metric</th><th>Definition</th><th>Review cadence</th></tr></thead>
 <tbody>
-<tr><td>Margin per send</td><td>Revenue minus discounts, sends, and platform cost</td><td>Monthly</td></tr>
-<tr><td>Repeat purchase rate</td><td>Second-order share within ninety days</td><td>Monthly</td></tr>
-<tr><td>Complaint and unsubscribe rate</td><td>Per campaign and per flow</td><td>Weekly</td></tr>
-<tr><td>Suppression accuracy</td><td>Sample post-purchase sends for violations</td><td>Weekly</td></tr>
-<tr><td>Time to edit safely</td><td>Minutes for a second operator to change a flow</td><td>Quarterly</td></tr>
-<tr><td>Holdout lift</td><td>Treated versus excluded group comparison</td><td>Quarterly</td></tr>
+<tr><td>Margin per send</td><td>Kept popups margin after discounts, sends, fees</td><td>Monthly</td></tr>
+<tr><td>Repeat purchase rate</td><td>Popups second orders inside ninety days</td><td>Monthly</td></tr>
+<tr><td>Complaint and unsubscribe rate</td><td>popups complaint lens on both blasts and flows</td><td>Weekly</td></tr>
+<tr><td>Suppression accuracy</td><td>Popups audit: sample post-order sends</td><td>Weekly</td></tr>
+<tr><td>Time to edit safely</td><td>Time a new popups owner needs per change</td><td>Quarterly</td></tr>
+<tr><td>Holdout lift</td><td>popups-exposed versus excluded comparison</td><td>Quarterly</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Popups matchup FAQ</h2>
 <section class="max-w-3xl mx-auto space-y-6">
-<div><h3>Klaviyo or Shopify Email for popups?</h3><p>Shopify Email is a reasonable start when popups campaigns are occasional and the catalog is small. Klaviyo pays off when popups work needs event-driven branching, catalog-aware content, and segment-level reporting. Model profile-based billing against expected contact growth before committing.</p></div>
-<div><h3>Omnisend vs Klaviyo for popups?</h3><p>Omnisend tends to be faster for a small team running email-first popups campaigns with light SMS. Klaviyo offers deeper segmentation and event flexibility, which matters as popups logic grows. Pilot both with one real popups journey and compare maintenance time, not feature lists.</p></div>
-<div><h3>Mailchimp or Klaviyo for popups?</h3><p>Mailchimp suits teams that value a familiar editor and broad campaign tooling for popups newsletters and simple automations. Klaviyo is stronger where popups messages depend on Shopify order, cart, and browse events. Check both official pricing pages at your contact volume before deciding.</p></div>
-<div><h3>Do I need a separate SMS tool for popups?</h3><p>Not at the start. Several platforms cover basic SMS alongside email, and SMS specialists earn their cost only when text messages measurably improve popups outcomes. Confirm consent handling, quiet hours, and per-message pricing, and verify that your audience actually responds to SMS.</p></div>
-<div><h3>How should I suppress audiences in popups flows?</h3><p>Exclude recent purchasers, open support or return cases, refunded orders, and anyone without documented consent. For popups, write exit conditions next to each flow so another operator can audit them. Suppression mistakes cost more margin than a missed campaign.</p></div>
-<div><h3>What does popups email cost?</h3><p>Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your popups campaigns consume. Providers change plans and limits often, so check official pricing pages and model an eighteen-month total before committing.</p></div>
-<div><h3>Which app should a lean team pilot first for popups?</h3><p>Start with the tool your team can fully operate in two weeks: native Shopify Email for simple popups sends, or a lean ecommerce platform when branching and suppression matter. A completed pilot beats an ambitious setup that stalls during week one.</p></div>
-<div><h3>How do I measure popups email results?</h3><p>Track margin per send, repeat purchase, unsubscribe and complaint rates, and support load alongside attributed revenue. For popups specifically, compare a holdout group against recipients so seasonal lift is not mistaken for program impact.</p></div>
-<div><h3>Can I run popups email without an agency?</h3><p>Yes, if the scope stays small. Pick one popups journey, document consent and suppression rules, and reuse a simple template system. Add outside help only when flow complexity, deliverability remediation, or peak-season volume exceeds in-house capacity.</p></div>
-<div><h3>When should I graduate from my first app for popups?</h3><p>Graduate when the team cannot safely edit flows, segment reliably by purchase state, or forecast cost at your growing contact count. For popups, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression.</p></div>
-<div><h3>How much discounting is acceptable for popups?</h3><p>Treat discounts as one lever, not the default. For popups, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. If most revenue needs a code, the program has a value problem rather than a pricing problem.</p></div>
-<div><h3>Which Shopify data matters most for popups?</h3><p>Order and refund state, cart and browse events, consent source, and product availability cover most popups decisions. Verify each event fires correctly in a test purchase before building logic on top of it, and document field meanings so marketing and engineering agree.</p></div>
-<div><h3>How do I avoid duplicate sends across apps for popups?</h3><p>Give one platform ownership of each popups journey, document which app sends what, and share suppression lists where the tools support it. Run a weekly audit during peak season that samples customers and lists every message they received.</p></div>
-<div><h3>What should a popups pilot include?</h3><p>A bounded pilot covers one audience, one or two journeys, explicit suppression rules, a holdout group, and a thirty-day review of margin and complaints. Agree on the success criteria before launch so results cannot be reinterpreted afterward.</p></div>
+<div><h3>Klaviyo or Shopify Email for popups?</h3><p>Popups beginners do well on native email; Klaviyo fits when popups logic leans on events, catalog data, and segment reporting, with profile billing modeled on popups expansion.</p></div>
+<div><h3>Omnisend vs Klaviyo for popups?</h3><p>Omnisend gets popups teams sending sooner with light SMS attached; Klaviyo stretches popups segmentation further. Test-drive one real popups flow each way before judging.</p></div>
+<div><h3>Mailchimp or Klaviyo for popups?</h3><p>Pick Mailchimp for popups when editor comfort and broadcast breadth lead; Klaviyo when popups hinges on Shopify event depth — and verify both official pricing pages on popups scale.</p></div>
+<div><h3>Do I need a separate SMS tool for popups?</h3><p>Hold specialist SMS for popups until texts demonstrably move popups numbers; platform-bundled SMS covers the start — with popups consent, quiet hours, and unit pricing confirmed.</p></div>
+<div><h3>How should I suppress audiences in popups flows?</h3><p>Guard popups with exits for buyers, open cases, refunds, and no-consent profiles, auditable per popups flow. In popups, a suppression miss hurts worse than a missed blast.</p></div>
+<div><h3>What does popups email cost?</h3><p>Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your popups campaigns consume. Pricing moves too often to quote statically: check the official pricing pages covering your popups stack and model eighteen months of total cost before committing.</p></div>
+<div><h3>Which app should a lean team pilot first for popups?</h3><p>For popups, choose whatever the team masters in a fortnight — native email for plain popups sends, a lean ESP once popups branching matters. A finished popups pilot beats a stalled grand plan.</p></div>
+<div><h3>How do I measure popups email results?</h3><p>Measure popups on contribution, not vanity sends: margin per send, repeat purchase, unsubscribes, complaints, and support load alongside attributed revenue, with a holdout cohort proving the popups journeys caused the lift.</p></div>
+<div><h3>Can I run popups email without an agency?</h3><p>Yes, if the scope stays small. Pick one popups journey, document consent and suppression rules, and reuse a simple template system. For popups, hire help only if journey complexity, inbox-placement remediation, or peak popups volume genuinely exceeds what the team can run.</p></div>
+<div><h3>When should I graduate from my first app for popups?</h3><p>The popups moment to graduate arrives when safe editing, purchase-state segmentation, or cost forecasting at your popups contact scale stops working. For popups, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression.</p></div>
+<div><h3>How much discounting is acceptable for popups?</h3><p>Treat discounts as one lever, not the default. For popups, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. A popups program where nearly every order needs a discount is signalling weak popups value, not wrong pricing.</p></div>
+<div><h3>Which Shopify data matters most for popups?</h3><p>Order and refund state, cart and browse events, consent source, and product availability cover most popups decisions. Before layering popups branching on events, fire each one in a test purchase and record what every popups-relevant field means for both teams.</p></div>
+<div><h3>How do I avoid duplicate sends across apps for popups?</h3><p>Give one platform ownership of each popups journey, document which app sends what, and share suppression lists where the tools support it. For popups peak weeks, sample customer timelines weekly and enumerate all popups sends per profile.</p></div>
+<div><h3>What should a popups pilot include?</h3><p>For popups, a tight pilot wins: single audience, at most two journeys, explicit suppression, a holdout, and a day-thirty popups review of margin and complaints with pre-agreed pass/fail lines.</p></div>
 </section>
 <script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",mainEntity:[
-{"@type": "Question", "name": "Klaviyo or Shopify Email for popups?", "acceptedAnswer": {"@type": "Answer", "text": "Shopify Email is a reasonable start when popups campaigns are occasional and the catalog is small. Klaviyo pays off when popups work needs event-driven branching, catalog-aware content, and segment-level reporting. Model profile-based billing against expected contact growth before committing."}},
-{"@type": "Question", "name": "Omnisend vs Klaviyo for popups?", "acceptedAnswer": {"@type": "Answer", "text": "Omnisend tends to be faster for a small team running email-first popups campaigns with light SMS. Klaviyo offers deeper segmentation and event flexibility, which matters as popups logic grows. Pilot both with one real popups journey and compare maintenance time, not feature lists."}},
-{"@type": "Question", "name": "Mailchimp or Klaviyo for popups?", "acceptedAnswer": {"@type": "Answer", "text": "Mailchimp suits teams that value a familiar editor and broad campaign tooling for popups newsletters and simple automations. Klaviyo is stronger where popups messages depend on Shopify order, cart, and browse events. Check both official pricing pages at your contact volume before deciding."}},
-{"@type": "Question", "name": "Do I need a separate SMS tool for popups?", "acceptedAnswer": {"@type": "Answer", "text": "Not at the start. Several platforms cover basic SMS alongside email, and SMS specialists earn their cost only when text messages measurably improve popups outcomes. Confirm consent handling, quiet hours, and per-message pricing, and verify that your audience actually responds to SMS."}},
-{"@type": "Question", "name": "How should I suppress audiences in popups flows?", "acceptedAnswer": {"@type": "Answer", "text": "Exclude recent purchasers, open support or return cases, refunded orders, and anyone without documented consent. For popups, write exit conditions next to each flow so another operator can audit them. Suppression mistakes cost more margin than a missed campaign."}},
-{"@type": "Question", "name": "What does popups email cost?", "acceptedAnswer": {"@type": "Answer", "text": "Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your popups campaigns consume. Providers change plans and limits often, so check official pricing pages and model an eighteen-month total before committing."}},
-{"@type": "Question", "name": "Which app should a lean team pilot first for popups?", "acceptedAnswer": {"@type": "Answer", "text": "Start with the tool your team can fully operate in two weeks: native Shopify Email for simple popups sends, or a lean ecommerce platform when branching and suppression matter. A completed pilot beats an ambitious setup that stalls during week one."}},
-{"@type": "Question", "name": "How do I measure popups email results?", "acceptedAnswer": {"@type": "Answer", "text": "Track margin per send, repeat purchase, unsubscribe and complaint rates, and support load alongside attributed revenue. For popups specifically, compare a holdout group against recipients so seasonal lift is not mistaken for program impact."}},
-{"@type": "Question", "name": "Can I run popups email without an agency?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if the scope stays small. Pick one popups journey, document consent and suppression rules, and reuse a simple template system. Add outside help only when flow complexity, deliverability remediation, or peak-season volume exceeds in-house capacity."}},
-{"@type": "Question", "name": "When should I graduate from my first app for popups?", "acceptedAnswer": {"@type": "Answer", "text": "Graduate when the team cannot safely edit flows, segment reliably by purchase state, or forecast cost at your growing contact count. For popups, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression."}},
-{"@type": "Question", "name": "How much discounting is acceptable for popups?", "acceptedAnswer": {"@type": "Answer", "text": "Treat discounts as one lever, not the default. For popups, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. If most revenue needs a code, the program has a value problem rather than a pricing problem."}},
-{"@type": "Question", "name": "Which Shopify data matters most for popups?", "acceptedAnswer": {"@type": "Answer", "text": "Order and refund state, cart and browse events, consent source, and product availability cover most popups decisions. Verify each event fires correctly in a test purchase before building logic on top of it, and document field meanings so marketing and engineering agree."}},
-{"@type": "Question", "name": "How do I avoid duplicate sends across apps for popups?", "acceptedAnswer": {"@type": "Answer", "text": "Give one platform ownership of each popups journey, document which app sends what, and share suppression lists where the tools support it. Run a weekly audit during peak season that samples customers and lists every message they received."}},
-{"@type": "Question", "name": "What should a popups pilot include?", "acceptedAnswer": {"@type": "Answer", "text": "A bounded pilot covers one audience, one or two journeys, explicit suppression rules, a holdout group, and a thirty-day review of margin and complaints. Agree on the success criteria before launch so results cannot be reinterpreted afterward."}}
+{"@type": "Question", "name": "Klaviyo or Shopify Email for popups?", "acceptedAnswer": {"@type": "Answer", "text": "Popups beginners do well on native email; Klaviyo fits when popups logic leans on events, catalog data, and segment reporting, with profile billing modeled on popups expansion."}},
+{"@type": "Question", "name": "Omnisend vs Klaviyo for popups?", "acceptedAnswer": {"@type": "Answer", "text": "Omnisend gets popups teams sending sooner with light SMS attached; Klaviyo stretches popups segmentation further. Test-drive one real popups flow each way before judging."}},
+{"@type": "Question", "name": "Mailchimp or Klaviyo for popups?", "acceptedAnswer": {"@type": "Answer", "text": "Pick Mailchimp for popups when editor comfort and broadcast breadth lead; Klaviyo when popups hinges on Shopify event depth — and verify both official pricing pages on popups scale."}},
+{"@type": "Question", "name": "Do I need a separate SMS tool for popups?", "acceptedAnswer": {"@type": "Answer", "text": "Hold specialist SMS for popups until texts demonstrably move popups numbers; platform-bundled SMS covers the start — with popups consent, quiet hours, and unit pricing confirmed."}},
+{"@type": "Question", "name": "How should I suppress audiences in popups flows?", "acceptedAnswer": {"@type": "Answer", "text": "Guard popups with exits for buyers, open cases, refunds, and no-consent profiles, auditable per popups flow. In popups, a suppression miss hurts worse than a missed blast."}},
+{"@type": "Question", "name": "What does popups email cost?", "acceptedAnswer": {"@type": "Answer", "text": "Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your popups campaigns consume. Pricing moves too often to quote statically: check the official pricing pages covering your popups stack and model eighteen months of total cost before committing."}},
+{"@type": "Question", "name": "Which app should a lean team pilot first for popups?", "acceptedAnswer": {"@type": "Answer", "text": "For popups, choose whatever the team masters in a fortnight — native email for plain popups sends, a lean ESP once popups branching matters. A finished popups pilot beats a stalled grand plan."}},
+{"@type": "Question", "name": "How do I measure popups email results?", "acceptedAnswer": {"@type": "Answer", "text": "Measure popups on contribution, not vanity sends: margin per send, repeat purchase, unsubscribes, complaints, and support load alongside attributed revenue, with a holdout cohort proving the popups journeys caused the lift."}},
+{"@type": "Question", "name": "Can I run popups email without an agency?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if the scope stays small. Pick one popups journey, document consent and suppression rules, and reuse a simple template system. For popups, hire help only if journey complexity, inbox-placement remediation, or peak popups volume genuinely exceeds what the team can run."}},
+{"@type": "Question", "name": "When should I graduate from my first app for popups?", "acceptedAnswer": {"@type": "Answer", "text": "The popups moment to graduate arrives when safe editing, purchase-state segmentation, or cost forecasting at your popups contact scale stops working. For popups, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression."}},
+{"@type": "Question", "name": "How much discounting is acceptable for popups?", "acceptedAnswer": {"@type": "Answer", "text": "Treat discounts as one lever, not the default. For popups, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. A popups program where nearly every order needs a discount is signalling weak popups value, not wrong pricing."}},
+{"@type": "Question", "name": "Which Shopify data matters most for popups?", "acceptedAnswer": {"@type": "Answer", "text": "Order and refund state, cart and browse events, consent source, and product availability cover most popups decisions. Before layering popups branching on events, fire each one in a test purchase and record what every popups-relevant field means for both teams."}},
+{"@type": "Question", "name": "How do I avoid duplicate sends across apps for popups?", "acceptedAnswer": {"@type": "Answer", "text": "Give one platform ownership of each popups journey, document which app sends what, and share suppression lists where the tools support it. For popups peak weeks, sample customer timelines weekly and enumerate all popups sends per profile."}},
+{"@type": "Question", "name": "What should a popups pilot include?", "acceptedAnswer": {"@type": "Answer", "text": "For popups, a tight pilot wins: single audience, at most two journeys, explicit suppression, a holdout, and a day-thirty popups review of margin and complaints with pre-agreed pass/fail lines."}}
 ]})} />
 <h2 class="mt-12">Governance and documentation for popups</h2>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Practice</th><th>Standard</th><th>Risk it prevents</th></tr></thead>
 <tbody>
-<tr><td>Flow ownership</td><td>One named owner per journey</td><td>Orphaned flows that send stale offers</td></tr>
-<tr><td>Naming convention</td><td>Prefix by job and audience</td><td>Impossible audits during peak season</td></tr>
-<tr><td>Change log</td><td>Record edits, dates, and reasons</td><td>Untraceable performance regressions</td></tr>
-<tr><td>Access control</td><td>Least-privilege seats for editors</td><td>Accidental deletes or unauthorized sends</td></tr>
-<tr><td>Quarterly flow review</td><td>Archive or simplify unused branches</td><td>Complexity tax that slows every edit</td></tr>
-<tr><td>Incident runbook</td><td>Steps for pausing sends and notifying</td><td>Slow response to a broken or harmful send</td></tr>
+<tr><td>Flow ownership</td><td>Popups journeys each carry one owner</td><td>popups ghosts sending expired incentives</td></tr>
+<tr><td>Naming convention</td><td>popups-flow names lead with purpose</td><td>Popups audits collapsing at peak</td></tr>
+<tr><td>Change log</td><td>popups-flow history recorded per change</td><td>Mystery popups dips nobody can source</td></tr>
+<tr><td>Access control</td><td>Popups seats on least privilege</td><td>Over-permissioned popups editors misfiring</td></tr>
+<tr><td>Quarterly flow review</td><td>Popups dead branches archived</td><td>Popups bloat taxing each edit</td></tr>
+<tr><td>Incident runbook</td><td>Popups incident path: pause, notify, fix</td><td>Lagging popups response to bad sends</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Peak season readiness for popups</h2>
 <ol>
-<li>Freeze flow edits two weeks before the peak window opens.</li>
-<li>Test every flow with a real purchase, refund, and support case.</li>
-<li>Confirm suppression rules exclude recent buyers and open returns.</li>
-<li>Raise holdout samples so peak results remain measurable.</li>
-<li>Pre-write quiet-hours and frequency-cap policies for SMS.</li>
-<li>Check plan limits and overage pricing against forecast volume.</li>
-<li>Assign a daily deliverability monitor for complaints and bounces.</li>
-<li>Document rollback steps for each flow before the first campaign.</li>
+<li>Lock popups flow edits a full fortnight before peak.</li>
+<li>Exercise each popups flow with live purchase, refund, support tests.</li>
+<li>Verify popups suppression clears recent buyers and open returns.</li>
+<li>Boost popups control groups before the surge.</li>
+<li>Popups texting policy written before peak.</li>
+<li>Price popups peaks against plan ceilings early.</li>
+<li>Staff daily popups deliverability watch on complaints and bounces.</li>
+<li>Popups undo paths recorded pre-campaign.</li>
 </ol>
-<p>One more operating note for popups: schedule the first quarterly review before launch, not after the first crisis. Teams that write down their suppression rules, discount caps, and escalation contacts in week one spend markedly less time firefighting later, and new operators inherit a documented system instead of folklore.</p>
-<p>Finally, keep the popups program honest with a quarterly written review: what shipped, what was suppressed, what margin was kept, and which assumptions failed. Written reviews turn individual judgment into team knowledge and make vendor decisions calmer, because the evidence sits in one place instead of in memory.</p>
+<p>For popups, schedule quarter-one review before the first send. Writing popups suppression rules, discount caps, and escalation paths down in week one saves weeks of peak-season triage and hands newcomers a working popups playbook.</p>
+<p>Close each popups quarter with a written ledger — popups sends shipped, suppressions honored, margin retained, failed bets — so popups vendor decisions rest on one shared evidence file, not scattered memory.</p>
 </main></BaseLayout>

@@ -68,144 +68,144 @@ const apps = [
 </a>.
 </p>
 <h2 class="mt-14">Consent and purchaser suppression for Customer stories</h2>
-<p>Before any customer stories automation goes live, confirm that every app in the stack records email and SMS consent in a form you can audit, and that purchase events suppress promotional follow-up immediately after checkout. A message that lands after a purchase, a refund, or an unresolved support case damages the channel faster than weak creative ever will.</p>
+<p>Before launching customer stories automation, prove every app in the stack logs email and SMS consent auditably, with purchase events cutting promotional follow-up the moment checkout completes. For customer stories, a promo arriving after a purchase, refund, or open support case burns trust faster than weak customer stories creative ever could.</p>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Audience state</th><th>Required handling</th><th>Why it matters</th></tr></thead>
 <tbody>
-<tr><td>No documented consent</td><td>Suppress all marketing; transactional messages only</td><td>Consent is the legal foundation of every send</td></tr>
-<tr><td>Consented, never purchased</td><td>Educational and social-proof content first</td><td>Early discounting trains deal-seeking behavior</td></tr>
-<tr><td>Active cart, no checkout</td><td>Reminder with product context, no instant discount</td><td>Margin protection during a high-intent window</td></tr>
-<tr><td>Purchased recently</td><td>Suppress promotion; shift to post-purchase education</td><td>Avoids buyer remorse and unsubscribe risk</td></tr>
-<tr><td>Refund or return open</td><td>Hold promotion until the case resolves</td><td>Service context changes message tolerance</td></tr>
-<tr><td>Repeated non-engagement</td><td>Sunset the contact before complaints accumulate</td><td>Protects sender reputation and inbox placement</td></tr>
-<tr><td>SMS consent present</td><td>Respect quiet hours and frequency caps</td><td>SMS complaints carry higher cost and risk</td></tr>
-<tr><td>Wholesale or B2B account</td><td>Route to account-specific communication</td><td>Retail promotions can breach contract terms</td></tr>
-<tr><td>Free or disposable email domain</td><td>Verify before enrolling in automated journeys</td><td>Bounce risk and low-quality signups hurt deliverability</td></tr>
-<tr><td>Staff and test accounts</td><td>Exclude from production sending</td><td>Test noise corrupts reporting and attribution</td></tr>
-<tr><td>Competitor or researcher signals</td><td>No special handling; normal consent rules apply</td><td>Manual exceptions create untrackable inconsistencies</td></tr>
-<tr><td>Legacy list without timestamps</td><td>Re-permission before automated follow-up</td><td>Undocumented consent is a compliance liability</td></tr>
+<tr><td>No documented consent</td><td>No customer stories promos without proof; transactional messages only</td><td>Every customer stories send stands on documented consent</td></tr>
+<tr><td>Consented, never purchased</td><td>First customer stories touches teach and reassure before selling</td><td>Premature customer stories offers teach shoppers to wait</td></tr>
+<tr><td>Active cart, no checkout</td><td>Customer Stories reminder with product context; discount withheld</td><td>Margin-safe customer stories recovery at peak intent</td></tr>
+<tr><td>Purchased recently</td><td>Recent customer stories buyers exit promos into onboarding</td><td>Keeps customer stories buyers from instant list fatigue</td></tr>
+<tr><td>Refund or return open</td><td>Hold customer stories marketing while service cases stay open</td><td>Open customer stories cases reset what the shopper tolerates</td></tr>
+<tr><td>Repeated non-engagement</td><td>Prune unengaged customer stories profiles early</td><td>Shields customer stories sender reputation and inboxing</td></tr>
+<tr><td>SMS consent present</td><td>Hold customer stories texts to quiet hours and frequency limits</td><td>Text grievances hit customer stories programs hardest</td></tr>
+<tr><td>Wholesale or B2B account</td><td>Customer Stories B2B routing stays account-specific</td><td>Customer Stories retail promos can violate B2B terms</td></tr>
+<tr><td>Free or disposable email domain</td><td>Verify customer stories throwaway addresses pre-journey</td><td>Unverified customer stories addresses poison sender score</td></tr>
+<tr><td>Staff and test accounts</td><td>Strip customer stories test data from live journeys</td><td>Customer Stories reporting stays clean without test noise</td></tr>
+<tr><td>Competitor or researcher signals</td><td>Treat customer stories snoops under normal consent policy</td><td>Customer Stories consistency beats clever carve-outs</td></tr>
+<tr><td>Legacy list without timestamps</td><td>Re-permission legacy customer stories lists pre-automation</td><td>Timestamp-less customer stories consent is legal exposure</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Margin, app costs, and pricing for Customer stories</h2>
-<p>Attributed revenue is not profit. A customer stories program that pays for itself should survive a full cost model: platform subscription, contact or send overages, SMS credits, capture tooling, template work, agency retainers, and the margin cost of every discount the flows issue. If stack cost approaches fifteen percent of email-attributed margin, simplify before optimizing.</p>
-<p>Pricing changes frequently and varies by region, contact volume, and contract term, so check the official pricing pages of every shortlisted app and model an eighteen-month total that includes a peak season. Free tiers usually trade limits in contacts, sends, branching, or support; confirm which limit binds for your customer stories plan first.</p>
+<p>Attributed revenue is not profit for customer stories. A self-funding customer stories program survives a full cost model: subscription, contact or send overages, SMS credits, capture tooling, templates, agency time, and every point of customer stories discount margin. When the customer stories stack nears fifteen percent of email-attributed margin, simplify the customer stories setup before tuning it.</p>
+<p>Pricing changes frequently and varies by region, contact volume, and contract term, so check the official pricing pages of every shortlisted app and model an eighteen-month total that includes a peak season. Customer Stories free tiers look generous until one limit bites — verify which of contacts, sends, branching, or support constrains customer stories first.</p>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Cost component</th><th>What to model</th><th>Common failure</th></tr></thead>
 <tbody>
-<tr><td>Platform subscription</td><td>Plan tier at realistic contact volume</td><td>Buying the tier for a list you do not have yet</td></tr>
-<tr><td>Contact or send overages</td><td>Growth rate against plan limits</td><td>Seasonal spikes triggering surprise invoices</td></tr>
-<tr><td>SMS credits</td><td>Opt-in rate times messages per journey</td><td>Assuming SMS converts like email at a fraction of cost</td></tr>
-<tr><td>Discount budget</td><td>Discount depth times expected redemption</td><td>Flows that train customers to wait for codes</td></tr>
-<tr><td>Creative and ops time</td><td>Hours per week to maintain flows</td><td>Underestimating editing and QA workload</td></tr>
-<tr><td>Migration and setup</td><td>Data import, consent mapping, flow rebuild</td><td>Losing consent records during a move</td></tr>
-<tr><td>Support and success tiers</td><td>Whether critical issues need paid support</td><td>Discovering support gaps during peak week</td></tr>
-<tr><td>Third-party integrations</td><td>Review, loyalty, and capture tool fees</td><td>Stack creep that doubles effective platform cost</td></tr>
-<tr><td>Deliverability remediation</td><td>Monitoring, list cleaning, and consulting</td><td>Reputation damage costing more than the subscription</td></tr>
+<tr><td>Platform subscription</td><td>Tier your customer stories plan to contacts you truly hold</td><td>Customer Stories tier bought for phantom growth</td></tr>
+<tr><td>Contact or send overages</td><td>Customer Stories headroom checked against growth</td><td>Peak customer stories volume blowing past tier limits</td></tr>
+<tr><td>SMS credits</td><td>customer stories SMS units from opt-in rate and flow depth</td><td>Customer Stories SMS economics misread as email</td></tr>
+<tr><td>Discount budget</td><td>Customer Stories discount load from depth and uptake</td><td>Customer Stories journeys schooling code-waiting</td></tr>
+<tr><td>Creative and ops time</td><td>Weekly customer stories hours to run and QA flows</td><td>customer stories maintenance hours wished away</td></tr>
+<tr><td>Migration and setup</td><td>customer stories switch priced in imports and rebuild labor</td><td>customer stories migration shedding consent proof</td></tr>
+<tr><td>Support and success tiers</td><td>Customer Stories severity coverage: paid or included</td><td>Customer Stories help-desk limits exposed by drops</td></tr>
+<tr><td>Third-party integrations</td><td>customer stories companion tools and their fees</td><td>Creeping customer stories add-ons dwarfing ESP spend</td></tr>
+<tr><td>Deliverability remediation</td><td>Customer Stories reputation maintenance budget</td><td>Customer Stories reputation repair dwarfing license fees</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Decision table for Customer stories</h2>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Situation</th><th>Start with</th><th>Reason</th></tr></thead>
 <tbody>
-<tr><td>Occasional sends, small catalog</td><td>Shopify Email</td><td>Native setup with minimal operating cost</td></tr>
-<tr><td>Branching and suppression matter</td><td>Klaviyo</td><td>Deep event and segment controls</td></tr>
-<tr><td>Small team, email plus light SMS</td><td>Omnisend</td><td>Accessible multichannel workflows</td></tr>
-<tr><td>Broad newsletter operations</td><td>Mailchimp</td><td>Familiar editor and audience tooling</td></tr>
-<tr><td>Lean lifecycle operations</td><td>Sequenzy</td><td>Focused sequence and campaign operation</td></tr>
-<tr><td>Developer-led custom builds</td><td>Customer.io</td><td>Event-triggered messaging flexibility</td></tr>
-<tr><td>CRM-led sales follow-up</td><td>ActiveCampaign</td><td>Automation joined to account context</td></tr>
-<tr><td>Simple list growth and popups</td><td>Privy</td><td>Capture-first tooling for new stores</td></tr>
-<tr><td>Commerce cohort analysis</td><td>Drip</td><td>Repeat-purchase reporting orientation</td></tr>
+<tr><td>Occasional sends, small catalog</td><td>Shopify Email</td><td>Minimal overhead for small-catalog customer stories volume</td></tr>
+<tr><td>Branching and suppression matter</td><td>Klaviyo</td><td>Customer Stories segmentation that scales with complexity</td></tr>
+<tr><td>Small team, email plus light SMS</td><td>Omnisend</td><td>Low-friction customer stories journeys spanning channels</td></tr>
+<tr><td>Broad newsletter operations</td><td>Mailchimp</td><td>Customer Stories newsletters in a familiar editor</td></tr>
+<tr><td>Lean lifecycle operations</td><td>Sequenzy</td><td>Pay-per-email customer stories operation for selective volume</td></tr>
+<tr><td>Developer-led custom builds</td><td>Customer.io</td><td>Developer-grade customer stories event triggers</td></tr>
+<tr><td>CRM-led sales follow-up</td><td>ActiveCampaign</td><td>CRM-aware customer stories automation for sales motion</td></tr>
+<tr><td>Simple list growth and popups</td><td>Privy</td><td>Customer Stories subscriber capture before lifecycle depth</td></tr>
+<tr><td>Commerce cohort analysis</td><td>Drip</td><td>Customer Stories reporting bent toward repeat buying</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Common failure modes in customer stories email</h2>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Failure</th><th>Prevention</th><th>Cost of getting it wrong</th></tr></thead>
 <tbody>
-<tr><td>Discount in the first touch</td><td>Hold offers until intent is established</td><td>Trains low-margin buying habits</td></tr>
-<tr><td>No purchase suppression</td><td>Exit flows on order and checkout events</td><td>Post-purchase promotions feel careless</td></tr>
-<tr><td>Consent imported without proof</td><td>Map timestamps and source fields</td><td>Compliance exposure during audits</td></tr>
-<tr><td>Flows only one operator understands</td><td>Document exits and naming conventions</td><td>Editing risk and key-person dependency</td></tr>
-<tr><td>Measuring clicks only</td><td>Track margin, returns, and complaints</td><td>Clicks reward aggressive, harmful tactics</td></tr>
-<tr><td>Ignoring deliverability signals</td><td>Monitor bounces and spam complaints</td><td>Recovery costs exceed prevention</td></tr>
-<tr><td>Peak-season flow changes</td><td>Freeze edits during the peak window</td><td>Untested changes fail at the worst time</td></tr>
-<tr><td>SMS without a channel strategy</td><td>Define SMS jobs separately from email</td><td>Frequency overlap drives opt-outs</td></tr>
+<tr><td>Discount in the first touch</td><td>Withhold customer stories offers until intent shows</td><td>Schools customer stories shoppers in low-margin habits</td></tr>
+<tr><td>No purchase suppression</td><td>End customer stories flows the moment orders land</td><td>customer stories promos chasing paid customers grate</td></tr>
+<tr><td>Consent imported without proof</td><td>Map customer stories consent timestamps and sources</td><td>customer stories compliance gaps surface at audit</td></tr>
+<tr><td>Flows only one operator understands</td><td>customer stories conventions written for successors</td><td>customer stories changes gamble without docs</td></tr>
+<tr><td>Measuring clicks only</td><td>Customer Stories truth in margin not clicks</td><td>Customer Stories click-chasing rewards harm</td></tr>
+<tr><td>Ignoring deliverability signals</td><td>Track customer stories bounce and complaint trendlines</td><td>customer stories damage control exceeds upkeep cost</td></tr>
+<tr><td>Peak-season flow changes</td><td>Customer Stories edit freeze across peak weeks</td><td>Peak-week customer stories experiments fail loudest</td></tr>
+<tr><td>SMS without a channel strategy</td><td>Customer Stories texts scoped independently of email</td><td>Doubled customer stories touches push unsubscribes</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Implementation order for a customer stories program</h2>
 <ol>
-<li>Document consent sources and map them into the platform before any campaign.</li>
-<li>Verify Shopify order, cart, refund, and support events fire in a test store.</li>
-<li>Build suppression rules and exit conditions before building any flow.</li>
-<li>Launch one bounded pilot journey with a holdout group for measurement.</li>
-<li>Review margin, complaints, unsubscribes, and repeat purchase after thirty days.</li>
-<li>Expand only when the pilot can be edited safely by a second operator.</li>
-<li>Write a peak-season freeze policy covering edits, discounts, and volume.</li>
-<li>Set a quarterly cost review that compares stack cost to email-attributed margin.</li>
-<li>Archive or simplify any flow nobody has reviewed in ninety days.</li>
+<li>Customer Stories first step: consent sources documented and mapped.</li>
+<li>Confirm customer stories event wiring with a full test-store pass.</li>
+<li>For customer stories, suppression architecture precedes journey building.</li>
+<li>Pilot customer stories with one bounded journey plus holdout measurement.</li>
+<li>For customer stories, the thirty-day read covers profit and list health.</li>
+<li>Customer Stories expansion needs two-operator safety.</li>
+<li>For customer stories, pre-write peak rules on changes and offers.</li>
+<li>Reprice customer stories totals against margin every quarter.</li>
+<li>Retire or trim customer stories flows untouched for ninety days.</li>
 </ol>
 <h2 class="mt-12">Metrics review cadence for customer stories</h2>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Metric</th><th>Definition</th><th>Review cadence</th></tr></thead>
 <tbody>
-<tr><td>Margin per send</td><td>Revenue minus discounts, sends, and platform cost</td><td>Monthly</td></tr>
-<tr><td>Repeat purchase rate</td><td>Second-order share within ninety days</td><td>Monthly</td></tr>
-<tr><td>Complaint and unsubscribe rate</td><td>Per campaign and per flow</td><td>Weekly</td></tr>
-<tr><td>Suppression accuracy</td><td>Sample post-purchase sends for violations</td><td>Weekly</td></tr>
-<tr><td>Time to edit safely</td><td>Minutes for a second operator to change a flow</td><td>Quarterly</td></tr>
-<tr><td>Holdout lift</td><td>Treated versus excluded group comparison</td><td>Quarterly</td></tr>
+<tr><td>Margin per send</td><td>Net customer stories margin post-discounts and delivery cost</td><td>Monthly</td></tr>
+<tr><td>Repeat purchase rate</td><td>Customer Stories second orders inside ninety days</td><td>Monthly</td></tr>
+<tr><td>Complaint and unsubscribe rate</td><td>customer stories complaint lens on both blasts and flows</td><td>Weekly</td></tr>
+<tr><td>Suppression accuracy</td><td>Customer Stories audit: sample post-order sends</td><td>Weekly</td></tr>
+<tr><td>Time to edit safely</td><td>Time a new customer stories owner needs per change</td><td>Quarterly</td></tr>
+<tr><td>Holdout lift</td><td>customer stories lift: messaged cohort against control</td><td>Quarterly</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Customer stories matchup FAQ</h2>
 <section class="max-w-3xl mx-auto space-y-6">
-<div><h3>Klaviyo or Shopify Email for customer stories?</h3><p>Shopify Email is a reasonable start when customer stories campaigns are occasional and the catalog is small. Klaviyo pays off when customer stories work needs event-driven branching, catalog-aware content, and segment-level reporting. Model profile-based billing against expected contact growth before committing.</p></div>
-<div><h3>Omnisend vs Klaviyo for customer stories?</h3><p>Omnisend tends to be faster for a small team running email-first customer stories campaigns with light SMS. Klaviyo offers deeper segmentation and event flexibility, which matters as customer stories logic grows. Pilot both with one real customer stories journey and compare maintenance time, not feature lists.</p></div>
-<div><h3>Mailchimp or Klaviyo for customer stories?</h3><p>Mailchimp suits teams that value a familiar editor and broad campaign tooling for customer stories newsletters and simple automations. Klaviyo is stronger where customer stories messages depend on Shopify order, cart, and browse events. Check both official pricing pages at your contact volume before deciding.</p></div>
-<div><h3>Do I need a separate SMS tool for customer stories?</h3><p>Not at the start. Several platforms cover basic SMS alongside email, and SMS specialists earn their cost only when text messages measurably improve customer stories outcomes. Confirm consent handling, quiet hours, and per-message pricing, and verify that your audience actually responds to SMS.</p></div>
-<div><h3>How should I suppress audiences in customer stories flows?</h3><p>Exclude recent purchasers, open support or return cases, refunded orders, and anyone without documented consent. For customer stories, write exit conditions next to each flow so another operator can audit them. Suppression mistakes cost more margin than a missed campaign.</p></div>
-<div><h3>What does customer stories email cost?</h3><p>Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your customer stories campaigns consume. Providers change plans and limits often, so check official pricing pages and model an eighteen-month total before committing.</p></div>
-<div><h3>Which app should a lean team pilot first for customer stories?</h3><p>Start with the tool your team can fully operate in two weeks: native Shopify Email for simple customer stories sends, or a lean ecommerce platform when branching and suppression matter. A completed pilot beats an ambitious setup that stalls during week one.</p></div>
-<div><h3>How do I measure customer stories email results?</h3><p>Track margin per send, repeat purchase, unsubscribe and complaint rates, and support load alongside attributed revenue. For customer stories specifically, compare a holdout group against recipients so seasonal lift is not mistaken for program impact.</p></div>
-<div><h3>Can I run customer stories email without an agency?</h3><p>Yes, if the scope stays small. Pick one customer stories journey, document consent and suppression rules, and reuse a simple template system. Add outside help only when flow complexity, deliverability remediation, or peak-season volume exceeds in-house capacity.</p></div>
-<div><h3>When should I graduate from my first app for customer stories?</h3><p>Graduate when the team cannot safely edit flows, segment reliably by purchase state, or forecast cost at your growing contact count. For customer stories, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression.</p></div>
-<div><h3>How much discounting is acceptable for customer stories?</h3><p>Treat discounts as one lever, not the default. For customer stories, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. If most revenue needs a code, the program has a value problem rather than a pricing problem.</p></div>
-<div><h3>Which Shopify data matters most for customer stories?</h3><p>Order and refund state, cart and browse events, consent source, and product availability cover most customer stories decisions. Verify each event fires correctly in a test purchase before building logic on top of it, and document field meanings so marketing and engineering agree.</p></div>
-<div><h3>How do I avoid duplicate sends across apps for customer stories?</h3><p>Give one platform ownership of each customer stories journey, document which app sends what, and share suppression lists where the tools support it. Run a weekly audit during peak season that samples customers and lists every message they received.</p></div>
-<div><h3>What should a customer stories pilot include?</h3><p>A bounded pilot covers one audience, one or two journeys, explicit suppression rules, a holdout group, and a thirty-day review of margin and complaints. Agree on the success criteria before launch so results cannot be reinterpreted afterward.</p></div>
+<div><h3>Klaviyo or Shopify Email for customer stories?</h3><p>Customer Stories at low volume runs fine on Shopify Email; graduate to Klaviyo once customer stories needs triggers, dynamic catalog content, and segment revenue views, after pricing profile growth for customer stories.</p></div>
+<div><h3>Omnisend vs Klaviyo for customer stories?</h3><p>Omnisend gets customer stories teams sending sooner with light SMS attached; Klaviyo stretches customer stories segmentation further. Test-drive one real customer stories flow each way before judging.</p></div>
+<div><h3>Mailchimp or Klaviyo for customer stories?</h3><p>Pick Mailchimp for customer stories when editor comfort and broadcast breadth lead; Klaviyo when customer stories hinges on Shopify event depth — and verify both official pricing pages on customer stories scale.</p></div>
+<div><h3>Do I need a separate SMS tool for customer stories?</h3><p>Customer Stories rarely needs specialist SMS day one; add it when texts measurably beat email on customer stories. Vet customer stories consent capture, quiet-hour enforcement, and per-text cost first.</p></div>
+<div><h3>How should I suppress audiences in customer stories flows?</h3><p>Guard customer stories with exits for buyers, open cases, refunds, and no-consent profiles, auditable per customer stories flow. In customer stories, a suppression miss hurts worse than a missed blast.</p></div>
+<div><h3>What does customer stories email cost?</h3><p>Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your customer stories campaigns consume. Plans and limits shift often, so check the official pricing pages for your customer stories shortlist and model an eighteen-month total before committing.</p></div>
+<div><h3>Which app should a lean team pilot first for customer stories?</h3><p>Open customer stories with the tool at full command in fourteen days — simple customer stories sends natively, branched customer stories on a lean platform. Shipping customer stories beats architecting it.</p></div>
+<div><h3>How do I measure customer stories email results?</h3><p>For customer stories, judge the program on margin per send, repeat purchase, unsubscribe and complaint rates, and support load next to attributed revenue — and keep a holdout group beside recipients so seasonal lift is never misread as program impact.</p></div>
+<div><h3>Can I run customer stories email without an agency?</h3><p>Yes, if the scope stays small. Pick one customer stories journey, document consent and suppression rules, and reuse a simple template system. For customer stories, hire help only if journey complexity, inbox-placement remediation, or peak customer stories volume genuinely exceeds what the team can run.</p></div>
+<div><h3>When should I graduate from my first app for customer stories?</h3><p>The customer stories moment to graduate arrives when safe editing, purchase-state segmentation, or cost forecasting at your customer stories contact scale stops working. For customer stories, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression.</p></div>
+<div><h3>How much discounting is acceptable for customer stories?</h3><p>Treat discounts as one lever, not the default. For customer stories, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. If most customer stories revenue needs a code, the customer stories program has a value problem rather than a pricing problem.</p></div>
+<div><h3>Which Shopify data matters most for customer stories?</h3><p>Order and refund state, cart and browse events, consent source, and product availability cover most customer stories decisions. On customer stories, prove events in a test checkout before trusting them in flows, with customer stories field definitions written where both teams can find them.</p></div>
+<div><h3>How do I avoid duplicate sends across apps for customer stories?</h3><p>Give one platform ownership of each customer stories journey, document which app sends what, and share suppression lists where the tools support it. For customer stories peak weeks, sample customer timelines weekly and enumerate all customer stories sends per profile.</p></div>
+<div><h3>What should a customer stories pilot include?</h3><p>Bound the customer stories pilot to one audience and one or two journeys, with written suppression rules, a holdout group, and a thirty-day margin-and-complaints review — and lock customer stories success criteria before launch so nobody reinterprets results afterward.</p></div>
 </section>
 <script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",mainEntity:[
-{"@type": "Question", "name": "Klaviyo or Shopify Email for customer stories?", "acceptedAnswer": {"@type": "Answer", "text": "Shopify Email is a reasonable start when customer stories campaigns are occasional and the catalog is small. Klaviyo pays off when customer stories work needs event-driven branching, catalog-aware content, and segment-level reporting. Model profile-based billing against expected contact growth before committing."}},
-{"@type": "Question", "name": "Omnisend vs Klaviyo for customer stories?", "acceptedAnswer": {"@type": "Answer", "text": "Omnisend tends to be faster for a small team running email-first customer stories campaigns with light SMS. Klaviyo offers deeper segmentation and event flexibility, which matters as customer stories logic grows. Pilot both with one real customer stories journey and compare maintenance time, not feature lists."}},
-{"@type": "Question", "name": "Mailchimp or Klaviyo for customer stories?", "acceptedAnswer": {"@type": "Answer", "text": "Mailchimp suits teams that value a familiar editor and broad campaign tooling for customer stories newsletters and simple automations. Klaviyo is stronger where customer stories messages depend on Shopify order, cart, and browse events. Check both official pricing pages at your contact volume before deciding."}},
-{"@type": "Question", "name": "Do I need a separate SMS tool for customer stories?", "acceptedAnswer": {"@type": "Answer", "text": "Not at the start. Several platforms cover basic SMS alongside email, and SMS specialists earn their cost only when text messages measurably improve customer stories outcomes. Confirm consent handling, quiet hours, and per-message pricing, and verify that your audience actually responds to SMS."}},
-{"@type": "Question", "name": "How should I suppress audiences in customer stories flows?", "acceptedAnswer": {"@type": "Answer", "text": "Exclude recent purchasers, open support or return cases, refunded orders, and anyone without documented consent. For customer stories, write exit conditions next to each flow so another operator can audit them. Suppression mistakes cost more margin than a missed campaign."}},
-{"@type": "Question", "name": "What does customer stories email cost?", "acceptedAnswer": {"@type": "Answer", "text": "Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your customer stories campaigns consume. Providers change plans and limits often, so check official pricing pages and model an eighteen-month total before committing."}},
-{"@type": "Question", "name": "Which app should a lean team pilot first for customer stories?", "acceptedAnswer": {"@type": "Answer", "text": "Start with the tool your team can fully operate in two weeks: native Shopify Email for simple customer stories sends, or a lean ecommerce platform when branching and suppression matter. A completed pilot beats an ambitious setup that stalls during week one."}},
-{"@type": "Question", "name": "How do I measure customer stories email results?", "acceptedAnswer": {"@type": "Answer", "text": "Track margin per send, repeat purchase, unsubscribe and complaint rates, and support load alongside attributed revenue. For customer stories specifically, compare a holdout group against recipients so seasonal lift is not mistaken for program impact."}},
-{"@type": "Question", "name": "Can I run customer stories email without an agency?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if the scope stays small. Pick one customer stories journey, document consent and suppression rules, and reuse a simple template system. Add outside help only when flow complexity, deliverability remediation, or peak-season volume exceeds in-house capacity."}},
-{"@type": "Question", "name": "When should I graduate from my first app for customer stories?", "acceptedAnswer": {"@type": "Answer", "text": "Graduate when the team cannot safely edit flows, segment reliably by purchase state, or forecast cost at your growing contact count. For customer stories, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression."}},
-{"@type": "Question", "name": "How much discounting is acceptable for customer stories?", "acceptedAnswer": {"@type": "Answer", "text": "Treat discounts as one lever, not the default. For customer stories, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. If most revenue needs a code, the program has a value problem rather than a pricing problem."}},
-{"@type": "Question", "name": "Which Shopify data matters most for customer stories?", "acceptedAnswer": {"@type": "Answer", "text": "Order and refund state, cart and browse events, consent source, and product availability cover most customer stories decisions. Verify each event fires correctly in a test purchase before building logic on top of it, and document field meanings so marketing and engineering agree."}},
-{"@type": "Question", "name": "How do I avoid duplicate sends across apps for customer stories?", "acceptedAnswer": {"@type": "Answer", "text": "Give one platform ownership of each customer stories journey, document which app sends what, and share suppression lists where the tools support it. Run a weekly audit during peak season that samples customers and lists every message they received."}},
-{"@type": "Question", "name": "What should a customer stories pilot include?", "acceptedAnswer": {"@type": "Answer", "text": "A bounded pilot covers one audience, one or two journeys, explicit suppression rules, a holdout group, and a thirty-day review of margin and complaints. Agree on the success criteria before launch so results cannot be reinterpreted afterward."}}
+{"@type": "Question", "name": "Klaviyo or Shopify Email for customer stories?", "acceptedAnswer": {"@type": "Answer", "text": "Customer Stories at low volume runs fine on Shopify Email; graduate to Klaviyo once customer stories needs triggers, dynamic catalog content, and segment revenue views, after pricing profile growth for customer stories."}},
+{"@type": "Question", "name": "Omnisend vs Klaviyo for customer stories?", "acceptedAnswer": {"@type": "Answer", "text": "Omnisend gets customer stories teams sending sooner with light SMS attached; Klaviyo stretches customer stories segmentation further. Test-drive one real customer stories flow each way before judging."}},
+{"@type": "Question", "name": "Mailchimp or Klaviyo for customer stories?", "acceptedAnswer": {"@type": "Answer", "text": "Pick Mailchimp for customer stories when editor comfort and broadcast breadth lead; Klaviyo when customer stories hinges on Shopify event depth — and verify both official pricing pages on customer stories scale."}},
+{"@type": "Question", "name": "Do I need a separate SMS tool for customer stories?", "acceptedAnswer": {"@type": "Answer", "text": "Customer Stories rarely needs specialist SMS day one; add it when texts measurably beat email on customer stories. Vet customer stories consent capture, quiet-hour enforcement, and per-text cost first."}},
+{"@type": "Question", "name": "How should I suppress audiences in customer stories flows?", "acceptedAnswer": {"@type": "Answer", "text": "Guard customer stories with exits for buyers, open cases, refunds, and no-consent profiles, auditable per customer stories flow. In customer stories, a suppression miss hurts worse than a missed blast."}},
+{"@type": "Question", "name": "What does customer stories email cost?", "acceptedAnswer": {"@type": "Answer", "text": "Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your customer stories campaigns consume. Plans and limits shift often, so check the official pricing pages for your customer stories shortlist and model an eighteen-month total before committing."}},
+{"@type": "Question", "name": "Which app should a lean team pilot first for customer stories?", "acceptedAnswer": {"@type": "Answer", "text": "Open customer stories with the tool at full command in fourteen days — simple customer stories sends natively, branched customer stories on a lean platform. Shipping customer stories beats architecting it."}},
+{"@type": "Question", "name": "How do I measure customer stories email results?", "acceptedAnswer": {"@type": "Answer", "text": "For customer stories, judge the program on margin per send, repeat purchase, unsubscribe and complaint rates, and support load next to attributed revenue — and keep a holdout group beside recipients so seasonal lift is never misread as program impact."}},
+{"@type": "Question", "name": "Can I run customer stories email without an agency?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if the scope stays small. Pick one customer stories journey, document consent and suppression rules, and reuse a simple template system. For customer stories, hire help only if journey complexity, inbox-placement remediation, or peak customer stories volume genuinely exceeds what the team can run."}},
+{"@type": "Question", "name": "When should I graduate from my first app for customer stories?", "acceptedAnswer": {"@type": "Answer", "text": "The customer stories moment to graduate arrives when safe editing, purchase-state segmentation, or cost forecasting at your customer stories contact scale stops working. For customer stories, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression."}},
+{"@type": "Question", "name": "How much discounting is acceptable for customer stories?", "acceptedAnswer": {"@type": "Answer", "text": "Treat discounts as one lever, not the default. For customer stories, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. If most customer stories revenue needs a code, the customer stories program has a value problem rather than a pricing problem."}},
+{"@type": "Question", "name": "Which Shopify data matters most for customer stories?", "acceptedAnswer": {"@type": "Answer", "text": "Order and refund state, cart and browse events, consent source, and product availability cover most customer stories decisions. On customer stories, prove events in a test checkout before trusting them in flows, with customer stories field definitions written where both teams can find them."}},
+{"@type": "Question", "name": "How do I avoid duplicate sends across apps for customer stories?", "acceptedAnswer": {"@type": "Answer", "text": "Give one platform ownership of each customer stories journey, document which app sends what, and share suppression lists where the tools support it. For customer stories peak weeks, sample customer timelines weekly and enumerate all customer stories sends per profile."}},
+{"@type": "Question", "name": "What should a customer stories pilot include?", "acceptedAnswer": {"@type": "Answer", "text": "Bound the customer stories pilot to one audience and one or two journeys, with written suppression rules, a holdout group, and a thirty-day margin-and-complaints review — and lock customer stories success criteria before launch so nobody reinterprets results afterward."}}
 ]})} />
 <h2 class="mt-12">Governance and documentation for customer stories</h2>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Practice</th><th>Standard</th><th>Risk it prevents</th></tr></thead>
 <tbody>
-<tr><td>Flow ownership</td><td>One named owner per journey</td><td>Orphaned flows that send stale offers</td></tr>
-<tr><td>Naming convention</td><td>Prefix by job and audience</td><td>Impossible audits during peak season</td></tr>
-<tr><td>Change log</td><td>Record edits, dates, and reasons</td><td>Untraceable performance regressions</td></tr>
-<tr><td>Access control</td><td>Least-privilege seats for editors</td><td>Accidental deletes or unauthorized sends</td></tr>
-<tr><td>Quarterly flow review</td><td>Archive or simplify unused branches</td><td>Complexity tax that slows every edit</td></tr>
-<tr><td>Incident runbook</td><td>Steps for pausing sends and notifying</td><td>Slow response to a broken or harmful send</td></tr>
+<tr><td>Flow ownership</td><td>Named customer stories owner on every journey</td><td>customer stories ghosts sending expired incentives</td></tr>
+<tr><td>Naming convention</td><td>customer stories-flow names lead with purpose</td><td>Unnamed customer stories sprawl unauditable in season</td></tr>
+<tr><td>Change log</td><td>customer stories-flow history recorded per change</td><td>Customer Stories regressions without a trail</td></tr>
+<tr><td>Access control</td><td>Limit customer stories edit rights tightly</td><td>customer stories rogue sends from open permissions</td></tr>
+<tr><td>Quarterly flow review</td><td>Prune idle customer stories branches quarterly</td><td>Customer Stories bloat taxing each edit</td></tr>
+<tr><td>Incident runbook</td><td>Customer Stories pause-and-notify runbook</td><td>Customer Stories harm airing too long</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Peak season readiness for customer stories</h2>
 <ol>
-<li>Freeze flow edits two weeks before the peak window opens.</li>
-<li>Test every flow with a real purchase, refund, and support case.</li>
-<li>Confirm suppression rules exclude recent buyers and open returns.</li>
-<li>Raise holdout samples so peak results remain measurable.</li>
-<li>Pre-write quiet-hours and frequency-cap policies for SMS.</li>
-<li>Check plan limits and overage pricing against forecast volume.</li>
-<li>Assign a daily deliverability monitor for complaints and bounces.</li>
-<li>Document rollback steps for each flow before the first campaign.</li>
+<li>Customer Stories code-freeze starts fourteen days out.</li>
+<li>Customer Stories QA spans purchase, refund, and case paths.</li>
+<li>Verify customer stories suppression clears recent buyers and open returns.</li>
+<li>Boost customer stories control groups before the surge.</li>
+<li>For customer stories, pre-commit text timing and frequency limits.</li>
+<li>Price customer stories peaks against plan ceilings early.</li>
+<li>Staff daily customer stories deliverability watch on complaints and bounces.</li>
+<li>Bank customer stories rollback plans ahead of sends.</li>
 </ol>
-<p>One more operating note for customer stories: schedule the first quarterly review before launch, not after the first crisis. Teams that write down their suppression rules, discount caps, and escalation contacts in week one spend markedly less time firefighting later, and new operators inherit a documented system instead of folklore.</p>
-<p>Finally, keep the customer stories program honest with a quarterly written review: what shipped, what was suppressed, what margin was kept, and which assumptions failed. Written reviews turn individual judgment into team knowledge and make vendor decisions calmer, because the evidence sits in one place instead of in memory.</p>
+<p>One more customer stories operating note: book the first quarterly review before launch, not after the first crisis. Customer Stories teams that record suppression rules, discount caps, and escalation contacts in week one firefight far less later, and new operators inherit a customer stories system instead of folklore.</p>
+<p>Finally, review customer stories in writing each quarter: what customer stories work shipped, what was suppressed, what margin the customer stories program kept, which assumptions failed. That customer stories record turns individual judgment into team knowledge and keeps vendor calls evidence-based.</p>
 </main></BaseLayout>

@@ -72,144 +72,144 @@ const apps = [
 </a>.
 </p>
 <h2 class="mt-14">Consent and purchaser suppression for Discount strategy</h2>
-<p>Before any discount strategy automation goes live, confirm that every app in the stack records email and SMS consent in a form you can audit, and that purchase events suppress promotional follow-up immediately after checkout. A message that lands after a purchase, a refund, or an unresolved support case damages the channel faster than weak creative ever will.</p>
+<p>For discount strategy, audit consent capture and purchase-event suppression before the first flow goes live — every app must record discount strategy opt-ins you can evidence and halt promos at checkout. In discount strategy, mistimed sends after purchases, refunds, or support cases destroy channel value quicker than any creative miss.</p>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Audience state</th><th>Required handling</th><th>Why it matters</th></tr></thead>
 <tbody>
-<tr><td>No documented consent</td><td>Suppress all marketing; transactional messages only</td><td>Consent is the legal foundation of every send</td></tr>
-<tr><td>Consented, never purchased</td><td>Educational and social-proof content first</td><td>Early discounting trains deal-seeking behavior</td></tr>
-<tr><td>Active cart, no checkout</td><td>Reminder with product context, no instant discount</td><td>Margin protection during a high-intent window</td></tr>
-<tr><td>Purchased recently</td><td>Suppress promotion; shift to post-purchase education</td><td>Avoids buyer remorse and unsubscribe risk</td></tr>
-<tr><td>Refund or return open</td><td>Hold promotion until the case resolves</td><td>Service context changes message tolerance</td></tr>
-<tr><td>Repeated non-engagement</td><td>Sunset the contact before complaints accumulate</td><td>Protects sender reputation and inbox placement</td></tr>
-<tr><td>SMS consent present</td><td>Respect quiet hours and frequency caps</td><td>SMS complaints carry higher cost and risk</td></tr>
-<tr><td>Wholesale or B2B account</td><td>Route to account-specific communication</td><td>Retail promotions can breach contract terms</td></tr>
-<tr><td>Free or disposable email domain</td><td>Verify before enrolling in automated journeys</td><td>Bounce risk and low-quality signups hurt deliverability</td></tr>
-<tr><td>Staff and test accounts</td><td>Exclude from production sending</td><td>Test noise corrupts reporting and attribution</td></tr>
-<tr><td>Competitor or researcher signals</td><td>No special handling; normal consent rules apply</td><td>Manual exceptions create untrackable inconsistencies</td></tr>
-<tr><td>Legacy list without timestamps</td><td>Re-permission before automated follow-up</td><td>Undocumented consent is a compliance liability</td></tr>
+<tr><td>No documented consent</td><td>No discount strategy promos without proof; transactional messages only</td><td>Without discount strategy consent proof, marketing has no legal footing</td></tr>
+<tr><td>Consented, never purchased</td><td>First discount strategy touches teach and reassure before selling</td><td>Discount Strategy margin suffers when discounts arrive first</td></tr>
+<tr><td>Active cart, no checkout</td><td>Context-rich discount strategy nudge before any incentive</td><td>Discount Strategy high-intent window deserves margin discipline</td></tr>
+<tr><td>Purchased recently</td><td>Discount Strategy buyers get education, not another pitch</td><td>Discount Strategy suppression protects the new-customer glow</td></tr>
+<tr><td>Refund or return open</td><td>Freeze discount strategy promos until refund or return closes</td><td>Service-active discount strategy shoppers reject promos</td></tr>
+<tr><td>Repeated non-engagement</td><td>Sunset cold discount strategy contacts before complaints build</td><td>Discount Strategy deliverability depends on pruning</td></tr>
+<tr><td>SMS consent present</td><td>Hold discount strategy texts to quiet hours and frequency limits</td><td>Text grievances hit discount strategy programs hardest</td></tr>
+<tr><td>Wholesale or B2B account</td><td>Isolate discount strategy wholesale comms from retail blasts</td><td>Wholesale discount strategy terms forbid retail-style offers</td></tr>
+<tr><td>Free or disposable email domain</td><td>Verify discount strategy throwaway addresses pre-journey</td><td>Unverified discount strategy addresses poison sender score</td></tr>
+<tr><td>Staff and test accounts</td><td>Keep discount strategy staff and test profiles out of live sends</td><td>Discount Strategy reporting stays clean without test noise</td></tr>
+<tr><td>Competitor or researcher signals</td><td>Discount Strategy researcher signups follow standard consent</td><td>Discount Strategy consistency beats clever carve-outs</td></tr>
+<tr><td>Legacy list without timestamps</td><td>Legacy discount strategy contacts re-opt before journeys</td><td>Discount Strategy lists without proof invite liability</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Margin, app costs, and pricing for Discount strategy</h2>
-<p>Attributed revenue is not profit. A discount strategy program that pays for itself should survive a full cost model: platform subscription, contact or send overages, SMS credits, capture tooling, template work, agency retainers, and the margin cost of every discount the flows issue. If stack cost approaches fifteen percent of email-attributed margin, simplify before optimizing.</p>
-<p>Pricing changes frequently and varies by region, contact volume, and contract term, so check the official pricing pages of every shortlisted app and model an eighteen-month total that includes a peak season. Free tiers usually trade limits in contacts, sends, branching, or support; confirm which limit binds for your discount strategy plan first.</p>
+<p>For discount strategy, revenue attribution flatters; margin decides. Burden the discount strategy program with its true load — platform fees, overages, SMS, capture, creative, agency, and discount strategy discount cost — before calling it profitable. For discount strategy, a stack at fifteen percent of attributed margin needs simplification first, optimization second.</p>
+<p>Pricing changes frequently and varies by region, contact volume, and contract term, so check the official pricing pages of every shortlisted app and model an eighteen-month total that includes a peak season. For discount strategy, free plans always bind somewhere; identify whether contacts, sends, branching, or support caps your discount strategy motion first.</p>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Cost component</th><th>What to model</th><th>Common failure</th></tr></thead>
 <tbody>
-<tr><td>Platform subscription</td><td>Plan tier at realistic contact volume</td><td>Buying the tier for a list you do not have yet</td></tr>
-<tr><td>Contact or send overages</td><td>Growth rate against plan limits</td><td>Seasonal spikes triggering surprise invoices</td></tr>
-<tr><td>SMS credits</td><td>Opt-in rate times messages per journey</td><td>Assuming SMS converts like email at a fraction of cost</td></tr>
-<tr><td>Discount budget</td><td>Discount depth times expected redemption</td><td>Flows that train customers to wait for codes</td></tr>
-<tr><td>Creative and ops time</td><td>Hours per week to maintain flows</td><td>Underestimating editing and QA workload</td></tr>
-<tr><td>Migration and setup</td><td>Data import, consent mapping, flow rebuild</td><td>Losing consent records during a move</td></tr>
-<tr><td>Support and success tiers</td><td>Whether critical issues need paid support</td><td>Discovering support gaps during peak week</td></tr>
-<tr><td>Third-party integrations</td><td>Review, loyalty, and capture tool fees</td><td>Stack creep that doubles effective platform cost</td></tr>
-<tr><td>Deliverability remediation</td><td>Monitoring, list cleaning, and consulting</td><td>Reputation damage costing more than the subscription</td></tr>
+<tr><td>Platform subscription</td><td>Discount Strategy tier priced at realistic contact scale</td><td>Discount Strategy overspend on aspirational tiers</td></tr>
+<tr><td>Contact or send overages</td><td>Discount Strategy growth pace versus plan ceilings</td><td>Peak discount strategy volume blowing past tier limits</td></tr>
+<tr><td>SMS credits</td><td>Discount Strategy text volume from real opt-in math</td><td>discount strategy text costs wished into email costs</td></tr>
+<tr><td>Discount budget</td><td>Price discount strategy incentives by redemption probability</td><td>discount strategy flows teaching shoppers to hold out</td></tr>
+<tr><td>Creative and ops time</td><td>Discount Strategy upkeep hours per operating week</td><td>discount strategy maintenance hours wished away</td></tr>
+<tr><td>Migration and setup</td><td>discount strategy switch priced in imports and rebuild labor</td><td>discount strategy migration shedding consent proof</td></tr>
+<tr><td>Support and success tiers</td><td>Discount Strategy support tier for critical incidents</td><td>Discount Strategy help-desk limits exposed by drops</td></tr>
+<tr><td>Third-party integrations</td><td>Discount Strategy satellite fees beyond the ESP</td><td>Discount Strategy sprawl doubling real platform cost</td></tr>
+<tr><td>Deliverability remediation</td><td>Discount Strategy reputation maintenance budget</td><td>Discount Strategy reputation repair dwarfing license fees</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Decision table for Discount strategy</h2>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Situation</th><th>Start with</th><th>Reason</th></tr></thead>
 <tbody>
-<tr><td>Occasional sends, small catalog</td><td>Shopify Email</td><td>Native setup with minimal operating cost</td></tr>
-<tr><td>Branching and suppression matter</td><td>Klaviyo</td><td>Deep event and segment controls</td></tr>
-<tr><td>Small team, email plus light SMS</td><td>Omnisend</td><td>Accessible multichannel workflows</td></tr>
-<tr><td>Broad newsletter operations</td><td>Mailchimp</td><td>Familiar editor and audience tooling</td></tr>
-<tr><td>Lean lifecycle operations</td><td>Sequenzy</td><td>Focused sequence and campaign operation</td></tr>
-<tr><td>Developer-led custom builds</td><td>Customer.io</td><td>Event-triggered messaging flexibility</td></tr>
-<tr><td>CRM-led sales follow-up</td><td>ActiveCampaign</td><td>Automation joined to account context</td></tr>
-<tr><td>Simple list growth and popups</td><td>Privy</td><td>Capture-first tooling for new stores</td></tr>
-<tr><td>Commerce cohort analysis</td><td>Drip</td><td>Repeat-purchase reporting orientation</td></tr>
+<tr><td>Occasional sends, small catalog</td><td>Shopify Email</td><td>Minimal overhead for small-catalog discount strategy volume</td></tr>
+<tr><td>Branching and suppression matter</td><td>Klaviyo</td><td>Deep discount strategy triggers for maturing programs</td></tr>
+<tr><td>Small team, email plus light SMS</td><td>Omnisend</td><td>Discount Strategy email-plus-SMS in one accessible builder</td></tr>
+<tr><td>Broad newsletter operations</td><td>Mailchimp</td><td>Known discount strategy campaign tooling for broadcast teams</td></tr>
+<tr><td>Lean lifecycle operations</td><td>Sequenzy</td><td>Guided email playbooks for lean discount strategy teams</td></tr>
+<tr><td>Developer-led custom builds</td><td>Customer.io</td><td>Discount Strategy flexibility for engineering-led stacks</td></tr>
+<tr><td>CRM-led sales follow-up</td><td>ActiveCampaign</td><td>Discount Strategy outreach with deal context attached</td></tr>
+<tr><td>Simple list growth and popups</td><td>Privy</td><td>Popup-led discount strategy growth for young stores</td></tr>
+<tr><td>Commerce cohort analysis</td><td>Drip</td><td>Cohort-aware discount strategy views on second orders</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Common failure modes in discount strategy email</h2>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Failure</th><th>Prevention</th><th>Cost of getting it wrong</th></tr></thead>
 <tbody>
-<tr><td>Discount in the first touch</td><td>Hold offers until intent is established</td><td>Trains low-margin buying habits</td></tr>
-<tr><td>No purchase suppression</td><td>Exit flows on order and checkout events</td><td>Post-purchase promotions feel careless</td></tr>
-<tr><td>Consent imported without proof</td><td>Map timestamps and source fields</td><td>Compliance exposure during audits</td></tr>
-<tr><td>Flows only one operator understands</td><td>Document exits and naming conventions</td><td>Editing risk and key-person dependency</td></tr>
-<tr><td>Measuring clicks only</td><td>Track margin, returns, and complaints</td><td>Clicks reward aggressive, harmful tactics</td></tr>
-<tr><td>Ignoring deliverability signals</td><td>Monitor bounces and spam complaints</td><td>Recovery costs exceed prevention</td></tr>
-<tr><td>Peak-season flow changes</td><td>Freeze edits during the peak window</td><td>Untested changes fail at the worst time</td></tr>
-<tr><td>SMS without a channel strategy</td><td>Define SMS jobs separately from email</td><td>Frequency overlap drives opt-outs</td></tr>
+<tr><td>Discount in the first touch</td><td>Withhold discount strategy offers until intent shows</td><td>discount strategy discount-first trains bargain hunting</td></tr>
+<tr><td>No purchase suppression</td><td>End discount strategy flows the moment orders land</td><td>Post-order discount strategy pitches feel blind</td></tr>
+<tr><td>Consent imported without proof</td><td>Record discount strategy opt-in origin and moment</td><td>Discount Strategy audit exposure without proof</td></tr>
+<tr><td>Flows only one operator understands</td><td>Document discount strategy exits and naming standards</td><td>Discount Strategy edits hinge on one memory</td></tr>
+<tr><td>Measuring clicks only</td><td>Score discount strategy on profit, returns, grievances</td><td>Click-only discount strategy metrics bless aggression</td></tr>
+<tr><td>Ignoring deliverability signals</td><td>Watch discount strategy bounces and spam signals</td><td>Discount Strategy neglect compounds into rescue spend</td></tr>
+<tr><td>Peak-season flow changes</td><td>Discount Strategy edit freeze across peak weeks</td><td>discount strategy changes break when traffic peaks</td></tr>
+<tr><td>SMS without a channel strategy</td><td>Separate discount strategy SMS duties from email duties</td><td>discount strategy duplication across channels bleeds opt-ins</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Implementation order for a discount strategy program</h2>
 <ol>
-<li>Document consent sources and map them into the platform before any campaign.</li>
-<li>Verify Shopify order, cart, refund, and support events fire in a test store.</li>
-<li>Build suppression rules and exit conditions before building any flow.</li>
-<li>Launch one bounded pilot journey with a holdout group for measurement.</li>
-<li>Review margin, complaints, unsubscribes, and repeat purchase after thirty days.</li>
-<li>Expand only when the pilot can be edited safely by a second operator.</li>
-<li>Write a peak-season freeze policy covering edits, discounts, and volume.</li>
-<li>Set a quarterly cost review that compares stack cost to email-attributed margin.</li>
-<li>Archive or simplify any flow nobody has reviewed in ninety days.</li>
+<li>Map discount strategy consent sources into the platform before any discount strategy campaign.</li>
+<li>For discount strategy, test-fire order, cart, refund, and support events first.</li>
+<li>Discount Strategy order: exits and suppression first, flows second.</li>
+<li>Pilot discount strategy with one bounded journey plus holdout measurement.</li>
+<li>For discount strategy, the thirty-day read covers profit and list health.</li>
+<li>Scale discount strategy only once a second operator edits safely.</li>
+<li>Codify the discount strategy peak freeze: edits, discounts, volume.</li>
+<li>Quarterly, weigh the discount strategy stack against attributed margin.</li>
+<li>Retire or trim discount strategy flows untouched for ninety days.</li>
 </ol>
 <h2 class="mt-12">Metrics review cadence for discount strategy</h2>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Metric</th><th>Definition</th><th>Review cadence</th></tr></thead>
 <tbody>
-<tr><td>Margin per send</td><td>Revenue minus discounts, sends, and platform cost</td><td>Monthly</td></tr>
-<tr><td>Repeat purchase rate</td><td>Second-order share within ninety days</td><td>Monthly</td></tr>
-<tr><td>Complaint and unsubscribe rate</td><td>Per campaign and per flow</td><td>Weekly</td></tr>
-<tr><td>Suppression accuracy</td><td>Sample post-purchase sends for violations</td><td>Weekly</td></tr>
-<tr><td>Time to edit safely</td><td>Minutes for a second operator to change a flow</td><td>Quarterly</td></tr>
-<tr><td>Holdout lift</td><td>Treated versus excluded group comparison</td><td>Quarterly</td></tr>
+<tr><td>Margin per send</td><td>discount strategy profit after incentive, send, platform load</td><td>Monthly</td></tr>
+<tr><td>Repeat purchase rate</td><td>discount strategy-driven second purchases per quarter</td><td>Monthly</td></tr>
+<tr><td>Complaint and unsubscribe rate</td><td>Split discount strategy grievances by campaign and journey</td><td>Weekly</td></tr>
+<tr><td>Suppression accuracy</td><td>discount strategy violation sampling on buyer timelines</td><td>Weekly</td></tr>
+<tr><td>Time to edit safely</td><td>Discount Strategy edit time for a fresh operator</td><td>Quarterly</td></tr>
+<tr><td>Holdout lift</td><td>discount strategy-exposed versus excluded comparison</td><td>Quarterly</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Discount strategy matchup FAQ</h2>
 <section class="max-w-3xl mx-auto space-y-6">
-<div><h3>Klaviyo or Shopify Email for discount strategy?</h3><p>Shopify Email is a reasonable start when discount strategy campaigns are occasional and the catalog is small. Klaviyo pays off when discount strategy work needs event-driven branching, catalog-aware content, and segment-level reporting. Model profile-based billing against expected contact growth before committing.</p></div>
-<div><h3>Omnisend vs Klaviyo for discount strategy?</h3><p>Omnisend tends to be faster for a small team running email-first discount strategy campaigns with light SMS. Klaviyo offers deeper segmentation and event flexibility, which matters as discount strategy logic grows. Pilot both with one real discount strategy journey and compare maintenance time, not feature lists.</p></div>
-<div><h3>Mailchimp or Klaviyo for discount strategy?</h3><p>Mailchimp suits teams that value a familiar editor and broad campaign tooling for discount strategy newsletters and simple automations. Klaviyo is stronger where discount strategy messages depend on Shopify order, cart, and browse events. Check both official pricing pages at your contact volume before deciding.</p></div>
-<div><h3>Do I need a separate SMS tool for discount strategy?</h3><p>Not at the start. Several platforms cover basic SMS alongside email, and SMS specialists earn their cost only when text messages measurably improve discount strategy outcomes. Confirm consent handling, quiet hours, and per-message pricing, and verify that your audience actually responds to SMS.</p></div>
-<div><h3>How should I suppress audiences in discount strategy flows?</h3><p>Exclude recent purchasers, open support or return cases, refunded orders, and anyone without documented consent. For discount strategy, write exit conditions next to each flow so another operator can audit them. Suppression mistakes cost more margin than a missed campaign.</p></div>
-<div><h3>What does discount strategy email cost?</h3><p>Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your discount strategy campaigns consume. Providers change plans and limits often, so check official pricing pages and model an eighteen-month total before committing.</p></div>
-<div><h3>Which app should a lean team pilot first for discount strategy?</h3><p>Start with the tool your team can fully operate in two weeks: native Shopify Email for simple discount strategy sends, or a lean ecommerce platform when branching and suppression matter. A completed pilot beats an ambitious setup that stalls during week one.</p></div>
-<div><h3>How do I measure discount strategy email results?</h3><p>Track margin per send, repeat purchase, unsubscribe and complaint rates, and support load alongside attributed revenue. For discount strategy specifically, compare a holdout group against recipients so seasonal lift is not mistaken for program impact.</p></div>
-<div><h3>Can I run discount strategy email without an agency?</h3><p>Yes, if the scope stays small. Pick one discount strategy journey, document consent and suppression rules, and reuse a simple template system. Add outside help only when flow complexity, deliverability remediation, or peak-season volume exceeds in-house capacity.</p></div>
-<div><h3>When should I graduate from my first app for discount strategy?</h3><p>Graduate when the team cannot safely edit flows, segment reliably by purchase state, or forecast cost at your growing contact count. For discount strategy, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression.</p></div>
-<div><h3>How much discounting is acceptable for discount strategy?</h3><p>Treat discounts as one lever, not the default. For discount strategy, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. If most revenue needs a code, the program has a value problem rather than a pricing problem.</p></div>
-<div><h3>Which Shopify data matters most for discount strategy?</h3><p>Order and refund state, cart and browse events, consent source, and product availability cover most discount strategy decisions. Verify each event fires correctly in a test purchase before building logic on top of it, and document field meanings so marketing and engineering agree.</p></div>
-<div><h3>How do I avoid duplicate sends across apps for discount strategy?</h3><p>Give one platform ownership of each discount strategy journey, document which app sends what, and share suppression lists where the tools support it. Run a weekly audit during peak season that samples customers and lists every message they received.</p></div>
-<div><h3>What should a discount strategy pilot include?</h3><p>A bounded pilot covers one audience, one or two journeys, explicit suppression rules, a holdout group, and a thirty-day review of margin and complaints. Agree on the success criteria before launch so results cannot be reinterpreted afterward.</p></div>
+<div><h3>Klaviyo or Shopify Email for discount strategy?</h3><p>For discount strategy, Shopify Email covers occasional small-catalog campaigns; Klaviyo earns its keep when discount strategy demands event branching, catalog-aware blocks, and segment reporting — model profile billing on projected discount strategy growth first.</p></div>
+<div><h3>Omnisend vs Klaviyo for discount strategy?</h3><p>Discount Strategy speed favors Omnisend for lean crews; discount strategy depth favors Klaviyo as logic matures. Run the same discount strategy journey live on both and compare maintenance hours.</p></div>
+<div><h3>Mailchimp or Klaviyo for discount strategy?</h3><p>For discount strategy, Mailchimp fits editor-comfortable newsletter teams; Klaviyo fits event-driven discount strategy on Shopify orders, carts, and browse — check official pricing pages for both at your discount strategy volume.</p></div>
+<div><h3>Do I need a separate SMS tool for discount strategy?</h3><p>Discount Strategy rarely needs specialist SMS day one; add it when texts measurably beat email on discount strategy. Vet discount strategy consent capture, quiet-hour enforcement, and per-text cost first.</p></div>
+<div><h3>How should I suppress audiences in discount strategy flows?</h3><p>Guard discount strategy with exits for buyers, open cases, refunds, and no-consent profiles, auditable per discount strategy flow. In discount strategy, a suppression miss hurts worse than a missed blast.</p></div>
+<div><h3>What does discount strategy email cost?</h3><p>Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your discount strategy campaigns consume. Pricing moves too often to quote statically: check the official pricing pages covering your discount strategy stack and model eighteen months of total cost before committing.</p></div>
+<div><h3>Which app should a lean team pilot first for discount strategy?</h3><p>Open discount strategy with the tool at full command in fourteen days — simple discount strategy sends natively, branched discount strategy on a lean platform. Shipping discount strategy beats architecting it.</p></div>
+<div><h3>How do I measure discount strategy email results?</h3><p>For discount strategy, judge the program on margin per send, repeat purchase, unsubscribe and complaint rates, and support load next to attributed revenue — and keep a holdout group beside recipients so seasonal lift is never misread as program impact.</p></div>
+<div><h3>Can I run discount strategy email without an agency?</h3><p>Yes, if the scope stays small. Pick one discount strategy journey, document consent and suppression rules, and reuse a simple template system. Keep discount strategy in-house unless tangled flows, deliverability triage, or peak-season discount strategy load exceed internal bandwidth.</p></div>
+<div><h3>When should I graduate from my first app for discount strategy?</h3><p>The discount strategy moment to graduate arrives when safe editing, purchase-state segmentation, or cost forecasting at your discount strategy contact scale stops working. For discount strategy, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression.</p></div>
+<div><h3>How much discounting is acceptable for discount strategy?</h3><p>Treat discounts as one lever, not the default. For discount strategy, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. A discount strategy program where nearly every order needs a discount is signalling weak discount strategy value, not wrong pricing.</p></div>
+<div><h3>Which Shopify data matters most for discount strategy?</h3><p>Order and refund state, cart and browse events, consent source, and product availability cover most discount strategy decisions. For discount strategy, verify each event with a live test purchase before building discount strategy logic on it, and document field meanings so marketing and engineering share definitions.</p></div>
+<div><h3>How do I avoid duplicate sends across apps for discount strategy?</h3><p>Give one platform ownership of each discount strategy journey, document which app sends what, and share suppression lists where the tools support it. Keep a weekly discount strategy peak-season audit: pull sample customers, list each discount strategy message they got, flag overlaps.</p></div>
+<div><h3>What should a discount strategy pilot include?</h3><p>Bound the discount strategy pilot to one audience and one or two journeys, with written suppression rules, a holdout group, and a thirty-day margin-and-complaints review — and lock discount strategy success criteria before launch so nobody reinterprets results afterward.</p></div>
 </section>
 <script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",mainEntity:[
-{"@type": "Question", "name": "Klaviyo or Shopify Email for discount strategy?", "acceptedAnswer": {"@type": "Answer", "text": "Shopify Email is a reasonable start when discount strategy campaigns are occasional and the catalog is small. Klaviyo pays off when discount strategy work needs event-driven branching, catalog-aware content, and segment-level reporting. Model profile-based billing against expected contact growth before committing."}},
-{"@type": "Question", "name": "Omnisend vs Klaviyo for discount strategy?", "acceptedAnswer": {"@type": "Answer", "text": "Omnisend tends to be faster for a small team running email-first discount strategy campaigns with light SMS. Klaviyo offers deeper segmentation and event flexibility, which matters as discount strategy logic grows. Pilot both with one real discount strategy journey and compare maintenance time, not feature lists."}},
-{"@type": "Question", "name": "Mailchimp or Klaviyo for discount strategy?", "acceptedAnswer": {"@type": "Answer", "text": "Mailchimp suits teams that value a familiar editor and broad campaign tooling for discount strategy newsletters and simple automations. Klaviyo is stronger where discount strategy messages depend on Shopify order, cart, and browse events. Check both official pricing pages at your contact volume before deciding."}},
-{"@type": "Question", "name": "Do I need a separate SMS tool for discount strategy?", "acceptedAnswer": {"@type": "Answer", "text": "Not at the start. Several platforms cover basic SMS alongside email, and SMS specialists earn their cost only when text messages measurably improve discount strategy outcomes. Confirm consent handling, quiet hours, and per-message pricing, and verify that your audience actually responds to SMS."}},
-{"@type": "Question", "name": "How should I suppress audiences in discount strategy flows?", "acceptedAnswer": {"@type": "Answer", "text": "Exclude recent purchasers, open support or return cases, refunded orders, and anyone without documented consent. For discount strategy, write exit conditions next to each flow so another operator can audit them. Suppression mistakes cost more margin than a missed campaign."}},
-{"@type": "Question", "name": "What does discount strategy email cost?", "acceptedAnswer": {"@type": "Answer", "text": "Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your discount strategy campaigns consume. Providers change plans and limits often, so check official pricing pages and model an eighteen-month total before committing."}},
-{"@type": "Question", "name": "Which app should a lean team pilot first for discount strategy?", "acceptedAnswer": {"@type": "Answer", "text": "Start with the tool your team can fully operate in two weeks: native Shopify Email for simple discount strategy sends, or a lean ecommerce platform when branching and suppression matter. A completed pilot beats an ambitious setup that stalls during week one."}},
-{"@type": "Question", "name": "How do I measure discount strategy email results?", "acceptedAnswer": {"@type": "Answer", "text": "Track margin per send, repeat purchase, unsubscribe and complaint rates, and support load alongside attributed revenue. For discount strategy specifically, compare a holdout group against recipients so seasonal lift is not mistaken for program impact."}},
-{"@type": "Question", "name": "Can I run discount strategy email without an agency?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if the scope stays small. Pick one discount strategy journey, document consent and suppression rules, and reuse a simple template system. Add outside help only when flow complexity, deliverability remediation, or peak-season volume exceeds in-house capacity."}},
-{"@type": "Question", "name": "When should I graduate from my first app for discount strategy?", "acceptedAnswer": {"@type": "Answer", "text": "Graduate when the team cannot safely edit flows, segment reliably by purchase state, or forecast cost at your growing contact count. For discount strategy, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression."}},
-{"@type": "Question", "name": "How much discounting is acceptable for discount strategy?", "acceptedAnswer": {"@type": "Answer", "text": "Treat discounts as one lever, not the default. For discount strategy, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. If most revenue needs a code, the program has a value problem rather than a pricing problem."}},
-{"@type": "Question", "name": "Which Shopify data matters most for discount strategy?", "acceptedAnswer": {"@type": "Answer", "text": "Order and refund state, cart and browse events, consent source, and product availability cover most discount strategy decisions. Verify each event fires correctly in a test purchase before building logic on top of it, and document field meanings so marketing and engineering agree."}},
-{"@type": "Question", "name": "How do I avoid duplicate sends across apps for discount strategy?", "acceptedAnswer": {"@type": "Answer", "text": "Give one platform ownership of each discount strategy journey, document which app sends what, and share suppression lists where the tools support it. Run a weekly audit during peak season that samples customers and lists every message they received."}},
-{"@type": "Question", "name": "What should a discount strategy pilot include?", "acceptedAnswer": {"@type": "Answer", "text": "A bounded pilot covers one audience, one or two journeys, explicit suppression rules, a holdout group, and a thirty-day review of margin and complaints. Agree on the success criteria before launch so results cannot be reinterpreted afterward."}}
+{"@type": "Question", "name": "Klaviyo or Shopify Email for discount strategy?", "acceptedAnswer": {"@type": "Answer", "text": "For discount strategy, Shopify Email covers occasional small-catalog campaigns; Klaviyo earns its keep when discount strategy demands event branching, catalog-aware blocks, and segment reporting — model profile billing on projected discount strategy growth first."}},
+{"@type": "Question", "name": "Omnisend vs Klaviyo for discount strategy?", "acceptedAnswer": {"@type": "Answer", "text": "Discount Strategy speed favors Omnisend for lean crews; discount strategy depth favors Klaviyo as logic matures. Run the same discount strategy journey live on both and compare maintenance hours."}},
+{"@type": "Question", "name": "Mailchimp or Klaviyo for discount strategy?", "acceptedAnswer": {"@type": "Answer", "text": "For discount strategy, Mailchimp fits editor-comfortable newsletter teams; Klaviyo fits event-driven discount strategy on Shopify orders, carts, and browse — check official pricing pages for both at your discount strategy volume."}},
+{"@type": "Question", "name": "Do I need a separate SMS tool for discount strategy?", "acceptedAnswer": {"@type": "Answer", "text": "Discount Strategy rarely needs specialist SMS day one; add it when texts measurably beat email on discount strategy. Vet discount strategy consent capture, quiet-hour enforcement, and per-text cost first."}},
+{"@type": "Question", "name": "How should I suppress audiences in discount strategy flows?", "acceptedAnswer": {"@type": "Answer", "text": "Guard discount strategy with exits for buyers, open cases, refunds, and no-consent profiles, auditable per discount strategy flow. In discount strategy, a suppression miss hurts worse than a missed blast."}},
+{"@type": "Question", "name": "What does discount strategy email cost?", "acceptedAnswer": {"@type": "Answer", "text": "Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your discount strategy campaigns consume. Pricing moves too often to quote statically: check the official pricing pages covering your discount strategy stack and model eighteen months of total cost before committing."}},
+{"@type": "Question", "name": "Which app should a lean team pilot first for discount strategy?", "acceptedAnswer": {"@type": "Answer", "text": "Open discount strategy with the tool at full command in fourteen days — simple discount strategy sends natively, branched discount strategy on a lean platform. Shipping discount strategy beats architecting it."}},
+{"@type": "Question", "name": "How do I measure discount strategy email results?", "acceptedAnswer": {"@type": "Answer", "text": "For discount strategy, judge the program on margin per send, repeat purchase, unsubscribe and complaint rates, and support load next to attributed revenue — and keep a holdout group beside recipients so seasonal lift is never misread as program impact."}},
+{"@type": "Question", "name": "Can I run discount strategy email without an agency?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if the scope stays small. Pick one discount strategy journey, document consent and suppression rules, and reuse a simple template system. Keep discount strategy in-house unless tangled flows, deliverability triage, or peak-season discount strategy load exceed internal bandwidth."}},
+{"@type": "Question", "name": "When should I graduate from my first app for discount strategy?", "acceptedAnswer": {"@type": "Answer", "text": "The discount strategy moment to graduate arrives when safe editing, purchase-state segmentation, or cost forecasting at your discount strategy contact scale stops working. For discount strategy, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression."}},
+{"@type": "Question", "name": "How much discounting is acceptable for discount strategy?", "acceptedAnswer": {"@type": "Answer", "text": "Treat discounts as one lever, not the default. For discount strategy, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. A discount strategy program where nearly every order needs a discount is signalling weak discount strategy value, not wrong pricing."}},
+{"@type": "Question", "name": "Which Shopify data matters most for discount strategy?", "acceptedAnswer": {"@type": "Answer", "text": "Order and refund state, cart and browse events, consent source, and product availability cover most discount strategy decisions. For discount strategy, verify each event with a live test purchase before building discount strategy logic on it, and document field meanings so marketing and engineering share definitions."}},
+{"@type": "Question", "name": "How do I avoid duplicate sends across apps for discount strategy?", "acceptedAnswer": {"@type": "Answer", "text": "Give one platform ownership of each discount strategy journey, document which app sends what, and share suppression lists where the tools support it. Keep a weekly discount strategy peak-season audit: pull sample customers, list each discount strategy message they got, flag overlaps."}},
+{"@type": "Question", "name": "What should a discount strategy pilot include?", "acceptedAnswer": {"@type": "Answer", "text": "Bound the discount strategy pilot to one audience and one or two journeys, with written suppression rules, a holdout group, and a thirty-day margin-and-complaints review — and lock discount strategy success criteria before launch so nobody reinterprets results afterward."}}
 ]})} />
 <h2 class="mt-12">Governance and documentation for discount strategy</h2>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Practice</th><th>Standard</th><th>Risk it prevents</th></tr></thead>
 <tbody>
-<tr><td>Flow ownership</td><td>One named owner per journey</td><td>Orphaned flows that send stale offers</td></tr>
-<tr><td>Naming convention</td><td>Prefix by job and audience</td><td>Impossible audits during peak season</td></tr>
-<tr><td>Change log</td><td>Record edits, dates, and reasons</td><td>Untraceable performance regressions</td></tr>
-<tr><td>Access control</td><td>Least-privilege seats for editors</td><td>Accidental deletes or unauthorized sends</td></tr>
-<tr><td>Quarterly flow review</td><td>Archive or simplify unused branches</td><td>Complexity tax that slows every edit</td></tr>
-<tr><td>Incident runbook</td><td>Steps for pausing sends and notifying</td><td>Slow response to a broken or harmful send</td></tr>
+<tr><td>Flow ownership</td><td>One accountable discount strategy operator per flow</td><td>discount strategy ghosts sending expired incentives</td></tr>
+<tr><td>Naming convention</td><td>discount strategy-flow names lead with purpose</td><td>Discount Strategy audits collapsing at peak</td></tr>
+<tr><td>Change log</td><td>discount strategy edits stamped, dated, explained</td><td>discount strategy performance drift with no log</td></tr>
+<tr><td>Access control</td><td>discount strategy access scoped to role</td><td>Discount Strategy accidents from excess access</td></tr>
+<tr><td>Quarterly flow review</td><td>Prune idle discount strategy branches quarterly</td><td>Overgrown discount strategy journeys stalling ops</td></tr>
+<tr><td>Incident runbook</td><td>discount strategy kill steps plus alert list</td><td>Lagging discount strategy response to bad sends</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Peak season readiness for discount strategy</h2>
 <ol>
-<li>Freeze flow edits two weeks before the peak window opens.</li>
-<li>Test every flow with a real purchase, refund, and support case.</li>
-<li>Confirm suppression rules exclude recent buyers and open returns.</li>
-<li>Raise holdout samples so peak results remain measurable.</li>
-<li>Pre-write quiet-hours and frequency-cap policies for SMS.</li>
-<li>Check plan limits and overage pricing against forecast volume.</li>
-<li>Assign a daily deliverability monitor for complaints and bounces.</li>
-<li>Document rollback steps for each flow before the first campaign.</li>
+<li>For discount strategy, freeze journey changes two weeks pre-peak.</li>
+<li>For discount strategy, trial every journey against real order events.</li>
+<li>Discount Strategy guardrails must shed fresh buyers.</li>
+<li>Boost discount strategy control groups before the surge.</li>
+<li>For discount strategy, pre-commit text timing and frequency limits.</li>
+<li>For discount strategy, test tier limits against peak projections.</li>
+<li>Discount Strategy placement watched every peak day.</li>
+<li>Discount Strategy undo paths recorded pre-campaign.</li>
 </ol>
-<p>One more operating note for discount strategy: schedule the first quarterly review before launch, not after the first crisis. Teams that write down their suppression rules, discount caps, and escalation contacts in week one spend markedly less time firefighting later, and new operators inherit a documented system instead of folklore.</p>
-<p>Finally, keep the discount strategy program honest with a quarterly written review: what shipped, what was suppressed, what margin was kept, and which assumptions failed. Written reviews turn individual judgment into team knowledge and make vendor decisions calmer, because the evidence sits in one place instead of in memory.</p>
+<p>One more discount strategy operating note: book the first quarterly review before launch, not after the first crisis. Discount Strategy teams that record suppression rules, discount caps, and escalation contacts in week one firefight far less later, and new operators inherit a discount strategy system instead of folklore.</p>
+<p>Finally, review discount strategy in writing each quarter: what discount strategy work shipped, what was suppressed, what margin the discount strategy program kept, which assumptions failed. That discount strategy record turns individual judgment into team knowledge and keeps vendor calls evidence-based.</p>
 </main></BaseLayout>

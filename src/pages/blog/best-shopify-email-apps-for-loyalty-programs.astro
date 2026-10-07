@@ -68,144 +68,144 @@ const apps = [
 </a>.
 </p>
 <h2 class="mt-14">Consent and purchaser suppression for Loyalty programs</h2>
-<p>Before any loyalty programs automation goes live, confirm that every app in the stack records email and SMS consent in a form you can audit, and that purchase events suppress promotional follow-up immediately after checkout. A message that lands after a purchase, a refund, or an unresolved support case damages the channel faster than weak creative ever will.</p>
+<p>Before launching loyalty programs automation, prove every app in the stack logs email and SMS consent auditably, with purchase events cutting promotional follow-up the moment checkout completes. In loyalty programs, mistimed sends after purchases, refunds, or support cases destroy channel value quicker than any creative miss.</p>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Audience state</th><th>Required handling</th><th>Why it matters</th></tr></thead>
 <tbody>
-<tr><td>No documented consent</td><td>Suppress all marketing; transactional messages only</td><td>Consent is the legal foundation of every send</td></tr>
-<tr><td>Consented, never purchased</td><td>Educational and social-proof content first</td><td>Early discounting trains deal-seeking behavior</td></tr>
-<tr><td>Active cart, no checkout</td><td>Reminder with product context, no instant discount</td><td>Margin protection during a high-intent window</td></tr>
-<tr><td>Purchased recently</td><td>Suppress promotion; shift to post-purchase education</td><td>Avoids buyer remorse and unsubscribe risk</td></tr>
-<tr><td>Refund or return open</td><td>Hold promotion until the case resolves</td><td>Service context changes message tolerance</td></tr>
-<tr><td>Repeated non-engagement</td><td>Sunset the contact before complaints accumulate</td><td>Protects sender reputation and inbox placement</td></tr>
-<tr><td>SMS consent present</td><td>Respect quiet hours and frequency caps</td><td>SMS complaints carry higher cost and risk</td></tr>
-<tr><td>Wholesale or B2B account</td><td>Route to account-specific communication</td><td>Retail promotions can breach contract terms</td></tr>
-<tr><td>Free or disposable email domain</td><td>Verify before enrolling in automated journeys</td><td>Bounce risk and low-quality signups hurt deliverability</td></tr>
-<tr><td>Staff and test accounts</td><td>Exclude from production sending</td><td>Test noise corrupts reporting and attribution</td></tr>
-<tr><td>Competitor or researcher signals</td><td>No special handling; normal consent rules apply</td><td>Manual exceptions create untrackable inconsistencies</td></tr>
-<tr><td>Legacy list without timestamps</td><td>Re-permission before automated follow-up</td><td>Undocumented consent is a compliance liability</td></tr>
+<tr><td>No documented consent</td><td>Hold all loyalty programs marketing; transactional only</td><td>Loyalty Programs consent is the legal basis of every send</td></tr>
+<tr><td>Consented, never purchased</td><td>Open loyalty programs with guidance and proof, not discounts</td><td>Loyalty Programs margin suffers when discounts arrive first</td></tr>
+<tr><td>Active cart, no checkout</td><td>Context-rich loyalty programs nudge before any incentive</td><td>Guards loyalty programs margin while intent peaks</td></tr>
+<tr><td>Purchased recently</td><td>Loyalty Programs buyers get education, not another pitch</td><td>Spares loyalty programs buyers remorse and unsubscribes</td></tr>
+<tr><td>Refund or return open</td><td>Freeze loyalty programs promos until refund or return closes</td><td>Service-active loyalty programs shoppers reject promos</td></tr>
+<tr><td>Repeated non-engagement</td><td>Sunset cold loyalty programs contacts before complaints build</td><td>Keeps loyalty programs placement high via list hygiene</td></tr>
+<tr><td>SMS consent present</td><td>Loyalty Programs texting respects time and frequency rules</td><td>Loyalty Programs SMS complaints cost more per incident</td></tr>
+<tr><td>Wholesale or B2B account</td><td>Send loyalty programs B2B accounts down their own track</td><td>Loyalty Programs contract buyers need separate rules</td></tr>
+<tr><td>Free or disposable email domain</td><td>Screen loyalty programs free/disposable emails before flows</td><td>Unverified loyalty programs addresses poison sender score</td></tr>
+<tr><td>Staff and test accounts</td><td>Keep loyalty programs staff and test profiles out of live sends</td><td>Loyalty Programs test sends skew attribution reads</td></tr>
+<tr><td>Competitor or researcher signals</td><td>Loyalty Programs researcher signups follow standard consent</td><td>Loyalty Programs one-offs breed audit gaps</td></tr>
+<tr><td>Legacy list without timestamps</td><td>Re-permission legacy loyalty programs lists pre-automation</td><td>Loyalty Programs compliance demands re-permission</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Margin, app costs, and pricing for Loyalty programs</h2>
-<p>Attributed revenue is not profit. A loyalty programs program that pays for itself should survive a full cost model: platform subscription, contact or send overages, SMS credits, capture tooling, template work, agency retainers, and the margin cost of every discount the flows issue. If stack cost approaches fifteen percent of email-attributed margin, simplify before optimizing.</p>
-<p>Pricing changes frequently and varies by region, contact volume, and contract term, so check the official pricing pages of every shortlisted app and model an eighteen-month total that includes a peak season. Free tiers usually trade limits in contacts, sends, branching, or support; confirm which limit binds for your loyalty programs plan first.</p>
+<p>Loyalty Programs profit needs the whole ledger: subscription plus overages, SMS credits, capture and template spend, agency retainers, and loyalty programs discount margin against attributed revenue. For loyalty programs, a stack at fifteen percent of attributed margin needs simplification first, optimization second.</p>
+<p>Pricing changes frequently and varies by region, contact volume, and contract term, so check the official pricing pages of every shortlisted app and model an eighteen-month total that includes a peak season. Free tiers ration contacts, sends, branching, or support — confirm which ceiling binds your loyalty programs plan first.</p>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Cost component</th><th>What to model</th><th>Common failure</th></tr></thead>
 <tbody>
-<tr><td>Platform subscription</td><td>Plan tier at realistic contact volume</td><td>Buying the tier for a list you do not have yet</td></tr>
-<tr><td>Contact or send overages</td><td>Growth rate against plan limits</td><td>Seasonal spikes triggering surprise invoices</td></tr>
-<tr><td>SMS credits</td><td>Opt-in rate times messages per journey</td><td>Assuming SMS converts like email at a fraction of cost</td></tr>
-<tr><td>Discount budget</td><td>Discount depth times expected redemption</td><td>Flows that train customers to wait for codes</td></tr>
-<tr><td>Creative and ops time</td><td>Hours per week to maintain flows</td><td>Underestimating editing and QA workload</td></tr>
-<tr><td>Migration and setup</td><td>Data import, consent mapping, flow rebuild</td><td>Losing consent records during a move</td></tr>
-<tr><td>Support and success tiers</td><td>Whether critical issues need paid support</td><td>Discovering support gaps during peak week</td></tr>
-<tr><td>Third-party integrations</td><td>Review, loyalty, and capture tool fees</td><td>Stack creep that doubles effective platform cost</td></tr>
-<tr><td>Deliverability remediation</td><td>Monitoring, list cleaning, and consulting</td><td>Reputation damage costing more than the subscription</td></tr>
+<tr><td>Platform subscription</td><td>Loyalty Programs tier matched to true contact volume</td><td>Paying loyalty programs prices for a list you lack</td></tr>
+<tr><td>Contact or send overages</td><td>Loyalty Programs growth pace versus plan ceilings</td><td>Loyalty Programs seasonal spikes surprise-billing</td></tr>
+<tr><td>SMS credits</td><td>Scale loyalty programs SMS by opt-ins and journey length</td><td>Treating loyalty programs texts like near-free email</td></tr>
+<tr><td>Discount budget</td><td>Loyalty Programs code depth times likely redemption</td><td>loyalty programs incentives training perpetual waiting</td></tr>
+<tr><td>Creative and ops time</td><td>Loyalty Programs maintenance load in staff hours</td><td>Loyalty Programs QA load surprising lean teams</td></tr>
+<tr><td>Migration and setup</td><td>loyalty programs migration: data, consent maps, rebuilds</td><td>Dropped loyalty programs permission records on switch</td></tr>
+<tr><td>Support and success tiers</td><td>Does loyalty programs crisis support cost extra</td><td>Loyalty Programs support gaps found at peak</td></tr>
+<tr><td>Third-party integrations</td><td>Loyalty Programs satellite fees beyond the ESP</td><td>loyalty programs side-tools eclipsing core cost</td></tr>
+<tr><td>Deliverability remediation</td><td>Loyalty Programs reputation maintenance budget</td><td>Loyalty Programs inbox harm priced above the plan</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Decision table for Loyalty programs</h2>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Situation</th><th>Start with</th><th>Reason</th></tr></thead>
 <tbody>
-<tr><td>Occasional sends, small catalog</td><td>Shopify Email</td><td>Native setup with minimal operating cost</td></tr>
-<tr><td>Branching and suppression matter</td><td>Klaviyo</td><td>Deep event and segment controls</td></tr>
-<tr><td>Small team, email plus light SMS</td><td>Omnisend</td><td>Accessible multichannel workflows</td></tr>
-<tr><td>Broad newsletter operations</td><td>Mailchimp</td><td>Familiar editor and audience tooling</td></tr>
-<tr><td>Lean lifecycle operations</td><td>Sequenzy</td><td>Focused sequence and campaign operation</td></tr>
-<tr><td>Developer-led custom builds</td><td>Customer.io</td><td>Event-triggered messaging flexibility</td></tr>
-<tr><td>CRM-led sales follow-up</td><td>ActiveCampaign</td><td>Automation joined to account context</td></tr>
-<tr><td>Simple list growth and popups</td><td>Privy</td><td>Capture-first tooling for new stores</td></tr>
-<tr><td>Commerce cohort analysis</td><td>Drip</td><td>Repeat-purchase reporting orientation</td></tr>
+<tr><td>Occasional sends, small catalog</td><td>Shopify Email</td><td>Zero-learning-curve start for light loyalty programs needs</td></tr>
+<tr><td>Branching and suppression matter</td><td>Klaviyo</td><td>Event-level loyalty programs control for growing logic</td></tr>
+<tr><td>Small team, email plus light SMS</td><td>Omnisend</td><td>Low-friction loyalty programs journeys spanning channels</td></tr>
+<tr><td>Broad newsletter operations</td><td>Mailchimp</td><td>Editor familiarity for loyalty programs broadcast desks</td></tr>
+<tr><td>Lean lifecycle operations</td><td>Sequenzy</td><td>Email-first loyalty programs sequences with guided operation</td></tr>
+<tr><td>Developer-led custom builds</td><td>Customer.io</td><td>Loyalty Programs flexibility for engineering-led stacks</td></tr>
+<tr><td>CRM-led sales follow-up</td><td>ActiveCampaign</td><td>Account-linked loyalty programs sequences for B2B motion</td></tr>
+<tr><td>Simple list growth and popups</td><td>Privy</td><td>Popup-led loyalty programs growth for young stores</td></tr>
+<tr><td>Commerce cohort analysis</td><td>Drip</td><td>Repeat-revenue loyalty programs lens on customer cohorts</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Common failure modes in loyalty programs email</h2>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Failure</th><th>Prevention</th><th>Cost of getting it wrong</th></tr></thead>
 <tbody>
-<tr><td>Discount in the first touch</td><td>Hold offers until intent is established</td><td>Trains low-margin buying habits</td></tr>
-<tr><td>No purchase suppression</td><td>Exit flows on order and checkout events</td><td>Post-purchase promotions feel careless</td></tr>
-<tr><td>Consent imported without proof</td><td>Map timestamps and source fields</td><td>Compliance exposure during audits</td></tr>
-<tr><td>Flows only one operator understands</td><td>Document exits and naming conventions</td><td>Editing risk and key-person dependency</td></tr>
-<tr><td>Measuring clicks only</td><td>Track margin, returns, and complaints</td><td>Clicks reward aggressive, harmful tactics</td></tr>
-<tr><td>Ignoring deliverability signals</td><td>Monitor bounces and spam complaints</td><td>Recovery costs exceed prevention</td></tr>
-<tr><td>Peak-season flow changes</td><td>Freeze edits during the peak window</td><td>Untested changes fail at the worst time</td></tr>
-<tr><td>SMS without a channel strategy</td><td>Define SMS jobs separately from email</td><td>Frequency overlap drives opt-outs</td></tr>
+<tr><td>Discount in the first touch</td><td>Withhold loyalty programs offers until intent shows</td><td>Schools loyalty programs shoppers in low-margin habits</td></tr>
+<tr><td>No purchase suppression</td><td>Checkout-triggered loyalty programs flow exits</td><td>Loyalty Programs promos after purchase read careless</td></tr>
+<tr><td>Consent imported without proof</td><td>loyalty programs consent fields mapped before importing</td><td>Loyalty Programs audit exposure without proof</td></tr>
+<tr><td>Flows only one operator understands</td><td>loyalty programs conventions written for successors</td><td>loyalty programs changes gamble without docs</td></tr>
+<tr><td>Measuring clicks only</td><td>Score loyalty programs on profit, returns, grievances</td><td>Loyalty Programs click-chasing rewards harm</td></tr>
+<tr><td>Ignoring deliverability signals</td><td>Loyalty Programs placement signals checked routinely</td><td>loyalty programs inbox recovery costs more than hygiene</td></tr>
+<tr><td>Peak-season flow changes</td><td>No loyalty programs flow changes mid-peak</td><td>Loyalty Programs surprises land hardest on drop day</td></tr>
+<tr><td>SMS without a channel strategy</td><td>loyalty programs SMS roles defined outside email</td><td>Doubled loyalty programs touches push unsubscribes</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Implementation order for a loyalty programs program</h2>
 <ol>
-<li>Document consent sources and map them into the platform before any campaign.</li>
-<li>Verify Shopify order, cart, refund, and support events fire in a test store.</li>
-<li>Build suppression rules and exit conditions before building any flow.</li>
-<li>Launch one bounded pilot journey with a holdout group for measurement.</li>
-<li>Review margin, complaints, unsubscribes, and repeat purchase after thirty days.</li>
-<li>Expand only when the pilot can be edited safely by a second operator.</li>
-<li>Write a peak-season freeze policy covering edits, discounts, and volume.</li>
-<li>Set a quarterly cost review that compares stack cost to email-attributed margin.</li>
-<li>Archive or simplify any flow nobody has reviewed in ninety days.</li>
+<li>Record loyalty programs permission origins in the ESP before sending.</li>
+<li>Confirm loyalty programs event wiring with a full test-store pass.</li>
+<li>For loyalty programs, suppression architecture precedes journey building.</li>
+<li>Open loyalty programs with a contained pilot and clean control.</li>
+<li>Thirty days into loyalty programs, score margin and audience health.</li>
+<li>For loyalty programs, growth waits for transferable editing.</li>
+<li>For loyalty programs, pre-write peak rules on changes and offers.</li>
+<li>Quarterly, weigh the loyalty programs stack against attributed margin.</li>
+<li>Prune loyalty programs flows no one has owned in a quarter.</li>
 </ol>
 <h2 class="mt-12">Metrics review cadence for loyalty programs</h2>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Metric</th><th>Definition</th><th>Review cadence</th></tr></thead>
 <tbody>
-<tr><td>Margin per send</td><td>Revenue minus discounts, sends, and platform cost</td><td>Monthly</td></tr>
-<tr><td>Repeat purchase rate</td><td>Second-order share within ninety days</td><td>Monthly</td></tr>
-<tr><td>Complaint and unsubscribe rate</td><td>Per campaign and per flow</td><td>Weekly</td></tr>
-<tr><td>Suppression accuracy</td><td>Sample post-purchase sends for violations</td><td>Weekly</td></tr>
-<tr><td>Time to edit safely</td><td>Minutes for a second operator to change a flow</td><td>Quarterly</td></tr>
-<tr><td>Holdout lift</td><td>Treated versus excluded group comparison</td><td>Quarterly</td></tr>
+<tr><td>Margin per send</td><td>Kept loyalty programs margin after discounts, sends, fees</td><td>Monthly</td></tr>
+<tr><td>Repeat purchase rate</td><td>Loyalty Programs second orders inside ninety days</td><td>Monthly</td></tr>
+<tr><td>Complaint and unsubscribe rate</td><td>loyalty programs complaint lens on both blasts and flows</td><td>Weekly</td></tr>
+<tr><td>Suppression accuracy</td><td>loyalty programs-buyer samples screened for breaches</td><td>Weekly</td></tr>
+<tr><td>Time to edit safely</td><td>loyalty programs edit-safety minutes without the author</td><td>Quarterly</td></tr>
+<tr><td>Holdout lift</td><td>loyalty programs incrementality from holdout contrast</td><td>Quarterly</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Loyalty programs matchup FAQ</h2>
 <section class="max-w-3xl mx-auto space-y-6">
-<div><h3>Klaviyo or Shopify Email for loyalty programs?</h3><p>Shopify Email is a reasonable start when loyalty programs campaigns are occasional and the catalog is small. Klaviyo pays off when loyalty programs work needs event-driven branching, catalog-aware content, and segment-level reporting. Model profile-based billing against expected contact growth before committing.</p></div>
-<div><h3>Omnisend vs Klaviyo for loyalty programs?</h3><p>Omnisend tends to be faster for a small team running email-first loyalty programs campaigns with light SMS. Klaviyo offers deeper segmentation and event flexibility, which matters as loyalty programs logic grows. Pilot both with one real loyalty programs journey and compare maintenance time, not feature lists.</p></div>
-<div><h3>Mailchimp or Klaviyo for loyalty programs?</h3><p>Mailchimp suits teams that value a familiar editor and broad campaign tooling for loyalty programs newsletters and simple automations. Klaviyo is stronger where loyalty programs messages depend on Shopify order, cart, and browse events. Check both official pricing pages at your contact volume before deciding.</p></div>
-<div><h3>Do I need a separate SMS tool for loyalty programs?</h3><p>Not at the start. Several platforms cover basic SMS alongside email, and SMS specialists earn their cost only when text messages measurably improve loyalty programs outcomes. Confirm consent handling, quiet hours, and per-message pricing, and verify that your audience actually responds to SMS.</p></div>
-<div><h3>How should I suppress audiences in loyalty programs flows?</h3><p>Exclude recent purchasers, open support or return cases, refunded orders, and anyone without documented consent. For loyalty programs, write exit conditions next to each flow so another operator can audit them. Suppression mistakes cost more margin than a missed campaign.</p></div>
-<div><h3>What does loyalty programs email cost?</h3><p>Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your loyalty programs campaigns consume. Providers change plans and limits often, so check official pricing pages and model an eighteen-month total before committing.</p></div>
-<div><h3>Which app should a lean team pilot first for loyalty programs?</h3><p>Start with the tool your team can fully operate in two weeks: native Shopify Email for simple loyalty programs sends, or a lean ecommerce platform when branching and suppression matter. A completed pilot beats an ambitious setup that stalls during week one.</p></div>
-<div><h3>How do I measure loyalty programs email results?</h3><p>Track margin per send, repeat purchase, unsubscribe and complaint rates, and support load alongside attributed revenue. For loyalty programs specifically, compare a holdout group against recipients so seasonal lift is not mistaken for program impact.</p></div>
-<div><h3>Can I run loyalty programs email without an agency?</h3><p>Yes, if the scope stays small. Pick one loyalty programs journey, document consent and suppression rules, and reuse a simple template system. Add outside help only when flow complexity, deliverability remediation, or peak-season volume exceeds in-house capacity.</p></div>
-<div><h3>When should I graduate from my first app for loyalty programs?</h3><p>Graduate when the team cannot safely edit flows, segment reliably by purchase state, or forecast cost at your growing contact count. For loyalty programs, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression.</p></div>
-<div><h3>How much discounting is acceptable for loyalty programs?</h3><p>Treat discounts as one lever, not the default. For loyalty programs, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. If most revenue needs a code, the program has a value problem rather than a pricing problem.</p></div>
-<div><h3>Which Shopify data matters most for loyalty programs?</h3><p>Order and refund state, cart and browse events, consent source, and product availability cover most loyalty programs decisions. Verify each event fires correctly in a test purchase before building logic on top of it, and document field meanings so marketing and engineering agree.</p></div>
-<div><h3>How do I avoid duplicate sends across apps for loyalty programs?</h3><p>Give one platform ownership of each loyalty programs journey, document which app sends what, and share suppression lists where the tools support it. Run a weekly audit during peak season that samples customers and lists every message they received.</p></div>
-<div><h3>What should a loyalty programs pilot include?</h3><p>A bounded pilot covers one audience, one or two journeys, explicit suppression rules, a holdout group, and a thirty-day review of margin and complaints. Agree on the success criteria before launch so results cannot be reinterpreted afterward.</p></div>
+<div><h3>Klaviyo or Shopify Email for loyalty programs?</h3><p>Loyalty Programs at low volume runs fine on Shopify Email; graduate to Klaviyo once loyalty programs needs triggers, dynamic catalog content, and segment revenue views, after pricing profile growth for loyalty programs.</p></div>
+<div><h3>Omnisend vs Klaviyo for loyalty programs?</h3><p>For loyalty programs, Omnisend ships email-first loyalty programs plus light SMS fastest for small teams; Klaviyo counters with deeper loyalty programs segmentation — pilot one genuine loyalty programs journey on each and weigh upkeep, not checklists.</p></div>
+<div><h3>Mailchimp or Klaviyo for loyalty programs?</h3><p>For loyalty programs, Mailchimp trades on familiarity, Klaviyo on Shopify event fidelity; settle loyalty programs pricing by checking both official pages at your contacts.</p></div>
+<div><h3>Do I need a separate SMS tool for loyalty programs?</h3><p>Hold specialist SMS for loyalty programs until texts demonstrably move loyalty programs numbers; platform-bundled SMS covers the start — with loyalty programs consent, quiet hours, and unit pricing confirmed.</p></div>
+<div><h3>How should I suppress audiences in loyalty programs flows?</h3><p>Loyalty Programs suppression: fresh purchasers, active cases, refunded orders, and consent gaps all exit. Document loyalty programs exits per journey; loyalty programs suppression errors dwarf missed-campaign cost.</p></div>
+<div><h3>What does loyalty programs email cost?</h3><p>Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your loyalty programs campaigns consume. Pricing moves too often to quote statically: check the official pricing pages covering your loyalty programs stack and model eighteen months of total cost before committing.</p></div>
+<div><h3>Which app should a lean team pilot first for loyalty programs?</h3><p>Open loyalty programs with the tool at full command in fourteen days — simple loyalty programs sends natively, branched loyalty programs on a lean platform. Shipping loyalty programs beats architecting it.</p></div>
+<div><h3>How do I measure loyalty programs email results?</h3><p>Measure loyalty programs on contribution, not vanity sends: margin per send, repeat purchase, unsubscribes, complaints, and support load alongside attributed revenue, with a holdout cohort proving the loyalty programs journeys caused the lift.</p></div>
+<div><h3>Can I run loyalty programs email without an agency?</h3><p>Yes, if the scope stays small. Pick one loyalty programs journey, document consent and suppression rules, and reuse a simple template system. Bring outside help onto loyalty programs only when flow complexity, deliverability repair, or peak-season loyalty programs volume outruns in-house capacity.</p></div>
+<div><h3>When should I graduate from my first app for loyalty programs?</h3><p>The loyalty programs moment to graduate arrives when safe editing, purchase-state segmentation, or cost forecasting at your loyalty programs contact scale stops working. For loyalty programs, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression.</p></div>
+<div><h3>How much discounting is acceptable for loyalty programs?</h3><p>Treat discounts as one lever, not the default. For loyalty programs, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. For loyalty programs, code-dependence across most revenue means the offer story — not the price — needs repair.</p></div>
+<div><h3>Which Shopify data matters most for loyalty programs?</h3><p>Order and refund state, cart and browse events, consent source, and product availability cover most loyalty programs decisions. On loyalty programs, prove events in a test checkout before trusting them in flows, with loyalty programs field definitions written where both teams can find them.</p></div>
+<div><h3>How do I avoid duplicate sends across apps for loyalty programs?</h3><p>Give one platform ownership of each loyalty programs journey, document which app sends what, and share suppression lists where the tools support it. During peak season, audit loyalty programs weekly by sampling customers and listing every loyalty programs message each one received.</p></div>
+<div><h3>What should a loyalty programs pilot include?</h3><p>For loyalty programs, a tight pilot wins: single audience, at most two journeys, explicit suppression, a holdout, and a day-thirty loyalty programs review of margin and complaints with pre-agreed pass/fail lines.</p></div>
 </section>
 <script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",mainEntity:[
-{"@type": "Question", "name": "Klaviyo or Shopify Email for loyalty programs?", "acceptedAnswer": {"@type": "Answer", "text": "Shopify Email is a reasonable start when loyalty programs campaigns are occasional and the catalog is small. Klaviyo pays off when loyalty programs work needs event-driven branching, catalog-aware content, and segment-level reporting. Model profile-based billing against expected contact growth before committing."}},
-{"@type": "Question", "name": "Omnisend vs Klaviyo for loyalty programs?", "acceptedAnswer": {"@type": "Answer", "text": "Omnisend tends to be faster for a small team running email-first loyalty programs campaigns with light SMS. Klaviyo offers deeper segmentation and event flexibility, which matters as loyalty programs logic grows. Pilot both with one real loyalty programs journey and compare maintenance time, not feature lists."}},
-{"@type": "Question", "name": "Mailchimp or Klaviyo for loyalty programs?", "acceptedAnswer": {"@type": "Answer", "text": "Mailchimp suits teams that value a familiar editor and broad campaign tooling for loyalty programs newsletters and simple automations. Klaviyo is stronger where loyalty programs messages depend on Shopify order, cart, and browse events. Check both official pricing pages at your contact volume before deciding."}},
-{"@type": "Question", "name": "Do I need a separate SMS tool for loyalty programs?", "acceptedAnswer": {"@type": "Answer", "text": "Not at the start. Several platforms cover basic SMS alongside email, and SMS specialists earn their cost only when text messages measurably improve loyalty programs outcomes. Confirm consent handling, quiet hours, and per-message pricing, and verify that your audience actually responds to SMS."}},
-{"@type": "Question", "name": "How should I suppress audiences in loyalty programs flows?", "acceptedAnswer": {"@type": "Answer", "text": "Exclude recent purchasers, open support or return cases, refunded orders, and anyone without documented consent. For loyalty programs, write exit conditions next to each flow so another operator can audit them. Suppression mistakes cost more margin than a missed campaign."}},
-{"@type": "Question", "name": "What does loyalty programs email cost?", "acceptedAnswer": {"@type": "Answer", "text": "Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your loyalty programs campaigns consume. Providers change plans and limits often, so check official pricing pages and model an eighteen-month total before committing."}},
-{"@type": "Question", "name": "Which app should a lean team pilot first for loyalty programs?", "acceptedAnswer": {"@type": "Answer", "text": "Start with the tool your team can fully operate in two weeks: native Shopify Email for simple loyalty programs sends, or a lean ecommerce platform when branching and suppression matter. A completed pilot beats an ambitious setup that stalls during week one."}},
-{"@type": "Question", "name": "How do I measure loyalty programs email results?", "acceptedAnswer": {"@type": "Answer", "text": "Track margin per send, repeat purchase, unsubscribe and complaint rates, and support load alongside attributed revenue. For loyalty programs specifically, compare a holdout group against recipients so seasonal lift is not mistaken for program impact."}},
-{"@type": "Question", "name": "Can I run loyalty programs email without an agency?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if the scope stays small. Pick one loyalty programs journey, document consent and suppression rules, and reuse a simple template system. Add outside help only when flow complexity, deliverability remediation, or peak-season volume exceeds in-house capacity."}},
-{"@type": "Question", "name": "When should I graduate from my first app for loyalty programs?", "acceptedAnswer": {"@type": "Answer", "text": "Graduate when the team cannot safely edit flows, segment reliably by purchase state, or forecast cost at your growing contact count. For loyalty programs, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression."}},
-{"@type": "Question", "name": "How much discounting is acceptable for loyalty programs?", "acceptedAnswer": {"@type": "Answer", "text": "Treat discounts as one lever, not the default. For loyalty programs, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. If most revenue needs a code, the program has a value problem rather than a pricing problem."}},
-{"@type": "Question", "name": "Which Shopify data matters most for loyalty programs?", "acceptedAnswer": {"@type": "Answer", "text": "Order and refund state, cart and browse events, consent source, and product availability cover most loyalty programs decisions. Verify each event fires correctly in a test purchase before building logic on top of it, and document field meanings so marketing and engineering agree."}},
-{"@type": "Question", "name": "How do I avoid duplicate sends across apps for loyalty programs?", "acceptedAnswer": {"@type": "Answer", "text": "Give one platform ownership of each loyalty programs journey, document which app sends what, and share suppression lists where the tools support it. Run a weekly audit during peak season that samples customers and lists every message they received."}},
-{"@type": "Question", "name": "What should a loyalty programs pilot include?", "acceptedAnswer": {"@type": "Answer", "text": "A bounded pilot covers one audience, one or two journeys, explicit suppression rules, a holdout group, and a thirty-day review of margin and complaints. Agree on the success criteria before launch so results cannot be reinterpreted afterward."}}
+{"@type": "Question", "name": "Klaviyo or Shopify Email for loyalty programs?", "acceptedAnswer": {"@type": "Answer", "text": "Loyalty Programs at low volume runs fine on Shopify Email; graduate to Klaviyo once loyalty programs needs triggers, dynamic catalog content, and segment revenue views, after pricing profile growth for loyalty programs."}},
+{"@type": "Question", "name": "Omnisend vs Klaviyo for loyalty programs?", "acceptedAnswer": {"@type": "Answer", "text": "For loyalty programs, Omnisend ships email-first loyalty programs plus light SMS fastest for small teams; Klaviyo counters with deeper loyalty programs segmentation — pilot one genuine loyalty programs journey on each and weigh upkeep, not checklists."}},
+{"@type": "Question", "name": "Mailchimp or Klaviyo for loyalty programs?", "acceptedAnswer": {"@type": "Answer", "text": "For loyalty programs, Mailchimp trades on familiarity, Klaviyo on Shopify event fidelity; settle loyalty programs pricing by checking both official pages at your contacts."}},
+{"@type": "Question", "name": "Do I need a separate SMS tool for loyalty programs?", "acceptedAnswer": {"@type": "Answer", "text": "Hold specialist SMS for loyalty programs until texts demonstrably move loyalty programs numbers; platform-bundled SMS covers the start — with loyalty programs consent, quiet hours, and unit pricing confirmed."}},
+{"@type": "Question", "name": "How should I suppress audiences in loyalty programs flows?", "acceptedAnswer": {"@type": "Answer", "text": "Loyalty Programs suppression: fresh purchasers, active cases, refunded orders, and consent gaps all exit. Document loyalty programs exits per journey; loyalty programs suppression errors dwarf missed-campaign cost."}},
+{"@type": "Question", "name": "What does loyalty programs email cost?", "acceptedAnswer": {"@type": "Answer", "text": "Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your loyalty programs campaigns consume. Pricing moves too often to quote statically: check the official pricing pages covering your loyalty programs stack and model eighteen months of total cost before committing."}},
+{"@type": "Question", "name": "Which app should a lean team pilot first for loyalty programs?", "acceptedAnswer": {"@type": "Answer", "text": "Open loyalty programs with the tool at full command in fourteen days — simple loyalty programs sends natively, branched loyalty programs on a lean platform. Shipping loyalty programs beats architecting it."}},
+{"@type": "Question", "name": "How do I measure loyalty programs email results?", "acceptedAnswer": {"@type": "Answer", "text": "Measure loyalty programs on contribution, not vanity sends: margin per send, repeat purchase, unsubscribes, complaints, and support load alongside attributed revenue, with a holdout cohort proving the loyalty programs journeys caused the lift."}},
+{"@type": "Question", "name": "Can I run loyalty programs email without an agency?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if the scope stays small. Pick one loyalty programs journey, document consent and suppression rules, and reuse a simple template system. Bring outside help onto loyalty programs only when flow complexity, deliverability repair, or peak-season loyalty programs volume outruns in-house capacity."}},
+{"@type": "Question", "name": "When should I graduate from my first app for loyalty programs?", "acceptedAnswer": {"@type": "Answer", "text": "The loyalty programs moment to graduate arrives when safe editing, purchase-state segmentation, or cost forecasting at your loyalty programs contact scale stops working. For loyalty programs, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression."}},
+{"@type": "Question", "name": "How much discounting is acceptable for loyalty programs?", "acceptedAnswer": {"@type": "Answer", "text": "Treat discounts as one lever, not the default. For loyalty programs, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. For loyalty programs, code-dependence across most revenue means the offer story — not the price — needs repair."}},
+{"@type": "Question", "name": "Which Shopify data matters most for loyalty programs?", "acceptedAnswer": {"@type": "Answer", "text": "Order and refund state, cart and browse events, consent source, and product availability cover most loyalty programs decisions. On loyalty programs, prove events in a test checkout before trusting them in flows, with loyalty programs field definitions written where both teams can find them."}},
+{"@type": "Question", "name": "How do I avoid duplicate sends across apps for loyalty programs?", "acceptedAnswer": {"@type": "Answer", "text": "Give one platform ownership of each loyalty programs journey, document which app sends what, and share suppression lists where the tools support it. During peak season, audit loyalty programs weekly by sampling customers and listing every loyalty programs message each one received."}},
+{"@type": "Question", "name": "What should a loyalty programs pilot include?", "acceptedAnswer": {"@type": "Answer", "text": "For loyalty programs, a tight pilot wins: single audience, at most two journeys, explicit suppression, a holdout, and a day-thirty loyalty programs review of margin and complaints with pre-agreed pass/fail lines."}}
 ]})} />
 <h2 class="mt-12">Governance and documentation for loyalty programs</h2>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Practice</th><th>Standard</th><th>Risk it prevents</th></tr></thead>
 <tbody>
-<tr><td>Flow ownership</td><td>One named owner per journey</td><td>Orphaned flows that send stale offers</td></tr>
-<tr><td>Naming convention</td><td>Prefix by job and audience</td><td>Impossible audits during peak season</td></tr>
-<tr><td>Change log</td><td>Record edits, dates, and reasons</td><td>Untraceable performance regressions</td></tr>
-<tr><td>Access control</td><td>Least-privilege seats for editors</td><td>Accidental deletes or unauthorized sends</td></tr>
-<tr><td>Quarterly flow review</td><td>Archive or simplify unused branches</td><td>Complexity tax that slows every edit</td></tr>
-<tr><td>Incident runbook</td><td>Steps for pausing sends and notifying</td><td>Slow response to a broken or harmful send</td></tr>
+<tr><td>Flow ownership</td><td>Loyalty Programs journeys each carry one owner</td><td>loyalty programs ghosts sending expired incentives</td></tr>
+<tr><td>Naming convention</td><td>loyalty programs naming encodes job plus segment</td><td>Peak loyalty programs triage blind without naming</td></tr>
+<tr><td>Change log</td><td>Loyalty Programs change log per journey</td><td>Unlogged loyalty programs changes hiding causes</td></tr>
+<tr><td>Access control</td><td>loyalty programs access scoped to role</td><td>Stray loyalty programs deletes via broad seats</td></tr>
+<tr><td>Quarterly flow review</td><td>loyalty programs branch count kept lean</td><td>Loyalty Programs bloat taxing each edit</td></tr>
+<tr><td>Incident runbook</td><td>Loyalty Programs incident path: pause, notify, fix</td><td>Slow loyalty programs kill on broken sends</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Peak season readiness for loyalty programs</h2>
 <ol>
-<li>Freeze flow edits two weeks before the peak window opens.</li>
-<li>Test every flow with a real purchase, refund, and support case.</li>
-<li>Confirm suppression rules exclude recent buyers and open returns.</li>
-<li>Raise holdout samples so peak results remain measurable.</li>
-<li>Pre-write quiet-hours and frequency-cap policies for SMS.</li>
-<li>Check plan limits and overage pricing against forecast volume.</li>
-<li>Assign a daily deliverability monitor for complaints and bounces.</li>
-<li>Document rollback steps for each flow before the first campaign.</li>
+<li>For loyalty programs, freeze journey changes two weeks pre-peak.</li>
+<li>Exercise each loyalty programs flow with live purchase, refund, support tests.</li>
+<li>Check loyalty programs exits filter buyers and open cases.</li>
+<li>Boost loyalty programs control groups before the surge.</li>
+<li>Set loyalty programs SMS boundaries ahead of volume.</li>
+<li>Loyalty Programs billing checked on peak math.</li>
+<li>Loyalty Programs placement watched every peak day.</li>
+<li>Pre-write loyalty programs rollback moves per flow before launch.</li>
 </ol>
-<p>One more operating note for loyalty programs: schedule the first quarterly review before launch, not after the first crisis. Teams that write down their suppression rules, discount caps, and escalation contacts in week one spend markedly less time firefighting later, and new operators inherit a documented system instead of folklore.</p>
-<p>Finally, keep the loyalty programs program honest with a quarterly written review: what shipped, what was suppressed, what margin was kept, and which assumptions failed. Written reviews turn individual judgment into team knowledge and make vendor decisions calmer, because the evidence sits in one place instead of in memory.</p>
+<p>For loyalty programs, schedule quarter-one review before the first send. Writing loyalty programs suppression rules, discount caps, and escalation paths down in week one saves weeks of peak-season triage and hands newcomers a working loyalty programs playbook.</p>
+<p>Close each loyalty programs quarter with a written ledger — loyalty programs sends shipped, suppressions honored, margin retained, failed bets — so loyalty programs vendor decisions rest on one shared evidence file, not scattered memory.</p>
 </main></BaseLayout>

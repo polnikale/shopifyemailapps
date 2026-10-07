@@ -68,144 +68,144 @@ const apps = [
 </a>.
 </p>
 <h2 class="mt-14">Consent and purchaser suppression for Cart recovery</h2>
-<p>Before any cart recovery automation goes live, confirm that every app in the stack records email and SMS consent in a form you can audit, and that purchase events suppress promotional follow-up immediately after checkout. A message that lands after a purchase, a refund, or an unresolved support case damages the channel faster than weak creative ever will.</p>
+<p>Cart Recovery readiness starts with provable consent records and instant post-checkout suppression across each app running cart recovery sends. Cart Recovery audiences forgive plain creative; they do not forgive promos sent mid-refund or right after checkout.</p>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Audience state</th><th>Required handling</th><th>Why it matters</th></tr></thead>
 <tbody>
-<tr><td>No documented consent</td><td>Suppress all marketing; transactional messages only</td><td>Consent is the legal foundation of every send</td></tr>
-<tr><td>Consented, never purchased</td><td>Educational and social-proof content first</td><td>Early discounting trains deal-seeking behavior</td></tr>
-<tr><td>Active cart, no checkout</td><td>Reminder with product context, no instant discount</td><td>Margin protection during a high-intent window</td></tr>
-<tr><td>Purchased recently</td><td>Suppress promotion; shift to post-purchase education</td><td>Avoids buyer remorse and unsubscribe risk</td></tr>
-<tr><td>Refund or return open</td><td>Hold promotion until the case resolves</td><td>Service context changes message tolerance</td></tr>
-<tr><td>Repeated non-engagement</td><td>Sunset the contact before complaints accumulate</td><td>Protects sender reputation and inbox placement</td></tr>
-<tr><td>SMS consent present</td><td>Respect quiet hours and frequency caps</td><td>SMS complaints carry higher cost and risk</td></tr>
-<tr><td>Wholesale or B2B account</td><td>Route to account-specific communication</td><td>Retail promotions can breach contract terms</td></tr>
-<tr><td>Free or disposable email domain</td><td>Verify before enrolling in automated journeys</td><td>Bounce risk and low-quality signups hurt deliverability</td></tr>
-<tr><td>Staff and test accounts</td><td>Exclude from production sending</td><td>Test noise corrupts reporting and attribution</td></tr>
-<tr><td>Competitor or researcher signals</td><td>No special handling; normal consent rules apply</td><td>Manual exceptions create untrackable inconsistencies</td></tr>
-<tr><td>Legacy list without timestamps</td><td>Re-permission before automated follow-up</td><td>Undocumented consent is a compliance liability</td></tr>
+<tr><td>No documented consent</td><td>Cart Recovery marketing stays off; transactional only</td><td>Cart Recovery consent is the legal basis of every send</td></tr>
+<tr><td>Consented, never purchased</td><td>Lead cart recovery newcomers with teaching and social proof</td><td>Cart Recovery margin suffers when discounts arrive first</td></tr>
+<tr><td>Active cart, no checkout</td><td>Context-rich cart recovery nudge before any incentive</td><td>Guards cart recovery margin while intent peaks</td></tr>
+<tr><td>Purchased recently</td><td>Suppress cart recovery selling after checkout; educate instead</td><td>Spares cart recovery buyers remorse and unsubscribes</td></tr>
+<tr><td>Refund or return open</td><td>Cart Recovery selling waits for case resolution</td><td>Service-active cart recovery shoppers reject promos</td></tr>
+<tr><td>Repeated non-engagement</td><td>Remove chronic cart recovery non-openers pre-complaint</td><td>Keeps cart recovery placement high via list hygiene</td></tr>
+<tr><td>SMS consent present</td><td>Cart Recovery SMS obeys quiet hours and caps</td><td>One cart recovery SMS complaint outweighs many email ones</td></tr>
+<tr><td>Wholesale or B2B account</td><td>Isolate cart recovery wholesale comms from retail blasts</td><td>B2B cart recovery mis-sends risk contract breach</td></tr>
+<tr><td>Free or disposable email domain</td><td>Cart Recovery automation skips unverified domains first</td><td>Cart Recovery list quality decides placement</td></tr>
+<tr><td>Staff and test accounts</td><td>Cart Recovery QA profiles excluded from reporting</td><td>Cart Recovery reporting stays clean without test noise</td></tr>
+<tr><td>Competitor or researcher signals</td><td>No bespoke cart recovery track for competitor signals</td><td>Ad-hoc cart recovery exceptions break traceability</td></tr>
+<tr><td>Legacy list without timestamps</td><td>Reconfirm cart recovery consent where timestamps are missing</td><td>Timestamp-less cart recovery consent is legal exposure</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Margin, app costs, and pricing for Cart recovery</h2>
-<p>Attributed revenue is not profit. A cart recovery program that pays for itself should survive a full cost model: platform subscription, contact or send overages, SMS credits, capture tooling, template work, agency retainers, and the margin cost of every discount the flows issue. If stack cost approaches fifteen percent of email-attributed margin, simplify before optimizing.</p>
-<p>Pricing changes frequently and varies by region, contact volume, and contract term, so check the official pricing pages of every shortlisted app and model an eighteen-month total that includes a peak season. Free tiers usually trade limits in contacts, sends, branching, or support; confirm which limit binds for your cart recovery plan first.</p>
+<p>Judge cart recovery on margin, not attribution. A durable cart recovery program absorbs subscription, overages, SMS, capture, creative, agency, and discount costs and still pays. If cart recovery tooling eats toward fifteen percent of attributed margin, reduce cart recovery scope before optimizing flows.</p>
+<p>Pricing changes frequently and varies by region, contact volume, and contract term, so check the official pricing pages of every shortlisted app and model an eighteen-month total that includes a peak season. Free tiers ration contacts, sends, branching, or support — confirm which ceiling binds your cart recovery plan first.</p>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Cost component</th><th>What to model</th><th>Common failure</th></tr></thead>
 <tbody>
-<tr><td>Platform subscription</td><td>Plan tier at realistic contact volume</td><td>Buying the tier for a list you do not have yet</td></tr>
-<tr><td>Contact or send overages</td><td>Growth rate against plan limits</td><td>Seasonal spikes triggering surprise invoices</td></tr>
-<tr><td>SMS credits</td><td>Opt-in rate times messages per journey</td><td>Assuming SMS converts like email at a fraction of cost</td></tr>
-<tr><td>Discount budget</td><td>Discount depth times expected redemption</td><td>Flows that train customers to wait for codes</td></tr>
-<tr><td>Creative and ops time</td><td>Hours per week to maintain flows</td><td>Underestimating editing and QA workload</td></tr>
-<tr><td>Migration and setup</td><td>Data import, consent mapping, flow rebuild</td><td>Losing consent records during a move</td></tr>
-<tr><td>Support and success tiers</td><td>Whether critical issues need paid support</td><td>Discovering support gaps during peak week</td></tr>
-<tr><td>Third-party integrations</td><td>Review, loyalty, and capture tool fees</td><td>Stack creep that doubles effective platform cost</td></tr>
-<tr><td>Deliverability remediation</td><td>Monitoring, list cleaning, and consulting</td><td>Reputation damage costing more than the subscription</td></tr>
+<tr><td>Platform subscription</td><td>Cart Recovery tier priced at realistic contact scale</td><td>Paying cart recovery prices for a list you lack</td></tr>
+<tr><td>Contact or send overages</td><td>Cart Recovery headroom checked against growth</td><td>Cart Recovery seasonal spikes surprise-billing</td></tr>
+<tr><td>SMS credits</td><td>Cart Recovery text volume from real opt-in math</td><td>cart recovery text costs wished into email costs</td></tr>
+<tr><td>Discount budget</td><td>Price cart recovery incentives by redemption probability</td><td>Cart Recovery journeys schooling code-waiting</td></tr>
+<tr><td>Creative and ops time</td><td>Weekly cart recovery hours to run and QA flows</td><td>Cart Recovery QA load surprising lean teams</td></tr>
+<tr><td>Migration and setup</td><td>cart recovery switch priced in imports and rebuild labor</td><td>Cart Recovery audit trail gaps after moves</td></tr>
+<tr><td>Support and success tiers</td><td>cart recovery escalation path and its price</td><td>Cart Recovery help-desk limits exposed by drops</td></tr>
+<tr><td>Third-party integrations</td><td>Adjacent cart recovery tooling: reviews, loyalty, capture</td><td>Cart Recovery sprawl doubling real platform cost</td></tr>
+<tr><td>Deliverability remediation</td><td>Cart Recovery monitoring, cleaning, advisory spend</td><td>Cart Recovery reputation repair dwarfing license fees</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Decision table for Cart recovery</h2>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Situation</th><th>Start with</th><th>Reason</th></tr></thead>
 <tbody>
-<tr><td>Occasional sends, small catalog</td><td>Shopify Email</td><td>Native setup with minimal operating cost</td></tr>
-<tr><td>Branching and suppression matter</td><td>Klaviyo</td><td>Deep event and segment controls</td></tr>
-<tr><td>Small team, email plus light SMS</td><td>Omnisend</td><td>Accessible multichannel workflows</td></tr>
-<tr><td>Broad newsletter operations</td><td>Mailchimp</td><td>Familiar editor and audience tooling</td></tr>
-<tr><td>Lean lifecycle operations</td><td>Sequenzy</td><td>Focused sequence and campaign operation</td></tr>
-<tr><td>Developer-led custom builds</td><td>Customer.io</td><td>Event-triggered messaging flexibility</td></tr>
-<tr><td>CRM-led sales follow-up</td><td>ActiveCampaign</td><td>Automation joined to account context</td></tr>
-<tr><td>Simple list growth and popups</td><td>Privy</td><td>Capture-first tooling for new stores</td></tr>
-<tr><td>Commerce cohort analysis</td><td>Drip</td><td>Repeat-purchase reporting orientation</td></tr>
+<tr><td>Occasional sends, small catalog</td><td>Shopify Email</td><td>Minimal overhead for small-catalog cart recovery volume</td></tr>
+<tr><td>Branching and suppression matter</td><td>Klaviyo</td><td>Event-level cart recovery control for growing logic</td></tr>
+<tr><td>Small team, email plus light SMS</td><td>Omnisend</td><td>Small-team cart recovery workflows across email and SMS</td></tr>
+<tr><td>Broad newsletter operations</td><td>Mailchimp</td><td>Cart Recovery newsletters in a familiar editor</td></tr>
+<tr><td>Lean lifecycle operations</td><td>Sequenzy</td><td>Pay-per-email cart recovery operation for selective volume</td></tr>
+<tr><td>Developer-led custom builds</td><td>Customer.io</td><td>Custom cart recovery messaging on raw events</td></tr>
+<tr><td>CRM-led sales follow-up</td><td>ActiveCampaign</td><td>Cart Recovery follow-up tied to account records</td></tr>
+<tr><td>Simple list growth and popups</td><td>Privy</td><td>Early cart recovery momentum through capture widgets</td></tr>
+<tr><td>Commerce cohort analysis</td><td>Drip</td><td>Cart Recovery analytics for replenishment cadence</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Common failure modes in cart recovery email</h2>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Failure</th><th>Prevention</th><th>Cost of getting it wrong</th></tr></thead>
 <tbody>
-<tr><td>Discount in the first touch</td><td>Hold offers until intent is established</td><td>Trains low-margin buying habits</td></tr>
-<tr><td>No purchase suppression</td><td>Exit flows on order and checkout events</td><td>Post-purchase promotions feel careless</td></tr>
-<tr><td>Consent imported without proof</td><td>Map timestamps and source fields</td><td>Compliance exposure during audits</td></tr>
-<tr><td>Flows only one operator understands</td><td>Document exits and naming conventions</td><td>Editing risk and key-person dependency</td></tr>
-<tr><td>Measuring clicks only</td><td>Track margin, returns, and complaints</td><td>Clicks reward aggressive, harmful tactics</td></tr>
-<tr><td>Ignoring deliverability signals</td><td>Monitor bounces and spam complaints</td><td>Recovery costs exceed prevention</td></tr>
-<tr><td>Peak-season flow changes</td><td>Freeze edits during the peak window</td><td>Untested changes fail at the worst time</td></tr>
-<tr><td>SMS without a channel strategy</td><td>Define SMS jobs separately from email</td><td>Frequency overlap drives opt-outs</td></tr>
+<tr><td>Discount in the first touch</td><td>Delay cart recovery codes past first intent proof</td><td>cart recovery discount-first trains bargain hunting</td></tr>
+<tr><td>No purchase suppression</td><td>Cart Recovery exits wired to order and checkout events</td><td>Cart Recovery mistiming insults fresh buyers</td></tr>
+<tr><td>Consent imported without proof</td><td>Record cart recovery opt-in origin and moment</td><td>Cart Recovery liability when sources are vague</td></tr>
+<tr><td>Flows only one operator understands</td><td>Cart Recovery flows legible to any operator</td><td>cart recovery changes gamble without docs</td></tr>
+<tr><td>Measuring clicks only</td><td>cart recovery measured on kept margin and complaints</td><td>Click-only cart recovery metrics bless aggression</td></tr>
+<tr><td>Ignoring deliverability signals</td><td>Track cart recovery bounce and complaint trendlines</td><td>cart recovery damage control exceeds upkeep cost</td></tr>
+<tr><td>Peak-season flow changes</td><td>cart recovery calm-before-peak change moratorium</td><td>Peak-week cart recovery experiments fail loudest</td></tr>
+<tr><td>SMS without a channel strategy</td><td>Separate cart recovery SMS duties from email duties</td><td>Cart Recovery frequency collision sheds subscribers</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Implementation order for a cart recovery program</h2>
 <ol>
-<li>Document consent sources and map them into the platform before any campaign.</li>
-<li>Verify Shopify order, cart, refund, and support events fire in a test store.</li>
-<li>Build suppression rules and exit conditions before building any flow.</li>
-<li>Launch one bounded pilot journey with a holdout group for measurement.</li>
-<li>Review margin, complaints, unsubscribes, and repeat purchase after thirty days.</li>
-<li>Expand only when the pilot can be edited safely by a second operator.</li>
-<li>Write a peak-season freeze policy covering edits, discounts, and volume.</li>
-<li>Set a quarterly cost review that compares stack cost to email-attributed margin.</li>
-<li>Archive or simplify any flow nobody has reviewed in ninety days.</li>
+<li>Map cart recovery consent sources into the platform before any cart recovery campaign.</li>
+<li>For cart recovery, test-fire order, cart, refund, and support events first.</li>
+<li>Set cart recovery guardrails before constructing journeys.</li>
+<li>Pilot cart recovery with one bounded journey plus holdout measurement.</li>
+<li>Thirty days into cart recovery, score margin and audience health.</li>
+<li>Scale cart recovery only once a second operator edits safely.</li>
+<li>For cart recovery, pre-write peak rules on changes and offers.</li>
+<li>Reprice cart recovery totals against margin every quarter.</li>
+<li>Cart Recovery hygiene: unreviewed flows simplified or cut.</li>
 </ol>
 <h2 class="mt-12">Metrics review cadence for cart recovery</h2>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Metric</th><th>Definition</th><th>Review cadence</th></tr></thead>
 <tbody>
-<tr><td>Margin per send</td><td>Revenue minus discounts, sends, and platform cost</td><td>Monthly</td></tr>
-<tr><td>Repeat purchase rate</td><td>Second-order share within ninety days</td><td>Monthly</td></tr>
-<tr><td>Complaint and unsubscribe rate</td><td>Per campaign and per flow</td><td>Weekly</td></tr>
-<tr><td>Suppression accuracy</td><td>Sample post-purchase sends for violations</td><td>Weekly</td></tr>
-<tr><td>Time to edit safely</td><td>Minutes for a second operator to change a flow</td><td>Quarterly</td></tr>
-<tr><td>Holdout lift</td><td>Treated versus excluded group comparison</td><td>Quarterly</td></tr>
+<tr><td>Margin per send</td><td>Cart Recovery revenue less discounts, send and platform cost</td><td>Monthly</td></tr>
+<tr><td>Repeat purchase rate</td><td>Cart Recovery second orders inside ninety days</td><td>Monthly</td></tr>
+<tr><td>Complaint and unsubscribe rate</td><td>Split cart recovery grievances by campaign and journey</td><td>Weekly</td></tr>
+<tr><td>Suppression accuracy</td><td>cart recovery-buyer samples screened for breaches</td><td>Weekly</td></tr>
+<tr><td>Time to edit safely</td><td>cart recovery handoff-edit minutes, second operator</td><td>Quarterly</td></tr>
+<tr><td>Holdout lift</td><td>Cart Recovery treated-versus-holdout read</td><td>Quarterly</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Cart recovery matchup FAQ</h2>
 <section class="max-w-3xl mx-auto space-y-6">
-<div><h3>Klaviyo or Shopify Email for cart recovery?</h3><p>Shopify Email is a reasonable start when cart recovery campaigns are occasional and the catalog is small. Klaviyo pays off when cart recovery work needs event-driven branching, catalog-aware content, and segment-level reporting. Model profile-based billing against expected contact growth before committing.</p></div>
-<div><h3>Omnisend vs Klaviyo for cart recovery?</h3><p>Omnisend tends to be faster for a small team running email-first cart recovery campaigns with light SMS. Klaviyo offers deeper segmentation and event flexibility, which matters as cart recovery logic grows. Pilot both with one real cart recovery journey and compare maintenance time, not feature lists.</p></div>
-<div><h3>Mailchimp or Klaviyo for cart recovery?</h3><p>Mailchimp suits teams that value a familiar editor and broad campaign tooling for cart recovery newsletters and simple automations. Klaviyo is stronger where cart recovery messages depend on Shopify order, cart, and browse events. Check both official pricing pages at your contact volume before deciding.</p></div>
-<div><h3>Do I need a separate SMS tool for cart recovery?</h3><p>Not at the start. Several platforms cover basic SMS alongside email, and SMS specialists earn their cost only when text messages measurably improve cart recovery outcomes. Confirm consent handling, quiet hours, and per-message pricing, and verify that your audience actually responds to SMS.</p></div>
-<div><h3>How should I suppress audiences in cart recovery flows?</h3><p>Exclude recent purchasers, open support or return cases, refunded orders, and anyone without documented consent. For cart recovery, write exit conditions next to each flow so another operator can audit them. Suppression mistakes cost more margin than a missed campaign.</p></div>
-<div><h3>What does cart recovery email cost?</h3><p>Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your cart recovery campaigns consume. Providers change plans and limits often, so check official pricing pages and model an eighteen-month total before committing.</p></div>
-<div><h3>Which app should a lean team pilot first for cart recovery?</h3><p>Start with the tool your team can fully operate in two weeks: native Shopify Email for simple cart recovery sends, or a lean ecommerce platform when branching and suppression matter. A completed pilot beats an ambitious setup that stalls during week one.</p></div>
-<div><h3>How do I measure cart recovery email results?</h3><p>Track margin per send, repeat purchase, unsubscribe and complaint rates, and support load alongside attributed revenue. For cart recovery specifically, compare a holdout group against recipients so seasonal lift is not mistaken for program impact.</p></div>
-<div><h3>Can I run cart recovery email without an agency?</h3><p>Yes, if the scope stays small. Pick one cart recovery journey, document consent and suppression rules, and reuse a simple template system. Add outside help only when flow complexity, deliverability remediation, or peak-season volume exceeds in-house capacity.</p></div>
-<div><h3>When should I graduate from my first app for cart recovery?</h3><p>Graduate when the team cannot safely edit flows, segment reliably by purchase state, or forecast cost at your growing contact count. For cart recovery, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression.</p></div>
-<div><h3>How much discounting is acceptable for cart recovery?</h3><p>Treat discounts as one lever, not the default. For cart recovery, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. If most revenue needs a code, the program has a value problem rather than a pricing problem.</p></div>
-<div><h3>Which Shopify data matters most for cart recovery?</h3><p>Order and refund state, cart and browse events, consent source, and product availability cover most cart recovery decisions. Verify each event fires correctly in a test purchase before building logic on top of it, and document field meanings so marketing and engineering agree.</p></div>
-<div><h3>How do I avoid duplicate sends across apps for cart recovery?</h3><p>Give one platform ownership of each cart recovery journey, document which app sends what, and share suppression lists where the tools support it. Run a weekly audit during peak season that samples customers and lists every message they received.</p></div>
-<div><h3>What should a cart recovery pilot include?</h3><p>A bounded pilot covers one audience, one or two journeys, explicit suppression rules, a holdout group, and a thirty-day review of margin and complaints. Agree on the success criteria before launch so results cannot be reinterpreted afterward.</p></div>
+<div><h3>Klaviyo or Shopify Email for cart recovery?</h3><p>Start cart recovery on Shopify Email while sends stay occasional and catalogs compact; Klaviyo pays when cart recovery branching and reporting complexity arrives — forecast profile cost on cart recovery list growth.</p></div>
+<div><h3>Omnisend vs Klaviyo for cart recovery?</h3><p>Cart Recovery speed favors Omnisend for lean crews; cart recovery depth favors Klaviyo as logic matures. Run the same cart recovery journey live on both and compare maintenance hours.</p></div>
+<div><h3>Mailchimp or Klaviyo for cart recovery?</h3><p>Cart Recovery newsletters suit Mailchimp familiarity; cart recovery automation on commerce events suits Klaviyo. Compare official pricing at your cart recovery contact tier before choosing.</p></div>
+<div><h3>Do I need a separate SMS tool for cart recovery?</h3><p>Hold specialist SMS for cart recovery until texts demonstrably move cart recovery numbers; platform-bundled SMS covers the start — with cart recovery consent, quiet hours, and unit pricing confirmed.</p></div>
+<div><h3>How should I suppress audiences in cart recovery flows?</h3><p>Guard cart recovery with exits for buyers, open cases, refunds, and no-consent profiles, auditable per cart recovery flow. In cart recovery, a suppression miss hurts worse than a missed blast.</p></div>
+<div><h3>What does cart recovery email cost?</h3><p>Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your cart recovery campaigns consume. Pricing moves too often to quote statically: check the official pricing pages covering your cart recovery stack and model eighteen months of total cost before committing.</p></div>
+<div><h3>Which app should a lean team pilot first for cart recovery?</h3><p>For cart recovery, two-week operability decides: native sends or lean-platform cart recovery branching — completed cart recovery pilots outrank ambitious stalls.</p></div>
+<div><h3>How do I measure cart recovery email results?</h3><p>Keep cart recovery honest by tracking margin per send, repeat purchase, complaint and unsubscribe rates, plus support load against attributed revenue; a holdout group for cart recovery recipients separates real lift from seasonal noise.</p></div>
+<div><h3>Can I run cart recovery email without an agency?</h3><p>Yes, if the scope stays small. Pick one cart recovery journey, document consent and suppression rules, and reuse a simple template system. Keep cart recovery in-house unless tangled flows, deliverability triage, or peak-season cart recovery load exceed internal bandwidth.</p></div>
+<div><h3>When should I graduate from my first app for cart recovery?</h3><p>Graduate the cart recovery stack when the team can no longer edit flows safely, segment cart recovery audiences by purchase state, or forecast cost at the growing contact count. For cart recovery, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression.</p></div>
+<div><h3>How much discounting is acceptable for cart recovery?</h3><p>Treat discounts as one lever, not the default. For cart recovery, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. If most cart recovery revenue needs a code, the cart recovery program has a value problem rather than a pricing problem.</p></div>
+<div><h3>Which Shopify data matters most for cart recovery?</h3><p>Order and refund state, cart and browse events, consent source, and product availability cover most cart recovery decisions. On cart recovery, prove events in a test checkout before trusting them in flows, with cart recovery field definitions written where both teams can find them.</p></div>
+<div><h3>How do I avoid duplicate sends across apps for cart recovery?</h3><p>Give one platform ownership of each cart recovery journey, document which app sends what, and share suppression lists where the tools support it. During peak season, audit cart recovery weekly by sampling customers and listing every cart recovery message each one received.</p></div>
+<div><h3>What should a cart recovery pilot include?</h3><p>Scope the cart recovery pilot narrowly — one audience, one or two cart recovery journeys, documented suppression, holdout coverage, thirty-day margin review — and agree the cart recovery success metric before the first send.</p></div>
 </section>
 <script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",mainEntity:[
-{"@type": "Question", "name": "Klaviyo or Shopify Email for cart recovery?", "acceptedAnswer": {"@type": "Answer", "text": "Shopify Email is a reasonable start when cart recovery campaigns are occasional and the catalog is small. Klaviyo pays off when cart recovery work needs event-driven branching, catalog-aware content, and segment-level reporting. Model profile-based billing against expected contact growth before committing."}},
-{"@type": "Question", "name": "Omnisend vs Klaviyo for cart recovery?", "acceptedAnswer": {"@type": "Answer", "text": "Omnisend tends to be faster for a small team running email-first cart recovery campaigns with light SMS. Klaviyo offers deeper segmentation and event flexibility, which matters as cart recovery logic grows. Pilot both with one real cart recovery journey and compare maintenance time, not feature lists."}},
-{"@type": "Question", "name": "Mailchimp or Klaviyo for cart recovery?", "acceptedAnswer": {"@type": "Answer", "text": "Mailchimp suits teams that value a familiar editor and broad campaign tooling for cart recovery newsletters and simple automations. Klaviyo is stronger where cart recovery messages depend on Shopify order, cart, and browse events. Check both official pricing pages at your contact volume before deciding."}},
-{"@type": "Question", "name": "Do I need a separate SMS tool for cart recovery?", "acceptedAnswer": {"@type": "Answer", "text": "Not at the start. Several platforms cover basic SMS alongside email, and SMS specialists earn their cost only when text messages measurably improve cart recovery outcomes. Confirm consent handling, quiet hours, and per-message pricing, and verify that your audience actually responds to SMS."}},
-{"@type": "Question", "name": "How should I suppress audiences in cart recovery flows?", "acceptedAnswer": {"@type": "Answer", "text": "Exclude recent purchasers, open support or return cases, refunded orders, and anyone without documented consent. For cart recovery, write exit conditions next to each flow so another operator can audit them. Suppression mistakes cost more margin than a missed campaign."}},
-{"@type": "Question", "name": "What does cart recovery email cost?", "acceptedAnswer": {"@type": "Answer", "text": "Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your cart recovery campaigns consume. Providers change plans and limits often, so check official pricing pages and model an eighteen-month total before committing."}},
-{"@type": "Question", "name": "Which app should a lean team pilot first for cart recovery?", "acceptedAnswer": {"@type": "Answer", "text": "Start with the tool your team can fully operate in two weeks: native Shopify Email for simple cart recovery sends, or a lean ecommerce platform when branching and suppression matter. A completed pilot beats an ambitious setup that stalls during week one."}},
-{"@type": "Question", "name": "How do I measure cart recovery email results?", "acceptedAnswer": {"@type": "Answer", "text": "Track margin per send, repeat purchase, unsubscribe and complaint rates, and support load alongside attributed revenue. For cart recovery specifically, compare a holdout group against recipients so seasonal lift is not mistaken for program impact."}},
-{"@type": "Question", "name": "Can I run cart recovery email without an agency?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if the scope stays small. Pick one cart recovery journey, document consent and suppression rules, and reuse a simple template system. Add outside help only when flow complexity, deliverability remediation, or peak-season volume exceeds in-house capacity."}},
-{"@type": "Question", "name": "When should I graduate from my first app for cart recovery?", "acceptedAnswer": {"@type": "Answer", "text": "Graduate when the team cannot safely edit flows, segment reliably by purchase state, or forecast cost at your growing contact count. For cart recovery, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression."}},
-{"@type": "Question", "name": "How much discounting is acceptable for cart recovery?", "acceptedAnswer": {"@type": "Answer", "text": "Treat discounts as one lever, not the default. For cart recovery, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. If most revenue needs a code, the program has a value problem rather than a pricing problem."}},
-{"@type": "Question", "name": "Which Shopify data matters most for cart recovery?", "acceptedAnswer": {"@type": "Answer", "text": "Order and refund state, cart and browse events, consent source, and product availability cover most cart recovery decisions. Verify each event fires correctly in a test purchase before building logic on top of it, and document field meanings so marketing and engineering agree."}},
-{"@type": "Question", "name": "How do I avoid duplicate sends across apps for cart recovery?", "acceptedAnswer": {"@type": "Answer", "text": "Give one platform ownership of each cart recovery journey, document which app sends what, and share suppression lists where the tools support it. Run a weekly audit during peak season that samples customers and lists every message they received."}},
-{"@type": "Question", "name": "What should a cart recovery pilot include?", "acceptedAnswer": {"@type": "Answer", "text": "A bounded pilot covers one audience, one or two journeys, explicit suppression rules, a holdout group, and a thirty-day review of margin and complaints. Agree on the success criteria before launch so results cannot be reinterpreted afterward."}}
+{"@type": "Question", "name": "Klaviyo or Shopify Email for cart recovery?", "acceptedAnswer": {"@type": "Answer", "text": "Start cart recovery on Shopify Email while sends stay occasional and catalogs compact; Klaviyo pays when cart recovery branching and reporting complexity arrives — forecast profile cost on cart recovery list growth."}},
+{"@type": "Question", "name": "Omnisend vs Klaviyo for cart recovery?", "acceptedAnswer": {"@type": "Answer", "text": "Cart Recovery speed favors Omnisend for lean crews; cart recovery depth favors Klaviyo as logic matures. Run the same cart recovery journey live on both and compare maintenance hours."}},
+{"@type": "Question", "name": "Mailchimp or Klaviyo for cart recovery?", "acceptedAnswer": {"@type": "Answer", "text": "Cart Recovery newsletters suit Mailchimp familiarity; cart recovery automation on commerce events suits Klaviyo. Compare official pricing at your cart recovery contact tier before choosing."}},
+{"@type": "Question", "name": "Do I need a separate SMS tool for cart recovery?", "acceptedAnswer": {"@type": "Answer", "text": "Hold specialist SMS for cart recovery until texts demonstrably move cart recovery numbers; platform-bundled SMS covers the start — with cart recovery consent, quiet hours, and unit pricing confirmed."}},
+{"@type": "Question", "name": "How should I suppress audiences in cart recovery flows?", "acceptedAnswer": {"@type": "Answer", "text": "Guard cart recovery with exits for buyers, open cases, refunds, and no-consent profiles, auditable per cart recovery flow. In cart recovery, a suppression miss hurts worse than a missed blast."}},
+{"@type": "Question", "name": "What does cart recovery email cost?", "acceptedAnswer": {"@type": "Answer", "text": "Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your cart recovery campaigns consume. Pricing moves too often to quote statically: check the official pricing pages covering your cart recovery stack and model eighteen months of total cost before committing."}},
+{"@type": "Question", "name": "Which app should a lean team pilot first for cart recovery?", "acceptedAnswer": {"@type": "Answer", "text": "For cart recovery, two-week operability decides: native sends or lean-platform cart recovery branching — completed cart recovery pilots outrank ambitious stalls."}},
+{"@type": "Question", "name": "How do I measure cart recovery email results?", "acceptedAnswer": {"@type": "Answer", "text": "Keep cart recovery honest by tracking margin per send, repeat purchase, complaint and unsubscribe rates, plus support load against attributed revenue; a holdout group for cart recovery recipients separates real lift from seasonal noise."}},
+{"@type": "Question", "name": "Can I run cart recovery email without an agency?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if the scope stays small. Pick one cart recovery journey, document consent and suppression rules, and reuse a simple template system. Keep cart recovery in-house unless tangled flows, deliverability triage, or peak-season cart recovery load exceed internal bandwidth."}},
+{"@type": "Question", "name": "When should I graduate from my first app for cart recovery?", "acceptedAnswer": {"@type": "Answer", "text": "Graduate the cart recovery stack when the team can no longer edit flows safely, segment cart recovery audiences by purchase state, or forecast cost at the growing contact count. For cart recovery, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression."}},
+{"@type": "Question", "name": "How much discounting is acceptable for cart recovery?", "acceptedAnswer": {"@type": "Answer", "text": "Treat discounts as one lever, not the default. For cart recovery, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. If most cart recovery revenue needs a code, the cart recovery program has a value problem rather than a pricing problem."}},
+{"@type": "Question", "name": "Which Shopify data matters most for cart recovery?", "acceptedAnswer": {"@type": "Answer", "text": "Order and refund state, cart and browse events, consent source, and product availability cover most cart recovery decisions. On cart recovery, prove events in a test checkout before trusting them in flows, with cart recovery field definitions written where both teams can find them."}},
+{"@type": "Question", "name": "How do I avoid duplicate sends across apps for cart recovery?", "acceptedAnswer": {"@type": "Answer", "text": "Give one platform ownership of each cart recovery journey, document which app sends what, and share suppression lists where the tools support it. During peak season, audit cart recovery weekly by sampling customers and listing every cart recovery message each one received."}},
+{"@type": "Question", "name": "What should a cart recovery pilot include?", "acceptedAnswer": {"@type": "Answer", "text": "Scope the cart recovery pilot narrowly — one audience, one or two cart recovery journeys, documented suppression, holdout coverage, thirty-day margin review — and agree the cart recovery success metric before the first send."}}
 ]})} />
 <h2 class="mt-12">Governance and documentation for cart recovery</h2>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Practice</th><th>Standard</th><th>Risk it prevents</th></tr></thead>
 <tbody>
-<tr><td>Flow ownership</td><td>One named owner per journey</td><td>Orphaned flows that send stale offers</td></tr>
-<tr><td>Naming convention</td><td>Prefix by job and audience</td><td>Impossible audits during peak season</td></tr>
-<tr><td>Change log</td><td>Record edits, dates, and reasons</td><td>Untraceable performance regressions</td></tr>
-<tr><td>Access control</td><td>Least-privilege seats for editors</td><td>Accidental deletes or unauthorized sends</td></tr>
-<tr><td>Quarterly flow review</td><td>Archive or simplify unused branches</td><td>Complexity tax that slows every edit</td></tr>
-<tr><td>Incident runbook</td><td>Steps for pausing sends and notifying</td><td>Slow response to a broken or harmful send</td></tr>
+<tr><td>Flow ownership</td><td>Named cart recovery owner on every journey</td><td>Abandoned cart recovery journeys mailing on</td></tr>
+<tr><td>Naming convention</td><td>cart recovery-flow names lead with purpose</td><td>Cart Recovery audits collapsing at peak</td></tr>
+<tr><td>Change log</td><td>cart recovery-flow history recorded per change</td><td>Cart Recovery regressions without a trail</td></tr>
+<tr><td>Access control</td><td>Limit cart recovery edit rights tightly</td><td>Over-permissioned cart recovery editors misfiring</td></tr>
+<tr><td>Quarterly flow review</td><td>Cart Recovery dead branches archived</td><td>cart recovery cruft raising edit cost</td></tr>
+<tr><td>Incident runbook</td><td>cart recovery kill steps plus alert list</td><td>Lagging cart recovery response to bad sends</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Peak season readiness for cart recovery</h2>
 <ol>
-<li>Freeze flow edits two weeks before the peak window opens.</li>
-<li>Test every flow with a real purchase, refund, and support case.</li>
-<li>Confirm suppression rules exclude recent buyers and open returns.</li>
-<li>Raise holdout samples so peak results remain measurable.</li>
-<li>Pre-write quiet-hours and frequency-cap policies for SMS.</li>
-<li>Check plan limits and overage pricing against forecast volume.</li>
-<li>Assign a daily deliverability monitor for complaints and bounces.</li>
-<li>Document rollback steps for each flow before the first campaign.</li>
+<li>Halt cart recovery edits ahead of the peak window.</li>
+<li>For cart recovery, trial every journey against real order events.</li>
+<li>For cart recovery, confirm buyer and return exclusions hold.</li>
+<li>Cart Recovery measurement needs bigger peak holdouts.</li>
+<li>Cart Recovery texting policy written before peak.</li>
+<li>Cart Recovery billing checked on peak math.</li>
+<li>Cart Recovery placement watched every peak day.</li>
+<li>Pre-write cart recovery rollback moves per flow before launch.</li>
 </ol>
-<p>One more operating note for cart recovery: schedule the first quarterly review before launch, not after the first crisis. Teams that write down their suppression rules, discount caps, and escalation contacts in week one spend markedly less time firefighting later, and new operators inherit a documented system instead of folklore.</p>
-<p>Finally, keep the cart recovery program honest with a quarterly written review: what shipped, what was suppressed, what margin was kept, and which assumptions failed. Written reviews turn individual judgment into team knowledge and make vendor decisions calmer, because the evidence sits in one place instead of in memory.</p>
+<p>Cart Recovery programs stay calm when the quarterly review is calendared pre-launch: suppression, discount caps, and escalation contacts for cart recovery live in writing from week one, so successors inherit process, not memory.</p>
+<p>Quarterly cart recovery honesty pays: log shipped cart recovery flows, suppression calls, margin kept, and broken assumptions. The cart recovery paper trail converts solo judgment into institutional knowledge.</p>
 </main></BaseLayout>

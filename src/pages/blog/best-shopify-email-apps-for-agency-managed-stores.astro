@@ -68,144 +68,144 @@ const apps = [
 </a>.
 </p>
 <h2 class="mt-14">Consent and purchaser suppression for Agency managed stores</h2>
-<p>Before any agency managed stores automation goes live, confirm that every app in the stack records email and SMS consent in a form you can audit, and that purchase events suppress promotional follow-up immediately after checkout. A message that lands after a purchase, a refund, or an unresolved support case damages the channel faster than weak creative ever will.</p>
+<p>Hold the agency managed stores launch until consent is documented per app and purchase events suppress agency managed stores promos immediately after checkout — both verifiable in an audit. Protect the agency managed stores channel first: post-purchase, refund-window, and support-case promos do more damage than dull agency managed stores copy.</p>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Audience state</th><th>Required handling</th><th>Why it matters</th></tr></thead>
 <tbody>
-<tr><td>No documented consent</td><td>Suppress all marketing; transactional messages only</td><td>Consent is the legal foundation of every send</td></tr>
-<tr><td>Consented, never purchased</td><td>Educational and social-proof content first</td><td>Early discounting trains deal-seeking behavior</td></tr>
-<tr><td>Active cart, no checkout</td><td>Reminder with product context, no instant discount</td><td>Margin protection during a high-intent window</td></tr>
-<tr><td>Purchased recently</td><td>Suppress promotion; shift to post-purchase education</td><td>Avoids buyer remorse and unsubscribe risk</td></tr>
-<tr><td>Refund or return open</td><td>Hold promotion until the case resolves</td><td>Service context changes message tolerance</td></tr>
-<tr><td>Repeated non-engagement</td><td>Sunset the contact before complaints accumulate</td><td>Protects sender reputation and inbox placement</td></tr>
-<tr><td>SMS consent present</td><td>Respect quiet hours and frequency caps</td><td>SMS complaints carry higher cost and risk</td></tr>
-<tr><td>Wholesale or B2B account</td><td>Route to account-specific communication</td><td>Retail promotions can breach contract terms</td></tr>
-<tr><td>Free or disposable email domain</td><td>Verify before enrolling in automated journeys</td><td>Bounce risk and low-quality signups hurt deliverability</td></tr>
-<tr><td>Staff and test accounts</td><td>Exclude from production sending</td><td>Test noise corrupts reporting and attribution</td></tr>
-<tr><td>Competitor or researcher signals</td><td>No special handling; normal consent rules apply</td><td>Manual exceptions create untrackable inconsistencies</td></tr>
-<tr><td>Legacy list without timestamps</td><td>Re-permission before automated follow-up</td><td>Undocumented consent is a compliance liability</td></tr>
+<tr><td>No documented consent</td><td>No agency managed stores promos without proof; transactional messages only</td><td>Agency Managed Stores consent is the legal basis of every send</td></tr>
+<tr><td>Consented, never purchased</td><td>Agency Managed Stores education and proof before any offer</td><td>First-touch agency managed stores codes create discount dependence</td></tr>
+<tr><td>Active cart, no checkout</td><td>Remind agency managed stores carts with context first, no instant code</td><td>Protects agency managed stores profit when purchase intent is hottest</td></tr>
+<tr><td>Purchased recently</td><td>Agency Managed Stores buyers get education, not another pitch</td><td>Agency Managed Stores suppression protects the new-customer glow</td></tr>
+<tr><td>Refund or return open</td><td>No agency managed stores promos mid-case; resume after resolution</td><td>Service-active agency managed stores shoppers reject promos</td></tr>
+<tr><td>Repeated non-engagement</td><td>Agency Managed Stores sunset policy precedes complaint spikes</td><td>Shields agency managed stores sender reputation and inboxing</td></tr>
+<tr><td>SMS consent present</td><td>Cap agency managed stores SMS cadence within legal quiet windows</td><td>One agency managed stores SMS complaint outweighs many email ones</td></tr>
+<tr><td>Wholesale or B2B account</td><td>Isolate agency managed stores wholesale comms from retail blasts</td><td>Agency Managed Stores retail promos can violate B2B terms</td></tr>
+<tr><td>Free or disposable email domain</td><td>Verify agency managed stores throwaway addresses pre-journey</td><td>Agency Managed Stores bounces from junk signups hurt inboxing</td></tr>
+<tr><td>Staff and test accounts</td><td>Agency Managed Stores internal accounts never enter production</td><td>QA agency managed stores sends distort real performance</td></tr>
+<tr><td>Competitor or researcher signals</td><td>No bespoke agency managed stores track for competitor signals</td><td>Agency Managed Stores consistency beats clever carve-outs</td></tr>
+<tr><td>Legacy list without timestamps</td><td>Reconfirm agency managed stores consent where timestamps are missing</td><td>Old agency managed stores permission without records is a risk</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Margin, app costs, and pricing for Agency managed stores</h2>
-<p>Attributed revenue is not profit. A agency managed stores program that pays for itself should survive a full cost model: platform subscription, contact or send overages, SMS credits, capture tooling, template work, agency retainers, and the margin cost of every discount the flows issue. If stack cost approaches fifteen percent of email-attributed margin, simplify before optimizing.</p>
-<p>Pricing changes frequently and varies by region, contact volume, and contract term, so check the official pricing pages of every shortlisted app and model an eighteen-month total that includes a peak season. Free tiers usually trade limits in contacts, sends, branching, or support; confirm which limit binds for your agency managed stores plan first.</p>
+<p>Judge agency managed stores on margin, not attribution. A durable agency managed stores program absorbs subscription, overages, SMS, capture, creative, agency, and discount costs and still pays. For agency managed stores, a stack at fifteen percent of attributed margin needs simplification first, optimization second.</p>
+<p>Pricing changes frequently and varies by region, contact volume, and contract term, so check the official pricing pages of every shortlisted app and model an eighteen-month total that includes a peak season. Before banking on free for agency managed stores, check which free-tier limit — contacts, sends, branching, support — hits your agency managed stores plan earliest.</p>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Cost component</th><th>What to model</th><th>Common failure</th></tr></thead>
 <tbody>
-<tr><td>Platform subscription</td><td>Plan tier at realistic contact volume</td><td>Buying the tier for a list you do not have yet</td></tr>
-<tr><td>Contact or send overages</td><td>Growth rate against plan limits</td><td>Seasonal spikes triggering surprise invoices</td></tr>
-<tr><td>SMS credits</td><td>Opt-in rate times messages per journey</td><td>Assuming SMS converts like email at a fraction of cost</td></tr>
-<tr><td>Discount budget</td><td>Discount depth times expected redemption</td><td>Flows that train customers to wait for codes</td></tr>
-<tr><td>Creative and ops time</td><td>Hours per week to maintain flows</td><td>Underestimating editing and QA workload</td></tr>
-<tr><td>Migration and setup</td><td>Data import, consent mapping, flow rebuild</td><td>Losing consent records during a move</td></tr>
-<tr><td>Support and success tiers</td><td>Whether critical issues need paid support</td><td>Discovering support gaps during peak week</td></tr>
-<tr><td>Third-party integrations</td><td>Review, loyalty, and capture tool fees</td><td>Stack creep that doubles effective platform cost</td></tr>
-<tr><td>Deliverability remediation</td><td>Monitoring, list cleaning, and consulting</td><td>Reputation damage costing more than the subscription</td></tr>
+<tr><td>Platform subscription</td><td>Tier your agency managed stores plan to contacts you truly hold</td><td>Agency Managed Stores tier bought for phantom growth</td></tr>
+<tr><td>Contact or send overages</td><td>Map agency managed stores list growth to tier thresholds</td><td>Peak agency managed stores volume blowing past tier limits</td></tr>
+<tr><td>SMS credits</td><td>Agency Managed Stores text volume from real opt-in math</td><td>agency managed stores text costs wished into email costs</td></tr>
+<tr><td>Discount budget</td><td>Agency Managed Stores code depth times likely redemption</td><td>Agency Managed Stores automation minting discount hunters</td></tr>
+<tr><td>Creative and ops time</td><td>Operator hours the agency managed stores program consumes weekly</td><td>agency managed stores maintenance hours wished away</td></tr>
+<tr><td>Migration and setup</td><td>agency managed stores switch priced in imports and rebuild labor</td><td>agency managed stores migration shedding consent proof</td></tr>
+<tr><td>Support and success tiers</td><td>Agency Managed Stores severity coverage: paid or included</td><td>Agency Managed Stores help-desk limits exposed by drops</td></tr>
+<tr><td>Third-party integrations</td><td>Agency Managed Stores review, loyalty, capture add-ons</td><td>agency managed stores side-tools eclipsing core cost</td></tr>
+<tr><td>Deliverability remediation</td><td>agency managed stores inbox-health monitoring and cleanup</td><td>Agency Managed Stores inbox harm priced above the plan</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Decision table for Agency managed stores</h2>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Situation</th><th>Start with</th><th>Reason</th></tr></thead>
 <tbody>
-<tr><td>Occasional sends, small catalog</td><td>Shopify Email</td><td>Native setup with minimal operating cost</td></tr>
-<tr><td>Branching and suppression matter</td><td>Klaviyo</td><td>Deep event and segment controls</td></tr>
-<tr><td>Small team, email plus light SMS</td><td>Omnisend</td><td>Accessible multichannel workflows</td></tr>
-<tr><td>Broad newsletter operations</td><td>Mailchimp</td><td>Familiar editor and audience tooling</td></tr>
-<tr><td>Lean lifecycle operations</td><td>Sequenzy</td><td>Focused sequence and campaign operation</td></tr>
-<tr><td>Developer-led custom builds</td><td>Customer.io</td><td>Event-triggered messaging flexibility</td></tr>
-<tr><td>CRM-led sales follow-up</td><td>ActiveCampaign</td><td>Automation joined to account context</td></tr>
-<tr><td>Simple list growth and popups</td><td>Privy</td><td>Capture-first tooling for new stores</td></tr>
-<tr><td>Commerce cohort analysis</td><td>Drip</td><td>Repeat-purchase reporting orientation</td></tr>
+<tr><td>Occasional sends, small catalog</td><td>Shopify Email</td><td>Zero-learning-curve start for light agency managed stores needs</td></tr>
+<tr><td>Branching and suppression matter</td><td>Klaviyo</td><td>Agency Managed Stores branching and suppression depth</td></tr>
+<tr><td>Small team, email plus light SMS</td><td>Omnisend</td><td>Small-team agency managed stores workflows across email and SMS</td></tr>
+<tr><td>Broad newsletter operations</td><td>Mailchimp</td><td>Agency Managed Stores breadth for newsletter-led operations</td></tr>
+<tr><td>Lean lifecycle operations</td><td>Sequenzy</td><td>Pay-per-email agency managed stores operation for selective volume</td></tr>
+<tr><td>Developer-led custom builds</td><td>Customer.io</td><td>Developer-grade agency managed stores event triggers</td></tr>
+<tr><td>CRM-led sales follow-up</td><td>ActiveCampaign</td><td>Account-linked agency managed stores sequences for B2B motion</td></tr>
+<tr><td>Simple list growth and popups</td><td>Privy</td><td>Early agency managed stores momentum through capture widgets</td></tr>
+<tr><td>Commerce cohort analysis</td><td>Drip</td><td>Cohort-aware agency managed stores views on second orders</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Common failure modes in agency managed stores email</h2>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Failure</th><th>Prevention</th><th>Cost of getting it wrong</th></tr></thead>
 <tbody>
-<tr><td>Discount in the first touch</td><td>Hold offers until intent is established</td><td>Trains low-margin buying habits</td></tr>
-<tr><td>No purchase suppression</td><td>Exit flows on order and checkout events</td><td>Post-purchase promotions feel careless</td></tr>
-<tr><td>Consent imported without proof</td><td>Map timestamps and source fields</td><td>Compliance exposure during audits</td></tr>
-<tr><td>Flows only one operator understands</td><td>Document exits and naming conventions</td><td>Editing risk and key-person dependency</td></tr>
-<tr><td>Measuring clicks only</td><td>Track margin, returns, and complaints</td><td>Clicks reward aggressive, harmful tactics</td></tr>
-<tr><td>Ignoring deliverability signals</td><td>Monitor bounces and spam complaints</td><td>Recovery costs exceed prevention</td></tr>
-<tr><td>Peak-season flow changes</td><td>Freeze edits during the peak window</td><td>Untested changes fail at the worst time</td></tr>
-<tr><td>SMS without a channel strategy</td><td>Define SMS jobs separately from email</td><td>Frequency overlap drives opt-outs</td></tr>
+<tr><td>Discount in the first touch</td><td>Agency Managed Stores incentives only after intent signals</td><td>agency managed stores discount-first trains bargain hunting</td></tr>
+<tr><td>No purchase suppression</td><td>Agency Managed Stores exits wired to order and checkout events</td><td>agency managed stores promos chasing paid customers grate</td></tr>
+<tr><td>Consent imported without proof</td><td>Map agency managed stores consent timestamps and sources</td><td>Agency Managed Stores liability when sources are vague</td></tr>
+<tr><td>Flows only one operator understands</td><td>Agency Managed Stores flows legible to any operator</td><td>Agency Managed Stores key-person risk on undocumented flows</td></tr>
+<tr><td>Measuring clicks only</td><td>Score agency managed stores on profit, returns, grievances</td><td>Click-only agency managed stores metrics bless aggression</td></tr>
+<tr><td>Ignoring deliverability signals</td><td>Watch agency managed stores bounces and spam signals</td><td>Agency Managed Stores neglect compounds into rescue spend</td></tr>
+<tr><td>Peak-season flow changes</td><td>agency managed stores calm-before-peak change moratorium</td><td>Peak-week agency managed stores experiments fail loudest</td></tr>
+<tr><td>SMS without a channel strategy</td><td>Give agency managed stores SMS its own job spec apart from email</td><td>Agency Managed Stores channel overlap triggers opt-outs</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Implementation order for a agency managed stores program</h2>
 <ol>
-<li>Document consent sources and map them into the platform before any campaign.</li>
-<li>Verify Shopify order, cart, refund, and support events fire in a test store.</li>
-<li>Build suppression rules and exit conditions before building any flow.</li>
-<li>Launch one bounded pilot journey with a holdout group for measurement.</li>
-<li>Review margin, complaints, unsubscribes, and repeat purchase after thirty days.</li>
-<li>Expand only when the pilot can be edited safely by a second operator.</li>
-<li>Write a peak-season freeze policy covering edits, discounts, and volume.</li>
-<li>Set a quarterly cost review that compares stack cost to email-attributed margin.</li>
-<li>Archive or simplify any flow nobody has reviewed in ninety days.</li>
+<li>Agency Managed Stores first step: consent sources documented and mapped.</li>
+<li>For agency managed stores, test-fire order, cart, refund, and support events first.</li>
+<li>Write agency managed stores suppression and exits before any agency managed stores flow exists.</li>
+<li>Pilot agency managed stores with one bounded journey plus holdout measurement.</li>
+<li>Thirty days into agency managed stores, score margin and audience health.</li>
+<li>For agency managed stores, growth waits for transferable editing.</li>
+<li>Document agency managed stores freeze terms before the season.</li>
+<li>Agency Managed Stores finance: stack cost over margin, quarterly.</li>
+<li>For agency managed stores, dusty journeys get archived quarterly.</li>
 </ol>
 <h2 class="mt-12">Metrics review cadence for agency managed stores</h2>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Metric</th><th>Definition</th><th>Review cadence</th></tr></thead>
 <tbody>
-<tr><td>Margin per send</td><td>Revenue minus discounts, sends, and platform cost</td><td>Monthly</td></tr>
-<tr><td>Repeat purchase rate</td><td>Second-order share within ninety days</td><td>Monthly</td></tr>
-<tr><td>Complaint and unsubscribe rate</td><td>Per campaign and per flow</td><td>Weekly</td></tr>
-<tr><td>Suppression accuracy</td><td>Sample post-purchase sends for violations</td><td>Weekly</td></tr>
-<tr><td>Time to edit safely</td><td>Minutes for a second operator to change a flow</td><td>Quarterly</td></tr>
-<tr><td>Holdout lift</td><td>Treated versus excluded group comparison</td><td>Quarterly</td></tr>
+<tr><td>Margin per send</td><td>Net agency managed stores margin post-discounts and delivery cost</td><td>Monthly</td></tr>
+<tr><td>Repeat purchase rate</td><td>agency managed stores-driven second purchases per quarter</td><td>Monthly</td></tr>
+<tr><td>Complaint and unsubscribe rate</td><td>Agency Managed Stores tracked per campaign and flow</td><td>Weekly</td></tr>
+<tr><td>Suppression accuracy</td><td>agency managed stores-buyer samples screened for breaches</td><td>Weekly</td></tr>
+<tr><td>Time to edit safely</td><td>Agency Managed Stores edit time for a fresh operator</td><td>Quarterly</td></tr>
+<tr><td>Holdout lift</td><td>agency managed stores incrementality from holdout contrast</td><td>Quarterly</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Agency managed stores matchup FAQ</h2>
 <section class="max-w-3xl mx-auto space-y-6">
-<div><h3>Klaviyo or Shopify Email for agency managed stores?</h3><p>Shopify Email is a reasonable start when agency managed stores campaigns are occasional and the catalog is small. Klaviyo pays off when agency managed stores work needs event-driven branching, catalog-aware content, and segment-level reporting. Model profile-based billing against expected contact growth before committing.</p></div>
-<div><h3>Omnisend vs Klaviyo for agency managed stores?</h3><p>Omnisend tends to be faster for a small team running email-first agency managed stores campaigns with light SMS. Klaviyo offers deeper segmentation and event flexibility, which matters as agency managed stores logic grows. Pilot both with one real agency managed stores journey and compare maintenance time, not feature lists.</p></div>
-<div><h3>Mailchimp or Klaviyo for agency managed stores?</h3><p>Mailchimp suits teams that value a familiar editor and broad campaign tooling for agency managed stores newsletters and simple automations. Klaviyo is stronger where agency managed stores messages depend on Shopify order, cart, and browse events. Check both official pricing pages at your contact volume before deciding.</p></div>
-<div><h3>Do I need a separate SMS tool for agency managed stores?</h3><p>Not at the start. Several platforms cover basic SMS alongside email, and SMS specialists earn their cost only when text messages measurably improve agency managed stores outcomes. Confirm consent handling, quiet hours, and per-message pricing, and verify that your audience actually responds to SMS.</p></div>
-<div><h3>How should I suppress audiences in agency managed stores flows?</h3><p>Exclude recent purchasers, open support or return cases, refunded orders, and anyone without documented consent. For agency managed stores, write exit conditions next to each flow so another operator can audit them. Suppression mistakes cost more margin than a missed campaign.</p></div>
-<div><h3>What does agency managed stores email cost?</h3><p>Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your agency managed stores campaigns consume. Providers change plans and limits often, so check official pricing pages and model an eighteen-month total before committing.</p></div>
-<div><h3>Which app should a lean team pilot first for agency managed stores?</h3><p>Start with the tool your team can fully operate in two weeks: native Shopify Email for simple agency managed stores sends, or a lean ecommerce platform when branching and suppression matter. A completed pilot beats an ambitious setup that stalls during week one.</p></div>
-<div><h3>How do I measure agency managed stores email results?</h3><p>Track margin per send, repeat purchase, unsubscribe and complaint rates, and support load alongside attributed revenue. For agency managed stores specifically, compare a holdout group against recipients so seasonal lift is not mistaken for program impact.</p></div>
-<div><h3>Can I run agency managed stores email without an agency?</h3><p>Yes, if the scope stays small. Pick one agency managed stores journey, document consent and suppression rules, and reuse a simple template system. Add outside help only when flow complexity, deliverability remediation, or peak-season volume exceeds in-house capacity.</p></div>
-<div><h3>When should I graduate from my first app for agency managed stores?</h3><p>Graduate when the team cannot safely edit flows, segment reliably by purchase state, or forecast cost at your growing contact count. For agency managed stores, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression.</p></div>
-<div><h3>How much discounting is acceptable for agency managed stores?</h3><p>Treat discounts as one lever, not the default. For agency managed stores, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. If most revenue needs a code, the program has a value problem rather than a pricing problem.</p></div>
-<div><h3>Which Shopify data matters most for agency managed stores?</h3><p>Order and refund state, cart and browse events, consent source, and product availability cover most agency managed stores decisions. Verify each event fires correctly in a test purchase before building logic on top of it, and document field meanings so marketing and engineering agree.</p></div>
-<div><h3>How do I avoid duplicate sends across apps for agency managed stores?</h3><p>Give one platform ownership of each agency managed stores journey, document which app sends what, and share suppression lists where the tools support it. Run a weekly audit during peak season that samples customers and lists every message they received.</p></div>
-<div><h3>What should a agency managed stores pilot include?</h3><p>A bounded pilot covers one audience, one or two journeys, explicit suppression rules, a holdout group, and a thirty-day review of margin and complaints. Agree on the success criteria before launch so results cannot be reinterpreted afterward.</p></div>
+<div><h3>Klaviyo or Shopify Email for agency managed stores?</h3><p>For agency managed stores, Shopify Email covers occasional small-catalog campaigns; Klaviyo earns its keep when agency managed stores demands event branching, catalog-aware blocks, and segment reporting — model profile billing on projected agency managed stores growth first.</p></div>
+<div><h3>Omnisend vs Klaviyo for agency managed stores?</h3><p>Omnisend gets agency managed stores teams sending sooner with light SMS attached; Klaviyo stretches agency managed stores segmentation further. Test-drive one real agency managed stores flow each way before judging.</p></div>
+<div><h3>Mailchimp or Klaviyo for agency managed stores?</h3><p>For agency managed stores, Mailchimp trades on familiarity, Klaviyo on Shopify event fidelity; settle agency managed stores pricing by checking both official pages at your contacts.</p></div>
+<div><h3>Do I need a separate SMS tool for agency managed stores?</h3><p>For early agency managed stores, bundled SMS is enough; specialists earn their agency managed stores fee only via measured lift. Validate agency managed stores opt-ins, quiet hours, and per-message rates beforehand.</p></div>
+<div><h3>How should I suppress audiences in agency managed stores flows?</h3><p>Guard agency managed stores with exits for buyers, open cases, refunds, and no-consent profiles, auditable per agency managed stores flow. In agency managed stores, a suppression miss hurts worse than a missed blast.</p></div>
+<div><h3>What does agency managed stores email cost?</h3><p>Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your agency managed stores campaigns consume. For agency managed stores budgeting, treat any static quote as stale — check official pricing pages and model an eighteen-month total before committing.</p></div>
+<div><h3>Which app should a lean team pilot first for agency managed stores?</h3><p>Open agency managed stores with the tool at full command in fourteen days — simple agency managed stores sends natively, branched agency managed stores on a lean platform. Shipping agency managed stores beats architecting it.</p></div>
+<div><h3>How do I measure agency managed stores email results?</h3><p>Measure agency managed stores on contribution, not vanity sends: margin per send, repeat purchase, unsubscribes, complaints, and support load alongside attributed revenue, with a holdout cohort proving the agency managed stores journeys caused the lift.</p></div>
+<div><h3>Can I run agency managed stores email without an agency?</h3><p>Yes, if the scope stays small. Pick one agency managed stores journey, document consent and suppression rules, and reuse a simple template system. For agency managed stores, hire help only if journey complexity, inbox-placement remediation, or peak agency managed stores volume genuinely exceeds what the team can run.</p></div>
+<div><h3>When should I graduate from my first app for agency managed stores?</h3><p>For agency managed stores, the graduation signal is operational: unsafe flow edits, unreliable purchase-state segmentation for agency managed stores, or cost forecasts that break as contacts grow. For agency managed stores, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression.</p></div>
+<div><h3>How much discounting is acceptable for agency managed stores?</h3><p>Treat discounts as one lever, not the default. For agency managed stores, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. If most agency managed stores revenue needs a code, the agency managed stores program has a value problem rather than a pricing problem.</p></div>
+<div><h3>Which Shopify data matters most for agency managed stores?</h3><p>Order and refund state, cart and browse events, consent source, and product availability cover most agency managed stores decisions. Before layering agency managed stores branching on events, fire each one in a test purchase and record what every agency managed stores-relevant field means for both teams.</p></div>
+<div><h3>How do I avoid duplicate sends across apps for agency managed stores?</h3><p>Give one platform ownership of each agency managed stores journey, document which app sends what, and share suppression lists where the tools support it. Keep a weekly agency managed stores peak-season audit: pull sample customers, list each agency managed stores message they got, flag overlaps.</p></div>
+<div><h3>What should a agency managed stores pilot include?</h3><p>For agency managed stores, a tight pilot wins: single audience, at most two journeys, explicit suppression, a holdout, and a day-thirty agency managed stores review of margin and complaints with pre-agreed pass/fail lines.</p></div>
 </section>
 <script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",mainEntity:[
-{"@type": "Question", "name": "Klaviyo or Shopify Email for agency managed stores?", "acceptedAnswer": {"@type": "Answer", "text": "Shopify Email is a reasonable start when agency managed stores campaigns are occasional and the catalog is small. Klaviyo pays off when agency managed stores work needs event-driven branching, catalog-aware content, and segment-level reporting. Model profile-based billing against expected contact growth before committing."}},
-{"@type": "Question", "name": "Omnisend vs Klaviyo for agency managed stores?", "acceptedAnswer": {"@type": "Answer", "text": "Omnisend tends to be faster for a small team running email-first agency managed stores campaigns with light SMS. Klaviyo offers deeper segmentation and event flexibility, which matters as agency managed stores logic grows. Pilot both with one real agency managed stores journey and compare maintenance time, not feature lists."}},
-{"@type": "Question", "name": "Mailchimp or Klaviyo for agency managed stores?", "acceptedAnswer": {"@type": "Answer", "text": "Mailchimp suits teams that value a familiar editor and broad campaign tooling for agency managed stores newsletters and simple automations. Klaviyo is stronger where agency managed stores messages depend on Shopify order, cart, and browse events. Check both official pricing pages at your contact volume before deciding."}},
-{"@type": "Question", "name": "Do I need a separate SMS tool for agency managed stores?", "acceptedAnswer": {"@type": "Answer", "text": "Not at the start. Several platforms cover basic SMS alongside email, and SMS specialists earn their cost only when text messages measurably improve agency managed stores outcomes. Confirm consent handling, quiet hours, and per-message pricing, and verify that your audience actually responds to SMS."}},
-{"@type": "Question", "name": "How should I suppress audiences in agency managed stores flows?", "acceptedAnswer": {"@type": "Answer", "text": "Exclude recent purchasers, open support or return cases, refunded orders, and anyone without documented consent. For agency managed stores, write exit conditions next to each flow so another operator can audit them. Suppression mistakes cost more margin than a missed campaign."}},
-{"@type": "Question", "name": "What does agency managed stores email cost?", "acceptedAnswer": {"@type": "Answer", "text": "Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your agency managed stores campaigns consume. Providers change plans and limits often, so check official pricing pages and model an eighteen-month total before committing."}},
-{"@type": "Question", "name": "Which app should a lean team pilot first for agency managed stores?", "acceptedAnswer": {"@type": "Answer", "text": "Start with the tool your team can fully operate in two weeks: native Shopify Email for simple agency managed stores sends, or a lean ecommerce platform when branching and suppression matter. A completed pilot beats an ambitious setup that stalls during week one."}},
-{"@type": "Question", "name": "How do I measure agency managed stores email results?", "acceptedAnswer": {"@type": "Answer", "text": "Track margin per send, repeat purchase, unsubscribe and complaint rates, and support load alongside attributed revenue. For agency managed stores specifically, compare a holdout group against recipients so seasonal lift is not mistaken for program impact."}},
-{"@type": "Question", "name": "Can I run agency managed stores email without an agency?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if the scope stays small. Pick one agency managed stores journey, document consent and suppression rules, and reuse a simple template system. Add outside help only when flow complexity, deliverability remediation, or peak-season volume exceeds in-house capacity."}},
-{"@type": "Question", "name": "When should I graduate from my first app for agency managed stores?", "acceptedAnswer": {"@type": "Answer", "text": "Graduate when the team cannot safely edit flows, segment reliably by purchase state, or forecast cost at your growing contact count. For agency managed stores, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression."}},
-{"@type": "Question", "name": "How much discounting is acceptable for agency managed stores?", "acceptedAnswer": {"@type": "Answer", "text": "Treat discounts as one lever, not the default. For agency managed stores, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. If most revenue needs a code, the program has a value problem rather than a pricing problem."}},
-{"@type": "Question", "name": "Which Shopify data matters most for agency managed stores?", "acceptedAnswer": {"@type": "Answer", "text": "Order and refund state, cart and browse events, consent source, and product availability cover most agency managed stores decisions. Verify each event fires correctly in a test purchase before building logic on top of it, and document field meanings so marketing and engineering agree."}},
-{"@type": "Question", "name": "How do I avoid duplicate sends across apps for agency managed stores?", "acceptedAnswer": {"@type": "Answer", "text": "Give one platform ownership of each agency managed stores journey, document which app sends what, and share suppression lists where the tools support it. Run a weekly audit during peak season that samples customers and lists every message they received."}},
-{"@type": "Question", "name": "What should a agency managed stores pilot include?", "acceptedAnswer": {"@type": "Answer", "text": "A bounded pilot covers one audience, one or two journeys, explicit suppression rules, a holdout group, and a thirty-day review of margin and complaints. Agree on the success criteria before launch so results cannot be reinterpreted afterward."}}
+{"@type": "Question", "name": "Klaviyo or Shopify Email for agency managed stores?", "acceptedAnswer": {"@type": "Answer", "text": "For agency managed stores, Shopify Email covers occasional small-catalog campaigns; Klaviyo earns its keep when agency managed stores demands event branching, catalog-aware blocks, and segment reporting — model profile billing on projected agency managed stores growth first."}},
+{"@type": "Question", "name": "Omnisend vs Klaviyo for agency managed stores?", "acceptedAnswer": {"@type": "Answer", "text": "Omnisend gets agency managed stores teams sending sooner with light SMS attached; Klaviyo stretches agency managed stores segmentation further. Test-drive one real agency managed stores flow each way before judging."}},
+{"@type": "Question", "name": "Mailchimp or Klaviyo for agency managed stores?", "acceptedAnswer": {"@type": "Answer", "text": "For agency managed stores, Mailchimp trades on familiarity, Klaviyo on Shopify event fidelity; settle agency managed stores pricing by checking both official pages at your contacts."}},
+{"@type": "Question", "name": "Do I need a separate SMS tool for agency managed stores?", "acceptedAnswer": {"@type": "Answer", "text": "For early agency managed stores, bundled SMS is enough; specialists earn their agency managed stores fee only via measured lift. Validate agency managed stores opt-ins, quiet hours, and per-message rates beforehand."}},
+{"@type": "Question", "name": "How should I suppress audiences in agency managed stores flows?", "acceptedAnswer": {"@type": "Answer", "text": "Guard agency managed stores with exits for buyers, open cases, refunds, and no-consent profiles, auditable per agency managed stores flow. In agency managed stores, a suppression miss hurts worse than a missed blast."}},
+{"@type": "Question", "name": "What does agency managed stores email cost?", "acceptedAnswer": {"@type": "Answer", "text": "Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your agency managed stores campaigns consume. For agency managed stores budgeting, treat any static quote as stale — check official pricing pages and model an eighteen-month total before committing."}},
+{"@type": "Question", "name": "Which app should a lean team pilot first for agency managed stores?", "acceptedAnswer": {"@type": "Answer", "text": "Open agency managed stores with the tool at full command in fourteen days — simple agency managed stores sends natively, branched agency managed stores on a lean platform. Shipping agency managed stores beats architecting it."}},
+{"@type": "Question", "name": "How do I measure agency managed stores email results?", "acceptedAnswer": {"@type": "Answer", "text": "Measure agency managed stores on contribution, not vanity sends: margin per send, repeat purchase, unsubscribes, complaints, and support load alongside attributed revenue, with a holdout cohort proving the agency managed stores journeys caused the lift."}},
+{"@type": "Question", "name": "Can I run agency managed stores email without an agency?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if the scope stays small. Pick one agency managed stores journey, document consent and suppression rules, and reuse a simple template system. For agency managed stores, hire help only if journey complexity, inbox-placement remediation, or peak agency managed stores volume genuinely exceeds what the team can run."}},
+{"@type": "Question", "name": "When should I graduate from my first app for agency managed stores?", "acceptedAnswer": {"@type": "Answer", "text": "For agency managed stores, the graduation signal is operational: unsafe flow edits, unreliable purchase-state segmentation for agency managed stores, or cost forecasts that break as contacts grow. For agency managed stores, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression."}},
+{"@type": "Question", "name": "How much discounting is acceptable for agency managed stores?", "acceptedAnswer": {"@type": "Answer", "text": "Treat discounts as one lever, not the default. For agency managed stores, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. If most agency managed stores revenue needs a code, the agency managed stores program has a value problem rather than a pricing problem."}},
+{"@type": "Question", "name": "Which Shopify data matters most for agency managed stores?", "acceptedAnswer": {"@type": "Answer", "text": "Order and refund state, cart and browse events, consent source, and product availability cover most agency managed stores decisions. Before layering agency managed stores branching on events, fire each one in a test purchase and record what every agency managed stores-relevant field means for both teams."}},
+{"@type": "Question", "name": "How do I avoid duplicate sends across apps for agency managed stores?", "acceptedAnswer": {"@type": "Answer", "text": "Give one platform ownership of each agency managed stores journey, document which app sends what, and share suppression lists where the tools support it. Keep a weekly agency managed stores peak-season audit: pull sample customers, list each agency managed stores message they got, flag overlaps."}},
+{"@type": "Question", "name": "What should a agency managed stores pilot include?", "acceptedAnswer": {"@type": "Answer", "text": "For agency managed stores, a tight pilot wins: single audience, at most two journeys, explicit suppression, a holdout, and a day-thirty agency managed stores review of margin and complaints with pre-agreed pass/fail lines."}}
 ]})} />
 <h2 class="mt-12">Governance and documentation for agency managed stores</h2>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Practice</th><th>Standard</th><th>Risk it prevents</th></tr></thead>
 <tbody>
-<tr><td>Flow ownership</td><td>One named owner per journey</td><td>Orphaned flows that send stale offers</td></tr>
-<tr><td>Naming convention</td><td>Prefix by job and audience</td><td>Impossible audits during peak season</td></tr>
-<tr><td>Change log</td><td>Record edits, dates, and reasons</td><td>Untraceable performance regressions</td></tr>
-<tr><td>Access control</td><td>Least-privilege seats for editors</td><td>Accidental deletes or unauthorized sends</td></tr>
-<tr><td>Quarterly flow review</td><td>Archive or simplify unused branches</td><td>Complexity tax that slows every edit</td></tr>
-<tr><td>Incident runbook</td><td>Steps for pausing sends and notifying</td><td>Slow response to a broken or harmful send</td></tr>
+<tr><td>Flow ownership</td><td>One accountable agency managed stores operator per flow</td><td>agency managed stores ghosts sending expired incentives</td></tr>
+<tr><td>Naming convention</td><td>Agency Managed Stores prefixes by job and audience</td><td>Unnamed agency managed stores sprawl unauditable in season</td></tr>
+<tr><td>Change log</td><td>agency managed stores edits stamped, dated, explained</td><td>agency managed stores performance drift with no log</td></tr>
+<tr><td>Access control</td><td>Agency Managed Stores seats on least privilege</td><td>agency managed stores rogue sends from open permissions</td></tr>
+<tr><td>Quarterly flow review</td><td>Prune idle agency managed stores branches quarterly</td><td>Tangled agency managed stores logic slowing changes</td></tr>
+<tr><td>Incident runbook</td><td>agency managed stores break-glass steps pre-written</td><td>Lagging agency managed stores response to bad sends</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Peak season readiness for agency managed stores</h2>
 <ol>
-<li>Freeze flow edits two weeks before the peak window opens.</li>
-<li>Test every flow with a real purchase, refund, and support case.</li>
-<li>Confirm suppression rules exclude recent buyers and open returns.</li>
-<li>Raise holdout samples so peak results remain measurable.</li>
-<li>Pre-write quiet-hours and frequency-cap policies for SMS.</li>
-<li>Check plan limits and overage pricing against forecast volume.</li>
-<li>Assign a daily deliverability monitor for complaints and bounces.</li>
-<li>Document rollback steps for each flow before the first campaign.</li>
+<li>Lock agency managed stores flow edits a full fortnight before peak.</li>
+<li>For agency managed stores, trial every journey against real order events.</li>
+<li>Check agency managed stores exits filter buyers and open cases.</li>
+<li>Agency Managed Stores measurement needs bigger peak holdouts.</li>
+<li>Agency Managed Stores texting policy written before peak.</li>
+<li>Agency Managed Stores billing checked on peak math.</li>
+<li>Staff daily agency managed stores deliverability watch on complaints and bounces.</li>
+<li>Bank agency managed stores rollback plans ahead of sends.</li>
 </ol>
-<p>One more operating note for agency managed stores: schedule the first quarterly review before launch, not after the first crisis. Teams that write down their suppression rules, discount caps, and escalation contacts in week one spend markedly less time firefighting later, and new operators inherit a documented system instead of folklore.</p>
-<p>Finally, keep the agency managed stores program honest with a quarterly written review: what shipped, what was suppressed, what margin was kept, and which assumptions failed. Written reviews turn individual judgment into team knowledge and make vendor decisions calmer, because the evidence sits in one place instead of in memory.</p>
+<p>For agency managed stores, schedule quarter-one review before the first send. Writing agency managed stores suppression rules, discount caps, and escalation paths down in week one saves weeks of peak-season triage and hands newcomers a working agency managed stores playbook.</p>
+<p>Close each agency managed stores quarter with a written ledger — agency managed stores sends shipped, suppressions honored, margin retained, failed bets — so agency managed stores vendor decisions rest on one shared evidence file, not scattered memory.</p>
 </main></BaseLayout>
