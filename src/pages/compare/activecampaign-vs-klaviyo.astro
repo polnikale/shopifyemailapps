@@ -7,37 +7,37 @@ import { siteFromHost } from '../../content';
 
 const site = siteFromHost();
 const path = '/compare/activecampaign-vs-klaviyo';
-const title = 'ActiveCampaign vs Klaviyo for Shopify Email: 2026 Comparison';
-const desc = 'ActiveCampaign vs Klaviyo for Shopify stores — CRM automation breadth vs ecommerce-native retention depth, hybrid B2B stacks, pricing, and team fit.';
+const title = 'ActiveCampaign vs Klaviyo for Shopify Email: Pricing and Fit';
+const desc = 'ActiveCampaign or Klaviyo for a Shopify store? Compare the pricing units, the data model, the sales-pipeline question and the migration path.';
 
 const faqs = [
   {
-    question: 'Is ActiveCampaign or Klaviyo better for a Shopify store doing $80k/mo?',
-    answer: 'Klaviyo usually wins for pure DTC ecommerce — cart, browse abandonment, predictive CLV, and flow revenue attribution are native. ActiveCampaign wins when CRM pipelines, lead scoring for wholesale, and automations spanning Shopify plus content site plus sales inbox matter. At $80k/mo pure DTC, Klaviyo ships revenue flows faster. With hybrid B2B/DTC or membership upsells, ActiveCampaign competes.',
+    question: 'Is ActiveCampaign or Klaviyo the better choice for a Shopify store?',
+    answer: 'For most Shopify stores that want email and SMS built around customer purchases and browsing, Klaviyo is the better choice. ActiveCampaign is the better choice when the same contact list also drives a sales pipeline, lead scoring or nurture on a content site.',
   },
   {
-    question: 'How does ActiveCampaign vs Klaviyo pricing compare at 15,000 contacts?',
-    answer: 'Klaviyo at 15k active profiles typically lands $200–350/mo depending on SMS. ActiveCampaign Plus at 15k often runs $140–220/mo depending on feature tier. Similar bands at mid-size lists — differentiate on workflow fit, not sticker price alone. Both punish list bloat; sunset stale contacts before comparing quotes.',
+    question: 'How do the prices compare?',
+    answer: 'ActiveCampaign lists its Starter plan from $15 a month for 1,000 contacts, and the Plus plan from $49 a month at the same size. Klaviyo lists its email plans from $20 a month for 500 profiles, $30 for 1,000 and $60 for 2,500. The units are different (contacts versus active profiles), so compare both at the same list size on each vendor’s pricing page.',
   },
   {
-    question: 'Which has better Shopify ecommerce automation?',
-    answer: 'Klaviyo by a wide margin for DTC — real-time browse and cart events, dynamic product blocks, predictive CLV, and segment-level flow revenue are first-class. ActiveCampaign handles Shopify cart abandonment via integrations and custom triggers — competent but not preset-driven. If cart recovery and browse must ship this week for pure ecommerce, Klaviyo wins. If cart is one automation among CRM-heavy journeys, ActiveCampaign fits.',
+    question: 'Does Klaviyo have a free plan, and does ActiveCampaign?',
+    answer: 'Klaviyo has a free plan that covers up to 250 active profiles and 500 email sends a month. ActiveCampaign does not list an ongoing free plan, but it offers a free trial. Check the pricing page for the current trial length.',
   },
   {
-    question: 'Can I migrate from ActiveCampaign to Klaviyo or vice versa?',
-    answer: 'Yes. Export contacts with consent metadata and custom fields. Rebuild welcome and cart first; run parallel two weeks with strict suppression. ActiveCampaign deal pipelines and site-tracking automations need CRM-specific replacements in Klaviyo — often simplified to tags and segments. Klaviyo browse flows have no ActiveCampaign equivalent without significant custom build. Budget 2–4 weeks for mid-size stores with four active automations plus CRM logic.',
+    question: 'Can I move from ActiveCampaign to Klaviyo, or back?',
+    answer: 'Yes. Export contacts together with their consent records and custom fields, rebuild the welcome and cart flows first, and run both platforms in parallel for a short period with suppression rules in place. CRM-specific parts of an ActiveCampaign setup, such as deal stages, usually need to be rebuilt as tags or segments in Klaviyo.',
   },
   {
-    question: 'Which handles B2B wholesale better?',
-    answer: 'ActiveCampaign leads — deal pipelines, sales automation, and lead scoring map naturally to wholesale inquiry follow-up. Klaviyo can tag and branch but lacks CRM pipeline UI sales teams expect. The hybrid supplement merchant chose ActiveCampaign for distributor deals and Klaviyo for consumer retention — eventually consolidating consumer onto Klaviyo only after wholesale moved to a dedicated CRM.',
+    question: 'Which tool is better for wholesale or B2B sales?',
+    answer: 'ActiveCampaign is usually the better fit when wholesale inquiries need deal stages and sales follow-up. Klaviyo can tag and branch these contacts, but it is designed around consumer ecommerce rather than a sales pipeline.',
   },
   {
-    question: 'Which platform handles Black Friday better?',
-    answer: 'Klaviyo offers segment-level VIP early access, recent purchaser suppression, holdout testing, and sunset tools built for ecommerce scale — critical when order volume spikes 5x. ActiveCampaign can broadcast and run complex automations but ecommerce suppression requires more manual list hygiene and tag discipline. Both need deliverability prep; Klaviyo\'s ecommerce-native tooling reduces sale-week panic for DTC operators.',
+    question: 'Which platform is better for sale periods and high send volume?',
+    answer: 'Klaviyo is built around ecommerce segments such as recent purchasers, so suppression rules are easier to set up for sale events. With ActiveCampaign, the same suppression often depends on tags you maintain yourself. Either tool needs list hygiene and a tested send schedule before a big promotion.',
   },
   {
-    question: 'What workflow test should decide the winner?',
-    answer: 'Build welcome (branch by signup source), browse or cart abandonment, post-purchase (gift buyer exclusion), winback (split engaged vs unengaged), and one CRM-triggered follow-up if applicable. Score time-to-live, Shopify trigger accuracy, browse depth needs, and whether sales pipelines matter. Pure DTC lean Klaviyo. Hybrid DTC-plus-B2B lean ActiveCampaign.',
+    question: 'What should I test in a trial before choosing?',
+    answer: 'Build a welcome flow, an abandoned cart flow and one post-purchase flow on your own store. Check how quickly new orders and events appear in each tool, whether you can exclude recent buyers, and how long it takes a non-technical team member to change a segment. Use the results together with the pricing at your real list size.',
   },
 ];
 ---
@@ -56,18 +56,20 @@ const faqs = [
       <header class="max-w-4xl">
         <p class="editorial-kicker">Head-to-head</p>
         <h1 class="hero-title mt-5">ActiveCampaign vs Klaviyo for Shopify email</h1>
+        <p class="mt-4 text-sm text-[#5d3a1d]">Written by the editorial team</p>
         <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-          CRM automation powerhouse versus Shopify-native retention maximums. ActiveCampaign optimizes for teams who need deal pipelines, lead scoring, and automations spanning Shopify orders plus wholesale inbox plus content site engagement. Klaviyo optimizes for DTC operators who design behavior-based retention around browse events, predictive CLV, and unified email-plus-SMS reporting. We stress-tested both on a hybrid supplement merchant splitting B2B and DTC, a $74k/mo coffee subscription that migrated from ActiveCampaign to Klaviyo for browse recovery, and a home fitness brand running ActiveCampaign because blog leads and Shopify orders share one automation brain.
+          For most Shopify stores, Klaviyo is the better pick, because its data model is built around shopping behaviour and its free plan covers up to 250 active profiles. The starting prices are not directly comparable: Klaviyo’s email plans begin at $20 a month for 500 profiles, while ActiveCampaign’s Starter plan begins at $15 a month for 1,000 contacts. ActiveCampaign becomes the better pick when the same list also feeds a sales pipeline, lead scoring or nurture on a content site.
         </p>
+        <!-- screenshot-unavailable: no licensed screenshots of either vendor dashboard are stored with this site -->
       </header>
 
       <div class="mt-12 max-w-4xl">
         <TldrBox
           picks={[
-            { label: 'Shopify DTC depth', tool: 'Klaviyo', reason: 'Browse, cart, predictive CLV, and flow revenue attribution.' },
-            { label: 'CRM automation', tool: 'ActiveCampaign', reason: 'Pipelines, lead scoring, and multichannel nurture.' },
-            { label: 'Pure ecommerce', tool: 'Klaviyo', reason: 'Native triggers and reporting for DTC retention operators.' },
-            { label: 'B2B + DTC hybrid', tool: 'ActiveCampaign', reason: 'Deal stages alongside Shopify marketing automation.' },
+            { label: 'Shopify retention', tool: 'Klaviyo', reason: 'Built around customer records and purchase behaviour, with a free plan for small lists.' },
+            { label: 'Sales pipeline', tool: 'ActiveCampaign', reason: 'Deal stages and lead scoring sit alongside email automation.' },
+            { label: 'Lowest entry price', tool: 'ActiveCampaign', reason: 'Starter plan from $15 a month at 1,000 contacts, billed monthly or annually.' },
+            { label: 'Email plus SMS in one list', tool: 'Klaviyo', reason: 'SMS sits in the same profile model, with pricing on request.' },
           ]}
         />
       </div>
@@ -76,184 +78,99 @@ const faqs = [
         <h2 class="px-5 py-4 font-serif text-2xl font-black text-[#24170f]">Comparison at a glance</h2>
         <table class="data-table">
           <thead>
-            <tr><th>Dimension</th><th>ActiveCampaign</th><th>Klaviyo</th></tr>
+            <tr><th>Tool</th><th>Best for</th><th>Starting price</th><th>Main limitation</th></tr>
           </thead>
           <tbody>
-            <tr><td>Best for</td><td>CRM + marketing automation</td><td>Shopify retention at scale</td></tr>
-            <tr><td>Starting price</td><td>From ~$29/mo</td><td>Free tier; paid from ~$20/mo</td></tr>
-            <tr><td>Billing model</td><td>Contacts + feature tier</td><td>Active profiles + SMS credits</td></tr>
-            <tr><td>Shopify depth</td><td>Good — one of many connectors</td><td>Native — browse, predictive, catalog</td></tr>
-            <tr><td>CRM pipelines</td><td>Core strength</td><td>Limited</td></tr>
-            <tr><td>Browse abandonment</td><td>Custom build required</td><td>Core strength</td></tr>
-            <tr><td>SMS</td><td>Add-on on higher plans</td><td>Built-in, unified segments</td></tr>
-            <tr><td>Learning curve</td><td>Moderate–steep</td><td>Moderate–steep</td></tr>
+            <tr>
+              <td>ActiveCampaign</td>
+              <td>Shops whose email list also feeds sales deals or content nurture</td>
+              <td>$15 a month, Starter plan, 1,000 contacts (monthly or annual billing)</td>
+              <td>Shopify-specific triggers are not the default, so setup takes more work</td>
+            </tr>
+            <tr>
+              <td>Klaviyo</td>
+              <td>Shopify stores focused on retention, with email and SMS</td>
+              <td>Free for up to 250 active profiles; $20 a month for the 500-profile email plan</td>
+              <td>Cost rises with profile count; Email+SMS plans are priced on request</td>
+            </tr>
           </tbody>
         </table>
       </div>
 
       <article class="prose-shopify mt-14 max-w-4xl">
-        <h2>Why this comparison matters for Shopify merchants</h2>
+        <h2>Why the choice matters for a Shopify store</h2>
         <p>
-          Merchants search "ActiveCampaign vs Klaviyo" when a CRM-heavy stack meets ecommerce growth pressure — or when a Klaviyo-curious team wonders if ActiveCampaign's automation breadth already covers Shopify adequately. Both pass Shopify essentials: order sync, product blocks, cart triggers. The fork is whether CRM pipelines and cross-site nurture are load-bearing, or whether browse abandonment and predictive segments drive retention economics. The coffee subscription had no CRM complexity; ActiveCampaign was the wrong long-term fit once browse recovery mattered.
+          Both tools connect to Shopify and can send welcome, cart and post-purchase emails, so the question is less about whether they work and more about what they are built around. Klaviyo organises contacts as profiles tied to store activity. ActiveCampaign organises contacts as a general CRM record that can be connected to a store. That difference shows up in the setup work, in how segments are built, and in what each platform costs as the list grows.
         </p>
         <p>
-          The hybrid supplement merchant ran ActiveCampaign for distributor inquiry pipelines with 60-day sales cycles while Klaviyo handled consumer cart and post-purchase flows. Dual-platform overhead was intentional — neither tool alone served both business lines. Consolidation attempts failed twice before they accepted separate brains for separate revenue models.
-        </p>
-
-        <h2>Workflow test: welcome series</h2>
-        <p>
-          Klaviyo activated welcome with signup-source branching and first-category-viewed personalization in under three hours using flow presets — the coffee subscription had welcome live same day after migration. ActiveCampaign built equivalent logic with explicit automation nodes for popup vs footer signup plus site-tracking conditions for blog readers — clearer to audit for the home fitness brand, slower to ship.
-        </p>
-        <p>
-          The home fitness brand wanted welcome email three to branch by whether the subscriber came from a workout guide PDF or a product page. ActiveCampaign's site tracking made that natural. Klaviyo achieved similar outcomes with Shopify-centric triggers but required more segment configuration for non-Shopify lead sources.
+          If your revenue comes mostly from people buying products online, Klaviyo usually needs less custom setup to reach the flows that matter most. If your store also takes wholesale or B2B enquiries, or runs a blog that generates leads, ActiveCampaign can hold those contacts in one place, which is the case it was designed for.
         </p>
 
-        <h2>Workflow test: browse and cart abandonment</h2>
+        <h2>ActiveCampaign: where it fits</h2>
         <p>
-          Klaviyo browse abandonment by collection attributed $11k/mo for the coffee subscription — the migration justification from ActiveCampaign. ActiveCampaign cart recovery worked with custom Shopify triggers but browse required webhook workarounds the solo operator never prioritized. Cart A/B tests on Klaviyo showed education-first step two beat 10% off for subscription-adjacent products.
+          ActiveCampaign is a marketing automation and CRM platform. Its strengths are deal stages, lead scoring, site tracking and automations that combine several sources of contact data. A store that sells to other businesses, runs membership upgrades or sends follow-up from a sales inbox will find those features useful.
         </p>
         <p>
-          Cross-journey suppression — exclude shoppers in active winback — was tighter in Klaviyo's flow logic for pure DTC. ActiveCampaign required careful tag discipline the hybrid supplement merchant maintained manually across consumer and wholesale contact types.
-        </p>
-
-        <h2>Pricing reality at growing list sizes</h2>
-        <p>
-          At 18k contacts, Klaviyo with moderate SMS often runs $280–420/mo. ActiveCampaign Plus at 18k lands $180–280/mo before SMS credits. ActiveCampaign can look cheaper on paper for email-only hybrid stacks. Klaviyo's value is DTC revenue attribution — if browse and cart flows recover $15k+/mo, platform premium pays for itself regardless of ActiveCampaign sticker savings.
+          Its limitation for a Shopify-only shop is that store events are one input among many. Shopify-specific triggers are available, but you should expect to spend more time building and checking them than you would in a tool built around the store. Tags and custom fields become important because they carry the logic that a Shopify-native tool would hold by default.
         </p>
         <p>
-          Dual-stack economics for the supplement merchant: $240/mo Klaviyo consumer plus $190/mo ActiveCampaign wholesale — justified by revenue separation, not optimal for a pure DTC shop. List hygiene mattered on both platforms; popup imports and stale blog leads inflated ActiveCampaign bills until sunset campaigns ran quarterly.
+          <strong>Price:</strong> the Starter plan is listed at $15 a month for 1,000 contacts, the Plus plan at $49 and the Pro plan at $79, with Enterprise at $145 for the same starting size. Monthly and annual billing show the same per-month price on the pricing page. Check the current contact tiers on the <a class="link" href="https://www.activecampaign.com/pricing">ActiveCampaign pricing page</a>.
         </p>
 
-        <h2>Shopify data depth in production</h2>
+        <h2>Klaviyo: where it fits</h2>
         <p>
-          Klaviyo's predictive CLV, catalog segmentation, and browse-by-collection maximums have no ActiveCampaign equivalent without significant custom engineering. ActiveCampaign goes deeper on custom fields, deal stages, and site tracking when Shopify customer metadata is one input among many — natural for the home fitness brand tracking blog engagement alongside product views.
+          Klaviyo is built for ecommerce email and SMS. Its profiles are linked to store activity, which makes it straightforward to build segments by purchase history, product interest and engagement, and to use those segments in flows. Email and SMS share one profile model, so a customer can be reached on either channel from the same segment.
         </p>
         <p>
-          The coffee subscription's irregular reorder cadence — 14 to 28 days by bag size — was manageable in ActiveCampaign with tag-driven delays. Klaviyo's predictive send-time and replenishment flows outperformed after migration with less manual tag maintenance. For standard consumables with simple cadence, either platform works; for browse-driven discovery catalogs, Klaviyo pulls ahead.
+          Its limitation is that it is not a CRM. Sales teams that need deal stages, pipeline views or lead scoring for wholesale will find it limited, and will likely need a separate tool for that work. Its cost also rises with the number of active profiles, so a large list that is not cleaned can become expensive quickly.
+        </p>
+        <p>
+          <strong>Price:</strong> the free plan covers up to 250 active profiles and 500 email sends a month, plus $5 of mobile messages. The email plans are listed at $20 a month for 500 profiles, $30 for 1,000, $60 for 2,500, $100 for 5,000, $150 for 10,000 and $400 for 25,000. Email+SMS plans are priced on request. See the <a class="link" href="https://www.klaviyo.com/pricing">Klaviyo pricing page</a> for the current figures.
         </p>
 
-        <h2>Team fit: who should choose which</h2>
-        <p><strong>Choose ActiveCampaign if:</strong></p>
-        <ul>
-          <li>Wholesale, B2B, or membership revenue requires deal pipelines and lead scoring</li>
-          <li>Automations span Shopify orders plus content site plus sales inbox</li>
-          <li>CRM sophistication outweighs browse abandonment and predictive CLV needs</li>
-          <li>Sales team expects pipeline UI, not just marketing automation</li>
-        </ul>
+        <h2>Pricing at the same list size</h2>
+        <p>
+          The two vendors count different things, so a like-for-like comparison has to start from the list size you actually have. At 1,000 contacts or profiles, ActiveCampaign’s Starter plan is $15 a month and Klaviyo’s 1,000-profile email plan is $30 a month. At 2,500, ActiveCampaign’s Plus plan is $49 a month and Klaviyo’s 2,500-profile plan is $60. These are list-price figures from each vendor’s pricing page, and they do not include any feature add-ons or SMS.
+        </p>
+        <p>
+          On an annual view, multiply the monthly price by 12. For example, 12 × $49 = $588 a year for ActiveCampaign’s Plus plan at its starting size, and 12 × $60 = $720 a year for Klaviyo’s 2,500-profile email plan. Those numbers show the base cost only. Add SMS, extra seats or higher feature tiers before you decide.
+        </p>
+
+        <h2>Migration steps if you switch</h2>
+        <p>
+          Moving between the two is manageable for a store with a clean list. Start by exporting contacts with their consent status, subscription source and custom fields. Confirm that the consent data came across before you import anything, because a missing consent flag is the most common reason a migration causes problems.
+        </p>
+        <p>
+          Next, rebuild the welcome flow and the cart flow in the new tool and check each step with test orders. Run the old and new platforms side by side for a short period, with suppression rules so the same customer is not emailed twice. Finally, retire the old flows one at a time. CRM-specific steps such as deal stages usually need a different design in Klaviyo, often as tags or segments.
+        </p>
+
+        <h2>How to choose</h2>
         <p><strong>Choose Klaviyo if:</strong></p>
         <ul>
-          <li>Pure DTC or DTC-dominant revenue drives retention strategy</li>
-          <li>Browse abandonment, cart recovery, and predictive segments are load-bearing</li>
-          <li>Unified email-plus-SMS reporting in one segment model matters</li>
-          <li>Flow revenue attribution by segment is how you measure marketing</li>
+          <li>Most of your revenue comes from online orders, and retention is the main goal</li>
+          <li>You want email and SMS to share one set of customer profiles</li>
+          <li>Your list is small enough to start on the free plan or the lower email tiers</li>
+          <li>You do not need a sales pipeline in the same tool</li>
+        </ul>
+        <p><strong>Choose ActiveCampaign if:</strong></p>
+        <ul>
+          <li>Wholesale, B2B or membership enquiries need deal stages and lead scoring</li>
+          <li>The same contacts receive content from a blog or site that you also track</li>
+          <li>Your team already works in a CRM and wants marketing in the same place</li>
+          <li>You are willing to build Shopify logic with tags and custom fields</li>
         </ul>
 
-        <h2>90-day rollout: business shape determines platform</h2>
+        <h2>A trial plan that answers the question</h2>
         <p>
-          Weeks 1–4: Map revenue shape — pure DTC Shopify versus hybrid wholesale, marketplace, or cross-site nurture. ActiveCampaign trial if CRM pipelines exist; Klaviyo trial if DTC-only.
+          Use the free trial or the free plan to test with your own data. Build a welcome flow, an abandoned cart flow and one post-purchase flow. Check how quickly new orders and events appear in each tool, and whether a recent buyer can be excluded from a promotion without a manual list edit.
         </p>
         <p>
-          Weeks 5–8: Five-flow test on constraint-matching platform — wholesale deal follow-up for AC, browse segmentation for Klaviyo.
-        </p>
-        <p>
-          Weeks 9–12: Coffee subscription should migrate to Klaviyo if DTC dominates; hybrid supplement merchant documents split until wholesale CRM moves elsewhere.
+          Then ask someone who will run the account day to day to change one segment and one flow. The time that takes is a better guide to ongoing cost than the feature list. Finally, price the trial at the list size you expect in twelve months, not the size you have today.
         </p>
 
-        <h2>Margin math: CRM pipelines versus ecommerce CDP</h2>
-        <p>
-          ActiveCampaign Plus at $149/mo with three sales seats delivers wholesale pipeline ROI hybrid merchants cannot get from Klaviyo alone. Klaviyo at $280/mo at 20k profiles wins pure DTC when browse and predictive segments drive $4k+ incremental monthly — typical above 600 orders/month. Pay for binding constraint, not agency resale preference.
-        </p>
-
-        <h2>Failure rehearsal: wrong shape pick</h2>
-        <p>
-          <strong>ActiveCampaign for pure DTC without CRM need.</strong> Pipeline complexity without wholesale leads — Klaviyo ships faster.
-        </p>
-        <p>
-          <strong>Klaviyo for B2B-heavy hybrid without CRM replacement.</strong> Deal follow-up leaks — AC or dedicated CRM required.
-        </p>
-
-        <h2>Merchant scenario: coffee subscription delaying Klaviyo too long</h2>
-        <p>
-          The $58k/mo coffee subscription ran ActiveCampaign for cross-site blog nurture while Shopify DTC grew — should have migrated DTC lifecycle to Klaviyo at 520 orders/month. Six months delay cost estimated $14k in browse and replenishment leakage. Home fitness brand correctly stayed on AC until DTC crossed 70% revenue — shape mattered.
-        </p>
-
-        <h2>Revenue-shape audit worksheet</h2>
-        <p>
-          Before trial starts, score five dimensions 1–5: Shopify DTC share of revenue, wholesale or pipeline deal dependence, cross-site content nurture volume, SMS as percent of retention GMV, browse abandonment as documented KPI. Scores above 18 on DTC plus browse plus SMS favor Klaviyo. Scores above 18 on CRM plus cross-site favor ActiveCampaign. Mixed scores predict dual-stack period — budget time and money accordingly.
-        </p>
-        <p>
-          Agency resale bias is common: partners push Klaviyo because certification is ubiquitous. If your constraint is wholesale pipeline, resist. If your constraint is predictive segments at 800 orders/month, resist ActiveCampaign comfort from prior B2B clients.
-        </p>
-
-        <h2>90-day rollout: constraint-matched five-flow test</h2>
-        <p>
-          Weeks 1–4: Pure DTC — Klaviyo trial with browse abandonment enabled day one. Hybrid — ActiveCampaign trial with one pipeline automation from real wholesale lead sample before ecommerce depth.
-        </p>
-        <p>
-          Weeks 5–8: Cart with gift-buyer exclusion and subscription-active suppression. Measure event latency and filter visibility — Klaviyo wins unified segment screen; AC wins if deal stage updated from same email click.
-        </p>
-        <p>
-          Weeks 9–12: Coffee subscription should schedule Klaviyo migration if DTC exceeds 65% revenue. Document AC sunset date for DTC automations or permanent dual-stack with suppression. Model Klaviyo profile hygiene — sunset dormant contacts before quoting annual cost.
-        </p>
-
-        <h2>Margin math: delayed Klaviyo migration compound cost</h2>
-        <p>
-          Coffee subscription six-month delay at estimated $2,333/mo browse plus replenishment leakage = $14k — far above migration agency fee. ActiveCampaign at $149/mo plus three seats during delay cost $894 — net loss dominated by opportunity cost, not platform sticker.
-        </p>
-        <p>
-          Klaviyo at $280/mo with 20k profiles wins when incremental browse plus predictive revenue exceeds $4k/mo — typical threshold 600 orders/month in our benchmarks. Below that, ActiveCampaign may remain the more practical choice when CRM ownership matters.
-        </p>
-
-        <h2>Failure rehearsal: agency-driven wrong shape pick</h2>
-        <p>
-          <strong>Klaviyo sold to wholesale-heavy merchant.</strong> Pipeline deals still in spreadsheets; marketing pays CDP prices for email-only usage.
-        </p>
-        <p>
-          <strong>ActiveCampaign sold to 900-order pure DTC.</strong> Browse abandonment never ships; competitor captures intent via email.
-        </p>
-        <p>
-          <strong>Profile bloat before Klaviyo quote.</strong> Import 30k contacts without hygiene — sticker shock causes delay; leakage continues. Sunset first, quote second.
-        </p>
-
-
-        <h2>Operational depth: shape review every six months</h2>
-        <p>
-          Revenue mix shifts — coffee subscription crossed 68% DTC month nine and should have triggered Klaviyo migration then, not month fifteen. Home fitness stayed AC correctly until DTC dominated. Schedule semiannual shape audit: if DTC exceeds 65% and browse is KPI, Klaviyo trial is overdue.
-        </p>
-        <p>
-          Klaviyo profile hygiene before quote: sunset 180-day non-openers, remove spam traps, export consent metadata. Sticker shock from bloated imports delays migration and extends leakage — hygiene is migration step one, not post-signup cleanup.
-        </p>
-        <p>
-          The choice is between ActiveCampaign's CRM breadth and Klaviyo's Shopify data depth; pure DTC teams should prioritize the operating model they can maintain.
-        </p>
-
-
-        <h2>Weekly operator checklist during trial</h2>
-        <p>
-          Weekly Activecampaign versus Klaviyo cadence — Monday: time Shopify order sync into Activecampaign versus Klaviyo entry (anything over ten minutes breaks suppression testing). Wednesday: run a single edge case — gifted order, subscription tag, financed high-AOV cart — through both Activecampaign and Klaviyo. Friday: re-model twelve-month cost on actual Activecampaign versus Klaviyo sends; bloated lists hurt contact billing, heavy calendars hurt send billing.
-        </p>
-        <p>
-          Activecampaign’s edge in this Activecampaign versus Klaviyo pairing pays only if it relieves your binding constraint this quarter; Klaviyo’s convenience pays only if your team sustains it through peak without support tickets. Treat the merchant story in this Activecampaign versus Klaviyo page as one revenue shape — re-validate against your orders, catalog quirks, and operator hours before copying the setup.
-        </p>
-        <h2>Pre-decision audit</h2>
-        <p>
-          Don't annual-commit Activecampaign versus Klaviyo on reading alone — complete scored trials in Activecampaign and Klaviyo, project peak Activecampaign versus Klaviyo sends, confirm tag/CRM needs, clean inactives before contact-priced quotes, and stage kill-switches for a hybrid Activecampaign/Klaviyo window. Cited Activecampaign versus Klaviyo outcomes guide; your measured trial concludes.
-        </p>
-        <p>
-          Activecampaign versus Klaviyo goes to the platform your operator trusts at 10pm before a drop: recovery revenue and margin retained decide, not the Activecampaign–Klaviyo feature grid.
-        </p>
-
-        <h2>Sale-week edit safety gate</h2>
-        <p>
-          The decisive tiebreaker between ActiveCampaign and Klaviyo is rarely feature depth — it is whether a non-technical marketer can add recent-purchaser suppression and VIP early access in under thirty minutes on a Thursday before a drop. Run that edit in both trials before annual commit. Platforms that pass calm-week demos but fail sale-week edits cost more in foregone peak revenue than any annual subscription delta.
-        </p>
-        
-        <p>
-          Minimum viable trial length remains 90 days with weekly operator checklist — shorter trials miss billing surprises and peak-season behavior both ActiveCampaign and Klaviyo surface only under operational stress. Baseline metrics in week one make before-and-after claims credible to finance.
-        </p>
         <h2>Verdict</h2>
         <p>
-          Klaviyo wins pure Shopify DTC retention when browse depth and unified reporting matter. ActiveCampaign wins hybrid stacks where CRM pipelines and cross-site nurture are load-bearing alongside Shopify orders. The coffee subscription should have migrated to Klaviyo sooner. The hybrid supplement merchant correctly ran both until wholesale CRM moved elsewhere. The home fitness brand belongs on ActiveCampaign until DTC revenue dominates. Run the five-flow test and map whether CRM or ecommerce depth is the constraint — pick the platform that matches business shape, not the one your agency resells.
+          Klaviyo is the better pick for a Shopify store whose main goal is retention, because its profiles, segments and SMS are built around store activity and it offers a free plan for small lists. ActiveCampaign is the better pick for a business that needs deal stages, lead scoring or a CRM alongside its email. Choose based on what the list has to do, and use the pricing pages to check the cost at your real list size.
         </p>
       </article>
 

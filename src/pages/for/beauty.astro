@@ -3,61 +3,48 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
 import FaqSection from '../../components/FaqSection.astro';
-import ToolReview from '../../components/ToolReview.astro';
 import { site, description, pageTitle } from '../../content';
-import { segmentBySlug } from '../../data/segments';
-import { appBySlug } from '../../data/apps';
 
-const segment = segmentBySlug('beauty')!;
 const path = '/for/beauty';
 const title = pageTitle(site, 'for/beauty');
 const desc = description(site, 'for/beauty');
 
-const featuredSlugs = ['sequenzy', 'klaviyo', 'omnisend', 'yotpo-email-sms', 'drip'];
-const featuredApps = featuredSlugs.map((s) => appBySlug(s)!).filter(Boolean);
-
-const comparisonApps = [
-  'sequenzy', 'klaviyo', 'omnisend', 'yotpo-email-sms', 'shopify-email', 'privy', 'drip',
-  'postscript', 'mailchimp', 'activecampaign', 'brevo', 'sendlane', 'rejoiner', 'marsello',
-  'firepush', 'tinyemail', 'aftership-email',
-].map((s) => appBySlug(s)!).filter(Boolean);
-
 const faqs = [
   {
-    question: 'What is the best Shopify email app for beauty brands with subscriptions?',
-    answer: 'Sequenzy leads for beauty subscription retention because it handles skip/churn prevention sequences, replenishment timing, and education-first flows without per-contact pricing that punishes large subscriber lists. Klaviyo is stronger when you need deep integration with Recharge or Skio plus predictive analytics across shade-level purchase history. Yotpo Email & SMS fits brands already running Yotpo reviews and loyalty modules.',
+    question: 'What is the best Shopify email app for a beauty brand?',
+    answer: 'For most beauty brands on Shopify, Klaviyo is the strongest choice once the list is large enough to justify it. Its Email plan starts at $20 a month for 500 profiles, and segments can separate active subscribers, cancelled subscribers and one-time buyers. Smaller stores can start on Omnisend, which has a free plan for up to 250 contacts and 500 emails a month.',
   },
   {
     question: 'How should beauty brands time replenishment emails?',
-    answer: 'Base timing on product usage, not arbitrary 30-day intervals. A vitamin C serum and a body lotion have different consumption curves. Use SKU-level replenishment windows derived from product size and typical usage, then suppress if the customer has an active subscription or recent reorder. Over-mailing replenishment trains unsubscribes faster in beauty than almost any other vertical.',
+    answer: 'Base the timing on how long each product actually lasts. A 30 ml serum used twice a day runs out far sooner than a body lotion or a hair mask. Set a reminder window for each product, based on size and typical use, and suppress the reminder when the customer has an active subscription or has reordered recently. Fixed 30-day intervals feel random to customers and are a common cause of unsubscribes.',
   },
   {
-    question: 'Can education emails outperform promos for beauty?',
-    answer: 'Yes — when segmented correctly. New subscribers need routine education; loyal buyers need ingredient updates and loyalty recognition; discount responders need different treatment than full-price replenishment customers. Track unsubscribe rate on education versus promo sends. Beauty brands that blast sale creative to education segments destroy list quality within two quarters.',
+    question: 'Should education emails come before promotions?',
+    answer: 'For new customers, yes. A new buyer usually needs to know how to apply a product, in what order to use a routine and what results are realistic. Send education first, and only introduce cross-sells after the customer has had time to use what they bought. Keep track of unsubscribe rates for education and promotional sends separately so you can see whether the promotions are costing you subscribers.',
   },
   {
-    question: 'When does Yotpo make sense over standalone email apps?',
-    answer: 'When reviews, loyalty points, and UGC are central to your retention model. Yotpo can trigger emails based on review status, loyalty tier, and SMS in one ecosystem. If email is your only retention channel and you do not use Yotpo reviews or loyalty, Sequenzy or Klaviyo deliver more focused lifecycle depth for less suite complexity.',
+    question: 'How much does Klaviyo cost for a beauty store?',
+    answer: 'Klaviyo prices its Email plans by active profiles. The pricing page lists $20 a month for 500 profiles, $30 for 1,000, $60 for 2,500, $100 for 5,000 and $400 for 25,000. A free plan covers 250 active profiles and 500 email sends a month. Email plus SMS plans are listed without a published figure, so SMS pricing is on request.',
   },
   {
-    question: 'How do beauty brands handle shade matching in email?',
-    answer: 'Post-purchase flows should confirm shade selection, offer exchange guidance, and cross-sell complementary shades only after satisfaction window passes. Tag customers by shade variant purchased and suppress promos for shades that do not match their profile. Quiz-led capture tools like Justuno can feed shade intent data into your email platform for smarter segmentation.',
+    question: 'Is Omnisend enough for a growing beauty brand?',
+    answer: 'It can be, for welcome, cart, post-purchase and simple replenishment flows, particularly while the list is small. The Pro plan lists 2,500 contacts at $41.30 a month with unlimited emails. When subscription branching, shade-level segments and routine education become daily work, many beauty brands move to Klaviyo or to a platform with more detailed logic.',
   },
   {
-    question: 'What metrics should beauty email programs optimize?',
-    answer: 'Replenishment conversion rate, subscription retention at 90 days, bundle attach rate from email, and unsubscribe rate split by education versus promotional content. Revenue per recipient matters, but beauty margin lives in repeat replenishment and subscription continuity — not one-time launch spikes.',
+    question: 'Does Shopify Email work for replenishment campaigns?',
+    answer: 'Shopify Email is built into the Shopify admin and includes 10,000 emails each month free. After that, the paid sending rate is $1 per 1,000 emails. It suits brands that need straightforward campaigns and launch announcements. Brands running several overlapping replenishment and education paths usually need a platform with stronger automation controls.',
   },
   {
-    question: 'Is Omnisend enough for a growing beauty DTC brand?',
-    answer: 'Omnisend handles welcome, cart, post-purchase, and SMS well for brands under roughly 1,000 monthly orders. When subscription logic, shade segmentation, and multi-product routine education become daily operations, most beauty brands add Sequenzy for strategy or migrate to Klaviyo for data depth.',
-  },
-  {
-    question: 'How do I prevent subscription churn emails from feeling desperate?',
-    answer: 'Lead with value — upcoming box contents, usage tips, loyalty recognition — before discounting skips. Offer pause before cancel. Segment churn risk by engagement decay and skipped shipments, not blanket "we miss you" blasts. Three-touch skip recovery with escalating value beats a single 30% off coupon.',
+    question: 'When does Drip fit a beauty store?',
+    answer: 'Drip fits operators who want to build explicit workflows with tags and branches, for example separate routine paths for cleanser buyers and serum buyers. Its 1 to 2,500 people plan is listed at $39 a month with unlimited email sends and up to 50 workflows. It has a 14-day trial but no ongoing free plan.',
   },
   {
     question: 'Should beauty brands pair email with SMS for replenishment?',
-    answer: 'SMS works for replenishment reminders when opt-in is explicit and frequency is capped — one reminder, not a weekly nag. Email carries education, ingredient stories, and bundle offers. Use Postscript or Omnisend SMS with strict suppression for active subscribers already charged for the month.',
+    answer: 'SMS works for a single replenishment reminder when customers have opted in and the frequency is capped. Email carries the education, ingredient detail and bundle offers. Whichever app you choose, suppress SMS reminders for subscribers who were charged for the current month, so a text does not arrive the same day as a renewal.',
+  },
+  {
+    question: 'What should beauty email programs measure?',
+    answer: 'Track replenishment conversion by product, subscription retention at 90 days, bundle attach rate from email, and unsubscribe rate split between education and promotional content. Revenue per recipient is useful, but beauty margin depends on repeat purchases and subscription continuity more than on launch-week spikes.',
   },
 ];
 ---
@@ -71,10 +58,10 @@ const faqs = [
       <p class="editorial-kicker mt-6">Beauty & skincare</p>
       <h1 class="hero-title mt-5 max-w-5xl">Best Shopify email apps for beauty brands</h1>
       <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-        Beauty retention is replenishment math wrapped in education. Your customers buy on 30–90 day cycles, evaluate shades and ingredients carefully, and churn from subscriptions when messaging feels transactional. The right Shopify email app times repeat purchase around actual product usage, teaches routines without overwhelming inboxes, and recovers skips before they become cancellations.
+        Our pick for most beauty brands on Shopify is Klaviyo. It separates active subscribers, cancelled subscribers and one-time buyers, which is the split you need before you can time a replenishment reminder correctly, and its Email plan starts at $20 a month for 500 profiles. Smaller stores with a short list should start with Omnisend, which has a free plan for up to 250 contacts.
       </p>
       <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
-        We ranked apps for beauty merchants facing {segment.pain}. Buying behavior looks like this: {segment.buyingCycle}. Below: tools that handle subscription logic, compliance-conscious education, and bundle attach without treating every subscriber like a coupon hunter.
+        This page compares the seven apps beauty merchants ask about most: Klaviyo, Omnisend, Shopify Email, Mailchimp, Privy, Drip and Seguno. Each price is the figure on the vendor's public pricing page as of 7 October 2026, with the plan and billing basis stated next to it.
       </p>
       <div class="mt-9 flex flex-wrap gap-3">
         <a class="btn btn-primary" href="/apps">Full app rankings</a>
@@ -88,113 +75,172 @@ const faqs = [
     <TldrBox
       title="Top Shopify email apps for beauty brands"
       picks={[
-        { label: 'Best overall', tool: 'Sequenzy', reason: 'Lifecycle playbooks for replenishment, routine education, subscription skip recovery, and shade follow-up — agent-first setup without per-contact list tax as your subscriber base grows.' },
-        { label: 'Best data depth', tool: 'Klaviyo', reason: 'Deep Shopify + subscription app sync, predictive CLV, and SKU-level segmentation for brands with large shade matrices and bundle catalogs.' },
-        { label: 'Best multichannel', tool: 'Omnisend', reason: 'Email, SMS, and push in one builder for DTC beauty brands that need reliable automations live before the next product drop.' },
-        { label: 'Best reviews + loyalty', tool: 'Yotpo Email & SMS', reason: 'Consolidates UGC, loyalty points, and campaigns when your retention model depends on social proof and rewards, not email alone.' },
-        { label: 'Best workflow builder', tool: 'Drip', reason: 'Visual automations for operators who want explicit control over routine education paths and replenishment branching by product category.' },
+        { label: 'Best overall', tool: 'Klaviyo', reason: 'Segments by subscription state and purchase history, with a Email plan from $20 a month for 500 profiles. Suited to beauty catalogues with many shades and bundles.' },
+        { label: 'Best for a small list', tool: 'Omnisend', reason: 'Free plan for up to 250 contacts and 500 emails a month, with email, SMS and push in one builder.' },
+        { label: 'Best if you want no extra app cost', tool: 'Shopify Email', reason: 'Built into the Shopify admin, with 10,000 emails a month free and $1 per 1,000 emails after that.' },
+        { label: 'Best for an existing Mailchimp account', tool: 'Mailchimp', reason: 'Free plan for up to 250 contacts; paid Standard plan from $20 a month at the 500-contact tier.' },
+        { label: 'Best for pay-by-contact simplicity', tool: 'Privy', reason: 'Email from $30 a month, where you pay only for mailable contacts and send unlimited emails.' },
+        { label: 'Best workflow builder', tool: 'Drip', reason: 'Tag-based workflows for separate routine paths, from $39 a month for up to 2,500 people with unlimited sends.' },
       ]}
     />
 
     <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Three beauty merchant scenarios</h2>
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">What a beauty email program has to do</h2>
       <p>
-        <strong>Scenario A — DTC serum brand, 400 orders/month, 35% subscription rate.</strong> Replenishment mistiming was killing month-4 retention. Customers received reorder emails on day 25 while still on day-35 usage cycles — they unsubscribed. After moving to Sequenzy with SKU-level consumption windows and subscription-state suppression, replenishment conversion rose 18% and unsubscribes on education sends dropped below promo sends for the first time. Klaviyo was overkill at this volume; Omnisend lacked shade-variant branching.
+        Beauty email has three jobs that other retail verticals only partly share. It has to time replenishment around how long each product lasts, it has to teach a routine before it sells the next step, and it has to stay quiet when a subscription renewal is about to be charged. Most email apps can send all three kinds of message. The difference lies in whether they can read the subscription and order state well enough to hold back the wrong message at the right moment.
       </p>
       <p>
-        <strong>Scenario B — Clean beauty retailer, 1,200 orders/month, heavy influencer acquisition.</strong> List grew 3x faster than purchasers; Klaviyo profile costs spiked. Implemented engagement sunset and migrated nurture strategy to Sequenzy pay-per-email for education sequences while keeping Klaviyo for predictive VIP segmentation on purchasers only. Profile bill dropped 34% while email revenue held flat.
+        Subscription apps on Shopify handle billing, so the email tool has to read that state from the store and respect it. A replenishment promotion that lands on the day a box is charged damages trust quickly. When you evaluate an app, ask how it receives order and subscription status, and whether you can build a suppression rule for "charged this month" without writing custom code.
       </p>
       <p>
-        <strong>Scenario C — Makeup brand with Yotpo reviews and loyalty.</strong> Retention spanned UGC, points, and replenishment. Yotpo Email & SMS consolidated review-request and loyalty-triggered campaigns; Sequenzy handled routine education and winback. Suite approach beat bolting standalone email onto separate review tool with Zapier delays.
-      </p>
-    </div>
-
-    <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Beauty email is retention infrastructure, not campaign decoration</h2>
-      <p>
-        Beauty brands that treat email as a promotional megaphone lose twice: subscribers churn from over-mailing, and replenishment revenue leaks to Amazon or competitors with better reminder timing. The merchants winning on Shopify build email around product usage curves — when a 50ml serum actually runs out, when a customer on a three-step routine is ready for step two, when a subscriber skips two months and needs value-first recovery instead of a panic discount.
-      </p>
-      <p>
-        Subscription apps like Recharge, Skio, and Bold manage billing; your email app must read that state and suppress conflicting messages. Nothing erodes trust faster than a replenishment promo sent the same day a subscription charge processes. The apps ranked here differ in how cleanly they ingest Shopify order data, subscription status, and product metadata without brittle Zapier chains.
-      </p>
-      <p>
-        Education content is the other pillar. Ingredient explainers, routine order, and shade confidence reduce returns and increase second purchase rate. But education and promo sends must be segmented — loyal replenishment buyers do not need beginner tutorials; new subscribers drown if you pitch VIP bundles on day three. See <a class="link" href="/use-cases/post-purchase">post-purchase education</a> and <a class="link" href="/use-cases/segmentation">segmentation</a> for the operational backbone.
+        Claims are the other constraint. Ingredient and results language is regulated in many markets, and no email app reviews your copy for you. Whichever tool you pick, build a sign-off step into the template process so that urgency rewrites go through the same review as the original.
       </p>
     </div>
 
     <div class="ledger-card mb-12 overflow-x-auto">
       <p class="editorial-kicker">Comparison table</p>
-      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">17 Shopify email apps for beauty brands</h2>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Seven Shopify email apps for beauty brands</h2>
       <table class="mt-8 w-full min-w-[720px] text-left text-sm">
         <thead>
           <tr class="border-b border-[#24170f]/15 text-xs font-black uppercase tracking-wider text-[#9a5b16]">
             <th class="py-3 pr-4">App</th>
             <th class="py-3 pr-4">Best for beauty</th>
-            <th class="py-3 pr-4">Pricing</th>
-            <th class="py-3 pr-4">Shopify depth</th>
-            <th class="py-3 pr-4">Automation</th>
-            <th class="py-3">Rating</th>
+            <th class="py-3 pr-4">Starting price (plan, billing)</th>
+            <th class="py-3">Key limitation</th>
           </tr>
         </thead>
         <tbody class="text-[#4a2d17]">
-          {comparisonApps.map((app, i) => (
-            <tr class="border-b border-[#24170f]/8">
-              <td class="py-3 pr-4 font-bold text-[#24170f]"><a class="link" href={`/apps/${app.slug}`}>{i + 1}. {app.name}</a></td>
-              <td class="py-3 pr-4">{app.bestFor}</td>
-              <td class="py-3 pr-4">{app.pricing}</td>
-              <td class="py-3 pr-4">{app.shopifyDepth}</td>
-              <td class="py-3 pr-4">{app.automationDepth}</td>
-              <td class="py-3">★ {app.rating}</td>
-            </tr>
-          ))}
+          <tr class="border-b border-[#24170f]/8">
+            <td class="py-3 pr-4 font-bold text-[#24170f]">1. Klaviyo</td>
+            <td class="py-3 pr-4">Large catalogues with shade and subscription segments</td>
+            <td class="py-3 pr-4">Email plan $20/month for 500 profiles (monthly); free plan for 250 profiles</td>
+            <td class="py-3">Cost rises with every active profile, so list hygiene matters</td>
+          </tr>
+          <tr class="border-b border-[#24170f]/8">
+            <td class="py-3 pr-4 font-bold text-[#24170f]">2. Omnisend</td>
+            <td class="py-3 pr-4">Small and growing DTC beauty lists needing email and SMS</td>
+            <td class="py-3 pr-4">Free for 250 contacts and 500 emails/month; Standard $11.20/month for 500 contacts (monthly, introductory 30% discount shown for three months)</td>
+            <td class="py-3">Branching for complex subscription logic is lighter than Klaviyo's</td>
+          </tr>
+          <tr class="border-b border-[#24170f]/8">
+            <td class="py-3 pr-4 font-bold text-[#24170f]">3. Shopify Email</td>
+            <td class="py-3 pr-4">Stores that want campaigns without a separate vendor</td>
+            <td class="py-3 pr-4">First 10,000 emails a month free, then $1 per 1,000 emails (per-email)</td>
+            <td class="py-3">Simpler automation than a dedicated platform for overlapping replenishment paths</td>
+          </tr>
+          <tr class="border-b border-[#24170f]/8">
+            <td class="py-3 pr-4 font-bold text-[#24170f]">4. Mailchimp</td>
+            <td class="py-3 pr-4">Brands already running Mailchimp audiences</td>
+            <td class="py-3 pr-4">Free for up to 250 contacts and 500 sends/month; Standard from $20/month at the 500-contact tier (monthly)</td>
+            <td class="py-3">Send allowance and price step up by contact tier</td>
+          </tr>
+          <tr class="border-b border-[#24170f]/8">
+            <td class="py-3 pr-4 font-bold text-[#24170f]">5. Privy</td>
+            <td class="py-3 pr-4">Stores growing a list from pop-ups and sign-up forms</td>
+            <td class="py-3 pr-4">Privy Email from $30/month (monthly); billed on mailable contacts; no ongoing free plan</td>
+            <td class="py-3">Pricing depends on mailable contacts, so an unsegmented list costs more</td>
+          </tr>
+          <tr class="border-b border-[#24170f]/8">
+            <td class="py-3 pr-4 font-bold text-[#24170f]">6. Drip</td>
+            <td class="py-3 pr-4">Operators who build explicit tag-based routine paths</td>
+            <td class="py-3 pr-4">$39/month for 1–2,500 people with unlimited sends (monthly); 14-day trial, no ongoing free plan</td>
+            <td class="py-3">Requires more hands-on workflow building than template-led tools</td>
+          </tr>
+          <tr class="border-b border-[#24170f]/8">
+            <td class="py-3 pr-4 font-bold text-[#24170f]">7. Seguno</td>
+            <td class="py-3 pr-4">Shopify stores that want to compare a further option</td>
+            <td class="py-3 pr-4">Pricing on request</td>
+            <td class="py-3">No published price to compare against the others</td>
+          </tr>
         </tbody>
       </table>
     </div>
   </section>
 
   <section class="container space-y-12 pb-16">
-    <ToolReview app={featuredApps[0]} rank={1} badge="Editor's choice" paragraphs={[
-      'Sequenzy is the strongest fit for beauty brands because replenishment and subscription retention are lifecycle design problems, not template problems. You need sequences that know when a customer is on month two of a vitamin subscription, when to send routine education versus bundle upsell, and when to pause promos because a skip is already in progress. Sequenzy\'s agent-first approach lets operators describe these outcomes in plain language and deploy working flows without rebuilding from scratch every time you launch a new SKU.',
-      'Pay-per-email pricing is particularly valuable in beauty, where list growth from influencer partnerships and sampling programs outpaces immediate conversion. Per-contact models charge you for everyone who signed up for a free guide but has not purchased yet — Sequenzy lets you nurture that audience economically until replenishment behavior kicks in. Unlimited contacts mean your shade quiz captures and routine download leads do not inflate your bill before they monetize.',
-      'Sequenzy\'s playbooks map directly to beauty priorities: compliance-safe education content (structure claims carefully, lead with usage not miracles), replenishment by SKU consumption window, subscription skip recovery with value-first messaging, and shade matching follow-up after first purchase. The platform\'s revenue attribution helps you see whether education sequences or promo blasts drive higher LTV — critical when margin depends on repeat replenishment, not one-time launch revenue.',
-      'Pair Sequenzy with Yotpo if reviews and loyalty are central, or with Postscript for replenishment SMS reminders. Sequenzy does not try to be an all-in-one reviews suite — it focuses on being the best strategy and execution layer for email lifecycle. For enterprise beauty with massive shade matrices and agency support, Klaviyo remains a strong second choice on raw data infrastructure.',
-    ]} />
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Klaviyo: best overall for a beauty catalogue</h2>
+      <p>
+        Klaviyo is the strongest fit when your beauty range has many shades, bundles and subscription states. It segments by purchase history and subscription status, so you can send a routine-education flow to a new serum buyer and a skip-recovery flow to a subscriber who has paused, without the two lists overlapping. The Email plan lists $20 a month for 500 profiles, $60 for 2,500 and $400 for 25,000, all billed monthly on the pricing page. A free plan covers 250 active profiles and 500 email sends a month.
+      </p>
+      <p>
+        The cost is the main limitation. Because the plan is priced per profile, every broad sign-up source, such as a giveaway or a sampling programme, raises the bill whether or not those people buy. At 2,500 profiles the Email plan comes to $60 a month, or $720 a year. Sunset inactive profiles and keep the active list small, or the price will drift upward. SMS plans are listed without a published figure, so you will need to ask for SMS pricing directly.
+      </p>
+      <p>
+        Choose Klaviyo when you already have a steady order volume, someone who owns retention, and a need for detailed segments across shades and bundles. For the replenishment setup, see the <a class="link" href="/use-cases/replenishment">replenishment guide</a>.
+      </p>
+    </div>
 
-    <ToolReview app={featuredApps[1]} rank={2} paragraphs={[
-      'Klaviyo is the default heavyweight for beauty brands with complex product catalogs, subscription integrations, and enough order volume to justify profile-based pricing. Native Shopify sync plus subscription app connectors let you segment by active subscriber, cancelled subscriber, one-time buyer, and shade variant purchased — the building blocks of intelligent beauty retention.',
-      'Predictive CLV and RFM segmentation help identify customers worth VIP treatment versus those who only respond to discounts. For brands running bundles and multi-step routines, Klaviyo\'s dynamic product blocks and collection triggers keep emails merchandised without manual creative swaps every launch. Flow A/B testing matters when you are optimizing replenishment timing across dozens of SKUs.',
-      'The cost and complexity caveats are real. Beauty lists grow fast from lead magnets and sampling; not every subscriber becomes a replenishment buyer within 90 days. Audit inactive profiles, enforce sunset policies, and avoid sending expensive automations to non-engaged contacts acquired through broad influencer codes. Klaviyo rewards discipline — sloppy list hygiene produces sloppy bills.',
-      'Choose Klaviyo when you have 1,000+ monthly orders, dedicated retention ownership, and dependence on deep segmentation across shades, bundles, and subscription states. It integrates cleanly with <a class="link" href="/use-cases/replenishment">replenishment workflows</a> and <a class="link" href="/use-cases/loyalty">loyalty campaigns</a> at scale.',
-    ]} />
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Omnisend: best for a small list that also needs SMS</h2>
+      <p>
+        Omnisend suits beauty brands that are still small and want welcome, cart, post-purchase and replenishment reminders running quickly. It keeps email, SMS and web push in a single builder, so you do not manage three tools for one customer. The free plan covers 250 contacts with 500 emails and 500 web push notifications a month, which is enough to test a welcome series and a post-purchase education flow before you spend anything.
+      </p>
+      <p>
+        Its limits show once the business grows. Segmentation covers most small beauty scenarios, but it is lighter than Klaviyo's when you need intricate subscription branching or shade-level logic across hundreds of variants. The Standard plan is listed at $11.20 a month for 500 contacts and 6,000 emails, with a 30% introductory discount shown for the first three months. The Pro plan is $41.30 a month for 2,500 contacts with unlimited emails, which works out to $495.60 a year.
+      </p>
+      <p>
+        Omnisend fits a beauty store with a short list and a simple automation plan. Many brands move to Klaviyo or a more detailed platform once subscription logic becomes a daily task.
+      </p>
+    </div>
 
-    <ToolReview app={featuredApps[2]} rank={3} paragraphs={[
-      'Omnisend delivers fast time-to-value for beauty DTC brands that need welcome, cart, post-purchase, and basic replenishment reminders live quickly. Prebuilt ecommerce automations reduce the gap between installing an app and sending revenue-bearing email — important when your next serum launch is three weeks away.',
-      'Email, SMS, and push in one interface simplify replenishment nudges and launch alerts without managing three separate tools. For beauty brands with strong mobile engagement, a single well-timed SMS replenishment reminder often outperforms a third email in the same week — provided opt-in and frequency caps are respected.',
-      'Omnisend\'s segmentation handles most SMB beauty scenarios but struggles compared to Klaviyo when you need intricate subscription branching or shade-level logic across hundreds of variants. Reporting is campaign-practical rather than diagnostic for margin-by-segment analysis. That tradeoff is acceptable when speed and clarity matter more than data science.',
-      'Omnisend fits growing beauty merchants doing 150–900 monthly orders who want multichannel retention without enterprise overhead. Many graduate to Sequenzy or Klaviyo when subscription complexity and education segmentation become daily operational requirements.',
-    ]} />
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Shopify Email: best if you want no extra vendor</h2>
+      <p>
+        Shopify Email is built into the Shopify admin, so the setup sits inside the store you already run. The first 10,000 emails each month are free, and after that you pay $1 per 1,000 emails. For a beauty brand that sends a few launch announcements and occasional newsletters, that pricing is hard to beat.
+      </p>
+      <p>
+        The limitation is depth. Shopify Email is a good tool for campaigns, but it is not designed for several overlapping replenishment paths, routine education sequences and suppression rules that depend on subscription state. If your replenishment program needs those, use Shopify Email for launches and newsletters and a dedicated platform for lifecycle flows, or move the whole program to one of the other apps on this page.
+      </p>
+    </div>
 
-    <ToolReview app={featuredApps[3]} rank={4} paragraphs={[
-      'Yotpo Email & SMS makes the shortlist when your beauty brand already runs — or plans to run — Yotpo reviews, loyalty, and UGC as core retention infrastructure. Triggering emails based on review submission, loyalty tier, and points balance creates cohesive customer journeys that standalone email tools replicate only with custom integrations.',
-      'UGC blocks in campaigns matter for beauty: real customer photos and shade-on-skin proof outperform studio photography for conversion. Yotpo lets you pull that social proof directly into email creative, which is especially powerful for shade-sensitive products where returns are costly.',
-      'The suite breadth is also the caveat. Yotpo\'s best economics appear when you use multiple modules. If you only need email and already have a strong retention platform, bolting on Yotpo for email alone adds complexity without proportional gain. Evaluate total cost across reviews, loyalty, SMS, and email before committing.',
-      'Yotpo fits beauty brands building a reviews-and-loyalty moat — think established DTC labels with repeat purchase rates above 35% and active UGC programs. Pair with Sequenzy if you want a dedicated lifecycle strategy layer alongside Yotpo\'s consolidation play.',
-    ]} />
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Mailchimp: best if your audience already lives there</h2>
+      <p>
+        Mailchimp has a free plan for up to 250 contacts and 500 sends a month, with a maximum of 250 sends per day. The paid Standard plan starts at $20 a month at the 500-contact tier and covers up to 6,000 emails a month at that level. If your beauty brand already has a Mailchimp audience with years of history, moving it costs time and deliverability, so staying can be the sensible choice.
+      </p>
+      <p>
+        Price and send allowance both step up with contact tiers, so a list that grows quickly will move into more expensive bands. Check the tier you will be in after six months of growth, not only the one you start in, and compare that with the cost of a platform that charges on different terms.
+      </p>
+    </div>
 
-    <ToolReview app={featuredApps[4]} rank={5} paragraphs={[
-      'Drip suits beauty operators who want explicit visual control over routine education paths. Map a three-step skincare introduction across separate branches: cleanser buyers receive toner education on day 14, serum buyers receive moisturizer cross-sell on day 21, subscription customers bypass one-time replenishment promos entirely.',
-      'Tag-based segmentation in Drip works well for beauty workflows — tags like "routine-step-1," "shade-undertone-warm," or "subscription-paused" drive conditional logic that template-only tools resist. Revenue dashboards give clear weekly readouts without enterprise reporting overhead.',
-      'Drip\'s Shopify integration is solid, but the beauty-specific agency ecosystem is thinner than Klaviyo\'s. Per-contact pricing follows the same list-growth dynamics as other profile-based tools. Best for focused catalogs with clear routine logic rather than 200-SKU shade explosions.',
-      'Choose Drip when someone on your team enjoys building workflows and you need custom education branching. Compare with Sequenzy in <a class="link" href="/compare/sequenzy-vs-drip">our head-to-head</a> if you want strategy guidance versus hands-on builder control.',
-    ]} />
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Privy: best for a list built from pop-ups and sign-up forms</h2>
+      <p>
+        Privy is built around capturing emails from pop-ups and sign-up forms, then sending to them. Its Email plan is listed at $30 a month, and the pricing page says you pay only for mailable contacts while sending unlimited emails. That model suits beauty stores whose list grows from quiz and sample sign-ups, where a large share of contacts never buy.
+      </p>
+      <p>
+        Privy has no ongoing free plan. Its SMS add-on includes 250 free credits, with paid credits chosen by monthly volume. Because the bill follows mailable contacts, a list that is not segmented early can grow more costly than expected. Keep a sunset rule for people who have not engaged in a set period.
+      </p>
+    </div>
+
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Drip: best workflow builder for routine paths</h2>
+      <p>
+        Drip is for operators who want to see every branch of a workflow. You can tag customers by routine step, skin concern or shade, then send each tag group to a separate path. A three-step skincare introduction, for example, can route a cleanser buyer to toner education and a serum buyer to a moisturiser suggestion, and keep subscribers out of one-time replenishment promotions.
+      </p>
+      <p>
+        The 1 to 2,500 people plan is listed at $39 a month with unlimited email sends and up to 50 workflows. It has a 14-day trial with no credit card required, but no ongoing free plan. Because the builder is hands-on, plan for someone on your team to maintain the workflows, rather than relying on templates.
+      </p>
+    </div>
+
+    <div class="prose-shopify">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Seguno: include it if it fits your Shopify setup</h2>
+      <p>
+        Seguno is on this list because beauty merchants ask about it. Pricing is on request, so compare it with the published plans above by asking the vendor for a quote. Before shortlisting it, check whether it covers the replenishment, subscription-suppression and SMS requirements in the checklist below, since those are the points that differ most between apps.
+      </p>
+    </div>
   </section>
 
   <section class="container py-12">
     <div class="card">
-      <p class="editorial-kicker">Replenishment math</p>
-      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">SKU-level timing beats calendar blasts</h2>
+      <p class="editorial-kicker">How to choose</p>
+      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Match the app to list size and subscription logic</h2>
       <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-        Build a replenishment matrix: product SKU, typical usage duration, first reminder offset, second reminder offset, and suppression rules for active subscriptions. A 30ml serum used twice daily empties faster than a weekly hair mask. Email sent on generic 30-day intervals feels random — correctly timed reminders feel helpful. Log replenishment conversion by SKU monthly and adjust windows based on actual reorder data, not assumptions from packaging labels.
+        Start with two numbers: the number of profiles or contacts you will hold in twelve months, and the number of subscription or replenishment paths you need to run at the same time. If the list is under 250 contacts, the free plans on Omnisend, Mailchimp or Klaviyo cover the basics. If you run one or two replenishment paths, Shopify Email or Omnisend can do the job. If you run several paths that depend on subscription state, shortlist Klaviyo or Drip and test the suppression rules before you commit.
+      </p>
+      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
+        Then check the cost at your projected size, not today's. Klaviyo's Email plan at 2,500 profiles is $60 a month, while Omnisend's Pro plan at 2,500 contacts is $41.30 a month. Privy is billed on mailable contacts, and Shopify Email charges $1 per 1,000 emails after the first 10,000 each month. Calculate the figure for twelve months of growth, including sign-up imports, and compare that total across the apps you shortlist.
       </p>
     </div>
   </section>
@@ -202,101 +248,45 @@ const faqs = [
   <section class="container py-12">
     <div class="grid gap-8 lg:grid-cols-2">
       <div class="ledger-card">
-        <p class="editorial-kicker">Routine education</p>
-        <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Teach before you sell the next step</h2>
-        <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-          New beauty subscribers need a 14-day education arc: how to use what they bought, what order to apply products, what results to expect realistically. Only after day 14 should cross-sell activate — and only for complementary categories, not duplicate serums. Segment education intensity by purchase history; veterans want ingredient updates, not Skincare 101.
-        </p>
+        <p class="editorial-kicker">Replenishment setup</p>
+        <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Set timing by product, not by calendar</h2>
+        <ol class="mt-4 list-decimal space-y-3 pl-5 text-[17px] leading-8 text-[#4a2d17]">
+          <li>List each product with its size and typical use per day or week.</li>
+          <li>Set a first reminder shortly before the product should run out, and a second one only if the first gets no reorder.</li>
+          <li>Suppress the reminder for customers with an active subscription or a reorder in the last few weeks.</li>
+          <li>Review reorder rates by product every month and adjust the windows from your own data.</li>
+        </ol>
       </div>
       <div class="ledger-card">
-        <p class="editorial-kicker">Subscription recovery</p>
-        <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Skip recovery without desperation discounts</h2>
+        <p class="editorial-kicker">Education and promotion</p>
+        <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Teach first, then cross-sell</h2>
         <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-          Three-touch skip sequence: (1) upcoming box value preview, (2) usage tips for products they already have, (3) optional incentive only if touches one and two failed. Offer pause before cancel. Tag recovered skips separately from never-skipped subscribers for LTV analysis. Email priorities: {segment.emailPriorities.join('; ')}.
+          New buyers need a short education run that explains how to use what they bought, in what order to apply it and what results are realistic. Introduce cross-sells after that run, and only for products that fit the routine. Track unsubscribe rates for education and promotional sends separately. If promotional unsubscribes run well ahead of education unsubscribes, reduce the promotional frequency before sending more.
         </p>
       </div>
     </div>
   </section>
 
   <section class="container py-12">
-    <div class="card">
-      <p class="editorial-kicker">Bundle strategy</p>
-      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Routine bundles beat random cross-sell</h2>
-      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-        Beauty email cross-sell fails when it recommends products that conflict with the customer's existing routine. Map bundle logic by routine step: cleanser buyers receive toner and moisturizer suggestions in sequence, not simultaneously. Track bundle attach rate from email by entry product — if serum-to-moisturizer attach is 8% but serum-to-sunscreen is 22%, reorder your cross-sell priority. Subscription customers should receive bundle offers only at skip-risk months or routine completion milestones, not every billing cycle. Full-price bundle previews for VIP segments protect margin better than perpetual "complete your routine for 15% off" blasts that train discount dependency.
+    <div class="prose-shopify max-w-4xl">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Deliverability and claims review</h2>
+      <p>
+        Beauty lists are sensitive to frequency, so keep promotional and education sends on separate schedules, and send promotions to people who have opened or clicked recently. Warm up any new sending domain before a launch or a sale, and avoid sending a full list on day one of a new tool. The <a class="link" href="/use-cases/deliverability">deliverability guide</a> covers the infrastructure side in more detail.
       </p>
-      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-        Sequenzy and Klaviyo both support product-triggered bundle paths; the strategy matters more than the tool. Document your top five routine entry products and the three-step cross-sell sequence for each before building automations. Reference <a class="link" href="/use-cases/post-purchase">post-purchase education</a> for timing cross-sell after satisfaction windows.
-      </p>
-    </div>
-  </section>
-
-  <section class="container py-12">
-    <div class="ledger-card">
-      <p class="editorial-kicker">Deliverability note</p>
-      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Beauty lists are promotion-sensitive</h2>
-      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-        Beauty subscribers churn from over-mailing faster than most verticals. Separate sending domains or subdomains for education versus heavy promo if complaint rates climb. Warm new domains before Black Friday and launch windows. Monitor unsubscribe rate by content type weekly — if promo unsubscribes exceed education unsubscribes 3:1, your ratio is broken. See <a class="link" href="/use-cases/deliverability">deliverability guide</a> for infrastructure detail. Brands switching from Mailchimp or Shopify Email to Sequenzy or Klaviyo should plan 2–3 week warmup before high-volume sale sends.
+      <p>
+        Put a claims review in front of every template that mentions results, ingredients or urgency. No app on this list performs that review for you, and a regulatory issue costs far more than a delayed send. Keep EU and US subscribers on separate lists where your consent records require it, and use copy that fits each market's rules.
       </p>
     </div>
   </section>
 
   <section class="container py-12">
     <div class="prose-shopify max-w-4xl">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Merchant scenario: $95k/mo skincare with replenishment windows</h2>
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Testing before you switch</h2>
       <p>
-        Luméa Skincare sells serums with 45–60 day consumption windows — generic 30-day replenishment emails arrived before product empty, training ignore behavior. After migrating to Sequenzy with SKU-specific consumption tags and education-before-discount post-purchase, replenishment click rate rose 2.8 points and discount usage in replenishment flows dropped 19%. Yotpo Reviews handles review ask on day 7; Sequenzy owns education days 1–6 and replenishment day 42 branch by product size purchased.
+        Test each shortlisted app on a staff account before you move a live list. Check four things: that a new subscriber receives the right welcome branch for the source they signed up from, that cart recovery skips anyone who bought the same variant recently, that post-purchase emails hold back discounts for gift buyers, and that a winback flow stops after a fixed number of messages. If any of these fails in the first week of testing, the app will not hold up during a sale.
       </p>
       <p>
-        Compliance gate: every template change runs legal review on claims language — no platform solves regulatory review. EU subscribers on separate double-opt-in list with GDPR archive; US list uses different promo urgency copy — never one template with translated footer.
-      </p>
-
-      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-12">90-day rollout: beauty lifecycle program</h2>
-      <p>
-        <strong>Days 1–21:</strong> Map top five routine entry products and three-step cross-sell per entry. Welcome branches by skin concern tag from popup quiz. Post-purchase education before any promo — application guide, patch test reminder, satisfaction check-in day 10.
-      </p>
-      <p>
-        <strong>Days 22–45:</strong> Replenishment by SKU consumption window, not fixed delay. VIP segment for full-price loyalists — replenishment without discount on first touch. Review request coordinated with Yotpo so duplicate asks do not fire from two systems.
-      </p>
-      <p>
-        <strong>Days 46–70:</strong> Winback split engaged versus unengaged; UGC social proof blocks for verified reviewers. Bundle cross-sell sequenced cleanser → toner → moisturizer, not simultaneous product dump.
-      </p>
-      <p>
-        <strong>Days 71–90:</strong> Deliverability audit — education versus promo sending separation if complaint rate climbs. Black Friday: recent purchasers and subscription-active suppressed from blanket promo; VIP early access with full ingredient disclosure in creative.
-      </p>
-
-      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-12">Margin math: replenishment timing versus discount training</h2>
-      <p>
-        Luméa: 840 replenishment-eligible orders monthly. Wrong-timing emails converted 6.2% with 35% discount uptake — margin cost significant on $48 AOV serums. Correct-window replenishment converts 11.4% with 18% discount uptake after education-first sequence — incremental gross profit $3,100/mo versus old timing model. List growth from influencer codes outpaces repeat purchase for first 8 months — per-contact pricing punishes; pay-per-send or hygiene discipline mandatory.
-      </p>
-
-      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-12">Failure rehearsal: beauty-specific email failures</h2>
-      <p>
-        <strong>Claims violation in promo blast.</strong> Legal review skipped on urgency rewrite — regulatory exposure. Rehearsal: compliance checkpoint on every template change, not only launch.
-      </p>
-      <p>
-        <strong>Routine-conflict cross-sell.</strong> Retinol buyer gets AHA promo same week — irritation and returns. Rehearsal: ingredient conflict matrix in cross-sell logic.
-      </p>
-      <p>
-        <strong>Over-mail promo ratio.</strong> Promo unsubscribes 3:1 versus education — deliverability decay. Rehearsal: weekly content-type unsubscribe ratio review.
-      </p>
-      <p>
-        <strong>Duplicate review plus replenishment.</strong> Day 7 review ask collides with day 6 replenishment preview — unsubscribe spike. Rehearsal: one-page trigger map across Yotpo and ESP.
-      </p>
-    </div>
-  </section>
-
-  <section class="container py-12">
-    <div class="prose-shopify max-w-4xl">
-      <h2 class="font-serif text-3xl font-black text-[#24170f]">Merchant scenario (for): Beauty rollout checkpoint</h2>
-      <p>
-        Shopify operators evaluating Beauty should document week-one baseline metrics before claiming migration wins — welcome time-to-live, cart suppression accuracy, post-purchase edge cases, and winback engagement splits scored on staff accounts. Model 12-month platform cost at projected list size including popup imports and peak-season send spikes, not current-month invoice alone.
-      </p>
-      <p>
-        Judge beauty stores on the Thursday edit: recent-purchaser suppression and VIP early access from a non-technical owner in thirty minutes. beauty stores tools failing here after smooth demos cost peak-season revenue beyond subscription math — ninety beauty stores trial days with weekly ops expose it.
-      </p>
-      <p>
-        beauty stores cutover discipline: kill-switch spreadsheet first — incumbent beauty stores automations off before twins go on, engaged imports only, cart overlap of twenty-one days. Finance blesses beauty stores when net incremental revenue beats migration cost threefold.
+        Move the list during a quiet period, not in the run-up to a launch. Keep the old tool's automations paused until the new one is sending correctly, import only engaged contacts, and allow about three weeks for the old and new welcome and cart flows to overlap before retiring the old ones.
       </p>
     </div>
   </section>
@@ -306,46 +296,6 @@ const faqs = [
       <a class="link" href="/apps">All Shopify email apps →</a>
       <a class="link" href="/use-cases/replenishment">Replenishment workflows →</a>
       <a class="link" href="/for/supplements">Supplement stores →</a>
-    </div>
-  </section>
-
-  <section class="container py-12">
-    <div class="prose-shopify max-w-4xl">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Merchant scenario: Beauty store email stack</h2>
-      <p>
-        Vertical-specific retention for Beauty catalogs requires matching platform to catalog physics — not homepage generic ranking. Test store profile: order velocity, AOV band, SKU count, subscription or POS presence, and primary bottleneck (capture, cart, browse, replenishment, SMS). Shortlist two platforms from vertical picks; run four-flow workflow test 14 days; migrate on quiet week with kill-switch spreadsheet.
-      </p>
-      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-10">90-day vertical rollout</h2>
-      <p><strong>Month 1:</strong> Fix capture if under 2.5%; welcome with source branch. <strong>Month 2:</strong> Cart and post-purchase with vertical-specific education delays. <strong>Month 3:</strong> Winback or replenishment per vertical calendar — not generic 90-day default.</p>
-      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-10">Margin math for Beauty</h2>
-      <p>
-        Model platform fee at 12-month list projection including popup imports — per-contact pricing punishes verticals with fast list growth and slow repeat purchase (apparel, beauty, supplements). Pay-per-send or quarterly hygiene offsets list bloat tax. Incremental workflow revenue minus stack TCO must exceed 3x before adding fourth vendor.
-      </p>
-      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-10">Failure rehearsal: wrong platform for vertical</h2>
-      <p>
-        <strong>Enterprise CDP too early.</strong> Klaviyo before order 500 — profile tax without predictive use. Fix: Omnisend or Sequenzy bridge. <strong>Capture neglected.</strong> Lifecycle platform before Privy — list growth stalled. Fix: capture first 14 days. <strong>Peak migration.</strong> November ESP switch — deliverability dip. Fix: quiet-week rule.
-      </p>
-    </div>
-  </section>
-
-  <section class="container py-12">
-    <div class="prose-shopify max-w-4xl">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Workflow test checklist for beauty</h2>
-      <p>
-        Run this beauty validation on staff accounts before peak season: (1) welcome branches correctly by signup source and suppresses existing customers; (2) cart recovery excludes recent purchasers of same SKU variant; (3) post-purchase suppresses gift buyers from discount cross-sell and respects try-on or education delay windows; (4) winback splits engaged versus unengaged and sunsets after three touches. Score each 0–10; any flow below 7 is migration or rebuild signal.
-      </p>
-      <p>
-        beauty stores budgeting starts post-growth: project contacts after every beauty stores capture source, then cost profile versus send models accordingly, keeping the quarterly 180-day sunset regardless. beauty stores TCO must bundle capture, peak texting, and shelfware for finance.
-      </p>
-      <p>
-        beauty stores rehearsal is mandatory: Thursday, thirty minutes, VIP access plus buyer suppression live. beauty stores tools acing quiet demos but flunking sale-week edits surrender peak revenue beyond license delta — log beauty stores trial results for finance against the 3x-labor bar, else fix beauty stores capture and collision first.
-      </p>
-      <p>
-        Time beauty stores moves outside peak: early-year or late-spring windows only, three-week welcome/cart overlap, ninety-day read-only incumbent for beauty stores records. The beauty stores kill-switch orders each pause ahead of its replacement; parallel cart sends scar deliverability for seasons.
-      </p>
-      <p>
-        Luméa compliance workflow: every template change requires legal archive ID before send — urgency rewrites bypassing review caused one regulatory flag that paused promos eight days. EU and US lists remain separate with geo-specific copy; never one translated footer on urgency language. Routine bundle attach rate tracked by entry product quarterly — serum-to-sunscreen twenty-two percent versus serum-to-moisturizer eight percent reorders cross-sell priority without random bestseller dumps. Promo versus education unsubscribe ratio reviewed weekly — three-to-one promo skew triggers content rebalance before deliverability complains climb.
-      </p>
     </div>
   </section>
 
