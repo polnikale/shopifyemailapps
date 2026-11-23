@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     question: 'How much does tinyEmail cost compared to Shopify Email?',
-    answer: 'tinyEmail free tier plus paid from ~$15/mo scales by subscribers and features. Shopify Email offers 10,000 free emails/mo inside Admin. tinyEmail wins on AI copy, template variety, and basic automations beyond broadcasts. Shopify Email wins on zero-friction Admin-native simplicity for pure newsletters.',
+    answer: 'Compare a current tinyEmail quote against Shopify Messaging usage charges for your actual list, send volume and required features; the historical prices on this page need revalidation. Shopify Email is now Shopify Messaging and supports email marketing and automations, plus SMS where the store and recipients are eligible. Compare the specific workflow, permissions and channel setup rather than assuming the native app only sends broadcasts.',
   },
   {
     question: 'tinyEmail vs Sequenzy for growing Shopify stores?',
@@ -245,7 +245,7 @@ const faqs = [
     <div class="prose-shopify mb-12">
       <h2 class="font-serif text-4xl font-black text-[#24170f]">90-day rollout: tinyEmail first automations on Shopify</h2>
       <p>
-        <strong>Days 1–10:</strong> Install tinyEmail, sync products, import Shopify customer list. Enable cart abandonment — two emails, no discount first touch. Keep Shopify Email for one monthly newsletter until tinyEmail templates match brand.
+        <strong>Days 1–10:</strong> Install tinyEmail and verify product sync and current account capabilities. Import only records with documented permission for the intended channel and purpose; a Shopify customer list is not permission evidence. Assign one owner to each cart flow and its pending queue. Stop old enrollments and cancel or drain queued messages before enabling the replacement for that cohort. Recheck suppressions and purchases at send time and deduplicate replayed cart events. Keep any native newsletter audience separate from the cart test.
       </p>
       <p>
         <strong>Days 11–30:</strong> Welcome series for popup signups — three emails educating burn time and scent pairing. Suppress recent purchasers. Measure welcome-attributed orders in Shopify with UTM.
@@ -270,7 +270,7 @@ const faqs = [
     <div class="prose-shopify mb-12">
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Margin math: tinyEmail starter automation ROI</h2>
       <p>
-        Wick &amp; Wax: tinyEmail ≈ $15–35/mo tier. Cart recovery lifts 8 orders monthly from 180 abandons (4.4% vs 0% baseline) = $384 revenue, $192 gross profit at 50% margin. Payback first month. Welcome adds 6 orders = $288 revenue. Combined incremental gross ~$336/mo vs $35 tool cost — 9.6x ROI.
+        Illustrative sensitivity only: at an assumed $48 order value, eight cart orders from 180 eligible abandoned carts would represent 4.4% recovery, $384 revenue and $192 gross profit at 50% margin. Six additional welcome orders would add $288 revenue and $144 gross profit if distinct from cart orders. The combined $336 gross benefit divided by an assumed $35 fee is a 9.6x gross-benefit-to-fee ratio, not net ROI. Subtract the fee, labor and other costs and use a comparable holdout to estimate incrementality; attributed orders alone do not establish lift. Separately, the earlier $22,000/340-order scenario implies about $64.71 per order, not $48; do not combine those assumptions.
       </p>
       <p>
         Opportunity cost of staying on Shopify Email only: estimated $400–600/mo uncaptured recovery and repeat revenue. tinyEmail is bridge economics — total stack under $50/mo until revenue justifies $100+ lifecycle platform.
@@ -280,7 +280,7 @@ const faqs = [
     <div class="prose-shopify mb-12">
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Failure rehearsal: tinyEmail ceiling hits</h2>
       <p>
-        <strong>Dual ESP cart collision:</strong> Shopify Email and tinyEmail both send abandonment — customer gets two. Disable Shopify automations entirely on install day.
+        <strong>Dual ESP cart collision:</strong> If the native app and tinyEmail target the same cart, duplicate sends are possible. Disable only the retiring equivalent flow after assigning its queue owner; cancel or drain pending sends, verify purchaser suppression, and test replay deduplication before enabling the replacement. Unrelated automations need their own ownership review.
       </p>
       <p>
         <strong>Segmentation wall at 600 orders:</strong> Cannot branch welcome by scent preference from browse — migration delayed until Q4 peak. Pre-write Sequenzy migration trigger at 500 orders.
@@ -341,7 +341,7 @@ const faqs = [
       Tinyemail sale-week gate: a non-technical marketer ships recent-purchaser suppression plus VIP early access inside thirty Thursday minutes — tools gliding through calm demos but failing this Tinyemail test forfeit more peak revenue than a year of subscription delta. Hold the Tinyemail trial to ninety days with weekly checks; billing and collision truths surface only under load.
     </p>
     <p>
-      Tinyemail cutover discipline: kill-switch spreadsheet first — incumbent Tinyemail automations off before twins go on, engaged imports only, cart overlap of twenty-one days. Finance blesses Tinyemail when net incremental revenue beats migration cost threefold.
+      tinyEmail cutover proposal: record the current flow state and queue owner before switching. A twenty-one-day comparison must use mutually exclusive cohorts with one sender per cart, not dual active flows for the same recipient. Stop retiring enrollments and cancel or drain queued sends before enabling replacements. Carry purpose-specific permission evidence and suppressions forward, recheck purchases at send time, and deduplicate replayed events. An engaged imported list alone does not prove permission. Finance should assess incremental contribution after all migration and operating costs.
     </p>
     </div>
 
