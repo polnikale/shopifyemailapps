@@ -72,19 +72,19 @@ const apps = [
 </a>.
 </p>
 <h2 class="mt-14">Consent and purchaser suppression for Flash sales</h2>
-<p>For flash sales, audit consent capture and purchase-event suppression before the first flow goes live — every app must record flash sales opt-ins you can evidence and halt promos at checkout. For flash sales, a promo arriving after a purchase, refund, or open support case burns trust faster than weak flash sales creative ever could.</p>
+<p>For flash sales, audit consent capture and purchase-event suppression before the first flow goes live. Record evidence of channel permission and stop a cart-recovery journey when its cart becomes a completed order; starting checkout alone does not establish a purchase. For flash sales, a promo arriving after a purchase, refund, or open support case burns trust faster than weak flash sales creative ever could.</p>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Audience state</th><th>Required handling</th><th>Why it matters</th></tr></thead>
 <tbody>
 <tr><td>No documented consent</td><td>Hold all flash sales marketing; transactional only</td><td>Every flash sales send stands on documented consent</td></tr>
 <tr><td>Consented, never purchased</td><td>Open flash sales with guidance and proof, not discounts</td><td>Flash Sales margin suffers when discounts arrive first</td></tr>
 <tr><td>Active cart, no checkout</td><td>Flash Sales reminder with product context; discount withheld</td><td>Protects flash sales profit when purchase intent is hottest</td></tr>
-<tr><td>Purchased recently</td><td>Flash Sales buyers get education, not another pitch</td><td>Flash Sales suppression protects the new-customer glow</td></tr>
+<tr><td>Purchased recently</td><td>Exit recovery for the purchased cart; assess later offers separately</td><td>Post-purchase education and service need a separate purpose, appropriate channel permission, current order state, and suppression checks</td></tr>
 <tr><td>Refund or return open</td><td>No flash sales promos mid-case; resume after resolution</td><td>Service-active flash sales shoppers reject promos</td></tr>
-<tr><td>Repeated non-engagement</td><td>Flash Sales sunset policy precedes complaint spikes</td><td>Flash Sales inboxing survives on timely sunsets</td></tr>
+<tr><td>Repeated non-engagement</td><td>Review clicks, orders, bounces, complaints, and permission before reducing frequency or sunsetting</td><td>Non-opens alone do not establish inactivity or predict complaints</td></tr>
 <tr><td>SMS consent present</td><td>Hold flash sales texts to quiet hours and frequency limits</td><td>Flash Sales SMS risk exceeds email per complaint</td></tr>
-<tr><td>Wholesale or B2B account</td><td>Isolate flash sales wholesale comms from retail blasts</td><td>Wholesale flash sales terms forbid retail-style offers</td></tr>
-<tr><td>Free or disposable email domain</td><td>Verify flash sales throwaway addresses pre-journey</td><td>Unverified flash sales addresses poison sender score</td></tr>
+<tr><td>Wholesale or B2B account</td><td>Isolate flash sales wholesale comms from retail blasts</td><td>Apply the account’s actual terms and eligibility; wholesale status alone does not forbid retail offers</td></tr>
+<tr><td>Free email provider or suspected disposable address</td><td>Do not exclude legitimate free-provider addresses; assess invalid or abusive addresses separately</td><td>Provider choice alone does not establish deliverability quality</td></tr>
 <tr><td>Staff and test accounts</td><td>Strip flash sales test data from live journeys</td><td>Internal flash sales activity corrupts program metrics</td></tr>
 <tr><td>Competitor or researcher signals</td><td>Treat flash sales snoops under normal consent policy</td><td>Flash Sales one-offs breed audit gaps</td></tr>
 <tr><td>Legacy list without timestamps</td><td>Re-permission legacy flash sales lists pre-automation</td><td>Timestamp-less flash sales consent is legal exposure</td></tr>
@@ -124,7 +124,7 @@ const apps = [
 <thead><tr><th>Failure</th><th>Prevention</th><th>Cost of getting it wrong</th></tr></thead>
 <tbody>
 <tr><td>Discount in the first touch</td><td>Delay flash sales codes past first intent proof</td><td>Schools flash sales shoppers in low-margin habits</td></tr>
-<tr><td>No purchase suppression</td><td>Flash Sales exits wired to order and checkout events</td><td>Flash Sales mistiming insults fresh buyers</td></tr>
+<tr><td>No purchase suppression</td><td>Exit recovery for the specific cart on confirmed purchase; validate event timing</td><td>Flash Sales mistiming insults fresh buyers</td></tr>
 <tr><td>Consent imported without proof</td><td>Map flash sales consent timestamps and sources</td><td>flash sales compliance gaps surface at audit</td></tr>
 <tr><td>Flows only one operator understands</td><td>Name and exit-map every flash sales journey</td><td>Flash Sales key-person risk on undocumented flows</td></tr>
 <tr><td>Measuring clicks only</td><td>Flash Sales truth in margin not clicks</td><td>flash sales clicks applaud tactics margin hates</td></tr>
@@ -161,7 +161,7 @@ const apps = [
 <div><h3>Omnisend vs Klaviyo for flash sales?</h3><p>Flash Sales speed favors Omnisend for lean crews; flash sales depth favors Klaviyo as logic matures. Run the same flash sales journey live on both and compare maintenance hours.</p></div>
 <div><h3>Mailchimp or Klaviyo for flash sales?</h3><p>Flash Sales newsletters suit Mailchimp familiarity; flash sales automation on commerce events suits Klaviyo. Compare official pricing at your flash sales contact tier before choosing.</p></div>
 <div><h3>Do I need a separate SMS tool for flash sales?</h3><p>For early flash sales, bundled SMS is enough; specialists earn their flash sales fee only via measured lift. Validate flash sales opt-ins, quiet hours, and per-message rates beforehand.</p></div>
-<div><h3>How should I suppress audiences in flash sales flows?</h3><p>Guard flash sales with exits for buyers, open cases, refunds, and no-consent profiles, auditable per flash sales flow. In flash sales, a suppression miss hurts worse than a missed blast.</p></div>
+<div><h3>How should I suppress audiences in flash sales flows?</h3><p>Exit cart recovery when that cart is purchased. Evaluate later promotions separately against channel permission, current order and service state, and suppression rules. Post-purchase education and service need their own purpose and eligibility; a purchase does not authorize every channel.</p></div>
 <div><h3>What does flash sales email cost?</h3><p>Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your flash sales campaigns consume. Because providers revise plans frequently, check official pricing pages and build an eighteen-month flash sales total — peak season included — before you commit.</p></div>
 <div><h3>Which app should a lean team pilot first for flash sales?</h3><p>For flash sales, choose whatever the team masters in a fortnight — native email for plain flash sales sends, a lean ESP once flash sales branching matters. A finished flash sales pilot beats a stalled grand plan.</p></div>
 <div><h3>How do I measure flash sales email results?</h3><p>Measure flash sales on contribution, not vanity sends: margin per send, repeat purchase, unsubscribes, complaints, and support load alongside attributed revenue, with a holdout cohort proving the flash sales journeys caused the lift.</p></div>
@@ -177,7 +177,7 @@ const apps = [
 {"@type": "Question", "name": "Omnisend vs Klaviyo for flash sales?", "acceptedAnswer": {"@type": "Answer", "text": "Flash Sales speed favors Omnisend for lean crews; flash sales depth favors Klaviyo as logic matures. Run the same flash sales journey live on both and compare maintenance hours."}},
 {"@type": "Question", "name": "Mailchimp or Klaviyo for flash sales?", "acceptedAnswer": {"@type": "Answer", "text": "Flash Sales newsletters suit Mailchimp familiarity; flash sales automation on commerce events suits Klaviyo. Compare official pricing at your flash sales contact tier before choosing."}},
 {"@type": "Question", "name": "Do I need a separate SMS tool for flash sales?", "acceptedAnswer": {"@type": "Answer", "text": "For early flash sales, bundled SMS is enough; specialists earn their flash sales fee only via measured lift. Validate flash sales opt-ins, quiet hours, and per-message rates beforehand."}},
-{"@type": "Question", "name": "How should I suppress audiences in flash sales flows?", "acceptedAnswer": {"@type": "Answer", "text": "Guard flash sales with exits for buyers, open cases, refunds, and no-consent profiles, auditable per flash sales flow. In flash sales, a suppression miss hurts worse than a missed blast."}},
+{"@type": "Question", "name": "How should I suppress audiences in flash sales flows?", "acceptedAnswer": {"@type": "Answer", "text": "Exit cart recovery when that cart is purchased. Evaluate later promotions separately against channel permission, current order and service state, and suppression rules. Post-purchase education and service need their own purpose and eligibility; a purchase does not authorize every channel."}},
 {"@type": "Question", "name": "What does flash sales email cost?", "acceptedAnswer": {"@type": "Answer", "text": "Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your flash sales campaigns consume. Because providers revise plans frequently, check official pricing pages and build an eighteen-month flash sales total — peak season included — before you commit."}},
 {"@type": "Question", "name": "Which app should a lean team pilot first for flash sales?", "acceptedAnswer": {"@type": "Answer", "text": "For flash sales, choose whatever the team masters in a fortnight — native email for plain flash sales sends, a lean ESP once flash sales branching matters. A finished flash sales pilot beats a stalled grand plan."}},
 {"@type": "Question", "name": "How do I measure flash sales email results?", "acceptedAnswer": {"@type": "Answer", "text": "Measure flash sales on contribution, not vanity sends: margin per send, repeat purchase, unsubscribes, complaints, and support load alongside attributed revenue, with a holdout cohort proving the flash sales journeys caused the lift."}},
