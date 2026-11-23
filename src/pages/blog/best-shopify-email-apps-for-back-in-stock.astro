@@ -67,8 +67,9 @@ const apps = [
 <a href="/use-cases/back-in-stock">back-in-stock guide
 </a>.
 </p>
+<h2>Variant availability before dispatch</h2><p>Use the requested variant and fulfillment location, not a product-wide stock total. Shopify distinguishes available stock from committed and unavailable units; on-hand or incoming quantities alone do not establish sellable stock. Recheck availability and purchase state before dispatch, deduplicate repeated restock events, and pause queued alerts when stock disappears. A notification does not reserve inventory or guarantee availability when the shopper opens it. Keep the requested alert permission separate from general marketing enrollment.</p><p><a href="https://help.shopify.com/en/manual/inventory-and-locations/fundamentals/inventory-states">Shopify inventory-state definitions</a> explain the stock distinction; the dispatch controls above are proposed checks, not verified capabilities of every shortlisted app.</p>
 <h2 class="mt-14">Consent and purchaser suppression for Back in stock</h2>
-<p>Before launching back in stock automation, prove every app in the stack logs email and SMS consent auditably, with purchase events cutting promotional follow-up the moment checkout completes. Back In Stock audiences forgive plain creative; they do not forgive promos sent mid-refund or right after checkout.</p>
+<p>Before launching back in stock automation, prove every app in the stack logs email and SMS consent auditably, with purchase-state checks stopping queued promotional follow-up where the integration supports cancellation; measure event delay and dispatch races. Back In Stock audiences forgive plain creative; they do not forgive promos sent mid-refund or right after checkout.</p>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Audience state</th><th>Required handling</th><th>Why it matters</th></tr></thead>
 <tbody>
@@ -86,7 +87,7 @@ const apps = [
 <tr><td>Legacy list without timestamps</td><td>Legacy back in stock contacts re-opt before journeys</td><td>Old back in stock permission without records is a risk</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Margin, app costs, and pricing for Back in stock</h2>
-<p>Back In Stock profit needs the whole ledger: subscription plus overages, SMS credits, capture and template spend, agency retainers, and back in stock discount margin against attributed revenue. When the back in stock stack nears fifteen percent of email-attributed margin, simplify the back in stock setup before tuning it.</p>
+<p>Back In Stock profit needs the whole ledger: subscription plus overages, SMS credits, capture and template spend, agency retainers, and back in stock discount margin against attributed revenue. Set a store-specific cost limit from contribution margin and operating needs; there is no universal fifteen-percent threshold.</p>
 <p>Pricing changes frequently and varies by region, contact volume, and contract term, so check the official pricing pages of every shortlisted app and model an eighteen-month total that includes a peak season. Before banking on free for back in stock, check which free-tier limit — contacts, sends, branching, support — hits your back in stock plan earliest.</p>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Cost component</th><th>What to model</th><th>Common failure</th></tr></thead>

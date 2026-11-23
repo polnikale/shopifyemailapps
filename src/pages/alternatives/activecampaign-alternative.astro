@@ -105,6 +105,10 @@ const faqs = [
           Some merchants should never have left a simpler stack. ActiveCampaign fits hybrid B2B/DTC with sales-assigned follow-up — wholesale inquiries, high-ticket furniture, custom jewelry quotes. Pure DTC with fast replenishment and seasonal winback usually needs a Shopify-first platform, not a CRM with ecommerce plugins. If your sales team lives in deal stages daily, skepticism toward this guide is warranted. If your "pipeline" is empty and your pain is cart recovery, the alternatives below will feel like relief.
         </p>
 
+        <h2>Verify the commerce integration before replacing it</h2>
+        <p>ActiveCampaign documents a Shopify integration that synchronizes order, product, customer, and abandoned-cart data. Its existence does not prove every browse, variant-stock, or replenishment trigger required by a store. Compare the exact event payload and plan requirements with the proposed replacement rather than treating CRM scope as evidence that native commerce sync is absent. See <a href="https://help.activecampaign.com/hc/en-us/articles/360012461899-Data-synced-from-the-ActiveCampaign-Shopify-integration">ActiveCampaign’s documented Shopify data sync</a>.</p>
+        <p>Before cutover, map stable store, customer, variant, and order identifiers; guest-to-customer matching; event timestamps; and refund or cancellation updates. Assign one sender per journey, preserve permission and suppression provenance, and define duplicate-event keys plus replay limits. Rehearse delayed and out-of-order events without enrolling historical imports into live recovery. These are proposed acceptance checks, not observed tests or guaranteed vendor features.</p>
+
         <h2>ActiveCampaign migration checklist for Shopify</h2>
         <p>Run this sequence before disconnecting ActiveCampaign from Shopify. CRM and ecommerce automations need separate audit tracks — do not migrate sales pipelines you still use.</p>
         <ol>

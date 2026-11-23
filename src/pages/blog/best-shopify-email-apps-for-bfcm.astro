@@ -67,8 +67,9 @@ const apps = [
 <a href="/use-cases/black-friday">Black Friday guide
 </a>.
 </p>
+<h2>Offer timing and contribution checks</h2><p>Document the offer expiry time and time zone, customer-local scheduling assumptions, and destination-specific delivery cutoff separately. An offer deadline is not a delivery promise. Check delayed queues and landing pages so a late message cannot advertise an expired offer as available; label any delivery estimate with its actual conditions. Before approving a discount, model net sales after discounts and refunds, product cost, fulfillment, payment fees, message costs, and fixed campaign costs. Attributed revenue alone cannot establish incremental profit.</p>
 <h2 class="mt-14">Consent and purchaser suppression for Bfcm</h2>
-<p>For bfcm, audit consent capture and purchase-event suppression before the first flow goes live — every app must record bfcm opt-ins you can evidence and halt promos at checkout. Bfcm audiences forgive plain creative; they do not forgive promos sent mid-refund or right after checkout.</p>
+<p>For bfcm, audit consent capture and purchase-event suppression before the first flow goes live — record the permission basis for each channel and verify purchase-event latency plus queued-send cancellation rather than assuming an immediate halt at checkout. Bfcm audiences forgive plain creative; they do not forgive promos sent mid-refund or right after checkout.</p>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Audience state</th><th>Required handling</th><th>Why it matters</th></tr></thead>
 <tbody>
@@ -86,7 +87,7 @@ const apps = [
 <tr><td>Legacy list without timestamps</td><td>Re-permission legacy bfcm lists pre-automation</td><td>Timestamp-less bfcm consent is legal exposure</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Margin, app costs, and pricing for Bfcm</h2>
-<p>Judge bfcm on margin, not attribution. A durable bfcm program absorbs subscription, overages, SMS, capture, creative, agency, and discount costs and still pays. Bfcm rule: near fifteen percent stack-to-margin, cut bfcm complexity before chasing gains.</p>
+<p>Judge bfcm on margin, not attribution. A durable bfcm program absorbs subscription, overages, SMS, capture, creative, agency, and discount costs and still pays. Set a store-specific cost limit from contribution margin; there is no universal fifteen-percent rule.</p>
 <p>Pricing changes frequently and varies by region, contact volume, and contract term, so check the official pricing pages of every shortlisted app and model an eighteen-month total that includes a peak season. Before banking on free for bfcm, check which free-tier limit — contacts, sends, branching, support — hits your bfcm plan earliest.</p>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Cost component</th><th>What to model</th><th>Common failure</th></tr></thead>
