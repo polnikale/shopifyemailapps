@@ -72,22 +72,22 @@ const apps = [
 </a>.
 </p>
 <h2 class="mt-14">Consent and purchaser suppression for Memberships</h2>
-<p>Before launching memberships automation, prove every app in the stack logs email and SMS consent auditably, with purchase events cutting promotional follow-up the moment checkout completes. Memberships audiences forgive plain creative; they do not forgive promos sent mid-refund or right after checkout.</p>
+<p>Before launching membership automation, record channel-specific permission and define each journey’s purpose, eligibility, frequency, and suppression. Purchase ends recovery for the purchased cart; separately eligible onboarding, member education, and service messages should follow current access and payment state. Review unresolved cases before unrelated selling.</p>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Audience state</th><th>Required handling</th><th>Why it matters</th></tr></thead>
 <tbody>
-<tr><td>No documented consent</td><td>Memberships marketing stays off; transactional only</td><td>Without memberships consent proof, marketing has no legal footing</td></tr>
+<tr><td>No documented consent</td><td>Hold marketing pending a documented eligibility review; assess necessary service messages separately</td><td>Missing permission records require review under applicable channel rules</td></tr>
 <tr><td>Consented, never purchased</td><td>Lead memberships newcomers with teaching and social proof</td><td>Memberships margin suffers when discounts arrive first</td></tr>
 <tr><td>Active cart, no checkout</td><td>Memberships reminder with product context; discount withheld</td><td>Memberships high-intent window deserves margin discipline</td></tr>
-<tr><td>Purchased recently</td><td>Recent memberships buyers exit promos into onboarding</td><td>Post-checkout memberships pitches trigger regret and opt-outs</td></tr>
+<tr><td>Purchased recently</td><td>Exit recovery for the purchased cart; evaluate onboarding and later marketing separately</td><td>Current member state, purpose, permission, and frequency determine the next message</td></tr>
 <tr><td>Refund or return open</td><td>Memberships selling waits for case resolution</td><td>Memberships tolerance collapses mid-dispute</td></tr>
-<tr><td>Repeated non-engagement</td><td>Remove chronic memberships non-openers pre-complaint</td><td>Shields memberships sender reputation and inboxing</td></tr>
+<tr><td>Repeated non-engagement</td><td>Review sustained inactivity using clicks, purchases, member activity, bounces, and complaints</td><td>Opens alone are an unreliable basis for suppression</td></tr>
 <tr><td>SMS consent present</td><td>Cap memberships SMS cadence within legal quiet windows</td><td>Memberships SMS risk exceeds email per complaint</td></tr>
-<tr><td>Wholesale or B2B account</td><td>Memberships wholesale accounts get dedicated messaging</td><td>B2B memberships mis-sends risk contract breach</td></tr>
-<tr><td>Free or disposable email domain</td><td>Screen memberships free/disposable emails before flows</td><td>Unverified memberships addresses poison sender score</td></tr>
+<tr><td>Wholesale or B2B account</td><td>Memberships wholesale accounts get dedicated messaging</td><td>Check account roles, channel permission, and relevant enrollment terms</td></tr>
+<tr><td>Free or disposable email domain</td><td>Validate address quality and permission; do not block ordinary free email providers</td><td>Invalid addresses and abusive submissions need evidence-based handling</td></tr>
 <tr><td>Staff and test accounts</td><td>Memberships QA profiles excluded from reporting</td><td>Memberships test sends skew attribution reads</td></tr>
-<tr><td>Competitor or researcher signals</td><td>Memberships exceptions stay undocumented-free</td><td>Ad-hoc memberships exceptions break traceability</td></tr>
-<tr><td>Legacy list without timestamps</td><td>Reconfirm memberships consent where timestamps are missing</td><td>Timestamp-less memberships consent is legal exposure</td></tr>
+<tr><td>Competitor or researcher signals</td><td>Record the evidence, reason, owner, and review date for exceptions</td><td>Ad-hoc memberships exceptions break traceability</td></tr>
+<tr><td>Legacy list without timestamps</td><td>Review missing permission evidence before further marketing</td><td>An absent timestamp alone does not establish the applicable legal position</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Margin, app costs, and pricing for Memberships</h2>
 <p>Judge memberships on margin, not attribution. A durable memberships program absorbs subscription, overages, SMS, capture, creative, agency, and discount costs and still pays. Memberships rule: near fifteen percent stack-to-margin, cut memberships complexity before chasing gains.</p>
@@ -105,6 +105,7 @@ const apps = [
 <tr><td>Third-party integrations</td><td>Memberships satellite fees beyond the ESP</td><td>Memberships tool sprawl quietly doubling bills</td></tr>
 <tr><td>Deliverability remediation</td><td>Memberships monitoring, cleaning, advisory spend</td><td>memberships sender damage costing more than tools</td></tr>
 </tbody></table></div>
+<p>Shopify also supports native marketing automations; a compact catalog does not imply manual campaigns only. Membership-state branching still depends on the events and conditions available in the store. Check the <a href="https://help.shopify.com/en/manual/promoting-marketing/create-marketing/shopify-messaging/marketing-automations">official automation guidance</a> and <a href="https://help.shopify.com/en/manual/promoting-marketing/autopilot/email-automations">Autopilot overlap guidance</a> before assigning sender ownership.</p>
 <h2 class="mt-12">Decision table for Memberships</h2>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Situation</th><th>Start with</th><th>Reason</th></tr></thead>
@@ -124,7 +125,7 @@ const apps = [
 <thead><tr><th>Failure</th><th>Prevention</th><th>Cost of getting it wrong</th></tr></thead>
 <tbody>
 <tr><td>Discount in the first touch</td><td>Memberships incentives only after intent signals</td><td>memberships discount-first trains bargain hunting</td></tr>
-<tr><td>No purchase suppression</td><td>Checkout-triggered memberships flow exits</td><td>Memberships mistiming insults fresh buyers</td></tr>
+<tr><td>No purchase suppression</td><td>Exit the purchased cart recovery; reassess other journeys by current member state</td><td>Broad buyer suppression can also block useful onboarding and education</td></tr>
 <tr><td>Consent imported without proof</td><td>Map memberships consent timestamps and sources</td><td>Unproven memberships consent fails audits</td></tr>
 <tr><td>Flows only one operator understands</td><td>Document memberships exits and naming standards</td><td>Single-operator memberships knowledge is fragile</td></tr>
 <tr><td>Measuring clicks only</td><td>memberships measured on kept margin and complaints</td><td>Memberships click-chasing rewards harm</td></tr>
@@ -135,7 +136,7 @@ const apps = [
 <h2 class="mt-12">Implementation order for a memberships program</h2>
 <ol>
 <li>Record memberships permission origins in the ESP before sending.</li>
-<li>Memberships gating: all four commerce events verified live.</li>
+<li>Verify the events used by the journey: enrollment, access, renewal, payment failure, pause, cancellation, and relevant commerce events.</li>
 <li>Write memberships suppression and exits before any memberships flow exists.</li>
 <li>Pilot memberships with one bounded journey plus holdout measurement.</li>
 <li>Memberships month-one review: margin kept, complaints, repeats.</li>
@@ -161,7 +162,7 @@ const apps = [
 <div><h3>Omnisend vs Klaviyo for memberships?</h3><p>For email-first memberships with a dash of SMS, Omnisend is the quicker launch; for memberships segmentation headroom, Klaviyo leads — pilot the same memberships journey twice and score effort.</p></div>
 <div><h3>Mailchimp or Klaviyo for memberships?</h3><p>For memberships, Mailchimp trades on familiarity, Klaviyo on Shopify event fidelity; settle memberships pricing by checking both official pages at your contacts.</p></div>
 <div><h3>Do I need a separate SMS tool for memberships?</h3><p>Hold specialist SMS for memberships until texts demonstrably move memberships numbers; platform-bundled SMS covers the start — with memberships consent, quiet hours, and unit pricing confirmed.</p></div>
-<div><h3>How should I suppress audiences in memberships flows?</h3><p>For memberships, suppress recent buyers, open support or return cases, refunds, and undocumented contacts — with memberships exit rules written beside each flow for audit. Botched memberships suppression costs more than a skipped send.</p></div>
+<div><h3>How should I suppress audiences in memberships flows?</h3><p>Exit recovery for the purchased cart. For other membership journeys, evaluate access and payment state, unresolved cases, message purpose, channel permission, and frequency. Keep necessary service and onboarding messages distinct from promotions, and document each flow’s suppression and exit rules.</p></div>
 <div><h3>What does memberships email cost?</h3><p>Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your memberships campaigns consume. Because providers revise plans frequently, check official pricing pages and build an eighteen-month memberships total — peak season included — before you commit.</p></div>
 <div><h3>Which app should a lean team pilot first for memberships?</h3><p>Open memberships with the tool at full command in fourteen days — simple memberships sends natively, branched memberships on a lean platform. Shipping memberships beats architecting it.</p></div>
 <div><h3>How do I measure memberships email results?</h3><p>For memberships, judge the program on margin per send, repeat purchase, unsubscribe and complaint rates, and support load next to attributed revenue — and keep a holdout group beside recipients so seasonal lift is never misread as program impact.</p></div>
@@ -169,7 +170,7 @@ const apps = [
 <div><h3>When should I graduate from my first app for memberships?</h3><p>For memberships, the graduation signal is operational: unsafe flow edits, unreliable purchase-state segmentation for memberships, or cost forecasts that break as contacts grow. For memberships, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression.</p></div>
 <div><h3>How much discounting is acceptable for memberships?</h3><p>Treat discounts as one lever, not the default. For memberships, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. For memberships, code-dependence across most revenue means the offer story — not the price — needs repair.</p></div>
 <div><h3>Which Shopify data matters most for memberships?</h3><p>Order and refund state, cart and browse events, consent source, and product availability cover most memberships decisions. Test-purchase every memberships event first, confirm it fires correctly, then document memberships field semantics so marketing and engineering agree.</p></div>
-<div><h3>How do I avoid duplicate sends across apps for memberships?</h3><p>Give one platform ownership of each memberships journey, document which app sends what, and share suppression lists where the tools support it. Keep a weekly memberships peak-season audit: pull sample customers, list each memberships message they got, flag overlaps.</p></div>
+<div><h3>How do I avoid duplicate sends across apps for memberships?</h3><p>Assign one sender to each membership journey and inventory native Shopify automations, approved Autopilot tactics where available, the membership platform, and third-party apps. Compare triggers, audiences, and timing before pausing or editing overlaps. Verify supported suppression synchronization rather than assuming shared lists prevent duplicates; audit sample message timelines during peak season.</p></div>
 <div><h3>What should a memberships pilot include?</h3><p>Bound the memberships pilot to one audience and one or two journeys, with written suppression rules, a holdout group, and a thirty-day margin-and-complaints review — and lock memberships success criteria before launch so nobody reinterprets results afterward.</p></div>
 </section>
 <script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",mainEntity:[
@@ -177,7 +178,7 @@ const apps = [
 {"@type": "Question", "name": "Omnisend vs Klaviyo for memberships?", "acceptedAnswer": {"@type": "Answer", "text": "For email-first memberships with a dash of SMS, Omnisend is the quicker launch; for memberships segmentation headroom, Klaviyo leads — pilot the same memberships journey twice and score effort."}},
 {"@type": "Question", "name": "Mailchimp or Klaviyo for memberships?", "acceptedAnswer": {"@type": "Answer", "text": "For memberships, Mailchimp trades on familiarity, Klaviyo on Shopify event fidelity; settle memberships pricing by checking both official pages at your contacts."}},
 {"@type": "Question", "name": "Do I need a separate SMS tool for memberships?", "acceptedAnswer": {"@type": "Answer", "text": "Hold specialist SMS for memberships until texts demonstrably move memberships numbers; platform-bundled SMS covers the start — with memberships consent, quiet hours, and unit pricing confirmed."}},
-{"@type": "Question", "name": "How should I suppress audiences in memberships flows?", "acceptedAnswer": {"@type": "Answer", "text": "For memberships, suppress recent buyers, open support or return cases, refunds, and undocumented contacts — with memberships exit rules written beside each flow for audit. Botched memberships suppression costs more than a skipped send."}},
+{"@type": "Question", "name": "How should I suppress audiences in memberships flows?", "acceptedAnswer": {"@type": "Answer", "text": "Exit recovery for the purchased cart. For other membership journeys, evaluate access and payment state, unresolved cases, message purpose, channel permission, and frequency. Keep necessary service and onboarding messages distinct from promotions, and document each flow’s suppression and exit rules."}},
 {"@type": "Question", "name": "What does memberships email cost?", "acceptedAnswer": {"@type": "Answer", "text": "Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your memberships campaigns consume. Because providers revise plans frequently, check official pricing pages and build an eighteen-month memberships total — peak season included — before you commit."}},
 {"@type": "Question", "name": "Which app should a lean team pilot first for memberships?", "acceptedAnswer": {"@type": "Answer", "text": "Open memberships with the tool at full command in fourteen days — simple memberships sends natively, branched memberships on a lean platform. Shipping memberships beats architecting it."}},
 {"@type": "Question", "name": "How do I measure memberships email results?", "acceptedAnswer": {"@type": "Answer", "text": "For memberships, judge the program on margin per send, repeat purchase, unsubscribe and complaint rates, and support load next to attributed revenue — and keep a holdout group beside recipients so seasonal lift is never misread as program impact."}},
@@ -185,7 +186,7 @@ const apps = [
 {"@type": "Question", "name": "When should I graduate from my first app for memberships?", "acceptedAnswer": {"@type": "Answer", "text": "For memberships, the graduation signal is operational: unsafe flow edits, unreliable purchase-state segmentation for memberships, or cost forecasts that break as contacts grow. For memberships, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression."}},
 {"@type": "Question", "name": "How much discounting is acceptable for memberships?", "acceptedAnswer": {"@type": "Answer", "text": "Treat discounts as one lever, not the default. For memberships, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. For memberships, code-dependence across most revenue means the offer story — not the price — needs repair."}},
 {"@type": "Question", "name": "Which Shopify data matters most for memberships?", "acceptedAnswer": {"@type": "Answer", "text": "Order and refund state, cart and browse events, consent source, and product availability cover most memberships decisions. Test-purchase every memberships event first, confirm it fires correctly, then document memberships field semantics so marketing and engineering agree."}},
-{"@type": "Question", "name": "How do I avoid duplicate sends across apps for memberships?", "acceptedAnswer": {"@type": "Answer", "text": "Give one platform ownership of each memberships journey, document which app sends what, and share suppression lists where the tools support it. Keep a weekly memberships peak-season audit: pull sample customers, list each memberships message they got, flag overlaps."}},
+{"@type": "Question", "name": "How do I avoid duplicate sends across apps for memberships?", "acceptedAnswer": {"@type": "Answer", "text": "Assign one sender to each membership journey and inventory native Shopify automations, approved Autopilot tactics where available, the membership platform, and third-party apps. Compare triggers, audiences, and timing before pausing or editing overlaps. Verify supported suppression synchronization rather than assuming shared lists prevent duplicates; audit sample message timelines during peak season."}},
 {"@type": "Question", "name": "What should a memberships pilot include?", "acceptedAnswer": {"@type": "Answer", "text": "Bound the memberships pilot to one audience and one or two journeys, with written suppression rules, a holdout group, and a thirty-day margin-and-complaints review — and lock memberships success criteria before launch so nobody reinterprets results afterward."}}
 ]})} />
 <h2 class="mt-12">Governance and documentation for memberships</h2>
@@ -203,7 +204,7 @@ const apps = [
 <ol>
 <li>Halt memberships edits ahead of the peak window.</li>
 <li>Memberships QA spans purchase, refund, and case paths.</li>
-<li>Check memberships exits filter buyers and open cases.</li>
+<li>Check that cart recovery exits after the relevant purchase and other journeys respect current access, case status, permission, and frequency.</li>
 <li>Boost memberships control groups before the surge.</li>
 <li>Memberships texting policy written before peak.</li>
 <li>Match memberships plan caps and overage rates to forecast volume.</li>
