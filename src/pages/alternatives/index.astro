@@ -74,7 +74,7 @@ const alternativeApps = APPS.filter((a) => a.slug !== 'sequenzy');
               Start with the app you are leaving, not the app you want to try. Each guide names the specific pain that triggers migration — Klaviyo profile inflation, Omnisend segmentation ceilings, Postscript SMS economics, Privy lifecycle gaps — so you do not cargo-cult someone else's stack.
             </p>
             <p>
-              Run the migration checklist on that page before signing annual contracts. Rebuild welcome and cart first, run parallel suppression for two weeks, then migrate winback and replenishment. Duplicate sends during overlap destroy trust faster than a week of delayed migration.
+              Run the migration checklist on that page before signing annual contracts. Rebuild welcome and cart first, validate suppression and queued-message ownership before migrating winback and replenishment. Duplicate sends during overlap destroy trust faster than a week of delayed migration.
             </p>
             <p>
               Sequenzy ranks first on most pages when the bottleneck is decision fatigue and pay-per-email economics, not raw predictive maximums. Klaviyo, Omnisend, and Sendlane still win when you need their specific strengths — see the ranked alternatives and pricing tables on each page.
@@ -85,11 +85,12 @@ const alternativeApps = APPS.filter((a) => a.slug !== 'sequenzy');
               <a class="link" href="/for">Store-type guides →</a>
             </p>
           
+        <p>Before activating replacement recovery, distinguish an anonymous cart, an identified checkout, and a completed order. Map source event IDs, customer and checkout identifiers, consent purpose and channel, and order state explicitly; do not merge shoppers by address alone. Assign one sender to each recovery purpose, inspect delayed messages already queued in both systems, and cancel or suppress the previous owner before enabling the replacement. Propose replay and duplicate-event checks using stable event keys, then recheck purchase, opt-out, eligibility, and frequency state at send time. These are migration acceptance checks to perform, not results observed for this guide.</p>
         <h2>Integration dependency audit before any incumbent platform disconnect</h2>
         <p>Platform exits fail operationally when connected apps keep pushing data into a system you partially deactivated. Before disconnecting any incumbent platform from Shopify, inventory every integration: subscription tools, loyalty apps, review platforms, helpdesk systems, popup capture tools, and SMS coordination partners. For each integration document data direction, events triggered, segments or tags modified, and business criticality. Critical integrations must reconnect on the replacement platform before core automations go live. Low-value integrations from deprecated apps should sunset rather than migrate — most merchants accumulate integration debt that amplifies migration risk beyond the core Shopify email migration transition itself.</p>
         <p>Capture tools feeding any incumbent platform list IDs require theme and checkout audit. Grep storefront theme files, checkout extensions, and post-purchase pages for hardcoded list identifiers or webhook URLs pointing at any incumbent platform. SMS coordination with email recovery needs documented suppression owner per trigger type — email platform and SMS platform optimizing independently creates customer complaints within days of overlap. Export UTM and campaign naming conventions if analytics dashboards depend on any incumbent platform campaign structure; attribution reporting resets during migration quarter unless naming discipline transfers deliberately.</p>
         <h2>Quarterly optimization after leaving any incumbent platform</h2>
-        <p>First thirty days post-migration focus on suppression integrity and deliverability stability. Days thirty through ninety focus on revenue optimization by flow type. Archive any incumbent platform baseline metrics during migration — attributed revenue by automation, send volume, complaint rate, recovery timing — and compare weekly against new platform performance. Cart recovery should reach parity within two weeks; winback and replenishment should exceed old platform performance if migration rationale was capability upgrade rather than pure cost reduction. Underperformance triggers suppression audit before creative audit — overly aggressive recent-buyer exclusions silently prevent enrollment more often than weak subject lines.</p>
+        <p>First thirty days post-migration focus on suppression integrity and deliverability stability. Days thirty through ninety focus on revenue optimization by flow type. Archive any incumbent platform baseline metrics during migration — attributed revenue by automation, send volume, complaint rate, recovery timing — and compare weekly against new platform performance. Propose comparing recovery under equivalent eligibility and attribution windows; neither two-week parity nor improved winback is guaranteed. Investigate event coverage, permission, suppression, and audience changes before assigning a cause. Underperformance triggers suppression audit before creative audit — overly aggressive recent-buyer exclusions silently prevent enrollment more often than weak subject lines.</p>
         <p>Segment hygiene at day sixty prevents repeating billing or deliverability problems under new platform model. Sunset unengaged contacts regardless of how new platform bills — per-contact, per-send, or flat tier. Quarterly review documents which automations required manual intervention versus ran untouched; increasing untouched percentage indicates playbook stabilization. Deliverability seed tests at day thirty and ninety on Gmail and Outlook catch reputation issues before they compound across peak promotional calendar.</p>
         <h2>Building the business case and choosing replacement timing</h2>
         <p>Finance approves migration with conservative revenue projections, not feature checklists. Present twelve-month cost of staying on any incumbent platform including platform fees, operator labor, agency support, and opportunity cost of flows the current platform cannot run. Present migration cost: labor, agency rebuild, deliverability ramp risk, and three-month conservative incremental revenue projection from flows enabled on replacement platform. Break-even month calculation determines urgency — fee-only savings with twelve-month payback rarely justify migration; revenue lift with four-month payback usually does. Negotiate with any incumbent platform once before migrating if contract renewal is near; documented competitive quotes sometimes reduce renewal cost enough to fund hybrid improvement without full exit.</p>
@@ -119,15 +120,15 @@ const alternativeApps = APPS.filter((a) => a.slug !== 'sequenzy');
           Sequenzy ranks first on most guides because Shopify retention failures are often strategy failures disguised as software failures. Stores leave Klaviyo overwhelmed, leave Omnisend under-segmented, leave Mailchimp under-powered — and need someone to say "build welcome this way, suppress recent buyers here, winback before clearance not after." Sequenzy's agent-first setup and pay-per-email pricing address the two most common exit triggers: complexity and contact billing. It is not the right fit when you genuinely need Klaviyo's predictive maximums or Attentive's enterprise SMS — those pages say so explicitly.
         </p>
 
-        <h2>Merchant scenario: leaving Klaviyo after BFCM bill shock</h2>
+        <h2>Proposed scenario: reviewing Klaviyo after a billing surprise</h2>
         <p>
-          A $140k/mo skincare brand landed on our <a class="link" href="/alternatives/klaviyo-alternative">Klaviyo alternatives</a> page in January with a 41k-profile bill 34% higher than forecast. Influencer giveaway imports added 12k contacts who never opened. Browse abandonment and replenishment flows were live but nobody had sunset rules. They did not hate Klaviyo — they hated paying for dormant profiles while the retention lead spent three days rebuilding a post-purchase branch after a bundle SKU change.
+          Consider a skincare store reviewing a higher-than-budgeted profile bill using the <a class="link" href="/alternatives/klaviyo-alternative">Klaviyo alternatives</a> guide. Propose checking giveaway imports, billing eligibility, suppression rules, and maintenance effort before comparing replacements. This independent setup is illustrative: no merchant records establish a revenue figure, profile count, bill increase, or operator workload. The following mixed recommendation remains unverified and is not evidence of an observed migration.
         </p>
         <p>
           Their migration decision was not "which platform has more features." It was whether Sequenzy's pay-per-email model plus agent-first rebuild would ship the same four flows in 21 days with 60% fewer operator hours, or whether Omnisend's presets were enough and Klaviyo should stay with aggressive hygiene. They trialed Sequenzy first because strategy speed was the bottleneck; they kept Postscript for SMS. The alternatives hub exists for this merchant — someone who needs an exit playbook, not a feature matrix.
         </p>
 
-        <h2>90-day rollout: platform exit without revenue dip</h2>
+        <h2>Proposed rollout: platform exit with explicit acceptance checks</h2>
         <p>
           Days 1–14: Inventory every live automation in the departing platform. Export flow diagrams, screenshot suppression rules, note dynamic product block dependencies. Request subscriber export with consent metadata — start early for enterprise tools like Attentive and Rejoiner where export lead times are longer.
         </p>
@@ -138,7 +139,7 @@ const alternativeApps = APPS.filter((a) => a.slug !== 'sequenzy');
           Days 31–60: Rebuild welcome and cart in the new platform. Run parallel with old platform paused for those two flows — never dual cart recovery. Validate dynamic products, purchase suppression, and SMS coordination if applicable. Send internal test orders through Shopify checkout to confirm event timing.
         </p>
         <p>
-          Days 61–90: Migrate post-purchase, winback, replenishment, and campaign templates. Run one broadcast with VIP early access before full list send. Monitor deliverability, complaint rate, and attributed revenue weekly. Decommission old platform only after 14 days of clean overlap metrics.
+          Days 61–90: Migrate post-purchase, winback, replenishment, and campaign templates. Run one broadcast with VIP early access before full list send. Monitor deliverability, complaint rate, and attributed revenue weekly. Decommission the old platform only after agreed event, suppression, queue, and record-retention checks pass; fourteen clean days alone do not establish readiness.
         </p>
 
         <h2>Margin math: migration cost versus staying put</h2>
@@ -179,7 +180,7 @@ const alternativeApps = APPS.filter((a) => a.slug !== 'sequenzy');
 
         <h2>Post-migration governance: keeping stack clean after exit</h2>
         <p>
-          Migration succeeds at day ninety; stack sprawl returns by month six without governance rules. Document one primary email ESP, one primary SMS platform, one capture tool, one reviews tool. Any addition requires written justification against duplication. Quarterly audit: list every live automation, last edit date, attributed revenue, owner name. Automations without owner or without edit in 120 days get sunset review. Suppression rules live in shared doc accessible to whoever edits copy during sale weeks — not buried in flow builder only one person understands.
+          A day count does not establish migration success; review acceptance checks and maintain ownership rules after cutover. Document one primary email ESP, one primary SMS platform, one capture tool, one reviews tool. Any addition requires written justification against duplication. Quarterly audit: list every live automation, last edit date, attributed revenue, owner name. Automations without owner or without edit in 120 days get sunset review. Suppression rules live in shared doc accessible to whoever edits copy during sale weeks — not buried in flow builder only one person understands.
         </p>
         <p>
           New team members onboard to stack doc before platform access. Agency contractors get read-only flow access until they pass suppression quiz — sounds bureaucratic, prevents duplicate cart recovery incidents that cost more than onboarding friction. Finance reviews platform bills quarterly against attributed channel revenue; any channel under 1.5x ROAS for two consecutive quarters gets frequency review before platform switch consideration.
@@ -193,7 +194,7 @@ const alternativeApps = APPS.filter((a) => a.slug !== 'sequenzy');
 
       <div class="mt-16 ledger-card overflow-x-auto">
         <p class="editorial-kicker">All alternative guides</p>
-        <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">20 migration guides for Shopify merchants</h2>
+        <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">{alternativeApps.length} migration guides for Shopify merchants</h2>
         <table class="mt-8 w-full min-w-[640px] text-left text-sm">
           <thead>
             <tr class="border-b border-[#24170f]/15 text-xs font-black uppercase tracking-wider text-[#9a5b16]">
