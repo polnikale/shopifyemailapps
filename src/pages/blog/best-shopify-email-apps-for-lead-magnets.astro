@@ -72,22 +72,22 @@ const apps = [
 </a>.
 </p>
 <h2 class="mt-14">Consent and purchaser suppression for Lead magnets</h2>
-<p>For lead magnets, audit consent capture and purchase-event suppression before the first flow goes live — every app must record lead magnets opt-ins you can evidence and halt promos at checkout. In lead magnets, mistimed sends after purchases, refunds, or support cases destroy channel value quicker than any creative miss.</p>
+<p>Before launching lead magnets automation, document permission for each channel and test purchase exits for the specific cart or checkout being recovered. Assess post-purchase education, service messages, and later offers separately by purpose, channel permission, current order or case state, frequency, and suppression. A purchase does not end every customer journey.</p>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Audience state</th><th>Required handling</th><th>Why it matters</th></tr></thead>
 <tbody>
-<tr><td>No documented consent</td><td>Lead Magnets marketing stays off; transactional only</td><td>Without lead magnets consent proof, marketing has no legal footing</td></tr>
+<tr><td>No documented consent</td><td>Hold marketing while channel permission is unverified; assess necessary service messages separately</td><td>A service message must not become a route around marketing preferences</td></tr>
 <tr><td>Consented, never purchased</td><td>Open lead magnets with guidance and proof, not discounts</td><td>First-touch lead magnets codes create discount dependence</td></tr>
 <tr><td>Active cart, no checkout</td><td>Remind lead magnets carts with context first, no instant code</td><td>Guards lead magnets margin while intent peaks</td></tr>
-<tr><td>Purchased recently</td><td>Recent lead magnets buyers exit promos into onboarding</td><td>Keeps lead magnets buyers from instant list fatigue</td></tr>
-<tr><td>Refund or return open</td><td>Lead Magnets selling waits for case resolution</td><td>Open lead magnets cases reset what the shopper tolerates</td></tr>
-<tr><td>Repeated non-engagement</td><td>Prune unengaged lead magnets profiles early</td><td>Lead Magnets inboxing survives on timely sunsets</td></tr>
+<tr><td>Purchased recently</td><td>Exit recovery for the purchased cart or checkout; assess education and later offers separately</td><td>Use message purpose, channel permission, current state, and suppression before each send</td></tr>
+<tr><td>Refund or return open</td><td>Pause conflicting offers while the case is open; keep relevant service updates separate</td><td>Resolution alone does not restore marketing permission or override other suppressions</td></tr>
+<tr><td>Repeated non-engagement</td><td>Use clicks, purchases, site activity where available, bounces, and complaints over a defined window</td><td>Do not sunset a customer solely because tracked opens are absent</td></tr>
 <tr><td>SMS consent present</td><td>Cap lead magnets SMS cadence within legal quiet windows</td><td>One lead magnets SMS complaint outweighs many email ones</td></tr>
-<tr><td>Wholesale or B2B account</td><td>Send lead magnets B2B accounts down their own track</td><td>Lead Magnets retail promos can violate B2B terms</td></tr>
-<tr><td>Free or disposable email domain</td><td>Verify lead magnets throwaway addresses pre-journey</td><td>Low-grade lead magnets signups drag deliverability</td></tr>
+<tr><td>Wholesale or B2B account</td><td>Route by actual account needs, channel permission, and applicable agreed terms</td><td>B2B status alone does not establish a contract or ban retail offers</td></tr>
+<tr><td>Free or disposable email domain</td><td>Accept valid free-provider addresses; investigate disposable or suspicious signups using evidence</td><td>A free mailbox is not proof of abuse; verification must be proportionate</td></tr>
 <tr><td>Staff and test accounts</td><td>Lead Magnets internal accounts never enter production</td><td>Internal lead magnets activity corrupts program metrics</td></tr>
 <tr><td>Competitor or researcher signals</td><td>No bespoke lead magnets track for competitor signals</td><td>Lead Magnets consistency beats clever carve-outs</td></tr>
-<tr><td>Legacy list without timestamps</td><td>Legacy lead magnets contacts re-opt before journeys</td><td>Old lead magnets permission without records is a risk</td></tr>
+<tr><td>Legacy list without timestamps</td><td>Review available source and permission evidence; hold unverified marketing imports</td><td>A missing timestamp alone does not prove permission absent or justify an unsolicited re-permission send</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Margin, app costs, and pricing for Lead magnets</h2>
 <p>Lead Magnets profit needs the whole ledger: subscription plus overages, SMS credits, capture and template spend, agency retainers, and lead magnets discount margin against attributed revenue. If lead magnets tooling eats toward fifteen percent of attributed margin, reduce lead magnets scope before optimizing flows.</p>
@@ -124,7 +124,7 @@ const apps = [
 <thead><tr><th>Failure</th><th>Prevention</th><th>Cost of getting it wrong</th></tr></thead>
 <tbody>
 <tr><td>Discount in the first touch</td><td>Withhold lead magnets offers until intent shows</td><td>Schools lead magnets shoppers in low-margin habits</td></tr>
-<tr><td>No purchase suppression</td><td>Lead Magnets exits wired to order and checkout events</td><td>Lead Magnets mistiming insults fresh buyers</td></tr>
+<tr><td>No purchase suppression</td><td>Exit recovery for the purchased cart or checkout; assess other journeys separately</td><td>Lead Magnets mistiming insults fresh buyers</td></tr>
 <tr><td>Consent imported without proof</td><td>Map lead magnets consent timestamps and sources</td><td>Unproven lead magnets consent fails audits</td></tr>
 <tr><td>Flows only one operator understands</td><td>lead magnets conventions written for successors</td><td>lead magnets changes gamble without docs</td></tr>
 <tr><td>Measuring clicks only</td><td>Score lead magnets on profit, returns, grievances</td><td>Lead Magnets click-chasing rewards harm</td></tr>
@@ -161,7 +161,7 @@ const apps = [
 <div><h3>Omnisend vs Klaviyo for lead magnets?</h3><p>For lead magnets, Omnisend ships email-first lead magnets plus light SMS fastest for small teams; Klaviyo counters with deeper lead magnets segmentation — pilot one genuine lead magnets journey on each and weigh upkeep, not checklists.</p></div>
 <div><h3>Mailchimp or Klaviyo for lead magnets?</h3><p>For lead magnets, Mailchimp trades on familiarity, Klaviyo on Shopify event fidelity; settle lead magnets pricing by checking both official pages at your contacts.</p></div>
 <div><h3>Do I need a separate SMS tool for lead magnets?</h3><p>For early lead magnets, bundled SMS is enough; specialists earn their lead magnets fee only via measured lift. Validate lead magnets opt-ins, quiet hours, and per-message rates beforehand.</p></div>
-<div><h3>How should I suppress audiences in lead magnets flows?</h3><p>Lead Magnets suppression: fresh purchasers, active cases, refunded orders, and consent gaps all exit. Document lead magnets exits per journey; lead magnets suppression errors dwarf missed-campaign cost.</p></div>
+<div><h3>How should I suppress audiences in lead magnets flows?</h3><p>For lead magnets, exit recovery for the specific purchased cart or checkout. Assess post-purchase education, service, and later offers separately by purpose, channel permission, current order or case state, frequency, and suppression. Pause conflicting promotions during unresolved cases; resolution does not restore permission. Document and test each journey’s eligibility before sending.</p></div>
 <div><h3>What does lead magnets email cost?</h3><p>Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your lead magnets campaigns consume. Plans and limits shift often, so check the official pricing pages for your lead magnets shortlist and model an eighteen-month total before committing.</p></div>
 <div><h3>Which app should a lean team pilot first for lead magnets?</h3><p>For lead magnets, two-week operability decides: native sends or lean-platform lead magnets branching — completed lead magnets pilots outrank ambitious stalls.</p></div>
 <div><h3>How do I measure lead magnets email results?</h3><p>Measure lead magnets on contribution, not vanity sends: margin per send, repeat purchase, unsubscribes, complaints, and support load alongside attributed revenue, with a holdout cohort proving the lead magnets journeys caused the lift.</p></div>
@@ -177,7 +177,7 @@ const apps = [
 {"@type": "Question", "name": "Omnisend vs Klaviyo for lead magnets?", "acceptedAnswer": {"@type": "Answer", "text": "For lead magnets, Omnisend ships email-first lead magnets plus light SMS fastest for small teams; Klaviyo counters with deeper lead magnets segmentation — pilot one genuine lead magnets journey on each and weigh upkeep, not checklists."}},
 {"@type": "Question", "name": "Mailchimp or Klaviyo for lead magnets?", "acceptedAnswer": {"@type": "Answer", "text": "For lead magnets, Mailchimp trades on familiarity, Klaviyo on Shopify event fidelity; settle lead magnets pricing by checking both official pages at your contacts."}},
 {"@type": "Question", "name": "Do I need a separate SMS tool for lead magnets?", "acceptedAnswer": {"@type": "Answer", "text": "For early lead magnets, bundled SMS is enough; specialists earn their lead magnets fee only via measured lift. Validate lead magnets opt-ins, quiet hours, and per-message rates beforehand."}},
-{"@type": "Question", "name": "How should I suppress audiences in lead magnets flows?", "acceptedAnswer": {"@type": "Answer", "text": "Lead Magnets suppression: fresh purchasers, active cases, refunded orders, and consent gaps all exit. Document lead magnets exits per journey; lead magnets suppression errors dwarf missed-campaign cost."}},
+{"@type": "Question", "name": "How should I suppress audiences in lead magnets flows?", "acceptedAnswer": {"@type": "Answer", "text": "For lead magnets, exit recovery for the specific purchased cart or checkout. Assess post-purchase education, service, and later offers separately by purpose, channel permission, current order or case state, frequency, and suppression. Pause conflicting promotions during unresolved cases; resolution does not restore permission. Document and test each journey’s eligibility before sending."}},
 {"@type": "Question", "name": "What does lead magnets email cost?", "acceptedAnswer": {"@type": "Answer", "text": "Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your lead magnets campaigns consume. Plans and limits shift often, so check the official pricing pages for your lead magnets shortlist and model an eighteen-month total before committing."}},
 {"@type": "Question", "name": "Which app should a lean team pilot first for lead magnets?", "acceptedAnswer": {"@type": "Answer", "text": "For lead magnets, two-week operability decides: native sends or lean-platform lead magnets branching — completed lead magnets pilots outrank ambitious stalls."}},
 {"@type": "Question", "name": "How do I measure lead magnets email results?", "acceptedAnswer": {"@type": "Answer", "text": "Measure lead magnets on contribution, not vanity sends: margin per send, repeat purchase, unsubscribes, complaints, and support load alongside attributed revenue, with a holdout cohort proving the lead magnets journeys caused the lift."}},
@@ -203,7 +203,7 @@ const apps = [
 <ol>
 <li>Lock lead magnets flow edits a full fortnight before peak.</li>
 <li>Exercise each lead magnets flow with live purchase, refund, support tests.</li>
-<li>Lead Magnets guardrails must shed fresh buyers.</li>
+<li>Check purchased-cart recovery exits and case-specific offer pauses; assess education and service separately.</li>
 <li>Boost lead magnets control groups before the surge.</li>
 <li>Set lead magnets SMS boundaries ahead of volume.</li>
 <li>Price lead magnets peaks against plan ceilings early.</li>
