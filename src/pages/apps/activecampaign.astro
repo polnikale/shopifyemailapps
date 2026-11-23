@@ -63,7 +63,7 @@ const faqs = [
         ActiveCampaign is what happens when Shopify ecommerce overlaps with sales follow-up — high-ticket furniture quotes, wholesale inquiries, B2B portal orders, or consultative beauty routines requiring human touch. Powerful conditional automations, built-in CRM pipelines, lead scoring, and site tracking live in one platform. Pure catalog DTC without sales motion usually overpays for complexity Sequenzy or Klaviyo handles with less operator burden.
       </p>
       <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
-        We tested ActiveCampaign on a $320 AOV furniture store with quote requests, a hybrid wholesale Shopify shop, and a standard apparel DTC that should have chosen Omnisend. Rating: ★ {app.rating}. Automation depth: {app.automationDepth}.
+        The scenarios below propose checks for furniture quote requests, hybrid wholesale operations and standard apparel DTC. They are not documented merchant tests. Ratings and capability labels are editorial inputs requiring separate substantiation: ★ {app.rating}; automation depth {app.automationDepth}.
       </p>
       <div class="mt-9 flex flex-wrap gap-3">
         <a class="btn btn-primary" href="/apps/klaviyo">Klaviyo review</a>
@@ -111,7 +111,7 @@ const faqs = [
         <strong>Gaps vs Klaviyo/Sequenzy:</strong> Browse abandonment less native — requires site tracking discipline. No predictive CLV out of box. Product recommendation blocks less polished for dynamic catalog email. Revenue attribution by flow less ecommerce-granular. Implementation is operator-heavy — no guided ecommerce playbook like Sequenzy or Omnisend prebuilds.
       </p>
       <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-        <strong>Maintenance warning:</strong> Automations become spaghetti without documentation. We audited a furniture store with 47 active automations — 12 duplicated cart logic from three migrations, 8 never triggered in 90 days. ActiveCampaign power requires governance or it becomes technical debt.
+        <strong>Maintenance warning:</strong> Automations become spaghetti without documentation. As a proposed audit, inventory active automations, identify duplicate cart logic left by prior migrations and investigate flows with no eligible enrollments. Record findings from the merchant’s actual account; no measured automation counts are established here.
       </p>
     </div>
 
@@ -139,7 +139,7 @@ const faqs = [
         <strong>Scenario:</strong> Custom furniture; $2,800 average quote. Customer submits fabric and dimension form. <strong>ActiveCampaign setup:</strong> Create deal in "Quote sent" stage; automation sends swatch guide; task assigned to sales rep at 48 hours no reply; move to "Negotiation" on rep manual update; Shopify order tag closes deal.
       </p>
       <p>
-        <strong>Result:</strong> 22% quote-to-order conversion vs 14% prior spreadsheet tracking. CRM visibility justified platform for this merchant — Klaviyo could not replicate pipeline without custom ops.
+        <strong>Validation:</strong> Proposed check: compare quote-to-order conversion for equivalent eligible leads with a defined baseline or holdout. Record rep effort and verify form-to-deal-to-order linkage before judging value; no conversion uplift was measured here.
       </p>
 
       <h3 class="font-serif text-2xl font-black text-[#24170f]">2. High-AOV cart abandonment — sales alert plus email</h3>
@@ -147,7 +147,7 @@ const faqs = [
         <strong>Scenario:</strong> Jewelry store; $890 cart abandoned. <strong>ActiveCampaign setup:</strong> Email sequence plus internal notification to sales if cart value exceeds $500 and contact has open deal or prior purchase over $400.
       </p>
       <p>
-        <strong>Result:</strong> 31% recovery when sales called within 4 hours; 9% email-only path. Human touch plus automation — ActiveCampaign sweet spot.
+        <strong>Validation:</strong> Proposed check: compare sales-assisted and email-only recovery using comparable eligible carts and a predeclared observation window. Include rep labor and current permission checks; no recovery rates were measured here.
       </p>
 
       <h3 class="font-serif text-2xl font-black text-[#24170f]">3. Wholesale reorder nudge — net-30 account lapsing</h3>
@@ -155,7 +155,7 @@ const faqs = [
         <strong>Scenario:</strong> Hybrid merchant; B2B buyer last ordered 75 days ago, typical cycle 45 days. <strong>ActiveCampaign setup:</strong> Segment on wholesale tag plus days since order; email rep and buyer; create follow-up task.
       </p>
       <p>
-        <strong>Result:</strong> 41% of nudged accounts reordered within 14 days. DTC winback template would miss rep coordination requirement.
+        <strong>Validation:</strong> Proposed check: measure incremental reorder contribution against an eligible control, recording rep follow-up and normal reorder timing. No observed reorder percentage or guaranteed fourteen-day outcome is established here.
       </p>
 
       <h3 class="font-serif text-2xl font-black text-[#24170f]">4. Standard apparel welcome — overbuilt failure case</h3>
@@ -209,7 +209,7 @@ const faqs = [
         Maintain an automation registry: name, trigger, owner, last reviewed date. Quarterly audit delete duplicates and never-triggered flows. CRM stages must match how sales actually works — empty stages mean you bought CRM theater.
       </p>
       <p>
-        Separate DTC and wholesale automations visually in naming convention. Tag collision between motions causes embarrassing emails — wholesale net-30 buyer should not get DTC 20% off winback. Shopify tags are source of truth; ActiveCampaign segments derive from them, not vice versa.
+        Separate DTC and wholesale automations visually in naming convention. Tag collision between motions causes embarrassing emails — wholesale net-30 buyer should not get DTC 20% off winback. Choose an authoritative system for each field and document sync direction, conflict resolution and stable customer identity. Tags can support segmentation but do not replace purpose-specific permission evidence. Assign one owner and active queue per trigger; check current order and permission state before delivery and deduplicate webhook retries and historical replays using persisted event keys.
       </p>
       <p>
         If CRM adoption fails after 90 days, migrate ecommerce flows to Sequenzy and downgrade ActiveCampaign to marketing-only tier or exit entirely. Sunk cost in configuration is smaller than ongoing per-contact waste.
@@ -267,7 +267,7 @@ const faqs = [
     <div class="prose-shopify mb-12">
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Margin math: ActiveCampaign hybrid sales plus email ROI</h2>
       <p>
-        Apex: ActiveCampaign ≈ $149–299/mo at contact tier. High-value cart recovery: 40 abandons over $500 monthly, 8 converted via sales outreach at $520 avg = $4,160 revenue, ~$2,080 gross profit at 50% margin. DTC email recovery adds 15 orders at $95 = $1,425. Combined gross ~$3,505/mo vs $299 tool — strong if sales team closes.
+        Apex: ActiveCampaign ≈ $149–299/mo at contact tier. High-value cart recovery: 40 abandons over $500 monthly, 8 converted via sales outreach at $520 avg = $4,160 revenue, ~$2,080 gross profit at 50% margin. DTC email recovery adds 15 orders at $95 = $1,425 revenue. If the same illustrative 50% gross margin applies, that contributes $712.50 gross profit, bringing combined gross profit to $2,792.50 before platform fees, sales labor, discounts and other costs. These assumed recoveries do not establish incremental contribution; compare against an eligible control before judging ROI.
       </p>
       <p>
         Failure mode: sales tasks created, 20% actioned — ROI collapses. Opportunity cost of ignored leads estimated $2k/mo. Per-contact pricing at 18k contacts pushes $400+ — DTC-only subset may be cheaper on Sequenzy pay-per-email while ActiveCampaign handles B2B cohort only via list split.
