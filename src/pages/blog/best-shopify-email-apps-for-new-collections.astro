@@ -68,22 +68,22 @@ const apps = [
 </a>.
 </p>
 <h2 class="mt-14">Consent and purchaser suppression for New collections</h2>
-<p>New Collections readiness starts with provable consent records and instant post-checkout suppression across each app running new collections sends. New Collections audiences forgive plain creative; they do not forgive promos sent mid-refund or right after checkout.</p>
+<p>Collection readiness requires documented permission for the specific purpose and channel, plus current order, complaint, unsubscribe, bounce, and service-case state at dispatch. Purchase exits cart recovery; separately eligible collection education, care, and service can continue. Review promotion timing around a purchase or open case rather than suppressing every journey.</p>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Audience state</th><th>Required handling</th><th>Why it matters</th></tr></thead>
 <tbody>
-<tr><td>No documented consent</td><td>Hold all new collections marketing; transactional only</td><td>New Collections consent is the legal basis of every send</td></tr>
-<tr><td>Consented, never purchased</td><td>First new collections touches teach and reassure before selling</td><td>First-touch new collections codes create discount dependence</td></tr>
-<tr><td>Active cart, no checkout</td><td>New Collections cart reminder first; earn the discount decision</td><td>Margin-safe new collections recovery at peak intent</td></tr>
-<tr><td>Purchased recently</td><td>Recent new collections buyers exit promos into onboarding</td><td>Spares new collections buyers remorse and unsubscribes</td></tr>
-<tr><td>Refund or return open</td><td>No new collections promos mid-case; resume after resolution</td><td>New Collections tolerance collapses mid-dispute</td></tr>
-<tr><td>Repeated non-engagement</td><td>Prune unengaged new collections profiles early</td><td>New Collections deliverability depends on pruning</td></tr>
-<tr><td>SMS consent present</td><td>Hold new collections texts to quiet hours and frequency limits</td><td>One new collections SMS complaint outweighs many email ones</td></tr>
-<tr><td>Wholesale or B2B account</td><td>New Collections wholesale accounts get dedicated messaging</td><td>Wholesale new collections terms forbid retail-style offers</td></tr>
-<tr><td>Free or disposable email domain</td><td>Verify new collections throwaway addresses pre-journey</td><td>New Collections list quality decides placement</td></tr>
+<tr><td>No documented consent</td><td>Hold collection marketing without documented eligibility; assess necessary service messages separately</td><td>An order or email address alone does not establish permission for collection marketing</td></tr>
+<tr><td>Consented, never purchased</td><td>Use collection education for eligible subscribers; test incentives against margin</td><td>Discount dependence is a risk to test, not an observed outcome here</td></tr>
+<tr><td>Active cart, no checkout</td><td>Check current cart, purchase state, permission, and frequency before recovery</td><td>A cart event alone does not authorize a reminder</td></tr>
+<tr><td>Purchased recently</td><td>Exit cart recovery on purchase; assess launch follow-up and onboarding separately</td><td>Avoids obsolete recovery while retaining eligible product education</td></tr>
+<tr><td>Refund or return open</td><td>Pause conflicting promotions during a case; keep necessary service available</td><td>Resolution does not restore withdrawn permission or clear other suppressions</td></tr>
+<tr><td>Repeated non-engagement</td><td>Review clicks, purchases, delivery, and recency before a documented sunset policy</td><td>Non-opening alone does not prove inactivity or invalid permission</td></tr>
+<tr><td>SMS consent present</td><td>Verify SMS-specific permission, local quiet hours, opt-outs, and cross-channel caps</td><td>Email permission does not establish SMS permission</td></tr>
+<tr><td>Wholesale or B2B account</td><td>New Collections wholesale accounts get dedicated messaging</td><td>Check account terms and recipient eligibility; B2B status is not permission</td></tr>
+<tr><td>Free or disposable email domain</td><td>Check actual delivery and abuse signals; distinguish free providers from disposable addresses</td><td>A free email domain alone is not a suppression reason</td></tr>
 <tr><td>Staff and test accounts</td><td>Keep new collections staff and test profiles out of live sends</td><td>New Collections reporting stays clean without test noise</td></tr>
 <tr><td>Competitor or researcher signals</td><td>No bespoke new collections track for competitor signals</td><td>New Collections one-offs breed audit gaps</td></tr>
-<tr><td>Legacy list without timestamps</td><td>New Collections sends to old lists need fresh opt-in</td><td>New Collections lists without proof invite liability</td></tr>
+<tr><td>Legacy list without timestamps</td><td>Hold uncertain records while checking permission evidence and applicable requirements</td><td>Do not send a re-permission campaign to records ineligible for marketing</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Margin, app costs, and pricing for New collections</h2>
 <p>For new collections, revenue attribution flatters; margin decides. Burden the new collections program with its true load — platform fees, overages, SMS, capture, creative, agency, and new collections discount cost — before calling it profitable. When the new collections stack nears fifteen percent of email-attributed margin, simplify the new collections setup before tuning it.</p>
@@ -120,7 +120,7 @@ const apps = [
 <thead><tr><th>Failure</th><th>Prevention</th><th>Cost of getting it wrong</th></tr></thead>
 <tbody>
 <tr><td>Discount in the first touch</td><td>New Collections incentives only after intent signals</td><td>New Collections first-touch codes cheapen the brand</td></tr>
-<tr><td>No purchase suppression</td><td>New Collections purchase exits on live order events</td><td>New Collections mistiming insults fresh buyers</td></tr>
+<tr><td>No purchase suppression</td><td>Exit cart recovery on purchase; recheck current eligibility before each other journey</td><td>New Collections mistiming insults fresh buyers</td></tr>
 <tr><td>Consent imported without proof</td><td>new collections consent fields mapped before importing</td><td>Unproven new collections consent fails audits</td></tr>
 <tr><td>Flows only one operator understands</td><td>new collections conventions written for successors</td><td>New Collections edits hinge on one memory</td></tr>
 <tr><td>Measuring clicks only</td><td>Score new collections on profit, returns, grievances</td><td>Click-only new collections metrics bless aggression</td></tr>
@@ -144,12 +144,12 @@ const apps = [
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Metric</th><th>Definition</th><th>Review cadence</th></tr></thead>
 <tbody>
-<tr><td>Margin per send</td><td>New Collections revenue less discounts, send and platform cost</td><td>Monthly</td></tr>
-<tr><td>Repeat purchase rate</td><td>new collections-driven second purchases per quarter</td><td>Monthly</td></tr>
+<tr><td>Margin per send</td><td>Attributed collection revenue less discounts, send and platform cost; a partial contribution metric, not causal profit</td><td>Monthly</td></tr>
+<tr><td>Repeat purchase rate</td><td>Second-purchase rate within a defined eligible cohort and follow-up window; attribution alone is not causation</td><td>Monthly</td></tr>
 <tr><td>Complaint and unsubscribe rate</td><td>new collections complaint lens on both blasts and flows</td><td>Weekly</td></tr>
 <tr><td>Suppression accuracy</td><td>new collections violation sampling on buyer timelines</td><td>Weekly</td></tr>
 <tr><td>Time to edit safely</td><td>New Collections edit time for a fresh operator</td><td>Quarterly</td></tr>
-<tr><td>Holdout lift</td><td>new collections lift: messaged cohort against control</td><td>Quarterly</td></tr>
+<tr><td>Holdout lift</td><td>Randomized eligible treatment versus holdout difference, with uncertainty and matched follow-up</td><td>Quarterly</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">New collections matchup FAQ</h2>
 <section class="max-w-3xl mx-auto space-y-6">
@@ -157,7 +157,7 @@ const apps = [
 <div><h3>Omnisend vs Klaviyo for new collections?</h3><p>For new collections, Omnisend ships email-first new collections plus light SMS fastest for small teams; Klaviyo counters with deeper new collections segmentation — pilot one genuine new collections journey on each and weigh upkeep, not checklists.</p></div>
 <div><h3>Mailchimp or Klaviyo for new collections?</h3><p>For new collections, Mailchimp trades on familiarity, Klaviyo on Shopify event fidelity; settle new collections pricing by checking both official pages at your contacts.</p></div>
 <div><h3>Do I need a separate SMS tool for new collections?</h3><p>New Collections rarely needs specialist SMS day one; add it when texts measurably beat email on new collections. Vet new collections consent capture, quiet-hour enforcement, and per-text cost first.</p></div>
-<div><h3>How should I suppress audiences in new collections flows?</h3><p>new collections flows must shed recent purchasers, case-active shoppers, refunds, and unconsented profiles, with new collections exit logic visible to any auditor — suppression slips outcost quiet weeks.</p></div>
+<div><h3>How should I suppress audiences in new collections flows?</h3><p>Purchase exits collection cart recovery. For other journeys, recheck purpose and channel permission, current order and case state, unsubscribe, complaint, and bounce suppression at dispatch. Pause conflicting promotions during a case while preserving eligible care, education, and necessary service; resolution never restores withdrawn permission.</p></div>
 <div><h3>What does new collections email cost?</h3><p>Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your new collections campaigns consume. For new collections budgeting, treat any static quote as stale — check official pricing pages and model an eighteen-month total before committing.</p></div>
 <div><h3>Which app should a lean team pilot first for new collections?</h3><p>New Collections pilots succeed on operability: if the crew runs it in two weeks it wins. Keep new collections scope shippable over impressive-but-stuck.</p></div>
 <div><h3>How do I measure new collections email results?</h3><p>For new collections reporting, pair attributed revenue with margin per send, repeat purchase, unsubscribe/complaint rates, and support load — then validate against a new collections holdout so peak-season demand is not credited to the flows.</p></div>
@@ -165,7 +165,7 @@ const apps = [
 <div><h3>When should I graduate from my first app for new collections?</h3><p>For new collections, the graduation signal is operational: unsafe flow edits, unreliable purchase-state segmentation for new collections, or cost forecasts that break as contacts grow. For new collections, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression.</p></div>
 <div><h3>How much discounting is acceptable for new collections?</h3><p>Treat discounts as one lever, not the default. For new collections, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. If most new collections revenue needs a code, the new collections program has a value problem rather than a pricing problem.</p></div>
 <div><h3>Which Shopify data matters most for new collections?</h3><p>Order and refund state, cart and browse events, consent source, and product availability cover most new collections decisions. Before layering new collections branching on events, fire each one in a test purchase and record what every new collections-relevant field means for both teams.</p></div>
-<div><h3>How do I avoid duplicate sends across apps for new collections?</h3><p>Give one platform ownership of each new collections journey, document which app sends what, and share suppression lists where the tools support it. For new collections peak weeks, sample customer timelines weekly and enumerate all new collections sends per profile.</p></div>
+<div><h3>How do I avoid duplicate sends across apps for new collections?</h3><p>Assign one sender to each collection journey, including native automations, and document suppression propagation and queue cancellation. Recheck current state at dispatch and deduplicate retried events by customer, event, and journey. Test purchase and unsubscribe changes during queued delays before launching; sample timelines for overlap.</p></div>
 <div><h3>What should a new collections pilot include?</h3><p>Run new collections as a contained test: one audience, a journey or two, suppression in writing, holdout measurement, and a thirty-day new collections check on margin and complaints against criteria set pre-launch.</p></div>
 </section>
 <script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",mainEntity:[
@@ -173,7 +173,7 @@ const apps = [
 {"@type": "Question", "name": "Omnisend vs Klaviyo for new collections?", "acceptedAnswer": {"@type": "Answer", "text": "For new collections, Omnisend ships email-first new collections plus light SMS fastest for small teams; Klaviyo counters with deeper new collections segmentation — pilot one genuine new collections journey on each and weigh upkeep, not checklists."}},
 {"@type": "Question", "name": "Mailchimp or Klaviyo for new collections?", "acceptedAnswer": {"@type": "Answer", "text": "For new collections, Mailchimp trades on familiarity, Klaviyo on Shopify event fidelity; settle new collections pricing by checking both official pages at your contacts."}},
 {"@type": "Question", "name": "Do I need a separate SMS tool for new collections?", "acceptedAnswer": {"@type": "Answer", "text": "New Collections rarely needs specialist SMS day one; add it when texts measurably beat email on new collections. Vet new collections consent capture, quiet-hour enforcement, and per-text cost first."}},
-{"@type": "Question", "name": "How should I suppress audiences in new collections flows?", "acceptedAnswer": {"@type": "Answer", "text": "new collections flows must shed recent purchasers, case-active shoppers, refunds, and unconsented profiles, with new collections exit logic visible to any auditor — suppression slips outcost quiet weeks."}},
+{"@type": "Question", "name": "How should I suppress audiences in new collections flows?", "acceptedAnswer": {"@type": "Answer", "text": "Purchase exits collection cart recovery. For other journeys, recheck purpose and channel permission, current order and case state, unsubscribe, complaint, and bounce suppression at dispatch. Pause conflicting promotions during a case while preserving eligible care, education, and necessary service; resolution never restores withdrawn permission."}},
 {"@type": "Question", "name": "What does new collections email cost?", "acceptedAnswer": {"@type": "Answer", "text": "Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your new collections campaigns consume. For new collections budgeting, treat any static quote as stale — check official pricing pages and model an eighteen-month total before committing."}},
 {"@type": "Question", "name": "Which app should a lean team pilot first for new collections?", "acceptedAnswer": {"@type": "Answer", "text": "New Collections pilots succeed on operability: if the crew runs it in two weeks it wins. Keep new collections scope shippable over impressive-but-stuck."}},
 {"@type": "Question", "name": "How do I measure new collections email results?", "acceptedAnswer": {"@type": "Answer", "text": "For new collections reporting, pair attributed revenue with margin per send, repeat purchase, unsubscribe/complaint rates, and support load — then validate against a new collections holdout so peak-season demand is not credited to the flows."}},
@@ -181,7 +181,7 @@ const apps = [
 {"@type": "Question", "name": "When should I graduate from my first app for new collections?", "acceptedAnswer": {"@type": "Answer", "text": "For new collections, the graduation signal is operational: unsafe flow edits, unreliable purchase-state segmentation for new collections, or cost forecasts that break as contacts grow. For new collections, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression."}},
 {"@type": "Question", "name": "How much discounting is acceptable for new collections?", "acceptedAnswer": {"@type": "Answer", "text": "Treat discounts as one lever, not the default. For new collections, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. If most new collections revenue needs a code, the new collections program has a value problem rather than a pricing problem."}},
 {"@type": "Question", "name": "Which Shopify data matters most for new collections?", "acceptedAnswer": {"@type": "Answer", "text": "Order and refund state, cart and browse events, consent source, and product availability cover most new collections decisions. Before layering new collections branching on events, fire each one in a test purchase and record what every new collections-relevant field means for both teams."}},
-{"@type": "Question", "name": "How do I avoid duplicate sends across apps for new collections?", "acceptedAnswer": {"@type": "Answer", "text": "Give one platform ownership of each new collections journey, document which app sends what, and share suppression lists where the tools support it. For new collections peak weeks, sample customer timelines weekly and enumerate all new collections sends per profile."}},
+{"@type": "Question", "name": "How do I avoid duplicate sends across apps for new collections?", "acceptedAnswer": {"@type": "Answer", "text": "Assign one sender to each collection journey, including native automations, and document suppression propagation and queue cancellation. Recheck current state at dispatch and deduplicate retried events by customer, event, and journey. Test purchase and unsubscribe changes during queued delays before launching; sample timelines for overlap."}},
 {"@type": "Question", "name": "What should a new collections pilot include?", "acceptedAnswer": {"@type": "Answer", "text": "Run new collections as a contained test: one audience, a journey or two, suppression in writing, holdout measurement, and a thirty-day new collections check on margin and complaints against criteria set pre-launch."}}
 ]})} />
 <h2 class="mt-12">Governance and documentation for new collections</h2>
@@ -199,7 +199,7 @@ const apps = [
 <ol>
 <li>New Collections code-freeze starts fourteen days out.</li>
 <li>For new collections, trial every journey against real order events.</li>
-<li>New Collections guardrails must shed fresh buyers.</li>
+<li>New Collections cart recovery must exit fresh buyers; assess care, education, and service by purpose.</li>
 <li>For new collections, grow control samples ahead of volume.</li>
 <li>Draft new collections SMS quiet-hour and cap rules in advance.</li>
 <li>For new collections, test tier limits against peak projections.</li>
