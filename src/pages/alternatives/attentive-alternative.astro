@@ -21,7 +21,7 @@ const faqs = [
   { question: 'Can small stores use Attentive?', answer: 'Technically yes; economically rare. Attentive fits high-volume DTC with list economics justifying enterprise spend.' },
   { question: 'Export from Attentive?', answer: 'Work with account team for subscriber export and compliance records — plan longer lead time than self-serve tools.' },
   { question: 'Sequenzy vs Attentive?', answer: 'Different categories — Sequenzy email lifecycle; Attentive enterprise SMS/email orchestration. Many leave Attentive SMS cost for Postscript while moving email to Sequenzy.' },
-  { question: 'Migration timeline?', answer: '4–8 weeks typical for enterprise exit — contract notice, number porting, journey rebuild.' },
+  { question: 'Migration timeline?', answer: 'Build the schedule from contract notice, export availability, sender ownership, porting eligibility, journey rebuilds, and approval requirements. Confirm lead times with both providers and include rollback checks; a four- to eight-week estimate is not a completion guarantee.' },
   { question: 'Attentive email module?', answer: 'Some stores use Attentive primarily for SMS — evaluate whether email also moves to Sequenzy or Klaviyo on exit.' },
   { question: 'When to stay on Attentive?', answer: 'Stay with strong ROI on two-tap acquisition, managed creative services in use, and volume that keeps CPM economics favorable.' },
 ];
@@ -84,6 +84,7 @@ const faqs = [
        
 <h2>Attentive migration checklist
 </h2>
+        <p>Before enabling replacement journeys, map Shopify customer IDs, normalized phone numbers, email addresses, and channel-specific permission history. Attentive documents tag collection of product views, cart adds, and purchases; this does not prove the replacement sees the same events. Test anonymous-to-known identity, checkout settings, duplicate and delayed delivery, and current purchase and opt-out status at dispatch. Confirm number-porting eligibility and sender ownership with both providers before setting the cutover date; do not treat a quoted lead time as a guarantee.</p>
        
 <ol>
          
@@ -100,7 +101,7 @@ const faqs = [
 </li>
          
 <li><strong>Plan number porting to Postscript or Klaviyo SMS
-</strong> — 2–4 week lead.
+</strong> — confirm eligibility, required documents, carrier dependencies, and the approved transfer date with both providers before scheduling sends.
 </li>
          
 <li><strong>Stand up Sequenzy or Klaviyo email
@@ -150,7 +151,7 @@ const faqs = [
 </p>
        
 <p>
-          Weeks 9–10: Number port and sender warmup plan. Reduce broadcast volume 50% during port week. Prepare site-wide notice if sender ID changes.
+          Porting phase, after provider approval: verify sender ownership, routing, replies, opt-outs, and scheduled sends. Agree any volume changes with the providers and prepare customer-facing notice if the sender changes. This phase has no fixed week or universal fifty-percent reduction.
        
 </p>
        
@@ -241,16 +242,16 @@ const faqs = [
 <h2>Quarterly optimization after leaving Attentive
 </h2>
        
-<p>First thirty days post-migration focus on suppression integrity and deliverability stability. Days thirty through ninety focus on revenue optimization by flow type. Archive Attentive baseline metrics during migration — attributed revenue by automation, send volume, complaint rate, recovery timing — and compare weekly against new platform performance. Cart recovery should reach parity within two weeks; winback and replenishment should exceed old platform performance if migration rationale was capability upgrade rather than pure cost reduction. Underperformance triggers suppression audit before creative audit — overly aggressive recent-buyer exclusions silently prevent enrollment more often than weak subject lines.
+<p>First thirty days post-migration focus on suppression integrity and deliverability stability. Days thirty through ninety focus on revenue optimization by flow type. Archive Attentive baseline metrics during migration — attributed revenue by automation, send volume, complaint rate, recovery timing — and compare weekly against new platform performance. Set store-specific comparison periods that cover journey delays, seasonality, and sufficient orders. Neither recovery parity within two weeks nor improved winback or replenishment is guaranteed by switching platforms. Underperformance triggers suppression audit before creative audit — overly aggressive recent-buyer exclusions silently prevent enrollment more often than weak subject lines.
 </p>
        
-<p>Segment hygiene at day sixty prevents repeating billing or deliverability problems under new platform model. Sunset unengaged contacts regardless of how new platform bills — per-contact, per-send, or flat tier. Quarterly review documents which automations required manual intervention versus ran untouched; increasing untouched percentage indicates playbook stabilization. Deliverability seed tests at day thirty and ninety on Gmail and Outlook catch reputation issues before they compound across peak promotional calendar.
+<p>Segment hygiene at day sixty prevents repeating billing or deliverability problems under new platform model. Review engagement alongside permission, purchase history, preferences, and active workflow dependencies before changing marketing eligibility; preserve suppression and audit history regardless of billing model. Quarterly review documents which automations required manual intervention versus ran untouched; increasing untouched percentage indicates playbook stabilization. Deliverability seed tests at day thirty and ninety on Gmail and Outlook catch reputation issues before they compound across peak promotional calendar.
 </p>
        
 <h2>Building the business case and choosing replacement timing
 </h2>
        
-<p>Finance approves migration with conservative revenue projections, not feature checklists. Present twelve-month cost of staying on Attentive including platform fees, operator labor, agency support, and opportunity cost of flows the current platform cannot run. Present migration cost: labor, agency rebuild, deliverability ramp risk, and three-month conservative incremental revenue projection from flows enabled on replacement platform. Break-even month calculation determines urgency — fee-only savings with twelve-month payback rarely justify migration; revenue lift with four-month payback usually does. Negotiate with Attentive once before migrating if contract renewal is near; documented competitive quotes sometimes reduce renewal cost enough to fund hybrid improvement without full exit.
+<p>Finance approves migration with conservative revenue projections, not feature checklists. Present twelve-month cost of staying on Attentive including platform fees, operator labor, agency support, and opportunity cost of flows the current platform cannot run. Present migration cost: labor, agency rebuild, deliverability ramp risk, and three-month conservative incremental revenue projection from flows enabled on replacement platform. Calculate payback using documented migration costs and a range of recurring costs and revenue assumptions. Set an acceptable payback period from the store’s budget and risk tolerance rather than a universal four- or twelve-month rule. Negotiate with Attentive once before migrating if contract renewal is near; documented competitive quotes sometimes reduce renewal cost enough to fund hybrid improvement without full exit.
 </p>
        
 <p>Replacement timing should avoid peak revenue weeks — post-BFCM January, post-Valentine March lull, mid-summer for seasonal categories. Never port SMS numbers during highest promotional month. Never run parallel cart recovery through busy sale weekend without named kill-switch owner available in real time. Migration is operational project with revenue risk; schedule it deliberately rather than reacting to invoice frustration with rushed cutover that costs more in duplicate sends and deliverability damage than platform fees ever did.
@@ -272,7 +273,7 @@ const faqs = [
 <p>Platform migration is deliverability event even when sending domain unchanged. New ESP routes mail through different infrastructure with different reputation pools. Ramp plan: days one through seven send only to engaged forty-five-day openers at fifty percent of normal campaign volume; days eight through fourteen expand to ninety-day engaged at seventy-five percent volume; day fifteen onward resume normal segmentation if complaint rate stays below threshold. Cart and transactional automations can run at full volume earlier if enrolled segments are purely behavioral purchase triggers rather than bulk marketing lists — but monitor complaint rate daily regardless.
 </p>
        
-<p>Compliance continuity for SMS migrations requires legal review of exported consent records before first send on new platform. Document opt-in source, timestamp, and keyword for every SMS subscriber. Exclude records with ambiguous consent rather than risk TCPA exposure — losing ten percent of list is cheaper than single class-action exposure. Email marketing consent similarly requires documented source; GDPR and CAN-SPAM both care about provable opt-in even when platforms technically allow import. Archive consent export files seven years minimum. Unsubscribe and preference center links must work before any broadcast — test on mobile devices where eighty percent of Shopify customers read email.
+<p>Compliance continuity for SMS migrations requires legal review of exported consent records before first send on new platform. Document opt-in source, timestamp, and keyword for every SMS subscriber. Keep records with unresolved permission out of marketing sends while the responsible reviewer resolves their status; do not assume a particular list loss or legal outcome. Preserve email permission and unsubscribe history and have the responsible legal reviewer determine applicable requirements, permitted uses, and retention periods. Platform import eligibility alone does not establish permission. Test unsubscribe and preference-center links across the devices used by the store’s customers before enabling broadcasts.
 </p>
        
 <h2>Revenue attribution reset and reporting discipline
@@ -281,7 +282,7 @@ const faqs = [
 <p>Accept attribution reset during migration quarter — comparing new platform attributed revenue against old platform last-quarter numbers is directionally useful but not pixel-perfect. UTM schemas, attribution windows, and click-definition differ across platforms. Build new baseline from week six onward rather than demanding week two matches old platform peak. Track flow-level revenue weekly: welcome, cart, browse, post-purchase, winback, replenishment, campaigns — each should trend independently. If total attributed revenue rises but cart recovery falls, investigate suppression collision before celebrating aggregate number.
 </p>
        
-<p>Finance reporting should separate platform cost as percentage of attributed email revenue monthly — target under three percent for mature DTC, under five percent during growth phase, investigate above seven percent regardless of platform choice. Include operator labor hours in total cost of ownership calculation quarterly. Platform that saves two hundred dollars monthly but adds eight hours maintenance is more expensive than platform costing two hundred more monthly with two hours maintenance. Migration business case validation happens at day ninety with real numbers, not projected numbers from sales demos — update internal ROI model with actuals and decide whether to deepen investment in chosen platform or plan next transition if goals missed.
+<p>Finance reporting should separate platform cost as percentage of attributed email revenue monthly — set a store-specific budget using margins, attribution definitions, and operating costs rather than universal three-, five-, or seven-percent thresholds. Include operator labor hours in total cost of ownership calculation quarterly. For an illustrative comparison, a $200 monthly fee saving with six additional maintenance hours breaks even at about $33.33 per hour before other costs; use the store’s actual labor rate and workload. Migration business case validation happens at day ninety with real numbers, not projected numbers from sales demos — update internal ROI model with actuals and decide whether to deepen investment in chosen platform or plan next transition if goals missed.
 </p>
 </article>
 
