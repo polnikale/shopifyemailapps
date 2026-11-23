@@ -89,19 +89,19 @@ const apps = [
 </a>.
 </p>
 <h2 class="mt-14">Consent and purchaser suppression for Fashion stores</h2>
-<p>Hold the fashion stores launch until consent is documented per app and purchase events suppress fashion stores promos immediately after checkout — both verifiable in an audit. Protect the fashion stores channel first: post-purchase, refund-window, and support-case promos do more damage than dull fashion stores copy.</p>
+<p>Before launch, document marketing eligibility per channel and test that a completed purchase exits recovery for that cart or purchase journey. Post-purchase education and service messages need their own purpose, channel-permission, current-order-state, and suppression checks; a purchase does not exclude every later promotion.</p>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Audience state</th><th>Required handling</th><th>Why it matters</th></tr></thead>
 <tbody>
-<tr><td>No documented consent</td><td>Suppress fashion stores marketing entirely until consent is documented</td><td>Fashion Stores consent is the legal basis of every send</td></tr>
+<tr><td>No documented consent</td><td>Suppress fashion stores marketing entirely until consent is documented</td><td>Document the applicable basis and channel permission before marketing; assess service messages separately</td></tr>
 <tr><td>Consented, never purchased</td><td>Fashion Stores education and proof before any offer</td><td>Premature fashion stores offers teach shoppers to wait</td></tr>
 <tr><td>Active cart, no checkout</td><td>Fashion Stores cart reminder first; earn the discount decision</td><td>Margin-safe fashion stores recovery at peak intent</td></tr>
-<tr><td>Purchased recently</td><td>Suppress fashion stores selling after checkout; educate instead</td><td>Spares fashion stores buyers remorse and unsubscribes</td></tr>
+<tr><td>Purchased recently</td><td>Exit recovery for the completed cart; assess later education and offers under separate eligibility rules</td><td>Spares fashion stores buyers remorse and unsubscribes</td></tr>
 <tr><td>Refund or return open</td><td>No fashion stores promos mid-case; resume after resolution</td><td>Fashion Stores messaging lands badly during open cases</td></tr>
 <tr><td>Repeated non-engagement</td><td>Sunset cold fashion stores contacts before complaints build</td><td>Keeps fashion stores placement high via list hygiene</td></tr>
 <tr><td>SMS consent present</td><td>Fashion Stores texting respects time and frequency rules</td><td>Text grievances hit fashion stores programs hardest</td></tr>
-<tr><td>Wholesale or B2B account</td><td>Send fashion stores B2B accounts down their own track</td><td>Wholesale fashion stores terms forbid retail-style offers</td></tr>
-<tr><td>Free or disposable email domain</td><td>Gate fashion stores journeys behind address verification</td><td>Fashion Stores bounces from junk signups hurt inboxing</td></tr>
+<tr><td>Wholesale or B2B account</td><td>Send fashion stores B2B accounts down their own track</td><td>Check actual account terms and audience relevance before applying retail offers</td></tr>
+<tr><td>Free or disposable email domain</td><td>Use proportionate signup verification and bounce controls; do not exclude valid free-email addresses</td><td>A free-email domain alone does not establish an invalid signup</td></tr>
 <tr><td>Staff and test accounts</td><td>Keep fashion stores staff and test profiles out of live sends</td><td>QA fashion stores sends distort real performance</td></tr>
 <tr><td>Competitor or researcher signals</td><td>No bespoke fashion stores track for competitor signals</td><td>Fashion Stores consistency beats clever carve-outs</td></tr>
 <tr><td>Legacy list without timestamps</td><td>Fashion Stores sends to old lists need fresh opt-in</td><td>Fashion Stores lists without proof invite liability</td></tr>
@@ -141,7 +141,7 @@ const apps = [
 <thead><tr><th>Failure</th><th>Prevention</th><th>Cost of getting it wrong</th></tr></thead>
 <tbody>
 <tr><td>Discount in the first touch</td><td>Withhold fashion stores offers until intent shows</td><td>fashion stores discount-first trains bargain hunting</td></tr>
-<tr><td>No purchase suppression</td><td>Fashion Stores purchase exits on live order events</td><td>Fashion Stores promos after purchase read careless</td></tr>
+<tr><td>No purchase suppression</td><td>Exit the relevant cart-recovery journey on a confirmed order event</td><td>Fashion Stores promos after purchase read careless</td></tr>
 <tr><td>Consent imported without proof</td><td>fashion stores consent fields mapped before importing</td><td>Fashion Stores audit exposure without proof</td></tr>
 <tr><td>Flows only one operator understands</td><td>fashion stores conventions written for successors</td><td>fashion stores changes gamble without docs</td></tr>
 <tr><td>Measuring clicks only</td><td>Fashion Stores scoreboard: margin, returns, complaints</td><td>fashion stores clicks applaud tactics margin hates</td></tr>
@@ -176,7 +176,7 @@ const apps = [
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Exception</th><th>Rule</th><th>Review owner</th></tr></thead>
 <tbody>
-<tr><td>VIP customers</td><td>Allow earlier access messages, still suppress post-purchase</td><td>Retention lead</td></tr>
+<tr><td>VIP customers</td><td>Allow relevant early access; exit completed-cart recovery and check separate promotion eligibility</td><td>Retention lead</td></tr>
 <tr><td>Backorder items</td><td>Delay recovery until stock returns</td><td>Merchandising</td></tr>
 <tr><td>Gift purchases</td><td>Suppress winback for the buyer; message separately</td><td>Lifecycle lead</td></tr>
 <tr><td>B2B accounts</td><td>Route to account manager sequences</td><td>Sales lead</td></tr>
@@ -209,7 +209,7 @@ const apps = [
 <ol>
 <li>Lock fashion stores flow edits a full fortnight before peak.</li>
 <li>Fashion Stores QA spans purchase, refund, and case paths.</li>
-<li>Verify fashion stores suppression clears recent buyers and open returns.</li>
+<li>Verify completed-cart recovery exits and current return, support, permission, and purpose-specific exclusions.</li>
 <li>Boost fashion stores control groups before the surge.</li>
 <li>Fashion Stores texting policy written before peak.</li>
 <li>Match fashion stores plan caps and overage rates to forecast volume.</li>
