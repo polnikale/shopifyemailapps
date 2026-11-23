@@ -63,7 +63,7 @@ const faqs = [
         Attentive is enterprise SMS acquisition and lifecycle for scaled DTC — two-tap mobile opt-in, journey orchestration across SMS and email, AI send-time optimization, and concierge onboarding that smaller platforms cannot match. Custom pricing and implementation timelines exclude tiny stores by design. If you are sub-$50k/mo, read our Postscript review instead. If SMS is a board-level growth lever with legal and creative teams in the loop, Attentive belongs on your shortlist.
       </p>
       <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
-        We evaluated Attentive alongside a $2.1M/mo beauty brand with pop-up retail, a fashion house at 12k SMS sends daily during drops, and a supplement company that rejected Attentive on cost at $400k/mo revenue. Rating: ★ {app.rating}. Category: {app.category}.
+        The examples below are proposed evaluation scenarios, not merchant engagements or measured supplier tests. The beauty, fashion, and supplement figures are planning assumptions requiring account-specific validation. Rating: ★ {app.rating}. Category: {app.category}.
       </p>
       <div class="mt-9 flex flex-wrap gap-3">
         <a class="btn btn-primary" href="/apps/postscript">Postscript review</a>
@@ -84,6 +84,12 @@ const faqs = [
         { label: 'Best for', tool: '$1M+/mo DTC', reason: 'Dedicated retention headcount and SMS as primary channel.' },
       ]}
     />
+
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Verify the current account scope</h2>
+      <p>Attentive currently markets email, SMS, MMS, RCS, and push. Its <a href="https://www.attentive.com/pricing">official pricing page</a> describes pricing by message volume, subscriber count, channels, and selected AI products; the dollar ranges below are unverified planning assumptions. Obtain a written quote covering message units, carrier fees, minimums, services, overages, and contract term. Do not infer a universal revenue threshold or implementation deadline.</p>
+      <p>Confirm merchant-country eligibility, recipient markets, carrier and device support, and enabled channel entitlements separately. A listed RCS capability does not mean every recipient is reachable. Test customer identity, purpose-specific permission, suppression freshness, purchase and refund state, and queued messages before enabling production journeys. Assign one owner to each event/channel; pause old queues before switching, deduplicate retries, and check current state again at dispatch. These are proposed acceptance checks, not observed integration behavior.</p>
+    </div>
 
     <div class="prose-shopify mb-12">
       <h2 class="font-serif text-4xl font-black text-[#24170f]">What Attentive actually delivers at enterprise scale</h2>
@@ -132,14 +138,14 @@ const faqs = [
     </div>
 
     <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Four workflow tests on Shopify</h2>
+      <h2 class="font-serif text-4xl font-black text-[#24170f]">Four proposed workflow checks on Shopify</h2>
 
       <h3 class="font-serif text-2xl font-black text-[#24170f]">1. Mobile acquisition — two-tap opt-in from Instagram landing page</h3>
       <p>
         <strong>Scenario:</strong> Beauty brand; 85% of paid traffic mobile; legacy popup converted 2.1% to email only. <strong>Attentive setup:</strong> Two-tap SMS opt-in on mobile PDP; email capture secondary; consent logged with timestamp.
       </p>
       <p>
-        <strong>Result:</strong> SMS opt-in rate 8.4% vs 2.1% email-only prior popup — incremental list growth justified enterprise contract for this account. Postscript popup without two-tap achieved 5.9% in parallel test on different landing page.
+        <strong>Proposed check:</strong> Compare mobile opt-in completion with equivalent traffic and consent wording; record eligible visitors, channel-specific consent, and opt-outs. The prior 8.4%, 2.1%, and 5.9% figures have no supplied experiment record and cannot establish relative performance.
       </p>
 
       <h3 class="font-serif text-2xl font-black text-[#24170f]">2. Cross-channel journey — cart SMS after unopened email</h3>
@@ -147,7 +153,7 @@ const faqs = [
         <strong>Scenario:</strong> Fashion brand; unified Attentive journey replaces Klaviyo email + Postscript SMS. Cart email at 1 hour; SMS at 6 hours if unopened; suppress on purchase. <strong>Attentive setup:</strong> Single journey builder, shared suppression.
       </p>
       <p>
-        <strong>Result:</strong> Duplicate touch complaints dropped 62% vs prior dual-vendor stack. Incremental SMS recovery lift 4.2% over email-only holdout — meaningful at $2M/mo scale, not magic.
+        <strong>Proposed check:</strong> Check one owner per cart and channel, permission at dispatch, purchase suppression, and replay deduplication using a stable cart/event identity. Email opens alone are an unreliable engagement signal. Measure duplicate touches separately from incremental contribution using a randomized holdout; no complaint or recovery lift has been observed here.
       </p>
 
       <h3 class="font-serif text-2xl font-black text-[#24170f]">3. Pop-up retail QR acquisition synced to Shopify POS</h3>
@@ -155,7 +161,7 @@ const faqs = [
         <strong>Scenario:</strong> Beauty brand with 12 retail locations; QR in-store signs feed SMS list tied to Shopify customer record. <strong>Attentive setup:</strong> Location-specific keywords; post-visit SMS with online exclusive offer.
       </p>
       <p>
-        <strong>Result:</strong> 14% of QR opt-ins purchased online within 30 days. Omnichannel segment fed Klaviyo email winback for in-store buyers — hybrid stack persisted because Klaviyo email depth remained superior.
+        <strong>Proposed check:</strong> Check QR consent provenance, customer identity matching, location tags, and purchase-state freshness before scheduling promotional follow-up. Compare eligible cohorts over a declared window; no 14% conversion rate or superiority over another ESP is established.
       </p>
 
       <h3 class="font-serif text-2xl font-black text-[#24170f]">4. AI send-time optimization on broadcast — Black Friday preview</h3>
@@ -163,7 +169,7 @@ const faqs = [
         <strong>Scenario:</strong> 180k SMS list; early access broadcast 24 hours before public sale. <strong>Attentive setup:</strong> AI-optimized send windows vs fixed 10am EST control on 20% holdout.
       </p>
       <p>
-        <strong>Result:</strong> AI cohort revenue per recipient +11% vs fixed send — statistically meaningful at list size, negligible on 8k lists. Enterprise feature value scales with audience size.
+        <strong>Proposed check:</strong> Randomize eligible subscribers between optimized and fixed windows, balancing time zones and quiet hours. Declare the revenue window and uncertainty before launch; audience size alone does not establish statistical significance. No 11% lift was measured here.
       </p>
     </div>
 
@@ -271,10 +277,10 @@ const faqs = [
     <div class="prose-shopify mb-12">
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Margin math: Attentive enterprise minimum vs SMS revenue</h2>
       <p>
-        Lustre: Attentive ≈ $800–1,200/mo minimum plus per-message fees — total SMS stack $1,400–2,000/mo with sends. Attributed SMS revenue $38k/mo (drops, recovery, VIP). Tool cost 3.7–5.3% of attributed — acceptable enterprise ratio. Postscript prior $520/mo recovered $22k — Attentive must lift attributed revenue $16k+ to justify premium.
+        Illustrative Lustre budget: assume a total monthly stack cost of $1,400–2,000 versus a $520 alternative, a difference of $880–1,480 before setup and labor. These are scenario inputs, not vendor quotes. $38,000 attributed revenue makes the cost ratio about 3.7–5.3%, but does not establish profit or incrementality. At an assumed 60% contribution margin before software and additional labor, break-even incremental revenue is about $1,467–2,467 per month. Add labor, discounts, returns, and other variable costs consistently; the $16,000 attributed-revenue difference cannot substitute for a causal lift estimate.
       </p>
       <p>
-        Compliance failure cost: one TCPA class action dwarfs annual Attentive spend — enterprise compliance tooling is insurance math. Pop-up opt-in without proper consent documentation — fine exposure exceeds $50k. Attentive premium buys legal-grade audit trail.
+        Consent evidence is an operational requirement, not insurance or a guarantee of legal compliance. Have qualified counsel review the relevant markets, message purposes, collection language, retention, and opt-out process. Verify what the contracted product actually records and exports; no fine estimate or legal adequacy has been established for this scenario.
       </p>
     </div>
 
