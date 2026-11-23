@@ -101,6 +101,8 @@ tools.unshift({ name: 'Sequenzy', best: 'Lean teams testing one focused sequence
 </section>)}
 
    
+<p>A randomized comparison of two messages estimates their relative effect for the tested audience. A no-message holdout is optional when the question is which variant works better, but is needed to estimate whether sending the marketing adds orders over sending none. Matched cohorts and before/after comparisons remain observational. Predeclare the outcome, allocation, minimum detectable effect, duration, and stopping rule; an inconclusive result is not proof of no difference. Klaviyo distinguishes <a href="https://help.klaviyo.com/hc/en-us/articles/18138290642971">global holdouts</a> from A/B tests and explains <a href="https://help.klaviyo.com/hc/en-us/articles/360052794352">campaign result interpretation</a>.</p>
+
 <h2>Experiment design that survives Shopify noise
 </h2>
    
@@ -193,25 +195,25 @@ tools.unshift({ name: 'Sequenzy', best: 'Lean teams testing one focused sequence
 </p>
  
 <h2 class="mt-14">Consent and purchaser suppression for Ab testing</h2>
-<p>Ab Testing readiness starts with provable consent records and instant post-checkout suppression across each app running ab testing sends. For ab testing, a promo arriving after a purchase, refund, or open support case burns trust faster than weak ab testing creative ever could.</p>
+<p>Testing readiness starts with documented sending eligibility and verified purchase suppression across the apps involved. Measure event-sync latency and recheck eligibility before each send; do not assume suppression is instant. For ab testing, a promo arriving after a purchase, refund, or open support case burns trust faster than weak ab testing creative ever could.</p>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Audience state</th><th>Required handling</th><th>Why it matters</th></tr></thead>
 <tbody>
-<tr><td>No documented consent</td><td>Ab Testing marketing stays off; transactional only</td><td>Consent evidence underwrites all ab testing sending</td></tr>
+<tr><td>No documented consent</td><td>Ab Testing marketing stays off; transactional only</td><td>Record the applicable permission basis separately for each channel and audience</td></tr>
 <tr><td>Consented, never purchased</td><td>Open ab testing with guidance and proof, not discounts</td><td>Early ab testing discounts train deal-waiting</td></tr>
 <tr><td>Active cart, no checkout</td><td>Remind ab testing carts with context first, no instant code</td><td>Margin-safe ab testing recovery at peak intent</td></tr>
 <tr><td>Purchased recently</td><td>Ab Testing buyers get education, not another pitch</td><td>Keeps ab testing buyers from instant list fatigue</td></tr>
 <tr><td>Refund or return open</td><td>Hold ab testing marketing while service cases stay open</td><td>Open ab testing cases reset what the shopper tolerates</td></tr>
-<tr><td>Repeated non-engagement</td><td>Remove chronic ab testing non-openers pre-complaint</td><td>Keeps ab testing placement high via list hygiene</td></tr>
-<tr><td>SMS consent present</td><td>Ab Testing texting respects time and frequency rules</td><td>One ab testing SMS complaint outweighs many email ones</td></tr>
-<tr><td>Wholesale or B2B account</td><td>Send ab testing B2B accounts down their own track</td><td>B2B ab testing mis-sends risk contract breach</td></tr>
-<tr><td>Free or disposable email domain</td><td>Verify ab testing throwaway addresses pre-journey</td><td>Low-grade ab testing signups drag deliverability</td></tr>
+<tr><td>Repeated non-engagement</td><td>Review sustained non-engagement using clicks, purchases, bounces, and complaints; opens alone are unreliable</td><td>Keeps ab testing placement high via list hygiene</td></tr>
+<tr><td>SMS consent present</td><td>Ab Testing texting respects time and frequency rules</td><td>Monitor complaints and opt-outs separately by channel; there is no universal exchange rate</td></tr>
+<tr><td>Wholesale or B2B account</td><td>Send ab testing B2B accounts down their own track</td><td>Check company roles, agreed contact rules, and account ownership before sending</td></tr>
+<tr><td>Free or disposable email domain</td><td>Validate address quality without rejecting legitimate shoppers solely for using a free email provider</td><td>Low-grade ab testing signups drag deliverability</td></tr>
 <tr><td>Staff and test accounts</td><td>Ab Testing QA profiles excluded from reporting</td><td>Internal ab testing activity corrupts program metrics</td></tr>
 <tr><td>Competitor or researcher signals</td><td>Treat ab testing snoops under normal consent policy</td><td>Ab Testing consistency beats clever carve-outs</td></tr>
-<tr><td>Legacy list without timestamps</td><td>Ab Testing sends to old lists need fresh opt-in</td><td>Timestamp-less ab testing consent is legal exposure</td></tr>
+<tr><td>Legacy list without timestamps</td><td>Review legacy permission records and applicable rules before deciding whether repermission is appropriate</td><td>A missing timestamp calls for a permission review, not an invented consent record</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Margin, app costs, and pricing for Ab testing</h2>
-<p>For ab testing, revenue attribution flatters; margin decides. Burden the ab testing program with its true load — platform fees, overages, SMS, capture, creative, agency, and ab testing discount cost — before calling it profitable. When the ab testing stack nears fifteen percent of email-attributed margin, simplify the ab testing setup before tuning it.</p>
+<p>For ab testing, revenue attribution flatters; margin decides. Burden the ab testing program with its true load — platform fees, overages, SMS, capture, creative, agency, and ab testing discount cost — before calling it profitable. Set a cost ceiling from the store’s contribution margin and operating budget; fifteen percent is not a universal profitability threshold.</p>
 <p>Pricing changes frequently and varies by region, contact volume, and contract term, so check the official pricing pages of every shortlisted app and model an eighteen-month total that includes a peak season. For ab testing, free plans always bind somewhere; identify whether contacts, sends, branching, or support caps your ab testing motion first.</p>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Cost component</th><th>What to model</th><th>Common failure</th></tr></thead>
@@ -256,7 +258,7 @@ tools.unshift({ name: 'Sequenzy', best: 'Lean teams testing one focused sequence
 <h2 class="mt-12">Implementation order for a ab testing program</h2>
 <ol>
 <li>Record ab testing permission origins in the ESP before sending.</li>
-<li>Ab Testing gating: all four commerce events verified live.</li>
+<li>Verify the events the experiment actually needs, including field meanings, sync delay, and purchase exits; support status may require a separate integration.</li>
 <li>Set ab testing guardrails before constructing journeys.</li>
 <li>For ab testing, start single-journey with a control group.</li>
 <li>For ab testing, the thirty-day read covers profit and list health.</li>
@@ -270,16 +272,16 @@ tools.unshift({ name: 'Sequenzy', best: 'Lean teams testing one focused sequence
 <thead><tr><th>Metric</th><th>Definition</th><th>Review cadence</th></tr></thead>
 <tbody>
 <tr><td>Margin per send</td><td>Kept ab testing margin after discounts, sends, fees</td><td>Monthly</td></tr>
-<tr><td>Repeat purchase rate</td><td>ab testing-driven second purchases per quarter</td><td>Monthly</td></tr>
+<tr><td>Repeat purchase rate</td><td>Second purchases per eligible recipient in the declared window; attribution alone does not establish causality</td><td>Monthly</td></tr>
 <tr><td>Complaint and unsubscribe rate</td><td>Ab Testing tracked per campaign and flow</td><td>Weekly</td></tr>
 <tr><td>Suppression accuracy</td><td>Spot-check ab testing sends after purchases</td><td>Weekly</td></tr>
 <tr><td>Time to edit safely</td><td>Ab Testing edit time for a fresh operator</td><td>Quarterly</td></tr>
-<tr><td>Holdout lift</td><td>ab testing-exposed versus excluded comparison</td><td>Quarterly</td></tr>
+<tr><td>Holdout lift</td><td>Randomly assigned eligible recipients receiving the tested marketing versus a no-message holdout, where feasible</td><td>Quarterly</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Ab testing matchup FAQ</h2>
 <section class="max-w-3xl mx-auto space-y-6">
-<div><h3>Klaviyo or Shopify Email for ab testing?</h3><p>Ab Testing at low volume runs fine on Shopify Email; graduate to Klaviyo once ab testing needs triggers, dynamic catalog content, and segment revenue views, after pricing profile growth for ab testing.</p></div>
-<div><h3>Omnisend vs Klaviyo for ab testing?</h3><p>For ab testing, Omnisend ships email-first ab testing plus light SMS fastest for small teams; Klaviyo counters with deeper ab testing segmentation — pilot one genuine ab testing journey on each and weigh upkeep, not checklists.</p></div>
+<div><h3>Klaviyo or Shopify Email for ab testing?</h3><p>For a basic campaign, first verify that Shopify’s current testing controls support the variable and outcome you need. Compare Klaviyo when you need more event-based branching or test reporting, and confirm plan eligibility and profile costs. Low volume can leave either tool with inconclusive results.</p></div>
+<div><h3>Omnisend vs Klaviyo for ab testing?</h3><p>Compare Omnisend’s campaign workflow with Klaviyo’s event-based audience and flow controls using the same proposed experiment. Time the setup and inspect the assignment and reporting options; no universal speed winner is established here.</p></div>
 <div><h3>Mailchimp or Klaviyo for ab testing?</h3><p>For ab testing, Mailchimp fits editor-comfortable newsletter teams; Klaviyo fits event-driven ab testing on Shopify orders, carts, and browse — check official pricing pages for both at your ab testing volume.</p></div>
 <div><h3>Do I need a separate SMS tool for ab testing?</h3><p>For ab testing, skip dedicated SMS initially — bundled texting suffices until SMS provably lifts ab testing results. Confirm ab testing consent, quiet hours, and per-message pricing, and prove the ab testing audience answers texts.</p></div>
 <div><h3>How should I suppress audiences in ab testing flows?</h3><p>Guard ab testing with exits for buyers, open cases, refunds, and no-consent profiles, auditable per ab testing flow. In ab testing, a suppression miss hurts worse than a missed blast.</p></div>
@@ -287,15 +289,15 @@ tools.unshift({ name: 'Sequenzy', best: 'Lean teams testing one focused sequence
 <div><h3>Which app should a lean team pilot first for ab testing?</h3><p>Ab Testing pilots succeed on operability: if the crew runs it in two weeks it wins. Keep ab testing scope shippable over impressive-but-stuck.</p></div>
 <div><h3>How do I measure ab testing email results?</h3><p>For ab testing reporting, pair attributed revenue with margin per send, repeat purchase, unsubscribe/complaint rates, and support load — then validate against a ab testing holdout so peak-season demand is not credited to the flows.</p></div>
 <div><h3>Can I run ab testing email without an agency?</h3><p>Yes, if the scope stays small. Pick one ab testing journey, document consent and suppression rules, and reuse a simple template system. For ab testing, hire help only if journey complexity, inbox-placement remediation, or peak ab testing volume genuinely exceeds what the team can run.</p></div>
-<div><h3>When should I graduate from my first app for ab testing?</h3><p>Graduate the ab testing stack when the team can no longer edit flows safely, segment ab testing audiences by purchase state, or forecast cost at the growing contact count. For ab testing, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression.</p></div>
+<div><h3>When should I graduate from my first app for ab testing?</h3><p>Consider changing tools when required assignment, reporting, suppression, or access controls cannot be operated safely at the current scale. Team size alone is not a migration threshold; first check whether documentation, permissions, or a simpler flow resolves the problem.</p></div>
 <div><h3>How much discounting is acceptable for ab testing?</h3><p>Treat discounts as one lever, not the default. For ab testing, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. When ab testing revenue only converts with a code attached, suspect ab testing value communication before blaming price points.</p></div>
 <div><h3>Which Shopify data matters most for ab testing?</h3><p>Order and refund state, cart and browse events, consent source, and product availability cover most ab testing decisions. For ab testing, verify each event with a live test purchase before building ab testing logic on it, and document field meanings so marketing and engineering share definitions.</p></div>
 <div><h3>How do I avoid duplicate sends across apps for ab testing?</h3><p>Give one platform ownership of each ab testing journey, document which app sends what, and share suppression lists where the tools support it. During peak season, audit ab testing weekly by sampling customers and listing every ab testing message each one received.</p></div>
 <div><h3>What should a ab testing pilot include?</h3><p>Run ab testing as a contained test: one audience, a journey or two, suppression in writing, holdout measurement, and a thirty-day ab testing check on margin and complaints against criteria set pre-launch.</p></div>
 </section>
 <script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",mainEntity:[
-{"@type": "Question", "name": "Klaviyo or Shopify Email for ab testing?", "acceptedAnswer": {"@type": "Answer", "text": "Ab Testing at low volume runs fine on Shopify Email; graduate to Klaviyo once ab testing needs triggers, dynamic catalog content, and segment revenue views, after pricing profile growth for ab testing."}},
-{"@type": "Question", "name": "Omnisend vs Klaviyo for ab testing?", "acceptedAnswer": {"@type": "Answer", "text": "For ab testing, Omnisend ships email-first ab testing plus light SMS fastest for small teams; Klaviyo counters with deeper ab testing segmentation — pilot one genuine ab testing journey on each and weigh upkeep, not checklists."}},
+{"@type": "Question", "name": "Klaviyo or Shopify Email for ab testing?", "acceptedAnswer": {"@type": "Answer", "text": "For a basic campaign, first verify that Shopify’s current testing controls support the variable and outcome you need. Compare Klaviyo when you need more event-based branching or test reporting, and confirm plan eligibility and profile costs. Low volume can leave either tool with inconclusive results."}},
+{"@type": "Question", "name": "Omnisend vs Klaviyo for ab testing?", "acceptedAnswer": {"@type": "Answer", "text": "Compare Omnisend’s campaign workflow with Klaviyo’s event-based audience and flow controls using the same proposed experiment. Time the setup and inspect the assignment and reporting options; no universal speed winner is established here."}},
 {"@type": "Question", "name": "Mailchimp or Klaviyo for ab testing?", "acceptedAnswer": {"@type": "Answer", "text": "For ab testing, Mailchimp fits editor-comfortable newsletter teams; Klaviyo fits event-driven ab testing on Shopify orders, carts, and browse — check official pricing pages for both at your ab testing volume."}},
 {"@type": "Question", "name": "Do I need a separate SMS tool for ab testing?", "acceptedAnswer": {"@type": "Answer", "text": "For ab testing, skip dedicated SMS initially — bundled texting suffices until SMS provably lifts ab testing results. Confirm ab testing consent, quiet hours, and per-message pricing, and prove the ab testing audience answers texts."}},
 {"@type": "Question", "name": "How should I suppress audiences in ab testing flows?", "acceptedAnswer": {"@type": "Answer", "text": "Guard ab testing with exits for buyers, open cases, refunds, and no-consent profiles, auditable per ab testing flow. In ab testing, a suppression miss hurts worse than a missed blast."}},
@@ -303,7 +305,7 @@ tools.unshift({ name: 'Sequenzy', best: 'Lean teams testing one focused sequence
 {"@type": "Question", "name": "Which app should a lean team pilot first for ab testing?", "acceptedAnswer": {"@type": "Answer", "text": "Ab Testing pilots succeed on operability: if the crew runs it in two weeks it wins. Keep ab testing scope shippable over impressive-but-stuck."}},
 {"@type": "Question", "name": "How do I measure ab testing email results?", "acceptedAnswer": {"@type": "Answer", "text": "For ab testing reporting, pair attributed revenue with margin per send, repeat purchase, unsubscribe/complaint rates, and support load — then validate against a ab testing holdout so peak-season demand is not credited to the flows."}},
 {"@type": "Question", "name": "Can I run ab testing email without an agency?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if the scope stays small. Pick one ab testing journey, document consent and suppression rules, and reuse a simple template system. For ab testing, hire help only if journey complexity, inbox-placement remediation, or peak ab testing volume genuinely exceeds what the team can run."}},
-{"@type": "Question", "name": "When should I graduate from my first app for ab testing?", "acceptedAnswer": {"@type": "Answer", "text": "Graduate the ab testing stack when the team can no longer edit flows safely, segment ab testing audiences by purchase state, or forecast cost at the growing contact count. For ab testing, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression."}},
+{"@type": "Question", "name": "When should I graduate from my first app for ab testing?", "acceptedAnswer": {"@type": "Answer", "text": "Consider changing tools when required assignment, reporting, suppression, or access controls cannot be operated safely at the current scale. Team size alone is not a migration threshold; first check whether documentation, permissions, or a simpler flow resolves the problem."}},
 {"@type": "Question", "name": "How much discounting is acceptable for ab testing?", "acceptedAnswer": {"@type": "Answer", "text": "Treat discounts as one lever, not the default. For ab testing, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. When ab testing revenue only converts with a code attached, suspect ab testing value communication before blaming price points."}},
 {"@type": "Question", "name": "Which Shopify data matters most for ab testing?", "acceptedAnswer": {"@type": "Answer", "text": "Order and refund state, cart and browse events, consent source, and product availability cover most ab testing decisions. For ab testing, verify each event with a live test purchase before building ab testing logic on it, and document field meanings so marketing and engineering share definitions."}},
 {"@type": "Question", "name": "How do I avoid duplicate sends across apps for ab testing?", "acceptedAnswer": {"@type": "Answer", "text": "Give one platform ownership of each ab testing journey, document which app sends what, and share suppression lists where the tools support it. During peak season, audit ab testing weekly by sampling customers and listing every ab testing message each one received."}},
@@ -325,7 +327,7 @@ tools.unshift({ name: 'Sequenzy', best: 'Lean teams testing one focused sequence
 <li>For ab testing, freeze journey changes two weeks pre-peak.</li>
 <li>Ab Testing QA spans purchase, refund, and case paths.</li>
 <li>Ab Testing guardrails must shed fresh buyers.</li>
-<li>Boost ab testing control groups before the surge.</li>
+<li>Set allocation and sample requirements before launch; changing group sizes mid-test can complicate interpretation.</li>
 <li>Draft ab testing SMS quiet-hour and cap rules in advance.</li>
 <li>For ab testing, test tier limits against peak projections.</li>
 <li>Staff daily ab testing deliverability watch on complaints and bounces.</li>
