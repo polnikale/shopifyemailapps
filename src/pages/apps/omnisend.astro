@@ -256,7 +256,7 @@ const faqs = [
     <div class="prose-shopify mb-12">
       <h2 class="font-serif text-4xl font-black text-[#24170f]">Margin math: Omnisend SMB multichannel stack cost</h2>
       <p>
-        Cedar &amp; Stone: Omnisend Standard ≈ $145/mo at 12k contacts including modest SMS. Cart recovery improves 5% → 10% on 480 abandons = 24 orders × $84 AOV = $2,016 revenue, $1,008 gross profit at 50% margin. SMS adds 8 recoveries = $672 more. Tool cost 7% of incremental gross — excellent SMB ROI.
+        Illustrative Cedar &amp; Stone model, not an observed result: assume a $145 monthly platform-and-message cost at 12k contacts, not a verified current quote. A recovery-rate change from 5% to 10% across 480 eligible abandoned carts implies 24 additional orders × $84 AOV = $2,016 revenue and $1,008 gross profit at an assumed 50% margin. If SMS contributes eight genuinely additional, deduplicated orders outside those 24, it adds $672 revenue and $336 gross profit. The combined $1,344 gross profit less $145 leaves $1,199 before migration labor, discounts, returns and other costs; the fee is about 10.8% of that gross profit. Attribute each recovered order once across channels and use a comparable holdout to estimate causal lift; a before/after recovery-rate change alone does not establish it.
       </p>
       <p>
         SMS creep: spring sale adds 6,000 promotional texts — bill +$95, opt-outs +0.8%. Frequency cap prevents margin erosion from over-messaging. Push notification ROI often negative on iOS-heavy home goods traffic — measure before scaling.
@@ -321,7 +321,7 @@ const faqs = [
       Omnisend verdict rule: Thursday-before-drop, thirty minutes, suppression and VIP access live without engineering. Calm-week Omnisend demos that cannot pass this edit waste more peak margin than any annual delta; the ninety-day Omnisend trial with weekly checklist exists to catch exactly that.
     </p>
     <p>
-      Omnisend kill-switch sheet precedes cutover: incumbents paused before equivalents enable, engaged-only imports first, cart parallel-run twenty-one days minimum. Omnisend finance clears the switch when incremental flow revenue less platform delta tops three times migration labor — else repair Omnisend capture or suppression first.
+      Omnisend cutover sheet should name one owner per live flow. Before enabling its replacement, pause incumbent enrollment, inspect already queued messages and cancel or drain them deliberately; a pause alone is not proof that pending sends stopped. Import eligible engaged contacts with purpose-specific email and SMS permission records, current opt-outs and suppression state; purchase history is not marketing permission. Observe cart behavior for twenty-one days in shadow mode or disjoint test cohorts rather than duplicate live recovery. Deduplicate checkout/order identifiers and replayed events across the handoff, recheck purchase and opt-out state before sending, and rehearse rollback with only one sender active. Finance should compare measured incremental contribution after platform and operating costs with migration labor over an explicit payback period.
     </p>
     </div>
 
