@@ -72,22 +72,21 @@ const apps = [
 </a>.
 </p>
 <h2 class="mt-14">Consent and purchaser suppression for Product care</h2>
-<p>Before launching product care automation, prove every app in the stack logs email and SMS consent auditably, with purchase events cutting promotional follow-up the moment checkout completes. In product care, mistimed sends after purchases, refunds, or support cases destroy channel value quicker than any creative miss.</p>
+<p>Decide whether each message provides required order service or offers optional care education or promotion. Record the permission or other applicable basis for its purpose and channel; a purchase or SMS opt-in does not by itself authorize email marketing. Recheck current permission, suppression, order, inventory, ownership and case state before dispatch, including messages already queued.</p>
 <div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Audience state</th><th>Required handling</th><th>Why it matters</th></tr></thead>
-<tbody>
-<tr><td>No documented consent</td><td>Suppress product care marketing entirely until consent is documented</td><td>Without product care consent proof, marketing has no legal footing</td></tr>
-<tr><td>Consented, never purchased</td><td>Open product care with guidance and proof, not discounts</td><td>First-touch product care codes create discount dependence</td></tr>
-<tr><td>Active cart, no checkout</td><td>Product Care reminder with product context; discount withheld</td><td>Protects product care profit when purchase intent is hottest</td></tr>
-<tr><td>Purchased recently</td><td>Suppress product care selling after checkout; educate instead</td><td>Spares product care buyers remorse and unsubscribes</td></tr>
-<tr><td>Refund or return open</td><td>Freeze product care promos until refund or return closes</td><td>Open product care cases reset what the shopper tolerates</td></tr>
-<tr><td>Repeated non-engagement</td><td>Product Care sunset policy precedes complaint spikes</td><td>Product Care deliverability depends on pruning</td></tr>
-<tr><td>SMS consent present</td><td>Product Care texting respects time and frequency rules</td><td>Text grievances hit product care programs hardest</td></tr>
-<tr><td>Wholesale or B2B account</td><td>Product Care B2B routing stays account-specific</td><td>Product Care retail promos can violate B2B terms</td></tr>
-<tr><td>Free or disposable email domain</td><td>Product Care automation skips unverified domains first</td><td>Product Care list quality decides placement</td></tr>
-<tr><td>Staff and test accounts</td><td>Product Care internal accounts never enter production</td><td>QA product care sends distort real performance</td></tr>
-<tr><td>Competitor or researcher signals</td><td>Product Care exceptions stay undocumented-free</td><td>Product Care consistency beats clever carve-outs</td></tr>
-<tr><td>Legacy list without timestamps</td><td>Legacy product care contacts re-opt before journeys</td><td>Old product care permission without records is a risk</td></tr>
+<thead><tr><th>Audience state</th><th>Required handling</th><th>Why it matters</th></tr></thead><tbody>
+<tr><td>No documented marketing permission</td><td>Hold optional product-care promotion until eligibility is established; send required service under its applicable basis</td><td>Service eligibility does not grant promotional permission</td></tr>
+<tr><td>Consented, never purchased</td><td>Offer relevant product education within the recorded purpose and channel</td><td>Permission alone does not establish compatibility or stock</td></tr>
+<tr><td>Active cart, no checkout</td><td>Check recovery eligibility and current cart state before a reminder</td><td>A cart event alone is not permission to send</td></tr>
+<tr><td>Purchased recently</td><td>Exit recovery for the matching cart or order; reassess ownership before later eligible product-care suggestions</td><td>A purchase should stop obsolete recovery without blocking needed care</td></tr>
+<tr><td>Refund or return open</td><td>Pause conflicting promotion and route required case service separately; reassess after resolution</td><td>Case closure alone does not restore marketing permission</td></tr>
+<tr><td>Repeated non-engagement</td><td>Review reliable clicks, purchases, complaints and a documented sunset policy</td><td>Non-opens alone do not reliably establish inactivity</td></tr>
+<tr><td>SMS consent present</td><td>Verify its purpose, region, quiet hours, caps and current withdrawal state separately</td><td>SMS permission does not transfer to email</td></tr>
+<tr><td>Wholesale or B2B account</td><td>Verify recipient role, purpose and applicable channel eligibility</td><td>An account relationship is not blanket promotional permission</td></tr>
+<tr><td>Free or disposable email domain</td><td>Use address validity, permission and abuse evidence; do not reject a free domain alone</td><td>Domain type alone does not establish consent or deliverability</td></tr>
+<tr><td>Staff and test accounts</td><td>Exclude test profiles from production audiences and measurement</td><td>Internal activity can distort program metrics</td></tr>
+<tr><td>Competitor or researcher signals</td><td>Apply the same documented eligibility rules</td><td>Inferred identity does not override permission</td></tr>
+<tr><td>Legacy list without timestamps</td><td>Hold promotion while checking available evidence; seek repermission only through an independently permitted route</td><td>A request for consent is itself a message requiring eligibility</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Margin, app costs, and pricing for Product care</h2>
 <p>Product Care profit needs the whole ledger: subscription plus overages, SMS credits, capture and template spend, agency retainers, and product care discount margin against attributed revenue. Product Care rule: near fifteen percent stack-to-margin, cut product care complexity before chasing gains.</p>
@@ -124,7 +123,7 @@ const apps = [
 <thead><tr><th>Failure</th><th>Prevention</th><th>Cost of getting it wrong</th></tr></thead>
 <tbody>
 <tr><td>Discount in the first touch</td><td>Withhold product care offers until intent shows</td><td>Product Care first-touch codes cheapen the brand</td></tr>
-<tr><td>No purchase suppression</td><td>End product care flows the moment orders land</td><td>Product Care promos after purchase read careless</td></tr>
+<tr><td>No purchase suppression</td><td>End matching-cart recovery, retain required care, and reassess optional lessons against current permission, product and case state</td><td>Product Care promos after purchase read careless</td></tr>
 <tr><td>Consent imported without proof</td><td>Record product care opt-in origin and moment</td><td>Unproven product care consent fails audits</td></tr>
 <tr><td>Flows only one operator understands</td><td>Document product care exits and naming standards</td><td>Product Care edits hinge on one memory</td></tr>
 <tr><td>Measuring clicks only</td><td>Product Care truth in margin not clicks</td><td>product care clicks applaud tactics margin hates</td></tr>
@@ -135,7 +134,7 @@ const apps = [
 <h2 class="mt-12">Implementation order for a product care program</h2>
 <ol>
 <li>Record product care permission origins in the ESP before sending.</li>
-<li>Product Care gating: all four commerce events verified live.</li>
+<li>Verify relevant order, delivery, refund, permission and case events with controlled test records, including delayed and replayed events.</li>
 <li>Write product care suppression and exits before any product care flow exists.</li>
 <li>For product care, start single-journey with a control group.</li>
 <li>At day thirty, review product care margin, complaints, unsubscribes, repeat buying.</li>
@@ -148,12 +147,12 @@ const apps = [
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Metric</th><th>Definition</th><th>Review cadence</th></tr></thead>
 <tbody>
-<tr><td>Margin per send</td><td>Product Care revenue less discounts, send and platform cost</td><td>Monthly</td></tr>
+<tr><td>Margin per send</td><td>Contribution after product, fulfillment, returns, discounts, platform, messaging, creative and operating costs; distinguish observed from incremental margin</td><td>Monthly</td></tr>
 <tr><td>Repeat purchase rate</td><td>Share of product care buyers reordering in-quarter</td><td>Monthly</td></tr>
 <tr><td>Complaint and unsubscribe rate</td><td>Product Care tracked per campaign and flow</td><td>Weekly</td></tr>
 <tr><td>Suppression accuracy</td><td>product care-buyer samples screened for breaches</td><td>Weekly</td></tr>
 <tr><td>Time to edit safely</td><td>Product Care edit time for a fresh operator</td><td>Quarterly</td></tr>
-<tr><td>Holdout lift</td><td>Product Care treated-versus-holdout read</td><td>Quarterly</td></tr>
+<tr><td>Holdout lift</td><td>Randomized eligible optional-marketing treatment versus holdout over a preset window; retain required care and service in both arms and report uncertainty</td><td>Quarterly</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Product care matchup FAQ</h2>
 <section class="max-w-3xl mx-auto space-y-6">
@@ -161,32 +160,32 @@ const apps = [
 <div><h3>Omnisend vs Klaviyo for product care?</h3><p>Omnisend gets product care teams sending sooner with light SMS attached; Klaviyo stretches product care segmentation further. Test-drive one real product care flow each way before judging.</p></div>
 <div><h3>Mailchimp or Klaviyo for product care?</h3><p>For product care, Mailchimp trades on familiarity, Klaviyo on Shopify event fidelity; settle product care pricing by checking both official pages at your contacts.</p></div>
 <div><h3>Do I need a separate SMS tool for product care?</h3><p>For product care, skip dedicated SMS initially — bundled texting suffices until SMS provably lifts product care results. Confirm product care consent, quiet hours, and per-message pricing, and prove the product care audience answers texts.</p></div>
-<div><h3>How should I suppress audiences in product care flows?</h3><p>Product Care suppression: fresh purchasers, active cases, refunded orders, and consent gaps all exit. Document product care exits per journey; product care suppression errors dwarf missed-campaign cost.</p></div>
+<div><h3>How should I suppress audiences in product care flows?</h3><p>Recheck current purpose and channel permission, unsubscribe and complaint suppression, matching cart or order state, ownership, stock and open cases before dispatch. Cancel obsolete queued recovery after the matching purchase; retain required care and service and separately eligible later care or editorial messages. A closed case does not automatically restore promotional eligibility.</p></div>
 <div><h3>What does product care email cost?</h3><p>Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your product care campaigns consume. Plans and limits shift often, so check the official pricing pages for your product care shortlist and model an eighteen-month total before committing.</p></div>
 <div><h3>Which app should a lean team pilot first for product care?</h3><p>Open product care with the tool at full command in fourteen days — simple product care sends natively, branched product care on a lean platform. Shipping product care beats architecting it.</p></div>
-<div><h3>How do I measure product care email results?</h3><p>Measure product care on contribution, not vanity sends: margin per send, repeat purchase, unsubscribes, complaints, and support load alongside attributed revenue, with a holdout cohort proving the product care journeys caused the lift.</p></div>
+<div><h3>How do I measure product care email results?</h3><p>Report attributed revenue separately from causal incremental contribution. Randomly assign eligible optional-marketing recipients to treatment and holdout, keep required care and service in both arms, and prespecify the window, sample and success criteria. Include product and fulfillment costs, returns, discounts, platform and operating costs, complaints and support load; report uncertainty rather than treating a seasonal difference as proof.</p></div>
 <div><h3>Can I run product care email without an agency?</h3><p>Yes, if the scope stays small. Pick one product care journey, document consent and suppression rules, and reuse a simple template system. For product care, hire help only if journey complexity, inbox-placement remediation, or peak product care volume genuinely exceeds what the team can run.</p></div>
 <div><h3>When should I graduate from my first app for product care?</h3><p>The product care moment to graduate arrives when safe editing, purchase-state segmentation, or cost forecasting at your product care contact scale stops working. For product care, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression.</p></div>
 <div><h3>How much discounting is acceptable for product care?</h3><p>Treat discounts as one lever, not the default. For product care, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. A product care program where nearly every order needs a discount is signalling weak product care value, not wrong pricing.</p></div>
 <div><h3>Which Shopify data matters most for product care?</h3><p>Order and refund state, cart and browse events, consent source, and product availability cover most product care decisions. On product care, prove events in a test checkout before trusting them in flows, with product care field definitions written where both teams can find them.</p></div>
-<div><h3>How do I avoid duplicate sends across apps for product care?</h3><p>Give one platform ownership of each product care journey, document which app sends what, and share suppression lists where the tools support it. Keep a weekly product care peak-season audit: pull sample customers, list each product care message they got, flag overlaps.</p></div>
-<div><h3>What should a product care pilot include?</h3><p>For product care, a tight pilot wins: single audience, at most two journeys, explicit suppression, a holdout, and a day-thirty product care review of margin and complaints with pre-agreed pass/fail lines.</p></div>
+<div><h3>How do I avoid duplicate sends across apps for product care?</h3><p>Assign one sending owner per journey and define which system owns queued jobs and cancellation. Use stable event and message identifiers to deduplicate retries and replays; recheck current eligibility before dispatch and reconcile delayed purchases across apps. Sample customer timelines to test whether cancellation and deduplication actually work.</p></div>
+<div><h3>What should a product care pilot include?</h3><p>Choose one product family and a bounded eligible audience, document delivery, product and ownership checks, matching-cart recovery exits, current suppression and queue ownership, and test delayed and replayed events. Prespecify an optional-marketing holdout with required service retained in both arms, a measurement window and margin, returns and complaint criteria. A thirty-day review is an operational checkpoint, not a guarantee of conclusive lift.</p></div>
 </section>
 <script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",mainEntity:[
 {"@type": "Question", "name": "Klaviyo or Shopify Email for product care?", "acceptedAnswer": {"@type": "Answer", "text": "Product Care beginners do well on native email; Klaviyo fits when product care logic leans on events, catalog data, and segment reporting, with profile billing modeled on product care expansion."}},
 {"@type": "Question", "name": "Omnisend vs Klaviyo for product care?", "acceptedAnswer": {"@type": "Answer", "text": "Omnisend gets product care teams sending sooner with light SMS attached; Klaviyo stretches product care segmentation further. Test-drive one real product care flow each way before judging."}},
 {"@type": "Question", "name": "Mailchimp or Klaviyo for product care?", "acceptedAnswer": {"@type": "Answer", "text": "For product care, Mailchimp trades on familiarity, Klaviyo on Shopify event fidelity; settle product care pricing by checking both official pages at your contacts."}},
 {"@type": "Question", "name": "Do I need a separate SMS tool for product care?", "acceptedAnswer": {"@type": "Answer", "text": "For product care, skip dedicated SMS initially — bundled texting suffices until SMS provably lifts product care results. Confirm product care consent, quiet hours, and per-message pricing, and prove the product care audience answers texts."}},
-{"@type": "Question", "name": "How should I suppress audiences in product care flows?", "acceptedAnswer": {"@type": "Answer", "text": "Product Care suppression: fresh purchasers, active cases, refunded orders, and consent gaps all exit. Document product care exits per journey; product care suppression errors dwarf missed-campaign cost."}},
+{"@type": "Question", "name": "How should I suppress audiences in product care flows?", "acceptedAnswer": {"@type": "Answer", "text": "Recheck current purpose and channel permission, unsubscribe and complaint suppression, matching cart or order state, ownership, stock and open cases before dispatch. Cancel obsolete queued recovery after the matching purchase; retain required care and service and separately eligible later care or editorial messages. A closed case does not automatically restore promotional eligibility."}},
 {"@type": "Question", "name": "What does product care email cost?", "acceptedAnswer": {"@type": "Answer", "text": "Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your product care campaigns consume. Plans and limits shift often, so check the official pricing pages for your product care shortlist and model an eighteen-month total before committing."}},
 {"@type": "Question", "name": "Which app should a lean team pilot first for product care?", "acceptedAnswer": {"@type": "Answer", "text": "Open product care with the tool at full command in fourteen days — simple product care sends natively, branched product care on a lean platform. Shipping product care beats architecting it."}},
-{"@type": "Question", "name": "How do I measure product care email results?", "acceptedAnswer": {"@type": "Answer", "text": "Measure product care on contribution, not vanity sends: margin per send, repeat purchase, unsubscribes, complaints, and support load alongside attributed revenue, with a holdout cohort proving the product care journeys caused the lift."}},
+{"@type": "Question", "name": "How do I measure product care email results?", "acceptedAnswer": {"@type": "Answer", "text": "Report attributed revenue separately from causal incremental contribution. Randomly assign eligible optional-marketing recipients to treatment and holdout, keep required care and service in both arms, and prespecify the window, sample and success criteria. Include product and fulfillment costs, returns, discounts, platform and operating costs, complaints and support load; report uncertainty rather than treating a seasonal difference as proof."}},
 {"@type": "Question", "name": "Can I run product care email without an agency?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if the scope stays small. Pick one product care journey, document consent and suppression rules, and reuse a simple template system. For product care, hire help only if journey complexity, inbox-placement remediation, or peak product care volume genuinely exceeds what the team can run."}},
 {"@type": "Question", "name": "When should I graduate from my first app for product care?", "acceptedAnswer": {"@type": "Answer", "text": "The product care moment to graduate arrives when safe editing, purchase-state segmentation, or cost forecasting at your product care contact scale stops working. For product care, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression."}},
 {"@type": "Question", "name": "How much discounting is acceptable for product care?", "acceptedAnswer": {"@type": "Answer", "text": "Treat discounts as one lever, not the default. For product care, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. A product care program where nearly every order needs a discount is signalling weak product care value, not wrong pricing."}},
 {"@type": "Question", "name": "Which Shopify data matters most for product care?", "acceptedAnswer": {"@type": "Answer", "text": "Order and refund state, cart and browse events, consent source, and product availability cover most product care decisions. On product care, prove events in a test checkout before trusting them in flows, with product care field definitions written where both teams can find them."}},
-{"@type": "Question", "name": "How do I avoid duplicate sends across apps for product care?", "acceptedAnswer": {"@type": "Answer", "text": "Give one platform ownership of each product care journey, document which app sends what, and share suppression lists where the tools support it. Keep a weekly product care peak-season audit: pull sample customers, list each product care message they got, flag overlaps."}},
-{"@type": "Question", "name": "What should a product care pilot include?", "acceptedAnswer": {"@type": "Answer", "text": "For product care, a tight pilot wins: single audience, at most two journeys, explicit suppression, a holdout, and a day-thirty product care review of margin and complaints with pre-agreed pass/fail lines."}}
+{"@type": "Question", "name": "How do I avoid duplicate sends across apps for product care?", "acceptedAnswer": {"@type": "Answer", "text": "Assign one sending owner per journey and define which system owns queued jobs and cancellation. Use stable event and message identifiers to deduplicate retries and replays; recheck current eligibility before dispatch and reconcile delayed purchases across apps. Sample customer timelines to test whether cancellation and deduplication actually work."}},
+{"@type": "Question", "name": "What should a product care pilot include?", "acceptedAnswer": {"@type": "Answer", "text": "Choose one product family and a bounded eligible audience, document delivery, product and ownership checks, matching-cart recovery exits, current suppression and queue ownership, and test delayed and replayed events. Prespecify an optional-marketing holdout with required service retained in both arms, a measurement window and margin, returns and complaint criteria. A thirty-day review is an operational checkpoint, not a guarantee of conclusive lift."}}
 ]})} />
 <h2 class="mt-12">Governance and documentation for product care</h2>
 <div class="overflow-x-auto mb-8"><table>
@@ -202,9 +201,9 @@ const apps = [
 <h2 class="mt-12">Peak season readiness for product care</h2>
 <ol>
 <li>Lock product care flow edits a full fortnight before peak.</li>
-<li>Prove product care flows on genuine transactions pre-peak.</li>
-<li>For product care, confirm buyer and return exclusions hold.</li>
-<li>For product care, grow control samples ahead of volume.</li>
+<li>Test product care flows with controlled order, delivery, return and case records before peak.</li>
+<li>Confirm matching-cart exits and current product and case state; retain necessary care and required service, and assess optional editorial separately.</li>
+<li>Prespecify randomized optional-marketing holdout allocation; retain required care and service in both arms.</li>
 <li>For product care, pre-commit text timing and frequency limits.</li>
 <li>Price product care peaks against plan ceilings early.</li>
 <li>Product Care placement watched every peak day.</li>
