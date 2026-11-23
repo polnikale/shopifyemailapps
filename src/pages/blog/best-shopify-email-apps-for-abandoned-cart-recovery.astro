@@ -23,7 +23,7 @@ const apps=[
 </h1><p class="mt-5 text-xl text-muted-foreground">Recover intent without over-discounting or messaging customers after conversion.
 </p></header><div class="max-w-3xl mx-auto prose-dark mb-12"><p>Abandoned-cart recovery is a timing and suppression problem. A useful flow knows whether checkout resumed, the product went out of stock, the customer already purchased elsewhere, or a discount would train the wrong behavior.
 </p><p>Verify cart events, product data, email and SMS consent, quiet hours, discount economics, and current pricing at official sources. Compare recovered margin, unsubscribes, complaints, and repeat purchase—not attributed revenue alone.
-</p></div><div class="overflow-x-auto mb-14"><table><thead><tr><th>App
+</p><p>Recheck the specific variant and relevant inventory location before a queued reminder. Stock can change between that check and checkout, so avoid promising availability or reserving stock unless the implementation actually does so. Shopify recovery exclusions and a third-party app’s rules can differ; test both rather than assuming identical eligibility.</p></div><div class="overflow-x-auto mb-14"><table><thead><tr><th>App
 </th><th>Best for
 </th><th>Strength
 </th><th>Trade-off
@@ -77,13 +77,13 @@ const apps=[
 </a>.
 </p>
 <h2 class="mt-14">Consent and purchaser suppression for Abandoned cart recovery</h2>
-<p>Abandoned Cart Recovery readiness starts with provable consent records and instant post-checkout suppression across each app running abandoned cart recovery sends. Abandoned Cart Recovery audiences forgive plain creative; they do not forgive promos sent mid-refund or right after checkout.</p>
+<p>Recovery readiness starts with a documented basis for each channel and tested purchase suppression in every sending app. A cart update, a started checkout, and a placed order are different states: define which event starts a reminder and which order event exits it. Measure synchronization delays and check eligibility again before sending; an integration does not guarantee instant suppression. Review pending messages after refunds and support incidents.</p>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Audience state</th><th>Required handling</th><th>Why it matters</th></tr></thead>
 <tbody>
-<tr><td>No documented consent</td><td>Suppress abandoned cart recovery marketing entirely until consent is documented</td><td>Without abandoned cart recovery consent proof, marketing has no legal footing</td></tr>
+<tr><td>No documented consent</td><td>Hold recovery marketing until channel permission and the applicable sending basis are verified</td><td>A checkout email address alone does not establish permission for every channel or jurisdiction</td></tr>
 <tr><td>Consented, never purchased</td><td>Open abandoned cart recovery with guidance and proof, not discounts</td><td>First-touch abandoned cart recovery codes create discount dependence</td></tr>
-<tr><td>Active cart, no checkout</td><td>Abandoned Cart Recovery reminder with product context; discount withheld</td><td>Guards abandoned cart recovery margin while intent peaks</td></tr>
+<tr><td>Active cart, no checkout</td><td>Send only if the integration identifies the recipient and exposes a qualifying cart event; withhold discounts initially</td><td>A cart event is not necessarily an abandoned checkout eligible for Shopify recovery</td></tr>
 <tr><td>Purchased recently</td><td>Suppress abandoned cart recovery selling after checkout; educate instead</td><td>Post-checkout abandoned cart recovery pitches trigger regret and opt-outs</td></tr>
 <tr><td>Refund or return open</td><td>Freeze abandoned cart recovery promos until refund or return closes</td><td>Service-active abandoned cart recovery shoppers reject promos</td></tr>
 <tr><td>Repeated non-engagement</td><td>Sunset cold abandoned cart recovery contacts before complaints build</td><td>Keeps abandoned cart recovery placement high via list hygiene</td></tr>
@@ -92,10 +92,10 @@ const apps=[
 <tr><td>Free or disposable email domain</td><td>Gate abandoned cart recovery journeys behind address verification</td><td>Low-grade abandoned cart recovery signups drag deliverability</td></tr>
 <tr><td>Staff and test accounts</td><td>Abandoned Cart Recovery internal accounts never enter production</td><td>Abandoned Cart Recovery reporting stays clean without test noise</td></tr>
 <tr><td>Competitor or researcher signals</td><td>Abandoned Cart Recovery researcher signups follow standard consent</td><td>Ad-hoc abandoned cart recovery exceptions break traceability</td></tr>
-<tr><td>Legacy list without timestamps</td><td>Abandoned Cart Recovery sends to old lists need fresh opt-in</td><td>Timestamp-less abandoned cart recovery consent is legal exposure</td></tr>
+<tr><td>Legacy list without timestamps</td><td>Review provenance and permission before activating legacy contacts</td><td>Missing records require review rather than an assumed right to send</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Margin, app costs, and pricing for Abandoned cart recovery</h2>
-<p>For abandoned cart recovery, revenue attribution flatters; margin decides. Burden the abandoned cart recovery program with its true load — platform fees, overages, SMS, capture, creative, agency, and abandoned cart recovery discount cost — before calling it profitable. Abandoned Cart Recovery rule: near fifteen percent stack-to-margin, cut abandoned cart recovery complexity before chasing gains.</p>
+<p>For abandoned cart recovery, revenue attribution flatters; margin decides. Burden the abandoned cart recovery program with its true load — platform fees, overages, SMS, capture, creative, agency, and abandoned cart recovery discount cost — before calling it profitable. Set a store-specific cost ceiling using contribution margin after discounts, fulfillment, returns, and messaging costs; there is no universal fifteen-percent threshold for recovery profitability.</p>
 <p>Pricing changes frequently and varies by region, contact volume, and contract term, so check the official pricing pages of every shortlisted app and model an eighteen-month total that includes a peak season. Free tiers ration contacts, sends, branching, or support — confirm which ceiling binds your abandoned cart recovery plan first.</p>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Cost component</th><th>What to model</th><th>Common failure</th></tr></thead>
@@ -140,9 +140,9 @@ const apps=[
 <h2 class="mt-12">Implementation order for a abandoned cart recovery program</h2>
 <ol>
 <li>Abandoned Cart Recovery first step: consent sources documented and mapped.</li>
-<li>Prove abandoned cart recovery-critical Shopify events — order, cart, refund, support — fire in a test store.</li>
+<li>Test the events the selected integration actually exposes: cart or checkout activity, placed orders, and refunds; support status may require a separate connection. Verify identifiers, timing, missing addresses, and duplicate events.</li>
 <li>For abandoned cart recovery, suppression architecture precedes journey building.</li>
-<li>Abandoned Cart Recovery pilot: one journey, one holdout, thirty-day read.</li>
+<li>Pilot one journey with an eligible randomized no-message holdout where supported. Treat thirty days as a review point, not a guarantee of enough evidence.</li>
 <li>Thirty days into abandoned cart recovery, score margin and audience health.</li>
 <li>Broaden abandoned cart recovery after the pilot survives handoff.</li>
 <li>Abandoned Cart Recovery peak policy locks edits, codes, cadence.</li>
@@ -173,7 +173,7 @@ const apps=[
 <div><h3>Can I run abandoned cart recovery email without an agency?</h3><p>Yes, if the scope stays small. Pick one abandoned cart recovery journey, document consent and suppression rules, and reuse a simple template system. Keep abandoned cart recovery in-house unless tangled flows, deliverability triage, or peak-season abandoned cart recovery load exceed internal bandwidth.</p></div>
 <div><h3>When should I graduate from my first app for abandoned cart recovery?</h3><p>Graduate the abandoned cart recovery stack when the team can no longer edit flows safely, segment abandoned cart recovery audiences by purchase state, or forecast cost at the growing contact count. For abandoned cart recovery, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression.</p></div>
 <div><h3>How much discounting is acceptable for abandoned cart recovery?</h3><p>Treat discounts as one lever, not the default. For abandoned cart recovery, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. For abandoned cart recovery, code-dependence across most revenue means the offer story — not the price — needs repair.</p></div>
-<div><h3>Which Shopify data matters most for abandoned cart recovery?</h3><p>Order and refund state, cart and browse events, consent source, and product availability cover most abandoned cart recovery decisions. Test-purchase every abandoned cart recovery event first, confirm it fires correctly, then document abandoned cart recovery field semantics so marketing and engineering agree.</p></div>
+<div><h3>Which Shopify data matters most for abandoned cart recovery?</h3><p>Distinguish cart activity, started checkout, placed order, and refund events; confirm which the integration exposes and how it matches a recipient. Verify channel permission and current variant availability before sending. A stock snapshot at enrollment is insufficient: test sold-out variants, changed prices, missing addresses, delayed orders, and duplicate events, and document what happens when fresh data is unavailable.</p></div>
 <div><h3>How do I avoid duplicate sends across apps for abandoned cart recovery?</h3><p>Give one platform ownership of each abandoned cart recovery journey, document which app sends what, and share suppression lists where the tools support it. During peak season, audit abandoned cart recovery weekly by sampling customers and listing every abandoned cart recovery message each one received.</p></div>
 <div><h3>What should a abandoned cart recovery pilot include?</h3><p>Run abandoned cart recovery as a contained test: one audience, a journey or two, suppression in writing, holdout measurement, and a thirty-day abandoned cart recovery check on margin and complaints against criteria set pre-launch.</p></div>
 </section>
@@ -189,7 +189,7 @@ const apps=[
 {"@type": "Question", "name": "Can I run abandoned cart recovery email without an agency?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if the scope stays small. Pick one abandoned cart recovery journey, document consent and suppression rules, and reuse a simple template system. Keep abandoned cart recovery in-house unless tangled flows, deliverability triage, or peak-season abandoned cart recovery load exceed internal bandwidth."}},
 {"@type": "Question", "name": "When should I graduate from my first app for abandoned cart recovery?", "acceptedAnswer": {"@type": "Answer", "text": "Graduate the abandoned cart recovery stack when the team can no longer edit flows safely, segment abandoned cart recovery audiences by purchase state, or forecast cost at the growing contact count. For abandoned cart recovery, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression."}},
 {"@type": "Question", "name": "How much discounting is acceptable for abandoned cart recovery?", "acceptedAnswer": {"@type": "Answer", "text": "Treat discounts as one lever, not the default. For abandoned cart recovery, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. For abandoned cart recovery, code-dependence across most revenue means the offer story — not the price — needs repair."}},
-{"@type": "Question", "name": "Which Shopify data matters most for abandoned cart recovery?", "acceptedAnswer": {"@type": "Answer", "text": "Order and refund state, cart and browse events, consent source, and product availability cover most abandoned cart recovery decisions. Test-purchase every abandoned cart recovery event first, confirm it fires correctly, then document abandoned cart recovery field semantics so marketing and engineering agree."}},
+{"@type": "Question", "name": "Which Shopify data matters most for abandoned cart recovery?", "acceptedAnswer": {"@type": "Answer", "text": "Distinguish cart activity, started checkout, placed order, and refund events; confirm which the integration exposes and how it matches a recipient. Verify channel permission and current variant availability before sending. A stock snapshot at enrollment is insufficient: test sold-out variants, changed prices, missing addresses, delayed orders, and duplicate events, and document what happens when fresh data is unavailable."}},
 {"@type": "Question", "name": "How do I avoid duplicate sends across apps for abandoned cart recovery?", "acceptedAnswer": {"@type": "Answer", "text": "Give one platform ownership of each abandoned cart recovery journey, document which app sends what, and share suppression lists where the tools support it. During peak season, audit abandoned cart recovery weekly by sampling customers and listing every abandoned cart recovery message each one received."}},
 {"@type": "Question", "name": "What should a abandoned cart recovery pilot include?", "acceptedAnswer": {"@type": "Answer", "text": "Run abandoned cart recovery as a contained test: one audience, a journey or two, suppression in writing, holdout measurement, and a thirty-day abandoned cart recovery check on margin and complaints against criteria set pre-launch."}}
 ]})} />
@@ -209,7 +209,7 @@ const apps=[
 <li>For abandoned cart recovery, freeze journey changes two weeks pre-peak.</li>
 <li>Abandoned Cart Recovery QA spans purchase, refund, and case paths.</li>
 <li>Check abandoned cart recovery exits filter buyers and open cases.</li>
-<li>Abandoned Cart Recovery measurement needs bigger peak holdouts.</li>
+<li>Size peak-season holdouts for the decision and available audience; do not assume a larger group is always required.</li>
 <li>For abandoned cart recovery, pre-commit text timing and frequency limits.</li>
 <li>Abandoned Cart Recovery billing checked on peak math.</li>
 <li>For abandoned cart recovery, name a daily inbox-health monitor.</li>
