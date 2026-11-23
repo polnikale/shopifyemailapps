@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     question: 'Is Justuno an email platform?',
-    answer: 'Justuno is capture-first — popups, quizzes, gamification, AI recommendations — with basic email. Growing stores keep Justuno for onsite and move welcome, cart, winback, and replenishment to Sequenzy, Klaviyo, or Omnisend. Searching "Justuno alternatives" often means lifecycle graduation, not popup replacement.',
+    answer: 'Justuno is positioned around onsite capture and list growth; that does not establish ownership of lifecycle email sending. Growing stores keep Justuno for onsite and move welcome, cart, winback, and replenishment to Sequenzy, Klaviyo, or Omnisend. Searching "Justuno alternatives" often means lifecycle graduation, not popup replacement.',
   },
   {
     question: 'Best Justuno replacement for full stack?',
@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     question: 'Can I export Justuno subscribers?',
-    answer: 'Yes — export with quiz answers, signup source, and consent timestamps. Quiz intent data becomes segmentation gold in Sequenzy or Klaviyo welcome branching. Reconnect popup integrations to new list IDs after migration.',
+    answer: 'Check the actual export and connected ESP records before promising portability. Verify whether quiz answers, signup source, channel permission, timestamps, and suppressions are available and usable in the destination; do not infer missing consent from a list membership. Map supported fields, review ambiguous records, and test the destination list routing before activation.',
   },
   {
     question: 'Justuno vs Privy when leaving?',
@@ -93,10 +93,10 @@ const faqs = [
       <article class="prose-shopify mt-14 max-w-4xl">
         <h2>Why Shopify merchants leave Justuno</h2>
         <p>
-          Lifecycle ceiling mirrors Privy's story with richer capture data wasted. A skincare brand collects quiz answers — oily, dry, sensitive — then sends identical welcome emails because Justuno's automation cannot branch on submission fields cleanly. The irony hurts: better intent data than Privy, same email limitations. Pageview pricing adds insult — traffic spikes from TikTok, bill spikes, lifecycle flatlines.
+          A capture tool and its connected email provider solve different problems. In a proposed skincare workflow, skin-type answers could inform welcome branches only if the capture fields, integration, destination segmentation, and permission support that use. Inspect the connected ESP before attributing a generic welcome email to Justuno. There is no measured merchant outcome or verified billing quote in this example.
         </p>
         <p>
-          Capture complexity without lifecycle payoff triggers full exits. Teams spend hours maintaining quiz logic and AI recommendation blocks while revenue lives in cart and winback flows Justuno never prioritized. When someone asks "why are we paying Justuno pageviews for emails Klaviyo should send," migration begins.
+          Review capture maintenance and downstream lifecycle performance separately. Inventory which system owns each form, field mapping, welcome enrollment, and message. Replacing capture does not require replacing a working ESP, and replacing the ESP does not require removing effective capture.
         </p>
         <p>
           Onsite fatigue is the second exit vector — quizzes that converted at 4% now convert at 1.2% after audience saturation. Merchants downgrade capture to Privy simplicity or native Shopify forms while moving lifecycle to Sequenzy. They leave Justuno capture, not necessarily the quiz strategy lesson.
@@ -109,15 +109,15 @@ const faqs = [
         <p>Decide capture strategy first — keep Justuno quizzes or migrate to Privy — then migrate email sends.</p>
         <ol>
           <li><strong>Decide capture vs lifecycle split.</strong> Keep Justuno for quizzes only, or replace capture entirely with Privy.</li>
-          <li><strong>Export subscribers with quiz metadata.</strong> Custom fields, signup source, consent timestamps — quiz answers become welcome branches.</li>
-          <li><strong>Pause Justuno email automations.</strong> Not necessarily popups unless switching capture vendor.</li>
+          <li><strong>Verify exportable capture metadata.</strong> Inspect available custom fields, signup sources, and permission records in Justuno and the connected ESP; do not assume quiz answers or timestamps are exportable.</li>
+          <li><strong>Identify the sending ESP.</strong> Pause its affected automations when replacement ownership is ready; keep capture live only with tested routing.</li>
           <li><strong>Connect lifecycle platform to Shopify.</strong> Sync catalog and orders before contact import.</li>
           <li><strong>Rebuild welcome branching by quiz intent.</strong> The migration payoff Justuno made possible but never delivered.</li>
           <li><strong>Enable cart with purchase suppression.</strong> Fix collision gaps Justuno shared with Privy-class tools.</li>
           <li><strong>Point Justuno integration to new list.</strong> Stop feeding old email automations; continue capture if keeping Justuno.</li>
           <li><strong>Run parallel suppression 14 days.</strong> Watch duplicate recovery during overlap.</li>
           <li><strong>Add post-purchase, winback, replenishment.</strong> Flows Justuno never prioritized.</li>
-          <li><strong>Reassess pageview tier.</strong> Downgrade Justuno if capture-only; cancel if Privy replaced onsite.</li>
+          <li><strong>Reassess the actual contract.</strong> Verify billing and cancellation terms; do not assume a separate capture-only tier exists.</li>
           <li><strong>Document quiz performance.</strong> Archive what worked before removing gamification entirely.</li>
         </ol>
 
@@ -134,7 +134,7 @@ const faqs = [
           Days 15–30: Connect Sequenzy or Klaviyo. Map quiz fields to welcome branches. Pause Justuno email automations; keep quiz capture live. Point Justuno integration to new list ID. Test quiz submission end-to-end.
         </p>
         <p>
-          Days 31–60: Cart with purchase suppression. Post-purchase regimen education by quiz segment. Fourteen-day parallel suppression on recovery. Downgrade Justuno to capture-only tier if pricing separates email.
+          Days 31–60: Cart with purchase suppression. Post-purchase regimen education by quiz segment. Fourteen-day parallel suppression on recovery. Review the actual Justuno plan and contract rather than assuming an email or capture-only tier.
         </p>
         <p>
           Days 61–90: Winback, replenishment by product type matching quiz profiles, VIP early access. Measure repeat purchase rate by quiz segment — the metric Justuno capture enabled but Justuno email never optimized.
@@ -153,13 +153,13 @@ const faqs = [
           <strong>Replace Justuno capture prematurely.</strong> Privy swap plus lifecycle migration same week. Fix: stabilize lifecycle four weeks first.
         </p>
         <p>
-          <strong>Popup feeds old list.</strong> Quiz submissions still enroll Justuno email automations. Fix: update integration target before pausing Justuno email.
+          <strong>Popup feeds old list.</strong> Capture submissions still enroll automations in the old connected ESP. Fix: verify routing and queued-message ownership before activating the new sender.
         </p>
         <p>
           <strong>Single welcome branch.</strong> Team rebuilds one welcome ignoring quiz segments. Fix: branching is the migration ROI.
         </p>
         <p>
-          <strong>Pageview tier not downgraded.</strong> Still paying full Justuno while email moved elsewhere. Fix: capture-only tier audit.
+          <strong>Contract assumptions go unchecked.</strong> Moving the connected ESP does not itself change Justuno billing. Fix: review actual capture requirements, plan terms, and cancellation conditions.
         </p>
 
         <h2>Justuno plus lifecycle: the recommended long-term stack</h2>
@@ -167,11 +167,12 @@ const faqs = [
           Justuno excels at intent capture; lifecycle platforms excel at monetizing intent. Do not replace Justuno unless quizzes underperform — replace Justuno email. See <a class="link" href="/compare/privy-vs-justuno">Privy vs Justuno</a> if capture tool also needs evaluation.
         </p>
       
+        <p>Before activating replacement recovery, distinguish an anonymous cart, an identified checkout, and a completed order. Map source event IDs, customer and checkout identifiers, consent purpose and channel, and order state explicitly; do not merge shoppers by address alone. Assign one sender to each recovery purpose, inspect delayed messages already queued in both systems, and cancel or suppress the previous owner before enabling the replacement. Propose replay and duplicate-event checks using stable event keys, then recheck purchase, opt-out, eligibility, and frequency state at send time. These are migration acceptance checks to perform, not results observed for this guide.</p>
         <h2>Integration dependency audit before Justuno disconnect</h2>
         <p>Platform exits fail operationally when connected apps keep pushing data into a system you partially deactivated. Before disconnecting Justuno from Shopify, inventory every integration: subscription tools, loyalty apps, review platforms, helpdesk systems, popup capture tools, and SMS coordination partners. For each integration document data direction, events triggered, segments or tags modified, and business criticality. Critical integrations must reconnect on the replacement platform before core automations go live. Low-value integrations from deprecated apps should sunset rather than migrate — most merchants accumulate integration debt that amplifies migration risk beyond the core quiz capture transition itself.</p>
         <p>Capture tools feeding Justuno list IDs require theme and checkout audit. Grep storefront theme files, checkout extensions, and post-purchase pages for hardcoded list identifiers or webhook URLs pointing at Justuno. SMS coordination with email recovery needs documented suppression owner per trigger type — email platform and SMS platform optimizing independently creates customer complaints within days of overlap. Export UTM and campaign naming conventions if analytics dashboards depend on Justuno campaign structure; attribution reporting resets during migration quarter unless naming discipline transfers deliberately.</p>
         <h2>Quarterly optimization after leaving Justuno</h2>
-        <p>First thirty days post-migration focus on suppression integrity and deliverability stability. Days thirty through ninety focus on revenue optimization by flow type. Archive Justuno baseline metrics during migration — attributed revenue by automation, send volume, complaint rate, recovery timing — and compare weekly against new platform performance. Cart recovery should reach parity within two weeks; winback and replenishment should exceed old platform performance if migration rationale was capability upgrade rather than pure cost reduction. Underperformance triggers suppression audit before creative audit — overly aggressive recent-buyer exclusions silently prevent enrollment more often than weak subject lines.</p>
+        <p>First thirty days post-migration focus on suppression integrity and deliverability stability. Days thirty through ninety focus on revenue optimization by flow type. Archive Justuno baseline metrics during migration — attributed revenue by automation, send volume, complaint rate, recovery timing — and compare weekly against new platform performance. Propose comparing recovery under equivalent eligibility and attribution windows; neither two-week parity nor improved winback is guaranteed. Investigate event coverage, permission, suppression, and audience changes before assigning a cause. Underperformance triggers suppression audit before creative audit — overly aggressive recent-buyer exclusions silently prevent enrollment more often than weak subject lines.</p>
         <p>Segment hygiene at day sixty prevents repeating billing or deliverability problems under new platform model. Sunset unengaged contacts regardless of how new platform bills — per-contact, per-send, or flat tier. Quarterly review documents which automations required manual intervention versus ran untouched; increasing untouched percentage indicates playbook stabilization. Deliverability seed tests at day thirty and ninety on Gmail and Outlook catch reputation issues before they compound across peak promotional calendar.</p>
         <h2>Building the business case and choosing replacement timing</h2>
         <p>Finance approves migration with conservative revenue projections, not feature checklists. Present twelve-month cost of staying on Justuno including platform fees, operator labor, agency support, and opportunity cost of flows the current platform cannot run. Present migration cost: labor, agency rebuild, deliverability ramp risk, and three-month conservative incremental revenue projection from flows enabled on replacement platform. Break-even month calculation determines urgency — fee-only savings with twelve-month payback rarely justify migration; revenue lift with four-month payback usually does. Negotiate with Justuno once before migrating if contract renewal is near; documented competitive quotes sometimes reduce renewal cost enough to fund hybrid improvement without full exit.</p>
@@ -181,8 +182,8 @@ const faqs = [
         <p>Every migration succeeds technically and fails organizationally when ownership is unclear. Assign named owner for: welcome and post-purchase copy edits, cart recovery timing and discount escalation rules, winback and replenishment calendar, popup and capture integration health, SMS compliance and opt-out monitoring, deliverability and complaint rate review, and platform billing audit. One person can own multiple roles on small teams but names must exist in writing — not "marketing" as abstract entity. During first ninety days post-migration, owner sends weekly three-line status to leadership: attributed revenue versus baseline, any duplicate-send incidents, and planned flow changes next week. This rhythm catches drift before it becomes quarterly surprise.</p>
         <p>Agency relationships need explicit scope reset after migration. If agency maintained previous platform flows, clarify whether agency rebuilds on new platform, trains internal owner, or exits automation scope entirely. Hybrid agency-internal ownership fails when both assume the other edits suppression rules before sale week. Document which flows agency may touch without approval versus which require internal sign-off — typically cart discount escalation and winback offer depth are internal decisions while template formatting is agency-appropriate. Contractor access should expire automatically ninety days post-migration unless renewed deliberately.</p>
         <h2>Deliverability and compliance continuity</h2>
-        <p>Platform migration is deliverability event even when sending domain unchanged. New ESP routes mail through different infrastructure with different reputation pools. Ramp plan: days one through seven send only to engaged forty-five-day openers at fifty percent of normal campaign volume; days eight through fourteen expand to ninety-day engaged at seventy-five percent volume; day fifteen onward resume normal segmentation if complaint rate stays below threshold. Cart and transactional automations can run at full volume earlier if enrolled segments are purely behavioral purchase triggers rather than bulk marketing lists — but monitor complaint rate daily regardless.</p>
-        <p>Compliance continuity for SMS migrations requires legal review of exported consent records before first send on new platform. Document opt-in source, timestamp, and keyword for every SMS subscriber. Exclude records with ambiguous consent rather than risk TCPA exposure — losing ten percent of list is cheaper than single class-action exposure. Email marketing consent similarly requires documented source; GDPR and CAN-SPAM both care about provable opt-in even when platforms technically allow import. Archive consent export files seven years minimum. Unsubscribe and preference center links must work before any broadcast — test on mobile devices where eighty percent of Shopify customers read email.</p>
+        <p>Platform migration is deliverability event even when sending domain unchanged. New ESP routes mail through different infrastructure with different reputation pools. Set a ramp plan with the receiving provider based on sending history, reputation, volume, and engagement. Review delivery, bounces, complaints, and opt-outs before expanding; a fixed day count does not establish readiness. Keep transactional order notices separate from promotional cart recovery: a behavioral trigger does not by itself establish permission or justify full-volume marketing sends.</p>
+        <p>Compliance continuity for SMS migrations requires legal review of exported consent records before first send on new platform. Document opt-in source, timestamp, and keyword for every SMS subscriber. Exclude records with ambiguous consent rather than risk TCPA exposure — losing ten percent of list is cheaper than single class-action exposure. Email permission and retention requirements depend on jurisdiction, purpose, and the applicable rules; importing a record does not establish permission. Have the responsible reviewer set the lawful basis, retention period, and suppression policy rather than assuming one universal opt-in or seven-year rule. Unsubscribe and preference-center links must work before any broadcast; propose tests on representative mobile clients before activation.</p>
         <h2>Revenue attribution reset and reporting discipline</h2>
         <p>Accept attribution reset during migration quarter — comparing new platform attributed revenue against old platform last-quarter numbers is directionally useful but not pixel-perfect. UTM schemas, attribution windows, and click-definition differ across platforms. Build new baseline from week six onward rather than demanding week two matches old platform peak. Track flow-level revenue weekly: welcome, cart, browse, post-purchase, winback, replenishment, campaigns — each should trend independently. If total attributed revenue rises but cart recovery falls, investigate suppression collision before celebrating aggregate number.</p>
         <p>Finance reporting should separate platform cost as percentage of attributed email revenue monthly — target under three percent for mature DTC, under five percent during growth phase, investigate above seven percent regardless of platform choice. Include operator labor hours in total cost of ownership calculation quarterly. Platform that saves two hundred dollars monthly but adds eight hours maintenance is more expensive than platform costing two hundred more monthly with two hours maintenance. Migration business case validation happens at day ninety with real numbers, not projected numbers from sales demos — update internal ROI model with actuals and decide whether to deepen investment in chosen platform or plan next transition if goals missed.</p>
