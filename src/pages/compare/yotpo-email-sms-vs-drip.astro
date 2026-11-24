@@ -1,260 +1,48 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
-import TldrBox from '../../components/TldrBox.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import { siteFromHost } from '../../content';
-
 const site = siteFromHost();
-const path = '/compare/yotpo-email-sms-vs-drip';
-const title = 'Yotpo Email & SMS vs Drip for Shopify: 2026 Comparison';
-const desc = 'Yotpo Email & SMS vs Drip for Shopify — reviews-loyalty suite lifecycle vs visual workflow control, custom branching, and operator team fit.';
-
+const path = "/compare/yotpo-email-sms-vs-drip";
+const title = "Yotpo Email & SMS to Drip: Shopify migration decisions";
+const desc = "Evaluate Drip around explicit Shopify workflow rules, with a separate plan for retained Yotpo Reviews, Loyalty and any SMS program.";
 const faqs = [
   {
-    question: 'Is Yotpo Email & SMS or Drip better for a Shopify store doing $55k/mo?',
-    answer: 'Drip suits teams that want visual workflow control and custom branching beyond templates — irregular reorder cadence, tag exclusions, journey A/B tests. Yotpo wins when Yotpo Reviews or Loyalty is live and post-purchase trust loops matter more than canvas tinkering. At $55k/mo with no Yotpo modules, Drip competes strongly. With Yotpo Reviews at scale, suite consolidation often beats Drip plus integrations.',
+    "question": "Does Drip replace all Yotpo products?",
+    "answer": "Moving email does not replace review display, review collection or a points program. Retain or replace those independently, and verify any data route needed for Drip messages."
   },
   {
-    question: 'How does Yotpo vs Drip pricing compare at 14,000 contacts?',
-    answer: 'Drip at 14k people typically lands $130–210/mo. Yotpo Email & SMS pricing ties to broader Yotpo contract — bundle economics improve when Reviews and Loyalty are already line items. Drip has no meaningful free tier at scale. Model whether Yotpo Email standalone cost exceeds Drip plus separate review tooling.',
-  },
-  {
-    question: 'Which has the better workflow builder?',
-    answer: 'Drip\'s visual canvas is clearer for complex branching, A/B splits, and custom field logic. Yotpo Email & SMS workflow builder is solid with ecommerce presets enriched by review and loyalty data — excellent when UGC timing is central. Choose Drip if you customize deeply without suite context. Choose Yotpo when review requests and loyalty earn are journey anchors.',
-  },
-  {
-    question: 'Can Drip replace Yotpo Email & SMS while keeping Yotpo Reviews?',
-    answer: 'Yes — many brands run Drip for lifecycle canvas while Yotpo owns review collection and display. Coordinate triggers to avoid duplicate post-purchase emails. Drip can branch on review tags synced from Yotpo but requires maintenance Yotpo Email avoids natively. The split works when canvas control justifies integration labor.',
-  },
-  {
-    question: 'Which handles replenishment and irregular reorder cadence better?',
-    answer: 'Drip allows custom delays and branches by product properties — flexible for subscription-adjacent snack boxes and coffee with variable consumption. Yotpo offers replenishment templates enriched by loyalty earn reminders — strong when repeat purchase ties to points. For bespoke reorder logic, Drip\'s canvas wins. For loyalty-centric consumables with reviews, Yotpo wins.',
-  },
-  {
-    question: 'Which handles post-purchase review requests better?',
-    answer: 'Yotpo natively when Reviews module is active — fulfillment timing, photo prompts, reviewer segmentation without sync. Drip requires integration configuration to respect review status. If post-purchase UGC velocity is a KPI, Yotpo\'s integrated post-purchase wins unless Drip canvas control is worth integration overhead.',
-  },
-  {
-    question: 'What workflow test should decide the winner?',
-    answer: 'Build welcome (branch by signup source), cart (exclude active winback), post-purchase review request, loyalty earn reminder, and winback with discount-sensitive split. Score time-to-live, review submission lift, and edit safety during sales. If Yotpo modules are live, lean Yotpo. If custom branching without suite context matters, lean Drip.',
-  },
+    "question": "What should a Drip rehearsal cover?",
+    "answer": "Inspect Shopify data, a wholesale exclusion, a gift purchaser and a repeat purchase that should exit replenishment. Prepare these as evaluation exercises; this page reports no observed outcomes."
+  }
 ];
 ---
-
 <BaseLayout title={title} description={desc} site={site} path={path}>
   <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
-
-  <section class="py-14 md:py-20">
-    <div class="container">
-      <nav class="mb-8 text-sm">
-        <a class="link" href="/compare">Comparisons</a>
-        <span class="mx-2 text-[#5d3a1d]">/</span>
-        <span class="text-[#5d3a1d]">Yotpo Email & SMS vs Drip</span>
-      </nav>
-
-      <header class="max-w-4xl">
-        <p class="editorial-kicker">Head-to-head</p>
-        <h1 class="hero-title mt-5">Yotpo Email & SMS vs Drip for Shopify</h1>
-        <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-          Suite trust loops versus visual workflow control. Yotpo Email & SMS optimizes lifecycle messaging when reviews and loyalty data should inform every send. Drip optimizes for operators who design behavior-based logic on a canvas they can audit and edit. We stress-tested both on a $64k/mo curated snack subscription box with irregular flavor reorder timing, a $78k/mo clean beauty brand running Yotpo Reviews and Loyalty, and a $51k/mo outdoor equipment shop that chose Drip for wholesale-tag exclusions Drip expressed cleanly.
-        </p>
-      </header>
-
-      <div class="mt-12 max-w-4xl">
-        <TldrBox
-          picks={[
-            { label: 'Reviews + loyalty loops', tool: 'Yotpo', reason: 'Native UGC timing and points earn in one graph.' },
-            { label: 'Workflow control', tool: 'Drip', reason: 'Visual canvas for custom branching and experiments.' },
-            { label: 'Suite consolidation', tool: 'Yotpo', reason: 'One vendor when Reviews or Loyalty already live.' },
-            { label: 'Operator builders', tool: 'Drip', reason: 'Hands-on logic without enterprise overhead.' },
-          ]}
-        />
-      </div>
-
-      <div class="mt-12 card overflow-x-auto">
-        <h2 class="px-5 py-4 font-serif text-2xl font-black text-[#24170f]">Comparison at a glance</h2>
-        <table class="data-table">
-          <thead>
-            <tr><th>Dimension</th><th>Yotpo Email & SMS</th><th>Drip</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Best for</td><td>Reviews/loyalty suite merchants</td><td>Visual workflow operators</td></tr>
-            <tr><td>Starting price</td><td>Bundle-dependent pricing</td><td>From ~$39/mo</td></tr>
-            <tr><td>Billing model</td><td>Yotpo contract tiers</td><td>People in account</td></tr>
-            <tr><td>Shopify depth</td><td>Native + reviews/loyalty data</td><td>Native — orders, tags, products</td></tr>
-            <tr><td>Prebuilt flows</td><td>UGC and loyalty anchors</td><td>Templates + custom build</td></tr>
-            <tr><td>Reviews integration</td><td>Native</td><td>Via integration</td></tr>
-            <tr><td>Workflow UI</td><td>Journey presets + suite data</td><td>Visual canvas</td></tr>
-            <tr><td>Learning curve</td><td>Moderate; suite context helps</td><td>Moderate for visual thinkers</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <article class="prose-shopify mt-14 max-w-4xl">
-        <h2>Why this comparison matters for Shopify merchants</h2>
-        <p>
-          Yotpo Email & SMS and Drip both pass Shopify essentials: order sync, product blocks, cart triggers, revenue tracking. The fork is whether your team wants suite-aligned trust loops or canvas-visible behavior logic. Neither is better in abstract — the snack box needed custom reorder branches Drip expressed naturally; the beauty brand needed review and loyalty sequences Yotpo wired without Zapier.
-        </p>
-        <p>
-          The outdoor equipment shop chose Drip and had cart and welcome live in ten days with wholesale-tagged customer exclusions visible on canvas — a win for their retention operator. Six months later they adopted Yotpo Reviews for UGC on PDPs but kept Drip for lifecycle — integration maintenance became a line item they budgeted explicitly rather than discovering during holiday sale edits.
-        </p>
-
-        <h2>Merchant scenario: curated snack subscription box on Drip</h2>
-        <p>
-          At $64k/mo this brand's reorder cadence varied 12 to 38 days by box size and household consumption — standard replenishment templates failed. Drip canvas built branches by product metafield with custom delays per SKU bundle. Cart recovery added education-before-discount paths for gift buyers excluded from promotional winback. Yotpo replenishment defaults assumed loyalty earn messaging they did not yet run — Loyalty module was not live.
-        </p>
-        <p>
-          They evaluated Yotpo Email after Reviews demos but chose Drip because canvas control mattered more than suite consolidation at their UGC maturity. When Loyalty launches next quarter, they will re-score — documented trigger ownership will prevent duplicate post-purchase if Yotpo Reviews joins the stack.
-        </p>
-
-        <h2>Merchant scenario: clean beauty brand on Yotpo suite</h2>
-        <p>
-          This brand at $78k/mo had Yotpo Reviews driving 310 photo submissions monthly and Loyalty with tiered point earn on repurchase. Post-purchase review requests in Drip required integration timing that lagged Yotpo native fulfillment triggers by 11% on submission rate. Loyalty earn and tier upgrade emails shared suppression with promotional sends natively in Yotpo Email & SMS.
-        </p>
-        <p>
-          Drip canvas could have replicated some logic via synced tags — maintenance cost exceeded their one-person retention team capacity. Suite consolidation won on operator hours saved, not feature checkbox counts.
-        </p>
-
-        <h2>Workflow test: welcome series</h2>
-        <p>
-          Drip built welcome with explicit nodes for popup vs footer signup on the snack box — clearer to audit, slower to ship than Yotpo presets. Yotpo welcome templates assumed loyalty enrollment and review social proof — powerful for the beauty brand, awkward without module data.
-        </p>
-        <p>
-          For launch-deadline stores without Yotpo modules, Drip or Omnisend ship faster. For teams documenting logic for future hires with suite context already live, Yotpo presets plus native UGC data accelerate.
-        </p>
-
-        <h2>Workflow test: abandoned cart</h2>
-        <p>
-          Both recovered carts effectively for $55–$120 AOV tests. Drip's cart workflow showed exactly which branch fired for discount-sensitive tags — valuable when the snack box A/B tested education vs 10% off in step two. Yotpo cart SMS integrated loyalty earn messaging on the beauty brand — "complete checkout and earn 150 points" lifted conversion on their serum line.
-        </p>
-        <p>
-          Cross-journey suppression — exclude shoppers in active winback or post-review follow-up — was tighter in Yotpo when reviews and loyalty lived in the same account. Drip's visual rules achieved similar outcomes after setup with synced tags from Yotpo Reviews on the outdoor shop's hybrid stack.
-        </p>
-
-        <h2>Pricing reality at growing list sizes</h2>
-        <p>
-          At 18k contacts, Drip at 18k people lands $180–280/mo. Yotpo Email & SMS pricing varies with bundle — beauty brand paying Reviews + Loyalty + Email saw consolidation savings versus Drip plus separate review and loyalty point solutions patched together.
-        </p>
-        <p>
-          List hygiene matters on both: popup imports inflate bills. Drip lead scoring helps prioritize but does not reduce profile counts automatically. Budget sunset campaigns on either platform before BFCM.
-        </p>
-
-        <h2>Shopify data depth in production</h2>
-        <p>
-          Drip goes deeper on custom fields and tag-driven logic when Shopify customer metadata is rich — wholesale exclusions on the outdoor shop are the canonical example. Yotpo adds review sentiment, loyalty tier, and redemption proximity when modules are active.
-        </p>
-        <p>
-          Neither matches Klaviyo's predictive CLV maximums. The snack box's irregular reorder cadence was natural in Drip's canvas. The beauty brand's reviewer vs non-reviewer winback splits were natural in Yotpo's integrated data.
-        </p>
-
-        <h2>Team fit: who should choose which</h2>
-        <p><strong>Choose Yotpo Email & SMS if:</strong></p>
-        <ul>
-          <li>Yotpo Reviews or Loyalty is already live and performing</li>
-          <li>Post-purchase UGC and loyalty earn emails are retention infrastructure</li>
-          <li>Suite consolidation reduces integration labor for your team size</li>
-          <li>Prebuilt trust-loop journeys beat canvas build time</li>
-        </ul>
-        <p><strong>Choose Drip if:</strong></p>
-        <ul>
-          <li>Your retention owner thinks in workflows and wants canvas visibility</li>
-          <li>Custom branching by tags and custom fields is central</li>
-          <li>You will A/B test journey paths frequently</li>
-          <li>Yotpo Reviews is absent or handled as display-only integration</li>
-        </ul>
-
-
-        <h2>90-day rollout: suite versus canvas trial</h2>
-        <p>
-          Weeks 1–4: Activate Yotpo Email trial only if Reviews or Loyalty is already live — build post-purchase review request and one cart flow. Parallel Drip trial on the same dev store with welcome, cart, and custom tag exclusion matching your wholesale rules.
-        </p>
-        <p>
-          Weeks 5–8: Score edit safety during a mock sale — can one person change discount branches without breaking review timing? Document trigger ownership if you split Yotpo Reviews display with Drip lifecycle.
-        </p>
-        <p>
-          Weeks 9–12: Model 12-month cost at 12k, 18k, and 25k profiles including SMS. Pick winner; freeze duplicate post-purchase sends before BFCM.
-        </p>
-
-        <h2>Margin math: integration labor versus suite consolidation</h2>
-        <p>
-          Drip at 18k people might run $220/mo versus Yotpo Email bundled with Reviews at $280/mo all-in. The $60 delta disappears if Drip plus Zapier maintenance costs six operator hours quarterly — roughly $900 at agency rates. Yotpo wins when UGC velocity is a KPI; Drip wins when canvas control prevents discount bleed on tagged wholesale accounts.
-        </p>
-
-        <h2>Failure rehearsal: wrong platform pick</h2>
-        <p>
-          <strong>Yotpo Email without Reviews or Loyalty.</strong> You pay suite pricing for presets that assume module data you do not have — slower launches than Drip with no trust-loop payoff.
-        </p>
-        <p>
-          <strong>Drip for review-heavy post-purchase.</strong> Integration lag drops submission rates 8–15% versus native Yotpo timing — measurable UGC loss on hero SKUs.
-        </p>
-
-        <h2>Merchant scenario: outdoor shop keeping Drip after Reviews adoption</h2>
-        <p>
-          The $51k/mo outdoor equipment brand adopted Yotpo Reviews for PDP stars but kept Drip for lifecycle because wholesale-tag exclusions were visible on canvas. They budget four hours monthly for review-status sync — cheaper than retraining the team on Yotpo journeys mid-season. Document this hybrid explicitly or duplicate post-purchase emails erode trust.
-        </p>
-
-
-        <h2>Operational depth: suite consolidation labor accounting</h2>
-        <p>
-          Outdoor shop kept Drip canvas after Yotpo Reviews adoption — integration labor to move lifecycle into suite exceeded consolidation savings first year. Honest dual-stack with trigger map beat forced suite email migration.
-        </p>
-        <p>
-          Yotpo wins when Reviews and Loyalty modules actively drive campaigns — UGC in cart, tier triggers. Drip wins operator autonomy on complex canvas branches and when suite email module scores below 3/5 utilization.
-        </p>
-        <p>
-          Monthly module audit: if paying for Yotpo email but only using Reviews, Drip for lifecycle is economically honest.
-        </p>
-        <p>
-          Post-purchase collision: Drip education day 1, Yotpo review ask day 4 — stagger in documented trigger ownership sheet.
-        </p>
-
-
-        <h2>Weekly operator checklist during trial</h2>
-        <p>
-          Weekly Yotpo Email Sms versus Drip cadence — Monday: time Shopify order sync into Yotpo Email Sms versus Drip entry (anything over ten minutes breaks suppression testing). Wednesday: run a single edge case — gifted order, subscription tag, financed high-AOV cart — through both Yotpo Email Sms and Drip. Friday: re-model twelve-month cost on actual Yotpo Email Sms versus Drip sends; bloated lists hurt contact billing, heavy calendars hurt send billing.
-        </p>
-        <p>
-          Yotpo Email Sms versus Drip is decided by constraints, not checklists: Yotpo Email Sms wins when its stronger lever unblocks this quarter’s bottleneck, Drip wins when its simpler operation holds up under your sale load. Use this page’s Yotpo Email Sms versus Drip example as a template to test, not a verdict to clone — map it to your orders, catalog, and hours.
-        </p>
-        <h2>Pre-decision audit</h2>
-        <p>
-          For Yotpo Email Sms versus Drip, require five artifacts pre-renewal: four-flow scores for Yotpo Email Sms and Drip, peak send forecast, sales-tag review, post-sunset contact counts, and Yotpo Email Sms versus Drip kill-switch sheet. Treat peer Yotpo Email Sms-versus-Drip notes as hypotheses your own trial must confirm.
-        </p>
-        <p>
-          Call Yotpo Email Sms versus Drip for the tool your team can safely change under sale pressure — Yotpo Email Sms or Drip, measured in recovered revenue per send and margin, not screenshots.
-        </p>
-
-        <h2>Sale-week edit safety gate</h2>
-        <p>
-          The decisive tiebreaker between Yotpo Email & SMS and Drip is rarely feature depth — it is whether a non-technical marketer can add recent-purchaser suppression and VIP early access in under thirty minutes on a Thursday before a drop. Run that edit in both trials before annual commit. Platforms that pass calm-week demos but fail sale-week edits cost more in foregone peak revenue than any annual subscription delta.
-        </p>
-        
-        <p>
-          Minimum viable trial length remains 90 days with weekly operator checklist — shorter trials miss billing surprises and peak-season behavior both Yotpo Email & SMS and Drip surface only under operational stress. Baseline metrics in week one make before-and-after claims credible to finance.
-        </p>
-
-        <p>
-          <em>Week one of the Yotpo Email Sms versus Drip trial sets the numbers: capture welcome/cart/post-purchase/winback baselines for Yotpo Email Sms and Drip or later Yotpo Email Sms versus Drip lift claims won’t survive finance. Recheck the Yotpo Email Sms versus Drip architecture quarterly.</em>
-        </p>
-        <h2>Visual canvas versus Yotpo UGC campaign loop</h2>
-        <p>
-          Supplement brand: Drip canvas winback by engagement scored 9/10; Yotpo reviewer-branch winback with UGC blocks scored 10/10 when Reviews module live. Drip wins without reviews infrastructure; Yotpo wins when UGC fuels campaigns. Hybrid: Drip lifecycle, Yotpo Reviews only — common when Email module underutilized.
-        </p>
-
-        <h2>Workflow validation: yotpo email sms vs drip</h2>
-        <p>
-          Write Yotpo Email Sms versus Drip trial scores down — welcome latency, cart suppression, gift-buyer edge, winback segmentation, priced-at-scale cost for Yotpo Email Sms and Drip — and use the half-hour sale-week edit as the Yotpo Email Sms versus Drip tiebreaker over demo aesthetics.
-        </p>
-        <p>
-          Yotpo Email Sms versus Drip needs a full quarter: weekly sync/edge-case/pricing checks across Yotpo Email Sms and Drip, baselines captured in week one. Anything shorter misleads finance on Yotpo Email Sms-versus-Drip billing and overlap behavior.
-        </p>
-        <h2>Verdict</h2>
-        <p>
-          Yotpo Email & SMS wins when Reviews or Loyalty modules are live and trust-loop messaging should not depend on integrations. Drip wins when your team ships revenue through visible, editable workflows and prefers operator depth over suite presets. Run the five-flow test on both trials against your actual module stack. The winner is whichever platform your marketer trusts to edit the night before a flash sale.
-        </p>
-      </article>
-
+  <section class="py-14 md:py-20"><div class="container">
+    <nav class="mb-8 text-sm"><a class="link" href="/compare">Comparisons</a></nav>
+    <header class="max-w-4xl"><p class="editorial-kicker">Head-to-head</p><h1 class="hero-title mt-5">{title}</h1><p class="mt-7 text-xl leading-9">{desc}</p></header>
+    <article class="prose-shopify mt-14 max-w-4xl">
+      <h2>The comparison has become a migration decision</h2>
+      <p>Yotpo Email & SMS is retired. Its live lifecycle notice says the dashboard and associated background services are inactive. Keeping Yotpo Reviews or Loyalty does not restore messaging. Evaluate a replacement sender while treating those retained products as separate services; the old suite-versus-standalone recommendation no longer describes an available choice.</p>
+      <h2>Connect store data before designing branches</h2>
+      <p>Drip documents syncing Shopify customers, orders and products, with an app embed for page and product-view tracking. Wait for the initial sync before judging missing product blocks. Installing the connection alone does not start automated emails. In a proposed rehearsal, inspect a repeat buyer and a recent order before creating workflow conditions; a visible canvas cannot compensate for missing source data.</p>
+      <h2>Make wholesale and gift-buyer exclusions explicit</h2>
+      <p>The useful reason to evaluate Drip is the work your operator needs to express and maintain. For a mixed retail/wholesale store, define which reliable field identifies trade buyers and where it enters Drip. Draft a retail welcome path with a wholesale exclusion, then change that field on a sample record and inspect the resulting eligibility. Gift purchasers may need seasonal reminders rather than a replenishment series aimed at the recipient. Do not infer either distinction from order value alone.</p>
+      <h2>Replenishment needs a business rule before a delay</h2>
+      <p>For consumables, write down whether timing follows the purchased item, a bundle or a subscription renewal. Rehearse another purchase before the scheduled reminder and a refund after workflow entry. Check which documented events and fields support those exits. If a proposed product attribute is unavailable, simplify the rule or budget a maintained data route rather than claiming arbitrary SKU-level automation is automatic.</p>
+      <h2>Keep Reviews and Loyalty without inventing a connector</h2>
+      <p>Retaining Yotpo review collection and on-site display is a separate decision from moving email to Drip. Name the review-request sender and leave that request out of Drip unless a supported integration and its configuration are established. For points-based email, verify the actual event or property route, customer matching and update behavior before drafting a balance claim. This page does not establish a native Drip connection for every Yotpo module.</p>
+      <h2>Account for channels and maintenance</h2>
+      <p>Scope Drip as the email candidate in this evaluation; establish the destination and transfer requirements for any SMS program separately. Include integration upkeep, template rebuilding and operator time in the budget. Keep a record of the customer fields used in each branch so another marketer can safely change a promotion. There is no supported contact-count price estimate or fixed trial duration in this comparison.</p>
+      <h2>Reconstruct the program from accessible records</h2>
+      <p>Start with prior exports, saved templates, consent evidence, suppression records and Shopify data you can legitimately access. Do not promise a fresh export from the retired Yotpo dashboard. Ask support what recovery remains possible before setting a launch date. A customer email or phone number in an order record does not establish marketing permission. Preserve opt-outs and mark unknown consent for review rather than importing every customer as subscribed.</p>
+      <h2>Activate against a message ownership map</h2>
+      <p>List welcome, cart, checkout recovery, post-purchase education, review collection, loyalty notices and winback separately. Prepare replacement messages disabled and inspect purchase exits, opt-outs and missing fields before activation. Give each trigger one live owner, including Shopify automations and retained Yotpo modules. Record who can pause each sender if a customer receives the wrong sequence. These are proposed acceptance exercises, not tests we ran or evidence of revenue lift.</p>
+      <h2>Primary sources</h2>
+      <p>Product information checked November 25, 2026. <a class="link" href="https://email-and-sms.yotpo.com/">Yotpo lifecycle notice</a> · <a class="link" href="https://help.drip.com/hc/en-us/articles/4424695491725-Connect-Your-Shopify-Store">Drip Shopify setup</a></p>
+    </article>
       <div class="mt-10 max-w-4xl text-sm">
         <p class="font-black text-[#24170f]">Related comparisons</p>
         <p class="mt-2">
@@ -267,5 +55,5 @@ const faqs = [
     </div>
   </section>
 
-  <FaqSection faqs={faqs} title="Yotpo Email & SMS vs Drip FAQ" />
+  <FaqSection faqs={faqs} title="Migration questions" />
 </BaseLayout>
