@@ -1,44 +1,27 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
-import TldrBox from '../../components/TldrBox.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import { siteFromHost } from '../../content';
 
 const site = siteFromHost();
 const path = '/compare/marsello-vs-yotpo-email-sms';
-const title = 'Marsello vs Yotpo Email & SMS for Shopify: 2026 Comparison';
-const desc = 'Marsello vs Yotpo Email & SMS for Shopify — retail loyalty focus vs reviews-loyalty suite consolidation, POS integration, and which platform fits boutique retail vs UGC-heavy DTC.';
+const title = "Marsello vs Yotpo Email & SMS: replacing messaging without breaking loyalty";
+const desc = "A Shopify stack review after Yotpo messaging retirement, separating Marsello loyalty adoption from retained Yotpo review and reward services.";
 
 const faqs = [
   {
-    question: 'Is Marsello or Yotpo Email better for a Shopify store with POS?',
-    answer: 'Marsello wins for retail-first brands where in-store earn-and-burn and associate-facing loyalty at checkout are central. Yotpo Email & SMS wins when you already pay for Yotpo Reviews and Loyalty and want suite consolidation with UGC-driven campaigns. Pure online DTC without POS often favors Yotpo if reviews collection is the retention loop.',
+    "question": "Can Yotpo Email be the new destination?",
+    "answer": "Its Email and SMS products were scheduled for retirement and the product endpoint reports decommissioning. Evaluate an available messaging destination."
   },
   {
-    question: 'How does Marsello vs Yotpo pricing compare?',
-    answer: 'Marsello bills on order volume and contact tiers — often $150–400/mo for mid-size retail. Yotpo uses modular pricing by product — Reviews, Loyalty, Email, SMS stack additively. Yotpo total suite cost can exceed Marsello when all modules active. Marsello value collapses without POS; Yotpo value collapses without Reviews module engagement.',
+    "question": "Does Marsello replace Yotpo Reviews?",
+    "answer": "Do not assume so. Assess review collection and display separately from loyalty and messaging, including retained product identifiers and content permissions."
   },
   {
-    question: 'Which has better loyalty-triggered email?',
-    answer: 'Both handle loyalty natively when loyalty module is active. Marsello integrates POS earn events without third-party sync — stronger for hybrid retail. Yotpo Loyalty plus Email triggers on point milestones with review status segmentation — stronger for UGC-heavy beauty and supplement brands. Choose based on whether checkout happens in-store or online.',
-  },
-  {
-    question: 'Can I use Marsello for loyalty and Yotpo for reviews only?',
-    answer: 'Possible but fragile — duplicate post-purchase emails asking for reviews and points create customer fatigue. Coordinate triggers so review request fires once. Many brands pick one loyalty owner: Marsello for retail POS or Yotpo for reviews-led DTC. Splitting increases integration maintenance without clear ROI.',
-  },
-  {
-    question: 'Which platform handles review request email better?',
-    answer: 'Yotpo natively — review request timing, visual UGC blocks in campaigns, and segmentation by review status are core. Marsello focuses on loyalty triggers over review collection — pair Judge.me or Yotpo Reviews separately if reviews matter. UGC-heavy brands lean Yotpo; loyalty-heavy retail leans Marsello.',
-  },
-  {
-    question: 'Does Yotpo SMS match Marsello for retail?',
-    answer: 'Neither is SMS-first for retail associates. Yotpo SMS handles promotional and loyalty texts for online subscribers. Marsello SMS capabilities are limited — email remains primary. For retail SMS at checkout opt-in, evaluate Attentive or Postscript alongside either platform.',
-  },
-  {
-    question: 'What workflow test should decide the winner?',
-    answer: 'Build POS purchase follow-up with points earn, loyalty tier upgrade, post-purchase review request, abandoned cart with social proof, and winback with loyalty incentive. If POS is live and associates reference points at checkout, score Marsello. If Reviews module drives UGC and you segment by reviewer status, score Yotpo.',
-  },
+    "question": "What is the main loyalty migration risk?",
+    "answer": "Unreconciled balances and outstanding rewards can create conflicting customer entitlements. Verify import behavior and redemption ownership before launch."
+  }
 ];
 ---
 
@@ -55,205 +38,28 @@ const faqs = [
 
       <header class="max-w-4xl">
         <p class="editorial-kicker">Head-to-head</p>
-        <h1 class="hero-title mt-5">Marsello vs Yotpo Email & SMS for Shopify</h1>
-        <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-          Two retention suites with different centers of gravity. Marsello optimizes for retail loyalty — points earned in-store, redeemed online, email reinforcing the loop. Yotpo optimizes for UGC-led retention — reviews collected post-purchase, loyalty points layered on, email and SMS in one modular ecosystem. We evaluated both through a boutique skincare brand on Yotpo Reviews weighing loyalty add-on, a multi-location candle retailer on Marsello expanding email, and a supplement DTC drowning in duplicate post-purchase messages.
-        </p>
+        <h1 class="hero-title mt-5">Marsello vs Yotpo Email & SMS: replacing messaging without breaking loyalty</h1>
+        <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">This is now a replacement and ownership decision. A store with Yotpo messaging history should decide whether it needs a new sender, a new loyalty ledger, or both. Those projects have different data and customer obligations.</p>
       </header>
 
-      <div class="mt-12 max-w-4xl">
-        <TldrBox
-          picks={[
-            { label: 'Retail POS loyalty', tool: 'Marsello', reason: 'In-store earn-and-burn without suite module juggling.' },
-            { label: 'Reviews + UGC suite', tool: 'Yotpo', reason: 'Native review requests and visual UGC in campaigns.' },
-            { label: 'Boutique retail email', tool: 'Marsello', reason: 'Associate-facing loyalty integrated with email triggers.' },
-            { label: 'Modular DTC consolidation', tool: 'Yotpo', reason: 'Stack Reviews, Loyalty, Email when modules already live.' },
-          ]}
-        />
-      </div>
-
-      <div class="mt-12 card overflow-x-auto">
-        <h2 class="px-5 py-4 font-serif text-2xl font-black text-[#24170f]">Comparison at a glance</h2>
-        <table class="data-table">
-          <thead>
-            <tr><th>Dimension</th><th>Marsello</th><th>Yotpo Email & SMS</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Best for</td><td>Retail + DTC loyalty</td><td>Reviews/loyalty-led suites</td></tr>
-            <tr><td>Starting price</td><td>From ~$135/mo</td><td>Free and paid modular tiers</td></tr>
-            <tr><td>Billing model</td><td>Orders + contacts</td><td>Modular by product</td></tr>
-            <tr><td>Shopify depth</td><td>Native — POS, loyalty</td><td>Native — strong with modules</td></tr>
-            <tr><td>POS integration</td><td>Core strength</td><td>Online-first</td></tr>
-            <tr><td>Reviews & UGC</td><td>Via integration</td><td>Native core</td></tr>
-            <tr><td>Loyalty triggers</td><td>Built-in</td><td>Native with Loyalty module</td></tr>
-            <tr><td>Suite complexity</td><td>Unified retail stack</td><td>Multi-module coordination</td></tr>
-          </tbody>
-        </table>
-      </div>
-
       <article class="prose-shopify mt-14 max-w-4xl">
-        <h2>Why this comparison matters for Shopify merchants</h2>
-        <p>
-          Marsello and Yotpo Email & SMS both promise retention beyond bare email — but they anchor on different loops. Marsello asks: how do we make customers return to our store, physically or digitally, through points and tiers? Yotpo asks: how do we turn purchasers into reviewers, advocates, and loyalty members through UGC? The candle retailer's customers visited quarterly in person and browsed online between visits — Marsello's POS sync made those touchpoints one profile. The skincare brand never saw customers in person — Yotpo's review photos in cart recovery emails drove conversion.
-        </p>
-        <p>
-          The supplement DTC had Yotpo Reviews, attempted Yotpo Loyalty, and Marsello trial simultaneously — three post-purchase emails within five days destroyed trust faster than either platform alone. Suite comparisons must include operational discipline, not just feature checklists.
-        </p>
-
-        <h2>Merchant scenario: candle retailer with four POS locations</h2>
-        <p>
-          Seasonal shoppers bought gift sets in-store during holidays and reordered refills online in spring. Marsello linked POS purchases to online profiles — gift buyer in December received replenishment email in March with points balance from in-store earn. Yotpo trial required Loyalty module configuration without native associate iPad view at checkout — online loyalty worked, in-store earn needed workarounds.
-        </p>
-        <p>
-          Marsello attributed 31% of online refill revenue to loyalty-triggered email cross-channel. Yotpo would have needed POS integration investment the team deferred. Retail footprint determined the winner before email depth was tested.
-        </p>
-
-        <h2>Merchant scenario: skincare DTC on Yotpo Reviews</h2>
-        <p>
-          Already paying for Yotpo Reviews with 2,400 UGC photos, the brand evaluated Yotpo Email add-on versus Marsello migration. Yotpo cart emails with customer photo grids recovered 12% more clicks than product-only blocks — social proof was native, not imported. Marsello loyalty required launching points program from scratch with no POS angle.
-        </p>
-        <p>
-          Adding Yotpo Email cost less than Marsello full stack because Reviews infrastructure was sunk cost. Consolidation won over best-in-class retail loyalty for pure online catalog.
-        </p>
-
-        <h2>Workflow test: post-purchase review request</h2>
-        <p>
-          Yotpo fired review request 10 days post-delivery with product image from line item and one-click review form — 18% review conversion on hero SKUs. Marsello post-purchase focused on points earn confirmation — review collection required Judge.me integration and separate trigger timing.
-        </p>
-        <p>
-          For brands where UGC fuels paid social and cart recovery, Yotpo's native loop saves weekly hours. For brands where repeat visit rate matters more than review volume, Marsello's points confirmation email drives different KPI.
-        </p>
-
-        <h2>Workflow test: abandoned cart with social proof</h2>
-        <p>
-          Yotpo cart email two pulled five-star review snippets for cart SKUs dynamically — credible social proof without manual creative updates. Marsello cart email two showed points balance toward free product — incentive-based rather than proof-based recovery.
-        </p>
-        <p>
-          A/B tests on the supplement catalog favored UGC blocks for cold traffic and points reminders for loyalty members — segmentation discipline required regardless of platform.
-        </p>
-
-        <h2>Pricing reality at growing list sizes</h2>
-        <p>
-          Marsello at 15k contacts with moderate retail order volume often runs $200–380/mo all-in. Yotpo Reviews plus Loyalty plus Email at 15k can run $250–500/mo modular — bundling discounts help but total exceeds Marsello when only email was needed. Compare module-by-module: Yotpo value requires Reviews engagement; Marsello value requires POS utilization.
-        </p>
-
-        <h2>Team fit: who should choose which</h2>
-        <p><strong>Choose Marsello if:</strong></p>
-        <ul>
-          <li>Shopify POS is live and associates reference loyalty at checkout</li>
-          <li>Online-offline customer unification is your retention thesis</li>
-          <li>Points and tiers drive repeat visits more than review volume</li>
-          <li>You want one retail-native stack without module coordination</li>
-        </ul>
-        <p><strong>Choose Yotpo Email & SMS if:</strong></p>
-        <ul>
-          <li>Yotpo Reviews is already live and UGC fuels marketing</li>
-          <li>Post-purchase review timing and visual UGC blocks are central</li>
-          <li>You are pure DTC without retail locations</li>
-          <li>Modular suite consolidation beats adding Marsello alongside Reviews</li>
-        </ul>
-
-        <h2>90-day rollout: retail loyalty versus UGC suite</h2>
-        <p>
-          Weeks 1–4: Audit checkout locations — POS-heavy versus pure DTC. Marsello trial if retail earn matters; Yotpo Email trial if Reviews or Loyalty modules live on DTC.
-        </p>
-        <p>
-          Weeks 5–8: Post-purchase workflow test — review request versus points earn on actual customer journey. Candle retailer with four POS locations versus skincare DTC on Yotpo Reviews represent opposite winners.
-        </p>
-        <p>
-          Weeks 9–12: Model modular Yotpo bundle versus Marsello retail stack at your location count. Consolidation only when module data or POS sync justifies suite cost.
-        </p>
-
-        <h2>Margin math: POS unified loyalty versus Yotpo UGC bundle</h2>
-        <p>
-          Marsello at $180/mo for four-location candle retailer unified in-store and online points — repeat purchase up 19% quarter one. Yotpo bundle at $260/mo for skincare DTC with Reviews live drove 280 monthly photo submissions — UGC velocity KPI justified modular suite. Retail without POS pays Marsello overhead; DTC without Reviews pays Yotpo email premium without trust-loop data.
-        </p>
-        <p>
-          Photo review volume converts to PDP conversion lift measurable in Shopify Analytics — skincare brand attributed 4.2% PDP CVR improvement to UGC density Yotpo stack enabled, ROI line Marsello cannot replicate without separate review tooling.
-        </p>
-
-        <h2>Failure rehearsal: wrong retention engine pick</h2>
-        <p>
-          <strong>Yotpo Email without Reviews or Loyalty on POS-heavy retail.</strong> UGC presets miss in-store earn moments Marsello handles natively.
-        </p>
-        <p>
-          <strong>Marsello on pure DTC without loyalty launch.</strong> Points infrastructure unused — Klaviyo or Omnisend ship faster.
-        </p>
-        <p>
-          <strong>Forcing one vendor when checkout is split.</strong> In-store and online purchasers receive wrong post-purchase message type — consolidation theater without revenue lift.
-        </p>
-
-        <h2>Merchant scenario: candle retailer versus skincare DTC</h2>
-        <p>
-          Four-location candle retailer chose Marsello — checkout happens in-store and online equally, points earn post-purchase drives repeat. Skincare DTC on Yotpo Reviews chose Yotpo Email — post-purchase review request timing and loyalty tier emails share suppression natively. Same comparison, opposite winners based on where purchase completes and what behavior repeats.
-        </p>
-        <p>
-          Ask one question before trials: is the behavior you want to repeat points redemption or photo review submission? Points-heavy omnichannel retail skews Marsello; UGC-heavy DTC with live Yotpo modules skews Yotpo Email. Mixed answers mean split stack or phased rollout — not forced consolidation.
-        </p>
-
-
-        <h2>Operational depth: retail footprint versus UGC strategy</h2>
-        <p>
-          Candle retailer with two mall kiosks chose Marsello POS loyalty — Yotpo Reviews depth irrelevant without ecommerce UGC strategy. Skincare DTC chose Yotpo suite for Reviews plus SMS — Marsello POS features unused.
-        </p>
-        <p>
-          Score retail location count and in-store revenue share — above 20% retail favors Marsello evaluation. Score review volume and UGC campaign frequency — above 500 monthly reviews favors Yotpo suite depth.
-        </p>
-        <p>
-          False consolidation picks suite for email while underusing loyalty or reviews modules — monthly module audit same as Yotpo-plus-Klaviyo hybrid merchants run.
-        </p>
-        <p>
-          Document the email lifecycle boundary when neither suite email module receives enough strategic ownership; keep Marsello or Yotpo only for the non-email modules actively used.
-        </p>
-
-
-        <h2>Weekly operator checklist during trial</h2>
-        <p>
-          Weekly Marsello versus Yotpo Email Sms cadence — Monday: time Shopify order sync into Marsello versus Yotpo Email Sms entry (anything over ten minutes breaks suppression testing). Wednesday: run a single edge case — gifted order, subscription tag, financed high-AOV cart — through both Marsello and Yotpo Email Sms. Friday: re-model twelve-month cost on actual Marsello versus Yotpo Email Sms sends; bloated lists hurt contact billing, heavy calendars hurt send billing.
-        </p>
-        <p>
-          In Marsello versus Yotpo Email Sms, buy Marsello’s depth when depth is the bottleneck and Yotpo Email Sms’s speed when staffing is the bottleneck — whichever advantage survives your peak calendar wins. The scenario sketched for Marsello versus Yotpo Email Sms here is illustrative, so confirm it against your own order mix, catalog, and bench strength first.
-        </p>
-        <h2>Pre-decision audit</h2>
-        <p>
-          For Marsello versus Yotpo Email Sms, require five artifacts pre-renewal: four-flow scores for Marsello and Yotpo Email Sms, peak send forecast, sales-tag review, post-sunset contact counts, and Marsello versus Yotpo Email Sms kill-switch sheet. Treat peer Marsello-versus-Yotpo Email Sms notes as hypotheses your own trial must confirm.
-        </p>
-        <p>
-          Call Marsello versus Yotpo Email Sms for the tool your team can safely change under sale pressure — Marsello or Yotpo Email Sms, measured in recovered revenue per send and margin, not screenshots.
-        </p>
-
-        <h2>Sale-week edit safety gate</h2>
-        <p>
-          The decisive tiebreaker between Marsello and Yotpo Email & SMS is rarely feature depth — it is whether a non-technical marketer can add recent-purchaser suppression and VIP early access in under thirty minutes on a Thursday before a drop. Run that edit in both trials before annual commit. Platforms that pass calm-week demos but fail sale-week edits cost more in foregone peak revenue than any annual subscription delta.
-        </p>
-        
-        <p>
-          Minimum viable trial length remains 90 days with weekly operator checklist — shorter trials miss billing surprises and peak-season behavior both Marsello and Yotpo Email & SMS surface only under operational stress. Baseline metrics in week one make before-and-after claims credible to finance.
-        </p>
-
-        <p>
-          <em>Log Marsello versus Yotpo Email Sms baselines — welcome, cart, post-purchase, winback on Marsello and Yotpo Email Sms — in week one; Marsello versus Yotpo Email Sms before-and-after claims without them fail finance review. Revisit the Marsello-versus-Yotpo Email Sms call every ninety days as mix and volume drift.</em>
-        </p>
-
-        <h2>Failure rehearsal: renewal-season panic migration</h2>
-        <p>
-          Teams rediscover comparison pages only at contract renewal under peak-season pressure — worst time to migrate. Schedule evaluation 120 days before renewal or BFCM, run four-flow trial calmly, and keep kill-switch spreadsheet ready. Panic migration causes duplicate cart recovery and deliverability dips that take quarters to heal.
-        </p>
-
-        <p>
-          Pair comparison verdict with one related store-type guide and one use-case playbook linked at page bottom — workflow tests in trials matter more when catalog shape and primary bottleneck are named explicitly in your internal rollout doc.
-        </p>
-        <p>Minimum 90-day trial with documented four-flow scores before renewal — shorter evaluations miss peak-season billing surprises and edit-safety failures that determine real-world platform fit.</p>
-
-        <h2>POS loyalty earn-and-burn versus Klaviyo predictive</h2>
-        <p>
-          Coffee roaster with two retail locations: Marsello POS earn drove 38% of repeat DTC orders from loyalty members who first earned in-store. Yotpo Email and SMS trial scored higher on UGC campaigns but lacked native POS earn without integration estimate. Marsello wins when loyalty infrastructure live; Klaviyo or Yotpo wins pure DTC without points program. Run tier-upgrade and points-earn post-purchase flows first — if those define retention, suite earns invoice.
-        </p>
-
-        <h2>Verdict</h2>
-        <p>
-          Marsello wins when retail POS and unified loyalty are your retention engine. Yotpo Email & SMS wins when Reviews and UGC already anchor your stack and modular consolidation reduces vendor sprawl. Run the post-purchase workflow test — review request versus points earn — on your actual customer journey. The winner matches where checkout happens and what behavior you are trying to repeat.
-        </p>
+        <p><em>Source descriptions checked November 24, 2026. Proposed exercises below are not completed tests or merchant results.</em></p>
+        <h2>Retirement changes the comparison</h2>
+        <p>Yotpo’s <a href="https://www.yotpo.com/blog/email-sms-migration-partners/">migration announcement</a> scheduled full Email and SMS deprecation for December 31, 2025; the <a href="https://email-and-sms.yotpo.com/">product endpoint</a> reports decommissioning. This does not imply retirement of its Reviews or Loyalty products. An old promise of consolidating new email into Yotpo is no longer a sound buying premise.</p>
+        <h2>What Marsello offers to evaluate</h2>
+        <p>The <a href="https://apps.shopify.com/marsello">Marsello developer listing</a> advertises points, rewards, VIP tiers and marketing add-ons for ecommerce and POS. That makes it relevant to a store considering loyalty and messaging together. It does not demonstrate import compatibility with a particular Yotpo balance export, review library or historical permission record.</p>
+        <h2>Separate three inventories</h2>
+        <p>Record messaging assets and suppressions first; then review collection, product identifiers and display widgets; then loyalty members, balances, tiers and outstanding rewards. For each, mark retain, replace or unresolved. Keeping a review service while changing email does not require moving the reward ledger. Moving rewards should have its own reconciliation and customer communication plan.</p>
+        <h2>Proposed exercise: a member holds an unused reward</h2>
+        <p>This proposed exercise has not been executed here. Select an authorized test member with earned points and an issued but unused reward. Document what the destination can import and what happens to the old reward code. Confirm a redemption cannot be counted twice and that a partial return updates the right ledger. Resolve unsupported states before opening enrollment in a second program.</p>
+        <h2>Keep review collection distinct from reward earn</h2>
+        <p>A review request and a points-earned notification serve different jobs. Assign one owner to each and document whether review submission earns an incentive under the retained program. Do not infer that Marsello replaces a review collection or display tool. Product matching and permission to reuse customer content need their own checks before review material appears in campaigns.</p>
+        <h2>Retail staff need a usable transition</h2>
+        <p>If adopting Marsello for POS loyalty, rehearse member lookup, enrollment and reward explanation with the intended permissions. Explain which balance staff should trust during transition and where to send disputes. Avoid simultaneously inviting customers into two competing reward programs merely to compare email templates.</p>
+        <h2>Costs and measurement</h2>
+        <p>Compare the proposed Marsello package with the complete retained stack, including any review tool and replacement sender. Include reward migration, support and staff instruction. Separate reward liability and redemption cost from subscription fees. Neither review volume nor the percentage of retail orders is a universal threshold for choosing a vendor.</p>
+        <h2>Release independent pieces deliberately</h2>
+        <p>Rebuild welcome, recovery, postpurchase and winback ownership without relying on a retired sender as rollback. Confirm what historical exports remain accessible. Preserve suppressions and channel-specific permission evidence, then verify links, coupons and pending messages. A loyalty launch can follow a messaging replacement once balances and terms are reconciled; forced same-day consolidation adds dependencies without proving value.</p>
       </article>
 
       <div class="mt-10 max-w-4xl text-sm">
@@ -261,7 +67,7 @@ const faqs = [
         <p class="mt-2">
           <a class="link" href="/compare/marsello-vs-klaviyo">Marsello vs Klaviyo</a> ·
           <a class="link" href="/compare/klaviyo-vs-yotpo-email-sms">Klaviyo vs Yotpo Email & SMS</a> ·
-          <a class="link" href="/for/skincare">Email apps for beauty stores</a> ·
+          <a class="link" href="/for/beauty">Email apps for beauty stores</a> ·
           <a class="link" href="/use-cases/post-purchase">Post-purchase playbook</a>
         </p>
       </div>
