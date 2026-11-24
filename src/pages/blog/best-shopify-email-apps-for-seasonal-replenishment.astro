@@ -72,22 +72,22 @@ const apps = [
 </a>.
 </p>
 <h2 class="mt-14">Consent and purchaser suppression for Seasonal replenishment</h2>
-<p>Before launching seasonal replenishment automation, prove every app in the stack logs email and SMS consent auditably, with purchase events cutting promotional follow-up the moment checkout completes. In seasonal replenishment, mistimed sends after purchases, refunds, or support cases destroy channel value quicker than any creative miss.</p>
+<p>For a seasonal reorder reminder, record permission for its purpose and channel, then recheck current opt-out, order, return and stock state at dispatch. A new order should cancel the matching product reminder and recalculate its next eligibility date from quantity and expected use; it should not stop unrelated, necessary order care. A scheduled message is not proof that its audience is still eligible.</p>
 <div class="overflow-x-auto mb-8"><table>
 <thead><tr><th>Audience state</th><th>Required handling</th><th>Why it matters</th></tr></thead>
 <tbody>
-<tr><td>No documented consent</td><td>No seasonal replenishment promos without proof; transactional messages only</td><td>Every seasonal replenishment send stands on documented consent</td></tr>
+<tr><td>No documented consent</td><td>Hold optional promotions until permission is established; assess necessary service messages under their own purpose</td><td>Service delivery does not grant permission for replenishment offers</td></tr>
 <tr><td>Consented, never purchased</td><td>Seasonal Replenishment education and proof before any offer</td><td>Premature seasonal replenishment offers teach shoppers to wait</td></tr>
 <tr><td>Active cart, no checkout</td><td>Seasonal Replenishment cart reminder first; earn the discount decision</td><td>Margin-safe seasonal replenishment recovery at peak intent</td></tr>
 <tr><td>Purchased recently</td><td>Seasonal Replenishment buyers get education, not another pitch</td><td>Post-checkout seasonal replenishment pitches trigger regret and opt-outs</td></tr>
 <tr><td>Refund or return open</td><td>Seasonal Replenishment selling waits for case resolution</td><td>Seasonal Replenishment tolerance collapses mid-dispute</td></tr>
-<tr><td>Repeated non-engagement</td><td>Remove chronic seasonal replenishment non-openers pre-complaint</td><td>Keeps seasonal replenishment placement high via list hygiene</td></tr>
+<tr><td>Repeated non-engagement</td><td>Use sustained inactivity across purchases, clicks and replies; opens alone are unreliable</td><td>Avoid removing active buyers solely because tracking pixels did not load</td></tr>
 <tr><td>SMS consent present</td><td>Seasonal Replenishment SMS obeys quiet hours and caps</td><td>Seasonal Replenishment SMS complaints cost more per incident</td></tr>
-<tr><td>Wholesale or B2B account</td><td>Send seasonal replenishment B2B accounts down their own track</td><td>Wholesale seasonal replenishment terms forbid retail-style offers</td></tr>
-<tr><td>Free or disposable email domain</td><td>Screen seasonal replenishment free/disposable emails before flows</td><td>Low-grade seasonal replenishment signups drag deliverability</td></tr>
+<tr><td>Wholesale or B2B account</td><td>Send seasonal replenishment B2B accounts down their own track</td><td>Account terms, pack sizes and approval cycles may differ</td></tr>
+<tr><td>Free or disposable email domain</td><td>Do not reject free email domains; assess invalid addresses, bounces and abuse separately</td><td>A free mailbox is not evidence of low intent</td></tr>
 <tr><td>Staff and test accounts</td><td>Seasonal Replenishment QA profiles excluded from reporting</td><td>Internal seasonal replenishment activity corrupts program metrics</td></tr>
 <tr><td>Competitor or researcher signals</td><td>Seasonal Replenishment researcher signups follow standard consent</td><td>Seasonal Replenishment consistency beats clever carve-outs</td></tr>
-<tr><td>Legacy list without timestamps</td><td>Seasonal Replenishment sends to old lists need fresh opt-in</td><td>Timestamp-less seasonal replenishment consent is legal exposure</td></tr>
+<tr><td>Legacy list without timestamps</td><td>Hold promotions where permission cannot be established; investigate the original scope and records</td><td>An import timestamp does not establish original permission</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Margin, app costs, and pricing for Seasonal replenishment</h2>
 <p>Attributed revenue is not profit for seasonal replenishment. A self-funding seasonal replenishment program survives a full cost model: subscription, contact or send overages, SMS credits, capture tooling, templates, agency time, and every point of seasonal replenishment discount margin. Seasonal Replenishment rule: near fifteen percent stack-to-margin, cut seasonal replenishment complexity before chasing gains.</p>
@@ -124,7 +124,7 @@ const apps = [
 <thead><tr><th>Failure</th><th>Prevention</th><th>Cost of getting it wrong</th></tr></thead>
 <tbody>
 <tr><td>Discount in the first touch</td><td>seasonal replenishment offers gated on demonstrated intent</td><td>seasonal replenishment discount-first trains bargain hunting</td></tr>
-<tr><td>No purchase suppression</td><td>End seasonal replenishment flows the moment orders land</td><td>Seasonal Replenishment mistiming insults fresh buyers</td></tr>
+<tr><td>No purchase suppression</td><td>Cancel the matching queued reorder offer when a new order arrives; reset its consumption clock</td><td>Seasonal Replenishment mistiming insults fresh buyers</td></tr>
 <tr><td>Consent imported without proof</td><td>Record seasonal replenishment opt-in origin and moment</td><td>seasonal replenishment compliance gaps surface at audit</td></tr>
 <tr><td>Flows only one operator understands</td><td>Document seasonal replenishment exits and naming standards</td><td>Seasonal Replenishment key-person risk on undocumented flows</td></tr>
 <tr><td>Measuring clicks only</td><td>Seasonal Replenishment truth in margin not clicks</td><td>Seasonal Replenishment vanity clicks hide damage</td></tr>
@@ -138,10 +138,10 @@ const apps = [
 <li>For seasonal replenishment, test-fire order, cart, refund, and support events first.</li>
 <li>Write seasonal replenishment suppression and exits before any seasonal replenishment flow exists.</li>
 <li>Open seasonal replenishment with a contained pilot and clean control.</li>
-<li>Thirty days into seasonal replenishment, score margin and audience health.</li>
+<li>Review after a complete relevant consumption and return window; a short season may not support a reliable lift estimate.</li>
 <li>Broaden seasonal replenishment after the pilot survives handoff.</li>
 <li>Seasonal Replenishment peak policy locks edits, codes, cadence.</li>
-<li>Quarterly, weigh the seasonal replenishment stack against attributed margin.</li>
+<li>Compare incremental contribution with all-in costs over the same season, audience and send volume; attribution alone is not lift.</li>
 <li>For seasonal replenishment, dusty journeys get archived quarterly.</li>
 </ol>
 <h2 class="mt-12">Metrics review cadence for seasonal replenishment</h2>
@@ -149,11 +149,11 @@ const apps = [
 <thead><tr><th>Metric</th><th>Definition</th><th>Review cadence</th></tr></thead>
 <tbody>
 <tr><td>Margin per send</td><td>seasonal replenishment profit after incentive, send, platform load</td><td>Monthly</td></tr>
-<tr><td>Repeat purchase rate</td><td>seasonal replenishment-driven second purchases per quarter</td><td>Monthly</td></tr>
+<tr><td>Repeat purchase rate</td><td>Eligible customers placing a repeat order in the stated season; descriptive unless randomized</td><td>Monthly</td></tr>
 <tr><td>Complaint and unsubscribe rate</td><td>Split seasonal replenishment grievances by campaign and journey</td><td>Weekly</td></tr>
 <tr><td>Suppression accuracy</td><td>Spot-check seasonal replenishment sends after purchases</td><td>Weekly</td></tr>
 <tr><td>Time to edit safely</td><td>seasonal replenishment handoff-edit minutes, second operator</td><td>Quarterly</td></tr>
-<tr><td>Holdout lift</td><td>seasonal replenishment lift: messaged cohort against control</td><td>Quarterly</td></tr>
+<tr><td>Holdout lift</td><td>Randomly assigned eligible customers: optional reminder versus no optional reminder; preserve required service in both arms and report uncertainty</td><td>Quarterly</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Seasonal replenishment matchup FAQ</h2>
 <section class="max-w-3xl mx-auto space-y-6">
@@ -164,12 +164,12 @@ const apps = [
 <div><h3>How should I suppress audiences in seasonal replenishment flows?</h3><p>Guard seasonal replenishment with exits for buyers, open cases, refunds, and no-consent profiles, auditable per seasonal replenishment flow. In seasonal replenishment, a suppression miss hurts worse than a missed blast.</p></div>
 <div><h3>What does seasonal replenishment email cost?</h3><p>Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your seasonal replenishment campaigns consume. Pricing moves too often to quote statically: check the official pricing pages covering your seasonal replenishment stack and model eighteen months of total cost before committing.</p></div>
 <div><h3>Which app should a lean team pilot first for seasonal replenishment?</h3><p>For seasonal replenishment, choose whatever the team masters in a fortnight — native email for plain seasonal replenishment sends, a lean ESP once seasonal replenishment branching matters. A finished seasonal replenishment pilot beats a stalled grand plan.</p></div>
-<div><h3>How do I measure seasonal replenishment email results?</h3><p>Keep seasonal replenishment honest by tracking margin per send, repeat purchase, complaint and unsubscribe rates, plus support load against attributed revenue; a holdout group for seasonal replenishment recipients separates real lift from seasonal noise.</p></div>
+<div><h3>How do I measure seasonal replenishment email results?</h3><p>Track reorder timing, contribution after discounts, returns and fulfillment, complaints and support load. Randomize eligible customers before exposure to an optional-reminder arm or a no-optional-reminder arm; retain required service in both. Report the outcome window, sample size and uncertainty. Compare platform, overage, SMS, integration, creative and staff costs at the same volume and seasonal horizon; attributed revenue alone does not establish lift.</p></div>
 <div><h3>Can I run seasonal replenishment email without an agency?</h3><p>Yes, if the scope stays small. Pick one seasonal replenishment journey, document consent and suppression rules, and reuse a simple template system. Bring outside help onto seasonal replenishment only when flow complexity, deliverability repair, or peak-season seasonal replenishment volume outruns in-house capacity.</p></div>
 <div><h3>When should I graduate from my first app for seasonal replenishment?</h3><p>For seasonal replenishment, the graduation signal is operational: unsafe flow edits, unreliable purchase-state segmentation for seasonal replenishment, or cost forecasts that break as contacts grow. For seasonal replenishment, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression.</p></div>
 <div><h3>How much discounting is acceptable for seasonal replenishment?</h3><p>Treat discounts as one lever, not the default. For seasonal replenishment, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. When seasonal replenishment revenue only converts with a code attached, suspect seasonal replenishment value communication before blaming price points.</p></div>
 <div><h3>Which Shopify data matters most for seasonal replenishment?</h3><p>Order and refund state, cart and browse events, consent source, and product availability cover most seasonal replenishment decisions. Before layering seasonal replenishment branching on events, fire each one in a test purchase and record what every seasonal replenishment-relevant field means for both teams.</p></div>
-<div><h3>How do I avoid duplicate sends across apps for seasonal replenishment?</h3><p>Give one platform ownership of each seasonal replenishment journey, document which app sends what, and share suppression lists where the tools support it. Keep a weekly seasonal replenishment peak-season audit: pull sample customers, list each seasonal replenishment message they got, flag overlaps.</p></div>
+<div><h3>How do I avoid duplicate sends across apps for seasonal replenishment?</h3><p>Assign one sender and queue owner to each product-season reminder. Cancel queued offers after the matching purchase, opt-out or season expiry; recheck state at dispatch. Store a stable customer, product, season and reminder identifier so delayed events or retries cannot replay the same offer. Audit overlap with Shopify and other apps before enabling the flow.</p></div>
 <div><h3>What should a seasonal replenishment pilot include?</h3><p>Scope the seasonal replenishment pilot narrowly — one audience, one or two seasonal replenishment journeys, documented suppression, holdout coverage, thirty-day margin review — and agree the seasonal replenishment success metric before the first send.</p></div>
 </section>
 <script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",mainEntity:[
@@ -180,12 +180,12 @@ const apps = [
 {"@type": "Question", "name": "How should I suppress audiences in seasonal replenishment flows?", "acceptedAnswer": {"@type": "Answer", "text": "Guard seasonal replenishment with exits for buyers, open cases, refunds, and no-consent profiles, auditable per seasonal replenishment flow. In seasonal replenishment, a suppression miss hurts worse than a missed blast."}},
 {"@type": "Question", "name": "What does seasonal replenishment email cost?", "acceptedAnswer": {"@type": "Answer", "text": "Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your seasonal replenishment campaigns consume. Pricing moves too often to quote statically: check the official pricing pages covering your seasonal replenishment stack and model eighteen months of total cost before committing."}},
 {"@type": "Question", "name": "Which app should a lean team pilot first for seasonal replenishment?", "acceptedAnswer": {"@type": "Answer", "text": "For seasonal replenishment, choose whatever the team masters in a fortnight — native email for plain seasonal replenishment sends, a lean ESP once seasonal replenishment branching matters. A finished seasonal replenishment pilot beats a stalled grand plan."}},
-{"@type": "Question", "name": "How do I measure seasonal replenishment email results?", "acceptedAnswer": {"@type": "Answer", "text": "Keep seasonal replenishment honest by tracking margin per send, repeat purchase, complaint and unsubscribe rates, plus support load against attributed revenue; a holdout group for seasonal replenishment recipients separates real lift from seasonal noise."}},
+{"@type": "Question", "name": "How do I measure seasonal replenishment email results?", "acceptedAnswer": {"@type": "Answer", "text": "Track reorder timing, contribution after discounts, returns and fulfillment, complaints and support load. Randomize eligible customers before exposure to an optional-reminder arm or a no-optional-reminder arm; retain required service in both. Report the outcome window, sample size and uncertainty. Compare platform, overage, SMS, integration, creative and staff costs at the same volume and seasonal horizon; attributed revenue alone does not establish lift."}},
 {"@type": "Question", "name": "Can I run seasonal replenishment email without an agency?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if the scope stays small. Pick one seasonal replenishment journey, document consent and suppression rules, and reuse a simple template system. Bring outside help onto seasonal replenishment only when flow complexity, deliverability repair, or peak-season seasonal replenishment volume outruns in-house capacity."}},
 {"@type": "Question", "name": "When should I graduate from my first app for seasonal replenishment?", "acceptedAnswer": {"@type": "Answer", "text": "For seasonal replenishment, the graduation signal is operational: unsafe flow edits, unreliable purchase-state segmentation for seasonal replenishment, or cost forecasts that break as contacts grow. For seasonal replenishment, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression."}},
 {"@type": "Question", "name": "How much discounting is acceptable for seasonal replenishment?", "acceptedAnswer": {"@type": "Answer", "text": "Treat discounts as one lever, not the default. For seasonal replenishment, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. When seasonal replenishment revenue only converts with a code attached, suspect seasonal replenishment value communication before blaming price points."}},
 {"@type": "Question", "name": "Which Shopify data matters most for seasonal replenishment?", "acceptedAnswer": {"@type": "Answer", "text": "Order and refund state, cart and browse events, consent source, and product availability cover most seasonal replenishment decisions. Before layering seasonal replenishment branching on events, fire each one in a test purchase and record what every seasonal replenishment-relevant field means for both teams."}},
-{"@type": "Question", "name": "How do I avoid duplicate sends across apps for seasonal replenishment?", "acceptedAnswer": {"@type": "Answer", "text": "Give one platform ownership of each seasonal replenishment journey, document which app sends what, and share suppression lists where the tools support it. Keep a weekly seasonal replenishment peak-season audit: pull sample customers, list each seasonal replenishment message they got, flag overlaps."}},
+{"@type": "Question", "name": "How do I avoid duplicate sends across apps for seasonal replenishment?", "acceptedAnswer": {"@type": "Answer", "text": "Assign one sender and queue owner to each product-season reminder. Cancel queued offers after the matching purchase, opt-out or season expiry; recheck state at dispatch. Store a stable customer, product, season and reminder identifier so delayed events or retries cannot replay the same offer. Audit overlap with Shopify and other apps before enabling the flow."}},
 {"@type": "Question", "name": "What should a seasonal replenishment pilot include?", "acceptedAnswer": {"@type": "Answer", "text": "Scope the seasonal replenishment pilot narrowly — one audience, one or two seasonal replenishment journeys, documented suppression, holdout coverage, thirty-day margin review — and agree the seasonal replenishment success metric before the first send."}}
 ]})} />
 <h2 class="mt-12">Governance and documentation for seasonal replenishment</h2>
@@ -197,14 +197,14 @@ const apps = [
 <tr><td>Change log</td><td>Log seasonal replenishment edits with date and rationale</td><td>seasonal replenishment performance drift with no log</td></tr>
 <tr><td>Access control</td><td>seasonal replenishment-editor seats minimal by default</td><td>Seasonal Replenishment accidents from excess access</td></tr>
 <tr><td>Quarterly flow review</td><td>Prune idle seasonal replenishment branches quarterly</td><td>Overgrown seasonal replenishment journeys stalling ops</td></tr>
-<tr><td>Incident runbook</td><td>Seasonal Replenishment incident path: pause, notify, fix</td><td>Seasonal Replenishment harm airing too long</td></tr>
+<tr><td>Incident runbook</td><td>Pause the owning queue, cancel stale jobs, correct state and deduplicate before replay</td><td>Seasonal Replenishment harm airing too long</td></tr>
 </tbody></table></div>
 <h2 class="mt-12">Peak season readiness for seasonal replenishment</h2>
 <ol>
-<li>Seasonal Replenishment code-freeze starts fourteen days out.</li>
+<li>Set the change freeze around the actual last safe fulfillment date and an approved rollback plan.</li>
 <li>For seasonal replenishment, trial every journey against real order events.</li>
 <li>Verify seasonal replenishment suppression clears recent buyers and open returns.</li>
-<li>Boost seasonal replenishment control groups before the surge.</li>
+<li>Set randomized optional-message holdouts before exposure; do not resize arms in response to early results.</li>
 <li>Draft seasonal replenishment SMS quiet-hour and cap rules in advance.</li>
 <li>Seasonal Replenishment billing checked on peak math.</li>
 <li>Staff daily seasonal replenishment deliverability watch on complaints and bounces.</li>
