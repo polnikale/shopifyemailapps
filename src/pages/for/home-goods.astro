@@ -1,383 +1,110 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
-import TldrBox from '../../components/TldrBox.astro';
 import FaqSection from '../../components/FaqSection.astro';
-import ToolReview from '../../components/ToolReview.astro';
-import { site, description, pageTitle } from '../../content';
-import { segmentBySlug } from '../../data/segments';
-import { appBySlug } from '../../data/apps';
-
-const segment = segmentBySlug('home-goods')!;
+import { site } from '../../content';
 const path = '/for/home-goods';
-const title = pageTitle(site, 'for/home-goods');
-const desc = description(site, 'for/home-goods');
-
-const featuredSlugs = ['sequenzy', 'klaviyo', 'drip', 'mailchimp', 'omnisend'];
-const featuredApps = featuredSlugs.map((s) => appBySlug(s)!).filter(Boolean);
-const shopifyEmail = appBySlug('shopify-email')!;
-
-const comparisonApps = [
-  'sequenzy', 'klaviyo', 'drip', 'mailchimp', 'omnisend', 'shopify-email', 'yotpo-email-sms',
-  'privy', 'brevo', 'activecampaign', 'sendlane', 'rejoiner', 'firepush', 'tinyemail',
-  'aftership-email', 'marsello', 'postscript',
-].map((s) => appBySlug(s)!).filter(Boolean);
-
+const title = "Choosing Shopify email apps for home goods stores";
+const desc = "Compare email apps around the project a shopper is trying to finish, the physical constraints of the item, and the delivery state of the order. A rug, a made-to-order sofa, and a replacement cushion should not share one timer.";
 const faqs = [
   {
-    question: 'What is the best Shopify email app for home goods stores?',
-    answer: 'Sequenzy ranks first for home goods because large catalogs and delayed purchase cycles need room-by-room segmentation, inspiration content series, and cross-sell by project completion — lifecycle strategy that agent-first playbooks accelerate. Klaviyo wins on catalog depth at scale. Drip suits operators building custom room-based workflow branches.',
+    "question": "Should I infer moving or family events from browsing?",
+    "answer": "Use customer-selected project information when possible. A viewed category does not establish a personal life event."
   },
   {
-    question: 'How should home goods brands segment email by room?',
-    answer: 'Tag customers by collection purchased and browse behavior: living room, bedroom, kitchen, outdoor. Cross-sell complements within room projects before jumping categories. A customer who bought dining chairs is ready for tableware, not patio furniture — unless browse data says otherwise.',
+    "question": "When should accessories be offered?",
+    "answer": "Check delivery and support state, compatibility, and the customer\u2019s project interest. A fixed delay after checkout can be premature."
   },
   {
-    question: 'Why is Mailchimp still mentioned for home goods?',
-    answer: 'Some established home retailers already run Mailchimp and need Shopify-connected campaigns without immediate migration. Mailchimp handles broadcasts and simple automations but trails ecommerce natives on browse abandonment by collection and project-based cross-sell. Most lifecycle-focused home brands migrate to Sequenzy or Klaviyo within 12 months.',
-  },
-  {
-    question: 'How long are home goods consideration cycles in email?',
-    answer: 'Typically 4–16 weeks for major pieces; shorter for accessories and decor. Use engagement-based nurture — continue inspiration content while opens and clicks stay active. Seasonal refresh campaigns align with moving, holidays, and spring renovation windows.',
-  },
-  {
-    question: 'What content works best for home goods email?',
-    answer: 'Inspiration-first: room reveals, styling tips, customer home photos, project completion guides. Promo-second: discounts after multiple inspiration touches. Education reduces return rates on size-sensitive items like rugs and furniture.',
-  },
-  {
-    question: 'What metrics should home goods email programs track?',
-    answer: 'Cross-sell revenue per room segment, browse-to-purchase window, catalog engagement depth, and project completion rate (customers buying complementary items within same room within 90 days).',
-  },
-  {
-    question: 'Can Shopify Email work for home goods brands?',
-    answer: 'For basic sale announcements and new collection blasts, yes. For room segmentation, extended browse nurture, and cross-sell by project stage, no — dedicated lifecycle platforms deliver materially more revenue.',
-  },
-  {
-    question: 'How do seasonal refresh campaigns differ from fashion seasonality?',
-    answer: 'Home refresh ties to life events — moving, new baby, holiday hosting — more than runway calendars. Build segments around purchase history and browse intent for seasonal categories: outdoor in spring, cozy textiles in fall, organization in January.',
-  },
-  {
-    question: 'Should home goods stores invest in back-in-stock email?',
-    answer: 'Yes for high-demand furniture and decor with long lead times. Variant and availability sync matters. See <a class="link" href="/use-cases/back-in-stock">back-in-stock guide</a>. Pair with browse abandonment when customers viewed unavailable items.',
-  },
+    "question": "Is a second same-room purchase project completion?",
+    "answer": "It is a measurable attachment event. It does not prove that the customer\u2019s project is finished."
+  }
 ];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
   <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
-
-  <section class="relative overflow-hidden py-16 md:py-24">
-    <div class="container">
-      <a href="/for" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All store types</a>
-      <p class="editorial-kicker mt-6">Home goods & decor</p>
-      <h1 class="hero-title mt-5 max-w-5xl">Best Shopify email apps for home goods stores</h1>
-      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-        Home goods shoppers do not impulse-buy a sectional sofa from a single email. They browse room by room, compare dimensions, save inspiration, and return weeks later when the project budget clears. Your email app must segment by style and room, deliver inspiration content over promotion, and cross-sell project completion without random catalog spam.
-      </p>
-      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
-        Evaluated for {segment.pain}. Typical buying cycle: {segment.buyingCycle}. Rankings favor apps that handle large catalogs, delayed conversion, room-based merchandising, and inspiration content that sustains consideration without defaulting to site-wide markdowns.
-      </p>
-      <div class="mt-9 flex flex-wrap gap-3">
-        <a class="btn btn-primary" href="/apps">Full app rankings</a>
-        <a class="btn btn-secondary" href="/use-cases/browse-abandonment">Browse abandonment</a>
-        <a class="btn btn-secondary" href="/compare/sequenzy-vs-klaviyo">Sequenzy vs Klaviyo</a>
-      </div>
-    </div>
+  <section class="container py-16">
+    <a class="link" href="/for">All store types</a>
+    <h1 class="hero-title mt-5">{title}</h1>
+    <p class="mt-7 max-w-3xl text-xl leading-9">{desc}</p>
   </section>
-
   <section class="container pb-12">
-    <TldrBox picks={[
-      { label: 'Best overall', tool: 'Sequenzy', reason: 'Room and style segmentation playbooks, inspiration content series, project-based cross-sell, and seasonal refresh campaigns with agent-first setup.' },
-      { label: 'Best catalog depth', tool: 'Klaviyo', reason: 'Collection-level browse abandonment and predictive segmentation for home brands with thousands of SKUs.' },
-      { label: 'Best workflow builder', tool: 'Drip', reason: 'Visual automations for room-based branching and long consideration nurture paths.' },
-      { label: 'Best familiar tool', tool: 'Mailchimp', reason: 'Acceptable for established retailers already on Mailchimp needing Shopify-connected campaigns — migration candidate for lifecycle depth.' },
-      { label: 'Best fast setup', tool: 'Omnisend', reason: 'Prebuilt ecommerce journeys for smaller home decor brands needing multichannel automations quickly.' },
-    ]} />
-
-    <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Three home goods merchant scenarios</h2>
-      <p>
-        <strong>Scenario A — Modern furniture DTC, 350 orders/month.</strong> Room-based cross-sell after sofa purchase increased 90-day project completion rate from 22% to 31%. Sequenzy inspiration series sustained 11-week average browse-to-purchase window without discount escalation.
-      </p>
-      <p>
-        <strong>Scenario B — Decor marketplace, 2,500 SKUs, 900 orders/month.</strong> Klaviyo collection-level dynamic blocks scaled merchandising impossible manually. Mailchimp migration completed in Q2; email revenue per recipient rose 24% first full quarter post-migration.
-      </p>
-      <p>
-        <strong>Scenario C — Rug and textile brand, high return rate on sizing.</strong> Post-purchase dimension education emails before cross-sell cut size-related returns 12%. Drip visual workflows made room-tag branching maintainable by solo retention operator.
-      </p>
-    </div>
-
-    <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Home goods email sells projects, not products</h2>
-      <p>
-        The mental model for home goods retention is project completion. A customer starting a living room refresh buys the sofa first, then the rug, then throw pillows, then lighting — often over 8–12 weeks. Email that pitches patio furniture to someone mid-living-room project feels irrelevant and trains ignores. Room-aware segmentation using collection purchases and browse history is non-negotiable.
-      </p>
-      <p>
-        Inspiration content carries more weight than discount codes in this vertical. Room reveals, customer home features, styling guides, and dimension education reduce returns on big-ticket items and keep engagement alive during long consideration windows. Promotional sends should follow inspiration sequences, not replace them.
-      </p>
-      <p>
-        Large catalogs punish generic platforms. You need collection-level triggers, back-in-stock for high-demand pieces, and <a class="link" href="/use-cases/segmentation">segmentation</a> that respects style preferences — modern versus traditional, minimalist versus maximalist — inferred from browse and purchase behavior.
-      </p>
-    </div>
-
-    <div class="ledger-card mb-12 overflow-x-auto">
-      <p class="editorial-kicker">Comparison table</p>
-      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">17 Shopify email apps for home goods stores</h2>
-      <table class="mt-8 w-full min-w-[720px] text-left text-sm">
-        <thead>
-          <tr class="border-b border-[#24170f]/15 text-xs font-black uppercase tracking-wider text-[#9a5b16]">
-            <th class="py-3 pr-4">App</th><th class="py-3 pr-4">Best for home goods</th><th class="py-3 pr-4">Pricing</th>
-            <th class="py-3 pr-4">Shopify depth</th><th class="py-3 pr-4">Automation</th><th class="py-3">Rating</th>
-          </tr>
-        </thead>
-        <tbody class="text-[#4a2d17]">
-          {comparisonApps.map((app, i) => (
-            <tr class="border-b border-[#24170f]/8">
-              <td class="py-3 pr-4 font-bold text-[#24170f]"><a class="link" href={`/apps/${app.slug}`}>{i + 1}. {app.name}</a></td>
-              <td class="py-3 pr-4">{app.bestFor}</td>
-              <td class="py-3 pr-4">{app.pricing}</td>
-              <td class="py-3 pr-4">{app.shopifyDepth}</td>
-              <td class="py-3 pr-4">{app.automationDepth}</td>
-              <td class="py-3">★ {app.rating}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section class="container space-y-12 pb-16">
-    <ToolReview app={featuredApps[0]} rank={1} badge="Editor's choice" paragraphs={[
-      'Sequenzy leads for home goods because the retention challenge is project-based lifecycle design across large catalogs — not sending another site-wide sale. You need room segmentation, inspiration content series that sustain 4–16 week consideration windows, cross-sell triggered by project stage, and seasonal refresh campaigns tied to life events. Sequenzy\'s agent-first playbooks translate these requirements into working sequences without cataloguing every SKU manually.',
-      'Pay-per-email pricing helps home brands whose lists grow through style quizzes and room planning downloads before project purchases materialize. Consideration cycles are long; per-contact models charge for months of inspiration nurture before the sofa converts.',
-      'Sequenzy differentiates on strategic clarity: which room segment gets which inspiration series, when cross-sell activates after first purchase, how to suppress customers who already completed a room project. Revenue attribution by room segment reveals whether living room buyers actually complete dining cross-sell — the metric that matters for home goods LTV.',
-      'Pair with Klaviyo if catalog complexity demands maximum browse data infrastructure. Mailchimp users should evaluate Sequenzy as migration target when lifecycle revenue stalls.',
-    ]} />
-
-    <ToolReview app={featuredApps[1]} rank={2} paragraphs={[
-      'Klaviyo handles massive home goods catalogs with collection-level browse abandonment, dynamic product blocks by room, and predictive CLV for identifying project completers versus one-item buyers. Native Shopify sync pulls collection membership essential for room segmentation.',
-      'Flow A/B testing optimizes inspiration versus promo balance — critical when over-discounting trains customers to wait for seasonal sales on furniture. RFM segmentation separates full-price decorators from clearance-only buyers.',
-      'Profile costs grow with inspiration content subscribers who take months to convert. Sunset non-engaged contacts and avoid expensive automations on quiz leads with zero browse activity.',
-      'Best at 800+ monthly orders with large catalogs and dedicated retention ops.',
-    ]} />
-
-    <ToolReview app={featuredApps[2]} rank={3} paragraphs={[
-      'Drip excels when home goods operators want explicit visual control over room-based branches. Map living room buyers through sofa → rug → accent cross-sell over 10 weeks. Kitchen buyers follow different product logic entirely. Tags like "room-living," "project-in-progress," and "style-modern" drive conditional paths.',
-      'Visual workflow builder makes long consideration nurture tangible — you see exactly where inspiration transitions to cross-sell. Revenue dashboards track project completion rate by entry collection.',
-      'Per-contact pricing and thinner home-goods agency ecosystem versus Klaviyo. Best for teams who enjoy building workflows and focused room categories.',
-      'See <a class="link" href="/compare/sequenzy-vs-drip">Sequenzy vs Drip</a> for strategy versus builder tradeoffs.',
-    ]} />
-
-    <ToolReview app={featuredApps[3]} rank={4} paragraphs={[
-      'Mailchimp remains relevant for established home retailers with existing Mailchimp investment — email templates, team familiarity, and integrated marketing features beyond email. Shopify product sync supports basic product campaigns and simple automations.',
-      'Lifecycle depth trails ecommerce natives significantly. Browse abandonment by collection, room segmentation, and project-based cross-sell require workarounds or accept limitations. Most home brands focused on retention revenue migrate to Sequenzy or Klaviyo.',
-      'Acceptable transitional tool, not destination platform for serious home goods retention. Evaluate migration when email revenue plateaus despite growing list.',
-      'See <a class="link" href="/alternatives/mailchimp-alternative">Mailchimp alternatives</a> when ready to switch.',
-    ]} />
-
-    <ToolReview app={featuredApps[4]} rank={5} paragraphs={[
-      'Omnisend delivers fast multichannel setup for smaller home decor brands: welcome, cart, post-purchase, and basic browse recovery live in days. Email, SMS, and push coordinate for back-in-stock alerts on popular furniture pieces.',
-      'Room segmentation and extended inspiration nurture are less sophisticated than Sequenzy or Klaviyo. Reporting is campaign-practical. Fine for boutiques under ~500 monthly orders.',
-      'Strong bridge platform during early growth. Plan upgrade when catalog and project complexity demand deeper segmentation.',
-      'Compare <a class="link" href="/compare/omnisend-vs-klaviyo">Omnisend vs Klaviyo</a> at growth inflection points.',
-    ]} />
-
-    <ToolReview app={shopifyEmail} rank={6} badge="Native baseline" paragraphs={[
-      'Shopify Email works for seasonal sale announcements and new collection blasts — common starting point for home decor brands focused on photography and merchandising before retention maturity.',
-      'Lacks room segmentation, inspiration series, extended browse nurture, and project-completion cross-sell. Home goods consideration windows exceed Shopify Email automation capability.',
-      'Typical graduation trigger: first time customer browses living room collection for three weeks without purchase and you have no email touchpoint beyond generic newsletter.',
-      'See <a class="link" href="/alternatives/mailchimp-alternative">migration options</a> from basic senders.',
-    ]} />
-  </section>
-
-  <section class="container py-12">
-    <div class="ledger-card">
-      <p class="editorial-kicker">Migration path</p>
-      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Home goods Mailchimp graduates</h2>
-      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-        Mailchimp-to-Sequenzy or Klaviyo migrations dominate home goods. Export collection interest tags if they exist; rebuild room segments from purchase history if not. Launch inspiration series before enabling promotional automations — home goods buyers expect content upgrade, not just new ESP. Plan 6-week transition with parallel sends on key flows only. Dynamic product blocks by collection are the primary Klaviyo advantage at catalog scale; Sequenzy advantage is strategy clarity for lean teams.
-      </p>
-    </div>
-  </section>
-
-  <section class="container py-12">
-    <div class="card">
-      <p class="editorial-kicker">Audit checklist</p>
-      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Monthly home goods email health check</h2>
-      <ul class="mt-6 space-y-4 text-[17px] leading-8 text-[#4a2d17]">
-        <li><strong class="text-[#24170f]">Room segmentation:</strong> Cross-sell recommendations stay within room project, not random catalog?</li>
-        <li><strong class="text-[#24170f]">Project completion rate:</strong> % buying 2+ items same room in 90 days — trending up?</li>
-        <li><strong class="text-[#24170f]">Inspiration before promo:</strong> New browsers receive content series before discount codes?</li>
-        <li><strong class="text-[#24170f]">Browse window:</strong> Average days from first browse to purchase tracked by collection?</li>
-        <li><strong class="text-[#24170f]">Return reduction:</strong> Post-purchase dimension education live for bulky SKU categories?</li>
-        <li><strong class="text-[#24170f]">Catalog sync:</strong> Email collection triggers updated after last merchandising reorg?</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="container py-12">
-    <div class="grid gap-8 lg:grid-cols-2">
-      <div class="card">
-        <p class="editorial-kicker">Room segmentation</p>
-        <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Project completion cross-sell</h2>
-        <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-          After first room purchase, wait 14 days before cross-sell. Recommend complementary items within same room, not random catalog highlights. Track project completion rate: % of customers buying 2+ items in same room within 90 days. Email priorities: {segment.emailPriorities.join('; ')}.
-        </p>
-      </div>
-      <div class="ledger-card">
-        <p class="editorial-kicker">Inspiration series</p>
-        <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Content before coupon</h2>
-        <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-          4-email inspiration arc for browsers: room reveal, styling tips, customer feature, dimension guide. Promo only on email 5 if no purchase. Reduces returns and sustains engagement through long consideration. Metrics: {segment.metrics.join('; ')}.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="container py-12">
-    <div class="card">
-      <p class="editorial-kicker">Catalog scale</p>
-      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">When home goods catalogs break generic email</h2>
-      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-        Home goods stores with 2,000+ SKUs cannot manually merchandise every email. Collection-level dynamic blocks become mandatory — living room browsers see living room products, not bestsellers from unrelated categories. Klaviyo and Sequenzy both support collection-triggered content; the operational work is defining which collections map to which room segments and maintaining that mapping when merchandising reorganizes. Plan quarterly catalog audits aligned with email segment definitions. A reorganized Shopify navigation without updated email segments produces irrelevant recommendations overnight.
-      </p>
-      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-        Returns on bulky items make post-purchase education critical: assembly guides, dimension confirmation, care instructions before cross-sell. Reducing return rate by 2 points on sofa purchases often exceeds revenue from an extra promo blast. Wire return reasons into segments when your returns app supports Shopify metafields or tags.
-      </p>
-    </div>
-  </section>
-
-  <section class="container py-12">
-    <div class="ledger-card">
-      <p class="editorial-kicker">Moving & life events</p>
-      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Trigger campaigns from life stage, not calendar</h2>
-      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-        Capture move dates, new home, new baby, or renovation intent via post-purchase surveys and quiz popups. Life-event segments receive accelerated inspiration series — "setting up your nursery" outperforms generic nursery sale blasts. Partner with <a class="link" href="/use-cases/segmentation">segmentation workflows</a> to maintain custom properties as customers progress through projects. Home goods LTV lives in project completion; email should accelerate room-by-room purchasing, not spray catalog-wide discounts.
-      </p>
-    </div>
-  </section>
-
-  <section class="container py-12">
     <div class="prose-shopify max-w-4xl">
-      <h2 class="font-serif text-3xl font-black text-[#24170f]">Merchant scenario (for): Home Goods rollout checkpoint</h2>
-      <p>
-        Shopify operators evaluating Home Goods should document week-one baseline metrics before claiming migration wins — welcome time-to-live, cart suppression accuracy, post-purchase edge cases, and winback engagement splits scored on staff accounts. Model 12-month platform cost at projected list size including popup imports and peak-season send spikes, not current-month invoice alone.
-      </p>
-      <p>
-        Home Goods Stores sale-week gate: a non-technical marketer ships recent-purchaser suppression plus VIP early access inside thirty Thursday minutes — tools gliding through calm demos but failing this home goods stores test forfeit more peak revenue than a year of subscription delta. Hold the home goods stores trial to ninety days with weekly checks; billing and collision truths surface only under load.
-      </p>
-      <p>
-        Before any home goods stores migration, stage the kill-switch: pause-then-enable sequencing, engaged-only week one, three-week cart overlap. home goods stores math must clear 3x labor on incremental revenue net of platform delta, or home goods stores stays put while capture gets fixed.
-      </p>
+      <h2 class="font-serif text-3xl font-black">Map room interest without assuming a household</h2>
+      <p>Record the room or project a shopper chooses, its source, and whether it is current. Browse history can suggest interest but does not establish a renovation, a new baby, or a move. Offer a simple way to change or stop project updates.</p>
+      <p>A customer may furnish more than one space or buy for someone else. Keep multiple projects distinguishable instead of overwriting living-room interest with the latest kitchen purchase. Ask the merchandising owner to define which collections belong to each project.</p>
     </div>
   </section>
-
-  <section class="container pb-8">
-    <div class="flex flex-wrap gap-4 text-sm font-bold">
-      <a class="link" href="/apps">All Shopify email apps →</a>
-      <a class="link" href="/use-cases/browse-abandonment">Browse abandonment →</a>
-      <a class="link" href="/for/fashion">Fashion stores →</a>
-    </div>
-  </section>
-
-  <section class="container py-12">
-    <div class="card">
-      <p class="editorial-kicker">Returns linkage</p>
-      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Return reasons feed segmentation</h2>
-      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-        Home goods returns for "did not fit space" need dimension education, not immediate cross-sell. Returns for "color mismatch" need style quiz refinement. Feed return tags from Loop, Returnly, or Shopify returns into email platform monthly. Segments without return awareness repeat mistakes in recommendations and damage trust on high-ticket pieces.
-      </p>
-    </div>
-  </section>
-
-  <section class="container py-12">
-    <div class="ledger-card">
-      <p class="editorial-kicker">Inspiration metrics</p>
-      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Measure content depth, not just clicks</h2>
-      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-        Home goods inspiration email success shows in time-to-second-purchase within same room and return rate reduction on dimension-sensitive SKUs — not campaign click rate. Track email recipients who purchase second room item within 90 days versus non-email baseline. Sequenzy attribution by sequence helps prove inspiration series value to stakeholders skeptical of "soft" content. When inspiration fails, problem is usually relevance (wrong room) not creative quality.
-      </p>
-    </div>
-  </section>
-
-  <section class="container py-12">
-    <div class="prose-shopify">
-      <h2 class="font-serif text-3xl font-black text-[#24170f]">Operator notes for home goods leads</h2>
-      <p>Project completion rate beats email revenue as strategic KPI. Email exists to accelerate room completion, not maximize single-send clicks. Report both but optimize for completion.</p>
-      <p>Mailchimp migration is emotional for long-tenured teams — document quick wins in first 30 days (browse recovery, inspiration series) to maintain stakeholder confidence during transition.</p>
-      <p>Large catalog stores should assign one person to collection-to-segment mapping. Merchandising changes without email updates is silent revenue leak.</p>
-      <p>Sequenzy versus Klaviyo for home goods splits on catalog size and team: under 800 SKUs and lean team favors Sequenzy strategy; 2,000+ SKUs with data operator favors Klaviyo dynamic blocks.</p>
-    </div>
-  </section>
-
-  <section class="container py-12">
-    <div class="card">
-      <p class="editorial-kicker">8-week implementation</p>
-      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Rollout plan for home goods email</h2>
-      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">Week 1: Room tags from purchase history. Week 2: Inspiration series for top collection. Week 3: Post-purchase dimension education for bulky SKUs. Week 4: Cross-sell delay rules. Week 5: Browse abandonment by room. Week 6: Life-event survey on thank-you page. Week 7: Seasonal refresh campaign. Week 8: Project completion rate baseline. Home goods rewards patience — measure browse-to-purchase in weeks, not days.</p>
-    </div>
-  </section>
-
-  <section class="container py-12">
+  <section class="container pb-12">
     <div class="prose-shopify max-w-4xl">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Merchant scenario: room-completion cross-sell</h2>
-      <p>
-        Hearth &amp; Home: customers who bought living-room anchor piece converted 24% to same-room accessories within 90 days when inspiration email preceded promo — random bestseller cross-sell converted 7%. Dimension education on bulky SKUs before cross-sell reduced return rate 3.1 points. Browse-to-purchase median 19 days — patience in delay rules beats panic discount. Life-event tags from thank-you survey fed seasonal refresh campaigns.
-      </p>
-      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-12">Margin math: project completion versus single-SKU promo</h2>
-      <p>
-        Room-completion path: average 2.3 items per completing customer, $340 combined AOV, 41% margin. Single discounted pillow promo path: $48 AOV, trained wait-for-sale, 12% repeat within 90 days versus 31% on room path. Email compounds when customers finish rooms — not one-off discount transactions.
-      </p>
+      <h2 class="font-serif text-3xl font-black">Separate stocked decor from made-to-order furniture</h2>
+      <p>The product brief should include variant, dimensions, finish, stock status, production lead-time source, and delivery options. Ready-to-ship accessories can take a different path from a custom upholstered item awaiting production. Do not interpret an order as evidence that the room is ready for accessories.</p>
+      <p>Assign fulfillment the authority for lead-time and service-area claims. If a delay changes the expected date, update queued emails and the landing page together. Availability of a finish sample does not imply availability of the full-size piece.</p>
     </div>
   </section>
-
-  <section class="container py-12">
-    <div class="prose-shopify">
-      <h2 class="font-serif text-3xl font-black text-[#24170f]">Bottom line for home goods stores</h2>
-      <p>Project completion beats campaign clicks. Sequenzy for strategy on lean teams, Klaviyo for massive catalogs, Drip for workflow operators, Mailchimp as legacy bridge only, Omnisend for fast multichannel. Room segmentation and inspiration-before-promo are non-negotiable regardless of platform.</p>
-      <p>Assign owner to collection-segment mapping. Measure 90-day room completion rate. Reduce returns with dimension education before cross-sell on bulky SKUs. Home goods email compounds when customers finish rooms with you — not when they buy one discounted pillow and disappear. Inspiration content should reference the room they already started, not random bestsellers from unrelated categories.</p>
-    </div>
-  </section>
-
-  <section class="container py-12">
+  <section class="container pb-12">
     <div class="prose-shopify max-w-4xl">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Merchant scenario: Home Goods store email stack</h2>
-      <p>
-        Vertical-specific retention for Home Goods catalogs requires matching platform to catalog physics — not homepage generic ranking. Test store profile: order velocity, AOV band, SKU count, subscription or POS presence, and primary bottleneck (capture, cart, browse, replenishment, SMS). Shortlist two platforms from vertical picks; run four-flow workflow test 14 days; migrate on quiet week with kill-switch spreadsheet.
-      </p>
-      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-10">90-day vertical rollout</h2>
-      <p><strong>Month 1:</strong> Fix capture if under 2.5%; welcome with source branch. <strong>Month 2:</strong> Cart and post-purchase with vertical-specific education delays. <strong>Month 3:</strong> Winback or replenishment per vertical calendar — not generic 90-day default.</p>
-      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-10">Margin math for Home Goods</h2>
-      <p>
-        Model platform fee at 12-month list projection including popup imports — per-contact pricing punishes verticals with fast list growth and slow repeat purchase (apparel, beauty, supplements). Pay-per-send or quarterly hygiene offsets list bloat tax. Incremental workflow revenue minus stack TCO must exceed 3x before adding fourth vendor.
-      </p>
-      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-10">Failure rehearsal: wrong platform for vertical</h2>
-      <p>
-        <strong>Enterprise CDP too early.</strong> Klaviyo before order 500 — profile tax without predictive use. Fix: Omnisend or Sequenzy bridge. <strong>Capture neglected.</strong> Lifecycle platform before Privy — list growth stalled. Fix: capture first 14 days. <strong>Peak migration.</strong> November ESP switch — deliverability dip. Fix: quiet-week rule.
-      </p>
+      <h2 class="font-serif text-3xl font-black">Build inspiration around a decision</h2>
+      <p>Plan a room example, a measurement guide, a material explanation, and an optional request for help. Each should answer a question that could block the purchase. Use accurate dimensions and clearly identify which products appear in a styled photograph.</p>
+      <p>Keep approved customer-image permissions attached to the asset. Avoid implying that a photograph guarantees a color match or that a room layout fits every space. If a subscriber stops engaging or changes projects, offer a slower cadence or a clear exit instead of extending nurture indefinitely.</p>
     </div>
   </section>
-
-  <section class="container py-12">
+  <section class="container pb-12">
     <div class="prose-shopify max-w-4xl">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Workflow test checklist for home goods</h2>
-      <p>
-        Run this home goods validation on staff accounts before peak season: (1) welcome branches correctly by signup source and suppresses existing customers; (2) cart recovery excludes recent purchasers of same SKU variant; (3) post-purchase suppresses gift buyers from discount cross-sell and respects try-on or education delay windows; (4) winback splits engaged versus unengaged and sunsets after three touches. Score each 0–10; any flow below 7 is migration or rebuild signal.
-      </p>
-      <p>
-        For home goods stores, model year-one cost on post-capture scale: popups, giveaways, and influencer waves inflate home goods stores contacts fast. Profile plans punish home goods stores capture volume, send-based plans reward restraint, and deliverability still demands quarterly pruning of 180-day sleepers — roll home goods stores TCO into a single finance line.
-      </p>
-      <p>
-        home goods stores sale-week drill decides: VIP early access with recent-buyer suppression in half an hour Thursday. home goods stores demo stars that fail it forfeit more than subscription delta — document home goods stores results, clear the 3x threshold, or repair capture before switching.
-      </p>
-      <p>
-        Time home goods stores moves outside peak: early-year or late-spring windows only, three-week welcome/cart overlap, ninety-day read-only incumbent for home goods stores records. The home goods stores kill-switch orders each pause ahead of its replacement; parallel cart sends scar deliverability for seasons.
-      </p>
-      <p>
-        Hearth &amp; Home room-completion metric: 90-day same-room attach rate board-visible quarterly — inspiration-before-promo sequence lifted rate from 7% to 24% on living-room anchor buyers. Bulky SKU dimension education before cross-sell reduced freight-related returns 3.1 points. Browse-to-purchase median 19 days — delay rules respect consideration window; panic discount email day two destroys trust on $400 sofa consideration.
-      </p>
+      <h2 class="font-serif text-3xl font-black">Send measurement help while changes are possible</h2>
+      <p>Before a bulky order becomes difficult to amend, link to the actual access and dimension checks relevant to that item: doorways, stairs, assembled size, or placement clearances. Route questions to a person who can confirm the order options.</p>
+      <p>If production has started or dispatch is booked, do not promise that clicking reply can change a finish or delivery slot. Explain the current support route and policy. After delivery, assembly and care content should match the purchased version, not a generic catalog guide.</p>
     </div>
   </section>
-
-  <FaqSection faqs={faqs} title="Home goods email FAQ" />
+  <section class="container pb-12">
+    <div class="prose-shopify max-w-4xl">
+      <h2 class="font-serif text-3xl font-black">Let delivery issues override project cross-sell</h2>
+      <p>A split shipment can leave an anchor piece undelivered while accessories have arrived. Build the project state from the relevant lines, not a single order-level fulfilled flag. Suppress completion offers when a damage, missing-part, or delivery case is open.</p>
+      <p>Support owns resolution and the signal to resume marketing. A customer reporting a damaged table should receive help with that table before suggestions for tableware. Confirm how the sender receives a reopened case, not just the first closure event.</p>
+    </div>
+  </section>
+  <section class="container pb-12">
+    <div class="prose-shopify max-w-4xl">
+      <h2 class="font-serif text-3xl font-black">Use compatibility before room-based recommendations</h2>
+      <p>Same room does not mean compatible. A replacement cover needs the correct sofa model and generation; a lamp shade needs the correct fitting; a dining chair needs dimensions that work with the table. Maintain explicit product relationships where fit matters.</p>
+      <p>Allow a no-recommendation outcome if the model is unknown or the compatible item is unavailable. An optional project survey can ask what is still needed. Buying two products in one room is an observable attachment measure, not proof that the customer considers the project complete.</p>
+    </div>
+  </section>
+  <section class="container pb-12">
+    <div class="prose-shopify max-w-4xl">
+      <h2 class="font-serif text-3xl font-black">Maintain the catalog-to-email map</h2>
+      <p>Give a named owner the collection and project mapping, with a review whenever merchandising reorganizes categories. Retired SKUs, renamed collections, and substituted finishes should have defined fallbacks in queued content. Record when the mapping was last checked.</p>
+      <p>For a large catalog, ask to preview which products each segment will see before scheduling. Scale alone does not require a particular supplier. The deciding issue is whether the operator can maintain accurate content and catch broken associations with the actual catalog.</p>
+    </div>
+  </section>
+  <section class="container pb-12">
+    <div class="prose-shopify max-w-4xl">
+      <h2 class="font-serif text-3xl font-black">Compare the complete project handoff</h2>
+      <p>Ask Sequenzy, Klaviyo, Drip, Mailchimp, Omnisend, or another shortlisted supplier to demonstrate a delayed sofa order, an active room interest, a damaged delivery, and a compatible accessory recommendation. Use the same anonymized product and customer records for each.</p>
+      <p>Include the incumbent and Shopify native setup in the comparison. Request a written cost model for long-lived prospects, campaigns, automations, support, and delivery or returns connectors. Do not migrate solely because the existing tool is familiar or because a replacement promises project-based revenue.</p>
+    </div>
+  </section>
+  <section class="container pb-12">
+    <div class="prose-shopify max-w-4xl">
+      <h2 class="font-serif text-3xl font-black">Move one room path and rehearse disruption</h2>
+      <p>Start with an approved inspiration sequence for one collection. Reconcile preferences and suppressions, render the content, and rehearse a renamed collection, split shipment, delayed delivery, and reopened support case on staff accounts. Save expected and actual outcomes.</p>
+      <p>Keep the new flow in preview while the incumbent is live. Pause the old equivalent before enabling the replacement. Preserve project interest history and support state so a platform change does not restart months of nurture for someone who already bought.</p>
+    </div>
+  </section>
+  <section class="container pb-12">
+    <div class="prose-shopify max-w-4xl">
+      <h2 class="font-serif text-3xl font-black">Measure attachment and delivery costs together</h2>
+      <p>Track time to a relevant follow-on order, net contribution, freight and return costs, complaints, and unresolved delivery cases by entry collection. Distinguish compatible-part purchases from a broader room project. State the observation window rather than declaring a universal project-completion deadline.</p>
+      <p>Use comparable mature cohorts or a planned holdout to assess an inspiration sequence. A customer ordering later may reflect delivery timing or seasonality. Report those limits and the maintenance work as well as attributed sales before deciding that another platform would pay for itself.</p>
+    </div>
+  </section>
+  <section class="container pb-12">
+    <div class="prose-shopify max-w-4xl">
+      <h2 class="font-serif text-3xl font-black">Keep the native baseline in the comparison</h2>
+      <p><a class="link" href="https://help.shopify.com/en/manual/promoting-marketing/create-marketing/shopify-messaging">Shopify documents Shopify Messaging, formerly Shopify Email</a>, for campaigns and marketing automations. Compare your actual requirements with the setup available to your store before deciding to replace it. The baseline does not establish that a particular edge case works; demonstrate that case with your own field mapping.</p>
+      <p><a class="link" href="/guides/selection-framework">Build a selection brief</a>, <a class="link" href="/guides/migration">plan the migration</a>, and <a class="link" href="/guides/discount-discipline">review incentive costs</a>. Keep the failed requirement, responsible owner, and proposed next step in the decision record.</p>
+    </div>
+  </section>
+  <FaqSection faqs={faqs} title="Store email questions" />
 </BaseLayout>
