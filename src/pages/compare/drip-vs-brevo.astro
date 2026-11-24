@@ -8,383 +8,71 @@ import { siteFromHost } from '../../content';
 const site = siteFromHost();
 const path = '/compare/drip-vs-brevo';
 const title = 'Drip vs Brevo for Shopify Email: 2026 Buyer Guide';
-const desc = 'Drip vs Brevo for Shopify: compare ecommerce workflows, CRM, transactional email, pricing models, pilots, and 14 realistic alternatives for a growing store.';
-
+const desc = 'Compare Drip lifecycle workflows with Brevo PushOwl Shopify sync, consent migration, CRM and transactional messaging responsibilities, and matched cost forecasts.';
 const faqs = [
-  { question: 'Is Drip or Brevo better for a Shopify-only store?', answer: 'Drip is usually the cleaner fit when retention is the job: its ecommerce workflow model makes product, order, tag, and purchase branches easier to inspect. Brevo wins when the same contact record must also support CRM deals, transactional API sends, or non-Shopify audiences. Test the actual cart, post-purchase, and winback logic before committing.' },
-  { question: 'Which is cheaper: Drip or Brevo?', answer: 'There is no universal winner because the billing units differ. Drip generally prices around people in the account, while Brevo combines contact or feature tiers with email-volume limits and usage-priced channels. Forecast 12 months of active profiles, sends, and SMS rather than comparing the entry banners. A cheaper plan that needs a second transactional or SMS vendor is not necessarily cheaper.' },
-  { question: 'Can Brevo replace Drip for Shopify lifecycle email?', answer: 'Yes for welcome, basic cart, post-purchase, and broadcast programs. The migration becomes less attractive when the store relies on many product-specific branches, suppression rules, or a retention operator who debugs journeys visually every week. Brevo is a capable generalist; Drip is the more focused workflow choice.' },
-  { question: 'What should a 30-day pilot prove?', answer: 'Build one welcome branch, a three-message cart flow with purchase suppression, a product-aware post-purchase cross-sell, and a winback split by engagement. Send test orders through each path, record time-to-live, confirm catalog data, and price the same 12-month contact and send forecast. Do not judge from a template gallery alone.' },
-  { question: 'Which alternatives deserve a pilot?', answer: 'Klaviyo and Omnisend are the strongest Shopify-native benchmarks; Shopify Email is the low-complexity baseline. Yotpo Email & SMS, Sendlane, ActiveCampaign, Mailchimp, Privy, TinyEmail, AfterShip Email, Postscript, and Attentive each solve a different channel, CRM, capture, or scale constraint.' },
+  { question: 'Is Drip or Brevo better for a Shopify-only store?', answer: 'Start with the work you need to operate. Drip documents Shopify customer, order and product sync and ecommerce workflow triggers. Brevo PushOwl also supports Shopify recovery and welcome journeys. Rehearse a product education flow and a purchase exit in each; do not assume a general suite lacks ecommerce tools or that a specialist is automatically easier.' },
+  { question: 'Which is cheaper: Drip or Brevo?', answer: 'Request quotes for the same imported population, campaign calendar, automation traffic and required modules. Include peak sends, implementation and any sender you retain. Confirm the billing treatment of imported and unsubscribed profiles rather than pricing only the list you intend to email. This guide does not quote supplier prices.' },
+  { question: 'Can Brevo replace Drip for Shopify lifecycle email?', answer: 'It is a candidate, using the supported Brevo PushOwl connector. Replacement depends on the actual events, product fields, purchase exits and consent records your current journeys use. Importing into an existing Brevo account may overwrite subscription status; review that separately from the ongoing consent source-of-truth setting before enabling marketing.' },
+  { question: 'What should a 30-day pilot prove?', answer: 'Treat 30 days as a proposed planning window, not a migration promise. Prove initial import and ongoing consent updates separately, then product education, purchase suppression and notification ownership. A second operator should explain an unexpected enrollment from the event history. Keep production sending paused until the relevant checks pass.' },
+  { question: 'Which alternatives deserve a pilot?', answer: 'Add another candidate only for a named gap that neither setup solves, such as a required event or an existing sales workflow. Keeping Shopify notifications and a separate CRM may be a workable option alongside Drip. An existing Brevo team should compare the effort of connecting PushOwl with the effort of rebuilding its marketing elsewhere.' },
 ];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
- 
-<ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
-
- 
-<section class="py-14 md:py-20">
-   
-<div class="container">
-     
-<nav class="mb-8 text-sm"><a class="link" href="/compare">Comparisons
-</a><span class="mx-2 text-[#5d3a1d]">/
-</span><span class="text-[#5d3a1d]">Drip vs Brevo
-</span></nav>
-     
-<header class="max-w-4xl">
-       
-<p class="editorial-kicker">Head-to-head buyer guide
-</p>
-       
-<h1 class="hero-title mt-5">Drip vs Brevo for Shopify email
-</h1>
-       
-<p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">Drip is a focused ecommerce automation workspace. Brevo is a broader messaging and CRM suite. That distinction matters more than feature-count parity: a Shopify retention operator may need product-aware branches, while a hybrid merchant may need deal stages, transactional API email, and one contact record across several revenue motions.
-</p>
-     
-</header>
-
-     
-<div class="mt-12 max-w-4xl"><TldrBox picks={[
-        { label: 'Best for Shopify lifecycle', tool: 'Drip', reason: 'More natural fit for visual, product- and behavior-based journeys.' },
-        { label: 'Best for CRM + API email', tool: 'Brevo', reason: 'Broader contact, pipeline, transactional, and channel coverage.' },
-        { label: 'Best native benchmark', tool: 'Klaviyo', reason: 'Use it as the data-depth and reporting control in your pilot.' },
-        { label: 'Best fast-start benchmark', tool: 'Omnisend', reason: 'Compare prebuilt ecommerce flows and multichannel setup speed.' },
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+  <section class="py-14 md:py-20">
+    <div class="container">
+      <nav class="mb-8 text-sm"><a class="link" href="/compare">Comparisons</a><span class="mx-2 text-[#5d3a1d]">/</span><span class="text-[#5d3a1d]">Drip vs Brevo</span></nav>
+      <header class="max-w-4xl">
+        <p class="editorial-kicker">Head-to-head buyer guide</p>
+        <h1 class="hero-title mt-5">Drip vs Brevo for Shopify email</h1>
+        <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">Should Shopify retention live in a dedicated lifecycle workspace, or join the Brevo account that already handles other customer messaging? Compare the work of maintaining product journeys with the work of connecting accounts, reconciling consent and assigning each sender a clear responsibility.</p>
+      </header>
+      <div class="mt-12 max-w-4xl"><TldrBox picks={[
+        { label: 'Lifecycle candidate', tool: 'Drip', reason: 'Evaluate Shopify purchase and product context in the journeys your operator maintains.' },
+        { label: 'Suite candidate', tool: 'Brevo', reason: 'Evaluate PushOwl alongside the CRM or transactional work you actually need.' },
       ]} /></div>
+      <article class="prose-shopify mt-14 max-w-4xl">
+        <h2>What each setup brings to the decision</h2>
+        <p><a href="https://help.drip.com/hc/en-us/articles/4424695491725-Connect-Your-Shopify-Store">Drip’s Shopify guide</a> describes customer, order and product sync, purchase-history segmentation and ecommerce triggers. Its app embed provides page and product-view tracking. These are useful ingredients for a retention owner building category education and repeat-purchase branches. The trade-off to investigate is the effort of maintaining those journeys alongside any separate sales or service tools.</p>
+        <p><a href="https://help.brevo.com/hc/en-us/articles/360014912879-Brevo-PushOwl-app-for-Shopify-Connect-your-Shopify-store-with-Brevo-PushOwl">Brevo identifies PushOwl as its supported Shopify connector</a>, replacing the former app for new stores. Its documented uses include recovery and welcome journeys. Brevo should therefore receive a real ecommerce rehearsal, rather than being dismissed as a list-only integration. For an existing Brevo team, the potential benefit is retaining its customer messaging work while adding Shopify data; the cost is reconciling account and permission behavior before sending.</p>
+        <div class="card overflow-x-auto"><table class="data-table">
+          <thead><tr><th>Requirement</th><th>Drip rehearsal</th><th>Brevo rehearsal</th></tr></thead>
+          <tbody>
+            <tr><td>Product education</td><td>Trace purchase and product context through a branch.</td><td>Inspect the fields and events available through PushOwl.</td></tr>
+            <tr><td>Existing customer records</td><td>Check matched profiles and subscription state after sync.</td><td>Confirm the intended account and import conflict behavior.</td></tr>
+            <tr><td>Sales relationship</td><td>Define the handoff to the CRM you retain.</td><td>Verify the sales module, permissions and handoff needed in your account.</td></tr>
+            <tr><td>Service notifications</td><td>Document which Shopify or external sender remains responsible.</td><td>Test a separate transactional route only if consolidation is required.</td></tr>
+          </tbody>
+        </table></div>
 
-     
-<div class="mt-12 card overflow-x-auto">
-       
-<h2 class="px-5 py-4 font-serif text-2xl font-black text-[#24170f]">At a glance
-</h2>
-       
-<table class="data-table"><thead><tr><th>Dimension
-</th><th>Drip
-</th><th>Brevo
-</th></tr></thead><tbody>
-         
-<tr><td>Core job
-</td><td>Ecommerce lifecycle automation
-</td><td>Email, SMS, transactional, and CRM suite
-</td></tr>
-         
-<tr><td>Shopify fit
-</td><td>Strong for DTC behavior and product branches
-</td><td>Good for standard journeys and hybrid commerce
-</td></tr>
-         
-<tr><td>Pricing model
-</td><td>Primarily people/account based; tier features vary
-</td><td>Email-volume and feature tiers; SMS/API usage can add cost
-</td></tr>
-         
-<tr><td>Workflow feel
-</td><td>Builder-led and ecommerce-oriented
-</td><td>Broad automation surface with more suite decisions
-</td></tr>
-         
-<tr><td>CRM
-</td><td>Not the main reason to buy it
-</td><td>Built-in pipeline and contact-management use cases
-</td></tr>
-         
-<tr><td>Transactional
-</td><td>Usually pair with Shopify or a specialist
-</td><td>Native transactional/API path is a major advantage
-</td></tr>
-         
-<tr><td>Best pilot question
-</td><td>Can one operator maintain every branch?
-</td><td>Does one suite genuinely replace the current stack?
-</td></tr>
-       
-</tbody></table>
-     
-</div>
+        <h2>The migration risk: initial import is not ongoing consent sync</h2>
+        <p>Brevo’s setup guide warns that importing Shopify data may overwrite existing contact attributes, including subscription status. Before importing into an established account, preserve a dated export of its suppression and consent records and reconcile conflicting profiles. Connecting the correct account matters: a newly created account will not automatically contain the sales and campaign history your team expects.</p>
+        <p>PushOwl’s <a href="https://docs.pushowl.com/en/articles/14660088-source-of-truth-for-marketing-consent">consent source-of-truth guide</a> distinguishes ongoing updates from the historical import. The setting governs real-time marketing consent, not product or order sync; it is not a blanket safeguard for the first import. Directional overrides can also affect which consent state is preserved.</p>
+        <p>Proposed conflict test: use a controlled profile that is subscribed in Shopify but suppressed in the existing Brevo account. Record both states before import, inspect the result with sending disabled, and resolve it against your actual consent evidence. Then test a subsequent update separately under the chosen settings. Include a newly created profile and an unsubscribe originating in Brevo. Keep the before/after records and the setting values so another operator can repeat the test.</p>
+        <p>Drip also warrants a consent check. Its integration guide describes new-profile status based on Shopify marketing preference and updates to Shopify when a person unsubscribes or resubscribes in Drip. That documentation does not certify every conflict in your existing database. Rehearse matching, unsubscribe and any bulk-import path you plan to use; do not equate having an order history with permission to market.</p>
 
-     
-<article class="prose-shopify mt-14 max-w-4xl">
-       
-<h2>The decision in one sentence
-</h2>
-       
-<p>Choose Drip when Shopify revenue is driven by a maintained lifecycle program and the operator values readable automation logic. Choose Brevo when email is one part of a broader system that includes CRM follow-up, transactional messages, SMS, or audiences outside Shopify. Neither choice should be made from the free tier: model active profiles, send volume, SMS, integration work, and the second vendor you may still need.
-</p>
+        <h2>Proposed lifecycle rehearsal: education followed by a repeat purchase</h2>
+        <p>For a store selling refillable products, build a proposed journey that sends setup guidance after the first purchase, then offers a relevant refill when appropriate to that product. This is a test design, not an observed merchant result. Use the product identifier to distinguish a refillable starter kit from an accessory that does not need replenishment. Choose timing from your own product usage guidance rather than a universal interval.</p>
+        <p>In each platform, record the incoming order and product fields, the branch taken and the planned next message. Place a repeat order before that message and inspect whether the purchase exit removes the refill promotion. Repeat with an accessory-only order and a suppressed profile. If you want delivery-based timing or subscription-aware exclusions, first establish the event source for those states; an order event alone proves neither delivery nor an active subscription.</p>
+        <p>Have the next operator change the refill recommendation without changing the entry rule. Ask them to explain why a selected profile is still waiting. Drip’s ecommerce workflow model is worth evaluating for this ongoing maintenance job. Brevo’s value depends on whether the same job remains understandable alongside its other messaging responsibilities. Record actual setup and correction effort; this guide has not measured either platform’s speed or revenue effect.</p>
 
-       
-<h2>Drip: strengths and trade-offs for Shopify
-</h2>
-       
-<p>Drip earns its place in a Shopify shortlist because its mental model starts with ecommerce behavior. A retention owner can organize welcome, browse or cart intent, product education, post-purchase, replenishment, and winback around customer events instead of treating Shopify as a generic list source. The important test is not whether a trigger exists; it is whether the operator can see why a customer entered, which branch fired, and which purchase event stopped the next message.
-</p>
-       
-<p><strong>Pros:
-</strong> ecommerce-first workflow vocabulary, useful product and order context, strong fit for a hands-on lifecycle operator, and less temptation to buy unrelated suite modules.
-</p>
-       
-<p><strong>Cons:
-</strong> less compelling when CRM pipelines or transactional infrastructure are central, pricing needs a real profile forecast, and complex programs still demand disciplined naming, suppression, and catalog QA.
-</p>
+        <h2>CRM and transactional email are separate requirements</h2>
+        <p>If sales staff follow wholesale inquiries, specify what they must record: a company, an owner, a stage and the next action. Verify the relevant Brevo sales capabilities and account entitlement with that task, rather than assuming a synced Shopify contact creates a complete sales process. For Drip, compare retaining your existing CRM and passing only the needed eligibility state into retention. Consolidation is valuable only if the sales team can still carry out its work.</p>
+        <p><a href="https://help.brevo.com/hc/en-us/articles/360021196220-What-are-the-differences-between-marketing-transactional-and-automation-emails">Brevo documents SMTP and API transactional sending</a>. It also distinguishes informational messages from promotional automation content. A refill discount remains marketing even if an API or automation sends it. Keep promotional eligibility separate from service-message delivery.</p>
+        <p>Do not infer that installing the Shopify connector reroutes order confirmations. Make a sender inventory for order receipts, shipping updates, password resets, recovery and product education. For any proposed change, identify the triggering system, template owner, duplicate-prevention rule and failure alert. Use controlled orders to check which sender actually fires. Keeping Shopify notifications in place may reduce migration work; moving them requires a separate implementation decision and validation.</p>
 
-       
-<h2>Brevo: strengths and trade-offs for Shopify
-</h2>
-       
-<p>Brevo is the better-shaped tool for a merchant whose Shopify store is not the whole business. It can combine campaigns, automation, contact attributes, CRM stages, transactional/API messaging, and additional channels. That breadth helps a store with wholesale inquiries, service notifications, or a separate lead-generation motion. It can also create unnecessary surface area for a pure DTC team that only needs five revenue flows and a clean product feed.
-</p>
-       
-<p><strong>Pros:
-</strong> broad channel coverage, CRM and transactional use cases, usage-based options that can suit high send volume, and a practical path for teams already using several Brevo modules.
-</p>
-       
-<p><strong>Cons:
-</strong> more setup decisions, Shopify lifecycle logic can feel less purpose-built than an ecommerce specialist, and send or SMS limits can surprise teams that price only the contact tier.
-</p>
+        <h2>Compare complete costs without invented price bands</h2>
+        <p>Use the same imported population and sending calendar for both quotes. Drip’s integration guide warns that syncing existing Shopify customers can increase billing; ask which imported statuses count in your account. For Brevo, obtain the applicable PushOwl quote and confirm the treatment of existing Brevo services, sales users and transactional volume. A direct Brevo marketing quote alone may not describe the Shopify setup you are buying.</p>
+        <p>Forecast a normal month, a promotion month and a month with list growth. Separate recurring platform charges from migration labor, connector work, retained vendors and ongoing maintenance. If you expect a saving from retiring another tool, count it only after its actual job has passed the replacement test.</p>
+        <p>Hypothetical workload calculation: 8,000 eligible contacts receiving four broadcasts produce 32,000 campaign emails. Adding 6,000 lifecycle messages produces 38,000 marketing emails; 2,000 service notifications would bring total email traffic to 40,000 if consolidated. These are planning assumptions, not supplier allowances or a merchant’s results. Obtain the applicable charges for each message category and add any additional channels separately.</p>
 
-       
-<h2>14-tool shortlist: what to test instead of arguing from demos
-</h2>
-       
-<p>These tools are not interchangeable winners. They represent the actual alternatives a Shopify operator may encounter when Drip or Brevo misses a constraint. Pricing below is a model, not a quote; verify the current tier, Shopify integration limits, SMS rate, and transactional volume during the pilot.
-</p>
-       
-<div class="card overflow-x-auto"><table class="data-table"><thead><tr><th>Tool
-</th><th>Best Shopify job
-</th><th>Pricing model to model
-</th><th>Pilot signal
-</th></tr></thead><tbody>
-         
-<tr><td>Drip
-</td><td>Behavior-led DTC lifecycle
-</td><td>People/account tiers
-</td><td>Branch clarity and operator upkeep
-</td></tr>
-         
-<tr><td>Brevo
-</td><td>CRM plus email/API messaging
-</td><td>Send volume, features, usage
-</td><td>One suite replacing real tools
-</td></tr>
-         
-<tr><td>Klaviyo
-</td><td>Deep Shopify data, email, SMS
-</td><td>Profiles plus channel usage
-</td><td>Revenue attribution and event depth
-</td></tr>
-         
-<tr><td>Omnisend
-</td><td>Fast email, SMS, and push flows
-</td><td>Contacts plus channel volume
-</td><td>Time-to-live for core automations
-</td></tr>
-         
-<tr><td>Shopify Email
-</td><td>Native broadcasts and simple sends
-</td><td>Included allowance then usage
-</td><td>Can the store stay simple?
-</td></tr>
-         
-<tr><td>Yotpo Email &amp; SMS
-</td><td>Retention beside reviews and loyalty
-</td><td>Modules, contacts, and usage
-</td><td>Value of the wider Yotpo ecosystem
-</td></tr>
-         
-<tr><td>Sendlane
-</td><td>Guided DTC retention at growing scale
-</td><td>Paid plans and packages
-</td><td>Migration support versus self-serve cost
-</td></tr>
-         
-<tr><td>ActiveCampaign
-</td><td>Shopify plus sales CRM workflows
-</td><td>Contacts and product tier
-</td><td>CRM logic is genuinely revenue-bearing
-</td></tr>
-         
-<tr><td>Mailchimp
-</td><td>Familiar campaigns and broad marketing
-</td><td>Contacts and feature tier
-</td><td>Team familiarity offsets Shopify depth gap
-</td></tr>
-         
-<tr><td>Privy
-</td><td>Popup capture plus basic email/SMS
-</td><td>Contacts and pageviews
-</td><td>Capture lift is the bottleneck
-</td></tr>
-         
-<tr><td>TinyEmail
-</td><td>Low-cost campaign drafting
-</td><td>Subscribers and features
-</td><td>Young store needs speed, not depth
-</td></tr>
-         
-<tr><td>AfterShip Email
-</td><td>Post-purchase and delivery context
-</td><td>Product tier and usage
-</td><td>Tracking data drives retention
-</td></tr>
-         
-<tr><td>Postscript
-</td><td>Shopify-first SMS recovery and campaigns
-</td><td>Message usage and plan
-</td><td>SMS is the primary revenue lane
-</td></tr>
-         
-<tr><td>Attentive
-</td><td>High-volume managed SMS and email
-</td><td>Custom contract and usage
-</td><td>Scale justifies managed support
-</td></tr>
-       
-</tbody></table></div>
-
-       
-<h2>Three authentic Shopify workflow tests
-</h2>
-       
-<h3>1. Welcome with intent and consent
-</h3>
-       
-<p>Capture a source or product-interest attribute, send a useful first message, and branch the second message by category viewed or signup promise. In Drip, inspect how easily the operator can audit the branch and stop a discount after purchase. In Brevo, verify that contact attributes, consent state, and Shopify events stay understandable after the workflow is handed to another person. Klaviyo is the data-depth control; Omnisend is the speed control; Shopify Email is the baseline for whether the branch is even necessary.
-</p>
-       
-<h3>2. Cart recovery without promotion leakage
-</h3>
-       
-<p>Use a three-message sequence: reminder, product proof, and an offer only for eligible customers. Exclude purchasers, recent discount users, wholesale buyers, and anyone already in a winback flow. Drip should be judged on readable suppression and product context. Brevo should be judged on whether the same exclusions remain reliable when CRM and transactional messages share the contact. Postscript belongs in the test only when SMS is a deliberate channel, not an automatic add-on.
-</p>
-       
-<h3>3. Post-purchase to replenishment
-</h3>
-       
-<p>Send education before the likely reorder window, cross-sell only after a delivered order, and suppress the message when a subscription or repeat order exists. AfterShip Email is a useful control when delivery status changes timing. Yotpo deserves a test when reviews or loyalty points are part of the post-purchase value exchange.
-</p>
-
-       
-<h2>Pricing and total-cost reality
-</h2>
-       
-<p>For Drip, model the number of marketable people the platform counts, not the number of Shopify customers in the admin. For Brevo, model monthly sends, API or transactional volume, SMS, and any CRM or advanced automation tier. Then add the cost of a second sender, a popup tool, a data connector, or an agency. A low headline price is not a win if a Shopify order confirmation still requires another provider or if the team cannot maintain the journeys without paid help.
-</p>
-       
-<p>Run three forecasts: a clean month, a peak-sale month, and the month after a successful list-growth campaign. Include inactive contacts, abandoned checkouts, consent records, and test profiles. The pilot should produce an 18-month cost range and a cancellation trigger, such as “move when active profiles exceed X” or “keep Brevo while wholesale pipeline revenue exceeds the incremental lifecycle cost.”
-</p>
-
-       
-<h2>Pros, cons, and fit by merchant type
-</h2>
-       
-<div class="card overflow-x-auto"><table class="data-table"><thead><tr><th>Merchant situation
-</th><th>Likely first pilot
-</th><th>Why
-</th></tr></thead><tbody>
-         
-<tr><td>Pure DTC, one retention operator
-</td><td>Drip, Klaviyo, Omnisend
-</td><td>Compare maintainable lifecycle depth and speed.
-</td></tr>
-         
-<tr><td>Shopify plus wholesale sales
-</td><td>Brevo, ActiveCampaign
-</td><td>CRM stages may be load-bearing.
-</td></tr>
-         
-<tr><td>Native, low-complexity store
-</td><td>Shopify Email, TinyEmail
-</td><td>Prove that a larger stack creates value before buying it.
-</td></tr>
-         
-<tr><td>Reviews and loyalty-led retention
-</td><td>Yotpo Email &amp; SMS
-</td><td>Measure ecosystem value, not email features in isolation.
-</td></tr>
-         
-<tr><td>SMS-first recovery
-</td><td>Postscript, Attentive
-</td><td>Price consent, volume, and managed-service needs together.
-</td></tr>
-         
-<tr><td>Post-purchase delivery motion
-</td><td>AfterShip Email
-</td><td>Delivery events may be more useful than generic segments.
-</td></tr>
-       
-</tbody></table></div>
-
-       
-<h2>30-day pilot and decision rubric
-</h2>
-       
-<p><strong>Days 1–5:
-</strong> export consent and suppression rules, map Shopify events, clean test profiles, and write the 12-month cost forecast.
-<strong>Days 6–12:
-</strong> build the three workflows above in Drip and Brevo, plus one native benchmark.
-<strong>Days 13–20:
-</strong> place test orders across first purchase, repeat purchase, discount, wholesale, and subscription cases; confirm timing, catalog blocks, exclusions, and unsubscribe behavior.
-<strong>Days 21–30:
-</strong> have a second operator edit a sale-week message, review deliverability and event logs, and score the evidence.
-</p>
-       
-<div class="card overflow-x-auto"><table class="data-table"><thead><tr><th>Score 1–5
-</th><th>Weight
-</th><th>Question
-</th></tr></thead><tbody>
-         
-<tr><td>Shopify event fidelity
-</td><td>25%
-</td><td>Did the right product, order, and customer state arrive?
-</td></tr>
-         
-<tr><td>Lifecycle maintainability
-</td><td>20%
-</td><td>Can another operator safely edit the journey?
-</td></tr>
-         
-<tr><td>Suppression and consent
-</td><td>20%
-</td><td>Are purchases, exclusions, and permissions dependable?
-</td></tr>
-         
-<tr><td>Total cost
-</td><td>20%
-</td><td>What is the 18-month peak-inclusive cost with required vendors?
-</td></tr>
-         
-<tr><td>Reporting and handoff
-</td><td>15%
-</td><td>Can the team connect sends to revenue and explain failures?
-</td></tr>
-       
-</tbody></table></div>
-
-       
-<h2>Verdict
-</h2>
-       
-<p>Drip is the better first pilot for a Shopify DTC team whose constraint is lifecycle quality and workflow control. Brevo is the better first pilot for a hybrid merchant whose constraint is CRM, transactional messaging, or channel consolidation. Klaviyo and Omnisend should keep both honest on Shopify depth; Shopify Email should keep the stack honest on complexity.
-</p>
-       
-<p>The winner is the platform that passes real Shopify test orders, keeps consent and suppression legible, survives a peak-month cost forecast, and can be edited safely by the person who owns retention. Schedule a 30-day pilot before an annual commitment and document the condition that would make you graduate to the next tool.
-</p>
-     
-</article>
-
-     
-<div class="mt-10 max-w-4xl text-sm"><p class="font-black text-[#24170f]">Related comparisons
-</p><p class="mt-2"><a class="link" href="/compare/brevo-vs-omnisend">Brevo vs Omnisend
-</a> ·
-<a class="link" href="/compare/drip-vs-mailchimp">Drip vs Mailchimp
-</a> ·
-<a class="link" href="/guides/selection-framework">Selection framework
-</a></p></div>
-   
-</div>
- 
-</section>
- 
-<FaqSection faqs={faqs} title="Drip vs Brevo FAQ" />
+        <h2>A decision record your team can use</h2>
+        <p>Make consent preservation and purchase exits acceptance requirements. For each requirement, retain the test profile, source event, observed branch and any correction needed. Compare operator effort and complete quoted cost only after those requirements pass; an arbitrary weighted score should not average away a failed suppression rule.</p>
+        <p>Choose Drip if the tested lifecycle work is maintainable and the retained CRM and notification arrangement meets your needs. Choose Brevo if the PushOwl import and ongoing sync behave as intended and the broader messaging arrangement removes work you otherwise have to maintain. If neither passes a required event or handoff, document that gap before expanding the shortlist. A proposed 30-day evaluation is a scheduling aid, not evidence that migration is safe or complete.</p>
+      </article>
+      <div class="mt-10 max-w-4xl text-sm"><p class="font-black text-[#24170f]">Related comparisons</p><p class="mt-2"><a class="link" href="/compare/brevo-vs-omnisend">Brevo vs Omnisend</a> · <a class="link" href="/compare/drip-vs-mailchimp">Drip vs Mailchimp</a> · <a class="link" href="/guides/selection-framework">Selection framework</a></p></div>
+    </div>
+  </section>
+  <FaqSection faqs={faqs} title="Drip vs Brevo FAQ" />
 </BaseLayout>
