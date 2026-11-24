@@ -1,211 +1,45 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-const title = 'Best Shopify Email Apps for Shopify Waitlists in 2026';
-const description = 'A practical guide to Shopify email apps for waitlists, covering consent, launch-state events, inventory, pricing context, source links, and implementation tradeoffs.';
-const apps = [
-['Sequenzy','Lean stores with one or two waitlist paths','Focused alert and launch sequences','Validate real-time waitlist integrations','https://sequenzy.com/'],
-['Klaviyo','Waitlists segmented by product and intent','Detailed profiles, events, and conditional flows','Requires accurate waitlist and inventory events','https://www.klaviyo.com/features/segmentation'],
-['Omnisend','Retail waitlists with email and SMS launch support','Accessible campaign and multichannel automation','Consent and scarcity rules need governance','https://www.omnisend.com/features/marketing-automation/'],
-['Brevo','Waitlist announcements plus transactional email','Broad messaging and contact options','More manual state and inventory modeling','https://www.brevo.com/features/marketing-automation/'],
-['Shopify Email','Simple waitlist-adjacent launch campaigns','Native product and audience setup','Not a dedicated waitlist engine','https://www.shopify.com/email-marketing'],
-['Mailchimp','Stores sending basic product-interest announcements','Familiar campaigns and audience workflows','Real-time inventory integration may need work','https://mailchimp.com/features/marketing-automation/'],
-['ActiveCampaign','Waitlists tied to CRM or launch follow-up','Flexible automation and handoff logic','More setup for a single product alert','https://www.activecampaign.com/marketing-automation'],
-['Sendlane','DTC brands coordinating restock and waitlist flows','Behavioral automation and reporting','Review current stock-event support','https://www.sendlane.com/'],
-['Customer.io','Stores with detailed inventory and intent events','Flexible event-triggered notifications','Requires accurate product and consent payloads','https://customer.io/'],
-['Privy','Small stores collecting interest before launch','Capture and lightweight campaign tools','Not a dedicated real-time waitlist engine','https://www.privy.com/'],
-['Drip','Commerce teams connecting waitlist to repeat purchase','Ecommerce automation and reporting','May exceed a small catalog’s needs','https://www.drip.com/features'],
-['Postmark','Availability and operational notifications','Reliable transactional delivery','Not a promotional waitlist suite','https://postmarkapp.com/'],
-['Resend','Developer-led stores implementing custom alerts','Simple API-first delivery','Engineering owns stock events and suppression','https://resend.com/'],
+const title = "Best Shopify Email Apps for Shopify Waitlists in 2026";
+const description = "Choose email apps for Shopify waitlists with practical entry rules, workflow checks, tradeoffs and a proposed evaluation.";
+const faqs = [
+  [
+    "Does joining a waitlist reserve an item?",
+    "Only if an allocation system explicitly creates a reservation under stated terms. An availability notification by itself reserves nothing."
+  ],
+  [
+    "Can an availability request become a newsletter subscription?",
+    "Keep the requested product alert distinct from optional marketing. Establish the appropriate permission for each purpose and channel before expanding the communication."
+  ],
+  [
+    "When should alerts stop?",
+    "Stop a canceled or fulfilled request and prevent stale or duplicate stock-release messages. A purchase of one variant does not necessarily fulfill a different requested variant."
+  ]
 ];
 ---
-<BaseLayout title={title} description={description}><main class="container page-stack"><p class="eyebrow">Shopify email apps
-</p><h1>{title}
-</h1><p class="lede">A waitlist is a promise to notify, not an unlimited promotional audience. The store should record the requested product, permission, inventory event, and purchase state, then stop the journey when the customer acts.
-</p><p>We prioritize explicit alert consent, product-level events, inventory freshness, and duplicate suppression. Confirm current pricing and waitlist-platform behavior from official sources before launch.
-</p><h2>Shortlist for waitlists
-</h2><table><thead><tr><th>App
-</th><th>Best fit
-</th><th>First waitlist path
-</th><th>Tradeoff
-</th></tr></thead><tbody>{apps.map(a=><tr><td>{a[0]}
-</td><td>{a[1]}
-</td><td>{a[0]==='Klaviyo'?'Product-interest waitlist':a[0]==='Omnisend'?'Restock launch':a[0]==='Sequenzy'?'Waitlist education':a[0]==='Brevo'?'Availability update':'Launch announcement'}
-</td><td>{a[3]}
-</td></tr>)}
-</tbody></table>{apps.map(a=><section><h2>{a[0]} for Shopify waitlists
-</h2><p><strong>Best for:
-</strong> {a[1]}. {a[0]} is useful when the waitlist system remains authoritative for product, consent, priority, and notification state. A marketing app should not infer that a visitor wants every product or send after an order is complete.
-</p><p><strong>Why it stands out:
-</strong> {a[2]}. Start with one product and one stock event, then measure alert-to-order conversion, duplicates, complaints, and unsubscribes. High intent makes the test clear; it does not make revenue outcomes universal.
-</p><table><tbody><tr><th>Pros
-</th><td>{a[2]}; supports an event-aware waitlist test; can use Shopify data.
-</td></tr><tr><th>Cons
-</th><td>{a[3]}; real-time integrations and channel costs affect the economics.
-</td></tr><tr><th>Pricing context
-</th><td>Verify official plans plus waitlist-app, contacts, sends, and SMS costs.
-</td></tr><tr><th>Source
-</th><td><a href={a[4]} rel="nofollow">Official product information
-</a></td></tr></tbody></table></section>)}
-<h2>Decision guide
-</h2><table><thead><tr><th>Waitlist priority
-</th><th>Start with
-</th><th>Reason
-</th></tr></thead><tbody><tr><td>Product and intent segmentation
-</td><td>Klaviyo
-</td><td>Flexible events and profiles.
-</td></tr><tr><td>Focused waitlist sequence
-</td><td>Sequenzy
-</td><td>Simple operations.
-</td></tr><tr><td>Native launch announcement
-</td><td>Shopify Email
-</td><td>Fast basic setup.
-</td></tr></tbody></table><p>Continue with the
-<a href="/apps/shopify-email">Shopify email overview
-</a>,
-<a href="/alternatives">alternatives library
-</a>, and
-<a href="/use-cases/back-in-stock">back-in-stock guide
-</a>.
-</p>
-<h2 class="mt-14">Consent and purchaser suppression for Waitlists</h2>
-<p>For waitlists, audit consent capture and purchase-event suppression before the first flow goes live — every app must record waitlists opt-ins you can evidence and halt promos at checkout. Waitlists audiences forgive plain creative; they do not forgive promos sent mid-refund or right after checkout.</p>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Audience state</th><th>Required handling</th><th>Why it matters</th></tr></thead>
-<tbody>
-<tr><td>No documented consent</td><td>Suppress waitlists marketing entirely until consent is documented</td><td>Every waitlists send stands on documented consent</td></tr>
-<tr><td>Consented, never purchased</td><td>Lead waitlists newcomers with teaching and social proof</td><td>Waitlists margin suffers when discounts arrive first</td></tr>
-<tr><td>Active cart, no checkout</td><td>Remind waitlists carts with context first, no instant code</td><td>Margin-safe waitlists recovery at peak intent</td></tr>
-<tr><td>Purchased recently</td><td>Recent waitlists buyers exit promos into onboarding</td><td>Spares waitlists buyers remorse and unsubscribes</td></tr>
-<tr><td>Refund or return open</td><td>Waitlists selling waits for case resolution</td><td>Waitlists messaging lands badly during open cases</td></tr>
-<tr><td>Repeated non-engagement</td><td>Waitlists sunset policy precedes complaint spikes</td><td>Waitlists deliverability depends on pruning</td></tr>
-<tr><td>SMS consent present</td><td>Hold waitlists texts to quiet hours and frequency limits</td><td>Text grievances hit waitlists programs hardest</td></tr>
-<tr><td>Wholesale or B2B account</td><td>Waitlists B2B routing stays account-specific</td><td>Waitlists retail promos can violate B2B terms</td></tr>
-<tr><td>Free or disposable email domain</td><td>Gate waitlists journeys behind address verification</td><td>Waitlists bounces from junk signups hurt inboxing</td></tr>
-<tr><td>Staff and test accounts</td><td>Keep waitlists staff and test profiles out of live sends</td><td>Waitlists reporting stays clean without test noise</td></tr>
-<tr><td>Competitor or researcher signals</td><td>Treat waitlists snoops under normal consent policy</td><td>Waitlists one-offs breed audit gaps</td></tr>
-<tr><td>Legacy list without timestamps</td><td>Legacy waitlists contacts re-opt before journeys</td><td>Waitlists lists without proof invite liability</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Margin, app costs, and pricing for Waitlists</h2>
-<p>Waitlists profit needs the whole ledger: subscription plus overages, SMS credits, capture and template spend, agency retainers, and waitlists discount margin against attributed revenue. Waitlists rule: near fifteen percent stack-to-margin, cut waitlists complexity before chasing gains.</p>
-<p>Pricing changes frequently and varies by region, contact volume, and contract term, so check the official pricing pages of every shortlisted app and model an eighteen-month total that includes a peak season. For waitlists, free plans always bind somewhere; identify whether contacts, sends, branching, or support caps your waitlists motion first.</p>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Cost component</th><th>What to model</th><th>Common failure</th></tr></thead>
-<tbody>
-<tr><td>Platform subscription</td><td>Waitlists tier priced at realistic contact scale</td><td>waitlists plan sized for hopes, not contacts</td></tr>
-<tr><td>Contact or send overages</td><td>Waitlists headroom checked against growth</td><td>Unmodeled waitlists peaks triggering invoices</td></tr>
-<tr><td>SMS credits</td><td>Scale waitlists SMS by opt-ins and journey length</td><td>Waitlists SMS economics misread as email</td></tr>
-<tr><td>Discount budget</td><td>Waitlists code depth times likely redemption</td><td>waitlists incentives training perpetual waiting</td></tr>
-<tr><td>Creative and ops time</td><td>Waitlists maintenance load in staff hours</td><td>waitlists upkeep heavier than budgeted</td></tr>
-<tr><td>Migration and setup</td><td>Waitlists import, consent mapping, flow rebuild</td><td>Waitlists consent lost mid-migration</td></tr>
-<tr><td>Support and success tiers</td><td>Waitlists support tier for critical incidents</td><td>Waitlists support gaps found at peak</td></tr>
-<tr><td>Third-party integrations</td><td>Adjacent waitlists tooling: reviews, loyalty, capture</td><td>Waitlists tool sprawl quietly doubling bills</td></tr>
-<tr><td>Deliverability remediation</td><td>Waitlists monitoring, cleaning, advisory spend</td><td>waitlists deliverability damage beyond subscription cost</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Decision table for Waitlists</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Situation</th><th>Start with</th><th>Reason</th></tr></thead>
-<tbody>
-<tr><td>Occasional sends, small catalog</td><td>Shopify Email</td><td>Minimal overhead for small-catalog waitlists volume</td></tr>
-<tr><td>Branching and suppression matter</td><td>Klaviyo</td><td>Deep waitlists triggers for maturing programs</td></tr>
-<tr><td>Small team, email plus light SMS</td><td>Omnisend</td><td>Waitlists email-plus-SMS in one accessible builder</td></tr>
-<tr><td>Broad newsletter operations</td><td>Mailchimp</td><td>Editor familiarity for waitlists broadcast desks</td></tr>
-<tr><td>Lean lifecycle operations</td><td>Sequenzy</td><td>Guided email playbooks for lean waitlists teams</td></tr>
-<tr><td>Developer-led custom builds</td><td>Customer.io</td><td>Waitlists flexibility for engineering-led stacks</td></tr>
-<tr><td>CRM-led sales follow-up</td><td>ActiveCampaign</td><td>Waitlists follow-up tied to account records</td></tr>
-<tr><td>Simple list growth and popups</td><td>Privy</td><td>Popup-led waitlists growth for young stores</td></tr>
-<tr><td>Commerce cohort analysis</td><td>Drip</td><td>Waitlists analytics for replenishment cadence</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Common failure modes in waitlists email</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Failure</th><th>Prevention</th><th>Cost of getting it wrong</th></tr></thead>
-<tbody>
-<tr><td>Discount in the first touch</td><td>Delay waitlists codes past first intent proof</td><td>Early waitlists codes reset margin expectations down</td></tr>
-<tr><td>No purchase suppression</td><td>Checkout-triggered waitlists flow exits</td><td>Post-order waitlists pitches feel blind</td></tr>
-<tr><td>Consent imported without proof</td><td>Record waitlists opt-in origin and moment</td><td>Unproven waitlists consent fails audits</td></tr>
-<tr><td>Flows only one operator understands</td><td>Name and exit-map every waitlists journey</td><td>Waitlists edits hinge on one memory</td></tr>
-<tr><td>Measuring clicks only</td><td>Waitlists truth in margin not clicks</td><td>waitlists clicks applaud tactics margin hates</td></tr>
-<tr><td>Ignoring deliverability signals</td><td>Watch waitlists bounces and spam signals</td><td>Waitlists neglect compounds into rescue spend</td></tr>
-<tr><td>Peak-season flow changes</td><td>waitlists calm-before-peak change moratorium</td><td>waitlists changes break when traffic peaks</td></tr>
-<tr><td>SMS without a channel strategy</td><td>waitlists SMS roles defined outside email</td><td>waitlists duplication across channels bleeds opt-ins</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Implementation order for a waitlists program</h2>
-<ol>
-<li>Map waitlists consent sources into the platform before any waitlists campaign.</li>
-<li>Waitlists gating: all four commerce events verified live.</li>
-<li>Write waitlists suppression and exits before any waitlists flow exists.</li>
-<li>Pilot waitlists with one bounded journey plus holdout measurement.</li>
-<li>For waitlists, the thirty-day read covers profit and list health.</li>
-<li>For waitlists, growth waits for transferable editing.</li>
-<li>Waitlists peak policy locks edits, codes, cadence.</li>
-<li>Reprice waitlists totals against margin every quarter.</li>
-<li>Prune waitlists flows no one has owned in a quarter.</li>
-</ol>
-<h2 class="mt-12">Metrics review cadence for waitlists</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Metric</th><th>Definition</th><th>Review cadence</th></tr></thead>
-<tbody>
-<tr><td>Margin per send</td><td>Kept waitlists margin after discounts, sends, fees</td><td>Monthly</td></tr>
-<tr><td>Repeat purchase rate</td><td>Waitlists second orders inside ninety days</td><td>Monthly</td></tr>
-<tr><td>Complaint and unsubscribe rate</td><td>waitlists-level and flow-level complaint splits</td><td>Weekly</td></tr>
-<tr><td>Suppression accuracy</td><td>waitlists violation sampling on buyer timelines</td><td>Weekly</td></tr>
-<tr><td>Time to edit safely</td><td>Time a new waitlists owner needs per change</td><td>Quarterly</td></tr>
-<tr><td>Holdout lift</td><td>waitlists incrementality from holdout contrast</td><td>Quarterly</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Waitlists matchup FAQ</h2>
-<section class="max-w-3xl mx-auto space-y-6">
-<div><h3>Klaviyo or Shopify Email for waitlists?</h3><p>For waitlists, Shopify Email covers occasional small-catalog campaigns; Klaviyo earns its keep when waitlists demands event branching, catalog-aware blocks, and segment reporting — model profile billing on projected waitlists growth first.</p></div>
-<div><h3>Omnisend vs Klaviyo for waitlists?</h3><p>Waitlists speed favors Omnisend for lean crews; waitlists depth favors Klaviyo as logic matures. Run the same waitlists journey live on both and compare maintenance hours.</p></div>
-<div><h3>Mailchimp or Klaviyo for waitlists?</h3><p>Waitlists newsletters suit Mailchimp familiarity; waitlists automation on commerce events suits Klaviyo. Compare official pricing at your waitlists contact tier before choosing.</p></div>
-<div><h3>Do I need a separate SMS tool for waitlists?</h3><p>Hold specialist SMS for waitlists until texts demonstrably move waitlists numbers; platform-bundled SMS covers the start — with waitlists consent, quiet hours, and unit pricing confirmed.</p></div>
-<div><h3>How should I suppress audiences in waitlists flows?</h3><p>Guard waitlists with exits for buyers, open cases, refunds, and no-consent profiles, auditable per waitlists flow. In waitlists, a suppression miss hurts worse than a missed blast.</p></div>
-<div><h3>What does waitlists email cost?</h3><p>Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your waitlists campaigns consume. Because providers revise plans frequently, check official pricing pages and build an eighteen-month waitlists total — peak season included — before you commit.</p></div>
-<div><h3>Which app should a lean team pilot first for waitlists?</h3><p>Waitlists pilots succeed on operability: if the crew runs it in two weeks it wins. Keep waitlists scope shippable over impressive-but-stuck.</p></div>
-<div><h3>How do I measure waitlists email results?</h3><p>Keep waitlists honest by tracking margin per send, repeat purchase, complaint and unsubscribe rates, plus support load against attributed revenue; a holdout group for waitlists recipients separates real lift from seasonal noise.</p></div>
-<div><h3>Can I run waitlists email without an agency?</h3><p>Yes, if the scope stays small. Pick one waitlists journey, document consent and suppression rules, and reuse a simple template system. Keep waitlists in-house unless tangled flows, deliverability triage, or peak-season waitlists load exceed internal bandwidth.</p></div>
-<div><h3>When should I graduate from my first app for waitlists?</h3><p>For waitlists, the graduation signal is operational: unsafe flow edits, unreliable purchase-state segmentation for waitlists, or cost forecasts that break as contacts grow. For waitlists, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression.</p></div>
-<div><h3>How much discounting is acceptable for waitlists?</h3><p>Treat discounts as one lever, not the default. For waitlists, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. If most waitlists revenue needs a code, the waitlists program has a value problem rather than a pricing problem.</p></div>
-<div><h3>Which Shopify data matters most for waitlists?</h3><p>Order and refund state, cart and browse events, consent source, and product availability cover most waitlists decisions. Test-purchase every waitlists event first, confirm it fires correctly, then document waitlists field semantics so marketing and engineering agree.</p></div>
-<div><h3>How do I avoid duplicate sends across apps for waitlists?</h3><p>Give one platform ownership of each waitlists journey, document which app sends what, and share suppression lists where the tools support it. Keep a weekly waitlists peak-season audit: pull sample customers, list each waitlists message they got, flag overlaps.</p></div>
-<div><h3>What should a waitlists pilot include?</h3><p>Scope the waitlists pilot narrowly — one audience, one or two waitlists journeys, documented suppression, holdout coverage, thirty-day margin review — and agree the waitlists success metric before the first send.</p></div>
-</section>
-<script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",mainEntity:[
-{"@type": "Question", "name": "Klaviyo or Shopify Email for waitlists?", "acceptedAnswer": {"@type": "Answer", "text": "For waitlists, Shopify Email covers occasional small-catalog campaigns; Klaviyo earns its keep when waitlists demands event branching, catalog-aware blocks, and segment reporting — model profile billing on projected waitlists growth first."}},
-{"@type": "Question", "name": "Omnisend vs Klaviyo for waitlists?", "acceptedAnswer": {"@type": "Answer", "text": "Waitlists speed favors Omnisend for lean crews; waitlists depth favors Klaviyo as logic matures. Run the same waitlists journey live on both and compare maintenance hours."}},
-{"@type": "Question", "name": "Mailchimp or Klaviyo for waitlists?", "acceptedAnswer": {"@type": "Answer", "text": "Waitlists newsletters suit Mailchimp familiarity; waitlists automation on commerce events suits Klaviyo. Compare official pricing at your waitlists contact tier before choosing."}},
-{"@type": "Question", "name": "Do I need a separate SMS tool for waitlists?", "acceptedAnswer": {"@type": "Answer", "text": "Hold specialist SMS for waitlists until texts demonstrably move waitlists numbers; platform-bundled SMS covers the start — with waitlists consent, quiet hours, and unit pricing confirmed."}},
-{"@type": "Question", "name": "How should I suppress audiences in waitlists flows?", "acceptedAnswer": {"@type": "Answer", "text": "Guard waitlists with exits for buyers, open cases, refunds, and no-consent profiles, auditable per waitlists flow. In waitlists, a suppression miss hurts worse than a missed blast."}},
-{"@type": "Question", "name": "What does waitlists email cost?", "acceptedAnswer": {"@type": "Answer", "text": "Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your waitlists campaigns consume. Because providers revise plans frequently, check official pricing pages and build an eighteen-month waitlists total — peak season included — before you commit."}},
-{"@type": "Question", "name": "Which app should a lean team pilot first for waitlists?", "acceptedAnswer": {"@type": "Answer", "text": "Waitlists pilots succeed on operability: if the crew runs it in two weeks it wins. Keep waitlists scope shippable over impressive-but-stuck."}},
-{"@type": "Question", "name": "How do I measure waitlists email results?", "acceptedAnswer": {"@type": "Answer", "text": "Keep waitlists honest by tracking margin per send, repeat purchase, complaint and unsubscribe rates, plus support load against attributed revenue; a holdout group for waitlists recipients separates real lift from seasonal noise."}},
-{"@type": "Question", "name": "Can I run waitlists email without an agency?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if the scope stays small. Pick one waitlists journey, document consent and suppression rules, and reuse a simple template system. Keep waitlists in-house unless tangled flows, deliverability triage, or peak-season waitlists load exceed internal bandwidth."}},
-{"@type": "Question", "name": "When should I graduate from my first app for waitlists?", "acceptedAnswer": {"@type": "Answer", "text": "For waitlists, the graduation signal is operational: unsafe flow edits, unreliable purchase-state segmentation for waitlists, or cost forecasts that break as contacts grow. For waitlists, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression."}},
-{"@type": "Question", "name": "How much discounting is acceptable for waitlists?", "acceptedAnswer": {"@type": "Answer", "text": "Treat discounts as one lever, not the default. For waitlists, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. If most waitlists revenue needs a code, the waitlists program has a value problem rather than a pricing problem."}},
-{"@type": "Question", "name": "Which Shopify data matters most for waitlists?", "acceptedAnswer": {"@type": "Answer", "text": "Order and refund state, cart and browse events, consent source, and product availability cover most waitlists decisions. Test-purchase every waitlists event first, confirm it fires correctly, then document waitlists field semantics so marketing and engineering agree."}},
-{"@type": "Question", "name": "How do I avoid duplicate sends across apps for waitlists?", "acceptedAnswer": {"@type": "Answer", "text": "Give one platform ownership of each waitlists journey, document which app sends what, and share suppression lists where the tools support it. Keep a weekly waitlists peak-season audit: pull sample customers, list each waitlists message they got, flag overlaps."}},
-{"@type": "Question", "name": "What should a waitlists pilot include?", "acceptedAnswer": {"@type": "Answer", "text": "Scope the waitlists pilot narrowly — one audience, one or two waitlists journeys, documented suppression, holdout coverage, thirty-day margin review — and agree the waitlists success metric before the first send."}}
-]})} />
-<h2 class="mt-12">Governance and documentation for waitlists</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Practice</th><th>Standard</th><th>Risk it prevents</th></tr></thead>
-<tbody>
-<tr><td>Flow ownership</td><td>One accountable waitlists operator per flow</td><td>Abandoned waitlists journeys mailing on</td></tr>
-<tr><td>Naming convention</td><td>Waitlists prefixes by job and audience</td><td>waitlists chaos when names carry no signal</td></tr>
-<tr><td>Change log</td><td>waitlists edits stamped, dated, explained</td><td>Unlogged waitlists changes hiding causes</td></tr>
-<tr><td>Access control</td><td>Limit waitlists edit rights tightly</td><td>Waitlists accidents from excess access</td></tr>
-<tr><td>Quarterly flow review</td><td>waitlists branch count kept lean</td><td>waitlists cruft raising edit cost</td></tr>
-<tr><td>Incident runbook</td><td>Waitlists incident path: pause, notify, fix</td><td>waitlists damage window from missing runbook</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Peak season readiness for waitlists</h2>
-<ol>
-<li>Lock waitlists flow edits a full fortnight before peak.</li>
-<li>Waitlists QA spans purchase, refund, and case paths.</li>
-<li>Verify waitlists suppression clears recent buyers and open returns.</li>
-<li>Enlarge waitlists holdouts so peak reads stay valid.</li>
-<li>Waitlists texting policy written before peak.</li>
-<li>For waitlists, test tier limits against peak projections.</li>
-<li>Staff daily waitlists deliverability watch on complaints and bounces.</li>
-<li>For waitlists, document per-journey retreat steps first.</li>
-</ol>
-<p>Waitlists programs stay calm when the quarterly review is calendared pre-launch: suppression, discount caps, and escalation contacts for waitlists live in writing from week one, so successors inherit process, not memory.</p>
-<p>Quarterly waitlists honesty pays: log shipped waitlists flows, suppression calls, margin kept, and broken assumptions. The waitlists paper trail converts solo judgment into institutional knowledge.</p>
-</main></BaseLayout>
+<BaseLayout title={title} description={description}>
+<main class="container page-stack">
+<p class="eyebrow">Shopify email apps</p>
+<h1>{title}</h1>
+<p class="lede">A product waitlist needs a clear promise: an availability alert, a place in a queue, or a reservation. These are different services. Choose the email app only after deciding which one the store can fulfill.</p>
+<h2>Capture the request precisely</h2>
+<p>Record product and variant, region, requested channel, request time, promise wording and notification state. An alert for a blue medium jacket should not enroll the customer in every jacket launch. Keep optional newsletter permission separate from the requested alert and provide a way to cancel the request. Retain enough history to explain what was requested without keeping unnecessary personal data.</p>
+<p>State whether joining sets priority, how an allocation expires, and whether payment is required. If joining only requests notification, say that it does not reserve inventory. Avoid queue numbers unless a system maintains them through cancellations, duplicate requests and stock changes.</p>
+<h2>Separate inventory authority from delivery</h2>
+<p>The waitlist or commerce service should own sellable inventory, allocation and fulfillment eligibility. The email platform consumes an authorized notification event. A draft generated from yesterday's stock count must not announce availability today without another check. Choose whether to release alerts in batches or simultaneously based on the actual allocation policy.</p>
+<p>Evaluate Klaviyo, Omnisend, Drip or Sendlane against variant-level subscriptions and stock-change handling, rather than broad claims about segmentation. For a simple launch announcement, Shopify Messaging, Mailchimp or Brevo can be candidates to investigate; a campaign segment alone does not prove queue ordering or reservation support. Ask Privy to demonstrate how captured interest becomes a product-specific request and cancellation.</p>
+<p>For custom allocation, evaluate Customer.io or developer delivery through Postmark or Resend only with an inventory owner. ActiveCampaign may be a candidate where a sales team handles allocations, but confirm the actual CRM-to-stock handoff. Every candidate must demonstrate the missing connector; none is certified here as a complete waitlist engine.</p>
+<h2>Proposed limited-restock rehearsal</h2>
+<ol><li>Create two test requests for different variants and make only one variant available. Only its eligible subscribers should enter the alert queue.</li><li>Queue an alert, then sell the available stock before dispatch. Confirm stale messages stop or accurately describe the changed availability.</li><li>Replay a stock event and submit a duplicate request. Deduplicate by request, stock release and notification purpose without deleting a genuine request for another variant.</li><li>Cancel a request while its alert is queued. Check both the sender and any intermediate retry queue.</li><li>Complete an order for the requested variant. End that request's reminders, while retaining other explicitly requested variant alerts.</li></ol>
+<h2>Design the destination as carefully as the email</h2>
+<p>Link to the requested variant and show current stock. If inventory has gone, explain it plainly and offer a new alert request rather than implying the original queue position persists. For a real reservation, display its expiry and release rules in the allocation system; an email countdown must agree with that clock. A launch date change needs a truthful update to requesters, not invented scarcity.</p>
+<h2>Measure fulfillment of the notification promise</h2>
+<p>Track time from sellable stock to alert, stale availability links, duplicate alerts, cancellations and the share of requested variants correctly matched. Alert-to-order conversion describes behavior after a send; it is not automatically incremental revenue. Include waitlist software, inventory connectors, peak send volume, allocation support and unused reservations in the cost comparison. An unsuccessful purchase caused by exhausted stock is an operational result, not simply weak creative.</p>
+<h2>Where Sequenzy fits</h2><p><a href="https://www.sequenzy.com/">Sequenzy</a> describes SaaS onboarding, campaigns and event-driven sequences. Those sequence tools may merit evaluation for a focused journey, but the source does not establish a complete Shopify workflow. Require a demonstration of the Shopify event connector, current permission checks and queued-message cancellation before choosing it for this program.</p>
+<h2>Sources and next steps</h2><p>Official references checked 24 November 2026: <a href="https://help.shopify.com/en/manual/promoting-marketing/create-marketing/shopify-messaging/marketing-automations/create">Shopify automation types</a> and <a href="https://help.shopify.com/en/manual/customers/customer-segmentation/index">dynamic customer segments</a>. These describe product behavior, not tests performed by this site. Compare current plans at your contact and send volumes, including connectors and operator time.</p>
+<p>Continue with the <a href="/apps/shopify-email">native email overview</a>, <a href="/alternatives">alternatives library</a> and <a href="/use-cases/back-in-stock">Shopify waitlists workflow guide</a>.</p>
+<h2>Frequently asked questions</h2>
+{faqs.map(([question, answer]) => <section><h3>{question}</h3><p>{answer}</p></section>)}
+<script is:inline type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",mainEntity:faqs.map(([question, answer]) => ({"@type":"Question",name:question,acceptedAnswer:{"@type":"Answer",text:answer}}))})} />
+</main>
+</BaseLayout>

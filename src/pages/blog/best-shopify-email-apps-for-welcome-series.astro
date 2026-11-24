@@ -1,212 +1,46 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-const title = 'Best Shopify Email Apps for Welcome Series in 2026';
-const description = 'A practical guide to Shopify email apps for welcome series, covering consent, preference capture, product education, pricing context, source links, and tradeoffs.';
-const apps = [
-['Sequenzy','Lean teams building a clear email welcome path','Focused sequence workflows and a simple first experiment','Validate event depth and Shopify catalog context for complex branches','https://sequenzy.com/'],
-['Klaviyo','Welcome flows with detailed profile and behavior branches','Rich events, profiles, and configurable segments','More setup and profile-based cost than a basic store needs','https://www.klaviyo.com/features/segmentation'],
-['Omnisend','Retail welcome journeys across email and SMS','Accessible automation for new subscribers','Channel consent and frequency need discipline','https://www.omnisend.com/features/marketing-automation/'],
-['Brevo','Welcome plus transactional foundations','Broad messaging and contact options','More manual Shopify-event modeling','https://www.brevo.com/features/marketing-automation/'],
-['Shopify Email','Small stores starting with one welcome flow','Native product and customer setup','Limited behavioral branching','https://www.shopify.com/email-marketing'],
-['Mailchimp','Brands wanting familiar campaign authoring','Large template and integration ecosystem','Advanced commerce journeys may need extra configuration','https://mailchimp.com/features/marketing-automation/'],
-['Drip','DTC brands tying onboarding to repeat purchase','Commerce-oriented tags and automation','Pricing and reporting should be checked at current list size','https://www.drip.com/features'],
-['ActiveCampaign','Teams combining welcome content with CRM follow-up','Deep automation branching and lead logic','More operational complexity for email-only stores','https://www.activecampaign.com/marketing-automation'],
-['Customer.io','Product-led stores using behavioral onboarding','Event-driven workflows and message branching','Requires clean event instrumentation','https://customer.io/product'],
-['Sendlane','Growth stores needing ecommerce automation controls','Commerce triggers and lifecycle workflows','Confirm integrations and plan limits before migration','https://www.sendlane.com/features'],
-['ConvertKit','Creator-led Shopify brands building a teaching sequence','Tag-based broadcasts and creator workflows','Less retail depth than commerce-first platforms','https://convertkit.com/features'],
-['MailerLite','Small catalog stores prioritizing low-friction setup','Accessible editor and basic automation','Fewer advanced behavioral controls','https://www.mailerlite.com/features'],
-['GetResponse','Stores combining welcome email with broader funnel work','Automation, forms, and funnel tooling','Broader suite can add setup overhead','https://www.getresponse.com/features'],
-['AWeber','Small teams needing dependable broadcast plus onboarding','Straightforward campaigns and autoresponders','Less granular commerce segmentation','https://www.aweber.com/features.htm'],
+const title = "Best Shopify Email Apps for Welcome Series in 2026";
+const description = "Choose email apps for welcome series with practical entry rules, workflow checks, tradeoffs and a proposed evaluation.";
+const faqs = [
+  [
+    "Should an imported list enter the welcome series?",
+    "An import is not a new subscription event. Preserve historical dates and suppression state, and deliberately decide whether any eligible audience needs a separate migration introduction."
+  ],
+  [
+    "Should every welcome series start without a discount?",
+    "Deliver the actual signup promise. If a discount was offered, honor its stated terms; do not substitute an unrelated sequence that withholds it."
+  ],
+  [
+    "What should change after the first purchase?",
+    "End inapplicable first-order reminders, preserve necessary order communication and move optional education or offers into a path that reflects the purchase."
+  ]
 ];
 ---
-<BaseLayout title={title} description={description}><main class="container page-stack"><p class="eyebrow">Shopify email apps
-</p><h1>{title}
-</h1><p class="lede">A welcome series is often a store’s first durable first-party relationship. It should set expectations, capture useful preferences, explain the product, and earn the next action without treating every new subscriber as a discount seeker.
-</p><p>We prioritize consent, preference capture, sequence clarity, and suppression after purchase. Confirm current pricing and consent requirements from official sources, then test the journey with real links and mobile rendering.
-</p><h2>Shortlist for welcome journeys
-</h2><table><thead><tr><th>App
-</th><th>Best fit
-</th><th>First workflow
-</th><th>Tradeoff
-</th></tr></thead><tbody>{apps.map(a=><tr><td>{a[0]}
-</td><td>{a[1]}
-</td><td>{a[0]==='Klaviyo'?'Preference-led onboarding':a[0]==='Omnisend'?'Welcome plus SMS option':a[0]==='Sequenzy'?'Three-step welcome sequence':a[0]==='Brevo'?'Welcome and transactional handoff':'Welcome product campaign'}
-</td><td>{a[3]}
-</td></tr>)}
-</tbody></table>{apps.map(a=><section><h2>{a[0]} for welcome series
-</h2><p><strong>Best for:
-</strong> {a[1]}. {a[0]} is useful when a brand knows what it wants a subscriber to learn or choose next. The first message should establish context; later messages can use explicit category or content interest, while purchasers are moved into a different lifecycle.
-</p><p><strong>Why it stands out:
-</strong> {a[2]}. Start with one audience source and one measurable goal—second visit, preference selection, or first purchase. Review conversion, unsubscribes, complaints, and time-to-maintain rather than repeating unsupported claims about average welcome revenue.
-</p><table><tbody><tr><th>Pros
-</th><td>{a[2]}; supports a foundational lifecycle test; can use Shopify events.
-</td></tr><tr><th>Cons
-</th><td>{a[3]}; total cost grows with contacts, sends, and channels.
-</td></tr><tr><th>Pricing context
-</th><td>Verify current plan limits, contact tiers, sends, seats, and SMS pricing.
-</td></tr><tr><th>Source
-</th><td><a href={a[4]} rel="nofollow">Official product information
-</a></td></tr></tbody></table></section>)}
-<h2>Decision guide
-</h2><table><thead><tr><th>Welcome priority
-</th><th>Start with
-</th><th>Reason
-</th></tr></thead><tbody><tr><td>Granular preference onboarding
-</td><td>Klaviyo
-</td><td>Flexible event and profile segmentation.
-</td></tr><tr><td>Simple email-first sequence
-</td><td>Sequenzy
-</td><td>Focused operations are easy to review.
-</td></tr><tr><td>Native first flow
-</td><td>Shopify Email
-</td><td>Low-friction setup for early stores.
-</td></tr></tbody></table><p>Continue with the
-<a href="/apps/shopify-email">Shopify email overview
-</a>,
-<a href="/alternatives">alternatives library
-</a>, and
-<a href="/use-cases/welcome-series">welcome-series guide
-</a>.
-</p>
-<h2 class="mt-14">Consent and purchaser suppression for Welcome series</h2>
-<p>For welcome series, audit consent capture and purchase-event suppression before the first flow goes live — every app must record welcome series opt-ins you can evidence and halt promos at checkout. For welcome series, a promo arriving after a purchase, refund, or open support case burns trust faster than weak welcome series creative ever could.</p>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Audience state</th><th>Required handling</th><th>Why it matters</th></tr></thead>
-<tbody>
-<tr><td>No documented consent</td><td>Hold all welcome series marketing; transactional only</td><td>Consent evidence underwrites all welcome series sending</td></tr>
-<tr><td>Consented, never purchased</td><td>Open welcome series with guidance and proof, not discounts</td><td>Premature welcome series offers teach shoppers to wait</td></tr>
-<tr><td>Active cart, no checkout</td><td>Welcome Series reminder with product context; discount withheld</td><td>Welcome Series high-intent window deserves margin discipline</td></tr>
-<tr><td>Purchased recently</td><td>Pause welcome series promos; switch to post-purchase teaching</td><td>Post-checkout welcome series pitches trigger regret and opt-outs</td></tr>
-<tr><td>Refund or return open</td><td>Hold welcome series marketing while service cases stay open</td><td>Service-active welcome series shoppers reject promos</td></tr>
-<tr><td>Repeated non-engagement</td><td>Sunset cold welcome series contacts before complaints build</td><td>Keeps welcome series placement high via list hygiene</td></tr>
-<tr><td>SMS consent present</td><td>Hold welcome series texts to quiet hours and frequency limits</td><td>One welcome series SMS complaint outweighs many email ones</td></tr>
-<tr><td>Wholesale or B2B account</td><td>Welcome Series B2B routing stays account-specific</td><td>Wholesale welcome series terms forbid retail-style offers</td></tr>
-<tr><td>Free or disposable email domain</td><td>Screen welcome series free/disposable emails before flows</td><td>Low-grade welcome series signups drag deliverability</td></tr>
-<tr><td>Staff and test accounts</td><td>Keep welcome series staff and test profiles out of live sends</td><td>Internal welcome series activity corrupts program metrics</td></tr>
-<tr><td>Competitor or researcher signals</td><td>Welcome Series exceptions stay undocumented-free</td><td>Welcome Series consistency beats clever carve-outs</td></tr>
-<tr><td>Legacy list without timestamps</td><td>Legacy welcome series contacts re-opt before journeys</td><td>Old welcome series permission without records is a risk</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Margin, app costs, and pricing for Welcome series</h2>
-<p>Judge welcome series on margin, not attribution. A durable welcome series program absorbs subscription, overages, SMS, capture, creative, agency, and discount costs and still pays. If welcome series tooling eats toward fifteen percent of attributed margin, reduce welcome series scope before optimizing flows.</p>
-<p>Pricing changes frequently and varies by region, contact volume, and contract term, so check the official pricing pages of every shortlisted app and model an eighteen-month total that includes a peak season. Before banking on free for welcome series, check which free-tier limit — contacts, sends, branching, support — hits your welcome series plan earliest.</p>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Cost component</th><th>What to model</th><th>Common failure</th></tr></thead>
-<tbody>
-<tr><td>Platform subscription</td><td>Welcome Series tier matched to true contact volume</td><td>Paying welcome series prices for a list you lack</td></tr>
-<tr><td>Contact or send overages</td><td>Welcome Series growth pace versus plan ceilings</td><td>Welcome Series seasonal spikes surprise-billing</td></tr>
-<tr><td>SMS credits</td><td>Welcome Series opt-in share times texts per journey</td><td>welcome series text costs wished into email costs</td></tr>
-<tr><td>Discount budget</td><td>Price welcome series incentives by redemption probability</td><td>Welcome Series journeys schooling code-waiting</td></tr>
-<tr><td>Creative and ops time</td><td>Operator hours the welcome series program consumes weekly</td><td>Welcome Series edit and QA effort undercounted</td></tr>
-<tr><td>Migration and setup</td><td>Welcome Series cutover cost in data and rebuilds</td><td>welcome series migration shedding consent proof</td></tr>
-<tr><td>Support and success tiers</td><td>Welcome Series support tier for critical incidents</td><td>Welcome Series support gaps found at peak</td></tr>
-<tr><td>Third-party integrations</td><td>Adjacent welcome series tooling: reviews, loyalty, capture</td><td>welcome series side-tools eclipsing core cost</td></tr>
-<tr><td>Deliverability remediation</td><td>welcome series deliverability upkeep and guidance cost</td><td>Welcome Series reputation repair dwarfing license fees</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Decision table for Welcome series</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Situation</th><th>Start with</th><th>Reason</th></tr></thead>
-<tbody>
-<tr><td>Occasional sends, small catalog</td><td>Shopify Email</td><td>Cheapest native path for occasional welcome series sends</td></tr>
-<tr><td>Branching and suppression matter</td><td>Klaviyo</td><td>Welcome Series segmentation that scales with complexity</td></tr>
-<tr><td>Small team, email plus light SMS</td><td>Omnisend</td><td>Low-friction welcome series journeys spanning channels</td></tr>
-<tr><td>Broad newsletter operations</td><td>Mailchimp</td><td>Editor familiarity for welcome series broadcast desks</td></tr>
-<tr><td>Lean lifecycle operations</td><td>Sequenzy</td><td>Email-first welcome series sequences with guided operation</td></tr>
-<tr><td>Developer-led custom builds</td><td>Customer.io</td><td>Custom welcome series messaging on raw events</td></tr>
-<tr><td>CRM-led sales follow-up</td><td>ActiveCampaign</td><td>Welcome Series outreach with deal context attached</td></tr>
-<tr><td>Simple list growth and popups</td><td>Privy</td><td>Welcome Series list growth via capture-first tools</td></tr>
-<tr><td>Commerce cohort analysis</td><td>Drip</td><td>Welcome Series reporting bent toward repeat buying</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Common failure modes in welcome series email</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Failure</th><th>Prevention</th><th>Cost of getting it wrong</th></tr></thead>
-<tbody>
-<tr><td>Discount in the first touch</td><td>welcome series offers gated on demonstrated intent</td><td>Welcome Series first-touch codes cheapen the brand</td></tr>
-<tr><td>No purchase suppression</td><td>Checkout-triggered welcome series flow exits</td><td>Welcome Series mistiming insults fresh buyers</td></tr>
-<tr><td>Consent imported without proof</td><td>welcome series consent fields mapped before importing</td><td>Welcome Series audit exposure without proof</td></tr>
-<tr><td>Flows only one operator understands</td><td>Document welcome series exits and naming standards</td><td>Single-operator welcome series knowledge is fragile</td></tr>
-<tr><td>Measuring clicks only</td><td>welcome series measured on kept margin and complaints</td><td>welcome series clicks applaud tactics margin hates</td></tr>
-<tr><td>Ignoring deliverability signals</td><td>welcome series deliverability watched weekly</td><td>welcome series damage control exceeds upkeep cost</td></tr>
-<tr><td>Peak-season flow changes</td><td>welcome series calm-before-peak change moratorium</td><td>welcome series changes break when traffic peaks</td></tr>
-<tr><td>SMS without a channel strategy</td><td>welcome series SMS roles defined outside email</td><td>Welcome Series frequency collision sheds subscribers</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Implementation order for a welcome series program</h2>
-<ol>
-<li>Record welcome series permission origins in the ESP before sending.</li>
-<li>Prove welcome series-critical Shopify events — order, cart, refund, support — fire in a test store.</li>
-<li>Set welcome series guardrails before constructing journeys.</li>
-<li>Open welcome series with a contained pilot and clean control.</li>
-<li>Thirty days into welcome series, score margin and audience health.</li>
-<li>For welcome series, growth waits for transferable editing.</li>
-<li>For welcome series, pre-write peak rules on changes and offers.</li>
-<li>Reprice welcome series totals against margin every quarter.</li>
-<li>Welcome Series hygiene: unreviewed flows simplified or cut.</li>
-</ol>
-<h2 class="mt-12">Metrics review cadence for welcome series</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Metric</th><th>Definition</th><th>Review cadence</th></tr></thead>
-<tbody>
-<tr><td>Margin per send</td><td>Kept welcome series margin after discounts, sends, fees</td><td>Monthly</td></tr>
-<tr><td>Repeat purchase rate</td><td>welcome series-driven second purchases per quarter</td><td>Monthly</td></tr>
-<tr><td>Complaint and unsubscribe rate</td><td>Welcome Series tracked per campaign and flow</td><td>Weekly</td></tr>
-<tr><td>Suppression accuracy</td><td>welcome series-buyer samples screened for breaches</td><td>Weekly</td></tr>
-<tr><td>Time to edit safely</td><td>Welcome Series edit time for a fresh operator</td><td>Quarterly</td></tr>
-<tr><td>Holdout lift</td><td>welcome series lift: messaged cohort against control</td><td>Quarterly</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Welcome series matchup FAQ</h2>
-<section class="max-w-3xl mx-auto space-y-6">
-<div><h3>Klaviyo or Shopify Email for welcome series?</h3><p>For welcome series, Shopify Email covers occasional small-catalog campaigns; Klaviyo earns its keep when welcome series demands event branching, catalog-aware blocks, and segment reporting — model profile billing on projected welcome series growth first.</p></div>
-<div><h3>Omnisend vs Klaviyo for welcome series?</h3><p>For welcome series, Omnisend ships email-first welcome series plus light SMS fastest for small teams; Klaviyo counters with deeper welcome series segmentation — pilot one genuine welcome series journey on each and weigh upkeep, not checklists.</p></div>
-<div><h3>Mailchimp or Klaviyo for welcome series?</h3><p>For welcome series, Mailchimp trades on familiarity, Klaviyo on Shopify event fidelity; settle welcome series pricing by checking both official pages at your contacts.</p></div>
-<div><h3>Do I need a separate SMS tool for welcome series?</h3><p>Welcome Series rarely needs specialist SMS day one; add it when texts measurably beat email on welcome series. Vet welcome series consent capture, quiet-hour enforcement, and per-text cost first.</p></div>
-<div><h3>How should I suppress audiences in welcome series flows?</h3><p>welcome series flows must shed recent purchasers, case-active shoppers, refunds, and unconsented profiles, with welcome series exit logic visible to any auditor — suppression slips outcost quiet weeks.</p></div>
-<div><h3>What does welcome series email cost?</h3><p>Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your welcome series campaigns consume. Because providers revise plans frequently, check official pricing pages and build an eighteen-month welcome series total — peak season included — before you commit.</p></div>
-<div><h3>Which app should a lean team pilot first for welcome series?</h3><p>Open welcome series with the tool at full command in fourteen days — simple welcome series sends natively, branched welcome series on a lean platform. Shipping welcome series beats architecting it.</p></div>
-<div><h3>How do I measure welcome series email results?</h3><p>Measure welcome series on contribution, not vanity sends: margin per send, repeat purchase, unsubscribes, complaints, and support load alongside attributed revenue, with a holdout cohort proving the welcome series journeys caused the lift.</p></div>
-<div><h3>Can I run welcome series email without an agency?</h3><p>Yes, if the scope stays small. Pick one welcome series journey, document consent and suppression rules, and reuse a simple template system. For welcome series, hire help only if journey complexity, inbox-placement remediation, or peak welcome series volume genuinely exceeds what the team can run.</p></div>
-<div><h3>When should I graduate from my first app for welcome series?</h3><p>Move off the starter welcome series setup when flow edits feel risky, purchase-state segments for welcome series misfire, or contact growth makes cost unpredictable. For welcome series, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression.</p></div>
-<div><h3>How much discounting is acceptable for welcome series?</h3><p>Treat discounts as one lever, not the default. For welcome series, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. If most welcome series revenue needs a code, the welcome series program has a value problem rather than a pricing problem.</p></div>
-<div><h3>Which Shopify data matters most for welcome series?</h3><p>Order and refund state, cart and browse events, consent source, and product availability cover most welcome series decisions. Test-purchase every welcome series event first, confirm it fires correctly, then document welcome series field semantics so marketing and engineering agree.</p></div>
-<div><h3>How do I avoid duplicate sends across apps for welcome series?</h3><p>Give one platform ownership of each welcome series journey, document which app sends what, and share suppression lists where the tools support it. Peak-season welcome series hygiene means a weekly sample audit — customers pulled at random, every welcome series message they received listed.</p></div>
-<div><h3>What should a welcome series pilot include?</h3><p>For welcome series, a tight pilot wins: single audience, at most two journeys, explicit suppression, a holdout, and a day-thirty welcome series review of margin and complaints with pre-agreed pass/fail lines.</p></div>
-</section>
-<script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",mainEntity:[
-{"@type": "Question", "name": "Klaviyo or Shopify Email for welcome series?", "acceptedAnswer": {"@type": "Answer", "text": "For welcome series, Shopify Email covers occasional small-catalog campaigns; Klaviyo earns its keep when welcome series demands event branching, catalog-aware blocks, and segment reporting — model profile billing on projected welcome series growth first."}},
-{"@type": "Question", "name": "Omnisend vs Klaviyo for welcome series?", "acceptedAnswer": {"@type": "Answer", "text": "For welcome series, Omnisend ships email-first welcome series plus light SMS fastest for small teams; Klaviyo counters with deeper welcome series segmentation — pilot one genuine welcome series journey on each and weigh upkeep, not checklists."}},
-{"@type": "Question", "name": "Mailchimp or Klaviyo for welcome series?", "acceptedAnswer": {"@type": "Answer", "text": "For welcome series, Mailchimp trades on familiarity, Klaviyo on Shopify event fidelity; settle welcome series pricing by checking both official pages at your contacts."}},
-{"@type": "Question", "name": "Do I need a separate SMS tool for welcome series?", "acceptedAnswer": {"@type": "Answer", "text": "Welcome Series rarely needs specialist SMS day one; add it when texts measurably beat email on welcome series. Vet welcome series consent capture, quiet-hour enforcement, and per-text cost first."}},
-{"@type": "Question", "name": "How should I suppress audiences in welcome series flows?", "acceptedAnswer": {"@type": "Answer", "text": "welcome series flows must shed recent purchasers, case-active shoppers, refunds, and unconsented profiles, with welcome series exit logic visible to any auditor — suppression slips outcost quiet weeks."}},
-{"@type": "Question", "name": "What does welcome series email cost?", "acceptedAnswer": {"@type": "Answer", "text": "Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your welcome series campaigns consume. Because providers revise plans frequently, check official pricing pages and build an eighteen-month welcome series total — peak season included — before you commit."}},
-{"@type": "Question", "name": "Which app should a lean team pilot first for welcome series?", "acceptedAnswer": {"@type": "Answer", "text": "Open welcome series with the tool at full command in fourteen days — simple welcome series sends natively, branched welcome series on a lean platform. Shipping welcome series beats architecting it."}},
-{"@type": "Question", "name": "How do I measure welcome series email results?", "acceptedAnswer": {"@type": "Answer", "text": "Measure welcome series on contribution, not vanity sends: margin per send, repeat purchase, unsubscribes, complaints, and support load alongside attributed revenue, with a holdout cohort proving the welcome series journeys caused the lift."}},
-{"@type": "Question", "name": "Can I run welcome series email without an agency?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if the scope stays small. Pick one welcome series journey, document consent and suppression rules, and reuse a simple template system. For welcome series, hire help only if journey complexity, inbox-placement remediation, or peak welcome series volume genuinely exceeds what the team can run."}},
-{"@type": "Question", "name": "When should I graduate from my first app for welcome series?", "acceptedAnswer": {"@type": "Answer", "text": "Move off the starter welcome series setup when flow edits feel risky, purchase-state segments for welcome series misfire, or contact growth makes cost unpredictable. For welcome series, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression."}},
-{"@type": "Question", "name": "How much discounting is acceptable for welcome series?", "acceptedAnswer": {"@type": "Answer", "text": "Treat discounts as one lever, not the default. For welcome series, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. If most welcome series revenue needs a code, the welcome series program has a value problem rather than a pricing problem."}},
-{"@type": "Question", "name": "Which Shopify data matters most for welcome series?", "acceptedAnswer": {"@type": "Answer", "text": "Order and refund state, cart and browse events, consent source, and product availability cover most welcome series decisions. Test-purchase every welcome series event first, confirm it fires correctly, then document welcome series field semantics so marketing and engineering agree."}},
-{"@type": "Question", "name": "How do I avoid duplicate sends across apps for welcome series?", "acceptedAnswer": {"@type": "Answer", "text": "Give one platform ownership of each welcome series journey, document which app sends what, and share suppression lists where the tools support it. Peak-season welcome series hygiene means a weekly sample audit — customers pulled at random, every welcome series message they received listed."}},
-{"@type": "Question", "name": "What should a welcome series pilot include?", "acceptedAnswer": {"@type": "Answer", "text": "For welcome series, a tight pilot wins: single audience, at most two journeys, explicit suppression, a holdout, and a day-thirty welcome series review of margin and complaints with pre-agreed pass/fail lines."}}
-]})} />
-<h2 class="mt-12">Governance and documentation for welcome series</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Practice</th><th>Standard</th><th>Risk it prevents</th></tr></thead>
-<tbody>
-<tr><td>Flow ownership</td><td>welcome series ownership assigned journey by journey</td><td>Abandoned welcome series journeys mailing on</td></tr>
-<tr><td>Naming convention</td><td>welcome series-flow names lead with purpose</td><td>Peak welcome series triage blind without naming</td></tr>
-<tr><td>Change log</td><td>Log welcome series edits with date and rationale</td><td>Mystery welcome series dips nobody can source</td></tr>
-<tr><td>Access control</td><td>welcome series-editor seats minimal by default</td><td>Stray welcome series deletes via broad seats</td></tr>
-<tr><td>Quarterly flow review</td><td>welcome series branch count kept lean</td><td>Welcome Series bloat taxing each edit</td></tr>
-<tr><td>Incident runbook</td><td>Welcome Series incident path: pause, notify, fix</td><td>Welcome Series harm airing too long</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Peak season readiness for welcome series</h2>
-<ol>
-<li>Halt welcome series edits ahead of the peak window.</li>
-<li>Welcome Series QA spans purchase, refund, and case paths.</li>
-<li>Verify welcome series suppression clears recent buyers and open returns.</li>
-<li>Enlarge welcome series holdouts so peak reads stay valid.</li>
-<li>Welcome Series texting policy written before peak.</li>
-<li>Welcome Series billing checked on peak math.</li>
-<li>Welcome Series placement watched every peak day.</li>
-<li>Welcome Series undo paths recorded pre-campaign.</li>
-</ol>
-<p>For welcome series, schedule quarter-one review before the first send. Writing welcome series suppression rules, discount caps, and escalation paths down in week one saves weeks of peak-season triage and hands newcomers a working welcome series playbook.</p>
-<p>Close each welcome series quarter with a written ledger — welcome series sends shipped, suppressions honored, margin retained, failed bets — so welcome series vendor decisions rest on one shared evidence file, not scattered memory.</p>
-</main></BaseLayout>
+<BaseLayout title={title} description={description}>
+<main class="container page-stack">
+<p class="eyebrow">Shopify email apps</p>
+<h1>{title}</h1>
+<p class="lede">A welcome series should deliver what a person was promised when subscribing. The first decision is who has genuinely just joined, rather than which editor offers the largest template library.</p>
+<h2>Define a real entry event</h2>
+<p>Record the subscription source, purpose, channel, event time and wording or offer version. Distinguish a new subscription from a historical profile import, account creation, order sync or list migration. An old record arriving in a new platform is not automatically a new subscriber. Keep original subscription time and import time in separate fields.</p>
+<p>For a migration, preserve subscription and suppression history, and disable automatic entry until the mapping has been checked. Where permission is unclear, hold optional marketing for review; sending a request for renewed permission is itself a communication that needs an appropriate basis. A profile's existence or an old purchase is not a substitute for current eligibility.</p>
+<h2>Choose around the promised first experience</h2>
+<p>Shopify's native documentation now uses Shopify Messaging and describes welcome templates triggered by online-store form subscription. Evaluate that route first when the entry source and journey match. Test the actual form and workflow rather than assuming every imported customer triggers the same experience.</p>
+<p>Evaluate Klaviyo, Omnisend, Drip or Sendlane if preferences and commerce events must change the path. Ask for a demonstration using your signup source, not a preloaded audience. For editorial onboarding, Mailchimp, MailerLite, Kit (formerly ConvertKit), AWeber or GetResponse are candidates to assess against preference selection, promised content and maintenance effort. This is a shortlist for investigation rather than a ranking of their Shopify connectors.</p>
+<p>Brevo and ActiveCampaign are candidates where onboarding crosses service or CRM ownership; demonstrate who changes the subscription state and who stops a queued message. Customer.io belongs in an event-driven evaluation when an engineering team can own identity and event ordering. Do not add branching unless it changes what the subscriber needs next.</p>
+<h2>Build a promise-led sequence</h2>
+<p>Deliver the promised guide, discount or access first. A signup offer should not be withheld merely because a generic playbook discourages first-message discounts. State exclusions, expiry and redemption conditions accurately. A later message can explain product choice, fit or care; an explicit preference should change content in a way the subscriber can recognize.</p>
+<p>After a purchase, stop unredeemed first-order reminders when they no longer apply and hand off to relevant product education. Do not stop necessary order notices or assume all post-purchase marketing is inappropriate. Coordinate with cart recovery so a person does not receive contradictory offers from two owners.</p>
+<h2>Proposed entry and replay checks</h2>
+<ol><li>Subscribe through each supported form and verify the correct promise, source and time reach the workflow.</li><li>Import a historical test subscriber with an old subscription date. Confirm the import does not manufacture a fresh welcome event.</li><li>Replay a genuine signup event and merge duplicate profiles. Confirm the same welcome enrollment is not sent twice.</li><li>Unsubscribe during a delay, then try a delayed delivery retry. Confirm the current suppression state wins.</li><li>Purchase before the offer reminder. Confirm the next message reflects the actual order and offer eligibility.</li></ol>
+<h2>Judge learning and acquisition separately</h2>
+<p>Track delivery of the promised resource, preference completion, first purchase among eligible nonbuyers, opt-outs and maintenance effort by signup source. An imported cohort must not inflate new-subscriber conversion. Compare equivalent sources and offer versions; a randomized eligible holdout can help estimate incremental purchase effects if the design and sample support that inference. Include capture tools, coupon redemption, template work, duplicate migration overlap and ongoing sends in total cost.</p>
+<h2>Where Sequenzy fits</h2><p><a href="https://www.sequenzy.com/">Sequenzy</a> describes SaaS onboarding, campaigns and event-driven sequences. Those sequence tools may merit evaluation for a focused journey, but the source does not establish a complete Shopify workflow. Require a demonstration of the Shopify event connector, current permission checks and queued-message cancellation before choosing it for this program.</p>
+<h2>Sources and next steps</h2><p>Official references checked 24 November 2026: <a href="https://help.shopify.com/en/manual/promoting-marketing/create-marketing/shopify-messaging/marketing-automations/create">Shopify automation types</a> and <a href="https://help.shopify.com/en/manual/customers/customer-segmentation/index">dynamic customer segments</a>. These describe product behavior, not tests performed by this site. Compare current plans at your contact and send volumes, including connectors and operator time.</p>
+<p>Continue with the <a href="/apps/shopify-email">native email overview</a>, <a href="/alternatives">alternatives library</a> and <a href="/use-cases/welcome-series">welcome series workflow guide</a>.</p>
+<h2>Frequently asked questions</h2>
+{faqs.map(([question, answer]) => <section><h3>{question}</h3><p>{answer}</p></section>)}
+<script is:inline type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",mainEntity:faqs.map(([question, answer]) => ({"@type":"Question",name:question,acceptedAnswer:{"@type":"Answer",text:answer}}))})} />
+</main>
+</BaseLayout>
