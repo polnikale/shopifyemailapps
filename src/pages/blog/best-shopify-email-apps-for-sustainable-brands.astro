@@ -1,211 +1,48 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-const title = 'Best Shopify Email Apps for Sustainable Brands in 2026';
-const description = 'Compare Shopify email apps for sustainable brands by education, lifecycle segmentation, trust-building, pricing context, and practical tradeoffs.';
-const apps = [
-['Sequenzy','Lean teams building education sequences','Focused workflows for repeatable messaging','Validate advanced catalog requirements','https://sequenzy.com/'],
-['Klaviyo','Detailed preference and behavior segments','Flexible event-based lifecycle controls','Requires careful data and claims governance','https://www.klaviyo.com/features/segmentation'],
-['Omnisend','Retail campaigns around launches and education','Accessible automation and multichannel workflows','Promotion-heavy defaults need deliberate positioning','https://www.omnisend.com/features/marketing-automation/'],
-['Brevo','Broad messaging with controlled contact costs','Email and transactional communication options','More manual ecommerce event modeling','https://www.brevo.com/features/marketing-automation/'],
-['Shopify Email','Small brands starting with native campaigns','Low-friction product and audience setup','Less flexible for complex preference logic','https://www.shopify.com/email-marketing'],
-['Mailchimp','Sustainable brands publishing educational newsletters','Familiar templates and audience workflows','Claims review and segmentation may need extra process','https://mailchimp.com/features/marketing-automation/'],
-['ActiveCampaign','Purpose-led brands connecting education to CRM context','Flexible automation and handoffs','More setup and governance','https://www.activecampaign.com/marketing-automation'],
-['Sendlane','DTC brands tying care content to commerce behavior','Behavioral automation and reporting','Review catalog and preference integration depth','https://www.sendlane.com/'],
-['Customer.io','Brands using detailed material and care events','Flexible event-triggered content','Requires evidence-safe data and event design','https://customer.io/'],
-['Privy','Small brands growing a preference-led audience','Capture and lightweight campaigns','Not suited to complex lifecycle governance','https://www.privy.com/'],
-['Drip','Commerce brands connecting education to repeat purchase','Ecommerce automation and reporting','May exceed a small education program’s needs','https://www.drip.com/features'],
-['Postmark','Care, delivery, and operational messages','Reliable transactional delivery','Not a promotional education platform','https://postmarkapp.com/'],
-['Resend','Developer-led brands building custom care journeys','Simple API-first sending','Engineering owns claims, templates, and suppression','https://resend.com/'],
+const title = "Best Shopify Email Apps for Sustainable Brands in 2026";
+const description = "Choose an email workflow that can keep material, packaging and care claims attached to their evidence.";
+const faqs = [
+  [
+    "Can an email app certify sustainability claims?",
+    "No. The app can help distribute approved content, but evidence must cover the exact claim, product scope and period. Assign a reviewer and a withdrawal process."
+  ],
+  [
+    "Should every buyer receive the same care series?",
+    "Use the purchased material and product version. Exchanges, updated instructions and service cases can change which message is useful."
+  ],
+  [
+    "How should repair content be evaluated?",
+    "Measure whether it answers ownership questions and avoids incorrect instructions. Repeat purchase alone can penalize a program intended to extend product life."
+  ]
 ];
 ---
-<BaseLayout title={title} description={description}><main class="container page-stack"><p class="eyebrow">Shopify email apps
-</p><h1>{title}
-</h1><p class="lede">Sustainable brands need email to explain materials, sourcing, care, durability, and tradeoffs without turning every message into a vague values claim. Relevance and evidence matter more than sending more often.
-</p><p>We prioritize preference capture, education, post-purchase care, and the ability to suppress audiences that have already received a specific message. Verify current vendor pricing at the linked source; contacts, sends, seats, and SMS can change the real cost.
-</p><h2>Shortlist
-</h2><table><thead><tr><th>App
-</th><th>Best fit
-</th><th>First workflow
-</th><th>Tradeoff
-</th></tr></thead><tbody>{apps.map(a=><tr><td>{a[0]}
-</td><td>{a[1]}
-</td><td>{a[0]==='Klaviyo'?'Material preference onboarding':a[0]==='Omnisend'?'Launch education':a[0]==='Sequenzy'?'Care and ownership sequence':a[0]==='Brevo'?'Transactional plus education':'Welcome and product story'}
-</td><td>{a[3]}
-</td></tr>)}
-</tbody></table>{apps.map(a=><section><h2>{a[0]} for sustainable brands
-</h2><p><strong>Best for:
-</strong> {a[1]}. {a[0]} is useful when the store can turn a real customer signal into a helpful next message: category interest, material preference, order status, or care need. Avoid using the platform to make unsupported environmental or social claims.
-</p><p><strong>Why it stands out:
-</strong> {a[2]}. A good first experiment is usually education-led: compare a care sequence or product-origin explanation with a clear baseline, then measure downstream engagement and repeat purchase rather than promising a fixed lift.
-</p><table><tbody><tr><th>Pros
-</th><td>{a[2]}; supports a focused lifecycle test; can use Shopify customer and order signals.
-</td></tr><tr><th>Cons
-</th><td>{a[3]}; total cost depends on audience size and channel usage.
-</td></tr><tr><th>Pricing context
-</th><td>Check the official pricing page for current contacts, sends, seats, and SMS.
-</td></tr><tr><th>Source
-</th><td><a href={a[4]} rel="nofollow">Official product information
-</a></td></tr></tbody></table></section>)}
-<h2>Decision guide
-</h2><table><thead><tr><th>Priority
-</th><th>Start with
-</th><th>Reason
-</th></tr></thead><tbody><tr><td>Granular preference segmentation
-</td><td>Klaviyo
-</td><td>Strong event and segment flexibility.
-</td></tr><tr><td>Simple education sequences
-</td><td>Sequenzy
-</td><td>Focused operations suit lean teams.
-</td></tr><tr><td>Native early-stage setup
-</td><td>Shopify Email
-</td><td>Fastest path to basic campaigns.
-</td></tr></tbody></table><p>Continue with the
-<a href="/apps/shopify-email">Shopify email overview
-</a>,
-<a href="/alternatives">alternatives library
-</a>, and
-<a href="/guides/consent-compliance">consent and compliance guide
-</a>.
-</p>
-<h2 class="mt-14">Consent and purchaser suppression for Sustainable brands</h2>
-<p>Before launching sustainable brands automation, prove every app in the stack logs email and SMS consent auditably, with purchase events cutting promotional follow-up the moment checkout completes. In sustainable brands, mistimed sends after purchases, refunds, or support cases destroy channel value quicker than any creative miss.</p>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Audience state</th><th>Required handling</th><th>Why it matters</th></tr></thead>
-<tbody>
-<tr><td>No documented consent</td><td>Sustainable Brands marketing stays off; transactional only</td><td>Without sustainable brands consent proof, marketing has no legal footing</td></tr>
-<tr><td>Consented, never purchased</td><td>Lead sustainable brands newcomers with teaching and social proof</td><td>Sustainable Brands margin suffers when discounts arrive first</td></tr>
-<tr><td>Active cart, no checkout</td><td>Remind sustainable brands carts with context first, no instant code</td><td>Sustainable Brands high-intent window deserves margin discipline</td></tr>
-<tr><td>Purchased recently</td><td>Suppress sustainable brands selling after checkout; educate instead</td><td>Sustainable Brands suppression protects the new-customer glow</td></tr>
-<tr><td>Refund or return open</td><td>Freeze sustainable brands promos until refund or return closes</td><td>Sustainable Brands tolerance collapses mid-dispute</td></tr>
-<tr><td>Repeated non-engagement</td><td>Prune unengaged sustainable brands profiles early</td><td>Sustainable Brands inboxing survives on timely sunsets</td></tr>
-<tr><td>SMS consent present</td><td>Sustainable Brands SMS obeys quiet hours and caps</td><td>One sustainable brands SMS complaint outweighs many email ones</td></tr>
-<tr><td>Wholesale or B2B account</td><td>Send sustainable brands B2B accounts down their own track</td><td>Sustainable Brands contract buyers need separate rules</td></tr>
-<tr><td>Free or disposable email domain</td><td>Verify sustainable brands throwaway addresses pre-journey</td><td>Sustainable Brands bounces from junk signups hurt inboxing</td></tr>
-<tr><td>Staff and test accounts</td><td>Keep sustainable brands staff and test profiles out of live sends</td><td>Sustainable Brands test sends skew attribution reads</td></tr>
-<tr><td>Competitor or researcher signals</td><td>Treat sustainable brands snoops under normal consent policy</td><td>Manual sustainable brands exceptions rot the audit trail</td></tr>
-<tr><td>Legacy list without timestamps</td><td>Sustainable Brands sends to old lists need fresh opt-in</td><td>Sustainable Brands lists without proof invite liability</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Margin, app costs, and pricing for Sustainable brands</h2>
-<p>Sustainable Brands profit needs the whole ledger: subscription plus overages, SMS credits, capture and template spend, agency retainers, and sustainable brands discount margin against attributed revenue. For sustainable brands, a stack at fifteen percent of attributed margin needs simplification first, optimization second.</p>
-<p>Pricing changes frequently and varies by region, contact volume, and contract term, so check the official pricing pages of every shortlisted app and model an eighteen-month total that includes a peak season. Free tiers ration contacts, sends, branching, or support — confirm which ceiling binds your sustainable brands plan first.</p>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Cost component</th><th>What to model</th><th>Common failure</th></tr></thead>
-<tbody>
-<tr><td>Platform subscription</td><td>Sustainable Brands tier priced at realistic contact scale</td><td>sustainable brands plan sized for hopes, not contacts</td></tr>
-<tr><td>Contact or send overages</td><td>Map sustainable brands list growth to tier thresholds</td><td>Sustainable Brands seasonal spikes surprise-billing</td></tr>
-<tr><td>SMS credits</td><td>Scale sustainable brands SMS by opt-ins and journey length</td><td>Sustainable Brands SMS economics misread as email</td></tr>
-<tr><td>Discount budget</td><td>Price sustainable brands incentives by redemption probability</td><td>Sustainable Brands journeys schooling code-waiting</td></tr>
-<tr><td>Creative and ops time</td><td>Sustainable Brands maintenance load in staff hours</td><td>sustainable brands upkeep heavier than budgeted</td></tr>
-<tr><td>Migration and setup</td><td>Sustainable Brands cutover cost in data and rebuilds</td><td>Dropped sustainable brands permission records on switch</td></tr>
-<tr><td>Support and success tiers</td><td>Does sustainable brands crisis support cost extra</td><td>Sustainable Brands help-desk limits exposed by drops</td></tr>
-<tr><td>Third-party integrations</td><td>sustainable brands companion tools and their fees</td><td>Creeping sustainable brands add-ons dwarfing ESP spend</td></tr>
-<tr><td>Deliverability remediation</td><td>sustainable brands deliverability upkeep and guidance cost</td><td>sustainable brands sender damage costing more than tools</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Decision table for Sustainable brands</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Situation</th><th>Start with</th><th>Reason</th></tr></thead>
-<tbody>
-<tr><td>Occasional sends, small catalog</td><td>Shopify Email</td><td>Zero-learning-curve start for light sustainable brands needs</td></tr>
-<tr><td>Branching and suppression matter</td><td>Klaviyo</td><td>Deep sustainable brands triggers for maturing programs</td></tr>
-<tr><td>Small team, email plus light SMS</td><td>Omnisend</td><td>Small-team sustainable brands workflows across email and SMS</td></tr>
-<tr><td>Broad newsletter operations</td><td>Mailchimp</td><td>Sustainable Brands newsletters in a familiar editor</td></tr>
-<tr><td>Lean lifecycle operations</td><td>Sequenzy</td><td>Pay-per-email sustainable brands operation for selective volume</td></tr>
-<tr><td>Developer-led custom builds</td><td>Customer.io</td><td>Sustainable Brands flexibility for engineering-led stacks</td></tr>
-<tr><td>CRM-led sales follow-up</td><td>ActiveCampaign</td><td>Sustainable Brands follow-up tied to account records</td></tr>
-<tr><td>Simple list growth and popups</td><td>Privy</td><td>Popup-led sustainable brands growth for young stores</td></tr>
-<tr><td>Commerce cohort analysis</td><td>Drip</td><td>Cohort-aware sustainable brands views on second orders</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Common failure modes in sustainable brands email</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Failure</th><th>Prevention</th><th>Cost of getting it wrong</th></tr></thead>
-<tbody>
-<tr><td>Discount in the first touch</td><td>Sustainable Brands incentives only after intent signals</td><td>sustainable brands discount-first trains bargain hunting</td></tr>
-<tr><td>No purchase suppression</td><td>End sustainable brands flows the moment orders land</td><td>Sustainable Brands promos after purchase read careless</td></tr>
-<tr><td>Consent imported without proof</td><td>sustainable brands consent fields mapped before importing</td><td>Unproven sustainable brands consent fails audits</td></tr>
-<tr><td>Flows only one operator understands</td><td>Sustainable Brands flows legible to any operator</td><td>sustainable brands changes gamble without docs</td></tr>
-<tr><td>Measuring clicks only</td><td>Sustainable Brands scoreboard: margin, returns, complaints</td><td>sustainable brands clicks applaud tactics margin hates</td></tr>
-<tr><td>Ignoring deliverability signals</td><td>Sustainable Brands placement signals checked routinely</td><td>Sustainable Brands repair bills dwarf prevention</td></tr>
-<tr><td>Peak-season flow changes</td><td>Lock sustainable brands flows through the peak window</td><td>Peak-week sustainable brands experiments fail loudest</td></tr>
-<tr><td>SMS without a channel strategy</td><td>Separate sustainable brands SMS duties from email duties</td><td>Doubled sustainable brands touches push unsubscribes</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Implementation order for a sustainable brands program</h2>
-<ol>
-<li>Record sustainable brands permission origins in the ESP before sending.</li>
-<li>Prove sustainable brands-critical Shopify events — order, cart, refund, support — fire in a test store.</li>
-<li>Write sustainable brands suppression and exits before any sustainable brands flow exists.</li>
-<li>Pilot sustainable brands with one bounded journey plus holdout measurement.</li>
-<li>At day thirty, review sustainable brands margin, complaints, unsubscribes, repeat buying.</li>
-<li>Scale sustainable brands only once a second operator edits safely.</li>
-<li>Sustainable Brands peak policy locks edits, codes, cadence.</li>
-<li>Quarterly, weigh the sustainable brands stack against attributed margin.</li>
-<li>For sustainable brands, dusty journeys get archived quarterly.</li>
-</ol>
-<h2 class="mt-12">Metrics review cadence for sustainable brands</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Metric</th><th>Definition</th><th>Review cadence</th></tr></thead>
-<tbody>
-<tr><td>Margin per send</td><td>sustainable brands profit after incentive, send, platform load</td><td>Monthly</td></tr>
-<tr><td>Repeat purchase rate</td><td>sustainable brands-driven second purchases per quarter</td><td>Monthly</td></tr>
-<tr><td>Complaint and unsubscribe rate</td><td>sustainable brands-level and flow-level complaint splits</td><td>Weekly</td></tr>
-<tr><td>Suppression accuracy</td><td>Spot-check sustainable brands sends after purchases</td><td>Weekly</td></tr>
-<tr><td>Time to edit safely</td><td>Time a new sustainable brands owner needs per change</td><td>Quarterly</td></tr>
-<tr><td>Holdout lift</td><td>sustainable brands incrementality from holdout contrast</td><td>Quarterly</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Sustainable brands matchup FAQ</h2>
-<section class="max-w-3xl mx-auto space-y-6">
-<div><h3>Klaviyo or Shopify Email for sustainable brands?</h3><p>For sustainable brands, Shopify Email covers occasional small-catalog campaigns; Klaviyo earns its keep when sustainable brands demands event branching, catalog-aware blocks, and segment reporting — model profile billing on projected sustainable brands growth first.</p></div>
-<div><h3>Omnisend vs Klaviyo for sustainable brands?</h3><p>For sustainable brands, Omnisend ships email-first sustainable brands plus light SMS fastest for small teams; Klaviyo counters with deeper sustainable brands segmentation — pilot one genuine sustainable brands journey on each and weigh upkeep, not checklists.</p></div>
-<div><h3>Mailchimp or Klaviyo for sustainable brands?</h3><p>For sustainable brands, Mailchimp trades on familiarity, Klaviyo on Shopify event fidelity; settle sustainable brands pricing by checking both official pages at your contacts.</p></div>
-<div><h3>Do I need a separate SMS tool for sustainable brands?</h3><p>For early sustainable brands, bundled SMS is enough; specialists earn their sustainable brands fee only via measured lift. Validate sustainable brands opt-ins, quiet hours, and per-message rates beforehand.</p></div>
-<div><h3>How should I suppress audiences in sustainable brands flows?</h3><p>sustainable brands flows must shed recent purchasers, case-active shoppers, refunds, and unconsented profiles, with sustainable brands exit logic visible to any auditor — suppression slips outcost quiet weeks.</p></div>
-<div><h3>What does sustainable brands email cost?</h3><p>Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your sustainable brands campaigns consume. Plans and limits shift often, so check the official pricing pages for your sustainable brands shortlist and model an eighteen-month total before committing.</p></div>
-<div><h3>Which app should a lean team pilot first for sustainable brands?</h3><p>Sustainable Brands pilots succeed on operability: if the crew runs it in two weeks it wins. Keep sustainable brands scope shippable over impressive-but-stuck.</p></div>
-<div><h3>How do I measure sustainable brands email results?</h3><p>Measure sustainable brands on contribution, not vanity sends: margin per send, repeat purchase, unsubscribes, complaints, and support load alongside attributed revenue, with a holdout cohort proving the sustainable brands journeys caused the lift.</p></div>
-<div><h3>Can I run sustainable brands email without an agency?</h3><p>Yes, if the scope stays small. Pick one sustainable brands journey, document consent and suppression rules, and reuse a simple template system. For sustainable brands, hire help only if journey complexity, inbox-placement remediation, or peak sustainable brands volume genuinely exceeds what the team can run.</p></div>
-<div><h3>When should I graduate from my first app for sustainable brands?</h3><p>For sustainable brands, the graduation signal is operational: unsafe flow edits, unreliable purchase-state segmentation for sustainable brands, or cost forecasts that break as contacts grow. For sustainable brands, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression.</p></div>
-<div><h3>How much discounting is acceptable for sustainable brands?</h3><p>Treat discounts as one lever, not the default. For sustainable brands, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. When sustainable brands revenue only converts with a code attached, suspect sustainable brands value communication before blaming price points.</p></div>
-<div><h3>Which Shopify data matters most for sustainable brands?</h3><p>Order and refund state, cart and browse events, consent source, and product availability cover most sustainable brands decisions. For sustainable brands, verify each event with a live test purchase before building sustainable brands logic on it, and document field meanings so marketing and engineering share definitions.</p></div>
-<div><h3>How do I avoid duplicate sends across apps for sustainable brands?</h3><p>Give one platform ownership of each sustainable brands journey, document which app sends what, and share suppression lists where the tools support it. For sustainable brands peak weeks, sample customer timelines weekly and enumerate all sustainable brands sends per profile.</p></div>
-<div><h3>What should a sustainable brands pilot include?</h3><p>For sustainable brands, a tight pilot wins: single audience, at most two journeys, explicit suppression, a holdout, and a day-thirty sustainable brands review of margin and complaints with pre-agreed pass/fail lines.</p></div>
-</section>
-<script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",mainEntity:[
-{"@type": "Question", "name": "Klaviyo or Shopify Email for sustainable brands?", "acceptedAnswer": {"@type": "Answer", "text": "For sustainable brands, Shopify Email covers occasional small-catalog campaigns; Klaviyo earns its keep when sustainable brands demands event branching, catalog-aware blocks, and segment reporting — model profile billing on projected sustainable brands growth first."}},
-{"@type": "Question", "name": "Omnisend vs Klaviyo for sustainable brands?", "acceptedAnswer": {"@type": "Answer", "text": "For sustainable brands, Omnisend ships email-first sustainable brands plus light SMS fastest for small teams; Klaviyo counters with deeper sustainable brands segmentation — pilot one genuine sustainable brands journey on each and weigh upkeep, not checklists."}},
-{"@type": "Question", "name": "Mailchimp or Klaviyo for sustainable brands?", "acceptedAnswer": {"@type": "Answer", "text": "For sustainable brands, Mailchimp trades on familiarity, Klaviyo on Shopify event fidelity; settle sustainable brands pricing by checking both official pages at your contacts."}},
-{"@type": "Question", "name": "Do I need a separate SMS tool for sustainable brands?", "acceptedAnswer": {"@type": "Answer", "text": "For early sustainable brands, bundled SMS is enough; specialists earn their sustainable brands fee only via measured lift. Validate sustainable brands opt-ins, quiet hours, and per-message rates beforehand."}},
-{"@type": "Question", "name": "How should I suppress audiences in sustainable brands flows?", "acceptedAnswer": {"@type": "Answer", "text": "sustainable brands flows must shed recent purchasers, case-active shoppers, refunds, and unconsented profiles, with sustainable brands exit logic visible to any auditor — suppression slips outcost quiet weeks."}},
-{"@type": "Question", "name": "What does sustainable brands email cost?", "acceptedAnswer": {"@type": "Answer", "text": "Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your sustainable brands campaigns consume. Plans and limits shift often, so check the official pricing pages for your sustainable brands shortlist and model an eighteen-month total before committing."}},
-{"@type": "Question", "name": "Which app should a lean team pilot first for sustainable brands?", "acceptedAnswer": {"@type": "Answer", "text": "Sustainable Brands pilots succeed on operability: if the crew runs it in two weeks it wins. Keep sustainable brands scope shippable over impressive-but-stuck."}},
-{"@type": "Question", "name": "How do I measure sustainable brands email results?", "acceptedAnswer": {"@type": "Answer", "text": "Measure sustainable brands on contribution, not vanity sends: margin per send, repeat purchase, unsubscribes, complaints, and support load alongside attributed revenue, with a holdout cohort proving the sustainable brands journeys caused the lift."}},
-{"@type": "Question", "name": "Can I run sustainable brands email without an agency?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if the scope stays small. Pick one sustainable brands journey, document consent and suppression rules, and reuse a simple template system. For sustainable brands, hire help only if journey complexity, inbox-placement remediation, or peak sustainable brands volume genuinely exceeds what the team can run."}},
-{"@type": "Question", "name": "When should I graduate from my first app for sustainable brands?", "acceptedAnswer": {"@type": "Answer", "text": "For sustainable brands, the graduation signal is operational: unsafe flow edits, unreliable purchase-state segmentation for sustainable brands, or cost forecasts that break as contacts grow. For sustainable brands, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression."}},
-{"@type": "Question", "name": "How much discounting is acceptable for sustainable brands?", "acceptedAnswer": {"@type": "Answer", "text": "Treat discounts as one lever, not the default. For sustainable brands, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. When sustainable brands revenue only converts with a code attached, suspect sustainable brands value communication before blaming price points."}},
-{"@type": "Question", "name": "Which Shopify data matters most for sustainable brands?", "acceptedAnswer": {"@type": "Answer", "text": "Order and refund state, cart and browse events, consent source, and product availability cover most sustainable brands decisions. For sustainable brands, verify each event with a live test purchase before building sustainable brands logic on it, and document field meanings so marketing and engineering share definitions."}},
-{"@type": "Question", "name": "How do I avoid duplicate sends across apps for sustainable brands?", "acceptedAnswer": {"@type": "Answer", "text": "Give one platform ownership of each sustainable brands journey, document which app sends what, and share suppression lists where the tools support it. For sustainable brands peak weeks, sample customer timelines weekly and enumerate all sustainable brands sends per profile."}},
-{"@type": "Question", "name": "What should a sustainable brands pilot include?", "acceptedAnswer": {"@type": "Answer", "text": "For sustainable brands, a tight pilot wins: single audience, at most two journeys, explicit suppression, a holdout, and a day-thirty sustainable brands review of margin and complaints with pre-agreed pass/fail lines."}}
-]})} />
-<h2 class="mt-12">Governance and documentation for sustainable brands</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Practice</th><th>Standard</th><th>Risk it prevents</th></tr></thead>
-<tbody>
-<tr><td>Flow ownership</td><td>sustainable brands ownership assigned journey by journey</td><td>Abandoned sustainable brands journeys mailing on</td></tr>
-<tr><td>Naming convention</td><td>sustainable brands-flow names lead with purpose</td><td>Peak sustainable brands triage blind without naming</td></tr>
-<tr><td>Change log</td><td>sustainable brands edits stamped, dated, explained</td><td>Unlogged sustainable brands changes hiding causes</td></tr>
-<tr><td>Access control</td><td>sustainable brands access scoped to role</td><td>Over-permissioned sustainable brands editors misfiring</td></tr>
-<tr><td>Quarterly flow review</td><td>Prune idle sustainable brands branches quarterly</td><td>sustainable brands cruft raising edit cost</td></tr>
-<tr><td>Incident runbook</td><td>Sustainable Brands pause-and-notify runbook</td><td>sustainable brands damage window from missing runbook</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Peak season readiness for sustainable brands</h2>
-<ol>
-<li>For sustainable brands, freeze journey changes two weeks pre-peak.</li>
-<li>Sustainable Brands QA spans purchase, refund, and case paths.</li>
-<li>Sustainable Brands guardrails must shed fresh buyers.</li>
-<li>Boost sustainable brands control groups before the surge.</li>
-<li>For sustainable brands, pre-commit text timing and frequency limits.</li>
-<li>Match sustainable brands plan caps and overage rates to forecast volume.</li>
-<li>Cover sustainable brands complaint and bounce review daily.</li>
-<li>Pre-write sustainable brands rollback moves per flow before launch.</li>
-</ol>
-<p>For sustainable brands, schedule quarter-one review before the first send. Writing sustainable brands suppression rules, discount caps, and escalation paths down in week one saves weeks of peak-season triage and hands newcomers a working sustainable brands playbook.</p>
-<p>Close each sustainable brands quarter with a written ledger — sustainable brands sends shipped, suppressions honored, margin retained, failed bets — so sustainable brands vendor decisions rest on one shared evidence file, not scattered memory.</p>
-</main></BaseLayout>
+<BaseLayout title={title} description={description}>
+<main class="container page-stack">
+<p class="eyebrow">Shopify email apps</p>
+<h1>{title}</h1>
+<p class="lede">{description}</p>
+<h2>Start with the claim, not a green segment</h2>
+<p>The audience is a merchant explaining sourcing, materials and ownership to subscribers. The buying decision is whether a tool can deliver accurate education as products and evidence change. A customer selecting recycled materials is expressing an interest; that selection is not proof that every product in the next campaign has recycled content.</p>
+<p>Create a claims register outside the email editor. For each approved statement, record the affected SKU or variant, component, supplier document, evidence date, reviewer and expiry or review trigger. Distinguish product from packaging, a single component from the whole item, and a supplier statement from independent certification. Never extend a certificate to products, locations or periods it does not cover.</p>
+<p>The US <a href="https://www.ftc.gov/business-guidance/resources/environmental-claims-summary-green-guides">FTC Green Guides summary</a> advises against broad unqualified environmental-benefit claims and calls for specific, prominent qualifications. This is a US advertising reference, not a worldwide compliance certificate. Environmental, labor and social claims need their own evidence; one does not substantiate the others.</p>
+<h2>Match the app to the evidence workflow</h2>
+<table><thead><tr><th>Candidate</th><th>Useful evaluation</th><th>Tradeoff to resolve</th></tr></thead><tbody>
+<tr><td>Klaviyo</td><td>Its segmentation tools make it a candidate for material-interest audiences.</td><td>Prove that a segment can be joined to the approved product/version, not merely a broad customer tag.</td></tr>
+<tr><td>Sequenzy</td><td>Consider sequences for care education once approved content and events are supplied.</td><td>Its public positioning is SaaS and product/Stripe events. Establish the Shopify event path and editing ownership before selecting it.</td></tr>
+<tr><td>Shopify Email / Shopify Messaging</td><td>Evaluate the store's current native campaign tool for a bounded care newsletter.</td><td>Check how product changes affect already drafted messages; native placement alone does not validate copy.</td></tr>
+</tbody></table>
+<p>Other original candidates—Omnisend, Brevo, Mailchimp, ActiveCampaign, Sendlane, Customer.io, Privy, Drip, Postmark and Resend—need not receive identical care-sequence recommendations. Compare an editor and audience workflow with a custom sending stack only after assigning who maintains claims, event mappings and unsubscribe state. A transport provider does not supply product substantiation.</p>
+<h2>A proposed care journey</h2>
+<ol><li>Use fulfilled line items to select the care instructions for the actual material and version purchased. A blended fabric can need different care from a similarly named product.</li><li>Separate essential ownership information from optional brand education. Apply the relevant purpose and channel permission; a purchase is not a marketing opt-in.</li><li>Before each scheduled message, check current eligibility, product version and service state. Cancel an obsolete care branch after an exchange rather than continuing instructions for the returned item.</li><li>When evidence changes, pause affected messages, identify drafts and queued jobs using the claim identifier, and approve replacement copy. Keep a record of what was actually sent.</li></ol>
+<p>Hypothetical example: a supplier record supports a recycled-content percentage for an outer carton only. The campaign should identify the carton and supported percentage, with its qualification near the claim. It should not describe the entire order as recycled or imply that the product itself has that composition. No supplier evidence or certification is asserted here.</p>
+<h2>Acceptance, costs and measurement</h2>
+<p>Propose tests for an exchanged item, a withdrawn claim, an expired certificate and an unsubscribed purchaser. Replay an order event and check that the same line-item/message version is not scheduled twice. Assign one sender for each care message and document queue cancellation limits; an incoming purchase event is not proof of instantaneous suppression across apps.</p>
+<p>Budget evidence review and translation as well as platform, contact/send charges, integration maintenance and support time. Compare equivalent eligible audiences over the same business period, including a seasonal peak if relevant. There is no universal percentage of attributed margin that makes the stack too expensive.</p>
+<p>Track incorrect-claim incidents, care-related support themes, returns and contribution after costs. A long-lasting product may appropriately produce fewer repeat orders. If testing an optional educational series, predefine a randomized eligible holdout, outcome window and uncertainty; attributed revenue alone cannot show that the series caused a sale.</p>
+<p>Continue with the <a href="/apps/shopify-email">Shopify email overview</a>, <a href="/alternatives">alternatives library</a> and <a href="/guides/consent-compliance">consent guide</a>.</p>
+<h2>Questions before choosing</h2>
+{faqs.map(([question, answer]) => <section><h3>{question}</h3><p>{answer}</p></section>)}
+<script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",mainEntity:faqs.map(([question,answer])=>({"@type":"Question",name:question,acceptedAnswer:{"@type":"Answer",text:answer}}))})} />
+</main>
+</BaseLayout>
