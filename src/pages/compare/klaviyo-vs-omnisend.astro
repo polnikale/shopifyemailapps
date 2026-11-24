@@ -1,248 +1,59 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
-import TldrBox from '../../components/TldrBox.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import { siteFromHost } from '../../content';
 
 const site = siteFromHost();
 const path = '/compare/klaviyo-vs-omnisend';
-const title = 'Klaviyo vs Omnisend for Shopify Email: 2026 Comparison';
-const desc = 'Klaviyo vs Omnisend for Shopify stores — data depth, pricing at scale, SMS, prebuilt flows, and which platform fits your retention team size.';
-
+const title = "Klaviyo vs Omnisend for Shopify email: 2026 comparison";
+const desc = "Choose an automation workspace by the journeys your team must maintain, rather than an assumed order-volume graduation point.";
 const faqs = [
   {
-    question: 'Is Klaviyo or Omnisend better for a new Shopify store?',
-    answer: 'Omnisend is usually faster for stores under ~800 orders/month that need welcome, cart, and post-purchase live this week. Klaviyo pays off once you rely on collection-level segmentation, predictive CLV, and complex suppression during seasonal drops. Neither replaces capture — pair with Privy or Justuno if popup conversion is still weak.',
+    "question": "Is Omnisend only for small stores?",
+    "answer": "No order-count ceiling is established here. Evaluate the required workflow, channels and maintenance burden."
   },
   {
-    question: 'How does Klaviyo vs Omnisend pricing compare at 10,000 contacts?',
-    answer: 'At 10k active profiles with regular email and modest SMS, Klaviyo often lands $150–250/mo depending on SMS credits and plan tier. Omnisend Standard/Pro typically runs lower on contacts alone but SMS and push volume can close the gap. Model your actual send frequency, not just contact count — a wide list with low engagement hurts Klaviyo economics more than Omnisend in some cases.',
+    "question": "Must I use both platforms during migration?",
+    "answer": "You can prepare a replacement in draft, but give each live trigger one owner to prevent duplicate messages."
   },
   {
-    question: 'Which has better Shopify integration?',
-    answer: 'Both are native Shopify apps with real-time sync. Klaviyo goes deeper on browse events, predictive metrics, and historical catalog fields for complex RFM. Omnisend covers core ecommerce triggers well and gets multichannel journeys live faster with prebuilt templates. For 5,000+ SKU catalogs with variant-level back-in-stock, Klaviyo has more headroom.',
-  },
-  {
-    question: 'Can I migrate from Omnisend to Klaviyo without losing revenue?',
-    answer: 'Yes, with staged migration: export consent timestamps, rebuild welcome and cart flows first, run parallel suppression checks for two weeks, then migrate winback and replenishment. The risk is duplicate sends during overlap — pause Omnisend automations before enabling Klaviyo equivalents. Profile count may jump if Klaviyo counts inactive contacts differently.',
-  },
-  {
-    question: 'Which platform handles Black Friday better?',
-    answer: 'Klaviyo offers finer segment control for VIP early access, recent purchaser suppression, and holdout testing — critical when send volume spikes 4–8x. Omnisend prebuilt sale templates and push/SMS in one journey help SMB teams move fast but require stricter manual suppression discipline. Both need deliverability prep (sunset unengaged 30 days before peak).',
-  },
-  {
-    question: 'Does Omnisend push notifications matter for Shopify email strategy?',
-    answer: 'Push can recover browse and cart intent on mobile web without SMS cost — useful for fashion and flash-sale catalogs. It can also annoy subscribers if overused. Klaviyo focuses on email + SMS; Omnisend bundles push. If push is not part of your channel strategy, that Omnisend feature is irrelevant weight.',
-  },
-  {
-    question: 'What workflow test should decide the winner?',
-    answer: 'Rebuild the same four flows in both: welcome (branch by popup vs product page source), abandoned cart (discount cap by cart value), post-purchase (exclude gift buyers), winback (split discount-sensitive vs full-price loyalists). Score on trigger accuracy, exclusion visibility, and whether a non-technical marketer can edit logic during a sale week.',
-  },
+    "question": "Does this page report a trial winner?",
+    "answer": "No. The exercises are proposed account checks, not tests performed by this site."
+  }
 ];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
   <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
-
   <section class="py-14 md:py-20">
     <div class="container">
-      <nav class="mb-8 text-sm">
-        <a class="link" href="/compare">Comparisons</a>
-        <span class="mx-2 text-[#5d3a1d]">/</span>
-        <span class="text-[#5d3a1d]">Klaviyo vs Omnisend</span>
-      </nav>
-
+      <nav class="mb-8 text-sm"><a class="link" href="/compare">Comparisons</a></nav>
       <header class="max-w-4xl">
         <p class="editorial-kicker">Head-to-head</p>
         <h1 class="hero-title mt-5">Klaviyo vs Omnisend for Shopify email</h1>
-        <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-          The most common fork in Shopify retention: pay for Klaviyo's data depth and predictive tooling, or ship faster with Omnisend's prebuilt multichannel journeys. We ran both through the same merchant scenarios — a $180k/mo apparel brand, a replenishment-heavy supplement shop, and a home goods store graduating off Shopify Email — to see which platform changes weekly operations, not just demo aesthetics.
-        </p>
+        <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">Choose an automation workspace by the journeys your team must maintain, rather than an assumed order-volume graduation point.</p>
       </header>
-
-      <div class="mt-12 max-w-4xl">
-        <TldrBox
-          picks={[
-            { label: 'Overall at scale', tool: 'Klaviyo', reason: 'Deeper Shopify events, predictive CLV, and segmentation headroom for complex catalogs.' },
-            { label: 'Speed to live', tool: 'Omnisend', reason: 'Prebuilt cart, welcome, and post-purchase flows in days, not weeks.' },
-            { label: 'SMB economics', tool: 'Omnisend', reason: 'Lower entry friction before profile counts explode.' },
-            { label: 'Multichannel', tool: 'Omnisend', reason: 'Email + SMS + push in one journey builder.' },
-          ]}
-        />
-      </div>
-
-      <div class="mt-12 card overflow-x-auto">
-        <h2 class="px-5 py-4 font-serif text-2xl font-black text-[#24170f]">Comparison at a glance</h2>
-        <table class="data-table">
-          <thead>
-            <tr><th>Dimension</th><th>Klaviyo</th><th>Omnisend</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Best for</td><td>Data-heavy retention programs at scale</td><td>SMB multichannel automation without enterprise overhead</td></tr>
-            <tr><td>Starting price</td><td>Free tier; paid from ~$20/mo</td><td>Free tier; Standard from ~$16/mo</td></tr>
-            <tr><td>Billing model</td><td>Active profiles + SMS credits</td><td>Contacts + message volume</td></tr>
-            <tr><td>Shopify depth</td><td>Native — browse, predictive, catalog</td><td>Native — core events, lighter predictive</td></tr>
-            <tr><td>SMS</td><td>Built-in, strong</td><td>Built-in + push</td></tr>
-            <tr><td>Prebuilt flows</td><td>Good templates, expects customization</td><td>Strong out-of-box ecommerce journeys</td></tr>
-            <tr><td>Reporting</td><td>Revenue by flow, cohort, segment</td><td>Revenue per message, solid SMB dashboards</td></tr>
-            <tr><td>Learning curve</td><td>Moderate–steep</td><td>Moderate</td></tr>
-          </tbody>
-        </table>
-      </div>
-
       <article class="prose-shopify mt-14 max-w-4xl">
-        <h2>Why this comparison matters for Shopify merchants</h2>
-        <p>
-          Klaviyo and Omnisend are not interchangeable labels in the Shopify App Store. They represent different operating philosophies. Klaviyo assumes you will build a retention database over your customer graph — every browse, every collection view, every discount redemption becomes fuel for segmentation next quarter. Omnisend assumes you need revenue-bearing automations live before your next product drop, with email, SMS, and push in one interface your marketing generalist can own.
-        </p>
-        <p>
-          Both passed our baseline Shopify tests: real-time order sync, product blocks in email, cart abandonment triggers, and consent-aware list growth. The divergence showed up in edge cases — variant-level back-in-stock for a size-run apparel label, replenishment branching for 90-day serum consumption, and BFCM suppression when 40% of the list had purchased in the prior 14 days. Klaviyo handled those without exports. Omnisend handled them with simpler logic but more manual tagging upfront.
-        </p>
-
-        <h2>Workflow test: welcome series</h2>
-        <p>
-          We configured identical welcome goals: turn popup subscribers into first-time buyers without training them to wait for 20% off. Klaviyo branched by signup source — giveaway wheel vs product page — using Shopify customer properties and popup integration metadata. Omnisend achieved the same branch with prebuilt welcome templates plus two custom segments, live in under three hours.
-        </p>
-        <p>
-          Klaviyo's advantage appeared at week six when the apparel brand added a new collection and wanted welcome email three to reference that collection dynamically. Klaviyo's catalog sync made that a merge-tag change. Omnisend required a template duplicate and segment tweak — still manageable, but more steps. For stores that rarely change welcome logic, Omnisend's speed wins. For stores that iterate creative weekly, Klaviyo's data model saves time.
-        </p>
-
-        <h2>Workflow test: abandoned cart</h2>
-        <p>
-          Cart recovery is where both platforms earn their keep. We modeled a $127 cart with two SKUs and a shopper who had never purchased. Klaviyo fired at 45 minutes with dynamic product blocks, suppressed at purchase, and capped discount at 10% only for carts under $75. Omnisend's prebuilt three-email cart series achieved similar outcomes with less conditional logic — but struggled when we tried to exclude customers already in an active winback flow without manual tags.
-        </p>
-        <p>
-          SMS recovery differed in cost visibility. Klaviyo's SMS credits sit beside email in reporting. Omnisend bundles SMS in journeys but promotional SMS during sale weeks stacked costs faster than the home goods team expected. Neither platform stops you from over-texting — discipline is still operational.
-        </p>
-
-        <h2>Pricing reality at growing list sizes</h2>
-        <p>
-          Profile-based pricing is Klaviyo's double-edged sword. A beauty brand with 28k profiles but only 6k monthly engaged email recipients still pays for the full profile count. Popup capture, giveaway imports, and stale contacts inflate bills unless you sunset aggressively. Omnisend's contact pricing behaves similarly but the team's subjective experience was lower friction sub-15k contacts with bundled multichannel value.
-        </p>
-        <p>
-          Run a 12-month projection: count profiles, expected SMS sends, seasonal spikes, and agency hours. A store projecting 50k profiles in year one should model Klaviyo at $300–600/mo depending on SMS. Omnisend may land 20–35% lower at the same contact tier but push and SMS volume narrows the gap. The cheaper platform is whichever matches your actual channel mix — not whichever looks cheaper on the pricing page footer.
-        </p>
-
-        <h2>Shopify data depth in production</h2>
-        <p>
-          Klaviyo's predictive CLV and churn risk scores changed how the supplement shop prioritized winback. Instead of blasting 25% off to all inactive customers, they targeted predicted churn deciles with education-first sequences. Omnisend does not match that predictive layer — the team used simpler recency segments and still recovered revenue, but with more margin leakage on discount-sensitive cohorts.
-        </p>
-        <p>
-          For catalogs under 200 SKUs with straightforward replenishment, Omnisend's data model is sufficient. For 2,000+ variants, collection-level merchandising, and browse abandonment by price band, Klaviyo's event history is the safer long-term bet.
-        </p>
-
-        <h2>Team fit: who should choose which</h2>
-        <p><strong>Choose Klaviyo if:</strong></p>
-        <ul>
-          <li>You have 1,000+ monthly orders and a retention owner who will audit segments weekly</li>
-          <li>Predictive analytics, holdout testing, and complex suppression are worth profile-based pricing</li>
-          <li>Your agency or in-house team already knows Klaviyo — migration cost is zero</li>
-          <li>Browse abandonment and collection-level merchandising drive meaningful revenue</li>
-        </ul>
-        <p><strong>Choose Omnisend if:</strong></p>
-        <ul>
-          <li>You need welcome, cart, and post-purchase live before your next launch — under two weeks</li>
-          <li>One marketer owns email, SMS, and push without wanting three tools</li>
-          <li>Your catalog and segmentation needs are moderate — not exotic B2B or multi-warehouse logic</li>
-          <li>You are graduating from Shopify Email or Mailchimp and want ecommerce-native defaults</li>
-        </ul>
-
-        <h2>90-day rollout: depth versus speed proof</h2>
-        <p>
-          Weeks 1–4: Omnisend trial — welcome, cart, post-purchase, one SMS branch live. Klaviyo trial with same four flows plus one browse segment test.
-        </p>
-        <p>
-          Weeks 5–8: Run identical BFCM prep drill — edit discount caps and suppression on both platforms. Score hours to live and confidence level of your solo marketer.
-        </p>
-        <p>
-          Weeks 9–12: Model cost at 10k, 25k, and 50k profiles with actual SMS volume. Graduate to Klaviyo only if predictive or browse segments drove measurable incremental revenue in weeks 5–8.
-        </p>
-
-        <h2>Margin math: Omnisend convenience versus Klaviyo ceiling</h2>
-        <p>
-          Omnisend at $140/mo versus Klaviyo at $280/mo at 15k profiles saves $140/mo. If Klaviyo browse abandonment recovers $2k extra monthly on a $95 AOV catalog, Klaviyo wins despite sticker price. Omnisend wins when team bandwidth is the constraint — presets ship two weeks faster and that gap covers the subscription delta for stores under $80k/mo.
-        </p>
-
-        <h2>Failure rehearsal: wrong graduation timing</h2>
-        <p>
-          <strong>Klaviyo at 250 orders/month.</strong> Paying for predictive CLV nobody queries — Omnisend would have shipped the same recovery revenue at half the cost.
-        </p>
-        <p>
-          <strong>Omnisend at 800 orders/month with complex replenishment.</strong> Manual tagging cannot keep pace with consumption cadence — Klaviyo predictive replenishment pays for itself.
-        </p>
-
-        <h2>Merchant scenario: home goods store graduating off Shopify Email</h2>
-        <p>
-          At $62k/mo this brand tested Omnisend first — cart and welcome live in six days. Klaviyo trial added browse recovery worth $1.4k monthly on throw pillows and seasonal decor with long consideration cycles. They chose Klaviyo at 480 orders/month because browse data mattered; a peer at $45k/mo with impulse accessories stayed on Omnisend profitably. Same comparison, different catalog behavior.
-        </p>
-
-
-        <h2>Operational depth: catalog behavior drives winner</h2>
-        <p>
-          Home goods at $62k/mo chose Klaviyo for browse on long-consideration decor — $1.4k monthly browse recovery. Impulse accessories peer at $45k/mo stayed Omnisend profitably — same comparison, different catalog consideration cycles.
-        </p>
-        <p>
-          Klaviyo at 250 orders/month wastes predictive CLV — Omnisend ships equal recovery at half cost. Klaviyo at 800 orders with complex replenishment — manual Omnisend tagging fails consumption cadence.
-        </p>
-        <p>
-          Four-flow test plus browse if consideration exceeds 48 hours. Winner is edit safety Thursday before drop — not feature spreadsheet density.
-        </p>
-        <p>
-          Resolve the operating boundary between platforms when Omnisend templates are outgrown but Klaviyo profile pricing is premature — document which system owns strategy, data, and channel execution.
-        </p>
-
-
-        <h2>Weekly operator checklist during trial</h2>
-        <p>
-          Weekly Klaviyo versus Omnisend cadence — Monday: time Shopify order sync into Klaviyo versus Omnisend entry (anything over ten minutes breaks suppression testing). Wednesday: run a single edge case — gifted order, subscription tag, financed high-AOV cart — through both Klaviyo and Omnisend. Friday: re-model twelve-month cost on actual Klaviyo versus Omnisend sends; bloated lists hurt contact billing, heavy calendars hurt send billing.
-        </p>
-        <p>
-          Whichever side of Klaviyo versus Omnisend maps to this quarter’s constraint deserves the vote — Klaviyo for depth-limited teams, Omnisend for bandwidth-limited ones — provided the edge holds without vendor rescue at peak. The Klaviyo versus Omnisend merchant anecdote above shows one shape of that tradeoff; verify it on your numbers before adopting it.
-        </p>
-        <h2>Pre-decision audit</h2>
-        <p>
-          Before signing a Klaviyo versus Omnisend annual plan: finish the four-flow test with written scores, model peak-season Klaviyo versus Omnisend send volume, check with sales if CRM or wholesale tags matter here, sunset dead profiles before pricing either side on contacts, and keep kill-switches ready if Klaviyo plus Omnisend coexist temporarily. The peer story cited for Klaviyo versus Omnisend is context — your tiebreaker trial after reading decides.
-        </p>
-        <p>
-          Between Klaviyo and Omnisend, the winner is whichever your marketer edits confidently the night before a flash sale — judged on Klaviyo versus Omnisend recovery revenue and margin, not demo polish.
-        </p>
-
-        <h2>Sale-week edit safety gate</h2>
-        <p>
-          The decisive tiebreaker between Klaviyo and Omnisend is rarely feature depth — it is whether a non-technical marketer can add recent-purchaser suppression and VIP early access in under thirty minutes on a Thursday before a drop. Run that edit in both trials before annual commit. Platforms that pass calm-week demos but fail sale-week edits cost more in foregone peak revenue than any annual subscription delta.
-        </p>
-        
-        <p>
-          Minimum viable trial length remains 90 days with weekly operator checklist — shorter trials miss billing surprises and peak-season behavior both Klaviyo and Omnisend surface only under operational stress. Baseline metrics in week one make before-and-after claims credible to finance.
-        </p>
-
-        <p>
-          <em>Week one of the Klaviyo versus Omnisend trial sets the numbers: capture welcome/cart/post-purchase/winback baselines for Klaviyo and Omnisend or later Klaviyo versus Omnisend lift claims won’t survive finance. Recheck the Klaviyo versus Omnisend architecture quarterly.</em>
-        </p>
-
-        <h2>Failure rehearsal: renewal-season panic migration</h2>
-        <p>
-          Teams rediscover comparison pages only at contract renewal under peak-season pressure — worst time to migrate. Schedule evaluation 120 days before renewal or BFCM, run four-flow trial calmly, and keep kill-switch spreadsheet ready. Panic migration causes duplicate cart recovery and deliverability dips that take quarters to heal.
-        </p>
-        <h2>90-day rollout: Omnisend to Klaviyo graduation path</h2>
-        <p>
-          Jewelry brand ran Omnisend months 1–8 at 420 orders/mo — welcome, cart, SMS live in 11 days. Month 9 browse-by-collection segmentation hit ceiling; Klaviyo trial scored 9/10 on variant back-in-stock and RFM refresh. Migration: 16 days, engaged-only import, rebuild four flows, sunset 6k ghost profiles before billing. Omnisend correct start; Klaviyo correct destination at order 800+ with complex catalog — document graduation trigger at Omnisend signup, not emergency peak-season panic.
-        </p>
-
-        <h2>Workflow validation: klaviyo vs omnisend</h2>
-        <p>
-          Score the Klaviyo versus Omnisend trial in writing before committing: welcome time-to-live on Klaviyo and Omnisend, cart suppression with purchase exclusion, gift-buyer post-purchase, engaged-versus-unengaged winback, twelve-month Klaviyo versus Omnisend pricing at projected size. If Klaviyo and Omnisend land within three points, the sub-thirty-minute sale-week edit breaks the tie — safer migration beats prettier demos.
-        </p>
-        <p>
-          Klaviyo versus Omnisend needs a full quarter: weekly sync/edge-case/pricing checks across Klaviyo and Omnisend, baselines captured in week one. Anything shorter misleads finance on Klaviyo-versus-Omnisend billing and overlap behavior.
-        </p>
-        <h2>Verdict</h2>
-        <p>
-          Klaviyo wins when your Shopify store has enough order volume and operational maturity to exploit a customer data platform — not just send campaigns. Omnisend wins when speed, multichannel convenience, and prebuilt ecommerce journeys matter more than predictive maximums. Run the four-flow workflow test on both before annual contracts. The winner is whichever platform makes safe edits on a busy Thursday before a drop — not whichever wins a feature spreadsheet.
-        </p>
+        <h2>Two overlapping platforms, one operating decision</h2>
+        <p>Both products market email, SMS and ecommerce automation. The useful question is whether your own merchandising rules are easier to express and maintain in one workspace. A small catalog can need difficult exclusions; a large catalog can use simple campaigns. Order count alone cannot select a platform.</p>
+        <h2>What the current listings establish</h2>
+        <p>The <a href="https://apps.shopify.com/klaviyo-email-marketing">Klaviyo listing</a> advertises customer data, segmentation and automated workflows. The <a href="https://apps.shopify.com/omnisend">Omnisend listing</a> advertises ready-made email templates, welcome, cart and post-purchase workflows, SMS and web push. These are supplier descriptions checked November 24, 2026, not comparative performance measurements. They do not establish that one tool lacks every capability emphasized by the other.</p>
+        <h2>Proposed catalog exercise: changing a collection</h2>
+        <p>This exercise has not been run. Use a seasonal collection containing products with variants, plus a discontinued product. Build a welcome message linking to the active collection, then change availability and inspect the preview. Record whether product selection updates, whether unavailable variants can appear, and whether the operator must duplicate a template. Ask for an explanation of the underlying event or property rather than accepting a polished demo.</p>
+        <h2>Cart suppression and overlapping journeys</h2>
+        <p>Create a test customer who signs up, begins checkout and purchases before the recovery message is due. Inspect enrollment, purchase exclusion and queued-message behavior. Then enroll a separate eligible test contact in winback and cart recovery. Decide which journey should take priority and implement that rule. A template being available does not prove it has your intended re-entry or exclusion behavior.</p>
+        <h2>When multichannel convenience matters</h2>
+        <p>If web push is part of your plan, verify browser permission capture, supported devices, identity matching and reporting in Omnisend. Compare the exact channels and integrations available in the Klaviyo account being quoted. Email permission is not permission for another channel. If your team will use only email, do not assign monetary value to channels it will not operate.</p>
+        <h2>Price the same audience and calendar</h2>
+        <p>Give each supplier the same marketable audience, suppressed records, campaign calendar and automation estimates. Request normal-month and sale-month quotes with message allowances, SMS destinations, overages, support and billing rules. Include implementation and the time spent maintaining custom segments. Avoid deleting useful customer history merely to reduce a headline contact count; understand suppression, retention and billing consequences first.</p>
+        <h2>A sale change that exposes maintenance cost</h2>
+        <p>Ask the person who will operate the account to add VIP early access while excluding recent purchasers. Have another person explain the resulting audience before any send. Keep the saved segment, preview and exclusion counts. Prefer the implementation the team can explain and reverse; do not turn an arbitrary completion-time target into a product ranking.</p>
+        <h2>Move only after the replacement is ready</h2>
+        <p>Inventory templates, forms, consent records, discounts, automations and reports. Rebuild the essential journey in draft and reconcile identities and exclusions before cutover. Assign a single sender to each trigger and disable the old journey before enabling its replacement. Keep an owner and rollback procedure. Evaluate delivered-message and complaint data separately from vendor-attributed sales; attribution windows can make two dashboards claim the same order.</p>
+        <h2>Decision</h2>
+        <p>Choose Omnisend when its templates and channel workflow meet the actual rules with manageable upkeep. Choose Klaviyo when the required data and segmentation workflow is demonstrated there and justifies the operating cost. If both pass, team ownership, implementation effort and the scoped quote are defensible tiebreakers. Neither choice guarantees incremental revenue.</p>
       </article>
-
       <div class="mt-10 max-w-4xl text-sm">
         <p class="font-black text-[#24170f]">Related comparisons</p>
         <p class="mt-2">
@@ -254,5 +65,5 @@ const faqs = [
     </div>
   </section>
 
-  <FaqSection faqs={faqs} title="Klaviyo vs Omnisend FAQ" />
+  <FaqSection faqs={faqs} title="Klaviyo vs Omnisend for Shopify email FAQ" />
 </BaseLayout>

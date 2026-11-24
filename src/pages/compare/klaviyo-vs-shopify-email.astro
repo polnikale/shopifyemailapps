@@ -1,263 +1,59 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
-import TldrBox from '../../components/TldrBox.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import { siteFromHost } from '../../content';
 
 const site = siteFromHost();
 const path = '/compare/klaviyo-vs-shopify-email';
-const title = 'Klaviyo vs Shopify Email: 2026 Comparison';
-const desc = 'Klaviyo vs Shopify Email for Shopify stores — when to graduate off native campaigns, automation gaps, pricing models, and lifecycle revenue reality.';
-
+const title = "Klaviyo vs Shopify Email for Shopify stores: 2026 comparison";
+const desc = "Compare the current Shopify Messaging automations with a demonstrated Klaviyo requirement before planning a migration.";
 const faqs = [
   {
-    question: 'Is Klaviyo or Shopify Email better for a new Shopify store?',
-    answer: 'Shopify Email wins the first 90 days — zero extra app install, product blocks from catalog, 10k free sends monthly. Klaviyo wins once cart recovery, browse abandonment, and segmented automations drive measurable revenue — typically past 300–500 orders/month. Shopify Email is a starting point, not a retention destination for growth-focused stores.',
+    "question": "Does Shopify only send newsletters?",
+    "answer": "No. Current Shopify Messaging documentation describes marketing automations and custom workflow options through Shopify Flow."
   },
   {
-    question: 'How does Klaviyo vs Shopify Email pricing compare?',
-    answer: 'Shopify Email: 10,000 free emails/month, then roughly $1 per 1,000 emails — no per-contact fees. Klaviyo: free tier to ~250 profiles, then active profile pricing from ~$20/mo scaling steeply. Shopify Email looks cheaper on paper until you factor lost cart recovery revenue. A store sending 30k emails/month might pay ~$20 to Shopify vs $150+ to Klaviyo — but Klaviyo automations often recover multiples of that delta.',
+    "question": "When should I move to Klaviyo?",
+    "answer": "When a demonstrated requirement and scoped business case justify the transition, rather than at a fixed monthly order count."
   },
   {
-    question: 'What automation does Shopify Email lack?',
-    answer: 'Meaningful flow builder depth. No browse abandonment, limited cart recovery sophistication, no predictive CLV, no complex suppression during sales, no flow A/B testing, no SMS. Shopify Email handles broadcasts and basic templates inside Admin — fine for announcements, insufficient for lifecycle programs.',
-  },
-  {
-    question: 'When should I graduate from Shopify Email to Klaviyo?',
-    answer: 'Signals: cart recovery is manual or nonexistent, you send the same sale blast to everyone, you cannot suppress recent purchasers during promotions, email revenue is untracked by journey, or you are paying for Klaviyo-level strategy with Shopify Email-level tooling. Most serious stores graduate within 6–12 months of traction.',
-  },
-  {
-    question: 'Can I use Shopify Email and Klaviyo together?',
-    answer: 'Technically yes, practically messy. Duplicate sends confuse subscribers and damage deliverability. Pick one sender for marketing automations. Common path: Shopify Email for occasional owner-sent announcements during migration, Klaviyo for all lifecycle flows — then sunset Shopify Email once team confidence is high.',
-  },
-  {
-    question: 'Does staying on Shopify Email hurt deliverability?',
-    answer: 'Not inherently — Shopify sends through reputable infrastructure. The risk is behavioral: batch-and-blast without engagement segmentation hurts inbox placement over time. Klaviyo\'s sunset and engagement tools make hygiene easier. Poor strategy hurts deliverability on any platform.',
-  },
-  {
-    question: 'What workflow test should decide the winner?',
-    answer: 'Try building abandoned cart with dynamic products, purchase suppression, and discount caps in Shopify Email — then attempt browse abandonment and winback with engagement splits. If two of four are impossible or require manual workarounds, that is your graduation trigger. Klaviyo should complete all four in trial.',
-  },
+    "question": "Can I keep both senders?",
+    "answer": "Give each marketing trigger one owner, inspect queued messages and coordinate audiences and calendars to prevent overlap."
+  }
 ];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
   <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
-
   <section class="py-14 md:py-20">
     <div class="container">
-      <nav class="mb-8 text-sm">
-        <a class="link" href="/compare">Comparisons</a>
-        <span class="mx-2 text-[#5d3a1d]">/</span>
-        <span class="text-[#5d3a1d]">Klaviyo vs Shopify Email</span>
-      </nav>
-
+      <nav class="mb-8 text-sm"><a class="link" href="/compare">Comparisons</a></nav>
       <header class="max-w-4xl">
         <p class="editorial-kicker">Head-to-head</p>
         <h1 class="hero-title mt-5">Klaviyo vs Shopify Email for Shopify stores</h1>
-        <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-          Every Shopify merchant starts with Shopify Email — it is right there in Admin, free sends included, product blocks ready. The question is when Klaviyo becomes worth the install, bill, and learning curve. We tested both on a $12k/mo handmade goods shop still blasting sale emails manually, a $70k/mo apparel brand delaying migration out of inertia, and a store that graduated at 450 orders/month and measured the recovery delta.
-        </p>
+        <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">Compare the current Shopify Messaging automations with a demonstrated Klaviyo requirement before planning a migration.</p>
       </header>
-
-      <div class="mt-12 max-w-4xl">
-        <TldrBox
-          picks={[
-            { label: 'Lifecycle automation', tool: 'Klaviyo', reason: 'Cart, browse, winback, and segmented flows with revenue attribution.' },
-            { label: 'Zero-friction start', tool: 'Shopify Email', reason: 'Native Admin campaigns with free monthly sends.' },
-            { label: 'Revenue at scale', tool: 'Klaviyo', reason: 'Retention programs that survive catalog and list growth.' },
-            { label: 'Cost at low volume', tool: 'Shopify Email', reason: 'Pay per send, not per contact — cheap for infrequent blasts.' },
-          ]}
-        />
-      </div>
-
-      <div class="mt-12 card overflow-x-auto">
-        <h2 class="px-5 py-4 font-serif text-2xl font-black text-[#24170f]">Comparison at a glance</h2>
-        <table class="data-table">
-          <thead>
-            <tr><th>Dimension</th><th>Klaviyo</th><th>Shopify Email</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Best for</td><td>Retention programs at scale</td><td>Basic campaigns inside Admin</td></tr>
-            <tr><td>Starting price</td><td>Free tier; paid from ~$20/mo</td><td>10k free emails/mo; ~$1/1k after</td></tr>
-            <tr><td>Billing model</td><td>Active profiles + SMS</td><td>Per email sent</td></tr>
-            <tr><td>Shopify depth</td><td>Native — full event graph</td><td>Native — catalog and customers</td></tr>
-            <tr><td>Automation</td><td>Advanced flows</td><td>Minimal</td></tr>
-            <tr><td>Segmentation</td><td>Predictive, RFM, behavioral</td><td>Basic customer lists</td></tr>
-            <tr><td>SMS</td><td>Built-in</td><td>Not available</td></tr>
-            <tr><td>Typical lifecycle</td><td>12+ months as primary ESP</td><td>3–12 months then graduate</td></tr>
-          </tbody>
-        </table>
-      </div>
-
       <article class="prose-shopify mt-14 max-w-4xl">
-        <h2>Why this comparison matters for Shopify merchants</h2>
-        <p>
-          Shopify Email exists to remove friction — not to compete with Klaviyo's full retention stack. Treating them as peers leads to either premature Klaviyo spend on a 50-order/month hobby store, or years of leaked cart revenue on a scaling brand because Admin email is "good enough." The handmade goods shop was the former risk; the apparel brand was the latter reality.
-        </p>
-        <p>
-          Shopify Email excels at: product launch announcements, BFCM blasts with catalog blocks, and owners who send monthly without wanting another dashboard. It fails at: automated cart recovery with conditional discounts, browse abandonment, replenishment timing, and suppression logic that prevents emailing yesterday's buyers during today's sale.
-        </p>
-
-        <h2>Workflow test: welcome series</h2>
-        <p>
-          Shopify Email has no true multi-step welcome automation — the handmade shop sent a single welcome manually after signup export. Klaviyo deployed three-email welcome with signup-source branching in one afternoon. For stores capturing emails via popup, the gap between "one welcome" and "nurture sequence" is measurable first-90-day conversion.
-        </p>
-        <p>
-          The apparel brand argued Shopify Email was "fine" because welcome was not prioritized. Meanwhile 2,400 new subscribers monthly received nothing automated for five days until a intern-sent generic blast. Klaviyo welcome reduced time-to-first-purchase by six days in the test cohort.
-        </p>
-
-        <h2>Workflow test: abandoned cart</h2>
-        <p>
-          This is where graduation pays for itself. Shopify Email offers basic cart recovery templates — single email, limited timing control, no multi-step series with discount escalation, weak suppression when purchase completes mid-sequence. Klaviyo's three-email cart flow with dynamic blocks recovered 3.2x more attributed revenue for the store that migrated at 450 orders/month.
-        </p>
-        <p>
-          Discount capping — no code for carts over $150 — is not realistically enforceable in Shopify Email without manual list gymnastics. Klaviyo flow filters handle it in minutes. Margin leakage during promotions is the hidden cost of staying native too long.
-        </p>
-
-        <h2>Pricing reality at growing list sizes</h2>
-        <p>
-          Shopify Email economics favor low-frequency senders. 8k contacts with one monthly newsletter and occasional sales: under $15/mo. Klaviyo at 8k profiles: $100–150/mo. The crossover is not send cost — it is recovered revenue from automations Shopify Email cannot run.
-        </p>
-        <p>
-          The apparel brand spent ~$40/mo on Shopify Email sends while leaving an estimated $8k–12k/month in recoverable cart and winback revenue on the table. Klaviyo at $220/mo was negative ROI only in the first month — positive by month two when flows stabilized. Calculate opportunity cost, not just line-item pricing.
-        </p>
-
-        <h2>Shopify data depth in production</h2>
-        <p>
-          Klaviyo ingests browse events, predictive CLV, and catalog changes in real time. Shopify Email knows what you bought and what is in catalog — sufficient for product blocks in blasts, insufficient for "viewed three times, never purchased" winback. If your retention strategy uses behavioral triggers beyond purchase history, Shopify Email is a dead end.
-        </p>
-        <p>
-          Shopify Email's genuine advantage is operational simplicity — no integration to break, brand colors pulled from theme, sends from familiar Admin. For solo founders treating email as occasional communication, that matters. For anyone with a retention KPI, it becomes a cage.
-        </p>
-
-        <h2>Team fit: who should choose which</h2>
-        <p><strong>Choose Klaviyo if:</strong></p>
-        <ul>
-          <li>You have 400+ monthly orders or fast growth toward that threshold</li>
-          <li>Cart recovery and automated welcome are untapped revenue</li>
-          <li>You run frequent promotions needing purchaser suppression</li>
-          <li>Email attributable revenue is tracked in your growth model</li>
-        </ul>
-        <p><strong>Choose Shopify Email if:</strong></p>
-        <ul>
-          <li>Orders are under 200/month and email is occasional not strategic</li>
-          <li>You need one sale blast monthly with product blocks — nothing more</li>
-          <li>Migration bandwidth is zero and you accept automation gaps temporarily</li>
-          <li>You are validating product-market fit before retention investment</li>
-        </ul>
-
-        <h2>90-day rollout: Admin email to CDP graduation</h2>
-        <p>
-          Weeks 1–4: Run cart recovery test — Shopify Email manual resend versus Klaviyo three-step automation on dev store with real product catalog.
-        </p>
-        <p>
-          Weeks 5–8: Klaviyo trial with welcome, cart, post-purchase, one winback segment. Measure attributed revenue against Shopify Email blast baseline from prior quarter.
-        </p>
-        <p>
-          Weeks 9–12: Model Klaviyo profile cost at current list size plus 25% growth. Graduate when automation revenue exceeds subscription within 60 days — typical above 400 orders/month.
-        </p>
-
-        <h2>Margin math: per-send pricing versus profile CDP</h2>
-        <p>
-          Shopify Email at roughly $10/mo for 10k sends looks cheaper than Klaviyo at $150/mo for 8k profiles. Cart recovery gap on 450 orders/month at $68 AOV often exceeds $4k monthly — Klaviyo pays back in two weeks. Native email "free tier" is expensive when automations do not exist; compare recovery revenue, not send line items.
-        </p>
-        <p>
-          Browse abandonment often doubles graduation ROI for considered-purchase catalogs: home goods brand browse recovery added $1.6k monthly Klaviyo attributed revenue invisible to Shopify Email blast metrics — include browse in trial scorecard when average consideration exceeds 48 hours.
-        </p>
-
-        <h2>Failure rehearsal: graduation timing errors</h2>
-        <p>
-          <strong>Shopify Email past 500 orders/month.</strong> Measurable cart leakage while comparing send pricing in isolation — year-two strategy failure.
-        </p>
-        <p>
-          <strong>Klaviyo before 250 orders/month.</strong> Profile pricing without segmentation discipline — paying for CDP nobody operates.
-        </p>
-        <p>
-          <strong>Graduating without list hygiene.</strong> Inactive profiles inflate Klaviyo billing — sunset quarterly before migration, not after sticker shock.
-        </p>
-
-        <h2>Merchant scenario: growth store scheduling Q2 graduation</h2>
-        <p>
-          A $52k/mo home goods brand tracked 90 days of Shopify Email blasts-only revenue — $1.1k attributed per campaign average. Klaviyo trial cart flow alone recovered $3.8k monthly by week six. They scheduled full graduation before BFCM, keeping Shopify Email only for owner-written holiday letter — one send, no automation overlap.
-        </p>
-        <p>
-          Profile pricing shock is real but usually smaller than cart leakage: model Klaviyo at your current list size plus 20% growth, then compare against 90 days of unattributed abandoned checkout value in Shopify Analytics. When leakage exceeds 3x subscription cost, graduation is arithmetic — not a platform preference debate.
-        </p>
-
-
-        <h2>Operational depth: graduation arithmetic worksheet</h2>
-        <p>
-          Home goods brand compared 90 days Shopify Email campaign revenue ($1.1k average per blast) versus Klaviyo trial cart ($3.8k/mo by week six). Leakage exceeded 3x Klaviyo subscription cost — graduation became arithmetic, not preference debate.
-        </p>
-        <p>
-          Browse abandonment doubles graduation ROI for considered-purchase catalogs — $1.6k monthly invisible to blast-only metrics. Include browse in trial scorecard when consideration exceeds 48 hours.
-        </p>
-        <p>
-          Graduation cutover: keep Shopify Email for owner holiday letter one send only — no automation overlap. Profile pricing shock smaller than cart leakage when hygiene applied before import.
-        </p>
-        <p>
-          Sub-250 orders/month stores should trial Shopify Email or Omnisend before Klaviyo CDP — paying for predictive segments nobody queries is negative ROI. Klaviyo wins past 400 orders when lifecycle automation revenue exceeds subscription within 60 days of flow deployment.
-        </p>
-
-
-        <h2>Weekly operator checklist during trial</h2>
-        <p>
-          Weekly Klaviyo versus Shopify Email cadence — Monday: time Shopify order sync into Klaviyo versus Shopify Email entry (anything over ten minutes breaks suppression testing). Wednesday: run a single edge case — gifted order, subscription tag, financed high-AOV cart — through both Klaviyo and Shopify Email. Friday: re-model twelve-month cost on actual Klaviyo versus Shopify Email sends; bloated lists hurt contact billing, heavy calendars hurt send billing.
-        </p>
-        <p>
-          Klaviyo’s edge in this Klaviyo versus Shopify Email pairing pays only if it relieves your binding constraint this quarter; Shopify Email’s convenience pays only if your team sustains it through peak without support tickets. Treat the merchant story in this Klaviyo versus Shopify Email page as one revenue shape — re-validate against your orders, catalog quirks, and operator hours before copying the setup.
-        </p>
-        <h2>Pre-decision audit</h2>
-        <p>
-          Before annual commitment on Klaviyo or Shopify Email: complete the four-flow test with documented scores, model peak-season send volume, interview sales if CRM or wholesale tags matter, sunset inactive profiles before quoting contact pricing, and schedule migration kill-switches if a hybrid stack emerges. Your edge case is the tiebreaker trial you run after reading, not the verdict paragraph alone.
-        </p>
-        <p>
-          Klaviyo versus Shopify Email goes to the platform your operator trusts at 10pm before a drop: recovery revenue and margin retained decide, not the Klaviyo–Shopify Email feature grid.
-        </p>
-
-        <h2>Sale-week edit safety gate</h2>
-        <p>
-          The decisive tiebreaker between Klaviyo and Shopify Email is rarely feature depth — it is whether a non-technical marketer can add recent-purchaser suppression and VIP early access in under thirty minutes on a Thursday before a drop. Run that edit in both trials before annual commit. Platforms that pass calm-week demos but fail sale-week edits cost more in foregone peak revenue than any annual subscription delta.
-        </p>
-        
-        <p>
-          Minimum viable trial length remains 90 days with weekly operator checklist — shorter trials miss billing surprises and peak-season behavior both Klaviyo and Shopify Email surface only under operational stress. Baseline metrics in week one make before-and-after claims credible to finance.
-        </p>
-
-        <p>
-          <em>For Klaviyo versus Shopify Email, baselines first — record all four flows on Klaviyo and Shopify Email in week one — then re-adjudicate Klaviyo versus Shopify Email every quarter as revenue shape moves.</em>
-        </p>
-
-        <h2>Failure rehearsal: renewal-season panic migration</h2>
-        <p>
-          Teams rediscover comparison pages only at contract renewal under peak-season pressure — worst time to migrate. Schedule evaluation 120 days before renewal or BFCM, run four-flow trial calmly, and keep kill-switch spreadsheet ready. Panic migration causes duplicate cart recovery and deliverability dips that take quarters to heal.
-        </p>
-
-        <p>
-          Pair comparison verdict with one related store-type guide and one use-case playbook linked at page bottom — workflow tests in trials matter more when catalog shape and primary bottleneck are named explicitly in your internal rollout doc.
-        </p>
-        <p>Minimum 90-day trial with documented four-flow scores before renewal — shorter evaluations miss peak-season billing surprises and edit-safety failures that determine real-world platform fit.</p>
-
-        <h2>Merchant scenario: $38k/mo store graduating Shopify Email</h2>
-        <p>
-          Plant shop at $38k/mo ran Shopify Email 14 months — welcome and monthly broadcast fine; cart recovery 4.1%, no browse abandonment. Klaviyo trial recovered $2,400/mo attributed by week six with cart and browse flows. Shopify Email free tier economics lost against incremental recovery minus $180/mo Klaviyo starter. Graduation trigger: when cart plus browse combined under 8% and order volume exceeds 250/mo, native Shopify Email becomes revenue leak not cost savings.
-        </p>
-
-        <h2>Workflow validation: klaviyo vs shopify email</h2>
-        <p>
-          Klaviyo versus Shopify Email scorecard first, contract second: time welcome live on Klaviyo versus Shopify Email, verify cart exclusion, gift-buyer post-purchase, winback splits, and twelve-month cost. When Klaviyo and Shopify Email converge within three points, edit safety under time pressure decides Klaviyo versus Shopify Email.
-        </p>
-        <p>
-          Ninety days is the Klaviyo versus Shopify Email floor — weekly operator checks on Klaviyo and Shopify Email plus day-one baselines — because truncated Klaviyo versus Shopify Email pilots miss the billing and suppression surprises finance cares about.
-        </p>
-        <h2>Verdict</h2>
-        <p>
-          Shopify Email is the right Day One tool and the wrong Year Two strategy for growth stores. Klaviyo wins whenever lifecycle automation revenue exceeds its subscription cost — which for most stores past 400 orders/month is within 60 days of proper flow deployment. Do not compare send pricing in isolation. Run the cart recovery test; if Shopify Email cannot match Klaviyo's attributed recovery, schedule graduation this quarter.
-        </p>
+        <h2>Shopify Email is now part of a broader comparison</h2>
+        <p>The older framing of Shopify as broadcasts only is misleading. <a href="https://help.shopify.com/en/manual/promoting-marketing/create-marketing/marketing-automations">Shopify documents Messaging automations</a> for email, SMS and WhatsApp, including actions such as abandoned carts and newsletter signup. The documentation also points to Shopify Flow for custom workflows and third-party apps. Checked November 24, 2026: inspect your account and channel eligibility rather than assuming every capability is enabled everywhere.</p>
+        <h2>Compare a requirement, not a growth milestone</h2>
+        <p>The <a href="https://apps.shopify.com/klaviyo-email-marketing">Klaviyo listing</a> advertises sign-up forms, welcome and abandoned-checkout setup, data-driven segmentation and automated workflows. Those capabilities overlap with jobs merchants may already handle in Shopify. An order-count threshold or the age of a store does not establish when changing platforms pays off.</p>
+        <h2>Map the current Shopify workflow first</h2>
+        <p>Open each active marketing automation and record its trigger, audience conditions, delay, message content and exit behavior. Identify any custom Shopify Flow steps and who maintains them. Separate marketing automations from order confirmations and other transactional messages. A migration should not accidentally disable transactional communication or leave two marketing recoveries enabled.</p>
+        <h2>Proposed exercise: purchase while welcome is waiting</h2>
+        <p>This exercise has not been performed. Create an eligible test signup, schedule a follow-up, then place a test order before it sends. Inspect whether the customer should remain in the welcome journey or receive different content. Reproduce that intended rule in Shopify and Klaviyo, with identical content and permission assumptions. Save the execution history and explain any differences in enrollment and exclusion.</p>
+        <h2>Cart, checkout and browse are distinct triggers</h2>
+        <p>Specify which action starts recovery and how the visitor becomes identifiable. A checkout email does not demonstrate that an anonymous product view can trigger a message. Ask each implementation to show the relevant event, required tracking setup and purchase exclusion. Test returning buyers, unavailable items and an order placed on another device if those cases matter to your business.</p>
+        <h2>Segmentation and merchandising requirements</h2>
+        <p>Write the actual audience expression: for example, customers who bought a particular product but should not receive a promotion for its replacement yet. Reproduce it with available properties and events, then check sample customer records. If you need predictive features, request eligibility, data requirements and an account demonstration rather than assuming every small dataset supports a useful prediction.</p>
+        <h2>Compare complete costs and credible benefits</h2>
+        <p>Request current channel-specific prices and allowances from Shopify and a scoped Klaviyo quote using the same audience and send calendar. Include profile rules, message usage, connected apps and staff maintenance. Abandoned checkout value is not recoverable profit, and vendor-attributed orders are not automatically incremental. A proposed controlled evaluation should use consistent attribution and account for discounts, returns and message costs.</p>
+        <h2>Cutover without losing ownership</h2>
+        <p>Keep draft replacements disabled while validating event mapping, permission status and product content. Assign one owner to each live marketing trigger. At cutover, disable the old automation, check queued messages and then enable its replacement. Maintain access to exports and a rollback plan. If an occasional Shopify campaign remains, include it in the same audience and promotional calendar review.</p>
+        <h2>Decision</h2>
+        <p>Stay with Shopify when the demonstrated automations satisfy the required journeys and your team can operate them. Consider Klaviyo when a specific data, segmentation or workflow requirement is proved there and the improvement justifies migration and ongoing cost. There is no evidence here for a guaranteed revenue lift, mandatory migration deadline or universal deliverability winner.</p>
       </article>
-
       <div class="mt-10 max-w-4xl text-sm">
         <p class="font-black text-[#24170f]">Related comparisons</p>
         <p class="mt-2">
@@ -270,5 +66,5 @@ const faqs = [
     </div>
   </section>
 
-  <FaqSection faqs={faqs} title="Klaviyo vs Shopify Email FAQ" />
+  <FaqSection faqs={faqs} title="Klaviyo vs Shopify Email for Shopify stores FAQ" />
 </BaseLayout>
