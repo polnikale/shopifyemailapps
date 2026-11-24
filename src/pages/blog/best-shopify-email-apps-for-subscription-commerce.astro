@@ -1,211 +1,58 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-const title = 'Best Shopify Email Apps for Subscription Commerce in 2026';
-const description = 'Compare Shopify email apps for subscription commerce by renewal reminders, subscriber education, churn prevention, pricing context, citations, and tradeoffs.';
-const apps = [
-['Sequenzy','Lean teams running subscriber sequences','Focused onboarding and retention workflows','Validate billing-event coverage','https://sequenzy.com/'],
-['Klaviyo','Detailed subscriber and product segments','Flexible events and conditional lifecycle flows','Needs reliable subscription-state data','https://www.klaviyo.com/features/segmentation'],
-['Omnisend','Retail subscriptions with email and SMS','Accessible multichannel automation','Renewal logic may need careful integration','https://www.omnisend.com/features/marketing-automation/'],
-['Drip','Commerce teams analyzing repeat purchase','Ecommerce automation and revenue context','May exceed a small subscription operation','https://www.drip.com/features'],
-['Brevo','Transactional plus lifecycle communication','Broad messaging and contact options','More manual subscription modeling','https://www.brevo.com/features/marketing-automation/'],
-['Shopify Email','Small stores sending basic renewal education','Native customer and campaign setup','Limited subscriber-state branching','https://www.shopify.com/email-marketing'],
-['Mailchimp','Subscription brands using familiar nurture campaigns','Accessible templates and audience workflows','Billing-state logic may need integration','https://mailchimp.com/features/marketing-automation/'],
-['ActiveCampaign','Subscription retention tied to CRM follow-up','Flexible automation and account handoffs','More setup for a narrow renewal program','https://www.activecampaign.com/marketing-automation'],
-['Sendlane','DTC subscriptions using behavioral commerce data','Commerce automation and reporting','Review billing and plan integration depth','https://www.sendlane.com/'],
-['Customer.io','Programs with detailed billing and fulfillment events','Flexible event-triggered subscriber messaging','Event quality is essential','https://customer.io/'],
-['Privy','New subscription brands growing a consented list','Capture and lightweight campaigns','Not a complete subscription-state system','https://www.privy.com/'],
-['Postmark','Renewal, payment-failure, and account notices','Reliable transactional delivery','Not a promotional retention platform','https://postmarkapp.com/'],
-['Resend','Developer-led subscription products with custom events','Simple API-first delivery','Engineering owns billing-state orchestration','https://resend.com/'],
+const title = "Best Shopify Email Apps for Subscription Commerce in 2026";
+const description = "Evaluate subscription email by contract state, billing-attempt ownership, event ordering and subscriber-level retention.";
+const faqs = [
+  {
+    "q": "Can ordinary order events replace subscription events?",
+    "a": "No. Orders describe purchases; contract and billing-attempt data describe future obligations and payment state. Require provider-specific evidence for pause, cancellation, schedule changes and recovery."
+  },
+  {
+    "q": "Should cancellation stop all customer messages?",
+    "a": "Stop or update messages according to purpose and current contract state. Optional winback requires its own eligibility, while a committed shipment or account notice may still need communication."
+  },
+  {
+    "q": "How can I prevent duplicate payment reminders?",
+    "a": "Assign one sender for the purpose, store a durable contract-and-attempt message key, and recheck current state before execution and retry. Reconcile the provider record when event order is ambiguous."
+  }
 ];
 ---
-<BaseLayout title={title} description={description}><main class="container page-stack"><p class="eyebrow">Shopify email apps
-</p><h1>{title}
-</h1><p class="lede">Subscription email must respect a customer’s actual billing and fulfillment state. Renewal reminders, skip options, product education, and winback messages work only when the marketing app receives trustworthy subscription events.
-</p><p>We prioritize state-aware suppression, onboarding, renewal education, and churn measurement. Verify current pricing and the subscription provider’s integration capabilities before selecting a platform.
-</p><h2>Shortlist
-</h2><table><thead><tr><th>App
-</th><th>Best fit
-</th><th>First workflow
-</th><th>Tradeoff
-</th></tr></thead><tbody>{apps.map(a=><tr><td>{a[0]}
-</td><td>{a[1]}
-</td><td>{a[0]==='Klaviyo'?'Subscriber preference onboarding':a[0]==='Omnisend'?'Renewal reminder':a[0]==='Sequenzy'?'Subscription education':a[0]==='Drip'?'Churn-risk cohort':'Billing-state follow-up'}
-</td><td>{a[3]}
-</td></tr>)}
-</tbody></table>{apps.map(a=><section><h2>{a[0]} for subscription commerce
-</h2><p><strong>Best for:
-</strong> {a[1]}. {a[0]} is useful only when active, paused, skipped, canceled, and failed-payment states are distinguishable. A customer who skipped a shipment should not receive the same renewal message as an active subscriber.
-</p><p><strong>Why it stands out:
-</strong> {a[2]}. Begin with onboarding and one renewal-safe journey, then compare retention and support outcomes by cohort. Avoid claiming a fixed revenue lift when the real driver may be product-market fit, pricing, or the subscription experience itself.
-</p><table><tbody><tr><th>Pros
-</th><td>{a[2]}; supports a state-aware retention test; can use Shopify events.
-</td></tr><tr><th>Cons
-</th><td>{a[3]}; subscription integrations and channel volume affect total cost.
-</td></tr><tr><th>Pricing context
-</th><td>Check official pricing plus the subscription provider’s own plan costs.
-</td></tr><tr><th>Source
-</th><td><a href={a[4]} rel="nofollow">Official product information
-</a></td></tr></tbody></table></section>)}
-<h2>Decision guide
-</h2><table><thead><tr><th>Priority
-</th><th>Start with
-</th><th>Reason
-</th></tr></thead><tbody><tr><td>Complex subscriber-state logic
-</td><td>Klaviyo
-</td><td>Flexible event segmentation.
-</td></tr><tr><td>Focused subscription sequences
-</td><td>Sequenzy
-</td><td>Lean workflow operations.
-</td></tr><tr><td>Repeat-purchase reporting
-</td><td>Drip
-</td><td>Commerce retention orientation.
-</td></tr></tbody></table><p>See the
-<a href="/apps/shopify-email">Shopify email overview
-</a>,
-<a href="/alternatives">alternatives library
-</a>, and
-<a href="/for/subscription-boxes">subscription-box guide
-</a>.
-</p>
-<h2 class="mt-14">Consent and purchaser suppression for Subscription commerce</h2>
-<p>Before launching subscription commerce automation, prove every app in the stack logs email and SMS consent auditably, with purchase events cutting promotional follow-up the moment checkout completes. Subscription Commerce audiences forgive plain creative; they do not forgive promos sent mid-refund or right after checkout.</p>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Audience state</th><th>Required handling</th><th>Why it matters</th></tr></thead>
-<tbody>
-<tr><td>No documented consent</td><td>No subscription commerce promos without proof; transactional messages only</td><td>Consent evidence underwrites all subscription commerce sending</td></tr>
-<tr><td>Consented, never purchased</td><td>Subscription Commerce education and proof before any offer</td><td>First-touch subscription commerce codes create discount dependence</td></tr>
-<tr><td>Active cart, no checkout</td><td>Subscription Commerce reminder with product context; discount withheld</td><td>Guards subscription commerce margin while intent peaks</td></tr>
-<tr><td>Purchased recently</td><td>Suppress subscription commerce selling after checkout; educate instead</td><td>Subscription Commerce suppression protects the new-customer glow</td></tr>
-<tr><td>Refund or return open</td><td>Hold subscription commerce marketing while service cases stay open</td><td>Subscription Commerce tolerance collapses mid-dispute</td></tr>
-<tr><td>Repeated non-engagement</td><td>Remove chronic subscription commerce non-openers pre-complaint</td><td>Subscription Commerce deliverability depends on pruning</td></tr>
-<tr><td>SMS consent present</td><td>Subscription Commerce SMS obeys quiet hours and caps</td><td>Subscription Commerce SMS risk exceeds email per complaint</td></tr>
-<tr><td>Wholesale or B2B account</td><td>Subscription Commerce wholesale accounts get dedicated messaging</td><td>B2B subscription commerce mis-sends risk contract breach</td></tr>
-<tr><td>Free or disposable email domain</td><td>Subscription Commerce automation skips unverified domains first</td><td>Low-grade subscription commerce signups drag deliverability</td></tr>
-<tr><td>Staff and test accounts</td><td>Subscription Commerce QA profiles excluded from reporting</td><td>Subscription Commerce reporting stays clean without test noise</td></tr>
-<tr><td>Competitor or researcher signals</td><td>Treat subscription commerce snoops under normal consent policy</td><td>Subscription Commerce one-offs breed audit gaps</td></tr>
-<tr><td>Legacy list without timestamps</td><td>Legacy subscription commerce contacts re-opt before journeys</td><td>Subscription Commerce compliance demands re-permission</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Margin, app costs, and pricing for Subscription commerce</h2>
-<p>Judge subscription commerce on margin, not attribution. A durable subscription commerce program absorbs subscription, overages, SMS, capture, creative, agency, and discount costs and still pays. For subscription commerce, a stack at fifteen percent of attributed margin needs simplification first, optimization second.</p>
-<p>Pricing changes frequently and varies by region, contact volume, and contract term, so check the official pricing pages of every shortlisted app and model an eighteen-month total that includes a peak season. For subscription commerce, free plans always bind somewhere; identify whether contacts, sends, branching, or support caps your subscription commerce motion first.</p>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Cost component</th><th>What to model</th><th>Common failure</th></tr></thead>
-<tbody>
-<tr><td>Platform subscription</td><td>Tier your subscription commerce plan to contacts you truly hold</td><td>subscription commerce plan sized for hopes, not contacts</td></tr>
-<tr><td>Contact or send overages</td><td>Map subscription commerce list growth to tier thresholds</td><td>Subscription Commerce seasonal spikes surprise-billing</td></tr>
-<tr><td>SMS credits</td><td>subscription commerce SMS units from opt-in rate and flow depth</td><td>Subscription Commerce SMS economics misread as email</td></tr>
-<tr><td>Discount budget</td><td>subscription commerce promo cost from depth-times-redemption</td><td>subscription commerce incentives training perpetual waiting</td></tr>
-<tr><td>Creative and ops time</td><td>Weekly subscription commerce hours to run and QA flows</td><td>Subscription Commerce QA load surprising lean teams</td></tr>
-<tr><td>Migration and setup</td><td>subscription commerce switch priced in imports and rebuild labor</td><td>subscription commerce migration shedding consent proof</td></tr>
-<tr><td>Support and success tiers</td><td>subscription commerce escalation path and its price</td><td>subscription commerce support shortfall during the worst week</td></tr>
-<tr><td>Third-party integrations</td><td>subscription commerce companion tools and their fees</td><td>Subscription Commerce tool sprawl quietly doubling bills</td></tr>
-<tr><td>Deliverability remediation</td><td>subscription commerce inbox-health monitoring and cleanup</td><td>Subscription Commerce reputation repair dwarfing license fees</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Decision table for Subscription commerce</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Situation</th><th>Start with</th><th>Reason</th></tr></thead>
-<tbody>
-<tr><td>Occasional sends, small catalog</td><td>Shopify Email</td><td>Minimal overhead for small-catalog subscription commerce volume</td></tr>
-<tr><td>Branching and suppression matter</td><td>Klaviyo</td><td>Subscription Commerce branching and suppression depth</td></tr>
-<tr><td>Small team, email plus light SMS</td><td>Omnisend</td><td>Subscription Commerce email-plus-SMS in one accessible builder</td></tr>
-<tr><td>Broad newsletter operations</td><td>Mailchimp</td><td>Subscription Commerce breadth for newsletter-led operations</td></tr>
-<tr><td>Lean lifecycle operations</td><td>Sequenzy</td><td>Focused lifecycle subscription commerce sequences minus suite overhead</td></tr>
-<tr><td>Developer-led custom builds</td><td>Customer.io</td><td>Subscription Commerce flexibility for engineering-led stacks</td></tr>
-<tr><td>CRM-led sales follow-up</td><td>ActiveCampaign</td><td>Subscription Commerce follow-up tied to account records</td></tr>
-<tr><td>Simple list growth and popups</td><td>Privy</td><td>Subscription Commerce subscriber capture before lifecycle depth</td></tr>
-<tr><td>Commerce cohort analysis</td><td>Drip</td><td>Subscription Commerce analytics for replenishment cadence</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Common failure modes in subscription commerce email</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Failure</th><th>Prevention</th><th>Cost of getting it wrong</th></tr></thead>
-<tbody>
-<tr><td>Discount in the first touch</td><td>Delay subscription commerce codes past first intent proof</td><td>Schools subscription commerce shoppers in low-margin habits</td></tr>
-<tr><td>No purchase suppression</td><td>End subscription commerce flows the moment orders land</td><td>Subscription Commerce promos after purchase read careless</td></tr>
-<tr><td>Consent imported without proof</td><td>Record subscription commerce opt-in origin and moment</td><td>Unproven subscription commerce consent fails audits</td></tr>
-<tr><td>Flows only one operator understands</td><td>Name and exit-map every subscription commerce journey</td><td>subscription commerce changes gamble without docs</td></tr>
-<tr><td>Measuring clicks only</td><td>Score subscription commerce on profit, returns, grievances</td><td>Click-only subscription commerce metrics bless aggression</td></tr>
-<tr><td>Ignoring deliverability signals</td><td>subscription commerce deliverability watched weekly</td><td>subscription commerce inbox recovery costs more than hygiene</td></tr>
-<tr><td>Peak-season flow changes</td><td>No subscription commerce flow changes mid-peak</td><td>Peak-week subscription commerce experiments fail loudest</td></tr>
-<tr><td>SMS without a channel strategy</td><td>Give subscription commerce SMS its own job spec apart from email</td><td>Subscription Commerce channel overlap triggers opt-outs</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Implementation order for a subscription commerce program</h2>
-<ol>
-<li>Map subscription commerce consent sources into the platform before any subscription commerce campaign.</li>
-<li>Confirm subscription commerce event wiring with a full test-store pass.</li>
-<li>For subscription commerce, suppression architecture precedes journey building.</li>
-<li>Open subscription commerce with a contained pilot and clean control.</li>
-<li>Subscription Commerce month-one review: margin kept, complaints, repeats.</li>
-<li>Broaden subscription commerce after the pilot survives handoff.</li>
-<li>Codify the subscription commerce peak freeze: edits, discounts, volume.</li>
-<li>For subscription commerce, calendar a cost-versus-margin review each quarter.</li>
-<li>Subscription Commerce hygiene: unreviewed flows simplified or cut.</li>
-</ol>
-<h2 class="mt-12">Metrics review cadence for subscription commerce</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Metric</th><th>Definition</th><th>Review cadence</th></tr></thead>
-<tbody>
-<tr><td>Margin per send</td><td>subscription commerce profit after incentive, send, platform load</td><td>Monthly</td></tr>
-<tr><td>Repeat purchase rate</td><td>Subscription Commerce second orders inside ninety days</td><td>Monthly</td></tr>
-<tr><td>Complaint and unsubscribe rate</td><td>Split subscription commerce grievances by campaign and journey</td><td>Weekly</td></tr>
-<tr><td>Suppression accuracy</td><td>subscription commerce-buyer samples screened for breaches</td><td>Weekly</td></tr>
-<tr><td>Time to edit safely</td><td>subscription commerce edit-safety minutes without the author</td><td>Quarterly</td></tr>
-<tr><td>Holdout lift</td><td>subscription commerce-exposed versus excluded comparison</td><td>Quarterly</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Subscription commerce matchup FAQ</h2>
-<section class="max-w-3xl mx-auto space-y-6">
-<div><h3>Klaviyo or Shopify Email for subscription commerce?</h3><p>Subscription Commerce beginners do well on native email; Klaviyo fits when subscription commerce logic leans on events, catalog data, and segment reporting, with profile billing modeled on subscription commerce expansion.</p></div>
-<div><h3>Omnisend vs Klaviyo for subscription commerce?</h3><p>For subscription commerce, Omnisend ships email-first subscription commerce plus light SMS fastest for small teams; Klaviyo counters with deeper subscription commerce segmentation — pilot one genuine subscription commerce journey on each and weigh upkeep, not checklists.</p></div>
-<div><h3>Mailchimp or Klaviyo for subscription commerce?</h3><p>Subscription Commerce newsletters suit Mailchimp familiarity; subscription commerce automation on commerce events suits Klaviyo. Compare official pricing at your subscription commerce contact tier before choosing.</p></div>
-<div><h3>Do I need a separate SMS tool for subscription commerce?</h3><p>For early subscription commerce, bundled SMS is enough; specialists earn their subscription commerce fee only via measured lift. Validate subscription commerce opt-ins, quiet hours, and per-message rates beforehand.</p></div>
-<div><h3>How should I suppress audiences in subscription commerce flows?</h3><p>Guard subscription commerce with exits for buyers, open cases, refunds, and no-consent profiles, auditable per subscription commerce flow. In subscription commerce, a suppression miss hurts worse than a missed blast.</p></div>
-<div><h3>What does subscription commerce email cost?</h3><p>Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your subscription commerce campaigns consume. For subscription commerce budgeting, treat any static quote as stale — check official pricing pages and model an eighteen-month total before committing.</p></div>
-<div><h3>Which app should a lean team pilot first for subscription commerce?</h3><p>For subscription commerce, two-week operability decides: native sends or lean-platform subscription commerce branching — completed subscription commerce pilots outrank ambitious stalls.</p></div>
-<div><h3>How do I measure subscription commerce email results?</h3><p>For subscription commerce reporting, pair attributed revenue with margin per send, repeat purchase, unsubscribe/complaint rates, and support load — then validate against a subscription commerce holdout so peak-season demand is not credited to the flows.</p></div>
-<div><h3>Can I run subscription commerce email without an agency?</h3><p>Yes, if the scope stays small. Pick one subscription commerce journey, document consent and suppression rules, and reuse a simple template system. On subscription commerce, outside support earns its fee only when flow complexity, remediation work, or seasonal subscription commerce spikes pass in-house limits.</p></div>
-<div><h3>When should I graduate from my first app for subscription commerce?</h3><p>For subscription commerce, the graduation signal is operational: unsafe flow edits, unreliable purchase-state segmentation for subscription commerce, or cost forecasts that break as contacts grow. For subscription commerce, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression.</p></div>
-<div><h3>How much discounting is acceptable for subscription commerce?</h3><p>Treat discounts as one lever, not the default. For subscription commerce, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. For subscription commerce, code-dependence across most revenue means the offer story — not the price — needs repair.</p></div>
-<div><h3>Which Shopify data matters most for subscription commerce?</h3><p>Order and refund state, cart and browse events, consent source, and product availability cover most subscription commerce decisions. Before layering subscription commerce branching on events, fire each one in a test purchase and record what every subscription commerce-relevant field means for both teams.</p></div>
-<div><h3>How do I avoid duplicate sends across apps for subscription commerce?</h3><p>Give one platform ownership of each subscription commerce journey, document which app sends what, and share suppression lists where the tools support it. Peak-season subscription commerce hygiene means a weekly sample audit — customers pulled at random, every subscription commerce message they received listed.</p></div>
-<div><h3>What should a subscription commerce pilot include?</h3><p>Run subscription commerce as a contained test: one audience, a journey or two, suppression in writing, holdout measurement, and a thirty-day subscription commerce check on margin and complaints against criteria set pre-launch.</p></div>
-</section>
-<script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",mainEntity:[
-{"@type": "Question", "name": "Klaviyo or Shopify Email for subscription commerce?", "acceptedAnswer": {"@type": "Answer", "text": "Subscription Commerce beginners do well on native email; Klaviyo fits when subscription commerce logic leans on events, catalog data, and segment reporting, with profile billing modeled on subscription commerce expansion."}},
-{"@type": "Question", "name": "Omnisend vs Klaviyo for subscription commerce?", "acceptedAnswer": {"@type": "Answer", "text": "For subscription commerce, Omnisend ships email-first subscription commerce plus light SMS fastest for small teams; Klaviyo counters with deeper subscription commerce segmentation — pilot one genuine subscription commerce journey on each and weigh upkeep, not checklists."}},
-{"@type": "Question", "name": "Mailchimp or Klaviyo for subscription commerce?", "acceptedAnswer": {"@type": "Answer", "text": "Subscription Commerce newsletters suit Mailchimp familiarity; subscription commerce automation on commerce events suits Klaviyo. Compare official pricing at your subscription commerce contact tier before choosing."}},
-{"@type": "Question", "name": "Do I need a separate SMS tool for subscription commerce?", "acceptedAnswer": {"@type": "Answer", "text": "For early subscription commerce, bundled SMS is enough; specialists earn their subscription commerce fee only via measured lift. Validate subscription commerce opt-ins, quiet hours, and per-message rates beforehand."}},
-{"@type": "Question", "name": "How should I suppress audiences in subscription commerce flows?", "acceptedAnswer": {"@type": "Answer", "text": "Guard subscription commerce with exits for buyers, open cases, refunds, and no-consent profiles, auditable per subscription commerce flow. In subscription commerce, a suppression miss hurts worse than a missed blast."}},
-{"@type": "Question", "name": "What does subscription commerce email cost?", "acceptedAnswer": {"@type": "Answer", "text": "Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your subscription commerce campaigns consume. For subscription commerce budgeting, treat any static quote as stale — check official pricing pages and model an eighteen-month total before committing."}},
-{"@type": "Question", "name": "Which app should a lean team pilot first for subscription commerce?", "acceptedAnswer": {"@type": "Answer", "text": "For subscription commerce, two-week operability decides: native sends or lean-platform subscription commerce branching — completed subscription commerce pilots outrank ambitious stalls."}},
-{"@type": "Question", "name": "How do I measure subscription commerce email results?", "acceptedAnswer": {"@type": "Answer", "text": "For subscription commerce reporting, pair attributed revenue with margin per send, repeat purchase, unsubscribe/complaint rates, and support load — then validate against a subscription commerce holdout so peak-season demand is not credited to the flows."}},
-{"@type": "Question", "name": "Can I run subscription commerce email without an agency?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if the scope stays small. Pick one subscription commerce journey, document consent and suppression rules, and reuse a simple template system. On subscription commerce, outside support earns its fee only when flow complexity, remediation work, or seasonal subscription commerce spikes pass in-house limits."}},
-{"@type": "Question", "name": "When should I graduate from my first app for subscription commerce?", "acceptedAnswer": {"@type": "Answer", "text": "For subscription commerce, the graduation signal is operational: unsafe flow edits, unreliable purchase-state segmentation for subscription commerce, or cost forecasts that break as contacts grow. For subscription commerce, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression."}},
-{"@type": "Question", "name": "How much discounting is acceptable for subscription commerce?", "acceptedAnswer": {"@type": "Answer", "text": "Treat discounts as one lever, not the default. For subscription commerce, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. For subscription commerce, code-dependence across most revenue means the offer story — not the price — needs repair."}},
-{"@type": "Question", "name": "Which Shopify data matters most for subscription commerce?", "acceptedAnswer": {"@type": "Answer", "text": "Order and refund state, cart and browse events, consent source, and product availability cover most subscription commerce decisions. Before layering subscription commerce branching on events, fire each one in a test purchase and record what every subscription commerce-relevant field means for both teams."}},
-{"@type": "Question", "name": "How do I avoid duplicate sends across apps for subscription commerce?", "acceptedAnswer": {"@type": "Answer", "text": "Give one platform ownership of each subscription commerce journey, document which app sends what, and share suppression lists where the tools support it. Peak-season subscription commerce hygiene means a weekly sample audit — customers pulled at random, every subscription commerce message they received listed."}},
-{"@type": "Question", "name": "What should a subscription commerce pilot include?", "acceptedAnswer": {"@type": "Answer", "text": "Run subscription commerce as a contained test: one audience, a journey or two, suppression in writing, holdout measurement, and a thirty-day subscription commerce check on margin and complaints against criteria set pre-launch."}}
-]})} />
-<h2 class="mt-12">Governance and documentation for subscription commerce</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Practice</th><th>Standard</th><th>Risk it prevents</th></tr></thead>
-<tbody>
-<tr><td>Flow ownership</td><td>Subscription Commerce journeys each carry one owner</td><td>Ownerless subscription commerce flows decaying live</td></tr>
-<tr><td>Naming convention</td><td>Name subscription commerce flows job-first, audience-second</td><td>Peak subscription commerce triage blind without naming</td></tr>
-<tr><td>Change log</td><td>Subscription Commerce change log per journey</td><td>subscription commerce performance drift with no log</td></tr>
-<tr><td>Access control</td><td>subscription commerce access scoped to role</td><td>subscription commerce rogue sends from open permissions</td></tr>
-<tr><td>Quarterly flow review</td><td>Simplify dormant subscription commerce paths</td><td>subscription commerce cruft raising edit cost</td></tr>
-<tr><td>Incident runbook</td><td>Subscription Commerce incident path: pause, notify, fix</td><td>subscription commerce damage window from missing runbook</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Peak season readiness for subscription commerce</h2>
-<ol>
-<li>For subscription commerce, freeze journey changes two weeks pre-peak.</li>
-<li>For subscription commerce, trial every journey against real order events.</li>
-<li>Verify subscription commerce suppression clears recent buyers and open returns.</li>
-<li>Enlarge subscription commerce holdouts so peak reads stay valid.</li>
-<li>Draft subscription commerce SMS quiet-hour and cap rules in advance.</li>
-<li>Price subscription commerce peaks against plan ceilings early.</li>
-<li>Subscription Commerce placement watched every peak day.</li>
-<li>Bank subscription commerce rollback plans ahead of sends.</li>
-</ol>
-<p>Don't let subscription commerce run on memory — set the first quarterly subscription commerce review before launch, document suppression, caps, and escalation contacts in week one, and future operators get a subscription commerce runbook instead of rumors.</p>
-<p>For subscription commerce, make the quarterly write-up non-negotiable — shipped, suppressed, margin, misses — because a standing subscription commerce evidence base beats recalled anecdotes at renewal time.</p>
+<BaseLayout title={title} description={description}>
+<main class="container page-stack">
+<p class="eyebrow">Shopify email apps</p><h1>{title}</h1>
+<p class="lede">A recurring-commerce team should select an email app around the subscription contract, not the latest order. A paid order, a future renewal and an unresolved billing challenge are different states with different communication jobs.</p>
+<h2>Divide responsibilities before comparing apps</h2>
+<table><thead><tr><th>Requirement</th><th>Candidates</th><th>Decision test</th></tr></thead><tbody>
+<tr><td>Subscriber education with modest branching</td><td>Sequenzy, Mailchimp, Shopify Email</td><td>Can the team keep contract and preference fields current and stop a queued optional sequence after cancellation? Sequenzy is a sequence candidate, not an assumed billing integration.</td></tr>
+<tr><td>Product and contract-based lifecycle programs</td><td>Klaviyo, Omnisend, Drip, Sendlane</td><td>Demonstrate the exact subscription-provider connector, including pause, resume and failed-payment fields. Order-event support alone is insufficient.</td></tr>
+<tr><td>CRM or custom event orchestration</td><td>ActiveCampaign, Customer.io, Brevo</td><td>Show who maintains the state projection, identity mapping and recovery path when events are missing.</td></tr>
+<tr><td>Application-owned service delivery</td><td>Postmark, Resend</td><td>Demonstrate authenticated account links, a send ledger and retry rules; transport is separate from billing orchestration.</td></tr>
+<tr><td>Prospect capture</td><td>Privy</td><td>Keep acquisition consent distinct from contract management and do not enroll an existing subscriber in a first-purchase offer.</td></tr>
+</tbody></table>
+<p>This is a requirements shortlist, not observed comparative testing. Keep the subscription provider as the billing authority. The email layer should never initiate a second charge merely because it received a repeated payment-failure event.</p>
+<h2>Define the contract and attempt model</h2>
+<p>Maintain shop, customer, contract, cycle and billing-attempt identifiers separately. Store current contract status, effective change time, next scheduled billing date, provider version and last successful synchronization. A customer may have several contracts: cancellation of one must not terminate notices for another. A paid invoice does not establish that the next cycle is active, and canceling a contract does not necessarily cancel an already committed fulfillment.</p>
+<p><a href="https://shopify.dev/docs/apps/build/purchase-options/subscriptions/contracts">Shopify's subscription contract documentation</a> lists contract updates and billing success, failure and challenged events. These are distinct event types; the merchant's provider and API permissions determine what the messaging integration actually receives. Require a field map and sample payload for each transition rather than assuming every ESP exposes every topic.</p>
+<h2>Assign purpose and sender</h2>
+<table><thead><tr><th>Purpose</th><th>Owner to name</th><th>Exit or update</th></tr></thead><tbody>
+<tr><td>Upcoming billing notice</td><td>Subscription provider or explicitly validated replacement</td><td>Recompute after pause, date change, skip or cancellation; preserve required notice timing.</td></tr>
+<tr><td>Payment action required</td><td>One billing-service sender</td><td>Stop obsolete attempts after success; direct to a secure provider account page, never collect payment credentials by email reply.</td></tr>
+<tr><td>Product education</td><td>Lifecycle team</td><td>Use the relevant product and fulfillment; optional marketing follows its own eligibility rules.</td></tr>
+<tr><td>Optional winback</td><td>One marketing owner</td><td>Exclude active replacement contracts and honor channel opt-outs. Cancellation alone does not authorize a promotion.</td></tr>
+</tbody></table>
+<p>Marketing withdrawal and subscription cancellation are separate controls. Honor each for its purpose while maintaining legitimate account communications under the applicable rules. Legal notice requirements, renewal disclosures and jurisdiction-specific permission are operator review items; this guide does not establish compliance.</p>
+<h2>Handle state changes while messages wait</h2>
+<p>Use an idempotency key such as contract, cycle or attempt, purpose and message version, backed by persistent storage. Event-delivery ID alone cannot prevent two different events from creating the same customer notice. On execution and retry, fetch authoritative state and compare its version with the queued job. Reject stale transitions, record why a job was canceled, and reconcile periodically against the provider because event delivery can be delayed or missing.</p>
+<p><strong>Proposed scenario:</strong> a contract's billing attempt enters a challenged state. An old failure notification arrives afterward. Do not send a definitive cancellation or create a new retry schedule from that stale event. Consult the provider's current attempt and contract state, send only the currently appropriate action, and cancel queued failure messages after success. A separate contract for the same customer continues normally. This is a design exercise, not a tested integration.</p>
+<h2>Acceptance plan for the billing boundary</h2>
+<ol><li>Inventory current provider, Shopify, ESP and support senders by purpose. Identify which notification settings may be changed and which remain mandatory.</li><li>In a controlled account, propose cases for pause/resume, cancellation during delay, failed then successful payment, challenge, next-date edit and multiple contracts.</li><li>Replay duplicate and out-of-order events. Confirm the ledger, queued jobs and delivery logs agree; test a worker restart after a send succeeds but before acknowledgment.</li><li>Exercise stale-feed handling. Pause optional journeys, alert the named integration owner and retain a working service-notice path.</li><li>Have a second operator use the runbook to reconcile one contract and perform rollback without resending notices.</li></ol>
+<p>No acceptance tests have been executed for this article. Do not disable provider notices until purpose coverage and failure recovery are proven in the actual account.</p>
+<h2>Judge retention at the right unit</h2>
+<p>Separate involuntary billing loss from voluntary cancellation, skips and pauses. Define the eligible contract cohort and observation window before comparison; a skipped cycle is not automatically churn. Report successful paid renewals, refunds, complaints and support contacts per eligible contract or customer, naming the denominator. Multiple contracts per customer require consistent experiment assignment to avoid cross-exposure.</p>
+<p>For optional education or winback, consider a randomized comparison that preserves service notices in both arms. Report uncertainty and the effects of incomplete provider data. Attributed renewal revenue cannot show how much would have renewed anyway. A recovered payment is not proof that a promotional message caused it when provider retries and service notices also operated.</p>
+<p><strong>Hypothetical load:</strong> 600 contracts receive one upcoming-cycle notice; 40 require two additional payment-action messages. That is 600 + 40 × 2 = 680 planned sends before state-based cancellation. Budget the connector, reconciliation worker, incident cover, delivery charges and migration work alongside the ESP tier; compare the same contract volume and purpose coverage for each quote.</p>
+<p>Continue with the <a href="/apps/shopify-email">Shopify Email overview</a>, <a href="/alternatives">alternatives library</a> and <a href="/for/subscription-boxes">subscription-box guide</a>. Actual connector coverage, notification settings and operator/legal approval remain unresolved.</p>
+<h2>Frequently asked questions</h2>
+{faqs.map(f => <section><h3>{f.q}</h3><p>{f.a}</p></section>)}
+<script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@type':'FAQPage',mainEntity:faqs.map(f => ({'@type':'Question',name:f.q,acceptedAnswer:{'@type':'Answer',text:f.a}}))})} />
 </main></BaseLayout>

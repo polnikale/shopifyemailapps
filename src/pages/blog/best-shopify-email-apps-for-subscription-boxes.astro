@@ -1,220 +1,51 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-const title='Best Shopify Email Apps for Subscription Boxes in 2026';
-const description='Compare Shopify email apps for subscription-box billing reminders, shipment education, churn prevention, and replenishment.';
-const apps=[
-['Sequenzy','Lean billing and education sequences','Simple campaign operation','Confirm subscription integrations','https://sequenzy.com/'],
-['Klaviyo','Deep subscription and product segmentation','Rich customer and catalog events','Cost and setup complexity','https://www.klaviyo.com/pricing'],
-['Omnisend','Fast ecommerce lifecycle setup','Prebuilt campaigns and SMS','Subscription edge cases need testing','https://www.omnisend.com/pricing/'],
-['AfterShip Email','Delivery and post-purchase timing','Shipment events','Not a complete retention suite','https://www.aftership.com/pricing'],
-['Brevo','Cost-aware campaigns','Broad email and transactional paths','Complex subscription states need design','https://www.brevo.com/pricing/'],
-['Shopify Email','Small boxes sending basic customer updates','Native product and campaign setup','Limited billing-state depth','https://www.shopify.com/email'],
-['Mailchimp','Subscription newsletters and education','Familiar campaigns and templates','Cycle logic may need integration','https://mailchimp.com/pricing/'],
-['ActiveCampaign','Subscription retention tied to CRM context','Flexible automation and handoffs','More setup and governance','https://www.activecampaign.com/pricing'],
-['Sendlane','DTC boxes using subscription and commerce events','Ecommerce automation and reporting','Review billing and fulfillment support','https://www.sendlane.com/pricing'],
-['Customer.io','Boxes with detailed cycle and usage events','Flexible event-triggered messaging','Requires clean billing payloads','https://customer.io/pricing'],
-['Privy','New boxes growing a consented audience','Capture and lightweight campaigns','Not a complete recurring-state system','https://www.privy.com/pricing'],
-['Postmark','Billing, shipment, and account notifications','Reliable transactional delivery','Not a promotional retention platform','https://postmarkapp.com/pricing'],
-['Resend','Developer-led boxes with custom cycle events','Simple API-first delivery','Engineering owns billing and suppression','https://resend.com/pricing'],
+const title = "Best Shopify Email Apps for Subscription Boxes in 2026";
+const description = "Select email tools for box-cycle changes, gift privacy, reveal timing and fulfillment-aware customer education.";
+const faqs = [
+  {
+    "q": "Should every renewal trigger another unboxing email?",
+    "a": "No. Match education to the box edition and delivery, not simply the billing event. Prepaid plans, skips and split parcels make those clocks different."
+  },
+  {
+    "q": "Can the purchaser and gift recipient share one email journey?",
+    "a": "Keep their roles separate. The purchaser needs billing and account controls; a recipient may need approved product guidance. Do not expose price or infer marketing permission from gift receipt."
+  },
+  {
+    "q": "Which tool should own a selection reminder?",
+    "a": "Choose one sender that can read current cycle and cutoff state before execution and retry. Leave the existing operational path active until replacement and rollback behavior have been tested."
+  }
 ];
 ---
-<BaseLayout title={title} description={description}><article class="py-12 md:py-20"><div class="container"><header class="max-w-4xl mx-auto text-center mb-10"><p class="text-sm font-semibold text-primary mb-3">Shopify subscription guide
-</p><h1 class="text-4xl md:text-6xl font-bold tracking-tight">{title}
-</h1><p class="mt-5 text-xl text-muted-foreground">Coordinate billing, shipment, usage, and cancellation moments in one understandable customer path.
-</p></header><div class="max-w-3xl mx-auto prose-dark mb-12"><p>Subscription boxes have recurring billing, shipment timing, skips, failed payments, unboxing education, and churn-risk moments. Email should distinguish an operational notice from a promotional offer and account for the customer’s current cycle.
-</p><p>Verify subscription events, fulfillment timing, consent, suppression, SMS costs, and current pricing from official sources. Judge a flow with retention, support contacts, complaints, and margin—not attributed revenue alone.
-</p></div><div class="overflow-x-auto mb-14"><table><thead><tr><th>App
-</th><th>Best for
-</th><th>Strength
-</th><th>Trade-off
-</th></tr></thead><tbody>{apps.map(a=><tr><td><strong>{a[0]}
-</strong></td><td>{a[1]}
-</td><td>{a[2]}
-</td><td>{a[3]}
-</td></tr>)}
-</tbody></table></div><div class="max-w-4xl mx-auto space-y-12">{apps.map(a=><section><h2>{a[0]}: subscription-box fit
-</h2><p><strong>Best for:
-</strong> {a[1]}. {a[2]} The useful setup connects cycle, billing, shipment, product, and engagement state so the next message arrives at a meaningful moment.
-</p><p><strong>Pros:
-</strong> {a[2]}.
-<strong>Cons:
-</strong> {a[3]}.
-<strong>Pricing:
-</strong> verify current plans at the
-<a href={a[4]} target="_blank" rel="noopener noreferrer">official source
-</a>. Model contacts, profiles, sends, subscription events, SMS, and integration work.
-</p><table><thead><tr><th>Subscription moment
-</th><th>Email job
-</th><th>Control
-</th></tr></thead><tbody><tr><td>Upcoming shipment
-</td><td>Set expectations and timing
-</td><td>Use current cycle data
-</td></tr><tr><td>Failed payment
-</td><td>Explain recovery steps
-</td><td>Separate from promotion
-</td></tr><tr><td>Churn risk
-</td><td>Offer help or preference
-</td><td>Respect cancellation intent
-</td></tr></tbody></table></section>)}
-</div><div class="overflow-x-auto mt-14"><table><thead><tr><th>Subscription priority
-</th><th>Best candidates
-</th><th>Decision lens
-</th></tr></thead><tbody><tr><td>Behavior and catalog depth
-</td><td>Klaviyo
-</td><td>Cycle and product events
-</td></tr><tr><td>Fast multichannel
-</td><td>Omnisend
-</td><td>Setup and SMS control
-</td></tr><tr><td>Lean or operational
-</td><td>Sequenzy, AfterShip Email, Brevo
-</td><td>Sequence and delivery boundary
-</td></tr></tbody></table></div><p class="max-w-3xl mx-auto mt-12 text-center">Also read
-<a href="/apps/shopify-email">Shopify email strategy
-</a>,
-<a href="/alternatives/klaviyo-alternative">Klaviyo alternatives
-</a>, and
-<a href="/apps/aftership-email">AfterShip Email review
-</a>.
-</p>
-<h2 class="mt-14">Consent and purchaser suppression for Subscription boxes</h2>
-<p>Subscription Boxes readiness starts with provable consent records and instant post-checkout suppression across each app running subscription boxes sends. Protect the subscription boxes channel first: post-purchase, refund-window, and support-case promos do more damage than dull subscription boxes copy.</p>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Audience state</th><th>Required handling</th><th>Why it matters</th></tr></thead>
-<tbody>
-<tr><td>No documented consent</td><td>Suppress subscription boxes marketing entirely until consent is documented</td><td>Consent evidence underwrites all subscription boxes sending</td></tr>
-<tr><td>Consented, never purchased</td><td>Subscription Boxes education and proof before any offer</td><td>Early subscription boxes discounts train deal-waiting</td></tr>
-<tr><td>Active cart, no checkout</td><td>Context-rich subscription boxes nudge before any incentive</td><td>Protects subscription boxes profit when purchase intent is hottest</td></tr>
-<tr><td>Purchased recently</td><td>Recent subscription boxes buyers exit promos into onboarding</td><td>Post-checkout subscription boxes pitches trigger regret and opt-outs</td></tr>
-<tr><td>Refund or return open</td><td>Hold subscription boxes marketing while service cases stay open</td><td>Subscription Boxes tolerance collapses mid-dispute</td></tr>
-<tr><td>Repeated non-engagement</td><td>Prune unengaged subscription boxes profiles early</td><td>Keeps subscription boxes placement high via list hygiene</td></tr>
-<tr><td>SMS consent present</td><td>Subscription Boxes texting respects time and frequency rules</td><td>Text grievances hit subscription boxes programs hardest</td></tr>
-<tr><td>Wholesale or B2B account</td><td>Send subscription boxes B2B accounts down their own track</td><td>Subscription Boxes retail promos can violate B2B terms</td></tr>
-<tr><td>Free or disposable email domain</td><td>Verify subscription boxes throwaway addresses pre-journey</td><td>Unverified subscription boxes addresses poison sender score</td></tr>
-<tr><td>Staff and test accounts</td><td>Strip subscription boxes test data from live journeys</td><td>Subscription Boxes reporting stays clean without test noise</td></tr>
-<tr><td>Competitor or researcher signals</td><td>Subscription Boxes researcher signups follow standard consent</td><td>Subscription Boxes one-offs breed audit gaps</td></tr>
-<tr><td>Legacy list without timestamps</td><td>Subscription Boxes sends to old lists need fresh opt-in</td><td>Timestamp-less subscription boxes consent is legal exposure</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Margin, app costs, and pricing for Subscription boxes</h2>
-<p>Attributed revenue is not profit for subscription boxes. A self-funding subscription boxes program survives a full cost model: subscription, contact or send overages, SMS credits, capture tooling, templates, agency time, and every point of subscription boxes discount margin. For subscription boxes, a stack at fifteen percent of attributed margin needs simplification first, optimization second.</p>
-<p>Pricing changes frequently and varies by region, contact volume, and contract term, so check the official pricing pages of every shortlisted app and model an eighteen-month total that includes a peak season. Subscription Boxes free tiers look generous until one limit bites — verify which of contacts, sends, branching, or support constrains subscription boxes first.</p>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Cost component</th><th>What to model</th><th>Common failure</th></tr></thead>
-<tbody>
-<tr><td>Platform subscription</td><td>Subscription Boxes tier matched to true contact volume</td><td>Paying subscription boxes prices for a list you lack</td></tr>
-<tr><td>Contact or send overages</td><td>Subscription Boxes headroom checked against growth</td><td>Peak subscription boxes volume blowing past tier limits</td></tr>
-<tr><td>SMS credits</td><td>Subscription Boxes opt-in share times texts per journey</td><td>Subscription Boxes SMS economics misread as email</td></tr>
-<tr><td>Discount budget</td><td>Price subscription boxes incentives by redemption probability</td><td>subscription boxes incentives training perpetual waiting</td></tr>
-<tr><td>Creative and ops time</td><td>Weekly subscription boxes hours to run and QA flows</td><td>subscription boxes maintenance hours wished away</td></tr>
-<tr><td>Migration and setup</td><td>Subscription Boxes cutover cost in data and rebuilds</td><td>Subscription Boxes consent lost mid-migration</td></tr>
-<tr><td>Support and success tiers</td><td>Subscription Boxes support tier for critical incidents</td><td>Peak-week subscription boxes outage without coverage</td></tr>
-<tr><td>Third-party integrations</td><td>Subscription Boxes review, loyalty, capture add-ons</td><td>subscription boxes side-tools eclipsing core cost</td></tr>
-<tr><td>Deliverability remediation</td><td>subscription boxes deliverability upkeep and guidance cost</td><td>Subscription Boxes reputation repair dwarfing license fees</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Decision table for Subscription boxes</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Situation</th><th>Start with</th><th>Reason</th></tr></thead>
-<tbody>
-<tr><td>Occasional sends, small catalog</td><td>Shopify Email</td><td>Zero-learning-curve start for light subscription boxes needs</td></tr>
-<tr><td>Branching and suppression matter</td><td>Klaviyo</td><td>Subscription Boxes segmentation that scales with complexity</td></tr>
-<tr><td>Small team, email plus light SMS</td><td>Omnisend</td><td>Small-team subscription boxes workflows across email and SMS</td></tr>
-<tr><td>Broad newsletter operations</td><td>Mailchimp</td><td>Subscription Boxes newsletters in a familiar editor</td></tr>
-<tr><td>Lean lifecycle operations</td><td>Sequenzy</td><td>Guided email playbooks for lean subscription boxes teams</td></tr>
-<tr><td>Developer-led custom builds</td><td>Customer.io</td><td>API-first subscription boxes control for custom builds</td></tr>
-<tr><td>CRM-led sales follow-up</td><td>ActiveCampaign</td><td>Subscription Boxes follow-up tied to account records</td></tr>
-<tr><td>Simple list growth and popups</td><td>Privy</td><td>Subscription Boxes subscriber capture before lifecycle depth</td></tr>
-<tr><td>Commerce cohort analysis</td><td>Drip</td><td>Repeat-revenue subscription boxes lens on customer cohorts</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Common failure modes in subscription boxes email</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Failure</th><th>Prevention</th><th>Cost of getting it wrong</th></tr></thead>
-<tbody>
-<tr><td>Discount in the first touch</td><td>Subscription Boxes incentives only after intent signals</td><td>subscription boxes discount-first trains bargain hunting</td></tr>
-<tr><td>No purchase suppression</td><td>Subscription Boxes exits wired to order and checkout events</td><td>Subscription Boxes promos after purchase read careless</td></tr>
-<tr><td>Consent imported without proof</td><td>Map subscription boxes consent timestamps and sources</td><td>Unproven subscription boxes consent fails audits</td></tr>
-<tr><td>Flows only one operator understands</td><td>subscription boxes conventions written for successors</td><td>Single-operator subscription boxes knowledge is fragile</td></tr>
-<tr><td>Measuring clicks only</td><td>Score subscription boxes on profit, returns, grievances</td><td>Click-only subscription boxes metrics bless aggression</td></tr>
-<tr><td>Ignoring deliverability signals</td><td>subscription boxes deliverability watched weekly</td><td>Subscription Boxes repair bills dwarf prevention</td></tr>
-<tr><td>Peak-season flow changes</td><td>subscription boxes calm-before-peak change moratorium</td><td>Peak-week subscription boxes experiments fail loudest</td></tr>
-<tr><td>SMS without a channel strategy</td><td>Give subscription boxes SMS its own job spec apart from email</td><td>subscription boxes duplication across channels bleeds opt-ins</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Implementation order for a subscription boxes program</h2>
-<ol>
-<li>Map subscription boxes consent sources into the platform before any subscription boxes campaign.</li>
-<li>Subscription Boxes gating: all four commerce events verified live.</li>
-<li>Subscription Boxes order: exits and suppression first, flows second.</li>
-<li>For subscription boxes, start single-journey with a control group.</li>
-<li>For subscription boxes, the thirty-day read covers profit and list health.</li>
-<li>For subscription boxes, growth waits for transferable editing.</li>
-<li>Codify the subscription boxes peak freeze: edits, discounts, volume.</li>
-<li>Quarterly, weigh the subscription boxes stack against attributed margin.</li>
-<li>Retire or trim subscription boxes flows untouched for ninety days.</li>
-</ol>
-<h2 class="mt-12">Metrics review cadence for subscription boxes</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Metric</th><th>Definition</th><th>Review cadence</th></tr></thead>
-<tbody>
-<tr><td>Margin per send</td><td>Subscription Boxes revenue less discounts, send and platform cost</td><td>Monthly</td></tr>
-<tr><td>Repeat purchase rate</td><td>Subscription Boxes second orders inside ninety days</td><td>Monthly</td></tr>
-<tr><td>Complaint and unsubscribe rate</td><td>subscription boxes complaint lens on both blasts and flows</td><td>Weekly</td></tr>
-<tr><td>Suppression accuracy</td><td>subscription boxes-buyer samples screened for breaches</td><td>Weekly</td></tr>
-<tr><td>Time to edit safely</td><td>Time a new subscription boxes owner needs per change</td><td>Quarterly</td></tr>
-<tr><td>Holdout lift</td><td>Subscription Boxes treated-versus-holdout read</td><td>Quarterly</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Subscription boxes matchup FAQ</h2>
-<section class="max-w-3xl mx-auto space-y-6">
-<div><h3>Klaviyo or Shopify Email for subscription boxes?</h3><p>For subscription boxes, Shopify Email covers occasional small-catalog campaigns; Klaviyo earns its keep when subscription boxes demands event branching, catalog-aware blocks, and segment reporting — model profile billing on projected subscription boxes growth first.</p></div>
-<div><h3>Omnisend vs Klaviyo for subscription boxes?</h3><p>Subscription Boxes speed favors Omnisend for lean crews; subscription boxes depth favors Klaviyo as logic matures. Run the same subscription boxes journey live on both and compare maintenance hours.</p></div>
-<div><h3>Mailchimp or Klaviyo for subscription boxes?</h3><p>For subscription boxes, Mailchimp fits editor-comfortable newsletter teams; Klaviyo fits event-driven subscription boxes on Shopify orders, carts, and browse — check official pricing pages for both at your subscription boxes volume.</p></div>
-<div><h3>Do I need a separate SMS tool for subscription boxes?</h3><p>Subscription Boxes rarely needs specialist SMS day one; add it when texts measurably beat email on subscription boxes. Vet subscription boxes consent capture, quiet-hour enforcement, and per-text cost first.</p></div>
-<div><h3>How should I suppress audiences in subscription boxes flows?</h3><p>subscription boxes flows must shed recent purchasers, case-active shoppers, refunds, and unconsented profiles, with subscription boxes exit logic visible to any auditor — suppression slips outcost quiet weeks.</p></div>
-<div><h3>What does subscription boxes email cost?</h3><p>Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your subscription boxes campaigns consume. Because providers revise plans frequently, check official pricing pages and build an eighteen-month subscription boxes total — peak season included — before you commit.</p></div>
-<div><h3>Which app should a lean team pilot first for subscription boxes?</h3><p>Open subscription boxes with the tool at full command in fourteen days — simple subscription boxes sends natively, branched subscription boxes on a lean platform. Shipping subscription boxes beats architecting it.</p></div>
-<div><h3>How do I measure subscription boxes email results?</h3><p>For subscription boxes reporting, pair attributed revenue with margin per send, repeat purchase, unsubscribe/complaint rates, and support load — then validate against a subscription boxes holdout so peak-season demand is not credited to the flows.</p></div>
-<div><h3>Can I run subscription boxes email without an agency?</h3><p>Yes, if the scope stays small. Pick one subscription boxes journey, document consent and suppression rules, and reuse a simple template system. For subscription boxes, hire help only if journey complexity, inbox-placement remediation, or peak subscription boxes volume genuinely exceeds what the team can run.</p></div>
-<div><h3>When should I graduate from my first app for subscription boxes?</h3><p>Move off the starter subscription boxes setup when flow edits feel risky, purchase-state segments for subscription boxes misfire, or contact growth makes cost unpredictable. For subscription boxes, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression.</p></div>
-<div><h3>How much discounting is acceptable for subscription boxes?</h3><p>Treat discounts as one lever, not the default. For subscription boxes, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. A subscription boxes program where nearly every order needs a discount is signalling weak subscription boxes value, not wrong pricing.</p></div>
-<div><h3>Which Shopify data matters most for subscription boxes?</h3><p>Order and refund state, cart and browse events, consent source, and product availability cover most subscription boxes decisions. Test-purchase every subscription boxes event first, confirm it fires correctly, then document subscription boxes field semantics so marketing and engineering agree.</p></div>
-<div><h3>How do I avoid duplicate sends across apps for subscription boxes?</h3><p>Give one platform ownership of each subscription boxes journey, document which app sends what, and share suppression lists where the tools support it. For subscription boxes peak weeks, sample customer timelines weekly and enumerate all subscription boxes sends per profile.</p></div>
-<div><h3>What should a subscription boxes pilot include?</h3><p>Run subscription boxes as a contained test: one audience, a journey or two, suppression in writing, holdout measurement, and a thirty-day subscription boxes check on margin and complaints against criteria set pre-launch.</p></div>
-</section>
-<script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",mainEntity:[
-{"@type": "Question", "name": "Klaviyo or Shopify Email for subscription boxes?", "acceptedAnswer": {"@type": "Answer", "text": "For subscription boxes, Shopify Email covers occasional small-catalog campaigns; Klaviyo earns its keep when subscription boxes demands event branching, catalog-aware blocks, and segment reporting — model profile billing on projected subscription boxes growth first."}},
-{"@type": "Question", "name": "Omnisend vs Klaviyo for subscription boxes?", "acceptedAnswer": {"@type": "Answer", "text": "Subscription Boxes speed favors Omnisend for lean crews; subscription boxes depth favors Klaviyo as logic matures. Run the same subscription boxes journey live on both and compare maintenance hours."}},
-{"@type": "Question", "name": "Mailchimp or Klaviyo for subscription boxes?", "acceptedAnswer": {"@type": "Answer", "text": "For subscription boxes, Mailchimp fits editor-comfortable newsletter teams; Klaviyo fits event-driven subscription boxes on Shopify orders, carts, and browse — check official pricing pages for both at your subscription boxes volume."}},
-{"@type": "Question", "name": "Do I need a separate SMS tool for subscription boxes?", "acceptedAnswer": {"@type": "Answer", "text": "Subscription Boxes rarely needs specialist SMS day one; add it when texts measurably beat email on subscription boxes. Vet subscription boxes consent capture, quiet-hour enforcement, and per-text cost first."}},
-{"@type": "Question", "name": "How should I suppress audiences in subscription boxes flows?", "acceptedAnswer": {"@type": "Answer", "text": "subscription boxes flows must shed recent purchasers, case-active shoppers, refunds, and unconsented profiles, with subscription boxes exit logic visible to any auditor — suppression slips outcost quiet weeks."}},
-{"@type": "Question", "name": "What does subscription boxes email cost?", "acceptedAnswer": {"@type": "Answer", "text": "Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your subscription boxes campaigns consume. Because providers revise plans frequently, check official pricing pages and build an eighteen-month subscription boxes total — peak season included — before you commit."}},
-{"@type": "Question", "name": "Which app should a lean team pilot first for subscription boxes?", "acceptedAnswer": {"@type": "Answer", "text": "Open subscription boxes with the tool at full command in fourteen days — simple subscription boxes sends natively, branched subscription boxes on a lean platform. Shipping subscription boxes beats architecting it."}},
-{"@type": "Question", "name": "How do I measure subscription boxes email results?", "acceptedAnswer": {"@type": "Answer", "text": "For subscription boxes reporting, pair attributed revenue with margin per send, repeat purchase, unsubscribe/complaint rates, and support load — then validate against a subscription boxes holdout so peak-season demand is not credited to the flows."}},
-{"@type": "Question", "name": "Can I run subscription boxes email without an agency?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if the scope stays small. Pick one subscription boxes journey, document consent and suppression rules, and reuse a simple template system. For subscription boxes, hire help only if journey complexity, inbox-placement remediation, or peak subscription boxes volume genuinely exceeds what the team can run."}},
-{"@type": "Question", "name": "When should I graduate from my first app for subscription boxes?", "acceptedAnswer": {"@type": "Answer", "text": "Move off the starter subscription boxes setup when flow edits feel risky, purchase-state segments for subscription boxes misfire, or contact growth makes cost unpredictable. For subscription boxes, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression."}},
-{"@type": "Question", "name": "How much discounting is acceptable for subscription boxes?", "acceptedAnswer": {"@type": "Answer", "text": "Treat discounts as one lever, not the default. For subscription boxes, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. A subscription boxes program where nearly every order needs a discount is signalling weak subscription boxes value, not wrong pricing."}},
-{"@type": "Question", "name": "Which Shopify data matters most for subscription boxes?", "acceptedAnswer": {"@type": "Answer", "text": "Order and refund state, cart and browse events, consent source, and product availability cover most subscription boxes decisions. Test-purchase every subscription boxes event first, confirm it fires correctly, then document subscription boxes field semantics so marketing and engineering agree."}},
-{"@type": "Question", "name": "How do I avoid duplicate sends across apps for subscription boxes?", "acceptedAnswer": {"@type": "Answer", "text": "Give one platform ownership of each subscription boxes journey, document which app sends what, and share suppression lists where the tools support it. For subscription boxes peak weeks, sample customer timelines weekly and enumerate all subscription boxes sends per profile."}},
-{"@type": "Question", "name": "What should a subscription boxes pilot include?", "acceptedAnswer": {"@type": "Answer", "text": "Run subscription boxes as a contained test: one audience, a journey or two, suppression in writing, holdout measurement, and a thirty-day subscription boxes check on margin and complaints against criteria set pre-launch."}}
-]})} />
-<h2 class="mt-12">Governance and documentation for subscription boxes</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Practice</th><th>Standard</th><th>Risk it prevents</th></tr></thead>
-<tbody>
-<tr><td>Flow ownership</td><td>subscription boxes ownership assigned journey by journey</td><td>Ownerless subscription boxes flows decaying live</td></tr>
-<tr><td>Naming convention</td><td>subscription boxes-flow names lead with purpose</td><td>Peak subscription boxes triage blind without naming</td></tr>
-<tr><td>Change log</td><td>subscription boxes edits stamped, dated, explained</td><td>Mystery subscription boxes dips nobody can source</td></tr>
-<tr><td>Access control</td><td>subscription boxes access scoped to role</td><td>Subscription Boxes accidents from excess access</td></tr>
-<tr><td>Quarterly flow review</td><td>subscription boxes branch count kept lean</td><td>subscription boxes cruft raising edit cost</td></tr>
-<tr><td>Incident runbook</td><td>subscription boxes break-glass steps pre-written</td><td>subscription boxes damage window from missing runbook</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Peak season readiness for subscription boxes</h2>
-<ol>
-<li>Halt subscription boxes edits ahead of the peak window.</li>
-<li>Exercise each subscription boxes flow with live purchase, refund, support tests.</li>
-<li>Check subscription boxes exits filter buyers and open cases.</li>
-<li>Enlarge subscription boxes holdouts so peak reads stay valid.</li>
-<li>For subscription boxes, pre-commit text timing and frequency limits.</li>
-<li>Match subscription boxes plan caps and overage rates to forecast volume.</li>
-<li>Subscription Boxes placement watched every peak day.</li>
-<li>Pre-write subscription boxes rollback moves per flow before launch.</li>
-</ol>
-<p>Don't let subscription boxes run on memory — set the first quarterly subscription boxes review before launch, document suppression, caps, and escalation contacts in week one, and future operators get a subscription boxes runbook instead of rumors.</p>
-<p>For subscription boxes, make the quarterly write-up non-negotiable — shipped, suppressed, margin, misses — because a standing subscription boxes evidence base beats recalled anecdotes at renewal time.</p>
-</div></article></BaseLayout>
+<BaseLayout title={title} description={description}>
+<main class="container page-stack">
+<p class="eyebrow">Shopify email apps</p><h1>{title}</h1>
+<p class="lede">A subscription-box operator needs to tell the right person what happens in this box cycle. Billing, item selection and parcel delivery are separate milestones; one Shopify purchase timestamp cannot safely schedule all three.</p>
+<h2>Buy for the handoff that is failing</h2>
+<table><thead><tr><th>Job</th><th>Candidate group</th><th>What must be demonstrated</th></tr></thead><tbody>
+<tr><td>Box selection and education</td><td>Sequenzy, Mailchimp, Shopify Email</td><td>Target the correct cycle and content version; remove a recipient after a skip. Sequenzy remains a sequence candidate, without an assumed native box-state connector.</td></tr>
+<tr><td>Cycle-aware marketing across channels</td><td>Klaviyo, Omnisend, Sendlane, ActiveCampaign, Brevo</td><td>Use provider-sourced cycle IDs and current preferences; suppress a duplicate reminder across channels.</td></tr>
+<tr><td>Shipment-related communication</td><td>AfterShip Email</td><td>Show the specific fulfillment integration and parcel status used. Do not assume the email product and every AfterShip tracking feature are interchangeable.</td></tr>
+<tr><td>Custom operational notices</td><td>Customer.io, Postmark, Resend</td><td>Prove trigger, retry and cancellation ownership. Delivery infrastructure alone does not own box scheduling or billing.</td></tr>
+<tr><td>New-box audience capture</td><td>Privy</td><td>Capture a prospective subscriber's permission without enrolling them into an existing subscriber's cycle.</td></tr>
+</tbody></table>
+<p>These are a shortlist for demonstrations, not measured speed or reliability rankings. The subscription provider should remain authoritative for contracts and cycle changes; the warehouse or fulfillment system owns packing status. Email consumes those decisions rather than inventing its own renewal date.</p>
+<h2>Keep three clocks and two people separate</h2>
+<p>Store billing date, selection cutoff and dispatch estimate independently, with timezone and version. A prepaid plan may bill once and ship several boxes. A skipped cycle may move the next eligible shipment without canceling the contract. A packing cutoff is not a guaranteed delivery date. Publish only dates that the responsible operations system can currently support.</p>
+<p>For gifts, distinguish purchaser, recipient and marketing subscriber. Send payment and account-management information to the account holder; do not expose price or renewal links in a recipient's unboxing guide. Receiving a gifted box does not itself establish marketing permission. Ask the purchaser whether a reveal would spoil the gift and route product-specific care to the appropriate recipient only through an approved contact process.</p>
+<h2>A proposed cycle workflow</h2>
+<ol><li>When a box is scheduled, create a message record keyed by contract, cycle, recipient role and purpose. Include box edition and selection deadline version.</li><li>Before a selection reminder runs, fetch current cycle state and warehouse cutoff. Cancel it for a skip, cancellation, completed choice or closed selection window. An old queued message must not reopen an expired choice.</li><li>Send a selection confirmation from the designated owner. A substitution should identify the updated choice; do not reuse a cached contents reveal.</li><li>Trigger dispatch information from actual fulfillment state. Handle split parcels separately and avoid telling customers that the entire box is delivered after one parcel arrives.</li><li>Offer optional usage or unboxing content after the relevant delivery signal. Respect gift reveal preferences and marketing opt-outs; service content and promotions need separate purpose decisions.</li></ol>
+<p>Persist a durable send ledger and recheck eligibility on retries. Replayed events must not create another reminder. If the state feed is stale, pause optional content and surface the incident; preserve the established operational sender until a replacement path has passed account testing.</p>
+<h2>Hypothetical box calendar</h2>
+<p>A proposed monthly art box lets purchasers choose materials until June 8 at 18:00 in the shop's stated timezone. Packing begins June 10 and dispatch is estimated June 12. A customer skips the June cycle on June 7 after a reminder has entered a queue. The worker must cancel that queued reminder against the current cycle; it must not merely suppress all future education because the customer has purchased before. A prepaid gift recipient may still receive a later approved materials guide without seeing the purchaser's billing details. These dates illustrate dependencies, not recommended universal deadlines.</p>
+<h2>Acceptance cases before moving send ownership</h2>
+<p>Propose test accounts for prepaid gifts, last-minute skips, failed payments, changed addresses, substitutions and split parcels. Replay and reorder events, then inspect both queued jobs and actual provider send records. Confirm a skip cancels only the affected cycle, a closed cutoff removes the selection link, and a return does not erase a necessary shipment correction. Required notices must stay available during rollback. No tests or merchant outcomes are claimed here.</p>
+<p><a href="https://help.shopify.com/en/manual/products/purchase-options/subscriptions/shopify-subscriptions/manage-subscriptions/manage-app-settings">Shopify Subscriptions notification settings</a> document notification controls for that app. Other providers can own different messages. List every current sender and notification purpose before changing settings; a feature in Shopify Subscriptions is not proof that another provider exports the same event.</p>
+<h2>Measure box experience and matched costs</h2>
+<p>Track missed-selection contacts, wrong-content notices, duplicate sends and successful next-cycle fulfillment separately from campaign clicks. For optional education, a randomized eligible-cycle comparison can examine help requests and later retention while both groups retain service notices. Keep customer assignment consistent if multiple cycles overlap. Do not credit a prepaid shipment as a new email-generated purchase.</p>
+<p><strong>Hypothetical volume:</strong> 400 eligible cycles with two selection messages each create 800 planned sends before skips, choices or opt-outs cancel jobs. Model actual completed sends plus platform, subscription connector, content photography, gift-routing and support work. Compare vendors at the same eligible cycles and operational scope; no fixed price or cost-to-margin rule is assumed.</p>
+<p>Read the <a href="/apps/shopify-email">Shopify email strategy</a>, <a href="/alternatives/klaviyo-alternative">Klaviyo alternatives</a> and <a href="/apps/aftership-email">AfterShip Email review</a>. Provider contracts, rights to box content and actual account notification replacement remain unresolved publication checks.</p>
+<h2>Frequently asked questions</h2>
+{faqs.map(f => <section><h3>{f.q}</h3><p>{f.a}</p></section>)}
+<script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@type':'FAQPage',mainEntity:faqs.map(f => ({'@type':'Question',name:f.q,acceptedAnswer:{'@type':'Answer',text:f.a}}))})} />
+</main></BaseLayout>

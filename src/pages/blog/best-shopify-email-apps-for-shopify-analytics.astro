@@ -1,215 +1,49 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-const title = 'Best Shopify Email Apps for Shopify Analytics in 2026';
-const description = 'A practical guide to Shopify email apps for analytics, covering event quality, cohort reporting, attribution limits, pricing context, sources, and tradeoffs.';
-const apps = [
-['Sequenzy','Lean teams measuring sequence outcomes','Focused workflow reporting','Less advanced commerce analytics should be checked','https://sequenzy.com','Start with one recurring report for a welcome, care, or retention sequence. Record the audience, baseline, attribution window, and maintenance time so a small team can learn without overclaiming causality.'],
-['Klaviyo','Detailed customer and lifecycle analytics','Rich events, segments, and flow reporting','Attribution and data quality need scrutiny','https://www.klaviyo.com/features/segmentation','Klaviyo fits teams with enough event and cohort depth to compare lifecycle paths. Treat its attribution as one lens, then validate with holdouts, margin, returns, and comparable customer groups.'],
-['Omnisend','Retail campaign and automation reporting','Accessible performance views','Cross-channel comparisons need care','https://www.omnisend.com/features/marketing-automation/','Omnisend is practical for campaign and automation reporting across email and SMS. Keep channel costs and opt-outs visible so a high click rate does not hide an inefficient program.'],
-['Drip','DTC brands analyzing repeat-purchase behavior','Commerce reporting and automation context','Model assumptions remain important','https://www.drip.com/features','Drip suits stores where repeat purchase and product timing are central metrics. Compare cohorts by product and margin, and state the assumptions behind any retention conclusion.'],
-['Brevo','Broad messaging and transactional reporting','Email, transactional, and contact-oriented data','More manual Shopify cohort analysis','https://www.brevo.com/features/marketing-automation/','Brevo can provide a broad operational view when marketing and transactional streams are separated. Build a simple external cohort definition before interpreting combined totals.'],
-['Shopify Email','Small stores needing basic campaign feedback','Native campaign and order context','Limited advanced cohort and causal reporting','https://www.shopify.com/email-marketing','Shopify Email is suitable for a small campaign calendar and simple outcome review. Keep a spreadsheet or warehouse baseline when the team needs to compare periods or audiences fairly.'],
-['Mailchimp','Editorial brands measuring newsletter health','Campaign, audience, and engagement reporting','Commerce attribution needs additional validation','https://mailchimp.com/features/email/','Mailchimp works for retention, replies, clicks, and editorial engagement. Connect order data carefully and avoid using opens as a standalone measure of business impact.'],
-['Customer.io','Technical teams analyzing event-driven journeys','Flexible event and message reporting','Engineering and data QA are substantial','https://customer.io/product/messaging/','Customer.io is useful when event definitions and schemas are maintained. Add event version, source, and timestamp fields so reports remain interpretable as the product changes.'],
-['ActiveCampaign','Teams measuring marketing alongside CRM outcomes','Automation, contacts, and funnel context','Cross-team data ownership can complicate reporting','https://www.activecampaign.com/marketing-automation','ActiveCampaign fits stores where email outcomes connect to sales or account stages. Keep lifecycle, sales, and service outcomes distinct before combining them in a single funnel.'],
-['MailerLite','Small teams tracking newsletter and automation basics','Accessible campaign and audience reporting','Limited deep ecommerce cohort analysis','https://www.mailerlite.com/features','MailerLite is a sensible low-overhead analytics choice for a small program. Its constraints can encourage the team to focus on a few decisions instead of collecting unused metrics.'],
-['ConvertKit','Creator-led brands measuring content-to-commerce paths','Subscriber and sequence reporting','Commerce attribution depth is limited','https://convertkit.com/features','ConvertKit works when subscriber quality, replies, and educational engagement lead the analysis. Track commerce outcomes separately and explain the attribution gap rather than filling it with assumptions.'],
-['GetResponse','Stores measuring funnels with events and landing pages','Campaign, automation, and event reporting','Broader suite adds reporting overhead','https://www.getresponse.com/features','GetResponse fits programs where landing pages, registrations, and attendance form part of the funnel. Define the conversion event and window before comparing campaigns.'],
-['HubSpot','Teams unifying marketing, sales, and service reporting','CRM-connected lifecycle and attribution context','Cost and administration can be substantial','https://www.hubspot.com/products/marketing','HubSpot makes sense when the analytics question crosses ecommerce, service, and sales. Preserve source and ownership fields, and do not treat a shared record as proof of channel causality.']
+const title = "Best Shopify Email Apps for Shopify Analytics in 2026";
+const description = "Choose an email reporting workflow using order reconciliation, explicit attribution settings, cohort definitions and a proposed incrementality test.";
+const faqs = [
+  {
+    "q": "Should Shopify and my email app report the same revenue?",
+    "a": "Not necessarily. First match dates, conversion definitions, currency and attribution settings, then reconcile order IDs. Different credit rules can explain a difference without showing either report is broken."
+  },
+  {
+    "q": "Does a high attributed total prove email caused sales?",
+    "a": "No. Credit under a reporting model is different from incremental buying. A properly designed randomized comparison can estimate the effect of an optional journey, with uncertainty and contamination limits reported."
+  },
+  {
+    "q": "Which reporting app should a small team start with?",
+    "a": "Start with the report the team can reproduce and act on. A basic delivery and matched-order export can be enough; deeper cohort or CRM questions justify evaluating additional tools only when their data can answer them."
+  }
 ];
 ---
-<BaseLayout title={title} description={description}><main class="container page-stack"><p class="eyebrow">Shopify email apps
-</p><h1>{title}
-</h1><p class="lede">Analytics should answer a decision: which audience, message, or lifecycle step deserves a change? Shopify email reporting is useful when the underlying events, attribution window, and cohort definitions are visible.
-</p><p>We prioritize event quality, cohort comparisons, revenue and margin context, and honest limitations. Confirm current analytics features and pricing from official sources before treating platform-reported numbers as causal evidence.
-</p><h2>Shortlist for Shopify analytics
-</h2><table><thead><tr><th>App
-</th><th>Best fit
-</th><th>Strength
-</th><th>Tradeoff
-</th></tr></thead><tbody>{apps.map(a=><tr><td>{a[0]}
-</td><td>{a[1]}
-</td><td>{a[2]}
-</td><td>{a[3]}
-</td></tr>)}
-</tbody></table>{apps.map(a=><section><h2>{a[0]} for Shopify analytics
-</h2><p><strong>Best for:
-</strong> {a[1]}. {a[5]}
-</p><p><strong>Pros:
-</strong> {a[2]}.
-<strong>Cons:
-</strong> {a[3]}.
-<strong>Pricing:
-</strong> verify official plans for contacts, sends, seats, reporting, SMS, support, and implementation at the
-<a href={a[4]} target="_blank" rel="noopener noreferrer">official source
-</a>. Pilot one recurring report and include audience size, sends, bounces, clicks, orders, returns, discounts, margin, and a comparable cohort.
-</p><table><tbody><tr><th>Pros in practice
-</th><td>{a[2]}
-</td></tr><tr><th>Risk to manage
-</th><td>{a[3]}
-</td></tr><tr><th>Evidence to review
-</th><td>Event quality, cohort definition, attribution window, margin, returns, support impact, and incremental evidence.
-</td></tr></tbody></table></section>)}
-<h2>Decision guide
-</h2><table><thead><tr><th>Analytics priority
-</th><th>Start with
-</th><th>Reason
-</th></tr></thead><tbody><tr><td>Simple sequence outcomes
-</td><td>Sequenzy
-</td><td>Focused workflows are easier to isolate.
-</td></tr><tr><td>Detailed lifecycle cohorts
-</td><td>Klaviyo
-</td><td>Rich event and flow reporting.
-</td></tr><tr><td>Repeat-purchase analysis
-</td><td>Drip
-</td><td>Commerce retention orientation.
-</td></tr></tbody></table><p>Continue with the
-<a href="/apps/shopify-email">Shopify email overview
-</a>,
-<a href="/alternatives">alternatives library
-</a>, and
-<a href="/guides/revenue-attribution">revenue-attribution guide
-</a>.
-</p>
-<h2 class="mt-14">Consent and purchaser suppression for Shopify analytics</h2>
-<p>Shopify Analytics readiness starts with provable consent records and instant post-checkout suppression across each app running shopify analytics sends. Shopify Analytics audiences forgive plain creative; they do not forgive promos sent mid-refund or right after checkout.</p>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Audience state</th><th>Required handling</th><th>Why it matters</th></tr></thead>
-<tbody>
-<tr><td>No documented consent</td><td>No shopify analytics promos without proof; transactional messages only</td><td>Every shopify analytics send stands on documented consent</td></tr>
-<tr><td>Consented, never purchased</td><td>Open shopify analytics with guidance and proof, not discounts</td><td>First-touch shopify analytics codes create discount dependence</td></tr>
-<tr><td>Active cart, no checkout</td><td>Shopify Analytics reminder with product context; discount withheld</td><td>Margin-safe shopify analytics recovery at peak intent</td></tr>
-<tr><td>Purchased recently</td><td>Shopify Analytics buyers get education, not another pitch</td><td>Shopify Analytics suppression protects the new-customer glow</td></tr>
-<tr><td>Refund or return open</td><td>No shopify analytics promos mid-case; resume after resolution</td><td>Open shopify analytics cases reset what the shopper tolerates</td></tr>
-<tr><td>Repeated non-engagement</td><td>Prune unengaged shopify analytics profiles early</td><td>Shields shopify analytics sender reputation and inboxing</td></tr>
-<tr><td>SMS consent present</td><td>Cap shopify analytics SMS cadence within legal quiet windows</td><td>Shopify Analytics SMS complaints cost more per incident</td></tr>
-<tr><td>Wholesale or B2B account</td><td>Send shopify analytics B2B accounts down their own track</td><td>Wholesale shopify analytics terms forbid retail-style offers</td></tr>
-<tr><td>Free or disposable email domain</td><td>Gate shopify analytics journeys behind address verification</td><td>Shopify Analytics bounces from junk signups hurt inboxing</td></tr>
-<tr><td>Staff and test accounts</td><td>Strip shopify analytics test data from live journeys</td><td>Internal shopify analytics activity corrupts program metrics</td></tr>
-<tr><td>Competitor or researcher signals</td><td>No bespoke shopify analytics track for competitor signals</td><td>Shopify Analytics consistency beats clever carve-outs</td></tr>
-<tr><td>Legacy list without timestamps</td><td>Reconfirm shopify analytics consent where timestamps are missing</td><td>Old shopify analytics permission without records is a risk</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Margin, app costs, and pricing for Shopify analytics</h2>
-<p>Judge shopify analytics on margin, not attribution. A durable shopify analytics program absorbs subscription, overages, SMS, capture, creative, agency, and discount costs and still pays. Shopify Analytics rule: near fifteen percent stack-to-margin, cut shopify analytics complexity before chasing gains.</p>
-<p>Pricing changes frequently and varies by region, contact volume, and contract term, so check the official pricing pages of every shortlisted app and model an eighteen-month total that includes a peak season. Before banking on free for shopify analytics, check which free-tier limit — contacts, sends, branching, support — hits your shopify analytics plan earliest.</p>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Cost component</th><th>What to model</th><th>Common failure</th></tr></thead>
-<tbody>
-<tr><td>Platform subscription</td><td>Shopify Analytics tier matched to true contact volume</td><td>Paying shopify analytics prices for a list you lack</td></tr>
-<tr><td>Contact or send overages</td><td>Shopify Analytics growth pace versus plan ceilings</td><td>Shopify Analytics overage invoices after drops</td></tr>
-<tr><td>SMS credits</td><td>Shopify Analytics opt-in share times texts per journey</td><td>Treating shopify analytics texts like near-free email</td></tr>
-<tr><td>Discount budget</td><td>shopify analytics promo cost from depth-times-redemption</td><td>Shopify Analytics automation minting discount hunters</td></tr>
-<tr><td>Creative and ops time</td><td>Shopify Analytics upkeep hours per operating week</td><td>Shopify Analytics edit and QA effort undercounted</td></tr>
-<tr><td>Migration and setup</td><td>Shopify Analytics import, consent mapping, flow rebuild</td><td>Dropped shopify analytics permission records on switch</td></tr>
-<tr><td>Support and success tiers</td><td>Shopify Analytics severity coverage: paid or included</td><td>shopify analytics support shortfall during the worst week</td></tr>
-<tr><td>Third-party integrations</td><td>Shopify Analytics satellite fees beyond the ESP</td><td>shopify analytics side-tools eclipsing core cost</td></tr>
-<tr><td>Deliverability remediation</td><td>Shopify Analytics reputation maintenance budget</td><td>Shopify Analytics reputation repair dwarfing license fees</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Decision table for Shopify analytics</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Situation</th><th>Start with</th><th>Reason</th></tr></thead>
-<tbody>
-<tr><td>Occasional sends, small catalog</td><td>Shopify Email</td><td>Cheapest native path for occasional shopify analytics sends</td></tr>
-<tr><td>Branching and suppression matter</td><td>Klaviyo</td><td>Shopify Analytics segmentation that scales with complexity</td></tr>
-<tr><td>Small team, email plus light SMS</td><td>Omnisend</td><td>Approachable shopify analytics multichannel journeys</td></tr>
-<tr><td>Broad newsletter operations</td><td>Mailchimp</td><td>Editor familiarity for shopify analytics broadcast desks</td></tr>
-<tr><td>Lean lifecycle operations</td><td>Sequenzy</td><td>Email-first shopify analytics sequences with guided operation</td></tr>
-<tr><td>Developer-led custom builds</td><td>Customer.io</td><td>API-first shopify analytics control for custom builds</td></tr>
-<tr><td>CRM-led sales follow-up</td><td>ActiveCampaign</td><td>Shopify Analytics outreach with deal context attached</td></tr>
-<tr><td>Simple list growth and popups</td><td>Privy</td><td>Popup-led shopify analytics growth for young stores</td></tr>
-<tr><td>Commerce cohort analysis</td><td>Drip</td><td>Shopify Analytics reporting bent toward repeat buying</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Common failure modes in shopify analytics email</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Failure</th><th>Prevention</th><th>Cost of getting it wrong</th></tr></thead>
-<tbody>
-<tr><td>Discount in the first touch</td><td>Shopify Analytics incentives only after intent signals</td><td>Schools shopify analytics shoppers in low-margin habits</td></tr>
-<tr><td>No purchase suppression</td><td>Shopify Analytics purchase exits on live order events</td><td>Shopify Analytics promos after purchase read careless</td></tr>
-<tr><td>Consent imported without proof</td><td>Record shopify analytics opt-in origin and moment</td><td>Shopify Analytics audit exposure without proof</td></tr>
-<tr><td>Flows only one operator understands</td><td>Document shopify analytics exits and naming standards</td><td>Single-operator shopify analytics knowledge is fragile</td></tr>
-<tr><td>Measuring clicks only</td><td>Shopify Analytics truth in margin not clicks</td><td>Click-only shopify analytics metrics bless aggression</td></tr>
-<tr><td>Ignoring deliverability signals</td><td>Track shopify analytics bounce and complaint trendlines</td><td>Shopify Analytics neglect compounds into rescue spend</td></tr>
-<tr><td>Peak-season flow changes</td><td>No shopify analytics flow changes mid-peak</td><td>Shopify Analytics untested edits detonate at peak</td></tr>
-<tr><td>SMS without a channel strategy</td><td>Give shopify analytics SMS its own job spec apart from email</td><td>Shopify Analytics frequency collision sheds subscribers</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Implementation order for a shopify analytics program</h2>
-<ol>
-<li>Shopify Analytics first step: consent sources documented and mapped.</li>
-<li>For shopify analytics, test-fire order, cart, refund, and support events first.</li>
-<li>For shopify analytics, suppression architecture precedes journey building.</li>
-<li>Open shopify analytics with a contained pilot and clean control.</li>
-<li>Shopify Analytics month-one review: margin kept, complaints, repeats.</li>
-<li>For shopify analytics, growth waits for transferable editing.</li>
-<li>Codify the shopify analytics peak freeze: edits, discounts, volume.</li>
-<li>Quarterly, weigh the shopify analytics stack against attributed margin.</li>
-<li>Shopify Analytics hygiene: unreviewed flows simplified or cut.</li>
-</ol>
-<h2 class="mt-12">Metrics review cadence for shopify analytics</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Metric</th><th>Definition</th><th>Review cadence</th></tr></thead>
-<tbody>
-<tr><td>Margin per send</td><td>Net shopify analytics margin post-discounts and delivery cost</td><td>Monthly</td></tr>
-<tr><td>Repeat purchase rate</td><td>Share of shopify analytics buyers reordering in-quarter</td><td>Monthly</td></tr>
-<tr><td>Complaint and unsubscribe rate</td><td>Split shopify analytics grievances by campaign and journey</td><td>Weekly</td></tr>
-<tr><td>Suppression accuracy</td><td>Spot-check shopify analytics sends after purchases</td><td>Weekly</td></tr>
-<tr><td>Time to edit safely</td><td>Time a new shopify analytics owner needs per change</td><td>Quarterly</td></tr>
-<tr><td>Holdout lift</td><td>shopify analytics-exposed versus excluded comparison</td><td>Quarterly</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Shopify analytics matchup FAQ</h2>
-<section class="max-w-3xl mx-auto space-y-6">
-<div><h3>Klaviyo or Shopify Email for shopify analytics?</h3><p>Start shopify analytics on Shopify Email while sends stay occasional and catalogs compact; Klaviyo pays when shopify analytics branching and reporting complexity arrives — forecast profile cost on shopify analytics list growth.</p></div>
-<div><h3>Omnisend vs Klaviyo for shopify analytics?</h3><p>For email-first shopify analytics with a dash of SMS, Omnisend is the quicker launch; for shopify analytics segmentation headroom, Klaviyo leads — pilot the same shopify analytics journey twice and score effort.</p></div>
-<div><h3>Mailchimp or Klaviyo for shopify analytics?</h3><p>Shopify Analytics newsletters suit Mailchimp familiarity; shopify analytics automation on commerce events suits Klaviyo. Compare official pricing at your shopify analytics contact tier before choosing.</p></div>
-<div><h3>Do I need a separate SMS tool for shopify analytics?</h3><p>For early shopify analytics, bundled SMS is enough; specialists earn their shopify analytics fee only via measured lift. Validate shopify analytics opt-ins, quiet hours, and per-message rates beforehand.</p></div>
-<div><h3>How should I suppress audiences in shopify analytics flows?</h3><p>Shopify Analytics suppression: fresh purchasers, active cases, refunded orders, and consent gaps all exit. Document shopify analytics exits per journey; shopify analytics suppression errors dwarf missed-campaign cost.</p></div>
-<div><h3>What does shopify analytics email cost?</h3><p>Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your shopify analytics campaigns consume. Pricing moves too often to quote statically: check the official pricing pages covering your shopify analytics stack and model eighteen months of total cost before committing.</p></div>
-<div><h3>Which app should a lean team pilot first for shopify analytics?</h3><p>Open shopify analytics with the tool at full command in fourteen days — simple shopify analytics sends natively, branched shopify analytics on a lean platform. Shipping shopify analytics beats architecting it.</p></div>
-<div><h3>How do I measure shopify analytics email results?</h3><p>For shopify analytics reporting, pair attributed revenue with margin per send, repeat purchase, unsubscribe/complaint rates, and support load — then validate against a shopify analytics holdout so peak-season demand is not credited to the flows.</p></div>
-<div><h3>Can I run shopify analytics email without an agency?</h3><p>Yes, if the scope stays small. Pick one shopify analytics journey, document consent and suppression rules, and reuse a simple template system. For shopify analytics, hire help only if journey complexity, inbox-placement remediation, or peak shopify analytics volume genuinely exceeds what the team can run.</p></div>
-<div><h3>When should I graduate from my first app for shopify analytics?</h3><p>For shopify analytics, the graduation signal is operational: unsafe flow edits, unreliable purchase-state segmentation for shopify analytics, or cost forecasts that break as contacts grow. For shopify analytics, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression.</p></div>
-<div><h3>How much discounting is acceptable for shopify analytics?</h3><p>Treat discounts as one lever, not the default. For shopify analytics, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. When shopify analytics revenue only converts with a code attached, suspect shopify analytics value communication before blaming price points.</p></div>
-<div><h3>Which Shopify data matters most for shopify analytics?</h3><p>Order and refund state, cart and browse events, consent source, and product availability cover most shopify analytics decisions. On shopify analytics, prove events in a test checkout before trusting them in flows, with shopify analytics field definitions written where both teams can find them.</p></div>
-<div><h3>How do I avoid duplicate sends across apps for shopify analytics?</h3><p>Give one platform ownership of each shopify analytics journey, document which app sends what, and share suppression lists where the tools support it. Peak-season shopify analytics hygiene means a weekly sample audit — customers pulled at random, every shopify analytics message they received listed.</p></div>
-<div><h3>What should a shopify analytics pilot include?</h3><p>Run shopify analytics as a contained test: one audience, a journey or two, suppression in writing, holdout measurement, and a thirty-day shopify analytics check on margin and complaints against criteria set pre-launch.</p></div>
-</section>
-<script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",mainEntity:[
-{"@type": "Question", "name": "Klaviyo or Shopify Email for shopify analytics?", "acceptedAnswer": {"@type": "Answer", "text": "Start shopify analytics on Shopify Email while sends stay occasional and catalogs compact; Klaviyo pays when shopify analytics branching and reporting complexity arrives — forecast profile cost on shopify analytics list growth."}},
-{"@type": "Question", "name": "Omnisend vs Klaviyo for shopify analytics?", "acceptedAnswer": {"@type": "Answer", "text": "For email-first shopify analytics with a dash of SMS, Omnisend is the quicker launch; for shopify analytics segmentation headroom, Klaviyo leads — pilot the same shopify analytics journey twice and score effort."}},
-{"@type": "Question", "name": "Mailchimp or Klaviyo for shopify analytics?", "acceptedAnswer": {"@type": "Answer", "text": "Shopify Analytics newsletters suit Mailchimp familiarity; shopify analytics automation on commerce events suits Klaviyo. Compare official pricing at your shopify analytics contact tier before choosing."}},
-{"@type": "Question", "name": "Do I need a separate SMS tool for shopify analytics?", "acceptedAnswer": {"@type": "Answer", "text": "For early shopify analytics, bundled SMS is enough; specialists earn their shopify analytics fee only via measured lift. Validate shopify analytics opt-ins, quiet hours, and per-message rates beforehand."}},
-{"@type": "Question", "name": "How should I suppress audiences in shopify analytics flows?", "acceptedAnswer": {"@type": "Answer", "text": "Shopify Analytics suppression: fresh purchasers, active cases, refunded orders, and consent gaps all exit. Document shopify analytics exits per journey; shopify analytics suppression errors dwarf missed-campaign cost."}},
-{"@type": "Question", "name": "What does shopify analytics email cost?", "acceptedAnswer": {"@type": "Answer", "text": "Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your shopify analytics campaigns consume. Pricing moves too often to quote statically: check the official pricing pages covering your shopify analytics stack and model eighteen months of total cost before committing."}},
-{"@type": "Question", "name": "Which app should a lean team pilot first for shopify analytics?", "acceptedAnswer": {"@type": "Answer", "text": "Open shopify analytics with the tool at full command in fourteen days — simple shopify analytics sends natively, branched shopify analytics on a lean platform. Shipping shopify analytics beats architecting it."}},
-{"@type": "Question", "name": "How do I measure shopify analytics email results?", "acceptedAnswer": {"@type": "Answer", "text": "For shopify analytics reporting, pair attributed revenue with margin per send, repeat purchase, unsubscribe/complaint rates, and support load — then validate against a shopify analytics holdout so peak-season demand is not credited to the flows."}},
-{"@type": "Question", "name": "Can I run shopify analytics email without an agency?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if the scope stays small. Pick one shopify analytics journey, document consent and suppression rules, and reuse a simple template system. For shopify analytics, hire help only if journey complexity, inbox-placement remediation, or peak shopify analytics volume genuinely exceeds what the team can run."}},
-{"@type": "Question", "name": "When should I graduate from my first app for shopify analytics?", "acceptedAnswer": {"@type": "Answer", "text": "For shopify analytics, the graduation signal is operational: unsafe flow edits, unreliable purchase-state segmentation for shopify analytics, or cost forecasts that break as contacts grow. For shopify analytics, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression."}},
-{"@type": "Question", "name": "How much discounting is acceptable for shopify analytics?", "acceptedAnswer": {"@type": "Answer", "text": "Treat discounts as one lever, not the default. For shopify analytics, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. When shopify analytics revenue only converts with a code attached, suspect shopify analytics value communication before blaming price points."}},
-{"@type": "Question", "name": "Which Shopify data matters most for shopify analytics?", "acceptedAnswer": {"@type": "Answer", "text": "Order and refund state, cart and browse events, consent source, and product availability cover most shopify analytics decisions. On shopify analytics, prove events in a test checkout before trusting them in flows, with shopify analytics field definitions written where both teams can find them."}},
-{"@type": "Question", "name": "How do I avoid duplicate sends across apps for shopify analytics?", "acceptedAnswer": {"@type": "Answer", "text": "Give one platform ownership of each shopify analytics journey, document which app sends what, and share suppression lists where the tools support it. Peak-season shopify analytics hygiene means a weekly sample audit — customers pulled at random, every shopify analytics message they received listed."}},
-{"@type": "Question", "name": "What should a shopify analytics pilot include?", "acceptedAnswer": {"@type": "Answer", "text": "Run shopify analytics as a contained test: one audience, a journey or two, suppression in writing, holdout measurement, and a thirty-day shopify analytics check on margin and complaints against criteria set pre-launch."}}
-]})} />
-<h2 class="mt-12">Governance and documentation for shopify analytics</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Practice</th><th>Standard</th><th>Risk it prevents</th></tr></thead>
-<tbody>
-<tr><td>Flow ownership</td><td>Named shopify analytics owner on every journey</td><td>shopify analytics ghosts sending expired incentives</td></tr>
-<tr><td>Naming convention</td><td>Name shopify analytics flows job-first, audience-second</td><td>shopify analytics chaos when names carry no signal</td></tr>
-<tr><td>Change log</td><td>Shopify Analytics change log per journey</td><td>shopify analytics performance drift with no log</td></tr>
-<tr><td>Access control</td><td>shopify analytics-editor seats minimal by default</td><td>shopify analytics rogue sends from open permissions</td></tr>
-<tr><td>Quarterly flow review</td><td>shopify analytics branch count kept lean</td><td>Tangled shopify analytics logic slowing changes</td></tr>
-<tr><td>Incident runbook</td><td>Shopify Analytics incident path: pause, notify, fix</td><td>shopify analytics damage window from missing runbook</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Peak season readiness for shopify analytics</h2>
-<ol>
-<li>Halt shopify analytics edits ahead of the peak window.</li>
-<li>Exercise each shopify analytics flow with live purchase, refund, support tests.</li>
-<li>Verify shopify analytics suppression clears recent buyers and open returns.</li>
-<li>Enlarge shopify analytics holdouts so peak reads stay valid.</li>
-<li>For shopify analytics, pre-commit text timing and frequency limits.</li>
-<li>For shopify analytics, test tier limits against peak projections.</li>
-<li>Staff daily shopify analytics deliverability watch on complaints and bounces.</li>
-<li>Bank shopify analytics rollback plans ahead of sends.</li>
-</ol>
-<p>Don't let shopify analytics run on memory — set the first quarterly shopify analytics review before launch, document suppression, caps, and escalation contacts in week one, and future operators get a shopify analytics runbook instead of rumors.</p>
-<p>For shopify analytics, make the quarterly write-up non-negotiable — shipped, suppressed, margin, misses — because a standing shopify analytics evidence base beats recalled anecdotes at renewal time.</p>
+<BaseLayout title={title} description={description}>
+<main class="container page-stack">
+<p class="eyebrow">Shopify email apps</p><h1>{title}</h1>
+<p class="lede">Choose the reporting workflow that helps a merchandising or retention lead make a decision: change a journey, change its audience, or stop paying for it. A larger attributed-revenue total alone cannot answer that question.</p>
+<h2>Choose by the report you need to reproduce</h2>
+<table><thead><tr><th>Decision</th><th>Candidates to evaluate</th><th>Required demonstration</th></tr></thead><tbody>
+<tr><td>Did a basic campaign reach its intended audience?</td><td>Shopify Email; Mailchimp; MailerLite</td><td>Export recipients, delivery status, tagged clicks and matched orders. Keep delivery failures distinct from non-buyers.</td></tr>
+<tr><td>Which lifecycle cohort deserves a different journey?</td><td>Klaviyo; Drip; Omnisend</td><td>Reproduce a product or first-order cohort, its entry date, exclusions and refund-adjusted outcomes outside the dashboard.</td></tr>
+<tr><td>Can a lean team maintain one useful sequence report?</td><td>Sequenzy; Kit</td><td>Map the sequence membership and commerce data source; demonstrate an export. Sequence reporting is valuable only if the order join and maintenance work are understood.</td></tr>
+<tr><td>Do sales, support or custom events change the question?</td><td>Customer.io; ActiveCampaign; HubSpot; Brevo; GetResponse</td><td>Show identity joins and event ownership across systems. A messaging or CRM suite does not automatically provide a trustworthy Shopify profit model.</td></tr>
+</tbody></table>
+<p>These are evaluation groups, not tested rankings or promises of native integration. Kit is the current name used here for the former ConvertKit candidate. Ask for the actual account export and connector field map before buying a reporting tier; exclude a candidate if its available fields cannot answer your chosen question.</p>
+<h2>Write the measurement contract first</h2>
+<p>Define the unit: customer, order, or message. Record the shop timezone, currency conversion policy, reporting dates, order status, refund maturation period and whether revenue includes tax or shipping. Keep source order ID and line IDs so a partial refund updates the existing order instead of creating a second sale. Store event occurrence time separately from ingestion time; late imports should not silently move historical customers into a new cohort.</p>
+<p>Freeze cohort membership at the chosen entry event, such as first paid order for a product family. Exclude staff and synthetic orders explicitly. Report guest-to-account joins and unmatched records rather than assuming an email address is a permanent person ID. Keep permission and deletion handling in the data contract; a missing tracked session is not evidence that the shopper had no prior marketing exposure.</p>
+<h2>Reconcile attribution before interpreting it</h2>
+<p><a href="https://help.shopify.com/en/manual/promoting-marketing/analyze-marketing/marketing-performance">Shopify's marketing performance guidance</a> recommends matching date range, attribution model and traffic type when comparing reports. <a href="https://help.klaviyo.com/hc/en-us/articles/1260804504250">Klaviyo's attribution documentation</a> describes eligible interactions within configured windows and different date groupings. Record those settings with every export; do not add multiple vendors' credited revenue as if each claimed a separate order.</p>
+<ol><li>Start with a small set of paid, refunded, canceled and cross-channel orders. Join each platform's export by order ID.</li><li>Explain unmatched orders and duplicate credits. Check timezone boundaries, conversion event, message-send versus conversion date, interaction eligibility and currency.</li><li>Distinguish collection gaps from attribution choices. Cookie consent and tracking availability can affect observed sessions; absence of a click is not proof of absence of influence.</li><li>Reconcile the complete period only after the small sample is understandable. Version settings so a later window change is not mistaken for improved performance.</li></ol>
+<h2>Attributed outcomes and causal outcomes answer different questions</h2>
+<p>Attribution allocates credit according to rules. To estimate whether an optional sequence changes buying, propose a randomized eligible-customer holdout before entry. Keep required service messages in both groups. Assign customers consistently across devices where identity permits, log assignment, and prevent another app from sending the withheld treatment. Analyze everyone assigned, including non-openers; comparing clickers with non-clickers selects customers by behavior after treatment.</p>
+<p><strong>Hypothetical calculation:</strong> 1,000 eligible customers assigned to a sequence produce 120 buyers; 1,000 assigned to a control produce 100. Buyer rates are 12% and 10%, a 2 percentage-point difference and a 20% relative increase. The point estimate is 20 additional buyers per 1,000 assigned customers. This invented example has no uncertainty interval and is not a result or guarantee. Plan sample size and observation time around the buying cycle and detectable effect; an inconclusive estimate does not prove zero effect.</p>
+<h2>Make the financial comparison match the experiment</h2>
+<p>Use net sales after discounts and refunds, then subtract product cost, variable fulfillment, payment and messaging costs on the same basis in both groups. Compare contribution per assigned customer. Keep fixed reporting subscriptions, connector fees, analyst hours and migration work in a separate operating budget so they are neither forgotten nor charged twice. Deduct incremental program costs from the estimated contribution gain. There is no universal stack-to-margin percentage that decides whether a tool is worthwhile.</p>
+<h2>Acceptance exercise and operating record</h2>
+<p>The proposed exercise is to reproduce one cohort report with a refunded order, a late event and a duplicate webhook, then have a second analyst explain the totals from the written definitions. No exercise has been run for this guide. Keep query/export versions, refresh timestamp, source lag, unmatched-ID counts, attribution settings, assignment rules and the decision made. A dashboard that cannot expose its denominator may still help with delivery operations, but should not determine a causal budget decision.</p>
+<p>Continue with the <a href="/apps/shopify-email">Shopify Email overview</a>, <a href="/alternatives">alternatives library</a> and <a href="/guides/revenue-attribution">revenue-attribution guide</a>. Account-specific export availability and integration behavior remain untested.</p>
+<h2>Frequently asked questions</h2>
+{faqs.map(f => <section><h3>{f.q}</h3><p>{f.a}</p></section>)}
+<script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@type':'FAQPage',mainEntity:faqs.map(f => ({'@type':'Question',name:f.q,acceptedAnswer:{'@type':'Answer',text:f.a}}))})} />
 </main></BaseLayout>
