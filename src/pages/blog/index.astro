@@ -1,7 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 const title = 'Shopify Email App Guides';
-const description = 'A browsable hub for 100 citation-backed Shopify email app listicles covering store types, lifecycle jobs, campaigns, deliverability, analytics, and retention.';
+const description = 'Browse Shopify email app guides by store type, lifecycle job, campaign, and operating constraint.';
+const faqs = [{"question": "Which guide should a brand-new store read first?", "answer": "Start with the store-model guide closest to your catalog, then the welcome-series guide to define the signup promise. Add cart recovery when that workflow is part of your launch plan."}, {"question": "How current is the pricing information?", "answer": "Use current supplier pricing and a quote for your own list, volume, and channels. Article examples and linked prices may not reflect your account or contract."}, {"question": "Do these guides replace a deliverability audit?", "answer": "No. Use them to frame tool requirements. An audit needs evidence from your sending domains, permission records, sending history, and delivery results."}, {"question": "How should I combine guides into a decision?", "answer": "Read a store-model guide for audience constraints, a lifecycle guide for the specific workflow, and the selection framework for comparing candidates. Ask finalists to demonstrate the same workflow and price the same workload."}, {"question": "What if my store model is not covered?", "answer": "Use the closest catalog and buying-cycle analogy, then list the differences. For example, a preorder store needs availability and cancellation rules that a standard in-stock welcome sequence may not address."}];
 const guides = [
   ['Best Shopify Email Apps for Fashion Stores','/blog/best-shopify-email-apps-for-fashion-stores'],
   ['Best Shopify Email Apps for Abandoned Cart Recovery','/blog/best-shopify-email-apps-for-abandoned-cart-recovery'],
@@ -18,7 +19,7 @@ const guides = [
 <BaseLayout title={title} description={description}><main class="container page-stack"><p class="eyebrow">Editorial library
 </p><h1>{title}
 </h1><p class="lede">One hundred distinct guides for choosing Shopify email apps by store model, lifecycle job, campaign type, and operating constraint.
-</p><p>Every guide includes source links, pricing context, tool-by-tool tradeoffs, practical tables, and internal paths into the alternatives, guides, use cases, and app profiles.
+</p><p>Use these guides to frame a shortlist and the questions to take to a supplier demonstration. A linked article is a reading resource, not certification of an app or a record of an account test.
 </p><table><thead><tr><th>Editorial lane
 </th><th>What it answers
 </th><th>Start here
@@ -33,7 +34,7 @@ const guides = [
 </td><td><a href="/blog/best-shopify-email-apps-for-deliverability">Deliverability
 </a></td></tr></tbody></table><h2>Featured guides
 </h2><div class="grid gap-4 md:grid-cols-2">{guides.map(([label, href])=><a class="rounded-2xl border border-[#24170f]/15 bg-white p-5" href={href}><h3>{label}
-</h3><p class="mt-2 text-sm text-[#5b4637]">Read the source-backed shortlist and implementation verdict.
+</h3><p class="mt-2 text-sm text-[#5b4637]">Explore the requirements for this job.
 </p></a>)}
 </div><p>Explore the
 <a href="/alternatives">alternatives library
@@ -49,13 +50,13 @@ const guides = [
 <p>Start with the guide that matches your constraint, not the one that matches the loudest brand. A store model guide answers which catalog and audience shape fits which tool; a lifecycle guide answers which app supports a specific job; an operating discipline guide answers how to run the program safely once a tool is chosen. Reading one of each gives a more complete picture than five comparisons of the same two platforms.</p>
 <h2>How we evaluate Shopify email apps</h2>
 <div class="overflow-x-auto"><table>
-<thead><tr><th>Evaluation lane</th><th>What we test</th><th>Why it matters</th></tr></thead>
+<thead><tr><th>Evaluation lane</th><th>Proposed evaluation</th><th>Why it matters</th></tr></thead>
 <tbody>
-<tr><td>Shopify data fidelity</td><td>Order, cart, refund, and consent events in a test store</td><td>Automation is only as good as its events</td></tr>
-<tr><td>Consent and suppression</td><td>Post-purchase exits, quiet hours, and audit trails</td><td>Compliance failures cost more than missed sends</td></tr>
-<tr><td>Operating cost</td><td>Subscription, overages, SMS credits, and agency work</td><td>Stack cost should stay well under channel margin</td></tr>
-<tr><td>Editor safety</td><td>Whether a second operator can edit a flow without risk</td><td>Key-person dependency is a hidden failure mode</td></tr>
-<tr><td>Peak readiness</td><td>Behavior at five-times volume with freezes in place</td><td>Most programs break in November, not in demos</td></tr>
+<tr><td>Shopify data fidelity</td><td>Rehearse order, cart, refund, and consent events in a test store</td><td>Automation is only as good as its events</td></tr>
+<tr><td>Consent and suppression</td><td>Check purchase exits, channel eligibility, quiet hours, and audit trails</td><td>A contact record alone does not establish permission for every channel</td></tr>
+<tr><td>Operating cost</td><td>Subscription, overages, SMS credits, and agency work</td><td>Compare costs with expected contribution after discounts and returns</td></tr>
+<tr><td>Editor safety</td><td>Ask a second operator to edit, review, and roll back a draft flow</td><td>Key-person dependency is a hidden failure mode</td></tr>
+<tr><td>Peak readiness</td><td>Model your planned peak volume, queue delay, and rollback procedure</td><td>A small demonstration may not expose capacity limits</td></tr>
 </tbody>
 </table></div>
 <h2>Reading paths by store stage</h2>
@@ -69,18 +70,11 @@ const guides = [
 <tr><td>Mature program</td><td>How is deliverability and list hygiene maintained?</td><td><a href="/blog/best-shopify-email-apps-for-list-hygiene">List hygiene</a></td></tr>
 </tbody>
 </table></div>
-<h2>Editorial standards</h2>
-<ol>
-<li>Every shortlist is verified against vendor documentation at the time of writing.</li>
-<li>Pricing is always hedged and pointed at official pricing pages, because plans change.</li>
-<li>Trade-offs are stated per app, including who should not choose it.</li>
-<li>Claims about measured results are framed as illustrative scenarios, not guarantees.</li>
-<li>Each guide connects to the alternatives, use cases, and app profiles that support the decision.</li>
-<li>Internal links are checked against the built site so recommendations resolve to real pages.</li>
-<li>Corrections are noted inline rather than silently edited away.</li>
-</ol>
+<h2>Using the guidance responsibly</h2>
+<p>Separate a supplier capability claim from a proposed rehearsal and from a result measured in your own account. Before migration, record the source and date for each required feature, the plan that includes it, and the person responsible for checking it. A pricing link does not establish your total cost: include implementation, message volume, channels, and any retained tools.</p>
+<p>For a concrete reading path, a store launching a waitlist should read the waitlist guide for variant and notification rules, the welcome guide for a separate subscription promise, and the selection framework to compare candidates. A waitlist request and a marketing subscription can have different purposes; decide how each enters and exits its workflow before selecting a platform.</p>
 <h2>Full guide catalog</h2>
-<p>Every guide below follows the same structure: a shortlist with per-app trade-offs, pricing context pointing at official sources, decision tables, and implementation cautions. Use the catalog to jump directly to the job or store model you need.</p>
+<p>Use the catalog to jump directly to a job or store model. Compare the assumptions in that article with your catalog, purchase cycle, and team responsibilities before applying its recommendations.</p>
 <p>When two guides seem to conflict, prefer the one that matches your binding constraint. A store with weak capture should solve consent and list growth before upgrading its sending platform, and a store with strong capture but thin margins should fix discount economics before adding channels.</p>
 <div class="overflow-x-auto"><table>
 <thead><tr><th>Guide</th><th>Path</th></tr></thead>
@@ -189,22 +183,8 @@ const guides = [
 </table></div>
 <h2>Shopify email app FAQ</h2>
 <section class="max-w-3xl mx-auto space-y-6">
-<div><h3>Are these rankings sponsored?</h3><p>No. Guides prioritize operating fit, consent handling, and total cost. Vendor links point to official sources so readers can verify current plans and limits themselves.</p></div>
-<div><h3>Which guide should a brand-new store read first?</h3><p>Start with the store-model guide closest to your catalog, then the welcome-series and cart-recovery lifecycle guides. That covers the first ninety days of a realistic email program without overcommitting to a complex platform.</p></div>
-<div><h3>How current is the pricing information?</h3><p>We avoid restating specific plan prices because they change frequently. Each guide links to official pricing pages and explains which cost components to model, including overages, SMS credits, and implementation work.</p></div>
-<div><h3>Do these guides replace a deliverability audit?</h3><p>No. They help you choose and configure tools. Deliverability itself depends on consent quality, sending history, and infrastructure, which the deliverability guide covers separately.</p></div>
-<div><h3>How should I combine guides into a decision?</h3><p>Read one store-model guide, one lifecycle guide, and the selection-framework material, then model cost and suppression requirements across the two or three finalists. Decide with a bounded pilot rather than by feature comparison alone.</p></div>
-<div><h3>What if my store model is not covered?</h3><p>Use the closest catalog and buying-cycle analogy, then verify the assumptions that differ. The lifecycle and operating-discipline guides apply to almost any Shopify store regardless of vertical.</p></div>
+{faqs.map(({ question, answer }) => <div><h3>{question}</h3><p>{answer}</p></div>)}
 </section>
-<script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",mainEntity:[
-{"@type":"Question","name":"Are these rankings sponsored?","acceptedAnswer":{"@type":"Answer","text":"No. Guides prioritize operating fit, consent handling, and total cost, and vendor links point to official sources for verification."}},
-{"@type":"Question","name":"Which guide should a brand-new store read first?","acceptedAnswer":{"@type":"Answer","text":"Start with the store-model guide closest to your catalog, then the welcome-series and cart-recovery lifecycle guides."}},
-{"@type":"Question","name":"How current is the pricing information?","acceptedAnswer":{"@type":"Answer","text":"We avoid restating plan prices because they change frequently; each guide links to official pricing pages and explains what to model."}},
-{"@type":"Question","name":"Do these guides replace a deliverability audit?","acceptedAnswer":{"@type":"Answer","text":"No. They help you choose and configure tools; deliverability depends on consent quality, sending history, and infrastructure."}},
-{"@type":"Question","name":"How should I combine guides into a decision?","acceptedAnswer":{"@type":"Answer","text":"Read one store-model guide, one lifecycle guide, and selection-framework material, then model cost and suppression across finalists and decide with a bounded pilot."}},
-{"@type":"Question","name":"What if my store model is not covered?","acceptedAnswer":{"@type":"Answer","text":"Use the closest catalog and buying-cycle analogy, verify differing assumptions, and apply the lifecycle and operating-discipline guidance that generalizes across stores."}}
-]})} />
-<p>Finally, bookmark this hub: it is the fastest way back into the library when a platform changes, a team member joins, or a new lifecycle job appears. The catalog and reading paths are maintained alongside the guides themselves, so a change to one guide propagates to the paths that reference it.</p>
-<p>Every guide in this library is revised when a vendor materially changes its Shopify integration, pricing model, or consent tooling. If a guide and an official pricing page disagree, trust the pricing page and read our correction note at the top of the guide.</p>
+<script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",mainEntity:faqs.map(({question,answer})=>({"@type":"Question",name:question,acceptedAnswer:{"@type":"Answer",text:answer}}))})} />
+<p>When a guide and current supplier documentation disagree, use the supplier documentation for the current feature or plan and verify how it applies to your account. This directory does not establish publication status, sponsorship terms, or the date of each article's last factual review.</p>
 </main></BaseLayout>
-<p>The catalog above is generated from the live site structure, so every listed path resolves to a published guide. If a link ever breaks, treat it as a bug worth reporting, not an acceptable cost of maintenance.</p>
