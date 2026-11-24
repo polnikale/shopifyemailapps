@@ -1,246 +1,62 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
-import TldrBox from '../../components/TldrBox.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import { siteFromHost } from '../../content';
-
 const site = siteFromHost();
-const path = '/compare/klaviyo-vs-drip';
-const title = 'Klaviyo vs Drip for Shopify Email: 2026 Comparison';
-const desc = 'Klaviyo vs Drip for Shopify stores — predictive segmentation vs visual workflows, pricing at 25k profiles, and which platform fits operator-led retention teams.';
-
+const path = "/compare/klaviyo-vs-drip";
+const title = "Klaviyo vs Drip for Shopify: predictions or explicit journey logic?";
+const desc = "Evaluate Klaviyo and Drip for Shopify replenishment using prediction eligibility, workflow control, order data, SMS and migration effort.";
 const faqs = [
   {
-    question: 'Is Klaviyo or Drip better for a Shopify store doing $40k/mo?',
-    answer: 'At $40k/mo with a single retention owner, Drip often ships complex workflows faster because the visual builder maps to how operators think. Klaviyo pays off once you need predictive CLV, browse-by-collection segmentation, and agency-standard reporting. If your team enjoys building logic, Drip competes. If your team wants Shopify-native maximums, Klaviyo wins.',
+    "question": "Will Klaviyo predict when every product needs replenishment?",
+    "answer": "Do not assume a customer-level prediction is an SKU consumption model. Check eligibility and sample profiles, then compare the proposed timing against product-specific rules and subscription state."
   },
   {
-    question: 'How does Klaviyo vs Drip pricing compare at 25,000 contacts?',
-    answer: 'Both bill on people in account. Klaviyo at 25k active profiles typically lands $350–500/mo before SMS. Drip at 25k people often runs $300–450/mo depending on plan tier. Drip has no free tier at scale; Klaviyo free tier is irrelevant past ~250 contacts. Model SMS separately — Drip SMS exists but Klaviyo SMS reporting is more mature in Shopify stacks.',
+    "question": "Can Drip run Shopify order-based workflows?",
+    "answer": "Its documented workflow and Shopify integration support that evaluation. Confirm the particular order fields, app embed and external subscription data required by your journey."
   },
   {
-    question: 'Which has the better workflow builder?',
-    answer: 'Drip\'s visual workflow canvas is the clearest in the category — branches, delays, and A/B splits are obvious on one screen. Klaviyo flows are powerful but spread across more panels; experienced Klaviyo users move fast, newcomers stall. For a marketer who thinks in decision trees, Drip feels native. For a data analyst who thinks in segments first, Klaviyo feels native.',
-  },
-  {
-    question: 'Can I migrate from Drip to Klaviyo without losing automations?',
-    answer: 'Yes, but plan for logic translation, not copy-paste. Drip tags and custom fields map to Klaviyo properties with cleanup. Rebuild welcome and cart first, run parallel for two weeks with strict suppression, then migrate winback. Drip workflow A/B splits need manual recreation in Klaviyo flow experiments. Budget 2–4 weeks for a mid-size store.',
-  },
-  {
-    question: 'Which platform handles replenishment flows better?',
-    answer: 'Klaviyo\'s predictive replenishment and catalog sync handle variant-level serum and supplement timing with less manual tagging. Drip achieves replenishment through custom fields and order-based delays — flexible but operator-heavy. For 90-day consumables with three SKU variants, Klaviyo saves weekly maintenance. For bespoke subscription-adjacent logic, Drip\'s canvas wins.',
-  },
-  {
-    question: 'Does Drip\'s smaller ecosystem matter?',
-    answer: 'It matters for hiring and agency support. Klaviyo agencies are everywhere; Drip specialists are fewer. Klaviyo\'s template marketplace and integration directory are larger. Drip\'s Shopify sync is solid for core events — the gap shows up in exotic integrations (custom ERP, multi-store rollup) where Klaviyo partners are easier to find.',
-  },
-  {
-    question: 'What workflow test should decide the winner?',
-    answer: 'Build the same four flows: welcome (branch by first product viewed), abandoned cart (exclude wholesale tags), post-purchase (split first-time vs repeat), winback (discount-sensitive vs full-price). Score trigger accuracy, whether exclusions are visible without exporting, and edit safety during a flash sale. The winner is whichever you trust on a chaotic Thursday.',
-  },
+    "question": "Can I copy workflows during migration?",
+    "answer": "Plan to translate and validate the logic. Field names, goal entry behavior, waiting customers and consent handling require explicit mapping; an export alone does not preserve automation behavior."
+  }
 ];
 ---
-
 <BaseLayout title={title} description={desc} site={site} path={path}>
   <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+  <section class="py-14 md:py-20"><div class="container">
+    <nav class="mb-8"><a class="link" href="/compare">All comparisons</a></nav>
+    <header class="max-w-4xl"><p class="editorial-kicker">Head-to-head</p><h1 class="hero-title mt-5">{title}</h1>
+<p class="mt-7 text-xl leading-9">Both candidates deserve an actual workflow evaluation. For a repeat-purchase store, the useful distinction is whether historical predictions change a marketing decision or an operator needs explicit product-specific rules that another person can audit.</p></header>
+<article class="prose-shopify mt-14 max-w-4xl">
 
-  <section class="py-14 md:py-20">
-    <div class="container">
-      <nav class="mb-8 text-sm">
-        <a class="link" href="/compare">Comparisons</a>
-        <span class="mx-2 text-[#5d3a1d]">/</span>
-        <span class="text-[#5d3a1d]">Klaviyo vs Drip</span>
-      </nav>
+<h2>Separate data eligibility from feature availability</h2>
+<p><a href="https://help.klaviyo.com/hc/en-us/articles/360020919731">Klaviyo’s predictive analytics guide</a> describes eligibility conditions, including at least 500 purchasing customers and 180 days of order history. A new store cannot infer that predictions will be usable merely because it buys a plan. Review the full current conditions in the account, including recent orders and repeat-purchase history. A prediction is an estimate, not a guaranteed replenishment date for a specific SKU.</p>
+<p><a href="https://help.drip.com/hc/en-us/articles/4424702569357-Getting-Started-with-Workflows">Drip’s workflow guide</a> uses triggers, decisions and goals, including Shopify order-based entry. That supports a rule-driven evaluation. It does not prove the editor will be easier for your team or that custom subscription and consumption fields already exist in Shopify.</p>
+<h2>Proposed scenario: coffee bags with different reorder intervals</h2>
+<p>Suppose a roaster sells small bags, bulk bags and recurring subscriptions. This is a proposed test fixture, not an observed merchant. Define an explicit policy for who should receive a reorder reminder, then evaluate a predicted next-order approach separately from product-rule timing. Use the same controlled customers and orders in both tools.</p>
+<table class="data-table"><thead><tr><th>Case</th><th>Question to resolve</th></tr></thead><tbody>
+<tr><td>First small-bag purchase</td><td>What happens when there is too little individual history for a prediction?</td></tr>
+<tr><td>Bulk bag plus small bag</td><td>Which item governs the reminder, and can the operator explain why?</td></tr>
+<tr><td>Active subscription</td><td>Where does subscription state originate, and how does it exclude unnecessary reminders?</td></tr>
+<tr><td>Reorder during a delay</td><td>Does the existing reminder exit before another message is queued?</td></tr>
+<tr><td>Refunded order</td><td>Does refund state change timing or require an additional integration?</td></tr>
+</tbody></table>
+<h2>Workflow control: inspect the path, not the canvas screenshot</h2>
+<p>Build a purchase-triggered reminder with a subscription exclusion and a reorder exit. In Drip, inspect how <a href="https://help.drip.com/hc/en-us/articles/4424695599757-Workflows-Decisions">Decisions</a> split paths and how <a href="https://help.drip.com/hc/en-us/articles/4424710499981-Workflows-Goals">Goals</a> move people downstream. Specifically check the setting that permits a goal to act as an entry point; accidentally enabling it could admit people outside the intended purchase path.</p>
+<p>In Klaviyo, build the same policy using the available trigger and filters, then separately test the proposed predictive segment. Ask a second operator to change the bulk-bag delay, exclude an unavailable roast and explain the resulting audience. Record mistakes, help requests and time spent. This measures team fit without declaring either builder universally clearer.</p>
+<h2>Shopify setup and channel scope</h2>
+<p><a href="https://help.drip.com/hc/en-us/articles/4424695491725-Connect-Your-Shopify-Store">Drip’s Shopify setup</a> includes enabling its app embed. <a href="https://help.klaviyo.com/hc/en-us/articles/56141874651803">Klaviyo’s Shopify getting-started guide</a> also identifies an app embed for forms and on-site tracking. Check the installed theme, event payloads, customer identity and order history before attributing a missing trigger to the workflow editor.</p>
+<p>Drip currently advertises integrated SMS on its <a href="https://www.drip.com/sms">SMS page</a>; treating it as email-only would be misleading. For either candidate, confirm supported destinations, sender setup and consent import in the actual account before adding texts. Email permission alone should not be used as the SMS subscription flag.</p>
+<h2>Reporting and total effort</h2>
+<p>Request the same report from each trial: entrants, suppressed customers, messages sent, repeat orders, discounts and refunds for the reminder workflow. Align attribution windows before comparing dashboard revenue. Where practical, a later randomized holdout can estimate incremental effect; this page contains no measured lift or merchant outcomes.</p>
+<p>Quote current billable profiles or people, send allowances, SMS units, seats and support for the same workload. Include the time spent maintaining external fields, documenting logic and interpreting predictions. Avoid deleting customer history merely to reduce a quote; distinguish suppression, marketing eligibility and records needed for service or analysis.</p>
+<h2>Migration is a logic translation</h2>
+<p>Export permission evidence, field meanings and active automation membership. Map tags and properties explicitly. Rebuild one journey with sending restricted to owned test addresses; compare entries and exits before transferring ownership. Do not run both recovery senders on the same shoppers. Preserve rollback instructions and agree what happens to people already waiting in an old delay.</p>
+<h2>Decision</h2>
+<p>Favor Klaviyo when eligible predictive data actually changes the audience or timing and the resulting policy is understandable to the team. Favor Drip when explicit rules and its workflow model pass the operator handoff with less maintenance for your required journey. Catalog size and monthly revenue alone do not settle that choice.</p>
+<p>Continue with <a class="link" href="/compare/drip-vs-mailchimp">Drip vs Mailchimp</a> or the <a class="link" href="/use-cases/abandoned-cart">cart recovery playbook</a> if campaign migration or purchase exits are the remaining constraint.</p>
 
-      <header class="max-w-4xl">
-        <p class="editorial-kicker">Head-to-head</p>
-        <h1 class="hero-title mt-5">Klaviyo vs Drip for Shopify email</h1>
-        <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-          Two advanced automation platforms, opposite temperaments. Klaviyo is a Shopify customer data platform that happens to send email. Drip is a visual workflow engine built for operators who want to see every branch. We stress-tested both against a $95k/mo outdoor gear brand, a coffee subscription shop with irregular reorder cadence, and a skincare label migrating off Mailchimp — looking for which tool changes how retention actually runs.
-        </p>
-      </header>
-
-      <div class="mt-12 max-w-4xl">
-        <TldrBox
-          picks={[
-            { label: 'Shopify data depth', tool: 'Klaviyo', reason: 'Predictive CLV, browse events, and catalog-scale segmentation headroom.' },
-            { label: 'Workflow clarity', tool: 'Drip', reason: 'Best-in-class visual builder for behavior-based journeys.' },
-            { label: 'Agency ecosystem', tool: 'Klaviyo', reason: 'Larger partner network and hiring pool.' },
-            { label: 'Operator control', tool: 'Drip', reason: 'Hands-on logic without enterprise sales cycles.' },
-          ]}
-        />
-      </div>
-
-      <div class="mt-12 card overflow-x-auto">
-        <h2 class="px-5 py-4 font-serif text-2xl font-black text-[#24170f]">Comparison at a glance</h2>
-        <table class="data-table">
-          <thead>
-            <tr><th>Dimension</th><th>Klaviyo</th><th>Drip</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Best for</td><td>Data-heavy retention at scale</td><td>Visual workflow operators</td></tr>
-            <tr><td>Starting price</td><td>Free tier; paid from ~$20/mo</td><td>From ~$39/mo</td></tr>
-            <tr><td>Billing model</td><td>Active profiles + SMS credits</td><td>People in account</td></tr>
-            <tr><td>Shopify depth</td><td>Native — browse, predictive, catalog</td><td>Native — orders, tags, products</td></tr>
-            <tr><td>Workflow UI</td><td>Flow builder, segment-first</td><td>Visual canvas, branch-first</td></tr>
-            <tr><td>Predictive analytics</td><td>CLV, churn risk, replenishment</td><td>Lead scoring, custom fields</td></tr>
-            <tr><td>SMS</td><td>Built-in, mature reporting</td><td>Available, less central</td></tr>
-            <tr><td>Learning curve</td><td>Moderate–steep</td><td>Moderate for visual thinkers</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <article class="prose-shopify mt-14 max-w-4xl">
-        <h2>Why this comparison matters for Shopify merchants</h2>
-        <p>
-          Klaviyo and Drip both pass the Shopify baseline: real-time order sync, product blocks, cart abandonment, and revenue attribution. Neither is a popup tool or a newsletter-only sender. The fork is philosophical. Klaviyo assumes your competitive edge is knowing who will churn before they do — and merchandising to that graph. Drip assumes your edge is designing journeys an operator can see, audit, and rewrite without opening five tabs.
-        </p>
-        <p>
-          The outdoor gear brand exposed the gap immediately. They needed browse abandonment by collection (shell jackets vs base layers) with wholesale customer suppression. Klaviyo handled collection views natively and suppressed B2B tags in one segment. Drip required a custom field sync from Shopify customer tags and a workflow branch — totally doable, but the retention lead spent an afternoon wiring it where Klaviyo took twenty minutes.
-        </p>
-
-        <h2>Workflow test: welcome series</h2>
-        <p>
-          Goal: convert popup subscribers without training 25%-off expectations. Klaviyo branched welcome by signup source and first product viewed, pulling catalog imagery dynamically. Drip built the same branch on a visual canvas — popup tag on the left path, product-page tag on the right — with explicit delays visible as nodes. The Drip version was easier to explain to the founder in a fifteen-minute screen share.
-        </p>
-        <p>
-          At week eight, the skincare label added a new hero SKU and wanted welcome email four to feature it for subscribers who viewed that product pre-signup. Klaviyo's catalog sync made that a merge-tag swap. Drip needed a segment refresh and a workflow node edit — still fast, but the team noted Klaviyo felt more "catalog-aware" out of the box.
-        </p>
-
-        <h2>Workflow test: abandoned cart</h2>
-        <p>
-          We modeled a $214 cart with three items and a first-time visitor. Klaviyo fired at one hour, suppressed on purchase, and capped discount at 10% for carts under $100 using flow filters. Drip's three-step cart workflow matched outcomes with clearer visibility into where shoppers dropped — the canvas showed exactly which branch fired SMS vs email.
-        </p>
-        <p>
-          The coffee subscription shop hit a Drip advantage: irregular reorder timing. They built a workflow that waited 18–45 days based on bag size custom property, with an A/B split on education vs discount in step two. Klaviyo achieved similar logic through segments and flow splits, but the Drip canvas made the experiment obvious to a new hire. Klaviyo won on reporting — revenue by flow variant was faster to pull for the weekly standup.
-        </p>
-
-        <h2>Pricing reality at growing list sizes</h2>
-        <p>
-          Both platforms punish list bloat. The outdoor brand had 31k profiles but only 8k monthly engaged recipients — paying for the full count on either tool. Klaviyo's bill was predictable but steep. Drip landed slightly lower at the same people count but offered no meaningful free tier once they crossed 2,500 contacts.
-        </p>
-        <p>
-          Run a 12-month model: profiles, SMS volume, seasonal campaign spikes, and hours spent maintaining workflows. At 50k people, budget $500–800/mo for Klaviyo with moderate SMS. Drip may land 10–20% lower on contacts alone but workflow complexity increases maintenance hours — factor operator time as real cost. The cheaper platform is whichever matches your sending discipline, not whichever quotes lower on the pricing page.
-        </p>
-
-        <h2>Shopify data depth in production</h2>
-        <p>
-          Klaviyo's predictive CLV changed winback prioritization for the skincare label. They targeted predicted high-value churners with education sequences before discounting. Drip used lead scoring and recency tags — effective, but more manual to keep calibrated as SKU mix shifted.
-        </p>
-        <p>
-          For catalogs under 300 SKUs with straightforward repurchase cycles, Drip's data model is enough. For 1,500+ variants, collection-level browse abandonment, and holdout testing during BFCM, Klaviyo's event history and benchmark reporting are the safer long-term foundation.
-        </p>
-
-        <h2>Team fit: who should choose which</h2>
-        <p><strong>Choose Klaviyo if:</strong></p>
-        <ul>
-          <li>You have 800+ monthly orders and want predictive analytics driving segmentation</li>
-          <li>Browse abandonment, collection merchandising, and complex suppression are core revenue levers</li>
-          <li>Your agency or hire pool already speaks Klaviyo</li>
-          <li>Reporting by segment, cohort, and flow variant matters for weekly decisions</li>
-        </ul>
-        <p><strong>Choose Drip if:</strong></p>
-        <ul>
-          <li>Your retention owner thinks in workflows and wants every branch visible on one canvas</li>
-          <li>You need advanced logic without enterprise sales or implementation timelines</li>
-          <li>Custom field and tag-driven journeys are central to your merchandising</li>
-          <li>You value operator control over predictive black-box scoring</li>
-        </ul>
-
-        <h2>Suppression checklist before go-live</h2>
-        <p>
-          Klaviyo and Drip both punish sloppy cross-flow logic during sale weeks. Document these rules before parallel trial ends: purchasers suppress cart and winback within five minutes of order webhook; wholesale-tagged customers exclude promotional discount paths; active replenishment subscribers skip cart step two; popup discount seekers get different winback caps than full-price repeat buyers.
-        </p>
-        <p>
-          Export a weekly collision audit during trial — count profiles that received cart plus winback within 24 hours. Klaviyo's flow analytics surface this faster; Drip canvas makes branch visibility easier for founder review. Neither platform prevents over-messaging without operator discipline. The outdoor gear brand's Memorial Day edit excluded clearance SKUs from upsells in both platforms — test edit safety under pressure, not on calm Tuesdays.
-        </p>
-
-        <h2>When to graduate beyond both</h2>
-        <p>
-          If neither Klaviyo nor Drip wins because the workflow boundary is still unclear, pause expansion and resolve the event, suppression, and ownership requirements before adding another platform. If browse-by-collection at 2,000+ SKUs is central revenue lever, Klaviyo headroom justifies profile pricing even when Drip canvas feels friendlier today. Graduation trigger is usually order volume plus operator hours — not calendar age.
-        </p>
-
-        <h2>Merchant scenario: coffee subscription irregular reorder cadence</h2>
-        <p>
-          This roaster at $72k/mo sold three bag sizes with grind options — reorder windows ranged 18 to 45 days depending on household consumption, not calendar months. Klaviyo's predictive replenishment suggested send dates but required operator trust in black-box scoring when a new seasonal blend launched and historical data was thin. Drip built explicit canvas branches: 12oz whole bean waited 22 days, 5lb commercial grind waited 38 days, wholesale-tagged customers skipped promotional winback entirely.
-        </p>
-        <p>
-          The retention lead edited Drip nodes the night before a limited roast drop — excluding clearance inventory from full-price post-purchase upsells in one visible rule. Klaviyo achieved the same with flow filters but required three panel hops the founder could not audit during a chaotic Thursday. They chose Drip for operator visibility; they kept Klaviyo reporting exports for weekly standup revenue-by-variant until month ten when Drip attribution caught up. The lesson: predictive depth versus canvas clarity is a temperament decision, not a revenue guarantee.
-        </p>
-
-        <h2>90-day rollout: Klaviyo versus Drip parallel trial</h2>
-        <p>
-          Weeks 1–4: Connect both platforms to Shopify dev store with identical contact sample — 2,000 recent purchasers plus 500 popup subscribers. Build welcome and cart on each; measure time-to-live and trigger accuracy on test orders.
-        </p>
-        <p>
-          Weeks 5–8: Add post-purchase split (first-time vs repeat) and winback with discount-sensitive exclusion. Run one flash sale week editing both platforms under pressure — score which UI your retention owner trusts at 11pm before a drop.
-        </p>
-        <p>
-          Weeks 9–12: Model 12-month cost at 15k, 25k, and 40k profiles with actual SMS volume. Export weekly revenue-by-flow from both; compare attributed recovery, not feature checklists. Pick the winner and document the operating boundary before expanding the next flow.
-        </p>
-
-        <h2>Margin math: profile pricing versus canvas maintenance hours</h2>
-        <p>
-          Klaviyo at 25k profiles might cost $420/mo; Drip at 25k people lands $340/mo — $80/mo savings on paper. If Drip canvas saves four hours monthly on workflow edits versus Klaviyo segment-first navigation at $75/hour loaded operator cost, Drip wins $220/mo in total economics despite lower sticker savings.
-        </p>
-        <p>
-          Reverse case: Klaviyo predictive CLV targeting reduced winback discount leakage 8% on a $95k/mo skincare label — $760/mo margin preserved versus blanket 20% off. Klaviyo's higher bill paid for itself when predictive fields changed send decisions weekly. Run your own math on discount leakage and operator hours; neither platform wins universally on price alone.
-        </p>
-
-        <h2>Decision matrix: four signals for Klaviyo versus Drip</h2>
-        <p>
-          Signal one: weekly segment audit cadence — if retention owner audits Klaviyo segments weekly and uses predictive fields in send decisions, Klaviyo pricing justified. Signal two: workflow explainability — if founder needs canvas visibility before approving sale-week edits, Drip temperament fits. Signal three: catalog complexity — browse-by-collection above 800 SKUs favors Klaviyo event history. Signal four: agency ecosystem — hiring Klaviyo specialists is easier; Drip agencies exist but pool is smaller.
-        </p>
-        <p>
-          Coffee roaster chose Drip on signals two and four — founder audited canvas, agency was optional. Skincare label at $95k/mo chose Klaviyo on signals one and three — predictive churn and collection browse drove weekly decisions. Neither matrix is universal; run signals against your team, not industry defaults.
-        </p>
-
-        <h2>Failure rehearsal: wrong advanced platform pick</h2>
-        <p>
-          <strong>Klaviyo before order volume justifies data depth.</strong> Teams pay $350/mo for predictive segments they never use — six hours weekly maintaining flows they could run simpler elsewhere. Negative ROI on platform sophistication without operator discipline.
-        </p>
-        <p>
-          <strong>Drip without capture solved first.</strong> Visual workflows on a shrinking list optimize retention on insufficient subscribers — fix top-of-funnel before canvas complexity. Also: Drip for browse-by-collection at 2,000+ SKUs when Klaviyo native collection views would save weekly segment maintenance.
-        </p>
-
-        <h2>Weekly operator checklist during trial</h2>
-        <p>
-          Monday: export profiles that received cart plus winback within 24 hours on both platforms. Wednesday: verify wholesale suppression fired on test B2B-tagged order. Friday: compare attributed recovery by flow variant for standup — Klaviyo reporting faster, Drip canvas easier to explain to founder. Sale week: run edit drill excluding clearance inventory from upsells in under 15 minutes on chosen platform.
-        </p>
-
-        <p>
-          Annual contract note: run parallel trial before committing either platform to January renewal — Klaviyo profile inflation from giveaway imports spikes Q4 bills; Drip people count punishes same bloat. Sunset stale contacts on both before signing. The four-flow test plus billing audit beats feature matrix screenshots every time for operators who edit flows weekly, not annually. Neither platform forgives list hygiene neglect at renewal.
-        </p>
-
-        <p><em>Minimum viable trial length: 90 days with weekly operator checklist — shorter trials miss sale-week edit safety and billing cycle surprises both platforms surface only under operational stress.</em></p>
-
-        <h2>Merchant scenario: canvas operator versus predictive CLV routing</h2>
-        <p>
-          Leather goods brand chose Drip for welcome branching by product category purchased — operator built flows in six hours on canvas. Klaviyo trial added predictive CLV cart routing: VIP full-price recovery without discount on first touch recovered 28 orders monthly at $185 AOV versus Drip blanket 10% discount path. Klaviyo won when finance tracked margin KPI; Drip won when team had no bandwidth for weekly predictive review. Graduation trigger: when full-price recovery rate becomes line item on P&L, Klaviyo premium justified.
-        </p>
-
-        <h2>Validation checkpoint: predictive metrics cadence</h2>
-        <p>
-          Klaviyo wins only if predictive CLV and browse segments are reviewed weekly with send changes documented — leather goods brand justified premium when full-price VIP cart path recovered 28 orders monthly; Drip won when team had zero bandwidth for metrics cadence and preferred canvas control.
-        </p>
-        <h2>Verdict</h2>
-        <p>
-          Klaviyo wins when Shopify data maximums and predictive segmentation justify profile-based pricing. Drip wins when your team ships revenue through visible, editable workflows and prefers operator control over ecosystem size. Run the four-flow test on both trials. The winner is whichever platform your retention owner trusts to edit safely the night before a product drop — not whichever looks better in a feature matrix screenshot.
-        </p>
-      </article>
-
-      <div class="mt-10 max-w-4xl text-sm">
-        <p class="font-black text-[#24170f]">Related comparisons</p>
-        <p class="mt-2">
-          <a class="link" href="/compare/klaviyo-vs-omnisend">Klaviyo vs Omnisend</a> ·
-          <a class="link" href="/compare/drip-vs-mailchimp">Drip vs Mailchimp</a> ·
-          <a class="link" href="/for/supplements">Email apps for supplements</a> ·
-          <a class="link" href="/use-cases/abandoned-cart">Abandoned cart playbook</a>
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <FaqSection faqs={faqs} title="Klaviyo vs Drip FAQ" />
+</article></div></section>
+  <FaqSection faqs={faqs} title="Questions before choosing" />
 </BaseLayout>
