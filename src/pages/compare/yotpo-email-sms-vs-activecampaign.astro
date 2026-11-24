@@ -1,265 +1,44 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
-import TldrBox from '../../components/TldrBox.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import { siteFromHost } from '../../content';
-
 const site = siteFromHost();
-const path = '/compare/yotpo-email-sms-vs-activecampaign';
-const title = 'Yotpo Email & SMS vs ActiveCampaign for Shopify: 2026 Comparison';
-const desc = 'Yotpo Email & SMS vs ActiveCampaign for Shopify — reviews-loyalty suite lifecycle vs CRM automation depth, B2B hybrid tags, and ecommerce operator fit.';
-
+const path = "/compare/yotpo-email-sms-vs-activecampaign";
+const title = "Yotpo Email & SMS to ActiveCampaign: Shopify migration decisions";
+const desc = "Yotpo messaging has been decommissioned. Evaluate ActiveCampaign as a replacement for store messaging and sales workflows while deciding separately whether to retain Yotpo Reviews and Loyalty.";
 const faqs = [
   {
-    question: 'Is Yotpo Email & SMS or ActiveCampaign better for a Shopify store doing $70k/mo?',
-    answer: 'ActiveCampaign wins when CRM depth matters — lead scoring, deal pipelines, custom object logic, and B2B wholesale tags alongside DTC email. Yotpo Email & SMS wins when Yotpo Reviews or Loyalty is live and post-purchase UGC drives repeat revenue without complex CRM requirements. Pure DTC with UGC maturity leans Yotpo; hybrid B2B-plus-DTC with sales-assist workflows lean ActiveCampaign.',
+    "question": "Can I keep Yotpo Reviews while changing email platforms?",
+    "answer": "Treat Reviews as a separate active product decision. Document the sender for review requests and the supported route for any data needed in ActiveCampaign; do not assume that the retired messaging product remains part of the stack."
   },
   {
-    question: 'Can ActiveCampaign replace Yotpo Email & SMS while keeping Yotpo Reviews?',
-    answer: 'Yes — many hybrid merchants run ActiveCampaign for lifecycle and CRM while Yotpo owns review collection and display. You lose native review-request timing ActiveCampaign must configure via integration. Coordinate triggers to avoid duplicate post-purchase touches. The split works when CRM automation justifies maintenance ActiveCampaign operators accept.',
-  },
-  {
-    question: 'How does Yotpo vs ActiveCampaign pricing compare at 18,000 contacts?',
-    answer: 'ActiveCampaign at 18k contacts often runs $150–280/mo depending on automation tier and seat count. Yotpo Email & SMS pricing ties to broader Yotpo contract — bundle economics improve when Reviews and Loyalty are already line items. ActiveCampaign looks expensive until you value CRM features Yotpo does not provide; Yotpo looks expensive without Reviews infrastructure.',
-  },
-  {
-    question: 'Which has better ecommerce Shopify automations?',
-    answer: 'Yotpo Email & SMS when suite modules are active — post-purchase review requests, loyalty earn, cart recovery enriched by UGC data. ActiveCampaign offers flexible automation with CRM layers — stronger for B2B reorder nudges, sales-assist handoffs, and custom field branching, weaker for native review sequencing without integration.',
-  },
-  {
-    question: 'Which handles B2B wholesale plus DTC email better?',
-    answer: 'ActiveCampaign decisively when Shopify wholesale tags, account-based sequences, and sales team notifications are daily workflows. Yotpo Email assumes DTC retention with reviews and loyalty context — wholesale exclusion and rep handoffs require workarounds. Hybrid industrial supply and pro-equipment brands typically lean ActiveCampaign for CRM, Yotpo only if Reviews serves DTC UGC.',
-  },
-  {
-    question: 'Which handles post-purchase review requests better?',
-    answer: 'Yotpo natively when Reviews module is active — fulfillment timing, photo prompts, reviewer segmentation without sync. ActiveCampaign can branch on review tags synced from Yotpo but requires integration maintenance. If post-purchase UGC velocity is a KPI on DTC channel, Yotpo integrated post-purchase wins unless CRM logic is equally critical.',
-  },
-  {
-    question: 'What workflow test should decide the winner?',
-    answer: 'Build welcome, cart, post-purchase review request if Reviews is live, winback, and if B2B applies — wholesale reorder nudge with rep notification. Score time-to-live, review submission lift, and CRM workflow reliability. If wholesale tags and pipelines matter, lean ActiveCampaign. If Reviews and Loyalty are live on pure DTC, lean Yotpo.',
-  },
+    "question": "Can I export my old Yotpo messaging account now?",
+    "answer": "Do not plan on dashboard access. The decommission notice says it is inactive. Start with records already available and establish any recovery options with support before committing to a migration date."
+  }
 ];
 ---
-
 <BaseLayout title={title} description={desc} site={site} path={path}>
   <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
-
-  <section class="py-14 md:py-20">
-    <div class="container">
-      <nav class="mb-8 text-sm">
-        <a class="link" href="/compare">Comparisons</a>
-        <span class="mx-2 text-[#5d3a1d]">/</span>
-        <span class="text-[#5d3a1d]">Yotpo Email & SMS vs ActiveCampaign</span>
-      </nav>
-
-      <header class="max-w-4xl">
-        <p class="editorial-kicker">Head-to-head</p>
-        <h1 class="hero-title mt-5">Yotpo Email & SMS vs ActiveCampaign for Shopify</h1>
-        <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-          Suite trust loops versus CRM automation depth. Yotpo Email & SMS optimizes DTC lifecycle messaging when reviews and loyalty data should inform every send. ActiveCampaign optimizes for merchants who need lead scoring, pipeline logic, and B2B wholesale workflows alongside Shopify DTC email. We stress-tested both on a $76k/mo pro kitchen equipment brand with 30% wholesale revenue, a $68k/mo clean skincare DTC running Yotpo Reviews and Loyalty, and a $54k/mo industrial safety gear shop that chose ActiveCampaign for rep-assist reorder sequences ActiveCampaign expressed natively.
-        </p>
-      </header>
-
-      <div class="mt-12 max-w-4xl">
-        <TldrBox
-          picks={[
-            { label: 'Reviews + loyalty email', tool: 'Yotpo', reason: 'Native UGC timing and points earn on pure DTC.' },
-            { label: 'CRM + B2B hybrid', tool: 'ActiveCampaign', reason: 'Lead scoring, pipelines, and wholesale tag logic.' },
-            { label: 'Suite consolidation', tool: 'Yotpo', reason: 'One vendor when Reviews or Loyalty already live.' },
-            { label: 'Custom field automation', tool: 'ActiveCampaign', reason: 'Deep branching beyond ecommerce presets.' },
-          ]}
-        />
-      </div>
-
-      <div class="mt-12 card overflow-x-auto">
-        <h2 class="px-5 py-4 font-serif text-2xl font-black text-[#24170f]">Comparison at a glance</h2>
-        <table class="data-table">
-          <thead>
-            <tr><th>Dimension</th><th>Yotpo Email & SMS</th><th>ActiveCampaign</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Best for</td><td>Reviews/loyalty DTC merchants</td><td>CRM-heavy hybrid B2B+DTC</td></tr>
-            <tr><td>Starting price</td><td>Bundle-dependent pricing</td><td>From ~$29/mo</td></tr>
-            <tr><td>Billing model</td><td>Yotpo contract tiers</td><td>Contacts + feature tier</td></tr>
-            <tr><td>Shopify depth</td><td>Native + reviews/loyalty data</td><td>Native + CRM layers</td></tr>
-            <tr><td>Reviews integration</td><td>Native</td><td>Via integration</td></tr>
-            <tr><td>B2B / wholesale</td><td>Limited</td><td>Core strength</td></tr>
-            <tr><td>Lead scoring</td><td>Basic segments</td><td>Advanced CRM</td></tr>
-            <tr><td>Learning curve</td><td>Moderate; suite context</td><td>Steep with CRM features</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <article class="prose-shopify mt-14 max-w-4xl">
-        <h2>Why this comparison matters for Shopify merchants</h2>
-        <p>
-          ActiveCampaign and Yotpo Email & SMS serve overlapping but distinct buyer personas. Merchants search this comparison when ActiveCampaign CRM depth feels necessary for wholesale tags — or when Yotpo renewal bundles email alongside Reviews they already depend on for DTC UGC. Pure DTC with UGC maturity favors Yotpo consolidation; hybrid B2B-plus-DTC with sales-assist workflows favors ActiveCampaign unless Reviews is the sole retention lever.
-        </p>
-        <p>
-          The kitchen equipment brand ran 70% DTC and 30% wholesale through Shopify B2B tags. ActiveCampaign lead scoring routed high-AOV wholesale inquiries to rep inboxes while DTC cart recovery ran in parallel — logic Yotpo Email could approximate only with awkward workarounds. They kept Yotpo Reviews for DTC product pages but never considered Yotpo Email because CRM was the binding constraint.
-        </p>
-
-        <h2>Merchant scenario: pro kitchen equipment hybrid on ActiveCampaign</h2>
-        <p>
-          At $76k/mo this brand had wholesale accounts reordering on 90–180 day cycles with rep-assist for custom quotes above $2,400. ActiveCampaign automation triggered rep notifications when tagged wholesale accounts viewed premium SKU collections without ordering in 45 days — pipeline feature Yotpo does not offer. DTC welcome and cart ran in same account with wholesale exclusions on promotional winback.
-        </p>
-        <p>
-          Yotpo Email demos focused on review requests and loyalty earn — relevant for DTC line but irrelevant for commercial buyers who never left UGC. ActiveCampaign won on organizational fit, not email template aesthetics.
-        </p>
-
-        <h2>Merchant scenario: clean skincare DTC on Yotpo suite</h2>
-        <p>
-          This brand at $68k/mo had pure DTC traffic — no wholesale tags. Yotpo Reviews drove 265 photo submissions monthly; Loyalty with tiered earn on repurchase. Post-purchase review requests and loyalty earn emails shared suppression natively in Yotpo Email & SMS. ActiveCampaign could replicate some logic via synced tags — maintenance cost exceeded their one-person retention team capacity versus suite consolidation.
-        </p>
-        <p>
-          ActiveCampaign lead scoring and deal pipelines added complexity without corresponding revenue on pure DTC. Yotpo suite won on operator hours and native UGC context — CRM depth was solution looking for problem.
-        </p>
-
-        <h2>Workflow test: welcome series with channel branching</h2>
-        <p>
-          ActiveCampaign built welcome with explicit branches for wholesale-tagged signups versus DTC popup discount seekers on the kitchen equipment brand — education paths differed materially. Yotpo welcome templates assumed loyalty enrollment and review social proof — powerful for skincare DTC, awkward for wholesale accounts without UGC participation.
-        </p>
-        <p>
-          For pure DTC with Reviews live, Yotpo presets accelerate. For hybrid catalogs where signup source implies different sales motion, ActiveCampaign CRM branching wins.
-        </p>
-
-        <h2>Workflow test: abandoned cart and reorder nudges</h2>
-        <p>
-          Yotpo cart email with UGC social proof recovered 14% on skincare DTC — reviewer photos in cart emails lifted click rate. ActiveCampaign cart recovery on kitchen equipment DTC line performed similarly; wholesale reorder nudges with rep CC on high-value stalled carts were ActiveCampaign-only capability driving $8k/mo incremental B2B pipeline.
-        </p>
-        <p>
-          The industrial safety gear shop used ActiveCampaign to alert territory reps when tagged accounts abandoned carts above $900 — workflow that prevented Yotpo from competing meaningfully despite Reviews demos on DTC SKUs only.
-        </p>
-
-        <h2>Pricing reality at growing list sizes</h2>
-        <p>
-          ActiveCampaign at 18k contacts with automation plus CRM tier often runs $200–320/mo — seat count adds cost. Yotpo Email pricing varies with bundle; skincare brand paying Reviews + Loyalty + Email saw consolidation savings versus ActiveCampaign plus separate review tooling.
-        </p>
-        <p>
-          Model binding constraints before comparing line items. Kitchen equipment brand's ActiveCampaign CRM value exceeded incremental cost versus hypothetical Yotpo bundle. Skincare brand's Yotpo suite value exceeded ActiveCampaign CRM features they would never activate.
-        </p>
-
-        <h2>Shopify data depth in production</h2>
-        <p>
-          ActiveCampaign goes deep on custom fields, lead scores, and pipeline stages when Shopify customer metadata includes B2B tags and account hierarchies. Yotpo adds review sentiment, loyalty tier, and redemption proximity for DTC UGC programs — data types ActiveCampaign syncs but not as frictionlessly inside one admin.
-        </p>
-        <p>
-          Neither matches Klaviyo predictive CLV for pure DTC maximums. Choose based on whether CRM motion or trust-loop UGC drives your retention P&L — hybrid industrial brands skew ActiveCampaign; pure DTC beauty skew Yotpo.
-        </p>
-
-        <h2>Team fit: who should choose which</h2>
-        <p><strong>Choose Yotpo Email & SMS if:</strong></p>
-        <ul>
-          <li>Yotpo Reviews or Loyalty is already live on pure DTC channel</li>
-          <li>Post-purchase UGC and loyalty earn emails are retention infrastructure</li>
-          <li>Wholesale or CRM pipelines are absent or handled outside email</li>
-          <li>Suite consolidation reduces integration labor for lean teams</li>
-        </ul>
-        <p><strong>Choose ActiveCampaign if:</strong></p>
-        <ul>
-          <li>B2B wholesale tags and rep-assist workflows are daily operations</li>
-          <li>Lead scoring and pipeline automation matter alongside Shopify DTC</li>
-          <li>Custom field branching exceeds ecommerce preset comfort</li>
-          <li>You have operator capacity to maintain CRM automation monthly</li>
-        </ul>
-
-
-        <h2>90-day rollout: CRM versus suite channel test</h2>
-        <p>
-          Weeks 1–4: ActiveCampaign trial if wholesale or B2B tags exist — build one pipeline-triggered email. Yotpo Email trial if Reviews or Loyalty is live — post-purchase and cart with UGC timing.
-        </p>
-        <p>
-          Weeks 5–8: Score which platform your team edits during mock sale. Hybrid merchants document DTC versus B2B trigger ownership explicitly.
-        </p>
-        <p>
-          Weeks 9–12: Model cost including CRM seats versus Yotpo bundle. Pick winner by binding constraint — CRM pipelines or UGC velocity — not generic feature lists.
-        </p>
-
-        <h2>Margin math: pipeline automation versus trust loops</h2>
-        <p>
-          ActiveCampaign Plus at $149/mo for three sales seats plus Shopify automation versus Yotpo bundle at $260/mo. The kitchen equipment hybrid recovered $6k monthly from wholesale deal follow-up ActiveCampaign pipelines enabled — Yotpo could not replace that motion. Pure DTC skincare on Yotpo suite saved 10 hours monthly versus AC integration maintenance. Revenue shape determines economics, not contact count alone.
-        </p>
-
-        <h2>Failure rehearsal: wrong fit for channel mix</h2>
-        <p>
-          <strong>ActiveCampaign for pure DTC without CRM need.</strong> Pipeline complexity without wholesale leads — Omnisend or Klaviyo ship faster.
-        </p>
-        <p>
-          <strong>Yotpo Email for B2B-heavy catalogs.</strong> Deal stages and sales-assist automation absent — revenue leaks in wholesale inbox.
-        </p>
-
-        <h2>Merchant scenario: hybrid merchant running split stack</h2>
-        <p>
-          The pro kitchen equipment brand at $96k/mo runs ActiveCampaign for wholesale inquiry pipelines and Yotpo Reviews for DTC PDP display — Yotpo Email only when DTC lifecycle consolidation beats maintaining two ESPs. Full Yotpo Email adoption waits until DTC crosses 75% of revenue; until then CRM binding constraint keeps ActiveCampaign non-negotiable.
-        </p>
-
-
-        <h2>Operational depth: CRM pipeline versus trust-loop split</h2>
-        <p>
-          Hybrid merchant runs ActiveCampaign wholesale pipeline and Yotpo Reviews-plus-email for DTC — split by revenue lane. Wrong pick when pure DTC chooses AC for pipeline theater or suite email without using Reviews module.
-        </p>
-        <p>
-          Yotpo wins UGC-powered lifecycle when review collection active and creative uses stars in cart. AC wins cross-site nurture and B2B deal stages load-bearing alongside Shopify.
-        </p>
-        <p>
-          Document lane ownership like Drip-plus-AC hybrid — promotional DTC email owner, pipeline owner, review request owner. Collision causes duplicate post-purchase touches.
-        </p>
-        <p>
-          A dedicated lifecycle platform can fit DTC retention when suite email templates plateau but the Reviews module remains valuable — modular honesty beats false CRM-plus-suite consolidation.
-        </p>
-
-
-        <h2>Weekly operator checklist during trial</h2>
-        <p>
-          Weekly Yotpo Email Sms versus Activecampaign cadence — Monday: time Shopify order sync into Yotpo Email Sms versus Activecampaign entry (anything over ten minutes breaks suppression testing). Wednesday: run a single edge case — gifted order, subscription tag, financed high-AOV cart — through both Yotpo Email Sms and Activecampaign. Friday: re-model twelve-month cost on actual Yotpo Email Sms versus Activecampaign sends; bloated lists hurt contact billing, heavy calendars hurt send billing.
-        </p>
-        <p>
-          In Yotpo Email Sms versus Activecampaign, buy Yotpo Email Sms’s depth when depth is the bottleneck and Activecampaign’s speed when staffing is the bottleneck — whichever advantage survives your peak calendar wins. The scenario sketched for Yotpo Email Sms versus Activecampaign here is illustrative, so confirm it against your own order mix, catalog, and bench strength first.
-        </p>
-        <h2>Pre-decision audit</h2>
-        <p>
-          Don't annual-commit Yotpo Email Sms versus Activecampaign on reading alone — complete scored trials in Yotpo Email Sms and Activecampaign, project peak Yotpo Email Sms versus Activecampaign sends, confirm tag/CRM needs, clean inactives before contact-priced quotes, and stage kill-switches for a hybrid Yotpo Email Sms/Activecampaign window. Cited Yotpo Email Sms versus Activecampaign outcomes guide; your measured trial concludes.
-        </p>
-        <p>
-          The Yotpo Email Sms versus Activecampaign verdict belongs to the calmer Thursday edit: whichever of Yotpo Email Sms or Activecampaign ships suppression and VIP access fastest wins on revenue and margin.
-        </p>
-
-        <h2>Sale-week edit safety gate</h2>
-        <p>
-          The decisive tiebreaker between Yotpo Email & SMS and ActiveCampaign is rarely feature depth — it is whether a non-technical marketer can add recent-purchaser suppression and VIP early access in under thirty minutes on a Thursday before a drop. Run that edit in both trials before annual commit. Platforms that pass calm-week demos but fail sale-week edits cost more in foregone peak revenue than any annual subscription delta.
-        </p>
-        
-        <p>
-          Minimum viable trial length remains 90 days with weekly operator checklist — shorter trials miss billing surprises and peak-season behavior both Yotpo Email & SMS and ActiveCampaign surface only under operational stress. Baseline metrics in week one make before-and-after claims credible to finance.
-        </p>
-
-        <p>
-          <em>Yotpo Email Sms versus Activecampaign discipline: week-one baseline capture across Yotpo Email Sms and Activecampaign for all four flows, quarterly re-decision on Yotpo Email Sms versus Activecampaign as channel mix evolves.</em>
-        </p>
-
-        <h2>Failure rehearsal: renewal-season panic migration</h2>
-        <p>
-          Teams rediscover comparison pages only at contract renewal under peak-season pressure — worst time to migrate. Schedule evaluation 120 days before renewal or BFCM, run four-flow trial calmly, and keep kill-switch spreadsheet ready. Panic migration causes duplicate cart recovery and deliverability dips that take quarters to heal.
-        </p>
-        <h2>CRM deal routing versus Yotpo trust loop modules</h2>
-        <p>
-          Wholesale hybrid: ActiveCampaign deal stages scored 10/10; Yotpo Email with Reviews scored 8/10 on UGC campaigns but 4/10 on wholesale exclusion. Architecture: ActiveCampaign pipeline plus Yotpo Reviews only — drop Yotpo Email tier. Suite wins when DTC trust loop drives revenue; CRM wins when B2B pipeline shares billing justification.
-        </p>
-
-        <h2>Workflow validation: yotpo email sms vs activecampaign</h2>
-        <p>
-          Write Yotpo Email Sms versus Activecampaign trial scores down — welcome latency, cart suppression, gift-buyer edge, winback segmentation, priced-at-scale cost for Yotpo Email Sms and Activecampaign — and use the half-hour sale-week edit as the Yotpo Email Sms versus Activecampaign tiebreaker over demo aesthetics.
-        </p>
-        <p>
-          Ninety days is the Yotpo Email Sms versus Activecampaign floor — weekly operator checks on Yotpo Email Sms and Activecampaign plus day-one baselines — because truncated Yotpo Email Sms versus Activecampaign pilots miss the billing and suppression surprises finance cares about.
-        </p>
-        <h2>Verdict</h2>
-        <p>
-          Yotpo Email & SMS wins when Reviews or Loyalty modules anchor pure DTC retention and trust-loop messaging should not depend on integrations. ActiveCampaign wins when CRM depth, wholesale tags, and sales-assist automation are organizational requirements alongside Shopify email. Hybrid merchants often run ActiveCampaign for B2B motion and Yotpo Reviews for DTC UGC display — full Yotpo Email only when DTC lifecycle consolidation beats CRM split. Run welcome, cart, and post-purchase tests against your actual channel mix; the winner matches whether CRM or UGC is the binding constraint.
-        </p>
-      </article>
-
+  <section class="py-14 md:py-20"><div class="container">
+    <nav class="mb-8 text-sm"><a class="link" href="/compare">Comparisons</a></nav>
+    <header class="max-w-4xl"><p class="editorial-kicker">Head-to-head</p><h1 class="hero-title mt-5">{title}</h1><p class="mt-7 text-xl leading-9">{desc}</p></header>
+    <article class="prose-shopify mt-14 max-w-4xl">
+      <h2>This is a replacement decision</h2>
+      <p>Yotpo announced full Email and SMS deprecation for December 31, 2025. Its current lifecycle notice says the application is decommissioned and dashboard access and background services are inactive. A new Yotpo messaging trial, bundle renewal or parallel Yotpo send test is therefore not an available buying premise. Reviews and Loyalty are separate decisions; their usefulness does not restore the retired sender.</p>
+      <h2>Reconstruct the data you can actually obtain</h2>
+      <p>Begin with Shopify customer and order records, prior exports you already hold and documented consent or suppression records. Do not assume the retired Yotpo dashboard can still export contacts, history or templates. If records are missing, establish what support can recover before scheduling a launch. Missing permission history is not permission to treat every old phone number or email address as subscribed.</p>
+      <h2>Shopify history has plan implications</h2>
+      <p>ActiveCampaign documents using Shopify data for follow-up email, automation and segments. Its integration guide says historical sync is unavailable on Starter. Distinguish historical order import from new events in your plan selection: a winback segment based on prior purchases cannot be validated using only newly created test orders. Inspect order status and customer matching as well as the presence of a contact.</p>
+      <h2>Wholesale follow-up is a separate workflow</h2>
+      <p>For a hypothetical store selling to both consumers and trade buyers, define the field that identifies a wholesale inquiry and the staff member who owns follow-up. Rehearse routing that inquiry while excluding it from the consumer discount welcome. ActiveCampaign lists CRM and SMS capabilities, but do not assume every plan includes the sales features, seats or channel coverage you need. Request a configuration that includes the actual workflow, rather than buying on a generic CRM label.</p>
+      <h2>Retain Reviews or Loyalty only with clear ownership</h2>
+      <p>Keeping a review widget or a points program does not require retaining retired Yotpo messaging. Inventory which active application sends review requests, rewards notices and promotional email. For any proposed transfer of review or points data into ActiveCampaign, establish the supported connector or field mapping first; this page does not promise a native integration. Missing loyalty data should omit the personalization rather than display a fabricated balance.</p>
+      <h2>Budget the replacement rather than an obsolete bundle</h2>
+      <p>Use ActiveCampaign’s current pricing for the required contact size, automation plan and any sales or messaging additions. Include retained Yotpo modules and integration maintenance separately. Rebuild a disabled welcome and recovery flow, inspect consent and purchase exits, then activate one owner per trigger. ActiveCampaign belongs on the shortlist when store email and sales follow-up need shared automation; a simple DTC newsletter does not by itself justify adding a sales pipeline.</p>
+      <h2>Primary sources</h2>
+      <p>Product information checked November 25, 2026. <a class="link" href="https://www.yotpo.com/blog/email-sms-migration-partners/">Yotpo retirement</a> · <a class="link" href="https://email-and-sms.yotpo.com/">Live lifecycle notice</a> · <a class="link" href="https://help.activecampaign.com/hc/en-us/articles/115000202150-Connect-your-Shopify-store-to-ActiveCampaign">ActiveCampaign Shopify integration</a> · <a class="link" href="https://www.activecampaign.com/pricing">ActiveCampaign plans</a></p>
+    </article>
       <div class="mt-10 max-w-4xl text-sm">
         <p class="font-black text-[#24170f]">Related comparisons</p>
         <p class="mt-2">
@@ -273,5 +52,5 @@ const faqs = [
     </div>
   </section>
 
-  <FaqSection faqs={faqs} title="Yotpo Email & SMS vs ActiveCampaign FAQ" />
+  <FaqSection faqs={faqs} title="Questions about this comparison" />
 </BaseLayout>
