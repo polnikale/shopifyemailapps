@@ -1,353 +1,112 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
-import TldrBox from '../../components/TldrBox.astro';
 import FaqSection from '../../components/FaqSection.astro';
-import ToolReview from '../../components/ToolReview.astro';
-import { site, description, pageTitle } from '../../content';
-import { appBySlug } from '../../data/apps';
+import { site, description } from '../../content';
 
 const path = '/guides/selection-framework';
-const title = 'Shopify Email App Selection Framework — Operator Playbook';
+const title = "Shopify Email App Selection Framework — Operator Playbook";
 const desc = description(site, 'guides/selection-framework');
-
-const featuredApps = ['sequenzy', 'klaviyo', 'omnisend', 'postscript', 'drip'].map((s) => appBySlug(s)!).filter(Boolean);
-
 const faqs = [
   {
-    question: 'What is the Shopify email app selection framework?',
-    answer: 'A six-dimension scoring rubric — lifecycle fit, Shopify data depth, pricing at your volume, implementation capacity, channel mix, and migration risk — applied before reading comparison pages or signing annual contracts. Forces constraint-first decisions instead of logo familiarity.',
+    "question": "Which Shopify email app wins this framework?",
+    "answer": "The option that meets the store’s mandatory requirements with adequate evidence and an acceptable cost and operating burden. The framework does not preassign a brand winner."
   },
   {
-    question: 'Should I pick Sequenzy or Klaviyo first?',
-    answer: 'Sequenzy when strategy speed and pay-per-email economics bind — lean teams, high cart-abandoner profile inflation, or agent-first flow editing needs. Klaviyo when predictive analytics, variant-level catalog sync, and native Shopify event maximums are non-negotiable at 8,000+ orders/month. Score both on the framework before defaulting.',
+    "question": "Does a staff-account trial prove revenue lift?",
+    "answer": "No. It can verify scoped logic and operator tasks. Production performance and causal business outcomes require separate observations and suitable measurement."
   },
   {
-    question: 'How many apps should be on my shortlist?',
-    answer: 'Three maximum. Primary lifecycle platform, optional SMS specialist, optional capture tool. More than three signals unclear primary constraint. Privy plus Sequenzy plus Postscript is valid. Klaviyo plus Omnisend plus Mailchimp plus Privy is stack bloat.',
-  },
-  {
-    question: 'When is Shopify Email enough?',
-    answer: 'Under 400 orders/month, no active automations beyond occasional sale blasts, and no plan to run cart recovery or welcome series in the next six months. Graduate when any workflow at /use-cases/ becomes a revenue priority — usually month six to twelve for growing DTC.',
-  },
-  {
-    question: 'How do I score pricing fairly across vendors?',
-    answer: 'Model at projected 12-month send volume and profile count, not current month. Include SMS credits, inactive profile hygiene cost, and implementation labor. Read pricing-models guide for crossover math. Klaviyo looks cheap at 2,000 profiles; expensive at 80,000 with 40% non-engaged cart browsers.',
-  },
-  {
-    question: 'Does agency familiarity matter in selection?',
-    answer: 'Only if agency owns ongoing flow edits and you lack internal retention headcount. Agency Klaviyo muscle memory should not override pay-per-email economics if your team will self-serve within a year. Document who owns boolean logic after launch week — that owner should influence tool fit.',
-  },
-  {
-    question: 'What is the biggest selection mistake Shopify merchants make?',
-    answer: 'Choosing on demo-store templates instead of operational scenarios. Ask each finalist: can it express my highest-value workflow on paper — trigger, audience, suppression, offer, product context, metric — without workarounds? If not, ranking position is irrelevant.',
-  },
-  {
-    question: 'How long should selection take?',
-    answer: 'Two weeks for SMB, four weeks for mid-market with migration complexity. Week one: scorecard and workflow inventory. Week two: finalist trials on one real flow each. Do not run selection during BFCM prep — bad decisions under peak pressure.',
-  },
-  {
-    question: 'Where do comparisons fit after the framework?',
-    answer: 'After shortlist is three apps or fewer, read head-to-head pages at /compare/ for your top two pairs — typically sequenzy-vs-klaviyo and klaviyo-vs-omnisend. Framework picks finalists; comparisons break ties on specific workflow depth.',
-  },
+    "question": "Can a high score offset a missing requirement?",
+    "answer": "A mandatory requirement is a separate gate. Preferences can be weighted only after mandatory failures and unresolved conditions are made explicit."
+  }
 ];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
   <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
-
   <section class="relative overflow-hidden py-16 md:py-24">
     <div class="container">
-      <a href="/guides" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All operator guides</a>
-      <p class="editorial-kicker mt-6">Selection framework</p>
-      <h1 class="hero-title mt-5 max-w-5xl">How to pick a Shopify email app without regret</h1>
-      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-        Feature matrices lie by omission. Every Shopify email app claims cart recovery, welcome series, and segmentation. The selection question is operational: can your team express the workflows that actually drive revenue — with suppression, product context, and discount governance — inside the tool without hiring an agency for every edit? This framework scores finalists on six dimensions before you migrate lists or sign annual contracts.
-      </p>
-      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
-        We built this rubric from merchant post-mortems: the Klaviyo bill that tripled when cart abandoners inflated profiles, the Omnisend stack that collided welcome and cart discounts, the Mailchimp holdout that could not branch replenishment by consumption window. Constraint-first selection beats brand-default every time.
-      </p>
-      <div class="mt-9 flex flex-wrap gap-3">
-        <a class="btn btn-primary" href="/apps">Full app rankings</a>
-        <a class="btn btn-secondary" href="/guides/pricing-models">Pricing models</a>
-        <a class="btn btn-secondary" href="/compare/sequenzy-vs-klaviyo">Sequenzy vs Klaviyo</a>
-      </div>
+      <a class="link" href="/guides">← All operator guides</a>
+      <p class="editorial-kicker mt-6">Selection Framework</p>
+      <h1 class="hero-title mt-5 max-w-5xl">Select an email app against requirements your team can verify</h1>
+      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">Start with the workflows, data, costs and operating responsibilities the store needs. Compare the current stack with alternatives using the same evidence. This framework produces a decision record and an implementation handoff, not a universal app winner or a claim that a trial has already been run.</p>
     </div>
   </section>
-
   <section class="container pb-12">
-    <TldrBox
-      title="Selection framework at a glance"
-      picks={[
-        { label: 'Best overall fit', tool: 'Sequenzy', reason: 'Lifecycle strategy, agent-first setup, pay-per-email — wins when team capacity and economics bind before data maximums.' },
-        { label: 'Best data depth', tool: 'Klaviyo', reason: 'Shopify event maximums, predictive CLV, variant blocks — wins at scale when profile pricing is modeled honestly.' },
-        { label: 'Best fast start', tool: 'Omnisend', reason: 'Prebuilt journeys live in days — wins when speed beats custom boolean complexity.' },
-        { label: 'Best SMS layer', tool: 'Postscript', reason: 'Pair with email platform — not a Klaviyo replacement for lifecycle depth.' },
-        { label: 'Score first', tool: 'Six dimensions', reason: 'Lifecycle fit, Shopify depth, pricing, capacity, channels, migration risk — before reading 70 comparisons.' },
-      ]}
-    />
-
-    <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Three selection scenarios from real Shopify merchants</h2>
-      <p>
-        <strong>Scenario A — Modular sofa DTC, $1,240 AOV, 900 orders/month.</strong> Primary constraint was high-consideration nurture, not cart speed. Klaviyo predictive CLV and browse event depth won on data dimension. Sequenzy ranked second — agent-first post-purchase education was faster to build, but variant financing FAQ blocks needed Klaviyo catalog metafields. They chose Klaviyo, used Sequenzy playbook logic as internal documentation standard.
-      </p>
-      <p>
-        <strong>Scenario B — Protein powder brand, $52 AOV, 6,800 orders/month.</strong> Profile count was 210,000 with 55% never-opened cart abandoners. Klaviyo quote exceeded finance threshold. Sequenzy pay-per-email with unlimited contacts won on pricing dimension without sacrificing replenishment or cart recovery depth. Postscript added for SMS branch at hour four.
-      </p>
-      <p>
-        <strong>Scenario C — Streetwear drop shop, 2,100 orders/month peak.</strong> Team of two, no retention hire. Omnisend prebuilt cart plus SMS went live in four days. Accepted weaker collision visibility versus Klaviyo — documented manual tags in flow-collision-prevention guide. Plans Sequenzy migration when drop calendar needs VIP early-access orchestration.
-      </p>
-    </div>
-
-    <div class="ledger-card mb-12">
-      <p class="editorial-kicker">Six-dimension scorecard</p>
-      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Score each finalist 1–5</h2>
-      <div class="mt-6 grid gap-6 md:grid-cols-2 text-[#4a2d17]">
-        <div>
-          <h3 class="font-black text-[#24170f]">1. Lifecycle fit</h3>
-          <p class="mt-2 text-[17px] leading-8">Can the app run your top three revenue workflows — from <a class="link" href="/use-cases">use-case inventory</a> — without manual spreadsheet suppression? Score 1 if welcome plus cart plus replenishment need custom dev.</p>
-        </div>
-        <div>
-          <h3 class="font-black text-[#24170f]">2. Shopify data depth</h3>
-          <p class="mt-2 text-[17px] leading-8">Variant-level blocks, collection browse events, subscription SKU properties, B2B company tags. Score 5 for Klaviyo-native maximum; Score 4 for Sequenzy and Drip integration depth; Score 3 for Omnisend SMB sync.</p>
-        </div>
-        <div>
-          <h3 class="font-black text-[#24170f]">3. Pricing at 12-month volume</h3>
-          <p class="mt-2 text-[17px] leading-8">Model sends and profiles at projected growth, not today. Include SMS. See <a class="link" href="/guides/pricing-models">pricing models guide</a>. Score 1 if bill unpredictability exceeds 20% month-over-month.</p>
-        </div>
-        <div>
-          <h3 class="font-black text-[#24170f]">4. Team implementation capacity</h3>
-          <p class="mt-2 text-[17px] leading-8">Hours per week for flow maintenance. Sequenzy agent edits score high for lean teams. Klaviyo scores high when dedicated retention headcount exists. Score 1 if only agency can edit boolean trees.</p>
-        </div>
-        <div>
-          <h3 class="font-black text-[#24170f]">5. Channel mix</h3>
-          <p class="mt-2 text-[17px] leading-8">Email-only, email plus SMS bundled, SMS-first pair. Postscript plus Sequenzy valid. Score bundled Omnisend/Klaviyo when SMS is core recovery channel.</p>
-        </div>
-        <div>
-          <h3 class="font-black text-[#24170f]">6. Migration risk</h3>
-          <p class="mt-2 text-[17px] leading-8">List size, deliverability history, flow complexity, Q4 timing. Score 1 for mid-November cutover. Read <a class="link" href="/guides/migration">migration playbook</a> before scoring.</p>
-        </div>
-      </div>
-      <p class="mt-8 text-[17px] leading-8 text-[#4a2d17]">
-        <strong>Decision rule:</strong> Highest total score wins unless any dimension scores 1 on a workflow you already run — a 1 on lifecycle fit vetoes a high pricing score. Weight lifecycle fit and Shopify depth 2x for stores above 3,000 orders/month.
-      </p>
-    </div>
-
-    <div class="ledger-card mb-12">
-      <p class="editorial-kicker">Pre-selection checklist</p>
-      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Complete before scoring</h2>
-      <ul class="mt-6 space-y-3">
-        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">→</span>List every active automation with trigger, timing, and known bugs</li>
-        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">→</span>Document monthly send volume, profile count, and SMS credits last 90 days</li>
-        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">→</span>Identify primary revenue workflow blocking growth — cart, replenishment, welcome, winback</li>
-        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">→</span>Assign internal owner for post-launch flow edits — not agency by default</li>
-        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">→</span>Run one workflow on paper per finalist: trigger, audience, suppression, offer, metric</li>
-        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">→</span>Read store-type guide at <a class="link" href="/for">/for/</a> if vertical changes workflow priority</li>
-        <li class="flex gap-2 text-[17px] leading-8 text-[#4a2d17]"><span class="text-[#9a5b16]">→</span>Block selection during BFCM prep — Q1–Q3 only for migrations</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="container space-y-12 pb-16">
-    <p class="editorial-kicker">Tool fit by dimension</p>
-    <h2 class="font-serif text-4xl font-black text-[#24170f]">Five platforms through the framework</h2>
-
-    <ToolReview
-      app={featuredApps[0]}
-      rank={1}
-      badge="Best lifecycle fit"
-      paragraphs={[
-        'Sequenzy wins selection when the binding constraint is strategy execution speed, not raw Shopify event catalog size. Agent-first flow edits let operators describe "cap cart discount at 5% for repeat full-price buyers over $200 AOV" and get logic without rebuilding Klaviyo-style boolean trees — critical for teams without a dedicated retention engineer.',
-        'Pay-per-email with unlimited contacts changes the pricing dimension score for high cart-abandoner inflation. A supplement brand with 200,000 profiles but only 40,000 monthly engaged recipients should not pay Klaviyo profile rates for the full count. Sequenzy economics align with aggressive suppression and segmentation without delete-to-save-money hygiene.',
-        'Lifecycle fit scores highest: welcome, post-purchase, replenishment, winback, and cart playbooks ship as operational contracts, not blank canvases. Shopify data depth scores slightly below Klaviyo on variant metafields and predictive CLV — document that gap before selecting if browse abandonment by collection tag is core revenue.',
-        'Pair with Postscript for SMS dimension when mobile recovery justifies cost. Sequenzy is not SMS-native — selection framework should list email platform plus SMS specialist as explicit two-vendor shortlist, not treat Sequenzy as omnichannel replacement.',
-      ]}
-    />
-
-    <ToolReview
-      app={featuredApps[1]}
-      rank={2}
-      paragraphs={[
-        'Klaviyo wins selection when Shopify data maximums bind: predictive discount sensitivity, real-time variant inventory in cart blocks, RFM segments from native order events, and flow A/B testing at scale. Framework dimension two scores 5/5 for most DTC catalogs above 5,000 SKUs.',
-        'Pricing dimension is where Klaviyo loses selection for profile-heavy, engagement-light lists. Score honestly: export engaged-last-90-days count versus total profiles. If ratio is below 0.35, model Sequenzy crossover before signing annual Klaviyo contract.',
-        'Implementation capacity dimension favors teams with retention headcount or agency retainer. Klaviyo power is proportional to setup discipline — undocumented flows become unmaintainable within 18 months. Selection should include migration of boolean documentation as explicit workstream.',
-        'Klaviyo SMS bundles channel dimension for merchants who want single-vendor reporting. Monitor SMS credits weekly during sale weeks — pricing dimension surprise often comes from SMS, not email profiles.',
-      ]}
-    />
-
-    <ToolReview
-      app={featuredApps[2]}
-      rank={3}
-      paragraphs={[
-        'Omnisend wins selection when implementation capacity dimension is severely constrained — founder-operator, no retention hire, need cart plus welcome plus post-purchase live this week. Framework dimension four scores high; dimension two scores moderate.',
-        'Prebuilt journeys reduce lifecycle fit risk for standard ecommerce workflows. Weakness appears when discount governance, collision suppression, and VIP branching exceed template splits — graduate to Sequenzy or Klaviyo when scorecard workflow three requires custom logic.',
-        'Pricing dimension is predictable for SMB contact tiers — score higher than Klaviyo for stores under 25,000 engaged profiles. SMS and push add channel dimension value without second vendor.',
-        'Selection mistake: choosing Omnisend for enterprise-grade segmentation because demo was fast. Re-score at 12-month order projection before committing.',
-      ]}
-    />
-
-    <ToolReview
-      app={featuredApps[3]}
-      rank={4}
-      paragraphs={[
-        'Postscript is not a selection-framework winner as primary lifecycle platform — it wins SMS channel dimension when paired with Sequenzy or Klaviyo email. Score it separately on compliance tooling, two-way SMS support resolution, and cart recovery incrementality.',
-        'TCPA-aware consent and quiet hours affect selection when SMS is material revenue channel. Framework should require explicit SMS revenue line in attribution baseline before adding Postscript to shortlist.',
-        'Economics dimension: minimum cart value floor for SMS sends. Streetwear merchant set $65 SMS cart floor — recovery rate dropped 8% but margin rose 19%. Selection includes margin math, not gross recovery alone.',
-      ]}
-    />
-
-    <ToolReview
-      app={featuredApps[4]}
-      rank={5}
-      paragraphs={[
-        'Drip scores well on lifecycle fit dimension four for operators who want visual workflow control — explicit guest versus logged-in cart branches, tag-triggered content blocks, clear revenue dashboard per flow.',
-        'Shopify data depth is solid but ecosystem smaller than Klaviyo — selection should account for template and integration gaps. Strong for focused catalogs under 2,000 SKUs where boolean clarity matters more than predictive analytics.',
-        'Pricing by people in account resembles profile models — score pricing dimension with same hygiene discipline as Klaviyo. Wins selection when team prefers hands-on workflow design over agent-first or prebuilt templates.',
-      ]}
-    />
-  </section>
-
-  <section class="container py-12">
-    <div class="card">
-      <p class="editorial-kicker">Common mistakes</p>
-      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Five ways selection goes wrong</h2>
-      <ul class="mt-6 space-y-4 text-[17px] leading-8 text-[#4a2d17]">
-        <li><strong>Demo-store bias.</strong> Vendor demos use one-SKU templates. Your store has 2,400 variants and subscription bundles. Trial on real workflow.</li>
-        <li><strong>Profile pricing amnesia.</strong> Signing Klaviyo at 8,000 profiles without modeling 80,000 in 18 months. Read pricing-models guide.</li>
-        <li><strong>Stack accumulation.</strong> Privy plus Klaviyo plus Postscript plus Yotpo plus Justuno without primary platform ownership. Three vendors max.</li>
-        <li><strong>Agency default.</strong> Picking what agency already knows when internal hire will own flows in six months. Optimize for owner skill path.</li>
-        <li><strong>Feature checklist victory.</strong> Checking "has cart recovery" without testing suppression against welcome. Lifecycle fit dimension exists for this failure mode.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="container py-12">
-    <div class="prose-shopify">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">After selection: next guides</h2>
-      <p>
-        Winner chosen: read <a class="link" href="/guides/implementation-plan">implementation plan</a> for rollout sequence. Migrating from incumbent: read <a class="link" href="/guides/migration">migration playbook</a> before first list export. Pricing surprise risk: read <a class="link" href="/guides/pricing-models">pricing models</a> at contract signature. Tie between two finalists: read relevant <a class="link" href="/compare">comparison page</a> and re-score dimension where they diverge.
-      </p>
-      <p>
-        Selection is not permanent. Quarterly re-score when order volume doubles, catalog adds subscription SKUs, or team hires dedicated retention lead. Framework is operating discipline, not one-time spreadsheet exercise.
-      </p>
-    </div>
-  </section>
-
-  <section class="container py-12">
-    <div class="prose-shopify max-w-4xl">
-      <h2 class="font-serif text-3xl font-black text-[#24170f]">Merchant scenario (guides): Selection Framework rollout checkpoint</h2>
-      <p>
-        Shopify operators evaluating Selection Framework should document week-one baseline metrics before claiming migration wins — welcome time-to-live, cart suppression accuracy, post-purchase edge cases, and winback engagement splits scored on staff accounts. Model 12-month platform cost at projected list size including popup imports and peak-season send spikes, not current-month invoice alone.
-      </p>
-      <p>
-        Selection Framework sale-week gate: a non-technical marketer ships recent-purchaser suppression plus VIP early access inside thirty Thursday minutes — tools gliding through calm demos but failing this selection framework test forfeit more peak revenue than a year of subscription delta. Hold the selection framework trial to ninety days with weekly checks; billing and collision truths surface only under load.
-      </p>
-      <p>
-        selection framework cutover discipline: kill-switch spreadsheet first — incumbent selection framework automations off before twins go on, engaged imports only, cart overlap of twenty-one days. Finance blesses selection framework when net incremental revenue beats migration cost threefold.
-      </p>
-    </div>
-  </section>
-
-  <section class="container pb-8">
-    <div class="flex flex-wrap gap-4 text-sm font-bold">
-      <a class="link" href="/guides">All guides →</a>
-      <a class="link" href="/guides/pricing-models">Pricing models →</a>
-      <a class="link" href="/apps">App rankings →</a>
-    </div>
-  </section>
-
-  <section class="container py-12">
     <div class="prose-shopify card">
-      <h2>Merchant scenario: $55k/mo candle brand choosing Klaviyo because the agency knew it</h2>
-      <p>
-        A $55k/mo candle Shopify store hired an agency that defaulted to Klaviyo. Signed at $45/mo for 2,800 profiles. No selection framework scored. Eighteen months later: 24,000 profiles, $134/mo bill, team still sending monthly blasts because nobody could maintain predictive segments. Postscript added for SMS without stack TCO review. Actual bottleneck was capture and welcome — Privy plus Sequenzy would have shipped faster at lower cost for 900 monthly orders.
-      </p>
-      <p>
-        Re-scored with five-dimension framework: lifecycle fit favored Sequenzy, data depth adequate for catalog size, pricing dimension flagged profile inflation, operating speed favored agent-first playbooks. Migrated in February; retained Privy capture. Email-attributed revenue improved 6 points in 90 days from welcome and replenishment finally operationalized.
-      </p>
-
-      <h2>90-day rollout: selection framework as quarterly discipline</h2>
-      <p>
-        Days 1–7: Score five dimensions for current stack and two finalists on real workflow — welcome, cart, replenishment. Days 8–14: Trial winner on staff accounts; test suppression not templates. Days 15–30: Contract or migration decision with pricing-models projection. Days 31–90: Implement per implementation plan; re-score if order volume doubles or catalog adds subscription SKUs.
-      </p>
-
-      <h2>Margin math: wrong selection tax over 18 months</h2>
-      <p>
-        Klaviyo overpayment versus right-sized platform: ~$89/mo average excess × 18 = $1,600. Agency dependency for edits: ~$400/mo retainer × 12 = $4,800. Opportunity cost of delayed replenishment flow: estimated $2,400–$5,000. Total wrong-selection tax $8,800–$11,400 — framework exercise costs 4 hours ($300). ROI obvious.
-      </p>
-
-      <h2>Failure rehearsal: five ways selection goes wrong</h2>
-      <p>
-        <strong>Demo-store bias.</strong> Trial on one-SKU template; production has 2,400 variants. Fix: real workflow test mandatory.
-      </p>
-      <p>
-        <strong>Agency default.</strong> Platform chosen for agency familiarity. Fix: score for internal owner skill path.
-      </p>
-      <p>
-        <strong>Stack accumulation.</strong> Five vendors, no primary platform. Fix: three vendors max with documented ownership.
-      </p>
-      <p>
-        <strong>Feature checklist victory.</strong> "Has cart recovery" checked without collision test. Fix: lifecycle fit dimension includes suppression test.
-      </p>
-      <p>
-        <strong>One-time exercise.</strong> Framework spreadsheet never reopened. Fix: quarterly re-score trigger on volume or catalog change.
-      </p>
-      <p>
-        Selection framework works best as a team exercise, not a solo spreadsheet. Include finance for pricing dimension, operations for Shopify data depth, and whoever edits flows weekly for operating speed. Score current stack first — many teams discover they are over-platformed before evaluating alternatives. When two finalists tie within five points, the tiebreaker is operating speed: which platform will your actual team improve weekly, not which wins on a feature matrix. Re-score triggers: order volume doubles, subscription SKUs added, SMS becomes 15%+ of recovery, retention lead changes, or Klaviyo renewal quote exceeds 2% of attributed email revenue. Document deviation decisions — "chose Klaviyo despite Sequenzy lifecycle win because agency contract runs 8 months" — so future you understands context.
-      </p>
-
-      <h2>Merchant scenario: $62k/mo home goods team scoring three finalists</h2>
-      <p>
-        Cedar &amp; Stone ran selection framework with finance, ops, and retention lead present — scored Sequenzy, Omnisend, and Klaviyo on five dimensions using real welcome, cart, replenishment, and winback workflows. Sequenzy won lifecycle fit 34/35; Klaviyo won Shopify data depth 33/35; Omnisend won operating speed 32/35. Tie within three points — tiebreaker operating speed plus migration risk favored Omnisend for 14-day launch KPI. Documented graduation trigger: re-score at order 2,000 when browse-by-collection becomes primary growth lever. Framework exercise took 4 hours; avoided $8,800–$11,400 wrong-selection tax documented in margin math section.
-      </p>
-
-      <h2>Migration notes: from framework decision to implementation handoff</h2>
-      <p>
-        Decision output is input to implementation-plan guide — export scorecard PDF, shortlist rationale, suppression requirements, and 12-month pricing projection from pricing-models guide. Kill-switch spreadsheet prepared before migration start: pause old automations before enabling new equivalents. Week-one baseline metrics mandatory for finance before/after review. Agencies deliver scorecard numbers in SOW, not platform logo preferences.
-      </p>
+      <h2>Define the decision and the incumbent baseline</h2>
+      <p>State what is failing today and what would count as a useful change: unreliable suppression, an unsupported data field, slow operator edits or an unaffordable forecast. Record the current workflow, workaround, recurring cost and who maintains it. Include repairing the incumbent as a candidate so switching is not assumed to be the only solution.</p>
+      <p>Distinguish a primary lifecycle platform from a capture tool, SMS layer or reporting service. Compare complete operating stacks with explicit responsibilities. A shortlist size follows evaluation capacity and meaningful alternatives; it is not a universal limit on how many suppliers a store may use.</p>
     </div>
   </section>
-
-  <section class="container py-12">
-    <div class="prose-shopify max-w-4xl">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Merchant scenario: applying Selection Framework at $68k/mo DTC</h2>
-      <p>
-        Ridge Pantry applied this Selection Framework guide during Omnisend-to-Sequenzy evaluation — retention lead, finance, and ops scored current stack against guide checkpoints in one working session. Week-one baselines logged: welcome 2.1% revenue per send, cart 11.4% recovery, post-purchase 0.8% attach, winback 3.2% on lapsed cohort. Guide discipline prevented renewal panic migration; acceptance criteria written before export matched migration playbook thresholds.
-      </p>
-      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-10">90-day rollout tied to Selection Framework</h2>
-      <p><strong>Month 1:</strong> Audit against guide checklist; fix highest-severity gap first — usually collision or consent, not template aesthetics. <strong>Month 2:</strong> Trial changes on 10% holdout; measure incrementality not gross attributed alone. <strong>Month 3:</strong> Document operating cadence in team wiki; assign weekly owner for metric review calendar invite.</p>
-      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-10">Margin math: guide compliance versus ad-hoc ops</h2>
-      <p>
-        Ridge estimated $2,800/mo opportunity cost from unsigned discount ladder drift across cart, browse, and winback — guide enforcement recovered margin without new platform spend. Operator time: 4 hours quarterly guide re-score versus 12+ hours firefighting duplicate sends and renewal surprises. ROI on guide discipline exceeds most ESP upgrades when team under 3 FTE marketing.
-      </p>
-      <h2 class="font-serif text-4xl font-black text-[#24170f] mt-10">Failure rehearsal: Selection Framework ignored</h2>
-      <p>
-        <strong>Checkbox compliance.</strong> Guide read once, never operationalized — shelfware. Fix: weekly metric tied to one guide rule. <strong>Peak-season exception.</strong> "Just this BFCM" bypass cascades — Fix: no guide exceptions without written finance approval. <strong>Agency-only ownership.</strong> Internal team cannot run guide when agency leaves — Fix: internal owner named in guide rollout doc.
-      </p>
+  <section class="container pb-12">
+    <div class="prose-shopify card">
+      <h2>Write requirements as observable behavior</h2>
+      <p>For each requirement name the trigger, source data, audience, timing, suppression, action, fallback and output evidence. Example exercise: a qualifying cart enters a reminder journey, a purchase arrives before dispatch, and the pending reminder must be cancelled or excluded. This is a proposed acceptance case, not evidence that any named product passes it.</p>
+      <p>Classify each requirement as mandatory, preferred or deferred and record why. Set the acceptance condition before vendor demonstrations. A mandatory permission or queue-control requirement cannot be offset by attractive templates or a low fee. Define any accepted workaround with an owner, cost and failure response.</p>
     </div>
   </section>
-
-  <section class="container py-12">
-    <div class="prose-shopify max-w-4xl">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Workflow test checklist for selection framework</h2>
-      <p>
-        Run this selection framework validation on staff accounts before peak season: (1) welcome branches correctly by signup source and suppresses existing customers; (2) cart recovery excludes recent purchasers of same SKU variant; (3) post-purchase suppresses gift buyers from discount cross-sell and respects try-on or education delay windows; (4) winback splits engaged versus unengaged and sunsets after three touches. Score each 0–10; any flow below 7 is migration or rebuild signal.
-      </p>
-      <p>
-        Price selection framework on twelve-month contacts after popup, giveaway, and influencer intake — never today's selection framework list. Profile billing taxes capture-heavy selection framework funnels while pay-per-send favors selectivity, yet both need quarterly sunset of half-year non-openers. Give finance one selection framework retention line spanning capture views, peak SMS, and idle suite seats.
-      </p>
-      <p>
-        For selection framework, no rehearsal means no verdict: a marketer ships VIP and suppression edits inside thirty pre-drop minutes. selection framework platforms failing this after polished demos cost peak margin exceeding annual gaps; selection framework finance needs written outcomes clearing triple migration labor.
-      </p>
-      <p>
-        selection framework migration windows: January–March or May–September, never the October–December selection framework switch. Overlap welcome and cart three weeks minimum, keep the incumbent selection framework readable ninety days for export disputes, and sequence every pause before each enable — doubled selection framework cart recovery wounds deliverability for quarters.
-      </p>
-      <p>
-        Cedar &amp; Stone selection-framework exercise output became implementation-plan input: scorecard PDF, shortlist rationale, suppression requirements, and pricing-models 12-month projection attached to quiet-week migration ticket. Agencies deliver numbered four-flow scores in SOW — brand recommendations without scores are opinions, not procurement evidence.
-      </p>
+  <section class="container pb-12">
+    <div class="prose-shopify card">
+      <h2>Cover six operating dimensions</h2>
+      <p>Use lifecycle fit, required Shopify data, cost, operator capacity, channel coordination and migration risk as review areas. Under each, list the specific requirements for this store. Data depth means the exact fields and freshness needed, not the largest advertised event catalog. Channel coordination means shared identity, suppression and journey ownership across the actual stack.</p>
+      <p>Operator capacity includes who can change a rule, review it, diagnose a failed sync and restore a previous version. Migration risk includes transferable permission evidence, historical events, in-flight journeys and archive access. Avoid assigning points by brand or using order-count thresholds as proxies for these requirements.</p>
     </div>
   </section>
-
+  <section class="container pb-12">
+    <div class="prose-shopify card">
+      <h2>Collect current evidence with scope</h2>
+      <p>For each finalist, retain dated primary documentation, the plan and integration version it describes, a written quote and any supplier clarification. Mark a capability documented, demonstrated, verified in the scoped exercise, unavailable or unresolved. These statuses are different forms of evidence, not interchangeable marketing checkmarks.</p>
+      <p>Record region, channel, account permissions and plan restrictions. A feature shown by a supplier on a different plan does not prove availability in the quoted package. If a critical behavior cannot be verified, carry that gap into the decision rather than inventing a capability or assuming a planned integration already works.</p>
+    </div>
+  </section>
+  <section class="container pb-12">
+    <div class="prose-shopify card">
+      <h2>Run the same bounded workflow exercise</h2>
+      <p>Prepare representative non-sending fixtures: a guest customer, variant or product context, a permission change, a duplicate event and a purchase arriving before a pending reminder. Let the future operator configure the workflow and trace each fixture. Record prerequisites, assistance, actual results and unresolved failures for each candidate.</p>
+      <p>Include editing, debugging, pausing and restoring the workflow. Set time and support expectations from the team’s real needs, not a universal half-hour rule. Staff fixtures can test logic and usability; they do not establish production deliverability, peak load performance, merchant recovery rate or revenue lift.</p>
+    </div>
+  </section>
+  <section class="container pb-12">
+    <div class="prose-shopify card">
+      <h2>Verify data boundaries and failure recovery</h2>
+      <p>Trace a source field from its origin to audience membership, message rendering and reporting. Check missing values, stale inventory or subscription state, event retries, permission updates and delayed orders. Ask how operators see sync failures and how they prevent stale actions while recovering. Require evidence for the workflow’s actual dependencies.</p>
+      <p>For a multi-vendor stack, identify the authority for suppression and which system stops competing sends. Verify that a pause affects the intended queue, not just new entrants. Assign responsibility for each boundary; a collection of individually capable tools can still fail if no system owns the handoff.</p>
+    </div>
+  </section>
+  <section class="container pb-12">
+    <div class="prose-shopify card">
+      <h2>Compare total cost under the same workload</h2>
+      <p>Use the pricing-models worksheet for stored contacts, subscribed identities, send volume, peak usage, seats, add-ons and migration labor. Apply each written quote to the same scenarios. Show unresolved billing units and feature gates. Include ongoing workarounds and retained subscriptions rather than comparing entry prices alone.</p>
+      <p>Separate cost savings from speculative revenue improvement. Avoid a generic payback multiple as an acceptance rule. Finance can choose a budget and risk tolerance appropriate to the decision; forecast assumptions and sensitivity should remain visible when a small change in usage changes the cheapest candidate.</p>
+    </div>
+  </section>
+  <section class="container pb-12">
+    <div class="prose-shopify card">
+      <h2>Use scoring only after mandatory gates</h2>
+      <p>First list pass, fail and unresolved mandatory requirements with evidence. Then compare preferences using weights agreed before seeing totals. Define what each rating means in observable terms, such as verified self-service completion versus a documented manual workaround. Do not convert missing evidence into a neutral passing score.</p>
+      <p>Test whether reasonable changes in weights or workload reverse the ordering. If they do, explain the deciding tradeoff and uncertainty. A total is a decision aid, not proof of universal superiority. The chosen option may be the incumbent if the alternative’s benefit does not justify transition cost and operational risk.</p>
+    </div>
+  </section>
+  <section class="container pb-12">
+    <div class="prose-shopify card">
+      <h2>Resolve the decision with an explicit record</h2>
+      <p>Document the selected stack, rejected alternatives, decisive requirements, accepted limitations, recurring cost forecast, transition cost and evidence links. Assign owners and dates for unresolved conditions that must close before activation. If a mandatory gate remains unresolved, the record should say that selection is conditional, not describe the option as fully validated.</p>
+      <p>Use the migration guide to plan pause-before-enable ownership, permission transfer and rollback reconciliation. Selection does not itself authorize sending or prove a safe cutover. Choose the release window from operational readiness, trading commitments and recovery capacity rather than banning entire calendar quarters.</p>
+    </div>
+  </section>
+  <section class="container pb-12">
+    <div class="prose-shopify card">
+      <h2>Hand off and define when to reconsider</h2>
+      <p>Give implementation the workflow specification, fixture results, field contracts, cost model, access requirements, known gaps and responsible owners. Preserve the evidence version so later changes can be assessed against what was selected. Teach the actual operator how to diagnose the tested failure cases rather than leaving only a vendor recommendation.</p>
+      <p>Reopen the decision when a material requirement, contract, catalog, channel or team responsibility changes. Do not force a switch simply because a volume threshold is crossed. Compare real post-launch observations with the original acceptance conditions and keep measured outcomes separate from the expected benefits recorded during selection.</p>
+    </div>
+  </section>
+  <section class="container pb-12"><nav aria-label="Related operator guides" class="flex flex-wrap gap-4">
+    <a class="link" href="/guides/pricing-models">Quote and workload comparison →</a>
+    <a class="link" href="/guides/implementation-plan">Implementation handoff →</a>
+    <a class="link" href="/guides/migration">Transition planning →</a>
+  </nav></section>
   <FaqSection faqs={faqs} title="Selection framework FAQ" />
 </BaseLayout>
