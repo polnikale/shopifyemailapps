@@ -1,215 +1,54 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-const title = 'Best Shopify Email Apps for Email and SMS in 2026';
-const description = 'Compare Shopify email apps for coordinated email and SMS by consent, channel orchestration, suppression, pricing context, sources, and tradeoffs.';
-const apps = [
-['Sequenzy','Email-first teams with occasional SMS needs','Focused email sequence operations','May not replace a full SMS stack','https://sequenzy.com','Use email for education and reserve SMS for a genuinely time-sensitive step. Confirm the SMS handoff and consent record before treating Sequenzy as the whole multichannel stack.'],
-['Klaviyo','Behavioral email and SMS journeys','Detailed events and cross-channel controls','Channel costs and consent governance need attention','https://www.klaviyo.com/features/segmentation','Klaviyo suits stores that can decide channel priority from customer behavior. Build a single suppression model so a purchase, complaint, or support issue silences both channels when appropriate.'],
-['Omnisend','Retail teams wanting accessible email/SMS workflows','Campaign and automation coordination','Frequency and SMS economics require discipline','https://www.omnisend.com/features/marketing-automation/','Omnisend is practical for launch reminders and promotional coordination. Calculate the combined contact frequency and SMS cost before adding a second reminder.'],
-['Brevo','Email, transactional, and SMS coverage','Broad messaging toolkit','More manual commerce orchestration','https://www.brevo.com/features/marketing-automation/','Brevo can fit stores that need operational email beside marketing and SMS. Separate transactional and promotional subscriptions clearly, especially for customers who opt out of marketing.'],
-['Shopify Email','Email foundations before adding SMS','Native campaign setup','Not a complete multichannel system','https://www.shopify.com/email-marketing','Shopify Email works when email carries the core relationship and SMS is managed elsewhere. Start with an email-only pilot and add SMS only after the consent and ownership model is clear.'],
-['Mailchimp','Newsletter-led brands adding selective texts','Audience and campaign workflows','SMS and commerce branching may need extra setup','https://mailchimp.com/features/email/','Mailchimp fits a brand with a stable newsletter and a narrow SMS use case. Keep channel preferences explicit and do not infer text permission from an old email signup.'],
-['Customer.io','Technical teams routing event-led messages','Flexible event-triggered messaging','Engineering and QA requirements are significant','https://customer.io/product/messaging/','Customer.io is useful when delivery, purchase, or product-use events decide the channel. Test duplicate events and regional sending restrictions before enabling automation.'],
-['ActiveCampaign','Email/SMS journeys connected to CRM stages','Automation and contact segmentation','Governance is needed across teams','https://www.activecampaign.com/marketing-automation','ActiveCampaign suits stores where sales follow-up and ecommerce messages share context. Keep sales outreach and consented marketing subscriptions separate in the contact model.'],
-['MailerLite','Small lists with occasional text promotion','Simple email and basic automation','Less suitable for complex cross-channel states','https://www.mailerlite.com/features','MailerLite is a good email foundation for a small store. It is best when SMS is rare, manually approved, and not required to react to many customer states.'],
-['Drip','DTC brands using email for repeat purchase','Commerce automation and lifecycle reporting','SMS may require a complementary stack','https://www.drip.com/features','Drip works for email-led replenishment and retention. Add a separate SMS provider only when the incremental urgency is measurable and the suppression handoff is reliable.'],
-['GetResponse','Stores combining email with live events','Automation, landing pages, and event tools','Broader suite adds operating overhead','https://www.getresponse.com/features','GetResponse fits educational launches where email explains and SMS reminds. Suppress attendees and purchasers from reminders promptly to avoid turning urgency into noise.'],
-['AWeber','Small merchants needing dependable email broadcasts','Campaigns, forms, and autoresponders','Not a full cross-channel orchestration layer','https://www.aweber.com/email-marketing.htm','AWeber can cover the email side of a modest program. Use it when the merchant can manage SMS consent, fees, and suppression outside the platform without losing a unified view.'],
-['HubSpot','Teams sharing marketing, sales, and service context','CRM-connected marketing and subscription controls','Cost and administration can be substantial','https://www.hubspot.com/products/marketing','HubSpot makes sense when marketing, service, and sales must coordinate channel decisions. Define subscription types and ownership before connecting SMS to a broad CRM segment.']
+import FaqSection from '../../components/FaqSection.astro';
+const title = "Best Shopify Email Apps for Email and SMS in 2026";
+const description = "Email explains a product; a text can carry a genuinely urgent reminder. Choose the channel for the customer\u2019s current job and permission, then coordinate both queues.";
+const faqs = [
+  {
+    "question": "Does bundled SMS cover every store?",
+    "answer": "No. Check supported destinations, sender setup, permission records, queue cancellation and operating cost for the specific job. An included channel is not evidence of suitability."
+  },
+  {
+    "question": "Does an email signup permit texts?",
+    "answer": "Do not infer SMS permission from email permission. Store separate channel status and evidence, and apply the relevant destination and program requirements."
+  },
+  {
+    "question": "Should every purchase stop every message?",
+    "answer": "Exit the completed-cart recovery or reminder it satisfies. Evaluate later education, promotions and service separately using current purpose, permissions and order state."
+  },
+  {
+    "question": "When is a separate SMS provider appropriate?",
+    "answer": "When it meets a requirement the email platform cannot demonstrate and the team can operate a reliable handoff. Fail closed on stale eligibility rather than sending from an outdated export."
+  }
 ];
 ---
-<BaseLayout title={title} description={description}><main class="container page-stack"><p class="eyebrow">Shopify email apps
-</p><h1>{title}
-</h1><p class="lede">Email and SMS work best as complementary channels. Email can carry education and detail; SMS can handle genuinely time-sensitive reminders. The platform should make consent, suppression, and channel priority explicit.
-</p><p>We prioritize cross-channel orchestration, frequency caps, opt-out behavior, and total-cost visibility. Confirm current vendor pricing and regional messaging rules from official sources before activating SMS.
-</p><h2>Shortlist
-</h2><table><thead><tr><th>App
-</th><th>Best fit
-</th><th>Strength
-</th><th>Tradeoff
-</th></tr></thead><tbody>{apps.map(a=><tr><td>{a[0]}
-</td><td>{a[1]}
-</td><td>{a[2]}
-</td><td>{a[3]}
-</td></tr>)}
-</tbody></table>{apps.map(a=><section><h2>{a[0]} for email and SMS
-</h2><p><strong>Best for:
-</strong> {a[1]}. {a[5]}
-</p><p><strong>Pros:
-</strong> {a[2]}.
-<strong>Cons:
-</strong> {a[3]}.
-<strong>Pricing:
-</strong> verify official contacts, sends, seats, SMS fees, and regional compliance terms at the
-<a href={a[4]} target="_blank" rel="noopener noreferrer">official source
-</a>. Pilot one journey and measure incremental orders, opt-outs, complaints, and cost per qualified action across both channels.
-</p><table><tbody><tr><th>Pros in practice
-</th><td>{a[2]}
-</td></tr><tr><th>Risk to manage
-</th><td>{a[3]}
-</td></tr><tr><th>Evidence to review
-</th><td>Consent capture, cross-channel frequency, suppressions, complaints, opt-outs, and qualified actions.
-</td></tr></tbody></table></section>)}
-<h2>Decision guide
-</h2><table><thead><tr><th>Priority
-</th><th>Start with
-</th><th>Reason
-</th></tr></thead><tbody><tr><td>Email-first foundations
-</td><td>Sequenzy
-</td><td>Focused lifecycle operations.
-</td></tr><tr><td>Deep cross-channel behavior
-</td><td>Klaviyo
-</td><td>Flexible event and suppression controls.
-</td></tr><tr><td>Accessible retail orchestration
-</td><td>Omnisend
-</td><td>Fast email/SMS campaign setup.
-</td></tr></tbody></table><p>See the
-<a href="/apps/shopify-email">Shopify email overview
-</a>,
-<a href="/alternatives">alternatives library
-</a>, and
-<a href="/guides/consent-compliance">consent guide
-</a>.
-</p>
-<h2 class="mt-14">Consent and purchaser suppression for Email and sms</h2>
-<p>Hold the email and sms launch until consent is documented per app and purchase events suppress email and sms promos immediately after checkout — both verifiable in an audit. Protect the email and sms channel first: post-purchase, refund-window, and support-case promos do more damage than dull email and sms copy.</p>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Audience state</th><th>Required handling</th><th>Why it matters</th></tr></thead>
-<tbody>
-<tr><td>No documented consent</td><td>Hold all email and sms marketing; transactional only</td><td>Consent evidence underwrites all email and sms sending</td></tr>
-<tr><td>Consented, never purchased</td><td>Email And Sms education and proof before any offer</td><td>First-touch email and sms codes create discount dependence</td></tr>
-<tr><td>Active cart, no checkout</td><td>Email And Sms reminder with product context; discount withheld</td><td>Protects email and sms profit when purchase intent is hottest</td></tr>
-<tr><td>Purchased recently</td><td>Recent email and sms buyers exit promos into onboarding</td><td>Keeps email and sms buyers from instant list fatigue</td></tr>
-<tr><td>Refund or return open</td><td>Freeze email and sms promos until refund or return closes</td><td>Open email and sms cases reset what the shopper tolerates</td></tr>
-<tr><td>Repeated non-engagement</td><td>Prune unengaged email and sms profiles early</td><td>Shields email and sms sender reputation and inboxing</td></tr>
-<tr><td>SMS consent present</td><td>Cap email and sms SMS cadence within legal quiet windows</td><td>Text grievances hit email and sms programs hardest</td></tr>
-<tr><td>Wholesale or B2B account</td><td>Email And Sms B2B routing stays account-specific</td><td>Email And Sms contract buyers need separate rules</td></tr>
-<tr><td>Free or disposable email domain</td><td>Screen email and sms free/disposable emails before flows</td><td>Email And Sms bounces from junk signups hurt inboxing</td></tr>
-<tr><td>Staff and test accounts</td><td>Strip email and sms test data from live journeys</td><td>Internal email and sms activity corrupts program metrics</td></tr>
-<tr><td>Competitor or researcher signals</td><td>Email And Sms researcher signups follow standard consent</td><td>Ad-hoc email and sms exceptions break traceability</td></tr>
-<tr><td>Legacy list without timestamps</td><td>Email And Sms sends to old lists need fresh opt-in</td><td>Email And Sms lists without proof invite liability</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Margin, app costs, and pricing for Email and sms</h2>
-<p>Attributed revenue is not profit for email and sms. A self-funding email and sms program survives a full cost model: subscription, contact or send overages, SMS credits, capture tooling, templates, agency time, and every point of email and sms discount margin. For email and sms, a stack at fifteen percent of attributed margin needs simplification first, optimization second.</p>
-<p>Pricing changes frequently and varies by region, contact volume, and contract term, so check the official pricing pages of every shortlisted app and model an eighteen-month total that includes a peak season. For email and sms, free plans always bind somewhere; identify whether contacts, sends, branching, or support caps your email and sms motion first.</p>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Cost component</th><th>What to model</th><th>Common failure</th></tr></thead>
-<tbody>
-<tr><td>Platform subscription</td><td>Email And Sms tier matched to true contact volume</td><td>Email And Sms tier bought for phantom growth</td></tr>
-<tr><td>Contact or send overages</td><td>Email And Sms growth pace versus plan ceilings</td><td>Peak email and sms volume blowing past tier limits</td></tr>
-<tr><td>SMS credits</td><td>Scale email and sms SMS by opt-ins and journey length</td><td>email and sms text costs wished into email costs</td></tr>
-<tr><td>Discount budget</td><td>Email And Sms discount load from depth and uptake</td><td>Email And Sms automation minting discount hunters</td></tr>
-<tr><td>Creative and ops time</td><td>Weekly email and sms hours to run and QA flows</td><td>email and sms upkeep heavier than budgeted</td></tr>
-<tr><td>Migration and setup</td><td>email and sms migration: data, consent maps, rebuilds</td><td>Dropped email and sms permission records on switch</td></tr>
-<tr><td>Support and success tiers</td><td>Email And Sms support tier for critical incidents</td><td>email and sms support shortfall during the worst week</td></tr>
-<tr><td>Third-party integrations</td><td>Email And Sms review, loyalty, capture add-ons</td><td>Email And Sms sprawl doubling real platform cost</td></tr>
-<tr><td>Deliverability remediation</td><td>email and sms deliverability upkeep and guidance cost</td><td>email and sms deliverability damage beyond subscription cost</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Decision table for Email and sms</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Situation</th><th>Start with</th><th>Reason</th></tr></thead>
-<tbody>
-<tr><td>Occasional sends, small catalog</td><td>Shopify Email</td><td>Cheapest native path for occasional email and sms sends</td></tr>
-<tr><td>Branching and suppression matter</td><td>Klaviyo</td><td>Deep email and sms triggers for maturing programs</td></tr>
-<tr><td>Small team, email plus light SMS</td><td>Omnisend</td><td>Email And Sms email-plus-SMS in one accessible builder</td></tr>
-<tr><td>Broad newsletter operations</td><td>Mailchimp</td><td>Known email and sms campaign tooling for broadcast teams</td></tr>
-<tr><td>Lean lifecycle operations</td><td>Sequenzy</td><td>Focused lifecycle email and sms sequences minus suite overhead</td></tr>
-<tr><td>Developer-led custom builds</td><td>Customer.io</td><td>API-first email and sms control for custom builds</td></tr>
-<tr><td>CRM-led sales follow-up</td><td>ActiveCampaign</td><td>Email And Sms outreach with deal context attached</td></tr>
-<tr><td>Simple list growth and popups</td><td>Privy</td><td>Email And Sms list growth via capture-first tools</td></tr>
-<tr><td>Commerce cohort analysis</td><td>Drip</td><td>Cohort-aware email and sms views on second orders</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Common failure modes in email and sms email</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Failure</th><th>Prevention</th><th>Cost of getting it wrong</th></tr></thead>
-<tbody>
-<tr><td>Discount in the first touch</td><td>Email And Sms incentives only after intent signals</td><td>Early email and sms codes reset margin expectations down</td></tr>
-<tr><td>No purchase suppression</td><td>Email And Sms purchase exits on live order events</td><td>Post-order email and sms pitches feel blind</td></tr>
-<tr><td>Consent imported without proof</td><td>Email And Sms proof: timestamp plus source per contact</td><td>Email And Sms audit exposure without proof</td></tr>
-<tr><td>Flows only one operator understands</td><td>Email And Sms flows legible to any operator</td><td>email and sms changes gamble without docs</td></tr>
-<tr><td>Measuring clicks only</td><td>Score email and sms on profit, returns, grievances</td><td>Email And Sms click-chasing rewards harm</td></tr>
-<tr><td>Ignoring deliverability signals</td><td>Email And Sms placement signals checked routinely</td><td>Email And Sms repair bills dwarf prevention</td></tr>
-<tr><td>Peak-season flow changes</td><td>Email And Sms edit freeze across peak weeks</td><td>email and sms changes break when traffic peaks</td></tr>
-<tr><td>SMS without a channel strategy</td><td>Give email and sms SMS its own job spec apart from email</td><td>Email And Sms channel overlap triggers opt-outs</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Implementation order for a email and sms program</h2>
-<ol>
-<li>Record email and sms permission origins in the ESP before sending.</li>
-<li>For email and sms, test-fire order, cart, refund, and support events first.</li>
-<li>Email And Sms order: exits and suppression first, flows second.</li>
-<li>For email and sms, start single-journey with a control group.</li>
-<li>At day thirty, review email and sms margin, complaints, unsubscribes, repeat buying.</li>
-<li>Broaden email and sms after the pilot survives handoff.</li>
-<li>Email And Sms peak policy locks edits, codes, cadence.</li>
-<li>Reprice email and sms totals against margin every quarter.</li>
-<li>For email and sms, dusty journeys get archived quarterly.</li>
-</ol>
-<h2 class="mt-12">Metrics review cadence for email and sms</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Metric</th><th>Definition</th><th>Review cadence</th></tr></thead>
-<tbody>
-<tr><td>Margin per send</td><td>Net email and sms margin post-discounts and delivery cost</td><td>Monthly</td></tr>
-<tr><td>Repeat purchase rate</td><td>email and sms-driven second purchases per quarter</td><td>Monthly</td></tr>
-<tr><td>Complaint and unsubscribe rate</td><td>Email And Sms tracked per campaign and flow</td><td>Weekly</td></tr>
-<tr><td>Suppression accuracy</td><td>Spot-check email and sms sends after purchases</td><td>Weekly</td></tr>
-<tr><td>Time to edit safely</td><td>email and sms edit-safety minutes without the author</td><td>Quarterly</td></tr>
-<tr><td>Holdout lift</td><td>Email And Sms treated-versus-holdout read</td><td>Quarterly</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Email and sms matchup FAQ</h2>
-<section class="max-w-3xl mx-auto space-y-6">
-<div><h3>Klaviyo or Shopify Email for email and sms?</h3><p>Email And Sms beginners do well on native email; Klaviyo fits when email and sms logic leans on events, catalog data, and segment reporting, with profile billing modeled on email and sms expansion.</p></div>
-<div><h3>Omnisend vs Klaviyo for email and sms?</h3><p>For email and sms, Omnisend ships email-first email and sms plus light SMS fastest for small teams; Klaviyo counters with deeper email and sms segmentation — pilot one genuine email and sms journey on each and weigh upkeep, not checklists.</p></div>
-<div><h3>Mailchimp or Klaviyo for email and sms?</h3><p>For email and sms, Mailchimp trades on familiarity, Klaviyo on Shopify event fidelity; settle email and sms pricing by checking both official pages at your contacts.</p></div>
-<div><h3>Do I need a separate SMS tool for email and sms?</h3><p>For early email and sms, bundled SMS is enough; specialists earn their email and sms fee only via measured lift. Validate email and sms opt-ins, quiet hours, and per-message rates beforehand.</p></div>
-<div><h3>How should I suppress audiences in email and sms flows?</h3><p>email and sms flows must shed recent purchasers, case-active shoppers, refunds, and unconsented profiles, with email and sms exit logic visible to any auditor — suppression slips outcost quiet weeks.</p></div>
-<div><h3>What does email and sms email cost?</h3><p>Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your email and sms campaigns consume. Because providers revise plans frequently, check official pricing pages and build an eighteen-month email and sms total — peak season included — before you commit.</p></div>
-<div><h3>Which app should a lean team pilot first for email and sms?</h3><p>Email And Sms pilots succeed on operability: if the crew runs it in two weeks it wins. Keep email and sms scope shippable over impressive-but-stuck.</p></div>
-<div><h3>How do I measure email and sms email results?</h3><p>For email and sms, judge the program on margin per send, repeat purchase, unsubscribe and complaint rates, and support load next to attributed revenue — and keep a holdout group beside recipients so seasonal lift is never misread as program impact.</p></div>
-<div><h3>Can I run email and sms email without an agency?</h3><p>Yes, if the scope stays small. Pick one email and sms journey, document consent and suppression rules, and reuse a simple template system. Keep email and sms in-house unless tangled flows, deliverability triage, or peak-season email and sms load exceed internal bandwidth.</p></div>
-<div><h3>When should I graduate from my first app for email and sms?</h3><p>Move off the starter email and sms setup when flow edits feel risky, purchase-state segments for email and sms misfire, or contact growth makes cost unpredictable. For email and sms, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression.</p></div>
-<div><h3>How much discounting is acceptable for email and sms?</h3><p>Treat discounts as one lever, not the default. For email and sms, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. A email and sms program where nearly every order needs a discount is signalling weak email and sms value, not wrong pricing.</p></div>
-<div><h3>Which Shopify data matters most for email and sms?</h3><p>Order and refund state, cart and browse events, consent source, and product availability cover most email and sms decisions. On email and sms, prove events in a test checkout before trusting them in flows, with email and sms field definitions written where both teams can find them.</p></div>
-<div><h3>How do I avoid duplicate sends across apps for email and sms?</h3><p>Give one platform ownership of each email and sms journey, document which app sends what, and share suppression lists where the tools support it. Keep a weekly email and sms peak-season audit: pull sample customers, list each email and sms message they got, flag overlaps.</p></div>
-<div><h3>What should a email and sms pilot include?</h3><p>Bound the email and sms pilot to one audience and one or two journeys, with written suppression rules, a holdout group, and a thirty-day margin-and-complaints review — and lock email and sms success criteria before launch so nobody reinterprets results afterward.</p></div>
-</section>
-<script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",mainEntity:[
-{"@type": "Question", "name": "Klaviyo or Shopify Email for email and sms?", "acceptedAnswer": {"@type": "Answer", "text": "Email And Sms beginners do well on native email; Klaviyo fits when email and sms logic leans on events, catalog data, and segment reporting, with profile billing modeled on email and sms expansion."}},
-{"@type": "Question", "name": "Omnisend vs Klaviyo for email and sms?", "acceptedAnswer": {"@type": "Answer", "text": "For email and sms, Omnisend ships email-first email and sms plus light SMS fastest for small teams; Klaviyo counters with deeper email and sms segmentation — pilot one genuine email and sms journey on each and weigh upkeep, not checklists."}},
-{"@type": "Question", "name": "Mailchimp or Klaviyo for email and sms?", "acceptedAnswer": {"@type": "Answer", "text": "For email and sms, Mailchimp trades on familiarity, Klaviyo on Shopify event fidelity; settle email and sms pricing by checking both official pages at your contacts."}},
-{"@type": "Question", "name": "Do I need a separate SMS tool for email and sms?", "acceptedAnswer": {"@type": "Answer", "text": "For early email and sms, bundled SMS is enough; specialists earn their email and sms fee only via measured lift. Validate email and sms opt-ins, quiet hours, and per-message rates beforehand."}},
-{"@type": "Question", "name": "How should I suppress audiences in email and sms flows?", "acceptedAnswer": {"@type": "Answer", "text": "email and sms flows must shed recent purchasers, case-active shoppers, refunds, and unconsented profiles, with email and sms exit logic visible to any auditor — suppression slips outcost quiet weeks."}},
-{"@type": "Question", "name": "What does email and sms email cost?", "acceptedAnswer": {"@type": "Answer", "text": "Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your email and sms campaigns consume. Because providers revise plans frequently, check official pricing pages and build an eighteen-month email and sms total — peak season included — before you commit."}},
-{"@type": "Question", "name": "Which app should a lean team pilot first for email and sms?", "acceptedAnswer": {"@type": "Answer", "text": "Email And Sms pilots succeed on operability: if the crew runs it in two weeks it wins. Keep email and sms scope shippable over impressive-but-stuck."}},
-{"@type": "Question", "name": "How do I measure email and sms email results?", "acceptedAnswer": {"@type": "Answer", "text": "For email and sms, judge the program on margin per send, repeat purchase, unsubscribe and complaint rates, and support load next to attributed revenue — and keep a holdout group beside recipients so seasonal lift is never misread as program impact."}},
-{"@type": "Question", "name": "Can I run email and sms email without an agency?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if the scope stays small. Pick one email and sms journey, document consent and suppression rules, and reuse a simple template system. Keep email and sms in-house unless tangled flows, deliverability triage, or peak-season email and sms load exceed internal bandwidth."}},
-{"@type": "Question", "name": "When should I graduate from my first app for email and sms?", "acceptedAnswer": {"@type": "Answer", "text": "Move off the starter email and sms setup when flow edits feel risky, purchase-state segments for email and sms misfire, or contact growth makes cost unpredictable. For email and sms, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression."}},
-{"@type": "Question", "name": "How much discounting is acceptable for email and sms?", "acceptedAnswer": {"@type": "Answer", "text": "Treat discounts as one lever, not the default. For email and sms, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. A email and sms program where nearly every order needs a discount is signalling weak email and sms value, not wrong pricing."}},
-{"@type": "Question", "name": "Which Shopify data matters most for email and sms?", "acceptedAnswer": {"@type": "Answer", "text": "Order and refund state, cart and browse events, consent source, and product availability cover most email and sms decisions. On email and sms, prove events in a test checkout before trusting them in flows, with email and sms field definitions written where both teams can find them."}},
-{"@type": "Question", "name": "How do I avoid duplicate sends across apps for email and sms?", "acceptedAnswer": {"@type": "Answer", "text": "Give one platform ownership of each email and sms journey, document which app sends what, and share suppression lists where the tools support it. Keep a weekly email and sms peak-season audit: pull sample customers, list each email and sms message they got, flag overlaps."}},
-{"@type": "Question", "name": "What should a email and sms pilot include?", "acceptedAnswer": {"@type": "Answer", "text": "Bound the email and sms pilot to one audience and one or two journeys, with written suppression rules, a holdout group, and a thirty-day margin-and-complaints review — and lock email and sms success criteria before launch so nobody reinterprets results afterward."}}
-]})} />
-<h2 class="mt-12">Governance and documentation for email and sms</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Practice</th><th>Standard</th><th>Risk it prevents</th></tr></thead>
-<tbody>
-<tr><td>Flow ownership</td><td>email and sms ownership assigned journey by journey</td><td>Ownerless email and sms flows decaying live</td></tr>
-<tr><td>Naming convention</td><td>email and sms naming encodes job plus segment</td><td>Unnamed email and sms sprawl unauditable in season</td></tr>
-<tr><td>Change log</td><td>Email And Sms change log per journey</td><td>email and sms performance drift with no log</td></tr>
-<tr><td>Access control</td><td>Email And Sms seats on least privilege</td><td>Over-permissioned email and sms editors misfiring</td></tr>
-<tr><td>Quarterly flow review</td><td>Simplify dormant email and sms paths</td><td>Overgrown email and sms journeys stalling ops</td></tr>
-<tr><td>Incident runbook</td><td>Email And Sms incident path: pause, notify, fix</td><td>Slow email and sms kill on broken sends</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Peak season readiness for email and sms</h2>
-<ol>
-<li>Email And Sms code-freeze starts fourteen days out.</li>
-<li>Email And Sms QA spans purchase, refund, and case paths.</li>
-<li>For email and sms, confirm buyer and return exclusions hold.</li>
-<li>Enlarge email and sms holdouts so peak reads stay valid.</li>
-<li>Draft email and sms SMS quiet-hour and cap rules in advance.</li>
-<li>Email And Sms billing checked on peak math.</li>
-<li>Email And Sms placement watched every peak day.</li>
-<li>For email and sms, document per-journey retreat steps first.</li>
-</ol>
-<p>One more email and sms operating note: book the first quarterly review before launch, not after the first crisis. Email And Sms teams that record suppression rules, discount caps, and escalation contacts in week one firefight far less later, and new operators inherit a email and sms system instead of folklore.</p>
-<p>Finally, review email and sms in writing each quarter: what email and sms work shipped, what was suppressed, what margin the email and sms program kept, which assumptions failed. That email and sms record turns individual judgment into team knowledge and keeps vendor calls evidence-based.</p>
-</main></BaseLayout>
+<BaseLayout title={title} description={description}>
+<article class="container page-stack">
+<p class="eyebrow">Shopify email apps</p>
+<h1>{title}</h1>
+<p class="lede">Email explains a product; a text can carry a genuinely urgent reminder. Choose the channel for the customer’s current job and permission, then coordinate both queues.</p>
+<h2>Three conditional supplier fits</h2>
+<p>This is a shortlist for different operating needs, not an observed ranking. Each candidate needs a demonstration using your store data.</p>
+<table><thead><tr><th>Candidate</th><th>Supported fit</th><th>Validation and tradeoff</th></tr></thead><tbody>
+<tr><td>Klaviyo</td><td>Evaluate for behavior-based email and SMS journeys. Its <a href="https://apps.shopify.com/klaviyo-email-marketing">Shopify listing</a> documents segmentation, personalization and email/SMS marketing.</td><td>Validate the events, channel permissions and cancellation behavior your journey requires; the listing does not prove your implementation.</td></tr>
+<tr><td>Omnisend</td><td>Evaluate for retail email and SMS coordination. Its <a href="https://support.omnisend.com/en/articles/3175406-connect-your-shopify-store-to-omnisend">Shopify connection guide</a> documents customer, product and order sync for targeted campaigns.</td><td>Confirm field freshness and destination coverage in your account. A combined interface does not remove channel cost or eligibility checks.</td></tr>
+<tr><td>Drip</td><td>Evaluate for email-led purchase and product-interest cohorts. Its <a href="https://www.drip.com/product/segmentation">segmentation documentation</a> describes purchase-history and products-viewed groups.</td><td>For SMS, assess an external provider and explicit integration ownership; this email capability does not establish a complete SMS stack.</td></tr>
+</tbody></table>
+<p>Capability sources checked on November 25, 2026. These are documented capabilities, not store test results. Confirm current regional availability, billing and connector behavior before purchase.</p>
+<h2>Channel-specific permission and shared suppression</h2>
+<p>Keep separate email and SMS eligibility, source, timestamp and scope. A phone number in an order is not a text marketing subscription. Check current destination-specific program requirements with the chosen provider before activating messages.</p>
+<p>Maintain shared journey state across channels: completed order, open support case, unresolved refund and campaign expiration. A purchase should cancel recovery for that cart in both queues. An SMS opt-out changes SMS eligibility; do not silently rewrite email preferences. A broader customer request or service hold may require both channels to pause.</p>
+<h2>Choose an actual handoff</h2>
+<p>A team can use Klaviyo or Omnisend for coordinated email and SMS after validating account coverage. An email-led Drip program can instead connect a separately contracted SMS provider through an integration or owned middleware, provided that provider demonstrates required destinations and opt-out handling. Another valid choice is to keep the program email-only until the handoff can be operated reliably.</p>
+<p>For an external handoff, send a stable customer ID, journey ID, expiry and current eligibility version. Require acknowledgment, deduplicate retries and check eligibility again before dispatch. Consume opt-out and delivery callbacks. If the connector cannot cancel a queued text after checkout, withhold that reminder or redesign the journey. Do not use an unattended list export as live suppression.</p>
+<h2>Proposed coordination exercise</h2>
+<p>In a test audience, run an email reminder followed by an eligible SMS fallback. Complete checkout between the two steps; repeat with an SMS opt-out, delayed purchase event, duplicate callback and support hold. Verify the queue and delivery log, not only the journey diagram. The technical owner must demonstrate that retries cannot create a second send and stale state stops the affected promotion.</p>
+<p>Then compare eligible customers randomly assigned to email alone versus the proposed email-plus-SMS journey. Preserve required service messages in both groups. Predefine the purchase observation window from the product cycle and sample needs. Compare net contribution per assigned customer, incremental orders, opt-outs, complaints and support contacts. Include carrier and message costs; attributed sales alone do not show SMS added value.</p>
+<h2>Cost, ownership and exit checks</h2>
+<p>Request a quote using the same eligible contacts, email sends, destination countries, SMS segments, seats and peak traffic for each candidate. Include connector work, creative time, support and migration. No matched quote establishes a universal cheapest option here. Keep discounts inside net sales rather than subtracting them twice.</p>
+<p>Name a lifecycle owner for campaign eligibility, a technical owner for event delivery and a service owner for return or complaint holds. Before signing, export a sample of identities, channel permissions, suppression history and journey definitions. Verify what cannot be exported and budget to rebuild it. During migration, disable the previous journey before enabling its replacement; preserve service delivery.</p>
+<p>Pause affected promotional paths when permissions are missing, events are stale or queued messages cannot be canceled. Record the incident and reconcile missed state before resuming. A second operator should demonstrate the pause, recovery and export procedure without the original author.</p>
+<p>Continue with the <a href="/guides/consent-compliance">consent guide</a> and <a href="/apps/klaviyo">Klaviyo overview</a>.</p>
+</article>
+<FaqSection faqs={faqs} />
+</BaseLayout>
