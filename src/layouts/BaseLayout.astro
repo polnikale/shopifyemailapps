@@ -6,6 +6,11 @@ import { siteFromHost, type SiteProfile } from '../content';
 export interface Props { title: string; description: string; site?: SiteProfile; path?: string; noIndex?: boolean; }
 const { title, description, site = siteFromHost(), path = Astro.url.pathname, noIndex = false } = Astro.props;
 const canonical = new URL(path.replace(/\.html$/,''), `https://www.${site.domain}`);
+canonical.protocol = 'https:';
+canonical.host = `www.${site.domain}`;
+canonical.search = '';
+canonical.hash = '';
+const serialize = (value: unknown) => JSON.stringify(value).replace(/</g, '\\u003c');
 ---
 <!DOCTYPE html>
 <html lang="en" class="dark" data-accent={site.accent}>
@@ -26,7 +31,7 @@ const canonical = new URL(path.replace(/\.html$/,''), `https://www.${site.domain
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@type':'WebSite',name:site.name,url:`https://www.${site.domain}`,description})} />
+    <script type="application/ld+json" set:html={serialize({'@context':'https://schema.org','@type':'WebSite',name:site.name,url:`https://www.${site.domain}`,description})} />
       <script defer src="https://umami-betfdlhcucczyocifxrr13g7.blogtopinserver.com/script.js" data-website-id="a7598f76-8614-476a-84d5-46ae4d9c1fd7"></script>
   </head>
   <body class="min-h-screen flex flex-col text-[#24170f]">

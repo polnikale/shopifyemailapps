@@ -7,6 +7,7 @@ export interface Props {
   path: string;
   datePublished?: string;
   dateModified?: string;
+  author?: { name: string; type?: 'Person' | 'Organization' };
   type?: 'Article' | 'WebPage';
 }
 const {
@@ -15,11 +16,17 @@ const {
   siteName,
   domain,
   path,
-  datePublished = '2026-01-15',
-  dateModified = '2026-07-08',
+  datePublished,
+  dateModified,
   type = 'Article',
+  author,
 } = Astro.props;
-const url = new URL(path.replace(/\.html$/, ''), `https://www.${domain}`).toString();
+const canonical = new URL(path.replace(/\.html$/, ''), `https://www.${domain}`);
+canonical.protocol = 'https:';
+canonical.host = `www.${domain}`;
+canonical.search = '';
+canonical.hash = '';
+const url = canonical.toString();
 const schema = {
   '@context': 'https://schema.org',
   '@type': type,
@@ -28,8 +35,8 @@ const schema = {
   datePublished,
   dateModified,
   url,
-  author: { '@type': 'Organization', name: siteName },
+  author: author ? { '@type': author.type ?? 'Person', name: author.name } : undefined,
   publisher: { '@type': 'Organization', name: siteName },
 };
 ---
-<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+<script type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g, '\\u003c')} />
