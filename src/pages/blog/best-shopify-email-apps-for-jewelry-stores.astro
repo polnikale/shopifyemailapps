@@ -1,227 +1,51 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import FaqSection from '../../components/FaqSection.astro';
 const title = 'Best Shopify Email Apps for Jewelry Stores in 2026';
-const description = 'Compare Shopify email apps for jewelry brands by product education, high-consideration journeys, VIP segmentation, pricing context, and evidence-based implementation.';
-const apps = [
-  ['Klaviyo', 'High-consideration catalogs and VIP segmentation', 'Rich event and profile data for browse, wishlist, and purchase journeys', 'Requires careful consent, data hygiene, and flow governance', 'https://www.klaviyo.com/features/segmentation'],
-  ['Omnisend', 'Gift-led launches and coordinated email/SMS', 'Accessible retail automation around campaigns and promotions', 'Luxury positioning may need more bespoke content control', 'https://www.omnisend.com/features/marketing-automation/'],
-  ['Sequenzy', 'Small jewelry teams building structured sequences', 'Focused sequences help turn education and follow-up into repeatable operations', 'Validate advanced product-feed and revenue-reporting requirements', 'https://sequenzy.io/'],
-  ['Brevo', 'Brands balancing marketing and transactional messaging', 'Broad messaging toolkit with contact-oriented pricing options', 'More manual work may be needed for nuanced merchandising logic', 'https://www.brevo.com/features/marketing-automation/'],
-  ['Drip', 'DTC brands that want commerce-focused automation', 'Customer-event workflows and revenue-oriented reporting', 'Feature depth can be unnecessary for a very small catalog', 'https://www.drip.com/features'],
+const description = 'Choose jewelry email apps by materials and sizing education, gift privacy, care and warranty handoffs, VIP relevance, and verified purchase exits.';
+const faqs = [
+  { question: 'What should a jewelry store automate first?', answer: 'Choose one documented buyer need: materials and sizing education, gift delivery guidance, or post-purchase care. Verify permission, product facts and purchase exits before adding more journeys.' },
+  { question: 'Can a gift recipient receive marketing because the buyer supplied an address?', answer: 'Do not treat a delivery address as the recipient’s marketing permission. Keep buyer and recipient records separate, protect surprise gifts, and collect recipient preferences directly before promotional enrollment.' },
+  { question: 'Should premium jewelry brands lead with discounts?', answer: 'Test accurate materials, sizing, care, delivery and warranty information against the existing experience. Compare retained contribution and customer outcomes; a discount may be appropriate, but it is not the default answer to uncertainty.' },
+  { question: 'Can a warranty or care email prove ownership or authenticity?', answer: 'No. An email click is not proof of identity, ownership, coverage or authenticity. Route claims to the store’s approved verification and service process, and keep promotional permission separate.' },
 ];
-apps.push(
-  ['Mailchimp', 'Editorial launches and beginner-friendly segmentation', 'Familiar campaigns, forms, and audience tools can support a small jewelry catalog.', 'Advanced product-event and VIP logic may require integrations or manual work.', 'https://mailchimp.com/pricing/'],
-  ['ActiveCampaign', 'Consultation, lead, and repeat-purchase journeys', 'Branching automation and CRM context support higher-consideration selling.', 'The team must govern tags, goals, and post-purchase suppressions.', 'https://www.activecampaign.com/pricing'],
-  ['Privy', 'Popups, welcome offers, and list growth', 'On-site capture and cart-oriented messaging can grow a permissioned audience.', 'Discount-led acquisition can erode a premium jewelry position if unmanaged.', 'https://www.privy.com/pricing'],
-  ['Shopify Email', 'Native store campaigns with low setup friction', 'Direct Shopify data access makes basic product and order campaigns approachable.', 'Complex lifecycle branching and deeper reporting may be limited.', 'https://www.shopify.com/email-marketing'],
-  ['Sendlane', 'Behavioral DTC automation and retention', 'Commerce events, segmentation, and lifecycle flows suit repeat-purchase programs.', 'Forecast contact and message economics as the VIP audience grows.', 'https://www.sendlane.com/pricing'],
-  ['Customer.io', 'Behavior-led education for hybrid commerce brands', 'Event-driven journeys can distinguish browsing, purchase, and service states.', 'Instrumentation and identity governance add implementation effort.', 'https://customer.io/pricing'],
-  ['Postmark', 'Transactional order and delivery notices', 'Separate streams can protect receipts, shipping, and account messages.', 'It is not a replacement for promotional segmentation or campaign planning.', 'https://postmarkapp.com/pricing'],
-  ['Resend', 'Developer-owned jewelry storefront notifications', 'API-first delivery supports custom order, warranty, and care events.', 'The store team must build preference, campaign, and lifecycle orchestration around it.', 'https://resend.com/pricing']
-  ,['MailerLite', 'Lean jewelry education and post-purchase newsletters', 'A straightforward editor can support materials, sizing, care, gifting, and warranty education without a large commerce suite.', 'Product-event depth, VIP modeling, and Shopify synchronization need validation before scaling beyond editorial and simple follow-up.', 'https://www.mailerlite.com/pricing']
-);
-apps[2][4] = 'https://sequenzy.com/';
 ---
 <BaseLayout title={title} description={description}>
- 
-<main class="container page-stack">
-   
-<p class="eyebrow">Shopify email apps
-</p><h1>{title}
-</h1>
-   
-<p class="lede">Jewelry email marketing has a longer consideration window than a typical impulse purchase. Buyers need reassurance about materials, sizing, delivery, returns, and gifting; the app must support that education without over-discounting the brand.
-</p>
-   
-<p>This shortlist weighs event quality, VIP and high-value segmentation, post-purchase education, and the practical cost of contacts, sends, seats, and SMS. Pricing and product limits change, so the official links below are the authority for a current plan decision.
-</p>
-   
-<h2>Best fits by jewelry-store need
-</h2><table><thead><tr><th>App
-</th><th>Best for
-</th><th>First journey to build
-</th><th>Watch-out
-</th></tr></thead><tbody>{apps.map((a) =>
-<tr><td>{a[0]}
-</td><td>{a[1]}
-</td><td>{a[0] === 'Klaviyo' ? 'Browse + VIP education' : a[0] === 'Omnisend' ? 'Gift-date campaign' : a[0] === 'Sequenzy' ? 'Material and care sequence' : a[0] === 'Brevo' ? 'Order follow-up' : 'High-value winback'}
-</td><td>{a[3]}
-</td></tr>)}
+<article class="container page-stack">
+<p class="eyebrow">Shopify email apps</p>
+<h1>{title}</h1>
+<p class="lede">Jewelry buyers may need reassurance about materials, sizing, delivery, returns and gifting before they commit. A useful email program answers the next question, then hands the conversation to a person when necessary. It should also make care and warranty support easy after purchase.</p>
+<p>This is a conditional shortlist and a set of proposed acceptance exercises, not a vendor ranking or a report of merchant results. Product documentation was checked on November 25, 2026. It supports the capabilities linked below; it does not establish that a particular store’s service records, stock feed or consent history will synchronize correctly.</p>
+<h2>Three conditional fits</h2>
+<table><thead><tr><th>Candidate</th><th>Useful starting point</th><th>Acceptance condition</th></tr></thead><tbody>
+<tr><td>Klaviyo</td><td>Separate product-interest education from VIP and service-sensitive paths. Its documented splits can use profile properties and event conditions.</td><td>Choose it if the team can maintain reliable product and customer fields and demonstrate current-state checks before a send. Confirm available plan features and unknown-value handling.</td></tr>
+<tr><td>Omnisend</td><td>Build gift-led retail paths using conditional splits and event data, with an optional separately permissioned SMS path.</td><td>Choose it if order and product events contain the required fields and the team can prevent competing store automations from sending duplicates. SMS need and economics require their own decision.</td></tr>
+<tr><td>Shopify Messaging (formerly Shopify Email)</td><td>Start with store-native marketing automations; custom or third-party workflows can use Shopify Flow.</td><td>Choose it if the required education and care handoffs can be expressed with the available triggers and actions. Prove service-state and gift routing before assuming a native workflow covers them.</td></tr>
 </tbody></table>
-    {apps.map((a) =>
-<section><h2>{a[0]} for jewelry brands
-</h2><p><strong>Best for:
-</strong> {a[1]}. {a[0]} earns its place when it helps the team answer the buyer’s next question at the right time—whether that is a product detail, a care reminder, a gift deadline, or a reason to revisit a considered item. Use explicit preference and purchase signals rather than making sensitive assumptions about recipients.
-</p><p><strong>Why it stands out:
-</strong> {a[2]}. That matters for jewelry because the revenue opportunity is often not a second discount; it is confidence. A useful implementation separates education, service, and promotion so a customer waiting for an order is not simultaneously pushed into a conflicting acquisition offer.
-</p><table><tbody><tr><th>Pros
-</th><td>{a[2]}; supports a measurable lifecycle test; can be connected to Shopify purchase behavior.
-</td></tr><tr><th>Cons
-</th><td>{a[3]}; effective cost depends on audience size, send volume, and optional channels.
-</td></tr><tr><th>Pricing context
-</th><td>Verify current vendor pricing and calculate the full monthly cost for contacts, sends, seats, and SMS before choosing.
-</td></tr><tr><th>Source
-</th><td><a href={a[4]} rel="nofollow">Official product information
-</a></td></tr></tbody></table></section>)}
-   
-<h2>Decision guide
-</h2><table><thead><tr><th>Priority
-</th><th>Recommended starting point
-</th><th>Why
-</th></tr></thead><tbody><tr><td>Granular VIP and product-interest paths
-</td><td>Klaviyo
-</td><td>Best match for complex event and segment logic.
-</td></tr><tr><td>Simple education sequences for a lean team
-</td><td>Sequenzy
-</td><td>Focused workflows can be easier to govern.
-</td></tr><tr><td>Commerce automation with revenue context
-</td><td>Drip
-</td><td>Strong fit when the store already tracks repeat purchase behavior.
-</td></tr></tbody></table>
-   
-<section><h2>FAQ
-</h2><h3>What should a jewelry store automate first?
-</h3><p>Start with product education, browse or wishlist follow-up, post-purchase care, and a gift-date or replenishment path. Keep service messages separate from promotion.
-</p><h3>Should premium jewelry brands lead with discounts?
-</h3><p>Not necessarily. Test confidence-building content—materials, sizing, care, delivery, warranty, and reviews—before assuming price is the only conversion lever.
-</p></section><script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",mainEntity:[{"@type":"Question",name:'What should a jewelry store automate first?',acceptedAnswer:{"@type":"Answer",text:"Start with product education, browse or wishlist follow-up, post-purchase care, and a gift-date or replenishment path. Keep service messages separate from promotion."}},{"@type":"Question",name:'Should premium jewelry brands lead with discounts?',acceptedAnswer:{"@type":"Answer",text:"Not necessarily. Test confidence-building content—materials, sizing, care, delivery, warranty, and reviews—before assuming price is the only conversion lever."}}]})}></script><p>Continue with our
-<a href="/apps/shopify-email">Shopify email guide
-</a>,
-<a href="/alternatives">alternative comparisons
-</a>, and
-<a href="/for/high-aov">high-AOV store guidance
-</a> to connect the tool choice to your merchandising model.
-</p>
- 
-<h2 class="mt-14">Consent and purchaser suppression for Jewelry stores</h2>
-<p>Before launching jewelry stores automation, document permission for each channel and test purchase exits for the specific cart or checkout being recovered. Assess post-purchase education, service messages, and later offers separately by purpose, channel permission, current order or case state, frequency, and suppression. A purchase does not end every customer journey.</p>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Audience state</th><th>Required handling</th><th>Why it matters</th></tr></thead>
-<tbody>
-<tr><td>No documented consent</td><td>Hold marketing while channel permission is unverified; assess necessary service messages separately</td><td>A service message must not become a route around marketing preferences</td></tr>
-<tr><td>Consented, never purchased</td><td>Jewelry Stores education and proof before any offer</td><td>First-touch jewelry stores codes create discount dependence</td></tr>
-<tr><td>Active cart, no checkout</td><td>Remind jewelry stores carts with context first, no instant code</td><td>Margin-safe jewelry stores recovery at peak intent</td></tr>
-<tr><td>Purchased recently</td><td>Exit recovery for the purchased cart or checkout; assess education and later offers separately</td><td>Use message purpose, channel permission, current state, and suppression before each send</td></tr>
-<tr><td>Refund or return open</td><td>Pause conflicting offers while the case is open; keep relevant service updates separate</td><td>Resolution alone does not restore marketing permission or override other suppressions</td></tr>
-<tr><td>Repeated non-engagement</td><td>Use clicks, purchases, site activity where available, bounces, and complaints over a defined window</td><td>Do not sunset a customer solely because tracked opens are absent</td></tr>
-<tr><td>SMS consent present</td><td>Jewelry Stores texting respects time and frequency rules</td><td>One jewelry stores SMS complaint outweighs many email ones</td></tr>
-<tr><td>Wholesale or B2B account</td><td>Route by actual account needs, channel permission, and applicable agreed terms</td><td>B2B status alone does not establish a contract or ban retail offers</td></tr>
-<tr><td>Free or disposable email domain</td><td>Accept valid free-provider addresses; investigate disposable or suspicious signups using evidence</td><td>A free mailbox is not proof of abuse; verification must be proportionate</td></tr>
-<tr><td>Staff and test accounts</td><td>Strip jewelry stores test data from live journeys</td><td>QA jewelry stores sends distort real performance</td></tr>
-<tr><td>Competitor or researcher signals</td><td>Jewelry Stores exceptions stay undocumented-free</td><td>Jewelry Stores consistency beats clever carve-outs</td></tr>
-<tr><td>Legacy list without timestamps</td><td>Review available source and permission evidence; hold unverified marketing imports</td><td>A missing timestamp alone does not prove permission absent or justify an unsolicited re-permission send</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Margin, app costs, and pricing for Jewelry stores</h2>
-<p>Jewelry Stores profit needs the whole ledger: subscription plus overages, SMS credits, capture and template spend, agency retainers, and jewelry stores discount margin against attributed revenue. If jewelry stores tooling eats toward fifteen percent of attributed margin, reduce jewelry stores scope before optimizing flows.</p>
-<p>Pricing changes frequently and varies by region, contact volume, and contract term, so check the official pricing pages of every shortlisted app and model an eighteen-month total that includes a peak season. Before banking on free for jewelry stores, check which free-tier limit — contacts, sends, branching, support — hits your jewelry stores plan earliest.</p>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Cost component</th><th>What to model</th><th>Common failure</th></tr></thead>
-<tbody>
-<tr><td>Platform subscription</td><td>Jewelry Stores tier priced at realistic contact scale</td><td>jewelry stores plan sized for hopes, not contacts</td></tr>
-<tr><td>Contact or send overages</td><td>Map jewelry stores list growth to tier thresholds</td><td>Jewelry Stores overage invoices after drops</td></tr>
-<tr><td>SMS credits</td><td>jewelry stores SMS units from opt-in rate and flow depth</td><td>Treating jewelry stores texts like near-free email</td></tr>
-<tr><td>Discount budget</td><td>jewelry stores promo cost from depth-times-redemption</td><td>Jewelry Stores journeys schooling code-waiting</td></tr>
-<tr><td>Creative and ops time</td><td>Jewelry Stores maintenance load in staff hours</td><td>jewelry stores upkeep heavier than budgeted</td></tr>
-<tr><td>Migration and setup</td><td>jewelry stores switch priced in imports and rebuild labor</td><td>jewelry stores migration shedding consent proof</td></tr>
-<tr><td>Support and success tiers</td><td>Jewelry Stores severity coverage: paid or included</td><td>Jewelry Stores support gaps found at peak</td></tr>
-<tr><td>Third-party integrations</td><td>Adjacent jewelry stores tooling: reviews, loyalty, capture</td><td>Creeping jewelry stores add-ons dwarfing ESP spend</td></tr>
-<tr><td>Deliverability remediation</td><td>jewelry stores inbox-health monitoring and cleanup</td><td>Jewelry Stores reputation repair dwarfing license fees</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Decision table for Jewelry stores</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Situation</th><th>Start with</th><th>Reason</th></tr></thead>
-<tbody>
-<tr><td>Occasional sends, small catalog</td><td>Shopify Email</td><td>Native jewelry stores setup keeps operating cost minimal</td></tr>
-<tr><td>Branching and suppression matter</td><td>Klaviyo</td><td>Jewelry Stores branching and suppression depth</td></tr>
-<tr><td>Small team, email plus light SMS</td><td>Omnisend</td><td>Approachable jewelry stores multichannel journeys</td></tr>
-<tr><td>Broad newsletter operations</td><td>Mailchimp</td><td>Editor familiarity for jewelry stores broadcast desks</td></tr>
-<tr><td>Lean lifecycle operations</td><td>Sequenzy</td><td>Guided email playbooks for lean jewelry stores teams</td></tr>
-<tr><td>Developer-led custom builds</td><td>Customer.io</td><td>Custom jewelry stores messaging on raw events</td></tr>
-<tr><td>CRM-led sales follow-up</td><td>ActiveCampaign</td><td>Account-linked jewelry stores sequences for B2B motion</td></tr>
-<tr><td>Simple list growth and popups</td><td>Privy</td><td>Jewelry Stores subscriber capture before lifecycle depth</td></tr>
-<tr><td>Commerce cohort analysis</td><td>Drip</td><td>Repeat-revenue jewelry stores lens on customer cohorts</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Common failure modes in jewelry stores email</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Failure</th><th>Prevention</th><th>Cost of getting it wrong</th></tr></thead>
-<tbody>
-<tr><td>Discount in the first touch</td><td>Delay jewelry stores codes past first intent proof</td><td>Early jewelry stores codes reset margin expectations down</td></tr>
-<tr><td>No purchase suppression</td><td>Exit recovery for the purchased cart or checkout; assess other journeys separately</td><td>Jewelry Stores promos after purchase read careless</td></tr>
-<tr><td>Consent imported without proof</td><td>jewelry stores consent fields mapped before importing</td><td>Jewelry Stores audit exposure without proof</td></tr>
-<tr><td>Flows only one operator understands</td><td>Jewelry Stores flows legible to any operator</td><td>Jewelry Stores key-person risk on undocumented flows</td></tr>
-<tr><td>Measuring clicks only</td><td>Score jewelry stores on profit, returns, grievances</td><td>Jewelry Stores vanity clicks hide damage</td></tr>
-<tr><td>Ignoring deliverability signals</td><td>Jewelry Stores placement signals checked routinely</td><td>jewelry stores inbox recovery costs more than hygiene</td></tr>
-<tr><td>Peak-season flow changes</td><td>jewelry stores calm-before-peak change moratorium</td><td>jewelry stores changes break when traffic peaks</td></tr>
-<tr><td>SMS without a channel strategy</td><td>Jewelry Stores texts scoped independently of email</td><td>Jewelry Stores channel overlap triggers opt-outs</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Implementation order for a jewelry stores program</h2>
-<ol>
-<li>Map jewelry stores consent sources into the platform before any jewelry stores campaign.</li>
-<li>Jewelry Stores gating: all four commerce events verified live.</li>
-<li>Write jewelry stores suppression and exits before any jewelry stores flow exists.</li>
-<li>Pilot jewelry stores with one bounded journey plus holdout measurement.</li>
-<li>Jewelry Stores month-one review: margin kept, complaints, repeats.</li>
-<li>Jewelry Stores expansion needs two-operator safety.</li>
-<li>For jewelry stores, pre-write peak rules on changes and offers.</li>
-<li>Reprice jewelry stores totals against margin every quarter.</li>
-<li>Jewelry Stores hygiene: unreviewed flows simplified or cut.</li>
-</ol>
-<h2 class="mt-12">Metrics review cadence for jewelry stores</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Metric</th><th>Definition</th><th>Review cadence</th></tr></thead>
-<tbody>
-<tr><td>Margin per send</td><td>jewelry stores profit after incentive, send, platform load</td><td>Monthly</td></tr>
-<tr><td>Repeat purchase rate</td><td>jewelry stores-driven second purchases per quarter</td><td>Monthly</td></tr>
-<tr><td>Complaint and unsubscribe rate</td><td>jewelry stores-level and flow-level complaint splits</td><td>Weekly</td></tr>
-<tr><td>Suppression accuracy</td><td>jewelry stores-buyer samples screened for breaches</td><td>Weekly</td></tr>
-<tr><td>Time to edit safely</td><td>Time a new jewelry stores owner needs per change</td><td>Quarterly</td></tr>
-<tr><td>Holdout lift</td><td>jewelry stores incrementality from holdout contrast</td><td>Quarterly</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Suppression exceptions to review for jewelry stores</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Exception</th><th>Rule</th><th>Review owner</th></tr></thead>
-<tbody>
-<tr><td>VIP customers</td><td>Allow eligible earlier access; exit purchased-cart recovery and assess other messages separately</td><td>Retention lead</td></tr>
-<tr><td>Backorder items</td><td>Delay recovery until stock returns</td><td>Merchandising</td></tr>
-<tr><td>Gift purchases</td><td>Suppress winback for the buyer; message separately</td><td>Lifecycle lead</td></tr>
-<tr><td>B2B accounts</td><td>Route to account manager sequences</td><td>Sales lead</td></tr>
-<tr><td>Subscription actives</td><td>Swap one-time offers for member value</td><td>Retention lead</td></tr>
-<tr><td>Refunded high-value orders</td><td>Service follow-up before any promotion</td><td>Support lead</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Vendor selection checklist for jewelry stores</h2>
-<ol>
-<li>Confirm Shopify order, refund, cart, and consent events in a test store.</li>
-<li>Document consent sources and retention periods for each audience.</li>
-<li>Model eighteen-month cost including peak overages and SMS credits.</li>
-<li>Verify suppression exits with a real purchase and refund cycle.</li>
-<li>Score editor safety with a non-expert operator during a live week.</li>
-<li>Check export paths and consent data portability before signing.</li>
-<li>Agree on holdout methodology and success criteria in writing.</li>
-<li>Plan the first ninety days of flow build before the contract starts.</li>
-</ol>
-<h2 class="mt-12">Governance and documentation for jewelry stores</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Practice</th><th>Standard</th><th>Risk it prevents</th></tr></thead>
-<tbody>
-<tr><td>Flow ownership</td><td>jewelry stores ownership assigned journey by journey</td><td>jewelry stores ghosts sending expired incentives</td></tr>
-<tr><td>Naming convention</td><td>jewelry stores naming encodes job plus segment</td><td>Unnamed jewelry stores sprawl unauditable in season</td></tr>
-<tr><td>Change log</td><td>jewelry stores edits stamped, dated, explained</td><td>jewelry stores performance drift with no log</td></tr>
-<tr><td>Access control</td><td>Jewelry Stores seats on least privilege</td><td>jewelry stores rogue sends from open permissions</td></tr>
-<tr><td>Quarterly flow review</td><td>jewelry stores branch count kept lean</td><td>Overgrown jewelry stores journeys stalling ops</td></tr>
-<tr><td>Incident runbook</td><td>jewelry stores break-glass steps pre-written</td><td>Jewelry Stores harm airing too long</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Peak season readiness for jewelry stores</h2>
-<ol>
-<li>Halt jewelry stores edits ahead of the peak window.</li>
-<li>Exercise each jewelry stores flow with live purchase, refund, support tests.</li>
-<li>Check purchased-cart recovery exits and case-specific offer pauses; assess education and service separately.</li>
-<li>Enlarge jewelry stores holdouts so peak reads stay valid.</li>
-<li>Draft jewelry stores SMS quiet-hour and cap rules in advance.</li>
-<li>Price jewelry stores peaks against plan ceilings early.</li>
-<li>For jewelry stores, name a daily inbox-health monitor.</li>
-<li>Jewelry Stores undo paths recorded pre-campaign.</li>
-</ol>
-<p>Jewelry Stores programs stay calm when the quarterly review is calendared pre-launch: suppression, discount caps, and escalation contacts for jewelry stores live in writing from week one, so successors inherit process, not memory.</p>
-<p>Quarterly jewelry stores honesty pays: log shipped jewelry stores flows, suppression calls, margin kept, and broken assumptions. The jewelry stores paper trail converts solo judgment into institutional knowledge.</p>
-</main>
+<p>Primary references: <a href="https://help.klaviyo.com/hc/en-us/articles/52369094030235" rel="nofollow">Klaviyo multi-branch splits</a>, <a href="https://support.omnisend.com/en/articles/3810844-use-conditional-split-to-create-workflow-paths" rel="nofollow">Omnisend conditional paths</a>, <a href="https://support.omnisend.com/en/articles/4298431-understand-event-data-in-automation-workflows" rel="nofollow">Omnisend event data</a>, and <a href="https://help.shopify.com/en/manual/promoting-marketing/create-marketing/shopify-messaging/marketing-automations/create" rel="nofollow">Shopify automation creation</a>. These are implementation capabilities, not evidence of superior conversion or lower operating cost.</p>
+<h2>Define the records before the messages</h2>
+<p>The lifecycle lead owns channel permission and suppression rules; merchandising owns materials, variant sizing, availability and delivery claims; customer care owns open returns and warranty cases. Record the source system, identifier, update time and unknown-value behavior for each field. Keep buyer, delivery recipient, order, cart and product variant identifiers distinct. An interest click can help select educational content; it cannot authenticate a person or establish ownership of a piece.</p>
+<p>Collect optional stated interests and gift timing without inferring relationships or personal occasions from browsing. Do not copy a recipient’s address into the buyer’s marketing profile. A free-provider mailbox is valid unless there is separate evidence of abuse. Hold marketing imports whose permission cannot be verified; missing timestamps call for evidence review, not an automatic re-permission blast.</p>
+<h2>Proposed acceptance exercises</h2>
+<p>Use test records first. For each exercise, save the input event, expected branch, actual decision and reason for every skipped send. Check current permission and case state again at delivery time. No exercise below has been run for a merchant as part of this guide.</p>
+<h3>Materials and sizing: answer the question accurately</h3>
+<p>Merchandising approves the exact material description, finish, size chart and care limitations for each variant. The lifecycle lead builds an education path from explicit interest or a verified product event. Send an unknown variant to a general guide or human enquiry rather than guessing a metal, stone or size. Test a corrected product record and a purchase during the delay: stale facts must disappear and recovery for the purchased cart must exit. Keep relevant post-purchase education eligible only after its own purpose and permission checks.</p>
+<h3>Gifting: keep the surprise and the identities separate</h3>
+<p>The lifecycle lead tests a buyer ordering for a different recipient. Gift deadlines come from merchandising’s current delivery information, not a reusable promise. Confirm that receipts and price-bearing offers go to the intended buyer, while necessary delivery communication follows the store’s approved recipient process. A recipient is not subscribed to marketing merely because an address was supplied for delivery. Replay a changed gift date, buyer opt-out and recipient correction; pause promotional follow-up when purpose or identity is unclear. Do not suppress all future buyer messages simply because one purchase was a gift.</p>
+<h3>Care, warranty and returns: hand off to service</h3>
+<p>Customer care approves care guidance and warranty terms for the purchased piece. An open return, refund or warranty case pauses conflicting offers while relevant case updates remain a separate service decision. Test a partial return, a replacement order and a closed case: closing the case must not restore withdrawn marketing permission. If a warranty enquiry needs inspection or a repair, route it to the service owner; the email system must not decide coverage or authenticity from a click. Only add appointment reminders where the store actually offers a service appointment and the customer has requested it; booking, cancellation and completion come from the service record.</p>
+<h3>VIP access: make the benefit deliverable</h3>
+<p>The retention lead defines eligibility from retained purchases and stated interests, with customer care able to flag an unresolved case. Useful benefits include relevant early access, personal advice and care information rather than a permanent discount. Merchandising verifies the offered variant is available before release. Test a returned qualifying order, depleted stock and an open complaint. Remove an invalid invitation or route to an honest availability message; VIP status never overrides permission or purchased-cart exits.</p>
+<h3>Considered-item recovery: exit the right journey</h3>
+<p>The integration owner links cart and checkout events to the resulting order. Replay a duplicated event, a late purchase, a refund and an unavailable variant. One event must not create repeated enrollment; a purchase exits recovery for that cart or checkout, while a refund does not automatically restart it. Missing links or stale inventory hold the offer for investigation. Keep support and care paths independent so stopping recovery does not silence necessary order communication.</p>
+<h2>Evaluate confidence-building content without inventing lift</h2>
+<p>After the routing exercises pass, the analyst can propose a randomized comparison of an optional materials-and-sizing message with the existing experience among eligible buyers. Keep assignment stable per buyer, log eligibility before assignment and prevent overlap with other tests. Preserve necessary service communication in both groups. Define the observation window from the store’s consideration cycle and return window, and choose sample requirements and stopping rules before results are read; a fixed short pilot cannot establish success for every jewelry catalog.</p>
+<p>Report retained orders divided by all assigned eligible buyers in each group, plus net contribution per assigned buyer after returns, discounts, product costs and relevant messaging and operating costs. For example, 12 retained orders among 200 assigned buyers is 6%; 9 among 200 is 4.5%, a difference of 1.5 percentage points. These are illustrative numbers, not observed results or proof of lift. Report uncertainty, cancellations and unresolved returns; attributed revenue alone is not incrementality. Complaints and unsubscribes use delivered messages as their stated denominator, while routing errors use all examined decisions. Do not sunset a long-consideration customer solely because tracked opens are absent.</p>
+<h2>Costs, failure handling and operator handover</h2>
+<p>Finance models contacts, sends, seats, optional SMS, peak overages, integration maintenance, creative time and migration effort against the store’s actual volume. Compare a typical period and a gift-season peak using current vendor quotes. Include discount cost and returns when evaluating contribution. There is no universal percentage of attributed margin that proves an app is affordable.</p>
+<p>The integration owner monitors missing events and feed freshness; customer care escalates a wrong recipient or conflicting case offer immediately. On a failure, the lifecycle lead pauses the affected promotional path, records affected identifiers and decisions, corrects the mapping and replays saved cases in a non-sending environment. Resume only after merchandising or care approves the affected facts and another operator verifies exits and suppression. Do not resend a backlog automatically.</p>
+<p>Before handover, a second operator must be able to locate each journey’s owner, eligibility rule, permission evidence, message purpose, stop conditions and rollback control. Have that operator explain the gift and partial-return cases and safely disable a path using the written runbook. Schedule checks around actual gift deadlines and product changes; freeze unnecessary edits during the agreed peak window, but retain an emergency stop. Record unresolved failures rather than expanding a journey that cannot yet be operated safely.</p>
+<p>Continue with <a href="/for/high-aov">high-AOV store guidance</a> for consultation handoffs, <a href="/blog/best-shopify-email-apps-for-fashion-stores">fashion-store guidance</a> for sizing and retained purchases, or the <a href="/apps/shopify-email">Shopify email guide</a>. Those adjacent topics inform the decision; jewelry still needs its own gift privacy and care checks.</p>
+</article>
+<FaqSection faqs={faqs} />
 </BaseLayout>
