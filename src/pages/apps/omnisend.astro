@@ -1,348 +1,93 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
-import TldrBox from '../../components/TldrBox.astro';
 import FaqSection from '../../components/FaqSection.astro';
-import { site, description, pageTitle } from '../../content';
-import { appBySlug } from '../../data/apps';
-
-const app = appBySlug('omnisend')!;
+import { site } from '../../content';
 const path = '/apps/omnisend';
-const title = pageTitle(site, 'apps/omnisend');
-const desc = description(site, 'apps/omnisend');
-
+const title = 'Omnisend review for Shopify stores';
+const desc = 'Evaluate Shopify capture, catalog content and workflow branches before choosing repair or migration.';
 const faqs = [
   {
-    question: 'Is Omnisend good for Shopify email and SMS together?',
-    answer: 'Yes — Omnisend is the best SMB multichannel shortcut on Shopify. Email, SMS, and push live in one journey builder with prebuilt cart, welcome, and post-purchase flows. One-click install gets most stores live in days. Klaviyo goes deeper on data; Sequenzy goes faster on strategy playbooks; Omnisend wins when you want multichannel without enterprise complexity.',
+    "question": "What is Omnisend useful for on Shopify?",
+    "answer": "Capture, catalog content and lifecycle workflows with configurable branches. Verify actual data mappings, permissions and account access before enabling messages."
   },
   {
-    question: 'Omnisend vs Klaviyo for a 500-order-per-month Shopify store?',
-    answer: 'Omnisend usually wins on speed and entry cost at that volume. Klaviyo pays off once you need collection-level boolean logic, predictive CLV, and complex drop suppression. Many Omnisend merchants migrate to Sequenzy or Klaviyo at 800–1,200 orders/mo when seasonal winback becomes weekly ops.',
+    "question": "Does a large catalog force migration?",
+    "answer": "No. Demonstrate the required collection, property and variant jobs. Repair mappings or stale content first; evaluate alternatives only against unresolved requirements."
   },
   {
-    question: 'How does Omnisend pricing work on Shopify?',
-    answer: 'Free tier available; Standard and Pro scale by contacts and message volume. SMS and push billed within plan limits then overage. At 10k contacts with regular email + modest SMS, expect roughly $60–120/mo vs Klaviyo $150–250 for similar profile counts.',
+    "question": "Can I branch on pet type or form source?",
+    "answer": "The split guide documents contact and event rules, with custom properties routed through segments. Test missing values, refresh timing and re-entry in the actual workflow."
   },
   {
-    question: 'Does Omnisend sync Shopify browse abandonment?',
-    answer: 'Yes for core browse and cart events needed in prebuilt journeys. Segmentation is solid for SMB but less flexible than Klaviyo for exotic metafield logic across dozens of collections. Sufficient for most boutiques; insufficient for 5,000+ SKU matrix operations.',
+    "question": "Are selected product prices always current?",
+    "answer": "Product Picker content can become stale after store edits. Refresh affected products and verify prices, links and availability before sending."
   },
   {
-    question: 'Are Omnisend push notifications worth it?',
-    answer: 'Push can recover mobile web browse and cart intent without SMS cost — useful for flash sales. Overuse trains ignore behavior. If push is not in your channel strategy, the feature is irrelevant weight vs email-only tools.',
+    "question": "How much will email, SMS and push cost?",
+    "answer": "Obtain a current quote for the exact workload, destinations and billing term. Confirm channel eligibility and allowances; sample workloads here are not prices."
   },
   {
-    question: 'Can Omnisend replace Privy for popups?',
-    answer: 'Omnisend includes signup forms and gamified capture but Privy and Justuno win on exit intent depth and popup A/B testing. Common stack: Privy capture + Omnisend lifecycle.',
-  },
-  {
-    question: 'How fast can I launch automations on Shopify with Omnisend?',
-    answer: 'Our home goods test went from install to welcome, cart, and post-purchase live in eleven days including template customization. Faster than typical Klaviyo greenfield; comparable to Sequenzy playbook speed but with more template-driven editing.',
-  },
-  {
-    question: 'When should I leave Omnisend for Sequenzy?',
-    answer: 'When pay-per-email economics beat contact pricing, you want agent-first lifecycle guidance over template editing, or replenishment/winback complexity outgrows Omnisend boolean limits. Omnisend remains strong if SMS + push unity is the priority.',
-  },
-  {
-    question: 'Does Omnisend handle Black Friday volume on Shopify?',
-    answer: 'Yes with prep — sunset unengaged contacts 30 days before peak, cap SMS frequency, and test suppression for recent purchasers. Klaviyo offers finer holdout testing; Omnisend prebuilt sale templates help SMB teams move fast with manual discipline.',
-  },
+    "question": "Should I add another capture app or leave Omnisend?",
+    "answer": "Keep a working setup. Test a specific unmet capture or workflow requirement and compare repair effort with current alternatives; no sales-volume graduation rule applies."
+  }
 ];
 ---
-
 <BaseLayout title={title} description={desc} site={site} path={path}>
   <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
-
-  <section class="relative overflow-hidden py-16 md:py-24">
-    <div class="container">
-      <a href="/apps" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All app reviews</a>
-      <p class="editorial-kicker mt-6">SMB multichannel · Rank #3</p>
-      <h1 class="hero-title mt-5 max-w-5xl">{app.name} review for Shopify stores</h1>
-      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-        Omnisend is the practical shortcut when a Shopify team needs welcome, cart recovery, post-purchase, and SMS live this week — not next quarter. One-click install, prebuilt ecommerce journeys, and email + SMS + push in one builder reduce tool sprawl for boutiques without a retention specialist. It ranks third here because Klaviyo and Sequenzy eventually outpace it on data depth and strategy guidance — but Omnisend wins the first 12–18 months for many SMB merchants.
-      </p>
-      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
-        Tested on a 320-order/mo candle shop, a pet products store, and a fashion boutique graduating off Shopify Email. Rating: ★ {app.rating}. Automation: {app.automationDepth}.
-      </p>
-      <div class="mt-9 flex flex-wrap gap-3">
-        <a class="btn btn-primary" href="/compare/klaviyo-vs-omnisend">Klaviyo vs Omnisend</a>
-        <a class="btn btn-secondary" href="/use-cases/abandoned-cart">Cart recovery guide</a>
-      </div>
-    </div>
+  <section class="container py-16">
+    <a class="link" href="/apps">← All app reviews</a>
+    <p class="editorial-kicker mt-6">Supplier scope checked November 25, 2026</p>
+    <h1 class="hero-title mt-5">Omnisend review for Shopify stores</h1>
+    <p class="mt-7 max-w-3xl text-xl leading-9">{desc}</p>
+    <p class="mt-5">Merchant names, workloads and workflows below are proposed planning fixtures, not performed tests or measured client results.</p>
   </section>
-
   <section class="container pb-12">
-    <TldrBox
-      title="Verdict: Omnisend for Shopify"
-      picks={[
-        { label: 'Best for', tool: 'SMB speed', reason: 'Prebuilt journeys live in days — ideal for 100–800 orders/mo.' },
-        { label: 'Multichannel', tool: 'Email + SMS + push', reason: 'One builder, shared suppression — simpler than bolt-on SMS apps.' },
-        { label: 'Pricing', tool: 'Contact-based', reason: 'Competitive entry; SMS overages need weekly monitoring on sale weeks.' },
-        { label: 'Ceiling', tool: 'Segment limits', reason: 'Complex catalogs and predictive needs push stores to Klaviyo or Sequenzy.' },
-        { label: 'Pair with', tool: 'Privy capture', reason: 'Omnisend executes lifecycle; Privy fills top-of-funnel gaps.' },
-      ]}
-    />
-
     <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">The Omnisend value proposition on Shopify</h2>
-      <p>
-        Omnisend exists because most Shopify merchants do not need a blank canvas — they need cart recovery working before weekend traffic spikes. The app ships with ecommerce automations pre-wired: welcome, cart abandonment, browse abandonment, post-purchase, customer reactivation. Product picker blocks pull catalog items without custom HTML. SMS and push sit beside email in the same workflow, which matters when you want VIP early access via text without exporting segments to Postscript.
-      </p>
-      <p>
-        Revenue per message reporting is practical for weekly campaign decisions — not enterprise BI, but enough for a founder optimizing send time. Campaign presets accelerate seasonal sales. Gamified signup forms reduce the need for a separate popup app at very early stage, though Privy still wins capture depth at scale.
-      </p>
-      <p>
-        The ceiling arrives when boolean segmentation across dozens of collections, predictive CLV routing, and agent-first strategy layers become daily requirements. That is when merchants in our cohort migrated to Sequenzy (guidance + pay-per-email) or Klaviyo (data maximums). Omnisend is a bridge platform — and a good one.
-      </p>
+      <h2 class="font-serif text-4xl font-black">Verdict: keep useful workflows, repair specific gaps</h2>
+      <p>Omnisend is worth evaluating for a Shopify team that wants capture, catalog content and multichannel journeys in one working environment. Retain it when the required branches and suppression checks work. Order count, catalog size and time on the platform are not migration deadlines. A candle shop, pet store and fashion boutique below are proposed fixtures, not customers we tested or measured.</p>
+      <p>The <a href="https://support.omnisend.com/en/articles/3810844-use-conditional-split-to-create-workflow-paths">conditional split guide</a> documents event, contact and engagement rules, nested paths and merging. Custom-property routing uses segments; allow for refresh timing. This supports real branching jobs rather than a blanket claim that Omnisend cannot handle complex logic. Confirm feature access, channel activation and message allowances in the actual account.</p>
     </div>
-
-    <div class="ledger-card mb-12">
-      <p class="editorial-kicker">Shopify integration depth</p>
-      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Native sync, prebuilt triggers, and gaps</h2>
-      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-        Omnisend is a native Shopify app with real-time audience sync, product catalog import, and standard ecommerce events: placed order, added to cart, started checkout, viewed product, subscribed via form. Prebuilt automation templates map directly to these triggers — minimal custom wiring for welcome and cart flows.
-      </p>
-      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-        <strong>Strengths:</strong> Fast install, collection-based product blocks, SMS opt-in tied to Shopify checkout where configured, push notifications for browse/cart on mobile web, revenue attribution at campaign and workflow level, international SMS support in major markets.
-      </p>
-      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-        <strong>Gaps vs Klaviyo:</strong> Less flexible custom property logic, no predictive CLV out of the box, thinner browse history for pre-signup stitching, fewer agency-maintained recipes for exotic verticals. <strong>Gaps vs Sequenzy:</strong> No agent-first playbook generation or pay-per-email unlimited contacts; template editing instead of outcome-described sequences.
-      </p>
-      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-        <strong>Watch SMS costs:</strong> Promotional SMS during BFCM can exceed email plan cost if uncapped. Model per-message fees before scaling text recovery to full list.
-      </p>
-    </div>
-
     <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Pricing breakdown with merchant math</h2>
-      <p>Omnisend: {app.priceDetail}. Plans from {app.pricing}.</p>
-      <p>
-        <strong>Scenario A — 4,000 contacts, 15,000 emails, 600 SMS/mo.</strong> Standard plan roughly $40–65/mo all-in if SMS within allowance. Good fit for candle shop doing $45k/mo — email drove 18% of revenue within 90 days of install.
-      </p>
-      <p>
-        <strong>Scenario B — 11,000 contacts, BFCM week with 3,500 promotional SMS.</strong> Base plan $90–110/mo + SMS overage $45–80. Total November ~$180 vs normal $100. Still below Klaviyo at same contacts if SMS modest — but requires monitoring.
-      </p>
-      <p>
-        <strong>Scenario C — 25,000 contacts, low SMS, heavy email automations.</strong> Pro tier $160–200/mo. Sequenzy pay-per-send may undercut if list is wide but engagement concentrated. Klaviyo $350+ at 25k profiles — Omnisend middle ground until complexity forces migration.
-      </p>
+      <h2 class="font-serif text-4xl font-black">Capture and welcome: pet type, source and missing answers</h2>
+      <p>Proposed pet-store fixture: a subscriber selects large dog in a signup form. Map the answer to a named property, record form source and timestamp, and inspect the actual profile before enabling the welcome branch. Route a missing answer to general pet education rather than guessing an animal or offering an irrelevant product. Keep email and SMS permission separate.</p>
+      <p>Test a returning subscriber who changes the answer, an existing purchaser, a duplicate submission and an opt-out before message two. The acceptance record should show which answer wins, whether re-entry occurs, and who owns repairs. A successful popup submission alone does not prove downstream routing. Compare built-in forms with Privy or Justuno only against an unmet targeting or testing requirement; a second capture app is not mandatory at a given sales volume.</p>
     </div>
-
     <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Four workflow tests on Shopify</h2>
-
-      <h3 class="font-serif text-2xl font-black text-[#24170f]">1. Welcome — pet store popup with pet type quiz answer</h3>
-      <p>
-        <strong>Scenario:</strong> Subscriber selects "large dog" in Omnisend gamified form. <strong>Setup:</strong> Prebuilt welcome edited to feature large-breed products; email two tips content; suppress purchasers. <strong>Result:</strong> Live in 3 days; 16% first purchase within 30 days. Quiz data in custom field — sufficient for SMB pet store.
-      </p>
-
-      <h3 class="font-serif text-2xl font-black text-[#24170f]">2. Cart — $58 candle bundle, SMS on email two only</h3>
-      <p>
-        <strong>Scenario:</strong> Abandoned cart after 2 hours; subscriber opted into SMS. <strong>Setup:</strong> Email one reminder; SMS two hours later if no open; email three with free shipping threshold. <strong>Result:</strong> 14% recovery; SMS drove 40% of recovered orders — multichannel unity avoided duplicate exports.
-      </p>
-
-      <h3 class="font-serif text-2xl font-black text-[#24170f]">3. Post-purchase — review request + cross-sell diffuser after candle order</h3>
-      <p>
-        <strong>Scenario:</strong> Order delivered day 5. <strong>Setup:</strong> Post-purchase template with delivery delay; product block for complementary SKU. <strong>Result:</strong> Cross-sell $1.85 RPR; review click rate 9%. Klaviyo would add review integration depth; Omnisend sufficient for basic loop.
-      </p>
-
-      <h3 class="font-serif text-2xl font-black text-[#24170f]">4. Winback — 120-day lapsed with push + email for flash sale</h3>
-      <p>
-        <strong>Scenario:</strong> One-time buyers, no order in 120 days, push permission granted. <strong>Setup:</strong> Email styled edit; push 4 hours later for 24-hour sale; suppress recent purchasers. <strong>Result:</strong> 5.1% reactivation; push contributed 28% of winback revenue at zero SMS cost.
-      </p>
+      <h2 class="font-serif text-4xl font-black">Candle cart: channel coordination and checkout identity</h2>
+      <p>Proposed $58 candle bundle: map the native cart and checkout events and distinguish their identifiers before enrolling anyone. Use a reminder, then consider SMS only with current permission and an explicit purpose. Choose delays for the buying cycle; absence of an email open is not proof of absence of interest. Validate purchase exclusion immediately before each dispatch.</p>
+      <p>Test two tabs creating overlapping events, checkout completion during a delay, an expired discount, an unsubscribed phone number and a replayed cart. Keep one recovery owner per cart across Shopify and other apps. Stop new enrollment in a replaced flow, inspect pending messages and cancel or drain queues deliberately. Do not assume pausing enrollment cancels scheduled sends elsewhere.</p>
+      <p>The <a href="https://support.omnisend.com/en/articles/6659889-abandoned-cart-and-abandoned-checkout-automations">cart and checkout guide</a> explains native abandoned-product content. Verify that the chosen button restores the intended checkout; a product-page button and full-cart recovery link serve different jobs. See the <a href="/use-cases/abandoned-cart">cart recovery guide</a> for additional planning context.</p>
     </div>
-
-    <div class="grid gap-8 lg:grid-cols-2 mb-12">
-      <div class="card">
-        <p class="editorial-kicker">Pros</p>
-        <ul class="mt-4 space-y-3 text-[#4a2d17]">
-          {app.strengths.map((s) => <li class="flex gap-2"><span class="text-[#9a5b16]">+</span>{s}</li>)}
-        </ul>
-      </div>
-      <div class="card">
-        <p class="editorial-kicker">Cons</p>
-        <ul class="mt-4 space-y-3 text-[#4a2d17]">
-          {app.limits.map((l) => <li class="flex gap-2"><span class="text-[#9a5b16]">−</span>{l}</li>)}
-        </ul>
-      </div>
-    </div>
-
-    <div class="grid gap-8 lg:grid-cols-2 mb-12">
-      <div class="ledger-card">
-        <p class="editorial-kicker">Who should buy</p>
-        <ul class="mt-4 space-y-3 text-[#4a2d17]">
-          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>100–800 orders/mo needing multichannel fast</li>
-          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Graduating from Shopify Email within 6 months</li>
-          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Teams wanting SMS + push without Postscript bolt-on</li>
-        </ul>
-      </div>
-      <div class="ledger-card">
-        <p class="editorial-kicker">Who should skip</p>
-        <ul class="mt-4 space-y-3 text-[#4a2d17]">
-          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Predictive CLV drives every send — Klaviyo</li>
-          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Want pay-per-email + agent playbooks — Sequenzy</li>
-          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Capture-only problem — Privy first</li>
-        </ul>
-      </div>
-    </div>
-
     <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Getting maximum value before you outgrow Omnisend</h2>
-      <p>
-        Omnisend's window of advantage is speed. Install, enable prebuilt cart and welcome flows, customize product blocks for your top three SKUs, and measure recovery within 14 days — not 14 weeks of segment architecture. Add SMS only to subscribers with explicit opt-in; cap promotional texts during sale weeks before overage surprises arrive on the invoice.
-      </p>
-      <p>
-        Push notifications deserve a one-page policy: when they fire (browse abandon yes, every campaign no), who receives them (engaged subscribers only), and how they suppress if email already sent. Push is free relative to SMS but trains ignore behavior faster when overused.
-      </p>
-      <p>
-        Plan your graduation trigger now. When collection count exceeds comfortable boolean logic, when replenishment requires custom metafields, or when pay-per-email economics beat contact pricing above 15k subscribers — evaluate Sequenzy or Klaviyo. Migrating at 800 orders/mo with documented flows beats emergency migration at 2,000 orders/mo during Q4.
-      </p>
-      <p>
-        Capture remains separate. Omnisend forms work for early stage; at 500+ orders/mo most merchants add Privy or Justuno for exit intent depth and feed Omnisend segments via tags. Tag handoff at opt-in — popup source, collection interest, discount sensitivity — determines welcome performance more than template aesthetics.
-      </p>
+      <h2 class="font-serif text-4xl font-black">Post-purchase: diffuser recommendations and delivery truth</h2>
+      <p>Proposed candle buyer: send care instructions, request a review after an appropriate use interval, then recommend a diffuser only if eligible. Map delivery or fulfillment evidence explicitly; an order placed five days ago is not proof of delivery. Route refunds, cancellations and subscription orders away from an inappropriate cross-sell.</p>
+      <p>The <a href="https://support.omnisend.com/en/articles/1061865-use-product-picker-in-product-listing-item">Product Picker documentation</a> describes selecting Shopify products visually and importing their content. Listing data is captured when added or edited; later store changes may require refreshing the block. Re-add products after price changes and verify links and images. Picker and list selection cannot be mixed within the same listing item.</p>
+      <p>Acceptance fixtures include a sold-out diffuser variant, a changed sale price, a missing image and a gift order. Use an available general collection or omit the recommendation when the intended item is unavailable. A gift recipient is not automatically a marketing subscriber. Record variant and product IDs separately so a catalog repair does not silently change the offer.</p>
     </div>
-
     <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Omnisend merchant scenarios we see repeatedly</h2>
-      <p>
-        <strong>Candle / home fragrance SMB:</strong> Omnisend from Shopify Email graduation at 280 orders/mo. Prebuilt cart recovery paid for annual plan in six weeks. Stayed on Omnisend 14 months until catalog hit 400 SKUs and collection segmentation became weekly ops — migrated to Sequenzy for pay-per-send and playbook speed.
-      </p>
-      <p>
-        <strong>Pet DTC with SMS:</strong> Omnisend SMS on cart email two recovered orders email alone missed — pet owners check texts faster than promo tabs. Capped SMS at 2/month general, 4/month VIP. Push tested and disabled after 3 weeks — low opt-in, negligible revenue.
-      </p>
-      <p>
-        <strong>Fashion boutique bridge:</strong> Omnisend live before spring drop; Privy added for exit intent on collection landing pages. Tags passed at integration. Omnisend sufficient until second seasonal clearance when winback complexity pushed evaluation of Sequenzy vs Klaviyo — chose Sequenzy on economics.
-      </p>
-      <p>
-        Measure Omnisend success on revenue per message and recovery rate trends, not template aesthetics. When boolean segment limits frustrate weekly — usually 12–18 months in — graduation is feature not failure.
-      </p>
-      <p>
-        Support response times matter during first install week — Omnisend chat resolved our SMS compliance question in one session; document answers in internal wiki so sale week does not depend on live chat availability.
-      </p>
-      <p>
-        Deliverability prep mirrors any ESP: authenticate domain before scaling automations, warm new flows gradually, and keep complaint rates visible in weekly ops review alongside revenue per message.
-      </p>
-      <p>
-        See our <a class="link" href="/use-cases/abandoned-cart">abandoned cart guide</a> for suppression patterns that pair well with Omnisend prebuilt flows.
-      </p>
+      <h2 class="font-serif text-4xl font-black">Fashion browse and winback: collection context with explicit fallbacks</h2>
+      <p>Proposed boutique: route known denim interest into relevant education and exclude a recent denim purchaser. Confirm whether the condition uses the triggering event or a later profile update. Test a collection rename, an item in two collections, anonymous browsing and a contact who becomes identified later. Missing identity should prevent a personalized recovery send rather than manufacture a browsing history.</p>
+      <p>For a proposed 120-day lapsed group, define eligible last-order dates, refunds and time zone. Add email first; test push only for an addressable browser with active permission, and SMS only when separately eligible. An Android-only pilot can be a merchant choice, not a universal device rule. A purchase after entry must remove or redirect the next promotion. Evaluate each additional channel with disjoint cohorts and adequate observation rather than attributing every order to every touch.</p>
     </div>
-
     <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Merchant scenario: home goods SMB needing multichannel in two weeks</h2>
-      <p>
-        Cedar &amp; Stone ($88k/mo, 1,050 orders) runs email in Mailchimp poorly and has no SMS. Owner needs cart, welcome, post-purchase, and SMS live before spring sale in fourteen days — no retention hire, no agency budget. Omnisend's prebuilt journeys and one-click Shopify install are the pragmatic path vs Klaviyo learning curve or Sequenzy if they want more strategy guidance later.
-      </p>
-      <p>
-        Cedar &amp; Stone's scenario is Omnisend's core ranking justification on this site: SMB multichannel speed without enterprise complexity. Tradeoff accepted upfront: less exotic segmentation than Klaviyo, faster time-to-revenue.
-      </p>
+      <h2 class="font-serif text-4xl font-black">Cedar &amp; Stone: phased rollout with release gates</h2>
+      <p>Cedar &amp; Stone is a hypothetical home-goods shop at $88k monthly sales and 1,050 orders. Its owner wants welcome, cart and post-purchase ready for a spring sale. These planning inputs do not promise a fourteen-day launch. First inventory Mailchimp flows, tracking, permissions, exclusions and already queued sends; choose a quiet change window and one accountable owner.</p>
+      <p>Gate one: authenticate the domain, verify Shopify connection and form mappings, then rehearse welcome on staff accounts. Gate two: replay cart and purchase events with stable IDs and inspect the pending queue. Gate three: refresh product blocks, verify discounts and fulfillment fallbacks, then enable a limited eligible cohort. Add SMS and push only after consent, destinations, budget and fallback behavior are demonstrated.</p>
+      <p>Keep a rollback record containing prior rules, active-sender ownership and queue disposition. Use shadow evaluation or mutually exclusive cohorts for comparisons. Recheck opt-outs, recent purchases and event deduplication at send time. A quiet-week demo is insufficient if the operator cannot repair VIP access or suppression before a sale.</p>
     </div>
-
     <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">90-day rollout: Omnisend fast multichannel launch</h2>
-      <p>
-        <strong>Days 1–14:</strong> Install Omnisend, enable prebuilt welcome and cart workflows — customize product blocks and brand colors only. Import Mailchimp engaged list with suppressions. SMS opt-in at checkout enabled with compliant copy.
-      </p>
-      <p>
-        <strong>Days 15–35:</strong> Add post-purchase cross-sell by category purchased. Launch SMS cart recovery for mobile abandons — cap 2 promotional SMS monthly. Push notifications test on Android cohort only.
-      </p>
-      <p>
-        <strong>Days 36–60:</strong> Winback at 90 days. Weekly revenue per message review — pause underperforming push. Spring sale campaign coordinated across email and SMS with shared suppression list.
-      </p>
-      <p>
-        <strong>Days 61–90:</strong> Evaluate Omnisend vs Sequenzy upgrade if strategy guidance becomes bottleneck. If order volume crosses 2,000/mo and catalog hits 500 SKUs, model Klaviyo — Omnisend may still suffice if segments stay simple.
-      </p>
+      <h2 class="font-serif text-4xl font-black">Pricing worksheet and hypothetical margin math</h2>
+      <p>Request a current quote using billable contact definitions, monthly campaign and automation sends, channel destinations, SMS segments, peak volume, billing term and service requirements. Scenario A can use 4,000 contacts, 15,000 emails and 600 SMS; scenario B 11,000 contacts and 3,500 peak SMS; scenario C 25,000 contacts with concentrated engagement. These are workloads for quotes, not current prices or plan entitlements.</p>
+      <p>Illustrative Cedar &amp; Stone model: assume $145 monthly platform and message cost, not a verified quote. A recovery change from 5% to 10% across 480 eligible carts implies 24 additional orders. At $84 AOV that is $2,016 revenue and $1,008 gross profit at 50% margin. Eight genuinely additional SMS orders outside those 24 add $672 revenue and $336 gross profit. Combined $1,344 less $145 leaves $1,199 before labor, discounts, returns and other costs; the fee is about 10.8% of gross profit. These assumptions establish arithmetic, not causal lift.</p>
+      <p>Estimate incremental contribution with an appropriate holdout, deduplicate orders across channels and include capture fees and operator time. Model a seasonal SMS spike separately using the destination-specific quote. A platform comparison should use identical workloads and permissions, with no presumed winner.</p>
     </div>
-
     <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Margin math: Omnisend SMB multichannel stack cost</h2>
-      <p>
-        Illustrative Cedar &amp; Stone model, not an observed result: assume a $145 monthly platform-and-message cost at 12k contacts, not a verified current quote. A recovery-rate change from 5% to 10% across 480 eligible abandoned carts implies 24 additional orders × $84 AOV = $2,016 revenue and $1,008 gross profit at an assumed 50% margin. If SMS contributes eight genuinely additional, deduplicated orders outside those 24, it adds $672 revenue and $336 gross profit. The combined $1,344 gross profit less $145 leaves $1,199 before migration labor, discounts, returns and other costs; the fee is about 10.8% of that gross profit. Attribute each recovered order once across channels and use a comparable holdout to estimate causal lift; a before/after recovery-rate change alone does not establish it.
-      </p>
-      <p>
-        SMS creep: spring sale adds 6,000 promotional texts — bill +$95, opt-outs +0.8%. Frequency cap prevents margin erosion from over-messaging. Push notification ROI often negative on iOS-heavy home goods traffic — measure before scaling.
-      </p>
-    </div>
-
-    <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Failure rehearsal: Omnisend SMB operational traps</h2>
-      <p>
-        <strong>SMS bill shock during sale:</strong> Uncapped broadcasts — opt-outs spike. Pre-model SMS volume before every promo.
-      </p>
-      <p>
-        <strong>Prebuilt flow complacency:</strong> Never customize suppression — recent purchasers get cart emails. Edit defaults week one.
-      </p>
-      <p>
-        <strong>Outgrow without planning:</strong> 2,500 orders/mo on Omnisend with complex B2B tags — segmentation ceiling hit. Define Klaviyo trigger at 2k orders and 400 SKUs.
-      </p>
-      <p>
-        <strong>Push annoyance:</strong> Daily push erodes permission. Cap 4/month non-transactional.
-      </p>
-    </div>
-
-    <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Weekly operating cadence: Omnisend SMB multichannel</h2>
-      <p>
-        Monday: revenue per message by channel — email, SMS, push ranked; pause lowest performer if negative incremental lift two weeks running. Wednesday: prebuilt flow check — Omnisend defaults drift if theme changes break product blocks. Friday: SMS count vs monthly cap before weekend promo.
-      </p>
-      <p>
-        Monthly: Cedar &amp; Stone tests one new automation only — winback tweak OR cross-sell, not both same week. Spring sale prep includes shared suppression export for email and SMS; Omnisend unity is advantage only when configured deliberately.
-      </p>
-      <p>
-        Quarterly: upgrade trigger review at 1,500 orders — Omnisend may still suffice, but Klaviyo or Sequenzy evaluation belongs on calendar before segmentation pain becomes emergency.
-      </p>
-    </div>
-
-    <div class="ledger-card mb-12">
-      <p class="editorial-kicker">Implementation handoff</p>
-      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Omnisend 14-day launch checklist</h2>
-      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-        Cedar &amp; Stone: day 1 install, day 3 welcome live, day 7 cart live, day 10 SMS opt-in at checkout, day 14 spring sale coordinated across channels with shared suppression export. Prebuilt flows customized for suppression — recent purchasers excluded email one, not only email three.
-      </p>
-      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-        SMS promotional cap two monthly entered in team calendar before first broadcast. Push test Android-only until CTR proves addressable. Mailchimp engaged import only; cold full list import forbidden week one. Omnisend wins when speed is KPI — document Klaviyo evaluation trigger at 2k orders before segmentation ceiling surprise.
-      </p>
-    </div>
-
-    <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Margin math: Omnisend multichannel bill versus recovery lift</h2>
-      <p>
-        Cedar &amp; Stone at 11k contacts: Omnisend $128/mo email plus SMS peak weeks $42 additional. Cart recovery 12.1%, post-purchase cross-sell added $2,100/mo attributed. Klaviyo quote $240/mo at same profiles — defer until order 2,000 when browse-by-collection becomes KPI. Omnisend ROI: incremental recovery minus platform fee must exceed 3x before enterprise upgrade debate. SMS cap two promotional monthly in team calendar prevents surprise overage and subscriber fatigue.
-      </p>
-      <p>
-        Push test Android-only until CTR proves addressable — iOS web push limitations mean push is supplementary, not primary, for most Shopify catalogs.
-      </p>
-    </div>
-
-    <div class="prose-shopify mb-12"><h2 class="font-serif text-4xl font-black text-[#24170f]">Merchant scenario: Omnisend rollout checkpoint</h2>
-    <p>
-      Shopify operators evaluating Omnisend should document week-one baseline metrics before claiming migration wins — welcome time-to-live, cart suppression accuracy, post-purchase edge cases, and winback engagement splits scored on staff accounts. Model 12-month platform cost at projected list size including popup imports and peak-season send spikes, not current-month invoice alone.
-    </p>
-    <p>
-      Omnisend verdict rule: Thursday-before-drop, thirty minutes, suppression and VIP access live without engineering. Calm-week Omnisend demos that cannot pass this edit waste more peak margin than any annual delta; the ninety-day Omnisend trial with weekly checklist exists to catch exactly that.
-    </p>
-    <p>
-      Omnisend cutover sheet should name one owner per live flow. Before enabling its replacement, pause incumbent enrollment, inspect already queued messages and cancel or drain them deliberately; a pause alone is not proof that pending sends stopped. Import eligible engaged contacts with purpose-specific email and SMS permission records, current opt-outs and suppression state; purchase history is not marketing permission. Observe cart behavior for twenty-one days in shadow mode or disjoint test cohorts rather than duplicate live recovery. Deduplicate checkout/order identifiers and replayed events across the handoff, recheck purchase and opt-out state before sending, and rehearse rollback with only one sender active. Finance should compare measured incremental contribution after platform and operating costs with migration labor over an explicit payback period.
-    </p>
-    </div>
-
-        <div class="card mb-12">
-      <p class="editorial-kicker">Compare alternatives</p>
-      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Omnisend vs other Shopify email apps</h2>
-      <ul class="mt-6 space-y-3 text-lg font-bold">
-        <li><a class="link" href="/compare/klaviyo-vs-omnisend">Klaviyo vs Omnisend</a></li>
-        <li><a class="link" href="/compare/sequenzy-vs-omnisend">Sequenzy vs Omnisend</a></li>
-        <li><a class="link" href="/compare/omnisend-vs-shopify-email">Omnisend vs Shopify Email</a></li>
-        <li><a class="link" href="/compare/omnisend-vs-privy">Omnisend vs Privy</a></li>
-      </ul>
+      <h2 class="font-serif text-4xl font-black">Repair, retain or replace: an operating decision</h2>
+      <p>Monday: inspect channel contribution, exclusions and complaints. Wednesday: sample the actual pet-answer branch, cart queue and product blocks after theme or catalog changes. Friday: review SMS budget and VIP eligibility before the next promotion. Monthly: change one flow at a time and record the operator, rationale and rollback state.</p>
+      <p>If routing fails, first inspect field mapping, segment refresh, split placement and event timing. If catalog content is stale, refresh the listing rather than treating it as a universal platform ceiling. If capture underperforms, test placement and property handoff before adding another vendor. Retaining a working configuration or repairing one missing branch are valid outcomes.</p>
+      <p>Evaluate alternatives when a documented requirement remains unmet after a bounded repair attempt, service access is insufficient, or a current total-cost comparison favors a change. Use the same fixtures and acceptance criteria for <a href="/compare/klaviyo-vs-omnisend">Klaviyo vs Omnisend</a>, <a href="/compare/sequenzy-vs-omnisend">Sequenzy vs Omnisend</a>, <a href="/compare/omnisend-vs-shopify-email">Shopify Email</a> and <a href="/compare/omnisend-vs-privy">Privy</a>. The <a href="/apps/sequenzy">Sequenzy review</a> is another evaluation route, not a required graduation.</p>
     </div>
   </section>
-
-  <section class="container pb-8">
-    <div class="flex flex-wrap gap-4 text-sm font-bold">
-      <a class="link" href="/apps">All Shopify email apps →</a>
-      <a class="link" href="/apps/sequenzy">Sequenzy review →</a>
-    </div>
-  </section>
-
   <FaqSection faqs={faqs} title="Omnisend Shopify FAQ" />
 </BaseLayout>
