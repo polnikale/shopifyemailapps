@@ -1,216 +1,50 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import FaqSection from '../../components/FaqSection.astro';
 const title = 'Best Shopify Email Apps for Replenishment in 2026';
-const description = 'A practical guide to Shopify email apps for replenishment, covering purchase intervals, product education, consent, pricing context, sources, and lifecycle tradeoffs.';
-const apps = [
-['Sequenzy','Lean stores with clear reorder sequences','Focused workflows for repeat purchase','Validate interval and subscription events','https://sequenzy.com','Start with one consumable category and a product-specific reorder window. Teach use or care first, then suppress the reminder after purchase, skip, cancellation, return, or support contact.'],
-['Klaviyo','Behavioral replenishment by product and interval','Detailed purchase events and conditional flows','Timing and product data need governance','https://www.klaviyo.com/features/segmentation','Klaviyo fits catalogs with meaningful product intervals and reliable order events. Use quantity, last purchase, subscription, and service state rather than one generic timer.'],
-['Omnisend','Retail replenishment across email and SMS','Accessible reminder automation','Reminder frequency and channel cost need discipline','https://www.omnisend.com/features/marketing-automation/','Omnisend is practical for reorder reminders across email and SMS. Keep the channel frequency combined and do not send an urgent reminder when the customer has already reordered elsewhere.'],
-['Drip','DTC brands measuring repeat-order economics','Commerce automation and reporting','May exceed a small catalog’s needs','https://www.drip.com/features','Drip suits stores testing repeat-order timing and customer value by product. Compare windows against a baseline and include margin, returns, and support contacts in the decision.'],
-['Brevo','Replenishment beside transactional messaging','Broad email and contact options','More manual product-interval modeling','https://www.brevo.com/features/marketing-automation/','Brevo can support lifecycle reminders beside fulfillment and subscription communication. Keep service and promotional streams separate, and model product intervals explicitly.'],
-['Shopify Email','Small stores sending simple reorder education','Native campaigns and product setup','Limited interval-aware automation','https://www.shopify.com/email-marketing','Shopify Email is a good starting point for manual reorder education and product tips. Keep subscription state in the subscription platform and use the email tool for non-critical follow-up.'],
-['Mailchimp','Editorial brands with a few durable reorder categories','Campaigns, audiences, and basic automation','Advanced interval logic needs design','https://mailchimp.com/features/email/','Mailchimp fits a content-led replenishment program where product education precedes the reminder. Use category preferences and a sunset rule for one-off campaigns.'],
-['Customer.io','Technical stores with order, usage, and subscription events','Flexible event-triggered messaging','Engineering and QA effort are substantial','https://customer.io/product/messaging/','Customer.io is useful when reorder eligibility depends on reliable product-use or subscription events. Add duplicate protection and let service state override promotion.'],
-['ActiveCampaign','Replenishment connected to CRM or membership context','Automation and contact segmentation','Data ownership across teams is demanding','https://www.activecampaign.com/marketing-automation','ActiveCampaign suits brands where reorder behavior is part of a membership or account relationship. Keep marketing consent separate from service and account notes.'],
-['MailerLite','Small catalogs with one or two reorder paths','Simple campaigns and basic automation','Limited fit for many product intervals','https://www.mailerlite.com/features','MailerLite is a sensible low-overhead choice for a few staple products. Its simple model keeps timing and suppression review close to the operator.'],
-['ConvertKit','Creator-led products with replenishment education','Subscriber sequences and broadcasts','Commerce and subscription depth is limited','https://convertkit.com/features','ConvertKit works when product education and creator trust drive repeat purchase. Keep timing recommendations transparent and let Shopify own order and subscription truth.'],
-['AWeber','Small merchants sending a basic reorder note','Broadcasts and autoresponders','Limited product-state automation','https://www.aweber.com/email-marketing.htm','AWeber can cover a simple reminder to a known audience. It is best when the merchant can verify the reorder window and suppress recent purchasers outside the platform.'],
-['GetResponse','Replenishment paired with education events or guides','Automation, landing pages, and event tools','Broader suite adds operating overhead','https://www.getresponse.com/features','GetResponse fits products supported by guides, workshops, or educational landing pages. Stop event reminders and reorder prompts when attendance or purchase changes the next step.'],
-['HubSpot','Replenishment coordinated with service, sales, or wholesale','CRM-connected marketing and subscription context','Cost and administration can be substantial','https://www.hubspot.com/products/marketing','HubSpot makes sense when reorder communication spans ecommerce, service, and account teams. Define subscription types and ownership before using shared CRM fields to trigger reminders.']
+const description = 'Compare three conditional fits for product-specific reorder reminders, retained quantity, subscription pauses, purchase exits and product-window measurement.';
+const faqs = [
+  { question: 'How many days should I wait before a reorder reminder?', answer: 'There is no universal reorder interval. Start with retained quantity, pack size, comparable purchase history and customer-selected timing. Coffee, cosmetics and household refills need separate assumptions. A date estimates a useful reminder window; it does not prove depletion, usage or a health need. If evidence is weak, offer a timing preference or product guide instead.' },
+  { question: 'What happens after a purchase, skip or return?', answer: 'A matching purchase closes the satisfied reorder episode. The subscription system owns renewal, skip and pause state; a pause blocks conflicting optional reminders without stopping required service. Returns reduce retained quantity only after reconciliation, and an open service case holds related promotion. Case resolution does not restore marketing permission or authorize a resend.' },
+  { question: 'Which app should a small catalog consider?', answer: 'Shopify Messaging is a candidate for operator-reviewed campaigns; Klaviyo documents replenishment flows; Omnisend provides a replenishment preset. Choose against actual product-state data, queue control and maintenance capacity. None of these capabilities proves your subscription connector or custom cancellation process works.' },
+  { question: 'How do I measure whether reminders help?', answer: 'Randomize eligible customers before optional exposure and keep each customer in one arm across product episodes. Compare converted episodes divided by eligible episodes over the same product-specific window, allowing returns to mature. Keep required service in both arms. Report uncertainty, net margin and harms; attributed orders alone do not establish incremental lift.' }
 ];
 ---
-<BaseLayout title={title} description={description}><main class="container page-stack"><p class="eyebrow">Shopify email apps
-</p><h1>{title}
-</h1><p class="lede">Replenishment timing should follow product reality. A coffee, supplement, cosmetic, or consumable order has a different interval from a durable good, and a reminder should respect skips, returns, subscriptions, and customer preference.
-</p><p>We prioritize product-specific intervals, purchase-state suppression, education, and cohort measurement. Confirm current pricing and subscription or inventory integrations from official sources before automating reminders.
-</p><h2>Shortlist for replenishment
-</h2><table><thead><tr><th>App
-</th><th>Best fit
-</th><th>Strength
-</th><th>Tradeoff
-</th></tr></thead><tbody>{apps.map(a=><tr><td>{a[0]}
-</td><td>{a[1]}
-</td><td>{a[2]}
-</td><td>{a[3]}
-</td></tr>)}
-</tbody></table>{apps.map(a=><section><h2>{a[0]} for replenishment
-</h2><p><strong>Best for:
-</strong> {a[1]}. {a[5]}
-</p><p><strong>Pros:
-</strong> {a[2]}.
-<strong>Cons:
-</strong> {a[3]}.
-<strong>Pricing:
-</strong> verify official plans plus subscription, contacts, sends, SMS, support, and implementation costs at the
-<a href={a[4]} target="_blank" rel="noopener noreferrer">official source
-</a>. Pilot one consumable category against a baseline and review repeat order, margin, unsubscribes, complaints, support contacts, and suppression accuracy.
-</p><table><tbody><tr><th>Pros in practice
-</th><td>{a[2]}
-</td></tr><tr><th>Risk to manage
-</th><td>{a[3]}
-</td></tr><tr><th>Evidence to review
-</th><td>Interval fit, purchase suppression, subscription state, repeat order, margin, complaints, and support contacts.
-</td></tr></tbody></table></section>)}
-<h2>Decision guide
-</h2><table><thead><tr><th>Replenishment priority
-</th><th>Start with
-</th><th>Reason
-</th></tr></thead><tbody><tr><td>Focused reorder sequence
-</td><td>Sequenzy
-</td><td>Simple operations.
-</td></tr><tr><td>Product-specific intervals
-</td><td>Klaviyo
-</td><td>Flexible event and flow logic.
-</td></tr><tr><td>Repeat-order reporting
-</td><td>Drip
-</td><td>Commerce retention orientation.
-</td></tr></tbody></table><p>Continue with the
-<a href="/apps/shopify-email">Shopify email overview
-</a>,
-<a href="/alternatives">alternatives library
-</a>, and
-<a href="/use-cases/replenishment">replenishment guide
-</a>.
-</p>
-<h2 class="mt-14">Consent and purchaser suppression for Replenishment</h2>
-<p>Define each message purpose and channel before enrollment. Keep evidence of the applicable permission or other lawful basis; email permission does not establish SMS permission. Recheck current suppression, order, subscription, refund and support-case state immediately before dispatch. A purchase exits reminders for the matching cart or satisfied reorder need; later education or replenishment marketing needs its own eligible purpose, interval and permission. Required service continues independently.</p>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Audience state</th><th>Required handling</th><th>Why it matters</th></tr></thead>
-<tbody>
-<tr><td>No documented consent</td><td>Hold optional marketing until eligibility is established; send only independently justified required service</td><td>A purchase or service message does not establish marketing permission</td></tr>
-<tr><td>Consented, never purchased</td><td>Send optional education only with purpose and channel eligibility; do not infer consumption intervals without an order</td><td>Premature replenishment offers teach shoppers to wait</td></tr>
-<tr><td>Active cart, no checkout</td><td>Check recovery eligibility and matching-cart status at dispatch; withhold discounts by pilot policy</td><td>Protects replenishment profit when purchase intent is hottest</td></tr>
-<tr><td>Purchased recently</td><td>Exit matching-cart and satisfied reorder reminders; evaluate later care or marketing separately</td><td>Replenishment suppression protects the new-customer glow</td></tr>
-<tr><td>Refund or return open</td><td>Hold related promotions during the case; resolution alone does not restore eligibility</td><td>Service-active replenishment shoppers reject promos</td></tr>
-<tr><td>Repeated non-engagement</td><td>Review clicks, orders and preferences over the product cycle; opens alone do not prove inactivity</td><td>Shields replenishment sender reputation and inboxing</td></tr>
-<tr><td>SMS consent present</td><td>Verify independent SMS permission, current opt-out state and applicable timing and frequency rules</td><td>Replenishment SMS complaints cost more per incident</td></tr>
-<tr><td>Wholesale or B2B account</td><td>Use verified account terms and purpose; B2B status does not establish permission</td><td>Replenishment retail promos can violate B2B terms</td></tr>
-<tr><td>Free or disposable email domain</td><td>Use address validation proportionately; a free-domain address alone is not evidence of abuse</td><td>Assess actual bounce, complaint and abuse signals rather than domain stereotypes</td></tr>
-<tr><td>Staff and test accounts</td><td>Replenishment internal accounts never enter production</td><td>QA replenishment sends distort real performance</td></tr>
-<tr><td>Competitor or researcher signals</td><td>Document objective abuse controls; inferred occupation does not establish permission or an exemption</td><td>Replenishment consistency beats clever carve-outs</td></tr>
-<tr><td>Legacy list without timestamps</td><td>Hold marketing while evidence is checked; use repermission only through an independently eligible route</td><td>Missing timestamps require evidence review; a repermission email itself needs eligibility</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Margin, app costs, and pricing for Replenishment</h2>
-<p>Judge replenishment on margin, not attribution. A durable replenishment program absorbs subscription, overages, SMS, capture, creative, agency, and discount costs and still pays. If replenishment tooling eats toward fifteen percent of attributed margin, reduce replenishment scope before optimizing flows.</p>
-<p>Pricing changes frequently and varies by region, contact volume, and contract term, so check the official pricing pages of every shortlisted app and model an eighteen-month total that includes a peak season. Replenishment free tiers look generous until one limit bites — verify which of contacts, sends, branching, or support constrains replenishment first.</p>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Cost component</th><th>What to model</th><th>Common failure</th></tr></thead>
-<tbody>
-<tr><td>Platform subscription</td><td>Replenishment tier priced at realistic contact scale</td><td>Replenishment overspend on aspirational tiers</td></tr>
-<tr><td>Contact or send overages</td><td>Replenishment headroom checked against growth</td><td>Replenishment seasonal spikes surprise-billing</td></tr>
-<tr><td>SMS credits</td><td>Replenishment opt-in share times texts per journey</td><td>Treating replenishment texts like near-free email</td></tr>
-<tr><td>Discount budget</td><td>Price replenishment incentives by redemption probability</td><td>replenishment incentives training perpetual waiting</td></tr>
-<tr><td>Creative and ops time</td><td>Weekly replenishment hours to run and QA flows</td><td>replenishment maintenance hours wished away</td></tr>
-<tr><td>Migration and setup</td><td>replenishment migration: data, consent maps, rebuilds</td><td>replenishment migration shedding consent proof</td></tr>
-<tr><td>Support and success tiers</td><td>Does replenishment crisis support cost extra</td><td>replenishment support shortfall during the worst week</td></tr>
-<tr><td>Third-party integrations</td><td>Replenishment satellite fees beyond the ESP</td><td>Creeping replenishment add-ons dwarfing ESP spend</td></tr>
-<tr><td>Deliverability remediation</td><td>replenishment deliverability upkeep and guidance cost</td><td>replenishment deliverability damage beyond subscription cost</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Decision table for Replenishment</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Situation</th><th>Start with</th><th>Reason</th></tr></thead>
-<tbody>
-<tr><td>Occasional sends, small catalog</td><td>Shopify Email</td><td>Zero-learning-curve start for light replenishment needs</td></tr>
-<tr><td>Branching and suppression matter</td><td>Klaviyo</td><td>Deep replenishment triggers for maturing programs</td></tr>
-<tr><td>Small team, email plus light SMS</td><td>Omnisend</td><td>Approachable replenishment multichannel journeys</td></tr>
-<tr><td>Broad newsletter operations</td><td>Mailchimp</td><td>Replenishment newsletters in a familiar editor</td></tr>
-<tr><td>Lean lifecycle operations</td><td>Sequenzy</td><td>Focused lifecycle replenishment sequences minus suite overhead</td></tr>
-<tr><td>Developer-led custom builds</td><td>Customer.io</td><td>API-first replenishment control for custom builds</td></tr>
-<tr><td>CRM-led sales follow-up</td><td>ActiveCampaign</td><td>Account-linked replenishment sequences for B2B motion</td></tr>
-<tr><td>Simple list growth and popups</td><td>Privy</td><td>Replenishment subscriber capture before lifecycle depth</td></tr>
-<tr><td>Commerce cohort analysis</td><td>Drip</td><td>Replenishment analytics for replenishment cadence</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Common failure modes in replenishment email</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Failure</th><th>Prevention</th><th>Cost of getting it wrong</th></tr></thead>
-<tbody>
-<tr><td>Discount in the first touch</td><td>Withhold replenishment offers until intent shows</td><td>Schools replenishment shoppers in low-margin habits</td></tr>
-<tr><td>No purchase suppression</td><td>Exit matching-cart or satisfied reorder reminders; recheck current state at dispatch</td><td>replenishment promos chasing paid customers grate</td></tr>
-<tr><td>Consent imported without proof</td><td>replenishment consent fields mapped before importing</td><td>replenishment compliance gaps surface at audit</td></tr>
-<tr><td>Flows only one operator understands</td><td>replenishment conventions written for successors</td><td>replenishment changes gamble without docs</td></tr>
-<tr><td>Measuring clicks only</td><td>Replenishment truth in margin not clicks</td><td>Replenishment click-chasing rewards harm</td></tr>
-<tr><td>Ignoring deliverability signals</td><td>Replenishment placement signals checked routinely</td><td>Replenishment neglect compounds into rescue spend</td></tr>
-<tr><td>Peak-season flow changes</td><td>replenishment calm-before-peak change moratorium</td><td>replenishment changes break when traffic peaks</td></tr>
-<tr><td>SMS without a channel strategy</td><td>Replenishment texts scoped independently of email</td><td>Replenishment channel overlap triggers opt-outs</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Implementation order for a replenishment program</h2>
-<ol>
-<li>Replenishment first step: consent sources documented and mapped.</li>
-<li>Confirm replenishment event wiring with a full test-store pass.</li>
-<li>For replenishment, suppression architecture precedes journey building.</li>
-<li>Replenishment pilot: one eligible optional journey and randomized holdout, with required service in both arms and a window suited to the consumption cycle.</li>
-<li>At the predeclared review window, score margin, returns, complaints and audience health; extend observation if replenishment or return cycles are longer.</li>
-<li>Broaden replenishment after the pilot survives handoff.</li>
-<li>Replenishment peak policy locks edits, codes, cadence.</li>
-<li>Reprice replenishment totals against margin every quarter.</li>
-<li>Replenishment hygiene: unreviewed flows simplified or cut.</li>
-</ol>
-<h2 class="mt-12">Metrics review cadence for replenishment</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Metric</th><th>Definition</th><th>Review cadence</th></tr></thead>
-<tbody>
-<tr><td>Margin per send</td><td>Net replenishment margin post-discounts and delivery cost</td><td>Monthly</td></tr>
-<tr><td>Repeat purchase rate</td><td>Observed second purchases by cohort and quarter; attribution alone does not establish causal lift</td><td>Monthly</td></tr>
-<tr><td>Complaint and unsubscribe rate</td><td>replenishment complaint lens on both blasts and flows</td><td>Weekly</td></tr>
-<tr><td>Suppression accuracy</td><td>replenishment-buyer samples screened for breaches</td><td>Weekly</td></tr>
-<tr><td>Time to edit safely</td><td>replenishment edit-safety minutes without the author</td><td>Quarterly</td></tr>
-<tr><td>Holdout lift</td><td>Randomized eligible optional-marketing arms with equal observation windows; required service stays in both</td><td>Quarterly</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Replenishment matchup FAQ</h2>
-<section class="max-w-3xl mx-auto space-y-6">
-<div><h3>Klaviyo or Shopify Email for replenishment?</h3><p>Replenishment beginners do well on native email; Klaviyo fits when replenishment logic leans on events, catalog data, and segment reporting, with profile billing modeled on replenishment expansion.</p></div>
-<div><h3>Omnisend vs Klaviyo for replenishment?</h3><p>Replenishment speed favors Omnisend for lean crews; replenishment depth favors Klaviyo as logic matures. Test equivalent fixtures in isolated environments and compare maintenance hours; a live pilot needs one sender owner per journey and no duplicate enrollment.</p></div>
-<div><h3>Mailchimp or Klaviyo for replenishment?</h3><p>Pick Mailchimp for replenishment when editor comfort and broadcast breadth lead; Klaviyo when replenishment hinges on Shopify event depth — and verify both official pricing pages on replenishment scale.</p></div>
-<div><h3>Do I need a separate SMS tool for replenishment?</h3><p>Replenishment rarely needs specialist SMS day one; add it when texts measurably beat email on replenishment. Vet replenishment consent capture, quiet-hour enforcement, and per-text cost first.</p></div>
-<div><h3>How should I suppress audiences in replenishment flows?</h3><p>Recheck purpose and channel eligibility, current opt-outs, matching orders, subscriptions, returns and open cases before dispatch. Exit matching-cart or satisfied reorder reminders after purchase; later eligible care or replenishment is assessed separately. Case resolution or a new event must not silently restore suppressed marketing.</p></div>
-<div><h3>What does replenishment email cost?</h3><p>Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your replenishment campaigns consume. Because providers revise plans frequently, check official pricing pages and build an eighteen-month replenishment total — peak season included — before you commit.</p></div>
-<div><h3>Which app should a lean team pilot first for replenishment?</h3><p>For replenishment, choose whatever the team masters in a fortnight — native email for plain replenishment sends, a lean ESP once replenishment branching matters. A finished replenishment pilot beats a stalled grand plan.</p></div>
-<div><h3>How do I measure replenishment email results?</h3><p>Track repeat orders, net margin after returns and matched costs, complaints, opt-outs and support load. Attributed revenue records credit under a chosen rule, not causal lift. Randomize eligible optional-marketing recipients before exposure, keep required service in both arms, and predeclare observation windows and uncertainty; a small pilot may be inconclusive.</p></div>
-<div><h3>Can I run replenishment email without an agency?</h3><p>Yes, if the scope stays small. Pick one replenishment journey, document consent and suppression rules, and reuse a simple template system. For replenishment, hire help only if journey complexity, inbox-placement remediation, or peak replenishment volume genuinely exceeds what the team can run.</p></div>
-<div><h3>When should I graduate from my first app for replenishment?</h3><p>Graduate the replenishment stack when the team can no longer edit flows safely, segment replenishment audiences by purchase state, or forecast cost at the growing contact count. For replenishment, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression.</p></div>
-<div><h3>How much discounting is acceptable for replenishment?</h3><p>Treat discounts as one lever, not the default. For replenishment, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. For replenishment, code-dependence across most revenue means the offer story — not the price — needs repair.</p></div>
-<div><h3>Which Shopify data matters most for replenishment?</h3><p>Order and refund state, cart and browse events, consent source, and product availability cover most replenishment decisions. Before layering replenishment branching on events, fire each one in a test purchase and record what every replenishment-relevant field means for both teams.</p></div>
-<div><h3>How do I avoid duplicate sends across apps for replenishment?</h3><p>Assign one sender and queue owner per replenishment purpose, disable overlapping automations, and propagate current suppressions before dispatch. Deduplicate retried or replayed events using stable customer, order and journey identifiers. Test delayed events, cancellations and handoffs; a shared list alone cannot cancel another app’s queued messages.</p></div>
-<div><h3>What should a replenishment pilot include?</h3><p>Scope the pilot to one eligible audience and one or two journeys, documented dispatch checks and a randomized optional-marketing holdout. Keep required service in both arms. Predeclare net-margin and audience-health metrics and a window spanning the expected reorder and return cycles; thirty days may be too short.</p></div>
-</section>
-<script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",mainEntity:[
-{"@type": "Question", "name": "Klaviyo or Shopify Email for replenishment?", "acceptedAnswer": {"@type": "Answer", "text": "Replenishment beginners do well on native email; Klaviyo fits when replenishment logic leans on events, catalog data, and segment reporting, with profile billing modeled on replenishment expansion."}},
-{"@type": "Question", "name": "Omnisend vs Klaviyo for replenishment?", "acceptedAnswer": {"@type": "Answer", "text": "Replenishment speed favors Omnisend for lean crews; replenishment depth favors Klaviyo as logic matures. Test equivalent fixtures in isolated environments and compare maintenance hours; a live pilot needs one sender owner per journey and no duplicate enrollment."}},
-{"@type": "Question", "name": "Mailchimp or Klaviyo for replenishment?", "acceptedAnswer": {"@type": "Answer", "text": "Pick Mailchimp for replenishment when editor comfort and broadcast breadth lead; Klaviyo when replenishment hinges on Shopify event depth — and verify both official pricing pages on replenishment scale."}},
-{"@type": "Question", "name": "Do I need a separate SMS tool for replenishment?", "acceptedAnswer": {"@type": "Answer", "text": "Replenishment rarely needs specialist SMS day one; add it when texts measurably beat email on replenishment. Vet replenishment consent capture, quiet-hour enforcement, and per-text cost first."}},
-{"@type": "Question", "name": "How should I suppress audiences in replenishment flows?", "acceptedAnswer": {"@type": "Answer", "text": "Recheck purpose and channel eligibility, current opt-outs, matching orders, subscriptions, returns and open cases before dispatch. Exit matching-cart or satisfied reorder reminders after purchase; later eligible care or replenishment is assessed separately. Case resolution or a new event must not silently restore suppressed marketing."}},
-{"@type": "Question", "name": "What does replenishment email cost?", "acceptedAnswer": {"@type": "Answer", "text": "Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your replenishment campaigns consume. Because providers revise plans frequently, check official pricing pages and build an eighteen-month replenishment total — peak season included — before you commit."}},
-{"@type": "Question", "name": "Which app should a lean team pilot first for replenishment?", "acceptedAnswer": {"@type": "Answer", "text": "For replenishment, choose whatever the team masters in a fortnight — native email for plain replenishment sends, a lean ESP once replenishment branching matters. A finished replenishment pilot beats a stalled grand plan."}},
-{"@type": "Question", "name": "How do I measure replenishment email results?", "acceptedAnswer": {"@type": "Answer", "text": "Track repeat orders, net margin after returns and matched costs, complaints, opt-outs and support load. Attributed revenue records credit under a chosen rule, not causal lift. Randomize eligible optional-marketing recipients before exposure, keep required service in both arms, and predeclare observation windows and uncertainty; a small pilot may be inconclusive."}},
-{"@type": "Question", "name": "Can I run replenishment email without an agency?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if the scope stays small. Pick one replenishment journey, document consent and suppression rules, and reuse a simple template system. For replenishment, hire help only if journey complexity, inbox-placement remediation, or peak replenishment volume genuinely exceeds what the team can run."}},
-{"@type": "Question", "name": "When should I graduate from my first app for replenishment?", "acceptedAnswer": {"@type": "Answer", "text": "Graduate the replenishment stack when the team can no longer edit flows safely, segment replenishment audiences by purchase state, or forecast cost at the growing contact count. For replenishment, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression."}},
-{"@type": "Question", "name": "How much discounting is acceptable for replenishment?", "acceptedAnswer": {"@type": "Answer", "text": "Treat discounts as one lever, not the default. For replenishment, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. For replenishment, code-dependence across most revenue means the offer story — not the price — needs repair."}},
-{"@type": "Question", "name": "Which Shopify data matters most for replenishment?", "acceptedAnswer": {"@type": "Answer", "text": "Order and refund state, cart and browse events, consent source, and product availability cover most replenishment decisions. Before layering replenishment branching on events, fire each one in a test purchase and record what every replenishment-relevant field means for both teams."}},
-{"@type": "Question", "name": "How do I avoid duplicate sends across apps for replenishment?", "acceptedAnswer": {"@type": "Answer", "text": "Assign one sender and queue owner per replenishment purpose, disable overlapping automations, and propagate current suppressions before dispatch. Deduplicate retried or replayed events using stable customer, order and journey identifiers. Test delayed events, cancellations and handoffs; a shared list alone cannot cancel another app’s queued messages."}},
-{"@type": "Question", "name": "What should a replenishment pilot include?", "acceptedAnswer": {"@type": "Answer", "text": "Scope the pilot to one eligible audience and one or two journeys, documented dispatch checks and a randomized optional-marketing holdout. Keep required service in both arms. Predeclare net-margin and audience-health metrics and a window spanning the expected reorder and return cycles; thirty days may be too short."}}
-]})} />
-<h2 class="mt-12">Governance and documentation for replenishment</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Practice</th><th>Standard</th><th>Risk it prevents</th></tr></thead>
-<tbody>
-<tr><td>Flow ownership</td><td>replenishment ownership assigned journey by journey</td><td>Ownerless replenishment flows decaying live</td></tr>
-<tr><td>Naming convention</td><td>Replenishment prefixes by job and audience</td><td>Peak replenishment triage blind without naming</td></tr>
-<tr><td>Change log</td><td>Replenishment change log per journey</td><td>Replenishment regressions without a trail</td></tr>
-<tr><td>Access control</td><td>replenishment-editor seats minimal by default</td><td>Over-permissioned replenishment editors misfiring</td></tr>
-<tr><td>Quarterly flow review</td><td>replenishment branch count kept lean</td><td>Overgrown replenishment journeys stalling ops</td></tr>
-<tr><td>Incident runbook</td><td>Replenishment incident path: pause, notify, fix</td><td>Replenishment harm airing too long</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Peak season readiness for replenishment</h2>
-<ol>
-<li>Halt replenishment edits ahead of the peak window.</li>
-<li>Replenishment QA spans purchase, refund, and case paths.</li>
-<li>Verify replenishment suppression clears recent buyers and open returns.</li>
-<li>For replenishment, grow control samples ahead of volume.</li>
-<li>For replenishment, pre-commit text timing and frequency limits.</li>
-<li>Replenishment billing checked on peak math.</li>
-<li>Cover replenishment complaint and bounce review daily.</li>
-<li>Replenishment undo paths recorded pre-campaign.</li>
-</ol>
-<p>Replenishment programs stay calm when the quarterly review is calendared pre-launch: suppression, discount caps, and escalation contacts for replenishment live in writing from week one, so successors inherit process, not memory.</p>
-<p>Quarterly replenishment honesty pays: log shipped replenishment flows, suppression calls, margin kept, and broken assumptions. The replenishment paper trail converts solo judgment into institutional knowledge.</p>
-</main></BaseLayout>
+<BaseLayout title={title} description={description}>
+<article class="container page-stack">
+<p class="eyebrow">Shopify email apps</p>
+<h1>{title}</h1>
+<p class="lede">A replenishment reminder should follow the product the customer kept, the amount they bought and the timing they prefer. Buying a refill does not tell you when it will run out. Build a useful reorder window before choosing the email app.</p>
+<p>This shortlist offers three conditional fits, with proposed validation exercises rather than merchant test results or rankings. Documentation checked on November 25, 2026 supports the capabilities linked below; subscription integrations, delivery outcomes and merchant economics remain unverified.</p>
+<h2>Three ways to operate the reminder</h2>
+<table><thead><tr><th>Candidate</th><th>Positive fit</th><th>Boundary to validate</th></tr></thead><tbody>
+<tr><td>Shopify Messaging</td><td>Small catalogs where an operator reviews a campaign audience and its product timing.</td><td>A campaign tool is not an authoritative consumption model or subscription ledger.</td></tr>
+<tr><td>Klaviyo</td><td>Product-specific replenishment flows when order events and interval assumptions are reliable.</td><td>Verify matching-product exits, quantity corrections and queued-message retirement.</td></tr>
+<tr><td>Omnisend</td><td>A replenishment preset as a starting point for a clearly defined consumable category.</td><td>Review retrospective enrollment and broad purchase exits before activation.</td></tr>
+</tbody></table>
+<h3>Shopify Messaging: reviewed campaigns for a narrow catalog</h3>
+<p><a href="https://help.shopify.com/en/manual/promoting-marketing/create-marketing/shopify-messaging">Shopify documents campaigns and marketing automations</a> in Shopify Messaging, formerly Shopify Email. That makes it a candidate for a small, manually reviewed reorder audience. The operator must still establish current eligibility and suppress changed records before sending; the documentation does not establish a native retained-quantity model.</p>
+<p><strong>Proposed fixture:</strong> use one coffee SKU with one-pack and multi-pack orders. Shopify order and refund records own retained quantity, the customer owns timing preferences, and the subscription platform owns pauses. Prepare an audience snapshot, then inject a matching reorder, a partial return, an opt-out and a paused subscription before release. The changed records must be held or removed. Reimport the same order event and confirm it cannot create a second reminder episode. If audience refresh or queued cancellation cannot be demonstrated, keep the campaign unsent. Hand over the audience query, exclusion report, snapshot expiry and release checklist to a second operator.</p>
+<h3>Klaviyo: a product-specific flow with explicit re-entry rules</h3>
+<p><a href="https://help.klaviyo.com/hc/en-us/articles/360003195232">Klaviyo documents replenishment flows</a>, supporting a candidate when different product windows need different paths. Use that flow framework only after validating your incoming order, refund and subscription fields. A delay is a scheduling assumption, not evidence the customer consumed the product.</p>
+<p><strong>Proposed fixture:</strong> use a household refill sold in two pack sizes. Reconcile fulfilled units minus returned units, revise the estimated window after a partial return, and keep the same episode identifier through that revision. A matching new order exits the satisfied need; an unrelated order must follow the explicitly chosen product policy. Inject a subscription pause and open support case during the delay and verify both block dispatch. Replay fulfillment and refund events, including an older version arriving last: no duplicate enrollment or rollback of newer state is acceptable. If current-state checks or cancellation acknowledgements are missing, pause this flow. Give the successor the field mapping, replay log and expected exit traces.</p>
+<h3>Omnisend: adapt the preset before enabling it</h3>
+<p><a href="https://support.omnisend.com/en/articles/7887881-replenishment-reminder-automation">Omnisend documents a fulfillment-triggered replenishment preset</a> with product filters and a default purchase exit. It also describes retrospective triggering as enabled by default. This can suit a single consumable category after reviewing those defaults; neither the default delay nor any example interval establishes the right window for your store.</p>
+<p><strong>Proposed fixture:</strong> use a cosmetic refill with an old fulfilled order, a new order and a subscription renewal. Disable retrospective entry unless a reviewed backfill is intended. Verify whether the purchase exit stops reminders for all products or only the intended need, and document the consequence for mixed baskets. Inject a pause, skip, return and renewed purchase before send; optional reminders must respect subscription and service authority. Replay the old fulfillment after renewal and confirm it cannot reopen the closed episode. If event ordering or default exits cannot be reconciled, leave the workflow inactive. Hand over the enrollment cutoff, exit configuration and event-to-episode reconciliation to another operator.</p>
+<h2>Model the retained product before the timer</h2>
+<p>Use fulfilled quantity, pack size, confirmed returns and comparable repeat-order intervals to form a product window. Record whether quantity is measured in packs or units and convert once; do not mix a pack interval with individual-unit quantity. A returned unopened pack changes the retained amount, but does not prove how much of the rest was used. For gifts, irregular use or uncertain household demand, ask the customer to choose timing or skip reminders. Durable goods may have no useful replenishment window.</p>
+<p>Keep product care and education distinct from urgency. Offer a neutral reorder link, a later-reminder preference and a stop option. Do not infer health, dosage or depletion from purchase history. A subscription renewal may already satisfy the need: use the subscription system for active, paused, skipped and cancelled state instead of reconstructing it from email clicks. Cancellation ends subscription-specific promotion pending a fresh eligibility decision.</p>
+<h2>One episode, one authorized queue owner</h2>
+<p>Define an episode with stable customer, source order line, product need and journey identifiers. Store the estimate version separately: changing quantity, preference or estimated date updates that episode rather than creating another eligible episode. Deduplicate event identifiers and reject stale versions. A matching purchase closes the episode; any later genuine need requires a separately eligible episode, not a replay of the old one.</p>
+<p>Before dispatch, recheck channel permission, opt-outs, matching purchases, subscription state, availability, returns and open service cases. Required service has its own purpose and owner and continues independently. Neither case closure nor a fresh event silently restores marketing permission. If essential state is stale or unavailable, hold optional promotion.</p>
+<p>When a window changes or ownership moves, retire every old queued job and obtain acknowledgement before authorizing a replacement. Keep the episode locked while cancellation is uncertain. Reconcile delayed acknowledgements against job identifiers and provider send records: a late delivered acknowledgement closes that send opportunity, and an unknown result stays held for investigation. No independent resend is permitted. A shared contact list cannot cancel another provider's queue.</p>
+<h2>Measure within the product window</h2>
+<p>Freeze eligibility and randomize customers before optional exposure, keeping all their product episodes in one arm to reduce contamination. Predeclare eligible episodes, what matching retained purchase converts an episode, the maximum of one conversion per episode, product-specific follow-up and the return-maturation window. Include held and unsent eligible episodes in the assigned arm; removing them after assignment biases the comparison. An estimate revision must not add a denominator entry. Required service remains in both arms.</p>
+<p>Illustrative arithmetic only: 24 converted episodes / 200 eligible episodes = 12%; 18 / 200 = 9%, a difference of 3 percentage points. These are proposed example counts, not observed results. Correlated episodes within customers require customer-aware uncertainty estimates. If follow-up is incomplete or the sample is small, report an inconclusive result rather than a winner. Do not divide unique buyers by episodes.</p>
+<p>For each arm report net margin after refunds, discounts, product and fulfillment costs, messaging charges and matched operating costs per eligible episode. Also record complaints per delivered message, opt-outs per delivered message, service contacts per eligible episode and suppression breaches per checked dispatch opportunity. Keep these denominators separate. Platform attribution assigns credit under a rule; it does not establish incremental revenue. Compare current quotes at expected contacts and sends, plus the labor needed to reconcile state and recover failed jobs.</p>
+<h2>Release only after the successor can operate it</h2>
+<p>Run these fixtures in an isolated environment with production sending disabled; they are acceptance criteria, not claims of completed tests. For each candidate preserve expected and actual episode counts, eligible-episode denominators, conversion traces, suppressed dispatches and queue acknowledgements. Have a second operator explain a revised window, stop all affected jobs, reconcile a delayed acknowledgement and restart only an authorized replacement. Record who can pause the journey and where unresolved returns or subscription events are escalated. If that handover fails, keep the pilot paused.</p>
+<p>Continue with the <a href="/use-cases/replenishment">replenishment guide</a>, <a href="/blog/best-shopify-email-apps-for-pet-stores">pet-store product context</a> and <a href="/blog/best-shopify-email-apps-for-revenue-attribution">revenue-attribution discussion</a>. Those related pages are context, not evidence that this workflow or its economics has been validated.</p>
+</article>
+<FaqSection faqs={faqs} />
+</BaseLayout>
