@@ -1,212 +1,52 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-const title = 'Best Shopify Email Apps for Cross-Sell Campaigns in 2026';
-const description = 'Compare Shopify email apps for cross-sell campaigns by product compatibility, purchase context, suppression, pricing, source links, and practical tradeoffs.';
-const apps = [
-['Sequenzy','Lean teams with curated cross-sell paths','Focused sequence operations','Less suitable for complex product graphs','https://sequenzy.com/'],
-['Klaviyo','Complex product and purchase relationships','Rich events, segments, and conditional content','Catalog logic and compatibility need governance','https://www.klaviyo.com/features/segmentation'],
-['Omnisend','Retail cross-sell campaigns with email and SMS','Accessible product and automation workflows','Promotional frequency needs discipline','https://www.omnisend.com/features/marketing-automation/'],
-['Drip','DTC teams measuring repeat-order behavior','Commerce automation and reporting','May exceed a small catalog’s needs','https://www.drip.com/features'],
-['Shopify Email','Small stores making manual product pairings','Native product blocks and campaign setup','Limited dynamic compatibility logic','https://www.shopify.com/email-marketing'],
-['Brevo','Stores combining product follow-up with broad lifecycle mail','Flexible campaign and automation coverage','Product relationship modeling may be manual','https://www.brevo.com/features/marketing-automation/'],
-['Mailchimp','Smaller catalogs testing simple product pairings','Familiar templates and audience tools','Check dynamic product recommendation depth','https://mailchimp.com/features/marketing-automation/'],
-['ActiveCampaign','Teams joining purchase context to CRM follow-up','Flexible automation and account context','More setup than a curated sequence','https://www.activecampaign.com/marketing-automation'],
-['Sendlane','DTC brands using behavioral commerce data','Commerce-focused automation and reporting','Review current integration and volume limits','https://www.sendlane.com/'],
-['Customer.io','Stores with rich product and event data','Flexible event-triggered content','Needs clean catalog event payloads','https://customer.io/'],
-['Privy','New stores making lightweight accessory offers','Capture and simple campaign workflows','Not suited to complex compatibility rules','https://www.privy.com/'],
-['Postmark','Operational follow-ups linked to product ownership','Reliable transactional delivery','Not a promotional recommendation suite','https://postmarkapp.com/'],
-['Resend','Developer-led stores implementing recommendation logic','API-first delivery for custom systems','Engineering owns catalog logic and suppression','https://resend.com/'],
+import FaqSection from '../../components/FaqSection.astro';
+const title = "Best Shopify Email Apps for Cross-Sell Campaigns in 2026";
+const description = "Choose a Shopify cross-sell email app around compatible accessories, owned-product exclusions, fulfillment state and contribution margin.";
+const faqs = [
+  {
+    "question": "Should recent purchasers be excluded from every message?",
+    "answer": "No. End completed acquisition or accessory offers when their purpose is satisfied, while routing relevant care and necessary service messages by current order state. Check marketing permission separately."
+  },
+  {
+    "question": "Does cross-sell require SMS?",
+    "answer": "No. Add a channel only for a defined customer job with its own eligibility, preferences, timing and cost checks. Neither bundled nor specialist SMS proves suitability for the workflow."
+  },
+  {
+    "question": "How should free-mail addresses be handled?",
+    "answer": "Assess permission, address validity and abuse evidence. A legitimate free-mail domain alone is not a reason to exclude a customer."
+  },
+  {
+    "question": "When is an app ready for a pilot?",
+    "answer": "When it can select the approved pair, exclude existing owners, cancel stale queued offers and let the team inspect and pause the journey. Live outcome criteria should reflect the product and return window, not a fixed launch deadline."
+  }
 ];
 ---
-<BaseLayout title={title} description={description}><main class="container page-stack"><p class="eyebrow">Shopify email apps
-</p><h1>{title}
-</h1><p class="lede">A cross-sell is useful when the recommended product genuinely fits what the customer bought or considered. “Customers also bought” is not a strategy if compatibility, timing, price, or customer state is ignored.
-</p><p>We prioritize product relationships, post-purchase timing, inventory, and suppression. Confirm current catalog and dynamic-content capabilities from official sources before automating recommendations.
-</p><h2>Shortlist
-</h2><table><thead><tr><th>App
-</th><th>Best fit
-</th><th>First cross-sell
-</th><th>Tradeoff
-</th></tr></thead><tbody>{apps.map(a=><tr><td>{a[0]}
-</td><td>{a[1]}
-</td><td>{a[0]==='Klaviyo'?'Purchase-based pairing':a[0]==='Omnisend'?'Post-purchase campaign':a[0]==='Sequenzy'?'Curated accessory path':a[0]==='Drip'?'Repeat-order cross-sell':'Manual product pairing'}
-</td><td>{a[3]}
-</td></tr>)}
-</tbody></table>{apps.map(a=><section><h2>{a[0]} for cross-sell campaigns
-</h2><p><strong>Best for:
-</strong> {a[1]}. {a[0]} is useful when the store can explain the relationship between the original and recommended product. Suppress customers who already own the item, have an open service case, or are not yet in a reasonable post-purchase window.
-</p><p><strong>Why it stands out:
-</strong> {a[2]}. Start with one product pair and compare it with a general follow-up. Review order value, returns, margin, unsubscribes, and product availability; recommendation clicks alone do not establish incremental revenue.
-</p><table><tbody><tr><th>Pros
-</th><td>{a[2]}; supports a controlled merchandising test; can use Shopify product and order events.
-</td></tr><tr><th>Cons
-</th><td>{a[3]}; catalog quality and audience volume affect cost.
-</td></tr><tr><th>Pricing context
-</th><td>Verify official plans for contacts, sends, seats, dynamic content, and SMS.
-</td></tr><tr><th>Source
-</th><td><a href={a[4]} rel="nofollow">Official product information
-</a></td></tr></tbody></table></section>)}
-<h2>Decision guide
-</h2><table><thead><tr><th>Cross-sell priority
-</th><th>Start with
-</th><th>Reason
-</th></tr></thead><tbody><tr><td>Behavior-aware pairings
-</td><td>Klaviyo
-</td><td>Strong event and content controls.
-</td></tr><tr><td>Curated accessory path
-</td><td>Sequenzy
-</td><td>Focused sequence operations.
-</td></tr><tr><td>Manual product pairings
-</td><td>Shopify Email
-</td><td>Fast native setup.
-</td></tr></tbody></table><p>See the
-<a href="/apps/shopify-email">Shopify email overview
-</a>,
-<a href="/alternatives">alternatives library
-</a>, and
-<a href="/use-cases/post-purchase">post-purchase guide
-</a>.
-</p>
-<p>Native option context: <a href="https://help.shopify.com/en/manual/promoting-marketing/create-marketing/shopify-messaging">Shopify Messaging, formerly Shopify Email</a>, supports campaigns and automations. Check the <a href="https://help.shopify.com/en/manual/promoting-marketing/create-marketing/shopify-messaging/marketing-automations">current automation requirements</a> for the intended channel and workflow; a native campaign setup does not establish support for custom approval or product-compatibility events. Channel eligibility and regional availability need separate verification.</p>
-<h2 class="mt-14">Consent and purchaser suppression for Cross sell</h2>
-<p>For cross sell, record permission by purpose and channel before enabling marketing. Purchase, refund, support, and withdrawal events should re-evaluate the relevant journey rather than stop every message indiscriminately. Cancel queued promotions that no longer fit; keep necessary order and service updates separate, with appropriate content and recipient checks.</p>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Audience state</th><th>Required handling</th><th>Why it matters</th></tr></thead>
-<tbody>
-<tr><td>No documented consent</td><td>Hold marketing while the permitted purpose, channel and evidence are reviewed; send only independently justified service updates</td><td>A purchase or account alone does not establish permission for every promotion</td></tr>
-<tr><td>Consented, never purchased</td><td>Cross Sell education and proof before any offer</td><td>First-touch cross sell codes create discount dependence</td></tr>
-<tr><td>Active cart, no checkout</td><td>Context-rich cross sell nudge before any incentive</td><td>Cross Sell high-intent window deserves margin discipline</td></tr>
-<tr><td>Purchased recently</td><td>Exit completed acquisition or recovery pitches; route relevant care or onboarding by current order state</td><td>Purchase suppression applies to the journey purpose, not all customer communication</td></tr>
-<tr><td>Refund or return open</td><td>Freeze cross sell promos until refund or return closes</td><td>Service-active cross sell shoppers reject promos</td></tr>
-<tr><td>Repeated non-engagement</td><td>Sunset cold cross sell contacts before complaints build</td><td>Shields cross sell sender reputation and inboxing</td></tr>
-<tr><td>SMS consent present</td><td>Cap cross sell SMS cadence within legal quiet windows</td><td>Text grievances hit cross sell programs hardest</td></tr>
-<tr><td>Wholesale or B2B account</td><td>Check account preferences, applicable requirements and actual contract terms</td><td>Business status is not blanket marketing permission and contracts vary</td></tr>
-<tr><td>Free or disposable email domain</td><td>Assess address validity and signup abuse without excluding legitimate free-mail users</td><td>A free-mail domain alone does not establish abuse or lack of permission</td></tr>
-<tr><td>Staff and test accounts</td><td>Cross Sell QA profiles excluded from reporting</td><td>Cross Sell test sends skew attribution reads</td></tr>
-<tr><td>Competitor or researcher signals</td><td>Cross Sell researcher signups follow standard consent</td><td>Manual cross sell exceptions rot the audit trail</td></tr>
-<tr><td>Legacy list without timestamps</td><td>Review original evidence, withdrawals and applicable requirements before reuse; keep uncertain records out of marketing</td><td>Do not send a re-permission campaign unless that contact itself is permitted</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Margin, app costs, and pricing for Cross sell</h2>
-<p>Judge cross sell on margin, not attribution. A durable cross sell program absorbs subscription, overages, SMS, capture, creative, agency, and discount costs and still pays. If cross sell tooling eats toward fifteen percent of attributed margin, reduce cross sell scope before optimizing flows.</p>
-<p>Pricing changes frequently and varies by region, contact volume, and contract term, so check the official pricing pages of every shortlisted app and model an eighteen-month total that includes a peak season. Before banking on free for cross sell, check which free-tier limit — contacts, sends, branching, support — hits your cross sell plan earliest.</p>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Cost component</th><th>What to model</th><th>Common failure</th></tr></thead>
-<tbody>
-<tr><td>Platform subscription</td><td>Plan tier sized to actual cross sell list trajectory</td><td>Paying cross sell prices for a list you lack</td></tr>
-<tr><td>Contact or send overages</td><td>Map cross sell list growth to tier thresholds</td><td>Cross Sell overage invoices after drops</td></tr>
-<tr><td>SMS credits</td><td>Cross Sell text volume from real opt-in math</td><td>Cross Sell SMS economics misread as email</td></tr>
-<tr><td>Discount budget</td><td>Cross Sell code depth times likely redemption</td><td>cross sell incentives training perpetual waiting</td></tr>
-<tr><td>Creative and ops time</td><td>Weekly cross sell hours to run and QA flows</td><td>Cross Sell QA load surprising lean teams</td></tr>
-<tr><td>Migration and setup</td><td>Cross Sell import, consent mapping, flow rebuild</td><td>Cross Sell consent lost mid-migration</td></tr>
-<tr><td>Support and success tiers</td><td>Cross Sell severity coverage: paid or included</td><td>cross sell support shortfall during the worst week</td></tr>
-<tr><td>Third-party integrations</td><td>Adjacent cross sell tooling: reviews, loyalty, capture</td><td>Cross Sell tool sprawl quietly doubling bills</td></tr>
-<tr><td>Deliverability remediation</td><td>cross sell inbox-health monitoring and cleanup</td><td>Cross Sell inbox harm priced above the plan</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Decision table for Cross sell</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Situation</th><th>Start with</th><th>Reason</th></tr></thead>
-<tbody>
-<tr><td>Occasional sends, small catalog</td><td>Shopify Email</td><td>Minimal overhead for small-catalog cross sell volume</td></tr>
-<tr><td>Branching and suppression matter</td><td>Klaviyo</td><td>Cross Sell branching and suppression depth</td></tr>
-<tr><td>Small team, email plus light SMS</td><td>Omnisend</td><td>Low-friction cross sell journeys spanning channels</td></tr>
-<tr><td>Broad newsletter operations</td><td>Mailchimp</td><td>Known cross sell campaign tooling for broadcast teams</td></tr>
-<tr><td>Lean lifecycle operations</td><td>Sequenzy</td><td>Focused lifecycle cross sell sequences minus suite overhead</td></tr>
-<tr><td>Developer-led custom builds</td><td>Customer.io</td><td>Custom cross sell messaging on raw events</td></tr>
-<tr><td>CRM-led sales follow-up</td><td>ActiveCampaign</td><td>Account-linked cross sell sequences for B2B motion</td></tr>
-<tr><td>Simple list growth and popups</td><td>Privy</td><td>Cross Sell subscriber capture before lifecycle depth</td></tr>
-<tr><td>Commerce cohort analysis</td><td>Drip</td><td>Cross Sell reporting bent toward repeat buying</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Common failure modes in cross sell email</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Failure</th><th>Prevention</th><th>Cost of getting it wrong</th></tr></thead>
-<tbody>
-<tr><td>Discount in the first touch</td><td>cross sell offers gated on demonstrated intent</td><td>Cross Sell first-touch codes cheapen the brand</td></tr>
-<tr><td>No purchase suppression</td><td>Cross Sell exits wired to order and checkout events</td><td>Cross Sell promos after purchase read careless</td></tr>
-<tr><td>Consent imported without proof</td><td>Record cross sell opt-in origin and moment</td><td>Cross Sell liability when sources are vague</td></tr>
-<tr><td>Flows only one operator understands</td><td>Name and exit-map every cross sell journey</td><td>Cross Sell key-person risk on undocumented flows</td></tr>
-<tr><td>Measuring clicks only</td><td>cross sell measured on kept margin and complaints</td><td>cross sell clicks applaud tactics margin hates</td></tr>
-<tr><td>Ignoring deliverability signals</td><td>cross sell deliverability watched weekly</td><td>Cross Sell repair bills dwarf prevention</td></tr>
-<tr><td>Peak-season flow changes</td><td>Lock cross sell flows through the peak window</td><td>Cross Sell untested edits detonate at peak</td></tr>
-<tr><td>SMS without a channel strategy</td><td>Give cross sell SMS its own job spec apart from email</td><td>Cross Sell channel overlap triggers opt-outs</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Implementation order for a cross sell program</h2>
-<ol>
-<li>For cross sell, log every consent origin in-platform pre-launch.</li>
-<li>Confirm cross sell event wiring with a full test-store pass.</li>
-<li>Cross Sell order: exits and suppression first, flows second.</li>
-<li>Pilot cross sell with one bounded journey plus holdout measurement.</li>
-<li>Thirty days into cross sell, score margin and audience health.</li>
-<li>Broaden cross sell after the pilot survives handoff.</li>
-<li>For cross sell, pre-write peak rules on changes and offers.</li>
-<li>Cross Sell finance: stack cost over margin, quarterly.</li>
-<li>For cross sell, dusty journeys get archived quarterly.</li>
-</ol>
-<h2 class="mt-12">Metrics review cadence for cross sell</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Metric</th><th>Definition</th><th>Review cadence</th></tr></thead>
-<tbody>
-<tr><td>Margin per send</td><td>(Net revenue less product, fulfillment, refund, discount and allocated messaging costs) divided by delivered messages; avoid double-counting discounts already netted from revenue</td><td>Monthly</td></tr>
-<tr><td>Repeat purchase rate</td><td>cross sell-driven second purchases per quarter</td><td>Monthly</td></tr>
-<tr><td>Complaint and unsubscribe rate</td><td>cross sell-level and flow-level complaint splits</td><td>Weekly</td></tr>
-<tr><td>Suppression accuracy</td><td>cross sell-buyer samples screened for breaches</td><td>Weekly</td></tr>
-<tr><td>Time to edit safely</td><td>cross sell edit-safety minutes without the author</td><td>Quarterly</td></tr>
-<tr><td>Holdout lift</td><td>Difference in outcome per eligible customer between randomly assigned messaged and holdout groups over the same window; report sample size and uncertainty</td><td>Quarterly</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Cross sell matchup FAQ</h2>
-<section class="max-w-3xl mx-auto space-y-6">
-<div><h3>Klaviyo or Shopify Email for cross sell?</h3><p>Cross Sell beginners do well on native email; Klaviyo fits when cross sell logic leans on events, catalog data, and segment reporting, with profile billing modeled on cross sell expansion.</p></div>
-<div><h3>Omnisend vs Klaviyo for cross sell?</h3><p>Cross Sell speed favors Omnisend for lean crews; cross sell depth favors Klaviyo as logic matures. Compare the same cross sell scenario using isolated test profiles with live sends disabled. If a live comparison is justified, use mutually exclusive eligible cohorts and one sender per journey; cancel old queues before switching.</p></div>
-<div><h3>Mailchimp or Klaviyo for cross sell?</h3><p>For cross sell, Mailchimp fits editor-comfortable newsletter teams; Klaviyo fits event-driven cross sell on Shopify orders, carts, and browse — check official pricing pages for both at your cross sell volume.</p></div>
-<div><h3>Do I need a separate SMS tool for cross sell?</h3><p>Hold specialist SMS for cross sell until texts demonstrably move cross sell numbers; platform-bundled SMS covers the start — with cross sell consent, quiet hours, and unit pricing confirmed.</p></div>
-<div><h3>How should I suppress audiences in cross sell flows?</h3><p>For cross sell, suppress recent buyers, open support or return cases, refunds, and undocumented contacts — with cross sell exit rules written beside each flow for audit. Botched cross sell suppression costs more than a skipped send.</p></div>
-<div><h3>What does cross sell email cost?</h3><p>Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your cross sell campaigns consume. Plans and limits shift often, so check the official pricing pages for your cross sell shortlist and model an eighteen-month total before committing.</p></div>
-<div><h3>Which app should a lean team pilot first for cross sell?</h3><p>Cross Sell pilots succeed on operability: if the crew runs it in two weeks it wins. Keep cross sell scope shippable over impressive-but-stuck.</p></div>
-<div><h3>How do I measure cross sell email results?</h3><p>For cross sell reporting, pair attributed revenue with margin per send, repeat purchase, unsubscribe/complaint rates, and support load — then validate against a cross sell holdout so peak-season demand is not credited to the flows.</p></div>
-<div><h3>Can I run cross sell email without an agency?</h3><p>Yes, if the scope stays small. Pick one cross sell journey, document consent and suppression rules, and reuse a simple template system. For cross sell, hire help only if journey complexity, inbox-placement remediation, or peak cross sell volume genuinely exceeds what the team can run.</p></div>
-<div><h3>When should I graduate from my first app for cross sell?</h3><p>For cross sell, the graduation signal is operational: unsafe flow edits, unreliable purchase-state segmentation for cross sell, or cost forecasts that break as contacts grow. For cross sell, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression.</p></div>
-<div><h3>How much discounting is acceptable for cross sell?</h3><p>Treat discounts as one lever, not the default. For cross sell, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. When cross sell revenue only converts with a code attached, suspect cross sell value communication before blaming price points.</p></div>
-<div><h3>Which Shopify data matters most for cross sell?</h3><p>Order and refund state, cart and browse events, consent source, and product availability cover most cross sell decisions. On cross sell, prove events in a test checkout before trusting them in flows, with cross sell field definitions written where both teams can find them.</p></div>
-<div><h3>How do I avoid duplicate sends across apps for cross sell?</h3><p>Give one platform ownership of each cross sell journey, document which app sends what, and share suppression lists where the tools support it. Keep a weekly cross sell peak-season audit: pull sample customers, list each cross sell message they got, flag overlaps. Assign a stable journey-message key, reject replayed events, reconcile delayed events against current order and permission state, and check eligibility again at send time. Pause old workflows and clear scheduled sends during handover; shared suppression alone does not cancel queues.</p></div>
-<div><h3>What should a cross sell pilot include?</h3><p>Run cross sell as a contained test: one audience, a journey or two, suppression in writing, holdout measurement, and a thirty-day cross sell check on margin and complaints against criteria set pre-launch.</p></div>
-</section>
-<script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",mainEntity:[
-{"@type": "Question", "name": "Klaviyo or Shopify Email for cross sell?", "acceptedAnswer": {"@type": "Answer", "text": "Cross Sell beginners do well on native email; Klaviyo fits when cross sell logic leans on events, catalog data, and segment reporting, with profile billing modeled on cross sell expansion."}},
-{"@type": "Question", "name": "Omnisend vs Klaviyo for cross sell?", "acceptedAnswer": {"@type": "Answer", "text": "Cross Sell speed favors Omnisend for lean crews; cross sell depth favors Klaviyo as logic matures. Compare the same cross sell scenario using isolated test profiles with live sends disabled. If a live comparison is justified, use mutually exclusive eligible cohorts and one sender per journey; cancel old queues before switching."}},
-{"@type": "Question", "name": "Mailchimp or Klaviyo for cross sell?", "acceptedAnswer": {"@type": "Answer", "text": "For cross sell, Mailchimp fits editor-comfortable newsletter teams; Klaviyo fits event-driven cross sell on Shopify orders, carts, and browse — check official pricing pages for both at your cross sell volume."}},
-{"@type": "Question", "name": "Do I need a separate SMS tool for cross sell?", "acceptedAnswer": {"@type": "Answer", "text": "Hold specialist SMS for cross sell until texts demonstrably move cross sell numbers; platform-bundled SMS covers the start — with cross sell consent, quiet hours, and unit pricing confirmed."}},
-{"@type": "Question", "name": "How should I suppress audiences in cross sell flows?", "acceptedAnswer": {"@type": "Answer", "text": "For cross sell, suppress recent buyers, open support or return cases, refunds, and undocumented contacts — with cross sell exit rules written beside each flow for audit. Botched cross sell suppression costs more than a skipped send."}},
-{"@type": "Question", "name": "What does cross sell email cost?", "acceptedAnswer": {"@type": "Answer", "text": "Costs combine the platform subscription, contact or send overages, SMS credits, template and creative work, and the discount budget your cross sell campaigns consume. Plans and limits shift often, so check the official pricing pages for your cross sell shortlist and model an eighteen-month total before committing."}},
-{"@type": "Question", "name": "Which app should a lean team pilot first for cross sell?", "acceptedAnswer": {"@type": "Answer", "text": "Cross Sell pilots succeed on operability: if the crew runs it in two weeks it wins. Keep cross sell scope shippable over impressive-but-stuck."}},
-{"@type": "Question", "name": "How do I measure cross sell email results?", "acceptedAnswer": {"@type": "Answer", "text": "For cross sell reporting, pair attributed revenue with margin per send, repeat purchase, unsubscribe/complaint rates, and support load — then validate against a cross sell holdout so peak-season demand is not credited to the flows."}},
-{"@type": "Question", "name": "Can I run cross sell email without an agency?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if the scope stays small. Pick one cross sell journey, document consent and suppression rules, and reuse a simple template system. For cross sell, hire help only if journey complexity, inbox-placement remediation, or peak cross sell volume genuinely exceeds what the team can run."}},
-{"@type": "Question", "name": "When should I graduate from my first app for cross sell?", "acceptedAnswer": {"@type": "Answer", "text": "For cross sell, the graduation signal is operational: unsafe flow edits, unreliable purchase-state segmentation for cross sell, or cost forecasts that break as contacts grow. For cross sell, that moment usually arrives when more than two people maintain flows or when peak campaigns require documented suppression."}},
-{"@type": "Question", "name": "How much discounting is acceptable for cross sell?", "acceptedAnswer": {"@type": "Answer", "text": "Treat discounts as one lever, not the default. For cross sell, test content-led recovery and loyalty first, cap discount depth against margin, and document who can approve exceptions. When cross sell revenue only converts with a code attached, suspect cross sell value communication before blaming price points."}},
-{"@type": "Question", "name": "Which Shopify data matters most for cross sell?", "acceptedAnswer": {"@type": "Answer", "text": "Order and refund state, cart and browse events, consent source, and product availability cover most cross sell decisions. On cross sell, prove events in a test checkout before trusting them in flows, with cross sell field definitions written where both teams can find them."}},
-{"@type": "Question", "name": "How do I avoid duplicate sends across apps for cross sell?", "acceptedAnswer": {"@type": "Answer", "text": "Give one platform ownership of each cross sell journey, document which app sends what, and share suppression lists where the tools support it. Keep a weekly cross sell peak-season audit: pull sample customers, list each cross sell message they got, flag overlaps. Assign a stable journey-message key, reject replayed events, reconcile delayed events against current order and permission state, and check eligibility again at send time. Pause old workflows and clear scheduled sends during handover; shared suppression alone does not cancel queues."}},
-{"@type": "Question", "name": "What should a cross sell pilot include?", "acceptedAnswer": {"@type": "Answer", "text": "Run cross sell as a contained test: one audience, a journey or two, suppression in writing, holdout measurement, and a thirty-day cross sell check on margin and complaints against criteria set pre-launch."}}
-]})} />
-<h2 class="mt-12">Governance and documentation for cross sell</h2>
-<div class="overflow-x-auto mb-8"><table>
-<thead><tr><th>Practice</th><th>Standard</th><th>Risk it prevents</th></tr></thead>
-<tbody>
-<tr><td>Flow ownership</td><td>Cross Sell journeys each carry one owner</td><td>Abandoned cross sell journeys mailing on</td></tr>
-<tr><td>Naming convention</td><td>Cross Sell prefixes by job and audience</td><td>Peak cross sell triage blind without naming</td></tr>
-<tr><td>Change log</td><td>Cross Sell change log per journey</td><td>Mystery cross sell dips nobody can source</td></tr>
-<tr><td>Access control</td><td>Limit cross sell edit rights tightly</td><td>cross sell rogue sends from open permissions</td></tr>
-<tr><td>Quarterly flow review</td><td>Cross Sell dead branches archived</td><td>Overgrown cross sell journeys stalling ops</td></tr>
-<tr><td>Incident runbook</td><td>cross sell break-glass steps pre-written</td><td>cross sell damage window from missing runbook</td></tr>
-</tbody></table></div>
-<h2 class="mt-12">Peak season readiness for cross sell</h2>
-<ol>
-<li>Cross Sell code-freeze starts fourteen days out.</li>
-<li>Prove cross sell flows on genuine transactions pre-peak.</li>
-<li>For cross sell, confirm buyer and return exclusions hold.</li>
-<li>Enlarge cross sell holdouts so peak reads stay valid.</li>
-<li>Set cross sell SMS boundaries ahead of volume.</li>
-<li>Match cross sell plan caps and overage rates to forecast volume.</li>
-<li>Cross Sell placement watched every peak day.</li>
-<li>Bank cross sell rollback plans ahead of sends.</li>
-</ol>
-<p>Don't let cross sell run on memory — set the first quarterly cross sell review before launch, document suppression, caps, and escalation contacts in week one, and future operators get a cross sell runbook instead of rumors.</p>
-<p>For cross sell, make the quarterly write-up non-negotiable — shipped, suppressed, margin, misses — because a standing cross sell evidence base beats recalled anecdotes at renewal time.</p>
-</main></BaseLayout>
+<BaseLayout title={title} description={description}>
+<article class="container page-stack">
+<p class="eyebrow">Shopify email apps</p>
+<h1>{title}</h1>
+<p class="lede">A useful cross-sell explains why an accessory fits the product a customer already bought. A popular item is a poor recommendation when it has the wrong connector, size or model, is already owned, or arrives before the original order problem is resolved.</p>
+<h2>Start with an approved product pair</h2>
+<p>Record the purchased variant, compatible accessory variants, excluded combinations and the merchandising owner who approves changes. For example, a proposed camera-to-battery journey should distinguish model generations and exclude buyers who already purchased the battery. This is a rehearsal scenario, not a reported merchant result.</p>
+<p>Use retained purchases to determine ownership. A canceled or returned accessory is different from a kept one; uncertain history should go to review rather than silently becoming an eligible recommendation. Recheck stock, destination availability, current price and compatibility before sending. If the original item is returned, the accessory pitch may no longer make sense.</p>
+<h2>Three supplier fits to evaluate</h2>
+<p>These are candidates by workflow, without a tested ranking. The linked primary sources describe capabilities; they do not establish that your store's compatibility and service data are connected.</p>
+<table><thead><tr><th>Candidate</th><th>Useful fit and documented capability</th><th>Boundary to demonstrate</th></tr></thead><tbody>
+<tr><td>Klaviyo</td><td>For purchase-based accessory audiences: its <a href="https://www.klaviyo.com/features/segmentation">segmentation documentation</a> describes purchase history, custom properties and segment-triggered flows.</td><td>Demonstrate variant-level ownership exclusions and current compatibility data. Segmentation does not certify that two products fit.</td></tr>
+<tr><td>Drip</td><td>For curated merchandising with behavioral conditions: its <a href="https://www.drip.com/features">feature catalog</a> lists product blocks, conditional content, custom events and workflow decisions.</td><td>Verify how the approved pair and stock state reach the message. A top-seller block is not a compatibility rule.</td></tr>
+<tr><td>Shopify Messaging, formerly Shopify Email</td><td>For a native, bounded follow-up: Shopify documents <a href="https://help.shopify.com/en/manual/promoting-marketing/create-marketing/shopify-messaging/marketing-automations">action-triggered marketing automations</a> and custom workflows through Shopify Flow.</td><td>Prove the exact pair selection and queue cancellation in your workflow. Native availability alone does not establish custom event coverage.</td></tr>
+</tbody></table>
+<h2>Fulfillment and returns determine timing</h2>
+<p>Map order placed, fulfilled, delivered, delayed, returned and refunded as separate states. Shipment is not proof of delivery. Product education may be useful before an accessory offer, especially when installation or fit must first be confirmed. Pause optional promotions during an unresolved delivery, return or support issue under a written service policy; keep necessary service updates separately scoped.</p>
+<p>A purchase of the recommended accessory should end that enrollment and cancel queued offers. Assign one sender to the journey, use a stable enrollment/message key to reject replays, and reconcile late events against current order state. During migration, pause the old workflow and clear scheduled messages; a shared exclusion list alone does not clear another app's queue.</p>
+<h2>Rehearse before enabling live recommendations</h2>
+<ol><li>Create test profiles for a compatible pair, incompatible variant, existing accessory owner and returned original product. Disable live sends and inspect the actual rendered items and links.</li><li>Queue an offer, then buy the accessory, remove stock or open a return. Verify cancellation and send-time eligibility rather than only the segment preview.</li><li>Replay an order event and merge duplicate profiles. Confirm one enrollment and retained permission state.</li><li>Have another operator change the approved pair and roll it back. Document who can pause the journey when catalog or fulfillment data is stale.</li></ol>
+<h2>Evaluate kept margin rather than recommendation clicks</h2>
+<p>For a proposed live evaluation, randomly assign eligible customers to the offer and a protected holdout over the same window. Keep necessary service messages in both groups. Choose the observation period around delivery, accessory demand and the return window; a two-week launch does not establish success.</p>
+<p>Compare net contribution per assigned customer: net sales after discounts and refunds, less product, fulfillment and allocated messaging costs. Do not subtract discounts twice if already netted from sales. Report sample sizes, uncertainty, accessory return rates, complaints and unsubscribes. Attributed orders are useful diagnostics but do not establish incremental purchases.</p>
+<p>Forecast subscription tiers, contacts or sends, integration work and operator time at ordinary and peak volume using current supplier quotes. Set an affordable budget from your own economics; there is no universal stack-to-margin cutoff. Begin with a relevant explanation rather than assuming a discount is necessary.</p>
+<p>For broader lifecycle timing, see the <a href="/blog/best-shopify-email-apps-for-customer-retention">customer retention guide</a> and <a href="/blog/best-shopify-email-apps-for-post-purchase-retention">post-purchase guide</a>. Cross-sell eligibility still requires an approved product relationship, even when a retention cohort is eligible.</p>
+</article>
+<FaqSection faqs={faqs} />
+</BaseLayout>
