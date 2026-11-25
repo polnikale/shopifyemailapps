@@ -1,4 +1,10 @@
-# shopifyemailapps.com
+# Shopify Email Apps
 
-Shopify email marketing guides, app shortlists, lifecycle use cases, pricing caveats, and implementation pilots.
-Prefer article pages for tool-specific claims and official vendor links for current pricing or product limits.
+> Shopify email app research and lifecycle implementation planning.
+
+- [App directory](https://www.shopifyemailapps.com/apps): supplier profiles, including historical products.
+- [Use-case guides](https://www.shopifyemailapps.com/use-cases): workflow requirements and proposed pilots.
+- [Store-type guides](https://www.shopifyemailapps.com/for): category-specific operating questions.
+- [Reading claims](https://www.shopifyemailapps.com/llms.md): scope and interpretation of examples and supplier claims.
+
+Examples are proposed plans, not observed test results. Directory inclusion and page dates do not establish current availability, price or comparative performance; consult current supplier documentation for purchasing claims.

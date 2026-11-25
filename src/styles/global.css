@@ -144,3 +144,24 @@
     @apply mt-5 list-disc space-y-3 pl-6 text-[16px] leading-7 text-[#4a2d17];
   }
 }
+
+@layer base {
+  :focus-visible {
+    outline: 3px solid #7c3f10;
+    outline-offset: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .btn {
+    transition: none;
+  }
+
+  .btn-primary:hover {
+    transform: none;
+  }
+}
