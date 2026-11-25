@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
-import TldrBox from '../../components/TldrBox.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import { site, description, pageTitle } from '../../content';
 import { appBySlug } from '../../data/apps';
@@ -13,350 +12,139 @@ const desc = description(site, 'apps/yotpo-email-sms');
 
 const faqs = [
   {
-    question: 'Is Yotpo Email & SMS good for Shopify stores already on Yotpo reviews?',
-    answer: 'Yotpo announced the full sunset of Email & SMS for December 31, 2025. Its SMS app notice says the dashboard and associated background services are decommissioned. Treat this review as historical, not as an onboarding recommendation. This does not establish the status of Reviews, Loyalty, or every customer contract. Check your own agreement, billing records and export availability with the relevant provider.',
+    "question": "Is Yotpo Email & SMS an option for a new Shopify store?",
+    "answer": "No. Yotpo announced full Email and SMS deprecation for December 31, 2025. Assess a supported sender for new messaging. Reviews and Loyalty are separate product decisions; using either does not make retired messaging available."
   },
   {
-    question: 'How does Yotpo pricing work for email and SMS?',
-    answer: 'Modular pricing by product — reviews, loyalty, email, SMS billed separately or bundled. Free tiers exist on some modules. Total cost depends on which modules you activate. A store on reviews + loyalty + email often pays less than Klaviyo + separate reviews app, but more than Sequenzy email-only with pay-per-send.',
+    "question": "How should I evaluate old Yotpo messaging charges?",
+    "answer": "Reconcile invoices and contract line items for retired messaging separately from active Reviews or Loyalty subscriptions. Ask the provider about unresolved charges and accessible records. Historical bundle prices are not current offers and do not support savings claims."
   },
   {
-    question: 'Can Yotpo Email replace Klaviyo on Shopify?',
-    answer: 'For supplement and beauty brands where post-delivery review requests and loyalty tiers are central, Yotpo can consolidate stack. Klaviyo still wins on predictive CLV, browse abandonment depth, and flow sophistication. Sequenzy wins on lifecycle strategy speed without suite overhead.',
+    "question": "Can Yotpo Email replace Klaviyo now?",
+    "answer": "Do not migrate into the retired sender. Inventory the journeys you need and demonstrate their data and suppression behavior in a supported replacement. Existing Reviews or Loyalty usage can be retained while messaging is evaluated separately."
   },
   {
-    question: 'Does Yotpo sync Shopify orders for review request timing?',
-    answer: 'The retired Email/SMS service must not be relied on for new order-triggered sends. Review-request timing in other Yotpo products requires separate product and account verification. For a replacement, validate delivery versus fulfillment events, review status, loyalty tier and purchase history with sample orders; do not infer integration availability from the historical suite description.',
+    "question": "What happens to review-request timing?",
+    "answer": "Identify which active product owns each request and which event starts it. Verify fulfillment versus delivery, duplicate prevention and the available destination integration with staff orders. Do not infer current review-request behavior from the retired Email and SMS suite."
   },
   {
-    question: 'Yotpo SMS vs Postscript for Shopify?',
-    answer: 'The retired Yotpo Email/SMS service is not a current alternative to Postscript. Assess supported SMS providers against your markets, permission evidence, reply needs and queue ownership. Existing Yotpo Reviews or Loyalty usage does not establish messaging availability; verify replacement capabilities and suppression behavior before selecting a provider.',
+    "question": "Yotpo SMS or Postscript for Shopify?",
+    "answer": "Retired Yotpo SMS is not a current purchase alternative. For a supported SMS sender, demonstrate your required markets, number setup, consent transfer, opt-out processing and queue ownership. A historical comparison is not current channel availability."
   },
   {
-    question: 'When is Yotpo Email & SMS overkill?',
-    answer: 'When you only need email lifecycle without reviews or loyalty — Sequenzy or Omnisend deliver faster ROI. Paying for unused Yotpo modules adds complexity without revenue.',
+    "question": "Should I consolidate messaging with Yotpo Reviews and Loyalty?",
+    "answer": "The old all-in-one messaging consolidation proposal is no longer available. Evaluate active Reviews and Loyalty on their own jobs, and confirm how the chosen sender receives required fields. Count integration maintenance and data freshness in total operating cost."
   },
   {
-    question: 'How long does Yotpo migration take from Klaviyo?',
-    answer: 'Do not plan a migration into the retired Email/SMS service. For an exit, set timing from actual export availability, field mapping and destination validation rather than a fixed three-to-five-week promise. Give each journey one sender and use exclusive cohorts; cancel or drain pending queues before switching ownership. Recheck current permission, suppressions and purchases, and deduplicate replayed events before enabling cart or winback sends.',
+    "question": "How long does an exit take?",
+    "answer": "Use actual record access, destination validation and journey dependencies to set the schedule. Since deprecation has passed, do not assume the old dashboard or exports remain accessible. Seek missing records from the provider and retained business systems before promising a cutover date."
   },
   {
-    question: 'Does Yotpo include UGC in email campaigns?',
-    answer: 'Historical UGC email features do not establish current Email/SMS availability. Inventory any accessible assets and permissions, then confirm whether the supported destination can render the required blocks. Review collection alone does not prove permission to reuse a customer photo in marketing; verify rights and attribution for each asset.',
+    "question": "Can I reuse UGC in replacement campaigns?",
+    "answer": "Inventory accessible assets and permission records. Confirm the right to use each asset, attribution requirements, destination rendering and product mapping. Review collection alone does not establish permission to reuse a photo in marketing."
   },
   {
-    question: 'Who should choose Yotpo over Sequenzy?',
-    answer: 'Merchants already invested in Yotpo reviews/loyalty who want one dashboard for retention touchpoints. Choose Sequenzy when email lifecycle strategy is the primary job without suite consolidation needs.',
-  },
+    "question": "Should I choose Yotpo over Sequenzy?",
+    "answer": "For new email and SMS, evaluate a supported messaging provider rather than retired Yotpo messaging. A separate decision can retain Yotpo Reviews or Loyalty if it meets your needs. Demonstrate the required integration instead of assuming one dashboard is necessary."
+  }
 ];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
   <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
-
-  <aside class="container py-6" role="note"><p>Yotpo announced the full sunset of Email & SMS for December 31, 2025. Its SMS app notice says the dashboard and associated background services are decommissioned. Treat this review as historical, not as an onboarding recommendation. This does not establish the status of Reviews, Loyalty, or every customer contract. Check your own agreement, billing records and export availability with the relevant provider. <a href="https://www.yotpo.com/blog/email-sms-migration-partners/">Official migration notice</a>; <a href="https://email-and-sms.yotpo.com/">SMS service notice</a>.</p></aside>
-
-  <section class="relative overflow-hidden py-16 md:py-24">
-    <div class="container">
-      <a href="/apps" class="text-sm font-bold text-[#9a5b16] hover:text-[#24170f]">← All app reviews</a>
-      <p class="editorial-kicker mt-6">Retention suite · Rank #5</p>
-      <h1 class="hero-title mt-5 max-w-5xl">{app.name} review for Shopify stores</h1>
-      <p class="mt-7 max-w-3xl text-xl leading-9 text-[#4a2d17]">
-        Yotpo Email & SMS shines when retention spans reviews, loyalty, UGC, and campaigns — not email alone. Our supplement brand test triggered review requests post-delivery, loyalty point balances in winback emails, and SMS drops for VIP tiers from one modular dashboard. Email depth trails Klaviyo; strategy speed trails Sequenzy — but consolidation reduces tool sprawl when you are already paying for Yotpo reviews or loyalty.
-      </p>
-      <p class="mt-5 max-w-3xl text-lg leading-8 text-[#5d3a1d]">
-        Historical rating: ★ {app.rating}. Legacy Shopify depth: {app.shopifyDepth}. These fields do not establish present Email/SMS availability.
-      </p>
-      <div class="mt-9 flex flex-wrap gap-3">
-        <a class="btn btn-primary" href="/compare/klaviyo-vs-yotpo-email-sms">Klaviyo vs Yotpo</a>
-        <a class="btn btn-secondary" href="/use-cases/reviews-and-ugc">Reviews in email guide</a>
-      </div>
-    </div>
+  <section class="container py-16">
+    <a class="link" href="/apps">← All app reviews</a>
+    <p class="editorial-kicker mt-6">Supplier scope checked November 25, 2026</p>
+    <h1 class="hero-title mt-5">{app.name} for Shopify stores</h1>
+    <p class="mt-7 max-w-3xl text-xl leading-9">Yotpo Email &amp; SMS is a retired messaging product. A Shopify merchant arriving here needs an exit inventory, a replacement sender decision and continuity for any separate Reviews or Loyalty program. Buying more Yotpo modules cannot restore the retired sender. This page supplies proposed recovery and migration exercises, not merchant test results or a current messaging quote.</p>
   </section>
-
   <section class="container pb-12">
-    <TldrBox
-      title="Verdict: Yotpo Email & SMS"
-      picks={[
-        { label: 'Best for', tool: 'Yotpo stack users', reason: 'Historical positioning; do not activate retired Email/SMS modules.' },
-        { label: 'Email depth', tool: 'Solid not deepest', reason: 'Historical comparison, not verified current feature parity.' },
-        { label: 'Pricing', tool: 'Modular', reason: 'Reconcile legacy messaging charges separately from other active products.' },
-        { label: 'Also consider', tool: 'Sequenzy', reason: 'Email-first lifecycle without suite complexity if reviews live elsewhere.' },
-        { label: 'UGC strength', tool: 'Native blocks', reason: 'Verify destination rendering, asset rights and attribution individually.' },
-      ]}
-    />
-
     <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Suite logic vs specialist email</h2>
-      <p>
-        Yotpo built reputation on reviews and loyalty before expanding into email and SMS. The strategic bet: a customer who left a five-star review, has 800 loyalty points, and has not ordered in 60 days should receive different messaging than a one-time buyer who never reviewed. When those data points live in one platform, segments compile without Zapier spaghetti between Judge.me, Smile.io, and Klaviyo.
-      </p>
-      <p>
-        Historical suite designs added data dependencies beyond cart recovery. In a hypothetical replacement evaluation, a stale loyalty balance could appear in winback content if field mapping is incomplete; this is not a documented supplement-shop test. Validate balances against source records before sending. Plan the exit as a data project, not a template copy.
-      </p>
-      <p>
-        Sequenzy remains our top overall pick for email-first lifecycle strategy with pay-per-send economics. Yotpo wins when consolidation beats specialization — especially beauty, supplements, and pet brands where social proof and points drive repeat purchase.
-      </p>
+      <h2 class="font-serif text-4xl font-black">Retirement boundary and current sources</h2>
+      <p>The <a href="https://www.yotpo.com/blog/email-sms-migration-partners/">official migration announcement</a>, updated September 15, 2025, scheduled full Email and SMS deprecation for December 31, 2025. Its recommended partners were Attentive and Omnisend. That recommendation is supplier guidance, not this site independently scoring either provider or confirming your account access.</p>
+      <p>The announcement discusses Reviews and Loyalty integration separately. It does not justify treating those products as retired along with messaging. Inspect their current product documentation and your agreement for the features you use. A legacy review page, historical rank or module bundle cannot establish a current email purchase option.</p>
+      <p>Check the <a href="https://email-and-sms.yotpo.com/">messaging service notice</a> and contact the provider for account-specific recovery questions. Do not promise an export simply because a historical help article describes one. At this date, recovery may depend on retained exports, Shopify records, destination records or support assistance.</p>
     </div>
-
-    <div class="ledger-card mb-12">
-      <p class="editorial-kicker">Shopify integration depth</p>
-      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Native events across the Yotpo ecosystem</h2>
-      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-        Yotpo connects natively to Shopify for orders, products, customers, and fulfillment events. Email and SMS modules inherit review submission status, loyalty tier changes, points earned/redeemed, and UGC asset availability. Cart and browse triggers exist for standard recovery flows — comparable to Omnisend, below Klaviyo on exotic catalog logic.
-      </p>
-      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-        <strong>Standout integrations:</strong> Post-delivery review request timed to fulfillment, loyalty tier upgrade triggers, segment by reviewers vs non-reviewers, UGC galleries in product launch emails, SMS for VIP tier early access when loyalty module active, SMSBump connection within Yotpo family for text-heavy programs.
-      </p>
-      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-        <strong>Gaps:</strong> Predictive CLV not Klaviyo-grade. Agent-first sequence generation absent — template and builder driven. Pay-per-email unlimited contacts not offered; modular billing can exceed Sequenzy if email-only module priced like full suite. Flow collision rules need manual discipline during multi-module rollout.
-      </p>
-    </div>
-
     <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Pricing breakdown with merchant math</h2>
-      <p>{app.priceDetail}. {app.pricing}.</p>
-      <p>
-        <strong>Scenario A — Reviews + Email only, 6,000 contacts, 16,000 sends/mo.</strong> Modular bill roughly $80–140/mo depending on tier. Comparable Omnisend $50–80; Sequenzy $40–65 pay-per-send. Premium pays for review-email unity — audit if you use it.
-      </p>
-      <p>
-        <strong>Scenario B — Reviews + Loyalty + Email + SMS, 14,000 contacts.</strong> Combined $180–320/mo. Cheaper than Klaviyo + Smile + Postscript stack ($350–500+) if all modules actively used. Expensive if loyalty barely deployed.
-      </p>
-      <p>
-        <strong>Scenario C — Email module only on Yotpo, reviews elsewhere.</strong> Worst economics — paying suite entry without consolidation benefit. Migrate reviews to Yotpo or email to Sequenzy; do not straddle awkwardly.
-      </p>
+      <h2 class="font-serif text-4xl font-black">Exit inventory: what to recover first</h2>
+      <p>Assign a person to each inventory: customer identifiers, channel permission records, unsubscribe and STOP history, bounce suppressions, templates, media rights, automation logic and billing documents. Record where each dataset is actually available and the latest timestamp. A contact address without its provenance is not a ready-to-send audience.</p>
+      <p>Create a journey ledger listing trigger, eligible cohort, current owner, pending queue status and proposed destination. Include welcome, cart, order education, review requests and loyalty expiry reminders. Distinguish a disabled automation from canceled delayed sends. If the retired system cannot be inspected, mark queue status unknown and seek provider confirmation rather than claiming a live parallel run.</p>
+      <p>Preserve external keys and event identifiers in any permitted transfer. Match guest and account purchases without collapsing different people who share a household phone number. Reconcile current purchases and suppressions immediately before activation; a historical export can already be stale.</p>
     </div>
-
     <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Four workflow tests on Shopify</h2>
-
-      <h3 class="font-serif text-2xl font-black text-[#24170f]">1. Welcome — loyalty program intro at signup</h3>
-      <p>
-        Hypothetical illustration only; no substantiated merchant test supports these figures.
-        <strong>Scenario:</strong> Footer signup on supplement store with active Yotpo loyalty. <strong>Setup:</strong> Welcome explains points per dollar, first-purchase bonus, links to bestseller with UGC block from recent reviewers. <strong>Illustrative outcome, not measured evidence:</strong> 12% first purchase in 21 days; loyalty enrollment 34% of new subscribers. Unified data — no manual tag sync.
-      </p>
-
-      <h3 class="font-serif text-2xl font-black text-[#24170f]">2. Cart — $89 protein stack, SMS for loyalty VIP only</h3>
-      <p>
-        Hypothetical illustration only; no substantiated merchant test supports these figures.
-        <strong>Scenario:</strong> Gold tier member abandons cart. <strong>Setup:</strong> Email one with cart products; SMS for VIP tiers only with points reminder ("earn 890 points on this order"). <strong>Illustrative outcome, not measured evidence:</strong> 13% recovery; VIP SMS 22% of recovered revenue. Tier data from loyalty module — key Yotpo advantage.
-      </p>
-
-      <h3 class="font-serif text-2xl font-black text-[#24170f]">3. Post-purchase — review request day 7, cross-sell day 14</h3>
-      <p>
-        Hypothetical illustration only; no substantiated merchant test supports these figures.
-        <strong>Scenario:</strong> Order delivered; product category probiotics. <strong>Setup:</strong> Day 7 review request with star preview; day 14 cross-sell prebiotic if no review yet; suppress cross-sell if review submitted. <strong>Illustrative outcome, not measured evidence:</strong> Review rate 18% vs 11% pre-Yotpo; cross-sell only to non-reviewers protected NPS.
-      </p>
-
-      <h3 class="font-serif text-2xl font-black text-[#24170f]">4. Winback — lapsed loyalty members with expiring points</h3>
-      <p>
-        Hypothetical illustration only; no substantiated merchant test supports these figures.
-        <strong>Scenario:</strong> No order 75 days; 600 points expiring in 14 days. <strong>Setup:</strong> Email urgency on points expiry; SMS for members with phone opt-in; product rec from last category. <strong>Illustrative outcome, not measured evidence:</strong> 7.4% reactivation; 41% redeemed points on winback orders. Klaviyo would need loyalty integration; Yotpo native.
-      </p>
+      <h2 class="font-serif text-4xl font-black">Reviews continuity is its own job</h2>
+      <p>For an active Reviews program, identify the owner of collection requests and the system holding collected reviews. Confirm storefront display, moderation process, product identifiers and accessible assets independently of the messaging exit. Replacing an ESP is not a reason to remove a working review widget or duplicate collection requests.</p>
+      <p>Use staff orders for a single shipment, a partial shipment, a cancellation and a delayed delivery. Determine which event the active request uses. If only fulfillment is available, do not label it delivery. Schedule review collection according to the product and actual availability of evidence, rather than reusing an unsupported universal day-seven rule.</p>
+      <p>Collect reviews consistently across eligible customers. Do not withhold a request because a shopper returned an item, opened a complaint or might leave a low rating. Keep marketing cross-sell eligibility and review collection policy distinct; submission of a review is not proof of satisfaction or permission for a promotional send.</p>
     </div>
-
-    <div class="grid gap-8 lg:grid-cols-2 mb-12">
-      <div class="card">
-        <p class="editorial-kicker">Pros</p>
-        <ul class="mt-4 space-y-3 text-[#4a2d17]">
-          {app.strengths.map((s) => <li class="flex gap-2"><span class="text-[#9a5b16]">+</span>{s}</li>)}
-        </ul>
-      </div>
-      <div class="card">
-        <p class="editorial-kicker">Cons</p>
-        <ul class="mt-4 space-y-3 text-[#4a2d17]">
-          {app.limits.map((l) => <li class="flex gap-2"><span class="text-[#9a5b16]">−</span>{l}</li>)}
-        </ul>
-      </div>
-    </div>
-
-    <div class="grid gap-8 lg:grid-cols-2 mb-12">
-      <div class="ledger-card">
-        <p class="editorial-kicker">Historical audience — not a current purchase recommendation</p>
-        <ul class="mt-4 space-y-3 text-[#4a2d17]">
-          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Already on Yotpo reviews or loyalty</li>
-          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>UGC and points central to repeat purchase</li>
-          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Want fewer vendors on Shopify stack</li>
-        </ul>
-      </div>
-      <div class="ledger-card">
-        <p class="editorial-kicker">Who should skip</p>
-        <ul class="mt-4 space-y-3 text-[#4a2d17]">
-          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Email-only needs — Sequenzy or Omnisend</li>
-          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>Predictive segmentation at Klaviyo scale</li>
-          <li class="flex gap-2"><span class="text-[#9a5b16]">→</span>No plans to activate loyalty/reviews modules</li>
-        </ul>
-      </div>
-    </div>
-
     <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Yotpo module rollout order on Shopify</h2>
-      <p>
-        For a supported replacement, validate review data first if needed — email automations referencing review status fail silently when review module data is empty. Loyalty second — point balances in winback emails require accurate sync before first send. Replacement email and SMS campaigns third — cart and welcome after review request flows are stable.
-      </p>
-      <p>
-        Map custom fields before go-live: review submitted yes/no, loyalty tier, points balance, points expiry date, last review date. Test with internal orders across three product categories. Supplement brands often need separate review timing for subscribe-and-save vs one-time purchase — configure fulfillment triggers accordingly.
-      </p>
-      <p>
-        Audit modular billing quarterly. Merchants pay for loyalty seats while only using email broadcasts — common waste. Conversely, merchants on Sequenzy email plus Judge.me reviews plus Smile loyalty pay three vendors when Yotpo consolidation would reduce stack tax. Run the spreadsheet: total vendor cost vs active module usage.
-      </p>
-      <p>
-        When email depth becomes the bottleneck — complex drop suppression, predictive CLV routing, agent-first iteration — Sequenzy or Klaviyo may still enter the stack. Yotpo remains valuable for review and loyalty data feeding whichever ESP executes lifecycle sends via API or segment export.
-      </p>
+      <h2 class="font-serif text-4xl font-black">Loyalty continuity: balances, expiry and redemption</h2>
+      <p>Keep the loyalty system of record explicit. For each field the destination needs, document customer key, balance, tier, expiry date, update time and whether the value is a balance or redeemable reward. Confirm the integration on the actual plans; a partner announcement does not prove every field is available in your account.</p>
+      <p>Proposed rehearsal: staff member earns points, redeems a reward, receives a refund and changes tier. Compare the account display to the email preview after each event. Hold the message or omit the balance if freshness cannot be established. A claim that a shopper has enough points for a free bag requires the actual redemption rule and eligible product, not just a numeric merge field.</p>
+      <p>Expiry messaging must follow program terms and customer eligibility. Check changed expiry after redemption and purchases before release. Let the loyalty owner approve the content while the sender owner controls delivery; finance should reconcile points liability separately from campaign-attributed revenue.</p>
     </div>
-
     <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">When Yotpo beats best-in-class email alone</h2>
-      <p>
-        Hypothetical illustration only; no substantiated merchant test supports these figures.
-        Beauty brand running Yotpo reviews 3 years, adding email module: review request timing already optimized; winback emails referencing star ratings and UGC photos converted 2.3× vs generic product blocks imported from old Mailchimp templates. Consolidation win measurable in 60 days.
-      </p>
-      <p>
-        Hypothetical illustration only; no substantiated merchant test supports these figures.
-        Pet supplement store with loyalty tiers: winback emails showing "Your dog has 450 points — enough for free bag" beat plain discount codes in A/B test. Points data lived in Yotpo loyalty — rebuilding that dynamic creative in Klaviyo would require API middleware and weekly sync monitoring.
-      </p>
-      <p>
-        Counter-example: apparel drop brand with no reviews culture tried Yotpo email-only module — paid suite overhead without review or loyalty data to differentiate sends. Migrated to Sequenzy in 8 weeks; lesson: Yotpo when modules earn their keep, not when email alone is the job.
-      </p>
-      <p>
-        Integration health checks weekly during first 90 days: spot-check loyalty point balances in winback emails against Shopify customer accounts. Stale points destroy trust faster than no email at all.
-      </p>
-      <p>
-        For stores evaluating Sequenzy vs Yotpo: choose Yotpo when review and loyalty modules are already paid for and active; choose Sequenzy when email lifecycle strategy is the job and reviews live in a separate tool you are not migrating.
-      </p>
-      <p>
-        Read our <a class="link" href="/use-cases/loyalty">loyalty campaigns guide</a> when points-driven winback is central to your retention model.
-      </p>
-      <p>
-        SMS activation in a supported replacement should follow email stability — text opt-in compliance errors are costlier than delayed SMS launch by one week.
-      </p>
-      <p>
-        UGC blocks in campaigns require active review collection — empty galleries hurt credibility; delay UGC emails until you have fresh five-star assets in pipeline.
-      </p>
+      <h2 class="font-serif text-4xl font-black">Replacement selection without a consolidation winner</h2>
+      <p>Bring a concrete requirement set to a supported sender: purchase stop rules, variant content, permission transfer, review-request ownership, loyalty field freshness and SMS destinations. Demonstrate the important path using staff records. Count failed or unavailable dependencies explicitly rather than substituting a broad ecommerce integration badge.</p>
+      <p>Yotpo named Attentive and Omnisend as migration partners in its notice. Include them where their present offering fits, while checking current integration access and service terms directly. Sequenzy or another sender may warrant evaluation for a different operating model; this page supplies no best-overall score or claim that one provider generates faster ROI.</p>
+      <p>Keeping Reviews and Loyalty while changing messaging can preserve useful customer context. The value comes from working collection, redemption and data transfer, not a single-login promise. Compare the operator time needed to reconcile fields and correct a failed integration alongside license costs.</p>
     </div>
-
     <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Merchant scenario: skincare brand already on Yotpo Reviews</h2>
-      <p>
-        Historical planning illustration, not a current quote or observed merchant result.
-        PureLayer Skincare pays Yotpo for reviews ($149/mo) and sees review submission jump when SMS nudges post-delivery. Adding Yotpo Email &amp; SMS consolidates winback, loyalty point reminders, and review requests under one login — reducing the Klaviyo plus Postscript plus Yotpo three-way coordination tax. 1,450 orders/mo, $58 AOV, loyalty points drive 18% of repeat orders.
-      </p>
-      <p>
-        PureLayer's scenario tests suite economics: modular Yotpo pricing vs best-in-class Klaviyo email depth. Consolidation wins when reviews and loyalty are already central; email-only sophistication is secondary.
-      </p>
+      <h2 class="font-serif text-4xl font-black">Invoice reconciliation and replacement cost</h2>
+      <p>Do not buy a historical Email/SMS bundle. Split the current invoice into active Reviews, active Loyalty, any other contracted service and disputed or legacy messaging lines. Confirm cancellation terms, credits and record access with the provider. No price range formerly printed here is a current quote.</p>
+      <p>Build the replacement budget from the same contacts, send volumes, SMS markets, support needs and integration requirements for each candidate. Add one-time data cleanup and staff training, then recurring field reconciliation and template maintenance. Keep retained Reviews and Loyalty expenses in both scenarios when they do not change.</p>
+      <p>Conditional arithmetic example: if two future written quotes differ by $200 per month, the annual license difference is $2,400. If transition work costs $3,000, license savings alone would take 15 months to recover it, assuming the difference persists. This is a planning calculation, not a Yotpo price, merchant saving or forecast revenue lift.</p>
     </div>
-
     <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">90-day rollout: Yotpo Email &amp; SMS suite expansion</h2>
-      <p>
-        <strong>Days 1–20:</strong> Do not enable retired Yotpo Email. Inventory available records, consent evidence, suppressions and pending queues before planning an exit. Confirm actual export availability and destination field mapping, including point balances, before scheduling any replacement sends.
-      </p>
-      <p>
-        <strong>Days 21–45:</strong> In a supported replacement, after permission and suppression validation: Coordinate review request SMS and email — single orchestration rule: SMS at delivery+2 days if no review, email at day 5 if still empty. Suppress purchasers in winback during review collection week.
-      </p>
-      <p>
-        <strong>Days 46–70:</strong> In a supported replacement, after permission and suppression validation: Winback with loyalty balance callout. A/B test points-expiring urgency vs education. Add SMS cart recovery if Postscript not in stack — else map suppressions.
-      </p>
-      <p>
-        <strong>Days 71–90:</strong> Module audit: total Yotpo bill vs sum of best-in-class alternatives. If email segmentation hits walls on browse triggers, keep Yotpo for reviews/loyalty/SMS and move email depth to Sequenzy — hybrid stack is valid.
-      </p>
+      <h2 class="font-serif text-4xl font-black">Proposed welcome rehearsal: loyalty signup</h2>
+      <p>Use a staff signup that can be linked to a loyalty account. Explain program terms from the active source and preview any enrollment bonus against actual eligibility. Test an existing member and a new member separately so the welcome draft does not promise a second first-purchase reward.</p>
+      <p>Assign one welcome sender and check whether the loyalty product also sends enrollment messages. Submit an unsubscribe and a purchase between draft and release. Acceptance requires the promotional sequence to honor current eligibility and avoid duplicate promises. Observe purchase and enrollment behavior only after a real pilot; no former 12% or 34% outcome is evidence.</p>
     </div>
-
     <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Margin math: Yotpo suite consolidation vs best-of-breed</h2>
-      <p>
-        Historical planning illustration, not a current quote or observed merchant result.
-        PureLayer prior: Yotpo Reviews $149 + Klaviyo $280 + Postscript $180 = $609/mo. Yotpo Email &amp; SMS bundle ≈ $350–450/mo all modules — save $159–259/mo cash. Loyalty-triggered winback lifts repeat 2 points = 29 extra orders × $58 = $1,682 revenue, $842 gross profit at 50% margin — consolidation pays if flows perform within 90% of Klaviyo benchmark.
-      </p>
-      <p>
-        Shelfware risk: paying for Email, SMS, Reviews, Loyalty, UGC when only Reviews and SMS actively operated — $200+/mo waste. Quarterly module review. SMS overage during serum launch week adds $120 — model promotional SMS caps before scaling influencers.
-      </p>
+      <h2 class="font-serif text-4xl font-black">Proposed cart rehearsal: VIP with a changing balance</h2>
+      <p>Build an $89 protein cart on a staff VIP account. In the replacement sender, preview the cart, tier and any points statement. Then redeem points elsewhere, complete checkout and change phone permission before the next queued message. Each change should be reflected in eligibility or content before release.</p>
+      <p>Confirm who owns email recovery and SMS recovery, including any existing Postscript program. A shared customer key does not itself cancel another provider’s queue. Record the exact stop mechanism and replay the purchase event once to check duplication. Do not use the retired Yotpo sender as one side of this exercise.</p>
     </div>
-
     <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Failure rehearsal: Yotpo suite complexity traps</h2>
-      <p>
-        <strong>Review SMS plus winback email collision:</strong> Customer annoyed post-delivery — review rate drops. Orchestration priority table required.
-      </p>
-      <p>
-        <strong>Expecting Klaviyo browse depth:</strong> Collection-level abandonment weak — team blames Yotpo prematurely. Set email depth expectations in vendor selection.
-      </p>
-      <p>
-        <strong>Loyalty field mapping errors:</strong> Winback shows zero points when balance exists — trust destroyed. Staging test on 20 profiles before launch.
-      </p>
-      <p>
-        <strong>Full rip-and-replace migration:</strong> Hypothetical failure: disabling an incumbent before replacement validation interrupts journeys. No measured 15% loss or six-week timeline is established. Use exclusive cohorts and transfer journey ownership only after permission, suppression and queue checks.
-      </p>
+      <h2 class="font-serif text-4xl font-black">Proposed post-purchase rehearsal: requests and education</h2>
+      <p>Use an order containing two products with different delivery times. Keep care or usage education distinct from the review request. For the proposed replacement, demonstrate the event source, product-level request link and duplicate prevention before choosing a delay. A fixed day-seven review and day-fourteen cross-sell is only a possible pilot schedule.</p>
+      <p>A complaint or return can require service follow-up before promotion, but should not be used to selectively solicit positive reviews. Avoid making cross-sell conditional on whether a review was submitted as a proxy for satisfaction. Measure service contacts, review coverage and subsequent purchase separately; no causal NPS or return-rate result is established here.</p>
     </div>
-
     <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Weekly operating cadence: Yotpo suite orchestration</h2>
-      <p>
-        Monday: module utilization audit — Reviews, Loyalty, Email, SMS each need weekly KPI owner. Wednesday: orchestration calendar for post-delivery week — review SMS, loyalty balance email, winback pause rules on same account. Friday: loyalty points liability vs redemption trend; marketing cannot outrun finance on outstanding points.
-      </p>
-      <p>
-        Hypothetical illustration only; no substantiated merchant test supports these figures.
-        Monthly: compare total Yotpo invoice to best-of-breed stack quote — consolidation saves cash only when modules actively operated. PureLayer rotates review-request copy quarterly; stale asks reduce submission 9% in this hypothetical example.
-      </p>
-      <p>
-        Quarterly: hybrid stack decision — if email segmentation ceiling hit, move email depth to Sequenzy while Yotpo owns reviews, loyalty, SMS. Suite religion should not block revenue optimization.
-      </p>
+      <h2 class="font-serif text-4xl font-black">Proposed winback rehearsal: expiring points</h2>
+      <p>Use a staff account with 600 points and a documented expiry date, then change the expiry or redeem the balance before scheduling. Verify that the destination can refresh the relevant fields; if it cannot, use a link to the current account balance rather than asserting stale urgency in the message.</p>
+      <p>Treat a 75-day lapse and 14-day expiry window as proposed cohort settings, not proven optimal timing. Suppress a new purchaser and honor each channel’s permission independently. Compare education and expiry messages only with eligible recipients and a clear measurement plan. No reactivation or redemption percentage on the former page is retained as a result.</p>
     </div>
-
-    <div class="ledger-card mb-12">
-      <p class="editorial-kicker">Implementation handoff</p>
-      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Yotpo module orchestration checklist</h2>
-      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-        In this hypothetical replacement plan, PureLayer maps loyalty point merge fields in staging across 50 test profiles before winback references balance. Review SMS and email orchestration calendar blocks post-delivery week per customer. Legacy flows disabled one-for-one only as supported replacement journeys pass validation — phased migration only.
-      </p>
-      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-        Quarterly module audit: paying for UGC or Loyalty without weekly operator is shelfware. Finance tracks total Yotpo invoice against sum of Postscript plus Klaviyo plus Reviews-only quote — consolidation must beat best-of-breed on operated modules, not purchased modules.
-      </p>
-      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-        Skincare and supplement brands with reviews-driven repeat see highest Yotpo suite ROI — email depth gaps hurt less when post-delivery review SMS and loyalty balance emails drive the next purchase. Brands without reviews culture pay suite complexity without suite compounding.
-      </p>
-      <p class="mt-4 text-[17px] leading-8 text-[#4a2d17]">
-        PureLayer's phased module migration avoids the 15% revenue dip assumed here on full Klaviyo rip-and-replace — suite expansion is sequencing problem, not shopping problem.
-      </p>
-    </div>
-
     <div class="prose-shopify mb-12">
-      <h2 class="font-serif text-4xl font-black text-[#24170f]">Module audit: paying only for active Yotpo modules</h2>
-      <p>
-        Beauty brand on Reviews plus Loyalty: Email add-on UGC cart blocks drove campaigns; inactive SMS module dropped saving $89/mo. Monthly audit which modules fire revenue workflows — unused modules are suite tax. Split stack common: Yotpo Reviews, Klaviyo or Sequenzy marketing email. Consolidation wins when three or more modules actively used in peak season.
-      </p>
+      <h2 class="font-serif text-4xl font-black">Skincare case: preserving context while changing the sender</h2>
+      <p>Hypothetical brief: a skincare brand wants to keep an active Reviews program and use loyalty context in replacement winback messages. Start with its current product mappings, photo rights, points rules and audience permissions. The task is to transfer the needed context without recreating retired Yotpo messaging.</p>
+      <p>Ask the replacement to render one real approved review asset and a current account link in a draft. Test a deleted product, missing photo and expired reward before accepting it. A fallback without the asset or balance must still read correctly. Do not claim that a named merchant obtained a conversion multiple, avoided a revenue dip or saved a fixed bundle amount; those claims were unsupported.</p>
+      <p>For launch-week edits, rehearse a changed VIP cohort and unavailable SKU with the operator who will actually run the campaign. Choose an acceptance time based on that team’s operating needs. An arbitrary half-hour edit target does not establish a platform’s suitability.</p>
     </div>
-
-    <div class="prose-shopify mb-12"><h2 class="font-serif text-4xl font-black text-[#24170f]">Merchant scenario: Yotpo Email Sms rollout checkpoint</h2>
-    <p>
-      Shopify operators exiting retired Yotpo Email/SMS should document week-one baseline metrics before claiming migration wins — welcome time-to-live, cart suppression accuracy, post-purchase edge cases, and winback engagement splits scored on staff accounts. Model 12-month platform cost at projected list size including popup imports and peak-season send spikes, not current-month invoice alone.
-    </p>
-    <p>
-      For Yotpo Email Sms, the sale-week edit is the admissions exam: suppression plus VIP access live in under half an hour on a Thursday pre-drop. Yotpo Email Sms platforms passing quiet demos yet failing edits cost peak revenue dwarfing license gaps — so evaluate a supported replacement over an appropriate observation period with weekly operator checks.
-    </p>
-    <p>
-      For an exit from Yotpo Email/SMS, assign one sender per journey and exclusive cohorts. Cancel or drain pending queues before replacement sends; check current permission, suppressions and purchases and deduplicate replayed events. Engagement alone does not authorize an import or send. Confirm export availability rather than promising a fixed parallel-run period.
-    </p>
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black">Cutover checkpoints and operating cadence</h2>
+      <p>First checkpoint: establish record access and who owns each journey. Second: reconcile identities, channel permissions and suppressions in the destination. Third: rehearse changed purchases, redemptions and opt-outs during queue delays. Fourth: enable an exclusive pilot cohort only after its dependencies pass. These are acceptance stages, not a guaranteed 90-day schedule.</p>
+      <p>At cutover, cancel or drain accessible old queues and confirm unresolved legacy status with the provider. Do not assume a deprecated dashboard is still operational or propose keeping Yotpo SMS active while moving email. Retained Reviews and Loyalty can continue only under their own verified setup and request ownership.</p>
+      <p>During the pilot, inspect failed field updates and duplicate journey entries daily. Review permission and purchase freshness before campaigns; periodically reconcile invoice lines, integration ownership and loyalty terms. Record actual observations separately from supplier claims. Engagement metrics alone do not authorize a transfer or send.</p>
     </div>
-
-        <div class="card mb-12">
-      <p class="editorial-kicker">Compare alternatives</p>
-      <h2 class="mt-3 font-serif text-3xl font-black text-[#24170f]">Yotpo vs other Shopify email apps</h2>
-      <ul class="mt-6 space-y-3 text-lg font-bold">
-        <li><a class="link" href="/compare/klaviyo-vs-yotpo-email-sms">Klaviyo vs Yotpo Email & SMS</a></li>
-        <li><a class="link" href="/compare/sequenzy-vs-yotpo-email-sms">Sequenzy vs Yotpo Email & SMS</a></li>
-        <li><a class="link" href="/compare/omnisend-vs-yotpo-email-sms">Omnisend vs Yotpo Email & SMS</a></li>
-        <li><a class="link" href="/compare/marsello-vs-yotpo-email-sms">Marsello vs Yotpo Email &amp; SMS</a></li>
+    <div class="prose-shopify mb-12">
+      <h2 class="font-serif text-4xl font-black">Failure rehearsal and handoff</h2>
+      <p>If an export is unavailable, document what is missing and ask the provider about recovery; do not fabricate a complete consent history from Shopify purchases. If the loyalty balance is stale, hold the numeric claim and link to the account. If review requests duplicate, name a single owner and cancel the competing request where accessible.</p>
+      <p>If UGC has no documented reuse rights, omit it until rights are established. If a replacement integration is unavailable on the selected plan, revise the workflow or quote before signing. Keep a handoff record with source system, customer key, field refresh, journey owner, queue state and rollback action so the next operator can resolve a failure.</p>
+      <p>The linked comparison routes, including Marsello versus Yotpo, remain useful navigation into historical context and adjacent decisions. Their existence is not evidence that retired messaging can be purchased. Evaluate active Reviews, Loyalty and replacement messaging on their respective operational jobs.</p>
+    </div>
+    <div class="card mb-12"><h2 class="font-serif text-3xl font-black">Related decision guides and comparisons</h2>
+      <ul class="mt-6 space-y-3">
+        <li><a class="link" href="/apps">Apps</a></li>
+        <li><a class="link" href="/compare/klaviyo-vs-yotpo-email-sms">Klaviyo Vs Yotpo Email Sms</a></li>
+        <li><a class="link" href="/use-cases/reviews-and-ugc">Reviews And Ugc</a></li>
+        <li><a class="link" href="/use-cases/loyalty">Loyalty</a></li>
+        <li><a class="link" href="/compare/sequenzy-vs-yotpo-email-sms">Sequenzy Vs Yotpo Email Sms</a></li>
+        <li><a class="link" href="/compare/omnisend-vs-yotpo-email-sms">Omnisend Vs Yotpo Email Sms</a></li>
+        <li><a class="link" href="/compare/marsello-vs-yotpo-email-sms">Marsello Vs Yotpo Email Sms</a></li>
+        <li><a class="link" href="/apps/sequenzy">Sequenzy</a></li>
       </ul>
     </div>
   </section>
-
-  <section class="container pb-8">
-    <div class="flex flex-wrap gap-4 text-sm font-bold">
-      <a class="link" href="/apps">All Shopify email apps →</a>
-      <a class="link" href="/apps/sequenzy">Sequenzy review →</a>
-    </div>
-  </section>
-
-  <FaqSection faqs={faqs} title="Yotpo Email & SMS FAQ" />
+  <FaqSection faqs={faqs} title="Yotpo Email &amp; SMS FAQ" />
 </BaseLayout>
