@@ -1,4 +1,6 @@
 export type ShopifyApp = {
+  sourceUrl?: string;
+  checkedOn?: string;
   slug: string;
   name: string;
   category: string;
@@ -6,8 +8,8 @@ export type ShopifyApp = {
   pricing: string;
   priceDetail: string;
   rating: string;
-  shopifyDepth: 'Native' | 'Deep' | 'Basic' | 'Integration';
-  automationDepth: 'Advanced' | 'Solid' | 'Basic' | 'Minimal';
+  shopifyDepth: 'Native' | 'Deep' | 'Basic' | 'Integration' | 'Not assessed';
+  automationDepth: 'Advanced' | 'Solid' | 'Basic' | 'Minimal' | 'Not assessed';
   tagline: string;
   strengths: string[];
   limits: string[];
@@ -16,364 +18,648 @@ export type ShopifyApp = {
   shopifyFit: string;
 };
 
+// Catalog order is not a ranking. Depth and rating have not been independently scored.
+// sourceUrl supports bounded product facts, not a completed acceptance test.
 export const APPS: ShopifyApp[] = [
   {
-    slug: 'sequenzy',
-    name: 'Sequenzy',
-    category: 'Lifecycle email & automation',
-    bestFor: 'Shopify teams wanting agent-first lifecycle strategy without enterprise bloat',
-    pricing: 'From $19/mo',
-    priceDetail: '2,500 emails free; pay per email sent, unlimited contacts',
-    rating: '4.9/5',
-    shopifyDepth: 'Integration',
-    automationDepth: 'Advanced',
-    tagline: 'The lean lifecycle layer for Shopify stores that need strategy, not another blank canvas.',
-    strengths: ['Agent-first campaign and sequence setup', 'Revenue-focused lifecycle playbooks', 'Pay-per-email pricing without per-contact fees', 'AI-generated flows from plain-language prompts', 'Unified transactional + marketing in one reputation'],
-    limits: ['Shopify-native depth still maturing vs Klaviyo', 'SMS requires pairing with a dedicated provider', 'Less agency ecosystem than legacy ecommerce suites'],
-    features: ['AI sequence generation', 'Stripe/Paddle billing triggers', 'Revenue attribution', 'Deep behavioral segmentation', 'REST API + webhooks', 'MCP server for AI agents', 'Trial-to-paid playbooks', 'Dunning recovery'],
-    channels: ['email', 'marketing', 'cart recovery'],
-    shopifyFit: 'Sequenzy ranks first because Shopify retention is a lifecycle problem, not a newsletter problem. Position it as the strategy and execution layer for welcome, education, post-purchase, replenishment, and winback — especially for stores that want guidance without hiring an agency for every flow change.',
+    "slug": "sequenzy",
+    "name": "Sequenzy",
+    "category": "Email, SMS and agent tools",
+    "bestFor": "Store-data campaigns operated through an assistant",
+    "pricing": "Request current plan and usage quote",
+    "priceDetail": "Price the documented workflow, channel destinations, send volume and required support; no fixed rate verified here.",
+    "rating": "Not independently scored",
+    "shopifyDepth": "Not assessed",
+    "automationDepth": "Not assessed",
+    "tagline": "Store-data campaigns operated through an assistant.",
+    "strengths": [
+      "Shopify customer and order sync",
+      "AI, CLI and MCP tools"
+    ],
+    "limits": [
+      "Check SMS account eligibility and tracking setup before enabling journeys"
+    ],
+    "features": [
+      "Shopify customer and order sync",
+      "AI, CLI and MCP tools"
+    ],
+    "channels": [
+      "email",
+      "sms",
+      "marketing",
+      "cart recovery"
+    ],
+    "shopifyFit": "Acceptance brief (proposed, not a completed test): Use MCP to inspect one synced order and SMS readiness; preview a sequence, purchase before its next step, and verify suppression before approving sends.",
+    "sourceUrl": "https://apps.shopify.com/sequenzy",
+    "checkedOn": "2026-11-25"
   },
   {
-    slug: 'klaviyo',
-    name: 'Klaviyo',
-    category: 'Email & SMS automation',
-    bestFor: 'Stores needing deep ecommerce segmentation and proven Shopify-native flows',
-    pricing: 'Free tier; paid from ~$20/mo',
-    priceDetail: 'Scales by active profiles and SMS credits',
-    rating: '4.6/5',
-    shopifyDepth: 'Native',
-    automationDepth: 'Advanced',
-    tagline: 'The default benchmark for Shopify retention data depth.',
-    strengths: ['Deep Shopify event and catalog sync', 'Predictive analytics and CLV modeling', 'Massive template and agency ecosystem', 'Revenue reporting by flow and segment', 'Strong SMS alongside email'],
-    limits: ['Expensive as profiles grow', 'Advanced reporting needs setup discipline', 'Can overwhelm small teams without process'],
-    features: ['Real-time Shopify sync', 'Predictive CLV', 'Flow A/B testing', 'Dynamic product blocks', 'RFM segmentation', 'SMS + email journeys', 'Benchmark reporting', 'Reviews integration'],
-    channels: ['email', 'sms', 'marketing', 'cart recovery'],
-    shopifyFit: 'Klaviyo is the heavyweight when a Shopify store has enough order volume to justify profile-based pricing and wants every product, order, and browse event in one retention database.',
+    "slug": "klaviyo",
+    "name": "Klaviyo",
+    "category": "Email and SMS automation",
+    "bestFor": "Separate channel permission with Shopify customer data",
+    "pricing": "Request current plan and usage quote",
+    "priceDetail": "Price the documented workflow, channel destinations, send volume and required support; no fixed rate verified here.",
+    "rating": "Not independently scored",
+    "shopifyDepth": "Not assessed",
+    "automationDepth": "Not assessed",
+    "tagline": "Separate channel permission with Shopify customer data.",
+    "strengths": [
+      "Shopify integration",
+      "email and SMS consent collection"
+    ],
+    "limits": [
+      "SMS collection depends on supported location, sending number and age-gating"
+    ],
+    "features": [
+      "Shopify integration",
+      "email and SMS consent collection"
+    ],
+    "channels": [
+      "email",
+      "sms",
+      "marketing",
+      "cart recovery"
+    ],
+    "shopifyFit": "Acceptance brief (proposed, not a completed test): Compare a first-time checkout SMS opt-in with a historical subscriber import; show separate email and SMS permission and a purchase stopping a recovery flow.",
+    "sourceUrl": "https://help.klaviyo.com/hc/en-us/articles/360056824732",
+    "checkedOn": "2026-11-25"
   },
   {
-    slug: 'omnisend',
-    name: 'Omnisend',
-    category: 'Email, SMS & push',
-    bestFor: 'SMB Shopify stores wanting multichannel automation without enterprise complexity',
-    pricing: 'Free tier; Standard from ~$16/mo',
-    priceDetail: 'Scales by contacts and message volume',
-    rating: '4.7/5',
-    shopifyDepth: 'Native',
-    automationDepth: 'Solid',
-    tagline: 'Fast Shopify setup with pre-built ecommerce journeys.',
-    strengths: ['One-click Shopify install', 'Email + SMS + push in one builder', 'Strong prebuilt cart and welcome flows', 'Practical pricing for growing stores', 'Good campaign templates'],
-    limits: ['Less flexible than Klaviyo for complex data', 'SMS costs need monitoring', 'Reporting less granular at scale'],
-    features: ['Prebuilt automations', 'Product picker blocks', 'SMS workflows', 'Push notifications', 'Audience sync', 'Gamified signup forms', 'Campaign presets', 'Revenue per message'],
-    channels: ['email', 'sms', 'marketing', 'cart recovery'],
-    shopifyFit: 'Omnisend fits merchants who need cart recovery, welcome, and post-purchase live in days — not months — and want SMS in the same interface.',
+    "slug": "omnisend",
+    "name": "Omnisend",
+    "category": "Email, SMS and browser push",
+    "bestFor": "Coordinating channels from synced commerce data",
+    "pricing": "Request current plan and usage quote",
+    "priceDetail": "Price the documented workflow, channel destinations, send volume and required support; no fixed rate verified here.",
+    "rating": "Not independently scored",
+    "shopifyDepth": "Not assessed",
+    "automationDepth": "Not assessed",
+    "tagline": "Coordinating channels from synced commerce data.",
+    "strengths": [
+      "Shopify customer, product and order sync",
+      "push workflows"
+    ],
+    "limits": [
+      "Browser push requires HTTPS and its own subscriber permission"
+    ],
+    "features": [
+      "Shopify customer, product and order sync",
+      "push workflows"
+    ],
+    "channels": [
+      "email",
+      "sms",
+      "push",
+      "marketing",
+      "cart recovery"
+    ],
+    "shopifyFit": "Acceptance brief (proposed, not a completed test): Connect a test store, verify a changed product and order, then join email and push identities at checkout; purchase before the next recovery step and inspect the stop decision.",
+    "sourceUrl": "https://support.omnisend.com/en/articles/3175406-connect-your-shopify-store-to-omnisend",
+    "checkedOn": "2026-11-25"
   },
   {
-    slug: 'shopify-email',
-    name: 'Shopify Email',
-    category: 'Native email campaigns',
-    bestFor: 'Shops wanting low-friction email inside Shopify Admin',
-    pricing: '10,000 free emails/mo',
-    priceDetail: 'Then ~$1 per 1,000 emails',
-    rating: '4.2/5',
-    shopifyDepth: 'Native',
-    automationDepth: 'Minimal',
-    tagline: 'The zero-friction starting point inside Shopify Admin.',
-    strengths: ['Built directly into Shopify', 'Product blocks from catalog', 'No third-party app to manage', 'Low learning curve'],
-    limits: ['Limited automation depth', 'No advanced segmentation', 'Not a retention platform replacement'],
-    features: ['Product email blocks', 'Brand colors from store', 'Basic campaigns', 'Shopify customer lists', 'Sale templates', 'Mobile preview'],
-    channels: ['email', 'marketing'],
-    shopifyFit: 'Shopify Email works for basic newsletters and sale announcements. Stores focused on lifecycle revenue typically graduate within 6–12 months.',
+    "slug": "shopify-email",
+    "name": "Shopify Email",
+    "category": "Shopify Messaging (formerly Shopify Email)",
+    "bestFor": "Testing the native Shopify campaign baseline",
+    "pricing": "Request current plan and usage quote",
+    "priceDetail": "Price the documented workflow, channel destinations, send volume and required support; no fixed rate verified here.",
+    "rating": "Not independently scored",
+    "shopifyDepth": "Not assessed",
+    "automationDepth": "Not assessed",
+    "tagline": "Testing the native Shopify campaign baseline.",
+    "strengths": [
+      "Admin-based campaigns",
+      "email and SMS automations"
+    ],
+    "limits": [
+      "Channel availability and privacy settings must meet Shopify requirements"
+    ],
+    "features": [
+      "Admin-based campaigns",
+      "email and SMS automations"
+    ],
+    "channels": [
+      "email",
+      "sms",
+      "whatsapp",
+      "marketing",
+      "cart recovery"
+    ],
+    "shopifyFit": "Acceptance brief (proposed, not a completed test): Build a welcome automation in the admin, check consent for each channel and prove a purchase stops the incentive reminder; identify any custom Flow work before adding another sender.",
+    "sourceUrl": "https://help.shopify.com/en/manual/promoting-marketing/create-marketing/shopify-messaging",
+    "checkedOn": "2026-11-25"
   },
   {
-    slug: 'yotpo-email-sms',
-    name: 'Yotpo Email & SMS',
-    category: 'Retention marketing suite',
-    bestFor: 'Stores using or wanting reviews, loyalty, email, and SMS together',
-    pricing: 'Free and paid tiers',
-    priceDetail: 'Modular pricing by product',
-    rating: '4.5/5',
-    shopifyDepth: 'Native',
-    automationDepth: 'Solid',
-    tagline: 'Retention consolidation when reviews and loyalty matter.',
-    strengths: ['Email, SMS, reviews, loyalty ecosystem', 'Solid Shopify integration', 'UGC in campaigns', 'Loyalty-triggered automations'],
-    limits: ['Suite breadth adds complexity', 'Best value with multiple Yotpo modules', 'Email depth trails Klaviyo'],
-    features: ['Review request flows', 'Loyalty points in email', 'SMS campaigns', 'Visual UGC blocks', 'Segment by review status', 'Multi-module dashboard'],
-    channels: ['email', 'sms', 'marketing', 'cart recovery'],
-    shopifyFit: 'Yotpo makes sense when retention spans campaigns, reviews, loyalty, and SMS — not email alone.',
+    "slug": "yotpo-email-sms",
+    "name": "Yotpo Email & SMS",
+    "category": "Retired email and SMS products",
+    "bestFor": "Auditing a former Yotpo messaging program",
+    "pricing": "Retired messaging product",
+    "priceDetail": "No current messaging price presented.",
+    "rating": "Not independently scored",
+    "shopifyDepth": "Not assessed",
+    "automationDepth": "Not assessed",
+    "tagline": "Auditing a former Yotpo messaging program.",
+    "strengths": [
+      "Yotpo publishes messaging migration guidance"
+    ],
+    "limits": [
+      "Yotpo scheduled full Email and SMS deprecation for December 31, 2025"
+    ],
+    "features": [
+      "Yotpo publishes messaging migration guidance"
+    ],
+    "channels": [],
+    "shopifyFit": "Acceptance brief (proposed, not a completed test): Inventory old flows, export permission and suppression history where accessible, and confirm replacement queue ownership. Reviews and loyalty are separate products; do not infer messaging availability from them.",
+    "sourceUrl": "https://www.yotpo.com/blog/email-sms-migration-partners/",
+    "checkedOn": "2026-11-25"
   },
   {
-    slug: 'privy',
-    name: 'Privy',
-    category: 'Popups, email & SMS',
-    bestFor: 'Smaller stores needing list capture and basic campaigns fast',
-    pricing: 'Free tier; paid from ~$30/mo',
-    priceDetail: 'Scales by contacts and pageviews',
-    rating: '4.6/5',
-    shopifyDepth: 'Native',
-    automationDepth: 'Basic',
-    tagline: 'Capture-first tooling for stores still building their list.',
-    strengths: ['Excellent popup and capture tools', 'Simple email/SMS campaigns', 'Beginner-friendly onboarding', 'Spin-to-win and exit intent'],
-    limits: ['Shallow lifecycle automation', 'Simpler analytics than specialists', 'Often outgrown at scale'],
-    features: ['Exit-intent popups', 'Spin wheels', 'Cart saver bars', 'Basic automations', 'SMS opt-in', 'Coupon delivery', 'A/B popup tests'],
-    channels: ['email', 'sms', 'marketing', 'cart recovery'],
-    shopifyFit: 'Privy solves the top-of-funnel problem: turning traffic into subscribers before advanced lifecycle work begins.',
+    "slug": "privy",
+    "name": "Privy",
+    "category": "Onsite conversion, email and SMS",
+    "bestFor": "Connecting capture with lifecycle messaging",
+    "pricing": "Request current plan and usage quote",
+    "priceDetail": "Price the documented workflow, channel destinations, send volume and required support; no fixed rate verified here.",
+    "rating": "Not independently scored",
+    "shopifyDepth": "Not assessed",
+    "automationDepth": "Not assessed",
+    "tagline": "Connecting capture with lifecycle messaging.",
+    "strengths": [
+      "Onsite conversion and messaging platform",
+      "Sendlane acquisition announced"
+    ],
+    "limits": [
+      "Acquisition does not establish identical plans, contracts or feature access"
+    ],
+    "features": [
+      "Onsite conversion and messaging platform",
+      "Sendlane acquisition announced"
+    ],
+    "channels": [
+      "email",
+      "sms",
+      "marketing",
+      "cart recovery"
+    ],
+    "shopifyFit": "Acceptance brief (proposed, not a completed test): Submit a popup twice, confirm one permission record and coupon, then purchase before the welcome follow-up. Ask which acquired features are available in the quoted Privy account.",
+    "sourceUrl": "https://www.privy.com/blog/privy-acquires-sendlane",
+    "checkedOn": "2026-11-25"
   },
   {
-    slug: 'drip',
-    name: 'Drip',
-    category: 'Ecommerce automation',
-    bestFor: 'Teams wanting visual workflows and behavior-based segmentation',
-    pricing: 'From ~$39/mo',
-    priceDetail: 'Scales by people in account',
-    rating: '4.4/5',
-    shopifyDepth: 'Native',
-    automationDepth: 'Advanced',
-    tagline: 'Hands-on automation for operators who like building workflows.',
-    strengths: ['Strong visual workflow builder', 'Good behavior segmentation', 'Clear revenue focus', 'Solid Shopify sync'],
-    limits: ['Smaller ecosystem than Klaviyo', 'Workflow-heavy for simple needs', 'Per-contact pricing at scale'],
-    features: ['Visual automation builder', 'Tag and event triggers', 'Revenue dashboards', 'A/B workflow splits', 'Custom fields', 'Shopify product triggers', 'Lead scoring'],
-    channels: ['email', 'sms', 'marketing', 'cart recovery'],
-    shopifyFit: 'Drip suits teams that enjoy designing behavior-based journeys and want more control than template-only tools.',
+    "slug": "drip",
+    "name": "Drip",
+    "category": "Email automation and popups",
+    "bestFor": "Designing behavior-based email workflows",
+    "pricing": "Request current plan and usage quote",
+    "priceDetail": "Price the documented workflow, channel destinations, send volume and required support; no fixed rate verified here.",
+    "rating": "Not independently scored",
+    "shopifyDepth": "Not assessed",
+    "automationDepth": "Not assessed",
+    "tagline": "Designing behavior-based email workflows.",
+    "strengths": [
+      "Shopify customer segmentation",
+      "automation workflows and popups"
+    ],
+    "limits": [
+      "Confirm channel eligibility in the actual account rather than relying on listing category tags"
+    ],
+    "features": [
+      "Shopify customer segmentation",
+      "automation workflows and popups"
+    ],
+    "channels": [
+      "email",
+      "marketing",
+      "cart recovery"
+    ],
+    "shopifyFit": "Acceptance brief (proposed, not a completed test): Enter a product-interest segment, change the purchase state, and inspect branch eligibility before the next email. Preview product blocks after a price change and document the data lag.",
+    "sourceUrl": "https://apps.shopify.com/drip",
+    "checkedOn": "2026-11-25"
   },
   {
-    slug: 'postscript',
-    name: 'Postscript',
-    category: 'SMS marketing',
-    bestFor: 'Brands treating SMS as a revenue channel with compliance guardrails',
-    pricing: 'Usage-based',
-    priceDetail: 'Plan + per-message costs',
-    rating: '4.7/5',
-    shopifyDepth: 'Native',
-    automationDepth: 'Solid',
-    tagline: 'SMS-native recovery and campaigns for Shopify DTC.',
-    strengths: ['Shopify-focused SMS automations', 'Strong compliance tooling', 'Two-way conversations', 'Good cart recovery via SMS'],
-    limits: ['SMS-first, not full email', 'Cost discipline critical at scale', 'Requires email pairing for full lifecycle'],
-    features: ['TCPA compliance tools', 'Keyword opt-in', 'Cart abandonment SMS', 'Segmented broadcasts', 'Reply handling', 'Revenue tracking', 'Shopify event triggers'],
-    channels: ['sms', 'marketing', 'cart recovery'],
-    shopifyFit: 'Postscript belongs in the stack when checkout recovery and flash-sale urgency need SMS, not email alone.',
+    "slug": "postscript",
+    "name": "Postscript",
+    "category": "SMS and email with access conditions",
+    "bestFor": "Evaluating SMS alongside the email rollout",
+    "pricing": "Request current plan and usage quote",
+    "priceDetail": "Price the documented workflow, channel destinations, send volume and required support; no fixed rate verified here.",
+    "rating": "Not independently scored",
+    "shopifyDepth": "Not assessed",
+    "automationDepth": "Not assessed",
+    "tagline": "Evaluating SMS alongside the email rollout.",
+    "strengths": [
+      "Shopify SMS tools",
+      "email product announced"
+    ],
+    "limits": [
+      "Email page describes waitlist and cohort onboarding; confirm access before planning cutover"
+    ],
+    "features": [
+      "Shopify SMS tools",
+      "email product announced"
+    ],
+    "channels": [
+      "sms",
+      "email",
+      "marketing",
+      "cart recovery"
+    ],
+    "shopifyFit": "Acceptance brief (proposed, not a completed test): Obtain email access confirmation, then reconcile one shopper with multiple addresses and a phone number. Demonstrate cross-channel stop conditions and attribution windows before replacing an email sender.",
+    "sourceUrl": "https://draft.postscript.io/email",
+    "checkedOn": "2026-11-25"
   },
   {
-    slug: 'attentive',
-    name: 'Attentive',
-    category: 'SMS & email marketing',
-    bestFor: 'Larger DTC brands with high SMS volume',
-    pricing: 'Custom enterprise pricing',
-    priceDetail: 'Typically $500+/mo',
-    rating: '4.6/5',
-    shopifyDepth: 'Deep',
-    automationDepth: 'Advanced',
-    tagline: 'Enterprise SMS acquisition and lifecycle for scaled DTC.',
-    strengths: ['Excellent SMS acquisition flows', 'Strong enterprise support', 'Broad integrations', 'Managed services available'],
-    limits: ['Custom pricing excludes tiny stores', 'Can be more platform than needed early', 'Implementation timeline longer'],
-    features: ['Two-tap mobile opt-in', 'Journey orchestration', 'AI send-time optimization', 'Concierge onboarding', 'Creative services', 'Cross-channel journeys'],
-    channels: ['sms', 'email', 'marketing', 'cart recovery'],
-    shopifyFit: 'Attentive fits brands with traffic economics that justify premium SMS programs and managed growth support.',
+    "slug": "attentive",
+    "name": "Attentive",
+    "category": "SMS and email journeys",
+    "bestFor": "Separating transactional updates from promotional sends",
+    "pricing": "Request current plan and usage quote",
+    "priceDetail": "Price the documented workflow, channel destinations, send volume and required support; no fixed rate verified here.",
+    "rating": "Not independently scored",
+    "shopifyDepth": "Not assessed",
+    "automationDepth": "Not assessed",
+    "tagline": "Separating transactional updates from promotional sends.",
+    "strengths": [
+      "Shopify transactional journeys",
+      "email and SMS messaging"
+    ],
+    "limits": [
+      "Transactional permission does not establish permission for marketing"
+    ],
+    "features": [
+      "Shopify transactional journeys",
+      "email and SMS messaging"
+    ],
+    "channels": [
+      "sms",
+      "email",
+      "marketing",
+      "cart recovery"
+    ],
+    "shopifyFit": "Acceptance brief (proposed, not a completed test): Create an order update for a transactional-only subscriber and show that promotional messages remain excluded; inspect shipment updates and the corresponding email journey configuration.",
+    "sourceUrl": "https://help.attentive.com/hc/en-us/articles/360056977212-Set-up-transactional-subscriber-collection-and-messages-for-Shopify",
+    "checkedOn": "2026-11-25"
   },
   {
-    slug: 'mailchimp',
-    name: 'Mailchimp',
-    category: 'General email marketing',
-    bestFor: 'Teams already on Mailchimp needing Shopify-connected campaigns',
-    pricing: 'Free tier; paid from ~$13/mo',
-    priceDetail: 'Scales by contacts',
-    rating: '4.3/5',
-    shopifyDepth: 'Integration',
-    automationDepth: 'Basic',
-    tagline: 'Familiar campaigns — but lifecycle depth trails ecommerce natives.',
-    strengths: ['Familiar editor', 'Broad marketing features', 'Large integration ecosystem', 'Decent free tier'],
-    limits: ['Shopify depth trails specialists', 'Per-contact pricing painful at scale', 'Automation feels generic for ecommerce'],
-    features: ['Drag-drop editor', 'Basic automations', 'Shopify product sync', 'Audience dashboard', 'Social posting', 'Landing pages', 'Surveys'],
-    channels: ['email', 'marketing'],
-    shopifyFit: 'Mailchimp works for simple lists and broadcasts. Stores focused on lifecycle revenue usually migrate within a year.',
+    "slug": "mailchimp",
+    "name": "Mailchimp",
+    "category": "Email and ecommerce marketing",
+    "bestFor": "Keeping an existing audience connected to Shopify",
+    "pricing": "Request current plan and usage quote",
+    "priceDetail": "Price the documented workflow, channel destinations, send volume and required support; no fixed rate verified here.",
+    "rating": "Not independently scored",
+    "shopifyDepth": "Not assessed",
+    "automationDepth": "Not assessed",
+    "tagline": "Keeping an existing audience connected to Shopify.",
+    "strengths": [
+      "Shopify customer and order sync",
+      "product recommendations"
+    ],
+    "limits": [
+      "Pause overlapping welcome automations before connecting the store"
+    ],
+    "features": [
+      "Shopify customer and order sync",
+      "product recommendations"
+    ],
+    "channels": [
+      "email",
+      "sms",
+      "marketing"
+    ],
+    "shopifyFit": "Acceptance brief (proposed, not a completed test): Connect a single store to the intended audience, compare historic and new orders, and confirm that import does not start duplicate welcome messages. Reconcile unsubscribes before the first campaign.",
+    "sourceUrl": "https://mailchimp.com/help/connect-shopify/",
+    "checkedOn": "2026-11-25"
   },
   {
-    slug: 'activecampaign',
-    name: 'ActiveCampaign',
-    category: 'Marketing automation & CRM',
-    bestFor: 'Stores combining ecommerce with sales follow-up or B2B workflows',
-    pricing: 'From ~$29/mo',
-    priceDetail: 'Scales by contacts and tier',
-    rating: '4.5/5',
-    shopifyDepth: 'Integration',
-    automationDepth: 'Advanced',
-    tagline: 'Powerful logic when CRM and ecommerce overlap.',
-    strengths: ['Powerful automation logic', 'Built-in CRM', 'Broad integrations', 'Deep conditional branching'],
-    limits: ['Less Shopify-native than specialists', 'Setup can become overbuilt', 'Per-contact pricing'],
-    features: ['CRM pipelines', 'Conditional automations', 'Lead scoring', 'Site tracking', 'Split testing', 'Shopify deep data sync', 'Sales automations'],
-    channels: ['email', 'marketing'],
-    shopifyFit: 'ActiveCampaign makes sense when Shopify journeys overlap with consultative sales, wholesale, or high-ticket follow-up.',
+    "slug": "activecampaign",
+    "name": "ActiveCampaign",
+    "category": "Marketing automation and sales workflows",
+    "bestFor": "Purchase-triggered follow-up alongside sales processes",
+    "pricing": "Request current plan and usage quote",
+    "priceDetail": "Price the documented workflow, channel destinations, send volume and required support; no fixed rate verified here.",
+    "rating": "Not independently scored",
+    "shopifyDepth": "Not assessed",
+    "automationDepth": "Not assessed",
+    "tagline": "Purchase-triggered follow-up alongside sales processes.",
+    "strengths": [
+      "Shopify purchase and abandoned-cart data",
+      "ecommerce segment conditions"
+    ],
+    "limits": [
+      "Map guest and logged-in identities before linking sales follow-up"
+    ],
+    "features": [
+      "Shopify purchase and abandoned-cart data",
+      "ecommerce segment conditions"
+    ],
+    "channels": [
+      "email",
+      "marketing",
+      "cart recovery"
+    ],
+    "shopifyFit": "Acceptance brief (proposed, not a completed test): Place guest and logged-in orders, verify purchase fields and currency, then show which automation and sales owner receives each event. Retry the event and inspect duplicate follow-up prevention.",
+    "sourceUrl": "https://help.activecampaign.com/hc/en-us/articles/360012461919-Get-started-with-the-ActiveCampaign-Shopify-integration",
+    "checkedOn": "2026-11-25"
   },
   {
-    slug: 'brevo',
-    name: 'Brevo',
-    category: 'Email, SMS & transactional',
-    bestFor: 'Budget-conscious stores needing practical campaigns',
-    pricing: 'Free tier; paid from ~$25/mo',
-    priceDetail: 'Scales by email volume',
-    rating: '4.5/5',
-    shopifyDepth: 'Integration',
-    automationDepth: 'Solid',
-    tagline: 'Cost-aware email volume without premium ecommerce pricing.',
-    strengths: ['Affordable email volume', 'SMS and transactional options', 'Straightforward campaign tools', 'Pay-per-email model'],
-    limits: ['Lighter Shopify templates', 'Advanced ecommerce segmentation limited', 'Less retention-focused reporting'],
-    features: ['Marketing automation', 'Transactional email', 'SMS campaigns', 'Contact scoring', 'Landing pages', 'Shopify integration', 'WhatsApp (select markets)'],
-    channels: ['email', 'sms', 'marketing'],
-    shopifyFit: 'Brevo fits stores prioritizing dependable sends and volume pricing over deep Shopify lifecycle tooling.',
+    "slug": "brevo",
+    "name": "Brevo",
+    "category": "Brevo PushOwl for Shopify",
+    "bestFor": "Evaluating the current Shopify connection path",
+    "pricing": "Request current plan and usage quote",
+    "priceDetail": "Price the documented workflow, channel destinations, send volume and required support; no fixed rate verified here.",
+    "rating": "Not independently scored",
+    "shopifyDepth": "Not assessed",
+    "automationDepth": "Not assessed",
+    "tagline": "Evaluating the current Shopify connection path.",
+    "strengths": [
+      "Customer, catalog and order sync",
+      "email, SMS, push and WhatsApp"
+    ],
+    "limits": [
+      "Brevo identifies PushOwl as the supported connection, replacing its former Shopify app"
+    ],
+    "features": [
+      "Customer, catalog and order sync",
+      "email, SMS, push and WhatsApp"
+    ],
+    "channels": [
+      "email",
+      "sms",
+      "push",
+      "whatsapp",
+      "marketing",
+      "cart recovery"
+    ],
+    "shopifyFit": "Acceptance brief (proposed, not a completed test): Check the existing Brevo account identity before import, preserve subscription status, activate the tracker, and test a variant back-in-stock alert against actual inventory. Quote the Shopify product rather than a generic Brevo plan.",
+    "sourceUrl": "https://help.brevo.com/hc/en-us/articles/360014912879-Brevo-PushOwl-app-for-Shopify-Connect-your-Shopify-store-with-Brevo-PushOwl",
+    "checkedOn": "2026-11-25"
   },
   {
-    slug: 'sendlane',
-    name: 'Sendlane',
-    category: 'Email & SMS for ecommerce',
-    bestFor: 'DTC brands wanting guided retention automation',
-    pricing: 'From ~$83/mo',
-    priceDetail: 'Custom packages available',
-    rating: '4.6/5',
-    shopifyDepth: 'Native',
-    automationDepth: 'Advanced',
-    tagline: 'Ecommerce-first automation with migration support.',
-    strengths: ['Ecommerce-first automations', 'Email + SMS coordination', 'Strong migration support', 'Revenue-focused reporting'],
-    limits: ['Less transparent self-serve pricing', 'Best for brands ready to invest', 'Higher entry price than SMB tools'],
-    features: ['Multi-channel journeys', 'Custom audiences', 'Revenue attribution', 'SMS automations', 'Onboarding support', 'Deliverability tools', 'A/B testing'],
-    channels: ['email', 'sms', 'marketing', 'cart recovery'],
-    shopifyFit: 'Sendlane fits stores with enough order volume to justify a guided retention platform and migration help.',
+    "slug": "sendlane",
+    "name": "Sendlane",
+    "category": "Ecommerce messaging acquired by Privy",
+    "bestFor": "Reviewing Sendlane continuity and migration scope",
+    "pricing": "Request current plan and usage quote",
+    "priceDetail": "Price the documented workflow, channel destinations, send volume and required support; no fixed rate verified here.",
+    "rating": "Not independently scored",
+    "shopifyDepth": "Not assessed",
+    "automationDepth": "Not assessed",
+    "tagline": "Reviewing Sendlane continuity and migration scope.",
+    "strengths": [
+      "Email and SMS platform",
+      "Privy acquisition announced"
+    ],
+    "limits": [
+      "Confirm contracting entity, account continuity and feature transition directly"
+    ],
+    "features": [
+      "Email and SMS platform",
+      "Privy acquisition announced"
+    ],
+    "channels": [
+      "email",
+      "sms",
+      "marketing",
+      "cart recovery"
+    ],
+    "shopifyFit": "Acceptance brief (proposed, not a completed test): Request a written continuity plan for existing journeys, billing and support. Reproduce one suppression rule and reporting window in the proposed destination before moving the remaining flows.",
+    "sourceUrl": "https://www.privy.com/sendlane-acquisition",
+    "checkedOn": "2026-11-25"
   },
   {
-    slug: 'aftership-email',
-    name: 'AfterShip Email',
-    category: 'Email & SMS marketing',
-    bestFor: 'Merchants already using AfterShip for tracking workflows',
-    pricing: 'Free and paid tiers',
-    priceDetail: 'Varies by AfterShip product bundle',
-    rating: '4.3/5',
-    shopifyDepth: 'Native',
-    automationDepth: 'Basic',
-    tagline: 'Post-purchase timing tied to shipping and delivery events.',
-    strengths: ['Ties into post-purchase experience', 'Shipping and tracking ecosystem', 'Practical Shopify integrations', 'Delivery-triggered messages'],
-    limits: ['Less famous as pure email leader', 'Best when paired with AfterShip products', 'Limited standalone lifecycle depth'],
-    features: ['Shipping-triggered emails', 'Delivery notifications', 'Review requests post-delivery', 'SMS updates', 'Returns messaging', 'Tracking page integration'],
-    channels: ['email', 'sms', 'marketing'],
-    shopifyFit: 'AfterShip Email shines when retention messages depend on delivery, tracking, and returns timing.',
+    "slug": "aftership-email",
+    "name": "AfterShip Email",
+    "category": "AfterShip Email",
+    "bestFor": "Coordinating marketing with post-purchase notifications",
+    "pricing": "Request current plan and usage quote",
+    "priceDetail": "Price the documented workflow, channel destinations, send volume and required support; no fixed rate verified here.",
+    "rating": "Not independently scored",
+    "shopifyDepth": "Not assessed",
+    "automationDepth": "Not assessed",
+    "tagline": "Coordinating marketing with post-purchase notifications.",
+    "strengths": [
+      "Marketing email and post-purchase notification flows"
+    ],
+    "limits": [
+      "Tracking, Returns and SMS are distinct AfterShip services; confirm dependencies"
+    ],
+    "features": [
+      "Marketing email and post-purchase notification flows"
+    ],
+    "channels": [
+      "email",
+      "marketing"
+    ],
+    "shopifyFit": "Acceptance brief (proposed, not a completed test): Map a delayed delivery and a return to their source products, then check which email flow consumes each event. Keep service updates separate from promotions and price every required module.",
+    "sourceUrl": "https://www.aftership.com/legal/feature-specific-terms",
+    "checkedOn": "2026-11-25"
   },
   {
-    slug: 'recart',
-    name: 'Recart',
-    category: 'SMS & messenger recovery',
-    bestFor: 'Stores focused on cart recovery via mobile channels',
-    pricing: 'Paid plans / custom',
-    priceDetail: 'Usage-based messaging',
-    rating: '4.4/5',
-    shopifyDepth: 'Native',
-    automationDepth: 'Solid',
-    tagline: 'Mobile-first cart recovery specialization.',
-    strengths: ['Cart recovery focus', 'Mobile-first reminders', 'Good for promo-driven DTC', 'Messenger channel option'],
-    limits: ['Not a complete email suite', 'Narrower channel mix', 'Requires email tool pairing'],
-    features: ['Abandoned cart SMS', 'Messenger recovery', 'Browse abandonment', 'Discount automation', 'Subscriber growth tools', 'Revenue reporting'],
-    channels: ['sms', 'marketing', 'cart recovery'],
-    shopifyFit: 'Recart when abandoned cart recovery is the primary problem and mobile reminders outperform email.',
+    "slug": "recart",
+    "name": "Recart",
+    "category": "SMS marketing",
+    "bestFor": "Evaluating a Shopify SMS program",
+    "pricing": "Request current plan and usage quote",
+    "priceDetail": "Price the documented workflow, channel destinations, send volume and required support; no fixed rate verified here.",
+    "rating": "Not independently scored",
+    "shopifyDepth": "Not assessed",
+    "automationDepth": "Not assessed",
+    "tagline": "Evaluating a Shopify SMS program.",
+    "strengths": [
+      "Shopify-focused SMS marketing"
+    ],
+    "limits": [
+      "Historical Messenger positioning does not establish current Messenger access"
+    ],
+    "features": [
+      "Shopify-focused SMS marketing"
+    ],
+    "channels": [
+      "sms",
+      "marketing",
+      "cart recovery"
+    ],
+    "shopifyFit": "Acceptance brief (proposed, not a completed test): Collect an SMS opt-in, abandon a cart, then purchase before the reminder. Inspect consent, stop behavior and send costs; ask separately about any legacy Messenger workflow you need to retain.",
+    "sourceUrl": "https://recart.com/careers-old",
+    "checkedOn": "2026-11-25"
   },
   {
-    slug: 'justuno',
-    name: 'Justuno',
-    category: 'Conversion & list capture',
-    bestFor: 'Stores needing advanced popups, quizzes, and onsite capture',
-    pricing: 'From ~$29/mo',
-    priceDetail: 'Scales by traffic and features',
-    rating: '4.5/5',
-    shopifyDepth: 'Native',
-    automationDepth: 'Minimal',
-    tagline: 'Onsite capture that feeds your email/SMS stack.',
-    strengths: ['Powerful onsite targeting', 'Quiz and popup controls', 'Feeds lists into retention tools', 'AI product recommendations on-site'],
-    limits: ['Not primarily an email sender', 'Requires pairing with campaign tools', 'Capture-only without full lifecycle'],
-    features: ['Smart popups', 'Product quizzes', 'Gamification', 'AI recommendations', 'A/B testing', 'Segmentation by behavior', 'Shopify sync'],
-    channels: ['marketing'],
-    shopifyFit: 'Justuno strengthens the top of the funnel before campaigns in Klaviyo, Sequenzy, or Omnisend begin.',
+    "slug": "justuno",
+    "name": "Justuno",
+    "category": "Onsite conversion and capture",
+    "bestFor": "Passing subscriber intent to an existing sender",
+    "pricing": "Request current plan and usage quote",
+    "priceDetail": "Price the documented workflow, channel destinations, send volume and required support; no fixed rate verified here.",
+    "rating": "Not independently scored",
+    "shopifyDepth": "Not assessed",
+    "automationDepth": "Not assessed",
+    "tagline": "Passing subscriber intent to an existing sender.",
+    "strengths": [
+      "Shopify lead capture",
+      "targeted onsite offers"
+    ],
+    "limits": [
+      "A capture integration alone does not establish email delivery or downstream queue behavior"
+    ],
+    "features": [
+      "Shopify lead capture",
+      "targeted onsite offers"
+    ],
+    "channels": [
+      "marketing"
+    ],
+    "shopifyFit": "Acceptance brief (proposed, not a completed test): Capture a Shop login and coupon, inspect the destination audience and consent fields, then dismiss and revisit the offer on mobile. Verify the receiving sender owns the welcome queue.",
+    "sourceUrl": "https://partners.justuno.com/integration-partners/shopify",
+    "checkedOn": "2026-11-25"
   },
   {
-    slug: 'rejoiner',
-    name: 'Rejoiner',
-    category: 'Managed email & SMS lifecycle',
-    bestFor: 'Brands wanting strategic help, not just software',
-    pricing: 'Custom pricing',
-    priceDetail: 'Software + services model',
-    rating: '4.5/5',
-    shopifyDepth: 'Native',
-    automationDepth: 'Advanced',
-    tagline: 'Managed lifecycle for stores that want experts in the loop.',
-    strengths: ['Lifecycle strategy support', 'Email and SMS program help', 'Strong cart recovery expertise', 'Done-with-you implementation'],
-    limits: ['Not cheap self-serve', 'Fit depends on service needs', 'Less control than DIY platforms'],
-    features: ['Managed automations', 'Creative services', 'Strategy consulting', 'Cart recovery specialization', 'Revenue reporting', 'A/B testing support'],
-    channels: ['email', 'sms', 'marketing', 'cart recovery'],
-    shopifyFit: 'Rejoiner for brands that want experts designing, writing, and optimizing lifecycle campaigns alongside software.',
+    "slug": "rejoiner",
+    "name": "Rejoiner",
+    "category": "Lifecycle email and services",
+    "bestFor": "Scoping software versus managed lifecycle work",
+    "pricing": "Request current plan and usage quote",
+    "priceDetail": "Price the documented workflow, channel destinations, send volume and required support; no fixed rate verified here.",
+    "rating": "Not independently scored",
+    "shopifyDepth": "Not assessed",
+    "automationDepth": "Not assessed",
+    "tagline": "Scoping software versus managed lifecycle work.",
+    "strengths": [
+      "Email and SMS software with expert service support"
+    ],
+    "limits": [
+      "Confirm SMS scope and deliverables in a current proposal"
+    ],
+    "features": [
+      "Email and SMS software with expert service support"
+    ],
+    "channels": [
+      "email",
+      "sms",
+      "marketing",
+      "cart recovery"
+    ],
+    "shopifyFit": "Acceptance brief (proposed, not a completed test): Ask who writes, approves and changes each flow, then walk a recovered cart through the service handoff. Record revision ownership, reporting access and what remains if the service engagement ends.",
+    "sourceUrl": "https://www.rejoiner.com/",
+    "checkedOn": "2026-11-25"
   },
   {
-    slug: 'marsello',
-    name: 'Marsello',
-    category: 'Email, SMS & loyalty',
-    bestFor: 'Retailers combining Shopify ecommerce with loyalty and POS',
-    pricing: 'From ~$49/mo',
-    priceDetail: 'Scales by contacts and features',
-    rating: '4.4/5',
-    shopifyDepth: 'Native',
-    automationDepth: 'Solid',
-    tagline: 'Loyalty-driven retention for omnichannel retailers.',
-    strengths: ['Loyalty plus campaigns', 'Omnichannel retailer support', 'Customer segmentation included', 'POS integration'],
-    limits: ['Less specialized email depth', 'Best if loyalty is central', 'Email features trail Klaviyo'],
-    features: ['Loyalty program', 'Email campaigns', 'SMS marketing', 'POS sync', 'Referral programs', 'Segment by loyalty tier', 'Review prompts'],
-    channels: ['email', 'sms', 'marketing'],
-    shopifyFit: 'Marsello when loyalty, POS behavior, and repeat purchase automations are connected.',
+    "slug": "marsello",
+    "name": "Marsello",
+    "category": "Loyalty and customer messaging",
+    "bestFor": "Joining POS rewards with online customer history",
+    "pricing": "Request current plan and usage quote",
+    "priceDetail": "Price the documented workflow, channel destinations, send volume and required support; no fixed rate verified here.",
+    "rating": "Not independently scored",
+    "shopifyDepth": "Not assessed",
+    "automationDepth": "Not assessed",
+    "tagline": "Joining POS rewards with online customer history.",
+    "strengths": [
+      "Shopify POS loyalty",
+      "reward messages and merge tags"
+    ],
+    "limits": [
+      "Cross-channel matching uses email; phone-only members do not automatically link online"
+    ],
+    "features": [
+      "Shopify POS loyalty",
+      "reward messages and merge tags"
+    ],
+    "channels": [
+      "email",
+      "sms",
+      "marketing"
+    ],
+    "shopifyFit": "Acceptance brief (proposed, not a completed test): Enroll a phone-only POS member, then add email and verify the online match and point balance. Redeem a reward and check the next loyalty message reflects the new balance.",
+    "sourceUrl": "https://help.marsello.com/shopify-pos-common-questions-marsello-help-center",
+    "checkedOn": "2026-11-25"
   },
   {
-    slug: 'firepush',
-    name: 'Firepush',
-    category: 'Email, SMS & web push',
-    bestFor: 'Stores wanting push notifications alongside email and SMS',
-    pricing: 'Free tier; paid from ~$9/mo',
-    priceDetail: 'Scales by impressions and messages',
-    rating: '4.2/5',
-    shopifyDepth: 'Native',
-    automationDepth: 'Basic',
-    tagline: 'Multi-channel recovery including web push.',
-    strengths: ['Multi-channel recovery', 'Web push support', 'Simple Shopify automations', 'Low entry price'],
-    limits: ['Less polished than top suites', 'Push can become noisy', 'Limited segmentation depth'],
-    features: ['Web push notifications', 'SMS automations', 'Email campaigns', 'Abandoned cart flows', 'Price drop alerts', 'Back-in-stock push'],
-    channels: ['email', 'sms', 'marketing', 'cart recovery'],
-    shopifyFit: 'Firepush when web push is part of cart recovery and promotion strategy.',
+    "slug": "firepush",
+    "name": "Firepush",
+    "category": "Web push notifications",
+    "bestFor": "Evaluating browser-based recovery",
+    "pricing": "Request current plan and usage quote",
+    "priceDetail": "Price the documented workflow, channel destinations, send volume and required support; no fixed rate verified here.",
+    "rating": "Not independently scored",
+    "shopifyDepth": "Not assessed",
+    "automationDepth": "Not assessed",
+    "tagline": "Evaluating browser-based recovery.",
+    "strengths": [
+      "Current provider notice identifies Firepush as a web push app"
+    ],
+    "limits": [
+      "November 2026 notice says SMS and email campaigns are no longer offered"
+    ],
+    "features": [
+      "Current provider notice identifies Firepush as a web push app"
+    ],
+    "channels": [
+      "push",
+      "marketing",
+      "cart recovery"
+    ],
+    "shopifyFit": "Acceptance brief (proposed, not a completed test): Use a permitted browser subscription to test a product reminder, purchase suppression and browser revocation. Inventory any historical SMS or email flows for a separate sender; old help pages are not current availability evidence.",
+    "sourceUrl": "https://getfirepush.com/blog/sms-campaigns/",
+    "checkedOn": "2026-11-25"
   },
   {
-    slug: 'smsbump',
-    name: 'SMSBump',
-    category: 'SMS marketing',
-    bestFor: 'Merchants in the Yotpo SMS ecosystem',
-    pricing: 'Usage-based SMS',
-    priceDetail: 'Per-message + plan options',
-    rating: '4.5/5',
-    shopifyDepth: 'Native',
-    automationDepth: 'Solid',
-    tagline: 'Recognizable Shopify SMS for cart recovery and campaigns.',
-    strengths: ['Shopify SMS automations', 'List growth tools', 'Yotpo ecosystem connection', 'Cart abandonment SMS'],
-    limits: ['SMS economics need tracking', 'Not an email-first tool', 'Requires email pairing'],
-    features: ['SMS automations', 'Popup opt-in', 'Cart recovery texts', 'Segmented campaigns', 'MMS support', 'Revenue tracking', 'Keyword campaigns'],
-    channels: ['sms', 'marketing', 'cart recovery'],
-    shopifyFit: 'SMSBump for cart recovery, campaigns, and subscriber collection within Yotpo ecosystem.',
+    "slug": "smsbump",
+    "name": "SMSBump",
+    "category": "Legacy Yotpo SMSBump messaging",
+    "bestFor": "Reconciling a former SMSBump subscriber history",
+    "pricing": "Retired messaging product",
+    "priceDetail": "No current messaging price presented.",
+    "rating": "Not independently scored",
+    "shopifyDepth": "Not assessed",
+    "automationDepth": "Not assessed",
+    "tagline": "Reconciling a former SMSBump subscriber history.",
+    "strengths": [
+      "Legacy brand associated with Yotpo messaging"
+    ],
+    "limits": [
+      "Yotpo Email and SMS were scheduled for full deprecation on December 31, 2025"
+    ],
+    "features": [
+      "Legacy brand associated with Yotpo messaging"
+    ],
+    "channels": [],
+    "shopifyFit": "Acceptance brief (proposed, not a completed test): Trace SMSBump consent, STOP records and active phone-number ownership into the replacement program. Confirm which exports remain accessible and prevent replaying old recovery queues.",
+    "sourceUrl": "https://www.yotpo.com/blog/email-sms-migration-partners/",
+    "checkedOn": "2026-11-25"
   },
   {
-    slug: 'tinyemail',
-    name: 'tinyEmail',
-    category: 'AI-assisted email marketing',
-    bestFor: 'Budget-sensitive shops wanting quick campaign drafting',
-    pricing: 'Free tier; paid from ~$15/mo',
-    priceDetail: 'Scales by subscribers and features',
-    rating: '4.3/5',
-    shopifyDepth: 'Integration',
-    automationDepth: 'Basic',
-    tagline: 'Fast AI-assisted campaigns for young stores.',
-    strengths: ['Fast campaign creation', 'AI-assisted copy', 'Accessible pricing', 'Simple Shopify sync'],
-    limits: ['Lighter automation depth', 'Not battle-tested for complex programs', 'Limited segmentation'],
-    features: ['AI copy generation', 'Product email blocks', 'Basic automations', 'Template library', 'Shopify sync', 'Campaign scheduling'],
-    channels: ['email', 'marketing'],
-    shopifyFit: 'tinyEmail for young stores needing campaigns live quickly before graduating to deeper lifecycle tooling.',
-  },
+    "slug": "tinyemail",
+    "name": "tinyEmail",
+    "category": "AI-assisted ecommerce email",
+    "bestFor": "Reviewing generated campaign copy and store data",
+    "pricing": "Request current plan and usage quote",
+    "priceDetail": "Price the documented workflow, channel destinations, send volume and required support; no fixed rate verified here.",
+    "rating": "Not independently scored",
+    "shopifyDepth": "Not assessed",
+    "automationDepth": "Not assessed",
+    "tagline": "Reviewing generated campaign copy and store data.",
+    "strengths": [
+      "AI-assisted email and ecommerce workflows"
+    ],
+    "limits": [
+      "Generated copy needs product, offer and audience review before approval"
+    ],
+    "features": [
+      "AI-assisted email and ecommerce workflows"
+    ],
+    "channels": [
+      "email",
+      "marketing"
+    ],
+    "shopifyFit": "Acceptance brief (proposed, not a completed test): Draft a product campaign, change its price and availability, then preview all blocks and links. Check audience permission and sender authentication before scheduling; document which workflow steps still need manual work.",
+    "sourceUrl": "https://www.tinyemail.com/careers",
+    "checkedOn": "2026-11-25"
+  }
 ];
 
 export function appBySlug(slug: string) {
@@ -381,12 +667,14 @@ export function appBySlug(slug: string) {
 }
 
 export function channelApps(channel: string) {
-  return APPS.filter((app) => app.channels.includes(channel) || app.channels.includes('marketing'));
+  return APPS.filter((app) => app.channels.includes(channel));
 }
 
 export function comparisonPairs() {
   const pairs: [ShopifyApp, ShopifyApp][] = [];
-  const emailApps = channelApps('email');
+  // Historical comparison routes include retired and adjacent tools.
+  // Preserve the route roster independently of current channel availability.
+  const emailApps = APPS;
   for (let i = 0; i < emailApps.length; i++) {
     for (let j = i + 1; j < Math.min(emailApps.length, i + 7); j++) {
       pairs.push([emailApps[i], emailApps[j]]);
